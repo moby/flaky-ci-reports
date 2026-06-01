@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>registry-error:auth.docker.io:timeout — flakie</title>
+  <link rel="stylesheet" href="static/style.css"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 16 16&#39;%3E%3Ccircle cx=&#39;8&#39; cy=&#39;8&#39; r=&#39;6&#39; fill=&#39;%234f46e5&#39;/%3E%3C/svg%3E"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="static/report.js"></script>
+<script>window.FLAKIE_STATIC=true;</script></head>
+<body>
+  <nav>
+    <div class="brand">
+      flakie
+    </div>
+    <div class="links">
+      <a href="buildkit-index.html" class="active">Dashboard</a>
+      
+    </div>
+    
+    <details class="project-switcher">
+      <summary>
+        <span class="proj-label">project</span>
+        <span class="proj-name">buildkit</span>
+        <span class="proj-repo">moby/buildkit</span>
+        <span class="proj-caret">▾</span>
+      </summary>
+      <div class="proj-menu">
+        
+        <a href="buildkit-index.html" class="active">
+          <span class="proj-name">buildkit</span>
+          <span class="proj-repo">moby/buildkit</span>
+        </a>
+        
+        <a href="buildx-index.html">
+          <span class="proj-name">buildx</span>
+          <span class="proj-repo">docker/buildx</span>
+        </a>
+        
+        <a href="moby-index.html">
+          <span class="proj-name">moby</span>
+          <span class="proj-repo">moby/moby</span>
+        </a>
+        
+      </div>
+    </details>
+    
+  </nav>
+  <main>
+    
+<a href="buildkit-index.html" style="color:var(--text-muted);font-size:0.875rem">← dashboard</a>
+<h1 style="margin-top:0.5rem"><code style="font-size:1.25rem;color:var(--accent)">registry-error:auth.docker.io:timeout</code></h1>
+<p class="subtitle">Registry auth.docker.io timeout</p>
+
+<div class="fix-bar">
+  
+    
+  
+</div>
+
+
+
+<div class="filter-bar" id="g-pills">
+  <span class="label">Period:</span>
+  <a href="#" class="filter-pill" data-days="1">24 hours</a>
+  <a href="#" class="filter-pill" data-days="7">7 days</a>
+  <a href="#" class="filter-pill" data-days="30">30 days</a>
+  <a href="#" class="filter-pill" data-days="90">90 days</a>
+  <a href="#" class="filter-pill" data-days="0">All time</a>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div class="label">Hits (<span id="g-window-label">30d</span>)</div>
+    <div class="value" id="g-window-hits">0</div>
+  </div>
+  <div class="card">
+    <div class="label">Lifetime hits</div>
+    <div class="value muted">13</div>
+  </div>
+  <div class="card"><div class="label">First seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-03-25 17:42</div></div>
+  <div class="card"><div class="label">Last seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-05-12 14:12</div></div>
+  <div class="card"><div class="label">Workflows</div><div class="value">3</div></div>
+  <div class="card"><div class="label">Branches</div><div class="value">2</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Occurrences per day · by category <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· click a bar to drill into that day</span></div>
+  <div class="panel-body">
+    <div class="chart-container"><canvas id="g-chart"></canvas></div>
+  </div>
+</div>
+
+<div class="day-banner" id="g-day" style="display:none">
+  <span>Showing occurrences from <strong></strong> only.</span>
+  <a href="#" id="g-day-clear">Clear day filter</a>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Tag breakdown</div>
+  <div class="panel-body" id="g-tags" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem 2rem"></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Observations <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· newest first</span></div>
+  <div class="obs-list" id="g-obs"></div>
+</div>
+
+<script>renderGroup({
+  key: "registry-error:auth.docker.io:timeout",
+  obs: [{"t":1778595133,"url":"https://github.com/moby/buildkit/actions/runs/25740107377/job/75588712076","job_name":"test / run (containerd-rootless, ./frontend/dockerfile, dockerfile)","cat":"network","tags":{},"log":"/log/25740107377/1/75588712076?evidence=2805-2805"},{"t":1778595133,"url":"https://github.com/moby/buildkit/actions/runs/25740107127/job/75595030994","job_name":"image (alpine, rootless, moby/buildkit, -rootless) / build (1, linux/arm/v7, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/25740107127/1/75595030994?evidence=3398-3398"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868451","job_name":"test / run (containerd-rootless, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integr...","cat":"network","tags":{},"log":"/log/23557645829/1/68589868451?evidence=3019-3019"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868454","job_name":"test / run (./client, containerd, nydus, integration)","cat":"network","tags":{},"log":"/log/23557645829/1/68589868454?evidence=2980-2980"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868467","job_name":"test / run (containerd-2.0, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"network","tags":{},"log":"/log/23557645829/1/68589868467?evidence=3013-3013"},{"t":1774460528,"url":"https://github.com/moby/buildkit/actions/runs/23555415262/job/68580729222","job_name":"govulncheck","cat":"network","tags":{},"log":"/log/23555415262/1/68580729222?evidence=194-194"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760612","job_name":"validate (lint-labs, linux/riscv64, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760612?evidence=187-187"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760692","job_name":"validate (lint-nydus, linux/amd64, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760692?evidence=187-187"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760726","job_name":"validate (validate-dockerfile-5a37e745f827ecdbe6d6e07f924f6644, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760726?evidence=187-187"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760765","job_name":"validate (validate-dockerfile-78a70dd9e3c8d9af8792b1f90c6358b4, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760765?evidence=188-188"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760793","job_name":"validate (validate-archutil, linux/arm64, ubuntu-24.04-arm)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760793?evidence=183-183"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760795","job_name":"validate (validate-dockerfile-6c87b1f12519678c2e61c45b271299f2, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760795?evidence=187-187"},{"t":1774460527,"url":"https://github.com/moby/buildkit/actions/runs/23555415206/job/68580760868","job_name":"validate (validate-docs, ubuntu-24.04)","cat":"network","tags":{},"log":"/log/23555415206/1/68580760868?evidence=188-188"}],
+  fixedAt:  0 ,
+});</script>
+
+  </main>
+
+
+<footer class="static-footer">flakie · generated 2026-06-01 06:12 UTC</footer></body></html>

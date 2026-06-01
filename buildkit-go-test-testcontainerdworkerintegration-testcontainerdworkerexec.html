@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>go-test:TestContainerdWorkerIntegration/TestContainerdWorkerExec — flakie</title>
+  <link rel="stylesheet" href="static/style.css"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 16 16&#39;%3E%3Ccircle cx=&#39;8&#39; cy=&#39;8&#39; r=&#39;6&#39; fill=&#39;%234f46e5&#39;/%3E%3C/svg%3E"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="static/report.js"></script>
+<script>window.FLAKIE_STATIC=true;</script></head>
+<body>
+  <nav>
+    <div class="brand">
+      flakie
+    </div>
+    <div class="links">
+      <a href="buildkit-index.html" class="active">Dashboard</a>
+      
+    </div>
+    
+    <details class="project-switcher">
+      <summary>
+        <span class="proj-label">project</span>
+        <span class="proj-name">buildkit</span>
+        <span class="proj-repo">moby/buildkit</span>
+        <span class="proj-caret">▾</span>
+      </summary>
+      <div class="proj-menu">
+        
+        <a href="buildkit-index.html" class="active">
+          <span class="proj-name">buildkit</span>
+          <span class="proj-repo">moby/buildkit</span>
+        </a>
+        
+        <a href="buildx-index.html">
+          <span class="proj-name">buildx</span>
+          <span class="proj-repo">docker/buildx</span>
+        </a>
+        
+        <a href="moby-index.html">
+          <span class="proj-name">moby</span>
+          <span class="proj-repo">moby/moby</span>
+        </a>
+        
+      </div>
+    </details>
+    
+  </nav>
+  <main>
+    
+<a href="buildkit-index.html" style="color:var(--text-muted);font-size:0.875rem">← dashboard</a>
+<h1 style="margin-top:0.5rem"><code style="font-size:1.25rem;color:var(--accent)">go-test:TestContainerdWorkerIntegration/TestContainerdWorkerExec</code></h1>
+<p class="subtitle">TestContainerdWorkerIntegration/TestContainerdWorkerExec failed</p>
+
+<div class="fix-bar">
+  
+    
+  
+</div>
+
+
+
+<div class="filter-bar" id="g-pills">
+  <span class="label">Period:</span>
+  <a href="#" class="filter-pill" data-days="1">24 hours</a>
+  <a href="#" class="filter-pill" data-days="7">7 days</a>
+  <a href="#" class="filter-pill" data-days="30">30 days</a>
+  <a href="#" class="filter-pill" data-days="90">90 days</a>
+  <a href="#" class="filter-pill" data-days="0">All time</a>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div class="label">Hits (<span id="g-window-label">30d</span>)</div>
+    <div class="value" id="g-window-hits">0</div>
+  </div>
+  <div class="card">
+    <div class="label">Lifetime hits</div>
+    <div class="value muted">15</div>
+  </div>
+  <div class="card"><div class="label">First seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-03-12 03:46</div></div>
+  <div class="card"><div class="label">Last seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-05-13 07:59</div></div>
+  <div class="card"><div class="label">Workflows</div><div class="value">1</div></div>
+  <div class="card"><div class="label">Branches</div><div class="value">11</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Occurrences per day · by category <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· click a bar to drill into that day</span></div>
+  <div class="panel-body">
+    <div class="chart-container"><canvas id="g-chart"></canvas></div>
+  </div>
+</div>
+
+<div class="day-banner" id="g-day" style="display:none">
+  <span>Showing occurrences from <strong></strong> only.</span>
+  <a href="#" id="g-day-clear">Clear day filter</a>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Tag breakdown</div>
+  <div class="panel-body" id="g-tags" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem 2rem"></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Observations <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· newest first</span></div>
+  <div class="obs-list" id="g-obs"></div>
+</div>
+
+<script>renderGroup({
+  key: "go-test:TestContainerdWorkerIntegration/TestContainerdWorkerExec",
+  obs: [{"t":1778671618,"url":"https://github.com/moby/buildkit/actions/runs/25786272366/job/75741582824","job_name":"test / run (containerd-2.1, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-2.1"},"log":"/log/25786272366/1/75741582824?evidence=3820-3820"},{"t":1778523233,"url":"https://github.com/moby/buildkit/actions/runs/25686798306/job/75413863189","job_name":"test / run (containerd-2.1, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-2.1"},"log":"/log/25686798306/1/75413863189?evidence=3884-3884"},{"t":1778322274,"url":"https://github.com/moby/buildkit/actions/runs/25598795144/job/75149556232","job_name":"test / run (containerd, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd"},"log":"/log/25598795144/1/75149556232?evidence=3799-3799"},{"t":1778241198,"url":"https://github.com/moby/buildkit/actions/runs/25549914678/job/74996118912","job_name":"test / run (containerd, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd"},"log":"/log/25549914678/1/74996118912?evidence=3886-3886"},{"t":1778000298,"url":"https://github.com/moby/buildkit/actions/runs/25389103170/job/74460032338","job_name":"test / run (containerd-2.1, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-2.1"},"log":"/log/25389103170/1/74460032338?evidence=3974-3974"},{"t":1776076572,"url":"https://github.com/moby/buildkit/actions/runs/24338864515/job/71063385307","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"test","tags":{"worker":"containerd-snapshotter-stargz"},"log":"/log/24338864515/1/71063385307?evidence=3807-3807"},{"t":1775549465,"url":"https://github.com/moby/buildkit/actions/runs/24013885335/job/70030210720","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"test","tags":{"worker":"containerd-snapshotter-stargz"},"log":"/log/24013885335/1/70030210720?evidence=3974-3974"},{"t":1775122122,"url":"https://github.com/moby/buildkit/actions/runs/23892980402/job/69671612244","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-1.7"},"log":"/log/23892980402/1/69671612244?evidence=4362-4362"},{"t":1775039083,"url":"https://github.com/moby/buildkit/actions/runs/23844005770/job/69507431476","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"test","tags":{"worker":"containerd-snapshotter-stargz"},"log":"/log/23844005770/1/69507431476?evidence=3903-3903"},{"t":1775039083,"url":"https://github.com/moby/buildkit/actions/runs/23844005770/job/69507431496","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-1.7"},"log":"/log/23844005770/1/69507431496?evidence=3688-3688"},{"t":1774436465,"url":"https://github.com/moby/buildkit/actions/runs/23536345795/job/68513387474","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"test","tags":{"worker":"containerd-snapshotter-stargz"},"log":"/log/23536345795/1/68513387474?evidence=4081-4081"},{"t":1774397243,"url":"https://github.com/moby/buildkit/actions/runs/23517638034/job/68454273909","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-1.7"},"log":"/log/23517638034/1/68454273909?evidence=3762-3762"},{"t":1773670520,"url":"https://github.com/moby/buildkit/actions/runs/23146504259/job/67237189092","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-1.7"},"log":"/log/23146504259/1/67237189092?evidence=4252-4252"},{"t":1773656750,"url":"https://github.com/moby/buildkit/actions/runs/23139051394/job/67211105625","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-1.7"},"log":"/log/23139051394/1/67211105625?evidence=4094-4094"},{"t":1773341742,"url":"https://github.com/moby/buildkit/actions/runs/22985654977/job/66844469994","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"test","tags":{"worker":"containerd-1.7"},"log":"/log/22985654977/2/66844469994?evidence=4082-4082"}],
+  fixedAt:  0 ,
+});</script>
+
+  </main>
+
+
+<footer class="static-footer">flakie · generated 2026-06-01 06:12 UTC</footer></body></html>

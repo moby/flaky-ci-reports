@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>go-test:TestBridgeICC — flakie</title>
+  <link rel="stylesheet" href="static/style.css"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 16 16&#39;%3E%3Ccircle cx=&#39;8&#39; cy=&#39;8&#39; r=&#39;6&#39; fill=&#39;%234f46e5&#39;/%3E%3C/svg%3E"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="static/report.js"></script>
+<script>window.FLAKIE_STATIC=true;</script></head>
+<body>
+  <nav>
+    <div class="brand">
+      flakie
+    </div>
+    <div class="links">
+      <a href="moby-index.html" class="active">Dashboard</a>
+      
+    </div>
+    
+    <details class="project-switcher">
+      <summary>
+        <span class="proj-label">project</span>
+        <span class="proj-name">moby</span>
+        <span class="proj-repo">moby/moby</span>
+        <span class="proj-caret">▾</span>
+      </summary>
+      <div class="proj-menu">
+        
+        <a href="buildkit-index.html">
+          <span class="proj-name">buildkit</span>
+          <span class="proj-repo">moby/buildkit</span>
+        </a>
+        
+        <a href="buildx-index.html">
+          <span class="proj-name">buildx</span>
+          <span class="proj-repo">docker/buildx</span>
+        </a>
+        
+        <a href="moby-index.html" class="active">
+          <span class="proj-name">moby</span>
+          <span class="proj-repo">moby/moby</span>
+        </a>
+        
+      </div>
+    </details>
+    
+  </nav>
+  <main>
+    
+<a href="moby-index.html" style="color:var(--text-muted);font-size:0.875rem">← dashboard</a>
+<h1 style="margin-top:0.5rem"><code style="font-size:1.25rem;color:var(--accent)">go-test:TestBridgeICC</code></h1>
+<p class="subtitle">TestBridgeICC failed</p>
+
+<div class="fix-bar">
+  
+    
+  
+</div>
+
+
+
+<div class="filter-bar" id="g-pills">
+  <span class="label">Period:</span>
+  <a href="#" class="filter-pill" data-days="1">24 hours</a>
+  <a href="#" class="filter-pill" data-days="7">7 days</a>
+  <a href="#" class="filter-pill" data-days="30">30 days</a>
+  <a href="#" class="filter-pill" data-days="90">90 days</a>
+  <a href="#" class="filter-pill" data-days="0">All time</a>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div class="label">Hits (<span id="g-window-label">30d</span>)</div>
+    <div class="value" id="g-window-hits">0</div>
+  </div>
+  <div class="card">
+    <div class="label">Lifetime hits</div>
+    <div class="value muted">13</div>
+  </div>
+  <div class="card"><div class="label">First seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-05-08 10:02</div></div>
+  <div class="card"><div class="label">Last seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-05-15 13:48</div></div>
+  <div class="card"><div class="label">Workflows</div><div class="value">1</div></div>
+  <div class="card"><div class="label">Branches</div><div class="value">10</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Occurrences per day · by category <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· click a bar to drill into that day</span></div>
+  <div class="panel-body">
+    <div class="chart-container"><canvas id="g-chart"></canvas></div>
+  </div>
+</div>
+
+<div class="day-banner" id="g-day" style="display:none">
+  <span>Showing occurrences from <strong></strong> only.</span>
+  <a href="#" id="g-day-clear">Clear day filter</a>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Tag breakdown</div>
+  <div class="panel-body" id="g-tags" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem 2rem"></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Observations <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· newest first</span></div>
+  <div class="obs-list" id="g-obs"></div>
+</div>
+
+<script>renderGroup({
+  key: "go-test:TestBridgeICC",
+  obs: [{"t":1779200164,"url":"https://github.com/moby/moby/actions/runs/25921356153/job/76602883859","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25921356153/2/76602883859?evidence=7012-7012"},{"t":1779200164,"url":"https://github.com/moby/moby/actions/runs/25921356153/job/76191270470","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25921356153/1/76191270470?evidence=6886-6886"},{"t":1779099871,"url":"https://github.com/moby/moby/actions/runs/25914905738/job/76169290916","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25914905738/1/76169290916?evidence=6898-6898"},{"t":1778591859,"url":"https://github.com/moby/moby/actions/runs/25729667393/job/75568899591","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25729667393/2/75568899591?evidence=6807-6807"},{"t":1778591859,"url":"https://github.com/moby/moby/actions/runs/25729667393/job/75551642879","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25729667393/1/75551642879?evidence=6871-6871"},{"t":1778581929,"url":"https://github.com/moby/moby/actions/runs/25700809353/job/75460555527","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25700809353/1/75460555527?evidence=6855-6855"},{"t":1778522469,"url":"https://github.com/moby/moby/actions/runs/25685937616/job/75409917263","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25685937616/1/75409917263?evidence=6953-6953"},{"t":1778517311,"url":"https://github.com/moby/moby/actions/runs/25681374157/job/75393888034","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25681374157/1/75393888034?evidence=6922-6922"},{"t":1778496574,"url":"https://github.com/moby/moby/actions/runs/25663956569/job/75331817187","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25663956569/1/75331817187?evidence=6842-6842"},{"t":1778489214,"url":"https://github.com/moby/moby/actions/runs/25658009711/job/75311618579","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25658009711/1/75311618579?evidence=7027-7027"},{"t":1778257537,"url":"https://github.com/moby/moby/actions/runs/25555729222/job/75042332583","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25555729222/2/75042332583?evidence=6866-6866"},{"t":1778257537,"url":"https://github.com/moby/moby/actions/runs/25555729222/job/75014415226","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25555729222/1/75014415226?evidence=6878-6878"},{"t":1778237863,"url":"https://github.com/moby/moby/actions/runs/25549531431/job/74994069643","job_name":"test (snapshotter) / integration (ubuntu-24.04, iptables+firewalld)","cat":"test","tags":{},"log":"/log/25549531431/1/74994069643?evidence=6932-6932"}],
+  fixedAt:  0 ,
+});</script>
+
+  </main>
+
+
+<footer class="static-footer">flakie · generated 2026-06-01 06:12 UTC</footer></body></html>

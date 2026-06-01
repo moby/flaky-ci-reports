@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>registry-error:auth.docker.io:500 — flakie</title>
+  <link rel="stylesheet" href="static/style.css"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 16 16&#39;%3E%3Ccircle cx=&#39;8&#39; cy=&#39;8&#39; r=&#39;6&#39; fill=&#39;%234f46e5&#39;/%3E%3C/svg%3E"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="static/report.js"></script>
+<script>window.FLAKIE_STATIC=true;</script></head>
+<body>
+  <nav>
+    <div class="brand">
+      flakie
+    </div>
+    <div class="links">
+      <a href="buildkit-index.html" class="active">Dashboard</a>
+      
+    </div>
+    
+    <details class="project-switcher">
+      <summary>
+        <span class="proj-label">project</span>
+        <span class="proj-name">buildkit</span>
+        <span class="proj-repo">moby/buildkit</span>
+        <span class="proj-caret">▾</span>
+      </summary>
+      <div class="proj-menu">
+        
+        <a href="buildkit-index.html" class="active">
+          <span class="proj-name">buildkit</span>
+          <span class="proj-repo">moby/buildkit</span>
+        </a>
+        
+        <a href="buildx-index.html">
+          <span class="proj-name">buildx</span>
+          <span class="proj-repo">docker/buildx</span>
+        </a>
+        
+        <a href="moby-index.html">
+          <span class="proj-name">moby</span>
+          <span class="proj-repo">moby/moby</span>
+        </a>
+        
+      </div>
+    </details>
+    
+  </nav>
+  <main>
+    
+<a href="buildkit-index.html" style="color:var(--text-muted);font-size:0.875rem">← dashboard</a>
+<h1 style="margin-top:0.5rem"><code style="font-size:1.25rem;color:var(--accent)">registry-error:auth.docker.io:500</code></h1>
+<p class="subtitle">Registry auth.docker.io returned HTTP 500</p>
+
+<div class="fix-bar">
+  
+    
+  
+</div>
+
+
+
+<div class="filter-bar" id="g-pills">
+  <span class="label">Period:</span>
+  <a href="#" class="filter-pill" data-days="1">24 hours</a>
+  <a href="#" class="filter-pill" data-days="7">7 days</a>
+  <a href="#" class="filter-pill" data-days="30">30 days</a>
+  <a href="#" class="filter-pill" data-days="90">90 days</a>
+  <a href="#" class="filter-pill" data-days="0">All time</a>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div class="label">Hits (<span id="g-window-label">30d</span>)</div>
+    <div class="value" id="g-window-hits">0</div>
+  </div>
+  <div class="card">
+    <div class="label">Lifetime hits</div>
+    <div class="value muted">23</div>
+  </div>
+  <div class="card"><div class="label">First seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-03-25 18:33</div></div>
+  <div class="card"><div class="label">Last seen</div><div class="value" style="font-size:1rem;font-family:var(--code)">2026-03-25 18:33</div></div>
+  <div class="card"><div class="label">Workflows</div><div class="value">3</div></div>
+  <div class="card"><div class="label">Branches</div><div class="value">1</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Occurrences per day · by category <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· click a bar to drill into that day</span></div>
+  <div class="panel-body">
+    <div class="chart-container"><canvas id="g-chart"></canvas></div>
+  </div>
+</div>
+
+<div class="day-banner" id="g-day" style="display:none">
+  <span>Showing occurrences from <strong></strong> only.</span>
+  <a href="#" id="g-day-clear">Clear day filter</a>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Tag breakdown</div>
+  <div class="panel-body" id="g-tags" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem 2rem"></div>
+</div>
+
+<div class="panel">
+  <div class="panel-header">Observations <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">· newest first</span></div>
+  <div class="obs-list" id="g-obs"></div>
+</div>
+
+<script>renderGroup({
+  key: "registry-error:auth.docker.io:500",
+  obs: [{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868463","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestCDIClass","worker":"containerd-snapshotter-stargz"},"log":"/log/23557645829/1/68589868463?evidence=3764-3764"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868463","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestDiffSymlinkOverridesDir","worker":"containerd-snapshotter-stargz"},"log":"/log/23557645829/1/68589868463?evidence=4029-4029"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868463","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestBuildPushAndValidate","worker":"containerd-snapshotter-stargz"},"log":"/log/23557645829/1/68589868463?evidence=4378-4378"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868463","job_name":"test / run (containerd-snapshotter-stargz, ./client ./cmd/buildctl ./worker/containerd ./solver ./fronte...","cat":"network","tags":{"host":"auth.docker.io","status":"500"},"log":"/log/23557645829/1/68589868463?evidence=5136-5136"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868471","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestCacheExportCacheKeyLoop","worker":"containerd-1.7"},"log":"/log/23557645829/1/68589868471?evidence=3679-3679"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868471","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestDuplicateWhiteouts","worker":"containerd-1.7"},"log":"/log/23557645829/1/68589868471?evidence=4042-4042"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868471","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestFileOpSymlink","worker":"containerd-1.7"},"log":"/log/23557645829/1/68589868471?evidence=4157-4157"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868471","job_name":"test / run (containerd-1.7, ./client ./cmd/buildctl ./worker/containerd ./solver ./frontend, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500"},"log":"/log/23557645829/1/68589868471?evidence=5149-5149"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868493","job_name":"test / run (./client, oci, nydus, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestCacheExportCacheKeyLoop","worker":"oci"},"log":"/log/23557645829/1/68589868493?evidence=3739-3739"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868493","job_name":"test / run (./client, oci, nydus, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestProxyEnv","worker":"oci"},"log":"/log/23557645829/1/68589868493?evidence=3822-3822"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868493","job_name":"test / run (./client, oci, nydus, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500","test":"TestIntegration/TestValidatePlatformsEmpty","worker":"oci"},"log":"/log/23557645829/1/68589868493?evidence=3993-3993"},{"t":1774466663,"url":"https://github.com/moby/buildkit/actions/runs/23557645829/job/68589868493","job_name":"test / run (./client, oci, nydus, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500"},"log":"/log/23557645829/1/68589868493?evidence=4904-4904"},{"t":1774466583,"url":"https://github.com/moby/buildkit/actions/runs/23557645405/job/68589228975","job_name":"test-windows-amd64 (windows-2022, containerd, ./frontend/dockerfile#6-12)","cat":"network","tags":{"frontend":"builtin","host":"auth.docker.io","slice":"6-12","status":"500","test":"TestIntegration/TestWorkdirRelativePath","worker":"containerd"},"log":"/log/23557645405/1/68589228975?evidence=446-446"},{"t":1774466583,"url":"https://github.com/moby/buildkit/actions/runs/23557645405/job/68589228979","job_name":"test-windows-amd64 (windows-2022, containerd, ./frontend/dockerfile#5-12)","cat":"network","tags":{"frontend":"builtin","host":"auth.docker.io","slice":"5-12","status":"500","test":"TestIntegration/TestWarningsBeforeError","worker":"containerd"},"log":"/log/23557645405/1/68589228979?evidence=440-440"},{"t":1774466583,"url":"https://github.com/moby/buildkit/actions/runs/23557645405/job/68589229026","job_name":"test-windows-amd64 (windows-2022, containerd, ./frontend/dockerfile#10-12)","cat":"network","tags":{"frontend":"builtin","host":"auth.docker.io","slice":"10-12","status":"500","test":"TestIntegration/TestInvalidDefaultArgInFrom","worker":"containerd"},"log":"/log/23557645405/1/68589229026?evidence=461-461"},{"t":1774466583,"url":"https://github.com/moby/buildkit/actions/runs/23557645405/job/68589229053","job_name":"test-windows-amd64 (windows-2022, containerd, ./frontend/dockerfile#7-12)","cat":"network","tags":{"frontend":"client","host":"auth.docker.io","slice":"7-12","status":"500","test":"TestIntegration/TestMultipleInstructionsDisallowed","worker":"containerd"},"log":"/log/23557645405/1/68589229053?evidence=436-436"},{"t":1774466583,"url":"https://github.com/moby/buildkit/actions/runs/23557645405/job/68589229075","job_name":"test-windows-amd64 (windows-2022, containerd, ./frontend/dockerfile#4-12)","cat":"network","tags":{"frontend":"builtin","host":"auth.docker.io","slice":"4-12","status":"500","test":"TestIntegration/TestRunFakeHeredoc","worker":"containerd"},"log":"/log/23557645405/1/68589229075?evidence=510-510"},{"t":1774466568,"url":"https://github.com/moby/buildkit/actions/runs/23557645742/job/68589347705","job_name":"test / run (containerd, ./frontend/dockerfile, integration)","cat":"network","tags":{"frontend":"client","host":"auth.docker.io","status":"500","test":"TestIntegration/TestSourceDateEpochDockerfileDefaultInvalid","worker":"containerd"},"log":"/log/23557645742/1/68589347705?evidence=5006-5006"},{"t":1774466568,"url":"https://github.com/moby/buildkit/actions/runs/23557645742/job/68589347705","job_name":"test / run (containerd, ./frontend/dockerfile, integration)","cat":"network","tags":{"frontend":"builtin","host":"auth.docker.io","status":"500","test":"TestIntegration/TestSourceDateEpochDockerfileDefault","worker":"containerd"},"log":"/log/23557645742/1/68589347705?evidence=6172-6172"},{"t":1774466568,"url":"https://github.com/moby/buildkit/actions/runs/23557645742/job/68589347705","job_name":"test / run (containerd, ./frontend/dockerfile, integration)","cat":"network","tags":{"frontend":"builtin","host":"auth.docker.io","status":"500","test":"TestIntegration/TestOutlineArgs","worker":"containerd"},"log":"/log/23557645742/1/68589347705?evidence=6188-6188"},{"t":1774466568,"url":"https://github.com/moby/buildkit/actions/runs/23557645742/job/68589347705","job_name":"test / run (containerd, ./frontend/dockerfile, integration)","cat":"network","tags":{"host":"auth.docker.io","status":"500"},"log":"/log/23557645742/1/68589347705?evidence=7283-7283"},{"t":1774466568,"url":"https://github.com/moby/buildkit/actions/runs/23557645742/job/68589347711","job_name":"test / run (containerd-rootless, ./frontend/dockerfile, dockerfile)","cat":"network","tags":{"host":"auth.docker.io","status":"500"},"log":"/log/23557645742/1/68589347711?evidence=4759-4759"},{"t":1774466568,"url":"https://github.com/moby/buildkit/actions/runs/23557645742/job/68589347813","job_name":"test / run (containerd-snapshotter-stargz, ./frontend/dockerfile, dockerfile)","cat":"network","tags":{"host":"auth.docker.io","status":"500"},"log":"/log/23557645742/1/68589347813?evidence=5040-5040"}],
+  fixedAt:  0 ,
+});</script>
+
+  </main>
+
+
+<footer class="static-footer">flakie · generated 2026-06-01 06:12 UTC</footer></body></html>
