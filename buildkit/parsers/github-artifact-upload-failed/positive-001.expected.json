@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "github-artifact-upload-failed:server-busy",
+    "name": "actions/upload-artifact: Azure storage server busy",
+    "category": "network",
+    "fields": {
+      "variant": "server-busy"
+    },
+    "evidence": [
+      {
+        "start_line": 7233,
+        "end_line": 7233
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "docker-push-failed:docker.io/docker/buildx-bin",
+    "name": "docker push failed: docker.io/docker/buildx-bin",
+    "category": "network",
+    "fields": {
+      "image": "docker.io/docker/buildx-bin"
+    },
+    "evidence": [
+      {
+        "start_line": 749,
+        "end_line": 749
+      }
+    ]
+  }
+]

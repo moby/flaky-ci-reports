@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "docker-resolve-source-failed:docker.io/docker/dockerfile:1",
+    "name": "Resolve source metadata failed: docker.io/docker/dockerfile:1",
+    "category": "network",
+    "fields": {
+      "image": "docker.io/docker/dockerfile:1",
+      "inner_error": "failed to do request: Head \"https://registry-1.docker.io/v2/docker/dockerfile/manifests/1\": net/http: TLS handshake timeout"
+    },
+    "evidence": [
+      {
+        "start_line": 1181,
+        "end_line": 1181
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "gh-workflow-template-fetch-failed:html",
+    "name": "GitHub workflow template fetch failed: HTML error body",
+    "category": "network",
+    "fields": {
+      "variant": "html"
+    },
+    "evidence": [
+      {
+        "start_line": 119,
+        "end_line": 181
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "go-test:TestLaunch",
+    "name": "TestLaunch failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestLaunch"
+    },
+    "evidence": [
+      {
+        "start_line": 14101,
+        "end_line": 14101
+      }
+    ]
+  }
+]

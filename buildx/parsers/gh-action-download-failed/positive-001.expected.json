@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "gh-action-download-failed:401",
+    "name": "GitHub action download failed: HTTP 401",
+    "category": "network",
+    "fields": {
+      "status": "401"
+    },
+    "evidence": [
+      {
+        "start_line": 35,
+        "end_line": 35
+      }
+    ]
+  }
+]

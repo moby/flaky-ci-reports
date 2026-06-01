@@ -1,0 +1,582 @@
+﻿2026-05-16T13:18:27.2953029Z Current runner version: '2.334.0'
+2026-05-16T13:18:27.2988106Z ##[group]Runner Image Provisioner
+2026-05-16T13:18:27.2989317Z Hosted Compute Agent
+2026-05-16T13:18:27.2990257Z Version: 20260415.520
+2026-05-16T13:18:27.2991239Z Commit: af089020f5f67b61ccc91db6c07980876c02bf7b
+2026-05-16T13:18:27.2992421Z Build Date: 2026-04-15T18:07:08Z
+2026-05-16T13:18:27.2993435Z Worker ID: {cbdbeb78-aa6b-4c91-8775-09d6025d777d}
+2026-05-16T13:18:27.2994520Z Azure Region: eastus
+2026-05-16T13:18:27.2995249Z ##[endgroup]
+2026-05-16T13:18:27.2997287Z ##[group]Operating System
+2026-05-16T13:18:27.2998216Z Microsoft Windows Server 2022
+2026-05-16T13:18:27.2999005Z 10.0.20348
+2026-05-16T13:18:27.2999718Z Datacenter
+2026-05-16T13:18:27.3000328Z ##[endgroup]
+2026-05-16T13:18:27.3001012Z ##[group]Runner Image
+2026-05-16T13:18:27.3001775Z Image: windows-2022
+2026-05-16T13:18:27.3002496Z Version: 20260510.161.1
+2026-05-16T13:18:27.3004818Z Included Software: https://github.com/actions/runner-images/blob/win22/20260510.161/images/windows/Windows2022-Readme.md
+2026-05-16T13:18:27.3007411Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20260510.161
+2026-05-16T13:18:27.3008888Z ##[endgroup]
+2026-05-16T13:18:27.3010476Z ##[group]GITHUB_TOKEN Permissions
+2026-05-16T13:18:27.3012971Z Contents: read
+2026-05-16T13:18:27.3013686Z Metadata: read
+2026-05-16T13:18:27.3014369Z ##[endgroup]
+2026-05-16T13:18:27.3017062Z Secret source: None
+2026-05-16T13:18:27.3018592Z Prepare workflow directory
+2026-05-16T13:18:27.3789320Z Prepare all required actions
+2026-05-16T13:18:27.3848537Z Getting action download info
+2026-05-16T13:18:27.6407813Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-16T13:18:27.7494259Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-16T13:18:28.0060000Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-05-16T13:18:28.2231770Z Complete job name: build-windows
+2026-05-16T13:18:28.3680503Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-16T13:18:28.3681944Z with:
+2026-05-16T13:18:28.3682535Z   path: D:\a\moby\moby\go/src/github.com/docker/docker
+2026-05-16T13:18:28.3683319Z   repository: moby/moby
+2026-05-16T13:18:28.3684122Z   token: ***
+2026-05-16T13:18:28.3684591Z   ssh-strict: true
+2026-05-16T13:18:28.3685093Z   ssh-user: git
+2026-05-16T13:18:28.3685598Z   persist-credentials: true
+2026-05-16T13:18:28.3686238Z   clean: true
+2026-05-16T13:18:28.3686715Z   sparse-checkout-cone-mode: true
+2026-05-16T13:18:28.3687354Z   fetch-depth: 1
+2026-05-16T13:18:28.3687823Z   fetch-tags: false
+2026-05-16T13:18:28.3688346Z   show-progress: true
+2026-05-16T13:18:28.3688916Z   lfs: false
+2026-05-16T13:18:28.3689364Z   submodules: false
+2026-05-16T13:18:28.3689869Z   set-safe-directory: true
+2026-05-16T13:18:28.3690710Z env:
+2026-05-16T13:18:28.3691192Z   GO_VERSION: 1.26.3
+2026-05-16T13:18:28.3691608Z   DESTDIR: ./build
+2026-05-16T13:18:28.3692108Z   SETUP_BUILDX_VERSION: edge
+2026-05-16T13:18:28.3692596Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-16T13:18:28.3693146Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:18:28.3693595Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:18:28.3694066Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:18:28.3694604Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:18:28.3695242Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:18:28.3695728Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:18:28.3696149Z   TEST_CTN_NAME: moby
+2026-05-16T13:18:28.3696579Z ##[endgroup]
+2026-05-16T13:18:28.5086920Z Syncing repository: moby/moby
+2026-05-16T13:18:28.5088694Z ##[group]Getting Git version info
+2026-05-16T13:18:28.5089472Z Working directory is 'D:\a\moby\moby\go\src\github.com\docker\docker'
+2026-05-16T13:18:28.6082567Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-16T13:18:29.0432899Z git version 2.54.0.windows.1
+2026-05-16T13:18:29.0475873Z ##[endgroup]
+2026-05-16T13:18:29.0492439Z Temporarily overriding HOME='D:\a\_temp\5a4894a9-59a3-4e03-953b-4f21e962d001' before making global git config changes
+2026-05-16T13:18:29.0494182Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-16T13:18:29.0502824Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:18:29.1052243Z ##[group]Initializing the repository
+2026-05-16T13:18:29.1062379Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:18:29.1787905Z Initialized empty Git repository in D:/a/moby/moby/go/src/github.com/docker/docker/.git/
+2026-05-16T13:18:29.1826274Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/moby/moby
+2026-05-16T13:18:29.2287624Z ##[endgroup]
+2026-05-16T13:18:29.2288977Z ##[group]Disabling automatic garbage collection
+2026-05-16T13:18:29.2296656Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-16T13:18:29.2529909Z ##[endgroup]
+2026-05-16T13:18:29.2532476Z ##[group]Setting up auth
+2026-05-16T13:18:29.2534179Z Removing SSH command configuration
+2026-05-16T13:18:29.2544085Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-16T13:18:29.2781539Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-16T13:18:30.6283968Z Removing HTTP extra header
+2026-05-16T13:18:30.6294425Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-16T13:18:30.6523485Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-16T13:18:31.0704004Z Removing includeIf entries pointing to credentials config files
+2026-05-16T13:18:31.0714454Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-16T13:18:31.0947455Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-16T13:18:31.5634526Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-16T13:18:31.5895597Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:18:31.6141509Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:18:31.6455127Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path /github/runner_temp/git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:18:31.6709914Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path /github/runner_temp/git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:18:31.6975089Z ##[endgroup]
+2026-05-16T13:18:31.6975869Z ##[group]Fetching the repository
+2026-05-16T13:18:31.6989774Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e74612bee5dc63c19b50acf2b91c47601d822348:refs/remotes/pull/52640/merge
+2026-05-16T13:18:33.2506770Z From https://github.com/moby/moby
+2026-05-16T13:18:33.2508332Z  * [new ref]         e74612bee5dc63c19b50acf2b91c47601d822348 -> pull/52640/merge
+2026-05-16T13:18:33.2867232Z ##[endgroup]
+2026-05-16T13:18:33.2868099Z ##[group]Determining the checkout info
+2026-05-16T13:18:33.2869342Z ##[endgroup]
+2026-05-16T13:18:33.2879355Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-16T13:18:33.3310106Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-16T13:18:33.3540981Z ##[group]Checking out the ref
+2026-05-16T13:18:33.3549563Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/52640/merge
+2026-05-16T13:18:34.4120251Z Updating files:  38% (4861/12549)
+2026-05-16T13:18:34.4373551Z Updating files:  39% (4895/12549)
+2026-05-16T13:18:34.4648131Z Updating files:  40% (5020/12549)
+2026-05-16T13:18:34.4907491Z Updating files:  41% (5146/12549)
+2026-05-16T13:18:34.5151198Z Updating files:  42% (5271/12549)
+2026-05-16T13:18:34.5392628Z Updating files:  43% (5397/12549)
+2026-05-16T13:18:34.5672828Z Updating files:  44% (5522/12549)
+2026-05-16T13:18:34.5881020Z Updating files:  45% (5648/12549)
+2026-05-16T13:18:34.6122196Z Updating files:  46% (5773/12549)
+2026-05-16T13:18:34.6337999Z Updating files:  47% (5899/12549)
+2026-05-16T13:18:34.6559494Z Updating files:  48% (6024/12549)
+2026-05-16T13:18:34.6796267Z Updating files:  49% (6150/12549)
+2026-05-16T13:18:34.7017324Z Updating files:  50% (6275/12549)
+2026-05-16T13:18:34.7301091Z Updating files:  51% (6400/12549)
+2026-05-16T13:18:34.7549578Z Updating files:  52% (6526/12549)
+2026-05-16T13:18:34.7844960Z Updating files:  53% (6651/12549)
+2026-05-16T13:18:34.8094041Z Updating files:  54% (6777/12549)
+2026-05-16T13:18:34.8334350Z Updating files:  55% (6902/12549)
+2026-05-16T13:18:34.9159816Z Updating files:  56% (7028/12549)
+2026-05-16T13:18:34.9424105Z Updating files:  57% (7153/12549)
+2026-05-16T13:18:34.9708383Z Updating files:  58% (7279/12549)
+2026-05-16T13:18:34.9979989Z Updating files:  59% (7404/12549)
+2026-05-16T13:18:35.0238919Z Updating files:  60% (7530/12549)
+2026-05-16T13:18:35.0466310Z Updating files:  61% (7655/12549)
+2026-05-16T13:18:35.0704750Z Updating files:  62% (7781/12549)
+2026-05-16T13:18:35.0914543Z Updating files:  63% (7906/12549)
+2026-05-16T13:18:35.1129655Z Updating files:  64% (8032/12549)
+2026-05-16T13:18:35.1411237Z Updating files:  65% (8157/12549)
+2026-05-16T13:18:35.1751207Z Updating files:  66% (8283/12549)
+2026-05-16T13:18:35.1969534Z Updating files:  67% (8408/12549)
+2026-05-16T13:18:35.2194854Z Updating files:  68% (8534/12549)
+2026-05-16T13:18:35.2428185Z Updating files:  69% (8659/12549)
+2026-05-16T13:18:35.2655518Z Updating files:  70% (8785/12549)
+2026-05-16T13:18:35.2914001Z Updating files:  71% (8910/12549)
+2026-05-16T13:18:35.3148252Z Updating files:  72% (9036/12549)
+2026-05-16T13:18:35.3392386Z Updating files:  73% (9161/12549)
+2026-05-16T13:18:35.3677492Z Updating files:  74% (9287/12549)
+2026-05-16T13:18:35.3893594Z Updating files:  75% (9412/12549)
+2026-05-16T13:18:35.4056690Z Updating files:  76% (9538/12549)
+2026-05-16T13:18:35.4150714Z Updating files:  76% (9610/12549)
+2026-05-16T13:18:35.4394139Z Updating files:  77% (9663/12549)
+2026-05-16T13:18:35.4649567Z Updating files:  78% (9789/12549)
+2026-05-16T13:18:35.4923078Z Updating files:  79% (9914/12549)
+2026-05-16T13:18:35.5124283Z Updating files:  80% (10040/12549)
+2026-05-16T13:18:35.5342031Z Updating files:  81% (10165/12549)
+2026-05-16T13:18:35.5634221Z Updating files:  82% (10291/12549)
+2026-05-16T13:18:35.5874267Z Updating files:  83% (10416/12549)
+2026-05-16T13:18:35.6119558Z Updating files:  84% (10542/12549)
+2026-05-16T13:18:35.6345961Z Updating files:  85% (10667/12549)
+2026-05-16T13:18:35.6626726Z Updating files:  86% (10793/12549)
+2026-05-16T13:18:35.6895831Z Updating files:  87% (10918/12549)
+2026-05-16T13:18:35.7181991Z Updating files:  88% (11044/12549)
+2026-05-16T13:18:35.7347345Z Updating files:  89% (11169/12549)
+2026-05-16T13:18:35.7544407Z Updating files:  90% (11295/12549)
+2026-05-16T13:18:35.7740476Z Updating files:  91% (11420/12549)
+2026-05-16T13:18:35.7962925Z Updating files:  92% (11546/12549)
+2026-05-16T13:18:35.8329073Z Updating files:  93% (11671/12549)
+2026-05-16T13:18:35.8669029Z Updating files:  94% (11797/12549)
+2026-05-16T13:18:35.9006674Z Updating files:  95% (11922/12549)
+2026-05-16T13:18:35.9282815Z Updating files:  96% (12048/12549)
+2026-05-16T13:18:35.9563415Z Updating files:  97% (12173/12549)
+2026-05-16T13:18:35.9812909Z Updating files:  98% (12299/12549)
+2026-05-16T13:18:36.0085543Z Updating files:  99% (12424/12549)
+2026-05-16T13:18:36.0085989Z Updating files: 100% (12549/12549)
+2026-05-16T13:18:36.0086327Z Updating files: 100% (12549/12549), done.
+2026-05-16T13:18:36.0332007Z Note: switching to 'refs/remotes/pull/52640/merge'.
+2026-05-16T13:18:36.0332441Z 
+2026-05-16T13:18:36.0332749Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-16T13:18:36.0333523Z changes and commit them, and you can discard any commits you make in this
+2026-05-16T13:18:36.0334322Z state without impacting any branches by switching back to a branch.
+2026-05-16T13:18:36.0334733Z 
+2026-05-16T13:18:36.0335031Z If you want to create a new branch to retain commits you create, you may
+2026-05-16T13:18:36.0335675Z do so (now or later) by using -c with the switch command. Example:
+2026-05-16T13:18:36.0335910Z 
+2026-05-16T13:18:36.0336051Z   git switch -c <new-branch-name>
+2026-05-16T13:18:36.0336205Z 
+2026-05-16T13:18:36.0336285Z Or undo this operation with:
+2026-05-16T13:18:36.0336422Z 
+2026-05-16T13:18:36.0336492Z   git switch -
+2026-05-16T13:18:36.0336587Z 
+2026-05-16T13:18:36.0336772Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-16T13:18:36.0337058Z 
+2026-05-16T13:18:36.0337388Z HEAD is now at e74612b Merge df58acf56e592d0972c1616fcda176ac4c255768 into 0686f57c3d942ce4440f9ed7f2e955de3687dd4e
+2026-05-16T13:18:36.0476360Z ##[endgroup]
+2026-05-16T13:18:36.0838662Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-16T13:18:36.1066854Z e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:18:36.1411024Z ##[group]Run Get-ChildItem Env: | Out-String
+2026-05-16T13:18:36.1411451Z [36;1mGet-ChildItem Env: | Out-String[0m
+2026-05-16T13:18:36.1574436Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:18:36.1574807Z env:
+2026-05-16T13:18:36.1574982Z   GO_VERSION: 1.26.3
+2026-05-16T13:18:36.1575167Z   DESTDIR: ./build
+2026-05-16T13:18:36.1575353Z   SETUP_BUILDX_VERSION: edge
+2026-05-16T13:18:36.1575602Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-16T13:18:36.1575884Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:18:36.1576096Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:18:36.1576320Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:18:36.1576623Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:18:36.1576942Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:18:36.1577174Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:18:36.1577384Z   TEST_CTN_NAME: moby
+2026-05-16T13:18:36.1577571Z ##[endgroup]
+2026-05-16T13:18:42.0437657Z 
+2026-05-16T13:18:42.0438034Z Name                           Value
+2026-05-16T13:18:42.0438507Z ----                           -----
+2026-05-16T13:18:42.0439253Z ACTIONS_ORCHESTRATION_ID       e787bad0-43d7-4f10-a2bc-ef5f31ebe50c.build-windows.__default
+2026-05-16T13:18:42.0440751Z ACTIONS_RUNNER_ACTION_ARCHIVE… C:\actionarchivecache\
+2026-05-16T13:18:42.0441565Z ACTIONS_RUNNER_RETURN_JOB_RES… 1
+2026-05-16T13:18:42.0442132Z AGENT_TOOLSDIRECTORY           C:\hostedtoolcache\windows
+2026-05-16T13:18:42.0442723Z ALLUSERSPROFILE                C:\ProgramData
+2026-05-16T13:18:42.0443229Z ANDROID_HOME                   C:\Android\android-sdk
+2026-05-16T13:18:42.0444170Z ANDROID_NDK                    C:\Android\android-sdk\ndk\27.3.13750724
+2026-05-16T13:18:42.0444753Z ANDROID_NDK_HOME               C:\Android\android-sdk\ndk\27.3.13750724
+2026-05-16T13:18:42.0445365Z ANDROID_NDK_LATEST_HOME        C:\Android\android-sdk\ndk\29.0.14206865
+2026-05-16T13:18:42.0445800Z ANDROID_NDK_ROOT               C:\Android\android-sdk\ndk\27.3.13750724
+2026-05-16T13:18:42.0446146Z ANDROID_SDK_ROOT               C:\Android\android-sdk
+2026-05-16T13:18:42.0446517Z ANT_HOME                       C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.17
+2026-05-16T13:18:42.0446946Z APPDATA                        C:\Users\runneradmin\AppData\Roaming
+2026-05-16T13:18:42.0447260Z AZ_DEVOPS_GLOBAL_CONFIG_DIR    C:\azureDevOpsCli
+2026-05-16T13:18:42.0447521Z AZURE_CONFIG_DIR               C:\azureCli
+2026-05-16T13:18:42.0447790Z AZURE_DEVOPS_CACHE_DIR         C:\azureDevOpsCli\cache
+2026-05-16T13:18:42.0448189Z AZURE_EXTENSION_DIR            C:\Program Files\Common Files\AzureCliExtensionDirectory
+2026-05-16T13:18:42.0448581Z BIN_OUT                        D:\a\moby\moby\out
+2026-05-16T13:18:42.0448826Z CABAL_DIR                      C:\cabal
+2026-05-16T13:18:42.0449104Z ChocolateyInstall              C:\ProgramData\chocolatey
+2026-05-16T13:18:42.0449462Z ChromeWebDriver                C:\SeleniumWebDrivers\ChromeDriver
+2026-05-16T13:18:42.0449765Z CI                             true
+2026-05-16T13:18:42.0449995Z COBERTURA_HOME                 C:\cobertura-2.1.1
+2026-05-16T13:18:42.0450316Z CommonProgramFiles             C:\Program Files\Common Files
+2026-05-16T13:18:42.0450682Z CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files
+2026-05-16T13:18:42.0451047Z CommonProgramW6432             C:\Program Files\Common Files
+2026-05-16T13:18:42.0451345Z COMPUTERNAME                   runnervmy2hk6
+2026-05-16T13:18:42.0451611Z ComSpec                        C:\Windows\system32\cmd.exe
+2026-05-16T13:18:42.0451878Z CONDA                          C:\Miniconda
+2026-05-16T13:18:42.0452100Z DESTDIR                        ./build
+2026-05-16T13:18:42.0452319Z DOTNET_MULTILEVEL_LOOKUP       0
+2026-05-16T13:18:42.0452547Z DOTNET_NOLOGO                  1
+2026-05-16T13:18:42.0452925Z DOTNET_SKIP_FIRST_TIME_EXPERI… 1
+2026-05-16T13:18:42.0455690Z DriverData                     C:\Windows\System32\Drivers\DriverData
+2026-05-16T13:18:42.0456168Z EdgeWebDriver                  C:\SeleniumWebDrivers\EdgeDriver
+2026-05-16T13:18:42.0456485Z ENABLE_RUNNER_TRACING          true
+2026-05-16T13:18:42.0456703Z GCM_INTERACTIVE                Never
+2026-05-16T13:18:42.0456999Z GeckoWebDriver                 C:\SeleniumWebDrivers\GeckoDriver
+2026-05-16T13:18:42.0457302Z GHCUP_INSTALL_BASE_PREFIX      C:\
+2026-05-16T13:18:42.0457527Z GHCUP_MSYS2                    C:\msys64
+2026-05-16T13:18:42.0457747Z GITHUB_ACTION                  __run
+2026-05-16T13:18:42.0457953Z GITHUB_ACTION_REF              
+2026-05-16T13:18:42.0458155Z GITHUB_ACTION_REPOSITORY       
+2026-05-16T13:18:42.0458362Z GITHUB_ACTIONS                 true
+2026-05-16T13:18:42.0458585Z GITHUB_ACTOR                   vincentbernat
+2026-05-16T13:18:42.0458861Z GITHUB_ACTOR_ID                631446
+2026-05-16T13:18:42.0459150Z GITHUB_API_URL                 https://api.github.com
+2026-05-16T13:18:42.0459434Z GITHUB_BASE_REF                master
+2026-05-16T13:18:42.0459837Z GITHUB_ENV                     D:\a\_temp\_runner_file_commands\set_env_c5c925e1-64e7-4d6e-ba3d-8d35414adb94
+2026-05-16T13:18:42.0460257Z GITHUB_EVENT_NAME              pull_request
+2026-05-16T13:18:42.0460563Z GITHUB_EVENT_PATH              D:\a\_temp\_github_workflow\event.json
+2026-05-16T13:18:42.0460944Z GITHUB_GRAPHQL_URL             https://api.github.com/graphql
+2026-05-16T13:18:42.0461299Z GITHUB_HEAD_REF                fix/conntrack-delete-host-ip
+2026-05-16T13:18:42.0461586Z GITHUB_JOB                     build-windows
+2026-05-16T13:18:42.0462006Z GITHUB_OUTPUT                  D:\a\_temp\_runner_file_commands\set_output_c5c925e1-64e7-4d6e-ba3d-8d35414adb94
+2026-05-16T13:18:42.0463365Z GITHUB_PATH                    D:\a\_temp\_runner_file_commands\add_path_c5c925e1-64e7-4d6e-ba3d-8d35414adb94
+2026-05-16T13:18:42.0463817Z GITHUB_REF                     refs/pull/52640/merge
+2026-05-16T13:18:42.0464076Z GITHUB_REF_NAME                52640/merge
+2026-05-16T13:18:42.0464315Z GITHUB_REF_PROTECTED           false
+2026-05-16T13:18:42.0464537Z GITHUB_REF_TYPE                branch
+2026-05-16T13:18:42.0464750Z GITHUB_REPOSITORY              moby/moby
+2026-05-16T13:18:42.0464980Z GITHUB_REPOSITORY_ID           7691631
+2026-05-16T13:18:42.0465195Z GITHUB_REPOSITORY_OWNER        moby
+2026-05-16T13:18:42.0465419Z GITHUB_REPOSITORY_OWNER_ID     27259197
+2026-05-16T13:18:42.0465638Z GITHUB_RETENTION_DAYS          90
+2026-05-16T13:18:42.0465849Z GITHUB_RUN_ATTEMPT             1
+2026-05-16T13:18:42.0466046Z GITHUB_RUN_ID                  25962933994
+2026-05-16T13:18:42.0466267Z GITHUB_RUN_NUMBER              22136
+2026-05-16T13:18:42.0466511Z GITHUB_SERVER_URL              https://github.com
+2026-05-16T13:18:42.0466832Z GITHUB_SHA                     e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:18:42.0467305Z GITHUB_STATE                   D:\a\_temp\_runner_file_commands\save_state_c5c925e1-64e7-4d6e-ba3d-8d35414adb94
+2026-05-16T13:18:42.0467907Z GITHUB_STEP_SUMMARY            D:\a\_temp\_runner_file_commands\step_summary_c5c925e1-64e7-4d6e-ba3d-8d35414adb94
+2026-05-16T13:18:42.0468358Z GITHUB_TRIGGERING_ACTOR        vincentbernat
+2026-05-16T13:18:42.0468589Z GITHUB_WORKFLOW                buildkit
+2026-05-16T13:18:42.0468959Z GITHUB_WORKFLOW_REF            moby/moby/.github/workflows/buildkit.yml@refs/pull/52640/merge
+2026-05-16T13:18:42.0469424Z GITHUB_WORKFLOW_SHA            e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:18:42.0469744Z GITHUB_WORKSPACE               D:\a\moby\moby
+2026-05-16T13:18:42.0469975Z GO_VERSION                     1.26.3
+2026-05-16T13:18:42.0470202Z GOBIN                          D:\a\moby\moby\go\bin
+2026-05-16T13:18:42.0470462Z GOPATH                         D:\a\moby\moby\go
+2026-05-16T13:18:42.0470756Z GOROOT_1_22_X64                C:\hostedtoolcache\windows\go\1.22.12\x64
+2026-05-16T13:18:42.0471108Z GOROOT_1_23_X64                C:\hostedtoolcache\windows\go\1.23.12\x64
+2026-05-16T13:18:42.0471922Z GOROOT_1_24_X64                C:\hostedtoolcache\windows\go\1.24.13\x64
+2026-05-16T13:18:42.0472301Z GOROOT_1_25_X64                C:\hostedtoolcache\windows\go\1.25.10\x64
+2026-05-16T13:18:42.0472694Z GRADLE_HOME                    C:\ProgramData\chocolatey\lib\gradle\tools\gradle-9.5.0
+2026-05-16T13:18:42.0473081Z HOMEDRIVE                      C:
+2026-05-16T13:18:42.0473304Z HOMEPATH                       \Users\runneradmin
+2026-05-16T13:18:42.0473598Z IEWebDriver                    C:\SeleniumWebDrivers\IEDriver
+2026-05-16T13:18:42.0473875Z ImageOS                        win22
+2026-05-16T13:18:42.0474088Z ImageVersion                   20260510.161.1
+2026-05-16T13:18:42.0474451Z JAVA_HOME                      C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.482-8\x64
+2026-05-16T13:18:42.0474959Z JAVA_HOME_11_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\11.0.31-11\x64
+2026-05-16T13:18:42.0475468Z JAVA_HOME_17_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.19-10\x64
+2026-05-16T13:18:42.0475981Z JAVA_HOME_21_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.11-10.0\x64
+2026-05-16T13:18:42.0476487Z JAVA_HOME_25_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\25.0.3-9.0\x64
+2026-05-16T13:18:42.0477001Z JAVA_HOME_8_X64                C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.482-8\x64
+2026-05-16T13:18:42.0477437Z LOCALAPPDATA                   C:\Users\runneradmin\AppData\Local
+2026-05-16T13:18:42.0477736Z LOGONSERVER                    \\runnervmy2hk6
+2026-05-16T13:18:42.0478067Z M2                             C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.15\bin
+2026-05-16T13:18:42.0478515Z M2_REPO                        C:\ProgramData\m2
+2026-05-16T13:18:42.0478775Z MAVEN_OPTS                     -Xms256m
+2026-05-16T13:18:42.0479032Z npm_config_prefix              C:\npm\prefix
+2026-05-16T13:18:42.0479275Z NUMBER_OF_PROCESSORS           4
+2026-05-16T13:18:42.0479483Z OS                             Windows_NT
+2026-05-16T13:18:42.0480011Z Path                           C:\Program Files\PowerShell\7;C:\Program Files\MongoDB\Server\7.0\bin;C:\aliyun-cli;C:\v…
+2026-05-16T13:18:42.0480558Z PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+2026-05-16T13:18:42.0480927Z PGBIN                          C:\Program Files\PostgreSQL\14\bin
+2026-05-16T13:18:42.0481219Z PGDATA                         C:\PostgreSQL\14\data
+2026-05-16T13:18:42.0481466Z PGPASSWORD                     root
+2026-05-16T13:18:42.0481711Z PGROOT                         C:\Program Files\PostgreSQL\14
+2026-05-16T13:18:42.0481976Z PGUSER                         postgres
+2026-05-16T13:18:42.0482199Z PHPROOT                        c:\tools\php
+2026-05-16T13:18:42.0482475Z PIPX_BIN_DIR                   C:\Program Files (x86)\pipx_bin
+2026-05-16T13:18:42.0482778Z PIPX_HOME                      C:\Program Files (x86)\pipx
+2026-05-16T13:18:42.0483180Z POWERSHELL_DISTRIBUTION_CHANN… GitHub-Actions-win22
+2026-05-16T13:18:42.0483464Z POWERSHELL_UPDATECHECK         Off
+2026-05-16T13:18:42.0483679Z PROCESSOR_ARCHITECTURE         AMD64
+2026-05-16T13:18:42.0484002Z PROCESSOR_IDENTIFIER           AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD
+2026-05-16T13:18:42.0484336Z PROCESSOR_LEVEL                25
+2026-05-16T13:18:42.0484540Z PROCESSOR_REVISION             0101
+2026-05-16T13:18:42.0484762Z ProgramData                    C:\ProgramData
+2026-05-16T13:18:42.0485025Z ProgramFiles                   C:\Program Files
+2026-05-16T13:18:42.0485296Z ProgramFiles(x86)              C:\Program Files (x86)
+2026-05-16T13:18:42.0485573Z ProgramW6432                   C:\Program Files
+2026-05-16T13:18:42.0485953Z PSModuleAnalysisCachePath      C:\PSModuleAnalysisCachePath\ModuleAnalysisCache
+2026-05-16T13:18:42.0486605Z PSModulePath                   C:\Users\runneradmin\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:…
+2026-05-16T13:18:42.0487178Z PUBLIC                         C:\Users\Public
+2026-05-16T13:18:42.0487419Z RTOOLS45_HOME                  C:\rtools45
+2026-05-16T13:18:42.0487640Z RUNNER_ARCH                    X64
+2026-05-16T13:18:42.0487856Z RUNNER_ENVIRONMENT             github-hosted
+2026-05-16T13:18:42.0488130Z RUNNER_NAME                    GitHub Actions 1001424287
+2026-05-16T13:18:42.0488389Z RUNNER_OS                      Windows
+2026-05-16T13:18:42.0488603Z RUNNER_TEMP                    D:\a\_temp
+2026-05-16T13:18:42.0488876Z RUNNER_TOOL_CACHE              C:\hostedtoolcache\windows
+2026-05-16T13:18:42.0489229Z RUNNER_TRACKING_ID             github_54a65898-d04f-48dc-acc7-5b58fb077a89
+2026-05-16T13:18:42.0489556Z RUNNER_WORKSPACE               D:\a\moby
+2026-05-16T13:18:42.0489810Z SBT_HOME                       C:\Program Files (x86)\sbt\
+2026-05-16T13:18:42.0490138Z SELENIUM_JAR_PATH              C:\selenium\selenium-server.jar
+2026-05-16T13:18:42.0490451Z SETUP_BUILDKIT_IMAGE           moby/buildkit:latest
+2026-05-16T13:18:42.0490721Z SETUP_BUILDX_VERSION           edge
+2026-05-16T13:18:42.0490941Z SystemDrive                    C:
+2026-05-16T13:18:42.0491146Z SystemRoot                     C:\Windows
+2026-05-16T13:18:42.0491409Z TEMP                           C:\Users\RUNNER~1\AppData\Local\Temp
+2026-05-16T13:18:42.0491683Z TEST_CTN_NAME                  moby
+2026-05-16T13:18:42.0491889Z TEST_IMAGE_NAME                moby:test
+2026-05-16T13:18:42.0492138Z TMP                            C:\Users\RUNNER~1\AppData\Local\Temp
+2026-05-16T13:18:42.0492419Z USERDOMAIN                     runnervmy2hk6
+2026-05-16T13:18:42.0492669Z USERDOMAIN_ROAMINGPROFILE      runnervmy2hk6
+2026-05-16T13:18:42.0493000Z USERNAME                       runneradmin
+2026-05-16T13:18:42.0493255Z USERPROFILE                    C:\Users\runneradmin
+2026-05-16T13:18:42.0493510Z VCPKG_INSTALLATION_ROOT        C:\vcpkg
+2026-05-16T13:18:42.0493730Z windir                         C:\Windows
+2026-05-16T13:18:42.0494012Z WINDOWS_BASE_IMAGE             mcr.microsoft.com/windows/servercore
+2026-05-16T13:18:42.0494309Z WINDOWS_BASE_TAG_2022          ltsc2022
+2026-05-16T13:18:42.0494561Z WIX                            C:\Program Files (x86)\WiX Toolset v3.14\
+2026-05-16T13:18:42.0494781Z 
+2026-05-16T13:18:42.0494785Z 
+2026-05-16T13:18:42.2976591Z ##[group]Run New-Item -ItemType "directory" -Path "D:\a\moby\moby\go-build"
+2026-05-16T13:18:42.2977367Z [36;1mNew-Item -ItemType "directory" -Path "D:\a\moby\moby\go-build"[0m
+2026-05-16T13:18:42.2977937Z [36;1mNew-Item -ItemType "directory" -Path "D:\a\moby\moby\go\pkg\mod"[0m
+2026-05-16T13:18:42.2978651Z [36;1mecho "WINDOWS_BASE_IMAGE_TAG=ltsc2022" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:18:42.3015119Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:18:42.3015446Z env:
+2026-05-16T13:18:42.3015593Z   GO_VERSION: 1.26.3
+2026-05-16T13:18:42.3015764Z   DESTDIR: ./build
+2026-05-16T13:18:42.3015936Z   SETUP_BUILDX_VERSION: edge
+2026-05-16T13:18:42.3016165Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-16T13:18:42.3016400Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:18:42.3016610Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:18:42.3016799Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:18:42.3017085Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:18:42.3017381Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:18:42.3017586Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:18:42.3017771Z   TEST_CTN_NAME: moby
+2026-05-16T13:18:42.3017927Z ##[endgroup]
+2026-05-16T13:18:42.6496352Z 
+2026-05-16T13:18:42.6504314Z     Directory: D:\a\moby\moby
+2026-05-16T13:18:42.6504923Z 
+2026-05-16T13:18:42.6508354Z [32;1mMode   [0m[32;1m              LastWriteTime[0m [32;1;3m        Length[0m[32;1m Name[0m
+2026-05-16T13:18:42.6509459Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2026-05-16T13:18:42.6675987Z d----           5/16/2026  1:18 PM                [44;1mgo-build[0m
+2026-05-16T13:18:42.6730304Z 
+2026-05-16T13:18:42.6732839Z     Directory: D:\a\moby\moby\go\pkg
+2026-05-16T13:18:42.6733765Z 
+2026-05-16T13:18:42.6734666Z [32;1mMode   [0m[32;1m              LastWriteTime[0m [32;1;3m        Length[0m[32;1m Name[0m
+2026-05-16T13:18:42.6735663Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2026-05-16T13:18:42.6737052Z d----           5/16/2026  1:18 PM                [44;1mmod[0m
+2026-05-16T13:18:42.7205571Z 
+2026-05-16T13:18:42.7827280Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-16T13:18:42.7827684Z with:
+2026-05-16T13:18:42.7827866Z   go-version: 1.26.3
+2026-05-16T13:18:42.7828042Z   cache: false
+2026-05-16T13:18:42.7828197Z   check-latest: false
+2026-05-16T13:18:42.7828521Z   token: ***
+2026-05-16T13:18:42.7828669Z env:
+2026-05-16T13:18:42.7828805Z   GO_VERSION: 1.26.3
+2026-05-16T13:18:42.7828974Z   DESTDIR: ./build
+2026-05-16T13:18:42.7829142Z   SETUP_BUILDX_VERSION: edge
+2026-05-16T13:18:42.7829352Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-16T13:18:42.7829595Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:18:42.7829789Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:18:42.7829977Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:18:42.7830226Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:18:42.7830508Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:18:42.7830712Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:18:42.7830928Z   TEST_CTN_NAME: moby
+2026-05-16T13:18:42.7831100Z   WINDOWS_BASE_IMAGE_TAG: ltsc2022
+2026-05-16T13:18:42.7831305Z ##[endgroup]
+2026-05-16T13:18:42.9654230Z Setup go version spec 1.26.3
+2026-05-16T13:18:42.9677411Z Attempting to download 1.26.3...
+2026-05-16T13:18:43.4162241Z matching 1.26.3...
+2026-05-16T13:18:43.4193287Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-win32-x64.zip
+2026-05-16T13:18:44.2448443Z Extracting Go...
+2026-05-16T13:18:44.3338663Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.26.3-win32-x64.zip', 'D:\a\_temp\60029bf2-f2ed-424c-a30b-d3466482cd3d', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.26.3-win32-x64.zip' -DestinationPath 'D:\a\_temp\60029bf2-f2ed-424c-a30b-d3466482cd3d' -Force } else { throw $_ } } ;"
+2026-05-16T13:18:48.1394805Z Successfully extracted go to D:\a\_temp\60029bf2-f2ed-424c-a30b-d3466482cd3d
+2026-05-16T13:18:48.1395257Z Adding to the cache ...
+2026-05-16T13:18:58.8070010Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64 => D:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-16T13:18:58.8074246Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64.complete => D:\hostedtoolcache\windows\go\1.26.3\x64.complete
+2026-05-16T13:18:58.8075324Z Successfully cached go to C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-16T13:18:58.8081606Z Added go to the path
+2026-05-16T13:18:58.8084001Z Successfully set up Go version 1.26.3
+2026-05-16T13:18:59.0687503Z go version go1.26.3 windows/amd64
+2026-05-16T13:18:59.0687712Z 
+2026-05-16T13:18:59.0688003Z ##[group]go env
+2026-05-16T13:19:01.7660528Z set AR=ar
+2026-05-16T13:19:01.7660851Z set CC=gcc
+2026-05-16T13:19:01.7661363Z set CGO_CFLAGS=-O2 -g
+2026-05-16T13:19:01.7661697Z set CGO_CPPFLAGS=
+2026-05-16T13:19:01.7661957Z set CGO_CXXFLAGS=-O2 -g
+2026-05-16T13:19:01.7662252Z set CGO_ENABLED=1
+2026-05-16T13:19:01.7662514Z set CGO_FFLAGS=-O2 -g
+2026-05-16T13:19:01.7662806Z set CGO_LDFLAGS=-O2 -g
+2026-05-16T13:19:01.7663095Z set CXX=g++
+2026-05-16T13:19:01.7663335Z set GCCGO=gccgo
+2026-05-16T13:19:01.7663604Z set GO111MODULE=
+2026-05-16T13:19:01.7663851Z set GOAMD64=v1
+2026-05-16T13:19:01.7664100Z set GOARCH=amd64
+2026-05-16T13:19:01.7664342Z set GOAUTH=netrc
+2026-05-16T13:19:01.7664613Z set GOBIN=D:\a\moby\moby\go\bin
+2026-05-16T13:19:01.7665384Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+2026-05-16T13:19:01.7665901Z set GOCACHEPROG=
+2026-05-16T13:19:01.7666179Z set GODEBUG=
+2026-05-16T13:19:01.7666564Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+2026-05-16T13:19:01.7669216Z set GOEXE=.exe
+2026-05-16T13:19:01.7669483Z set GOEXPERIMENT=
+2026-05-16T13:19:01.7669675Z set GOFIPS140=off
+2026-05-16T13:19:01.7669839Z set GOFLAGS=
+2026-05-16T13:19:01.7671139Z set GOGCCFLAGS=-m64 -mthreads -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build906598166=/tmp/go-build -gno-record-gcc-switches
+2026-05-16T13:19:01.7672461Z set GOHOSTARCH=amd64
+2026-05-16T13:19:01.7672781Z set GOHOSTOS=windows
+2026-05-16T13:19:01.7673067Z set GOINSECURE=
+2026-05-16T13:19:01.7673339Z set GOMOD=NUL
+2026-05-16T13:19:01.7673647Z set GOMODCACHE=D:\a\moby\moby\go\pkg\mod
+2026-05-16T13:19:01.7674060Z set GONOPROXY=
+2026-05-16T13:19:01.7674328Z set GONOSUMDB=
+2026-05-16T13:19:01.7674581Z set GOOS=windows
+2026-05-16T13:19:01.7674870Z set GOPATH=D:\a\moby\moby\go
+2026-05-16T13:19:01.7675205Z set GOPRIVATE=
+2026-05-16T13:19:01.7675573Z set GOPROXY=https://proxy.golang.org,direct
+2026-05-16T13:19:01.7676110Z set GOROOT=C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-16T13:19:01.7676597Z set GOSUMDB=sum.golang.org
+2026-05-16T13:19:01.7676929Z set GOTELEMETRY=local
+2026-05-16T13:19:01.7677441Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+2026-05-16T13:19:01.7679268Z set GOTMPDIR=
+2026-05-16T13:19:01.7679563Z set GOTOOLCHAIN=local
+2026-05-16T13:19:01.7680140Z set GOTOOLDIR=C:\hostedtoolcache\windows\go\1.26.3\x64\pkg\tool\windows_amd64
+2026-05-16T13:19:01.7680773Z set GOVCS=
+2026-05-16T13:19:01.7681040Z set GOVERSION=go1.26.3
+2026-05-16T13:19:01.7681339Z set GOWORK=
+2026-05-16T13:19:01.7681627Z set PKG_CONFIG=pkg-config
+2026-05-16T13:19:01.7681881Z 
+2026-05-16T13:19:01.7682202Z ##[endgroup]
+2026-05-16T13:19:01.7931651Z ##[group]Run $tries = 30
+2026-05-16T13:19:01.7931966Z [36;1m$tries = 30[0m
+2026-05-16T13:19:01.7932209Z [36;1mWrite-Host "Waiting for Docker daemon..."[0m
+2026-05-16T13:19:01.7932473Z [36;1mwhile ($true) {[0m
+2026-05-16T13:19:01.7932723Z [36;1m  $ErrorActionPreference = "SilentlyContinue"[0m
+2026-05-16T13:19:01.7933017Z [36;1m  docker version | Out-Null[0m
+2026-05-16T13:19:01.7933255Z [36;1m  $ok = ($LastExitCode -eq 0)[0m
+2026-05-16T13:19:01.7933514Z [36;1m  $ErrorActionPreference = "Stop"[0m
+2026-05-16T13:19:01.7933774Z [36;1m  if ($ok) { break }[0m
+2026-05-16T13:19:01.7933968Z [36;1m  $tries--[0m
+2026-05-16T13:19:01.7934238Z [36;1m  if ($tries -le 0) { throw "Docker daemon did not become ready" }[0m
+2026-05-16T13:19:01.7934577Z [36;1m  Start-Sleep -Seconds 2[0m
+2026-05-16T13:19:01.7934782Z [36;1m}[0m
+2026-05-16T13:19:01.7934933Z [36;1mdocker info[0m
+2026-05-16T13:19:01.7968225Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:19:01.7968547Z env:
+2026-05-16T13:19:01.7968700Z   GO_VERSION: 1.26.3
+2026-05-16T13:19:01.7968865Z   DESTDIR: ./build
+2026-05-16T13:19:01.7969037Z   SETUP_BUILDX_VERSION: edge
+2026-05-16T13:19:01.7969257Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-16T13:19:01.7969502Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:19:01.7969699Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:19:01.7969888Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:19:01.7970149Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:19:01.7970442Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:19:01.7970651Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:19:01.7970831Z   TEST_CTN_NAME: moby
+2026-05-16T13:19:01.7971014Z   WINDOWS_BASE_IMAGE_TAG: ltsc2022
+2026-05-16T13:19:01.7971216Z   GOTOOLCHAIN: local
+2026-05-16T13:19:01.7971386Z ##[endgroup]
+2026-05-16T13:19:02.0744331Z Waiting for Docker daemon...
+2026-05-16T13:19:04.0282562Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:06.1078363Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:08.1460464Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:10.1754038Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:12.2044774Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:14.2507601Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:16.2871036Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:18.3254351Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:20.3603537Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:22.3950471Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:24.4477175Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:26.5059723Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:28.5359803Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:30.5676997Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:32.5983899Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:34.6360760Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:36.6746810Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:38.7107199Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:40.7627356Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:42.7834926Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:44.8227421Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:46.8528459Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:48.8821227Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:50.9066068Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:52.9330077Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:54.9615964Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:56.9842617Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:19:59.0161237Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:20:01.0518390Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:20:03.1073769Z failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+2026-05-16T13:20:03.3611871Z [31;1mException: [0mD:\a\_temp\8f7cf09f-8462-4cac-bdca-11296b479379.ps1:11[0m
+2026-05-16T13:20:03.3612608Z [31;1m[0m[36;1mLine |[0m
+2026-05-16T13:20:03.3614146Z [31;1m[0m[36;1m[36;1m  11 | [0m   if ($tries -le 0) { [36;1mthrow "Docker daemon did not become ready"[0m }[0m
+2026-05-16T13:20:03.3615159Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+2026-05-16T13:20:03.3615996Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mDocker daemon did not become ready[0m
+2026-05-16T13:20:03.3806826Z ##[error]Process completed with exit code 1.
+2026-05-16T13:20:03.4016162Z Post job cleanup.
+2026-05-16T13:20:03.5884435Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-16T13:20:03.6100262Z git version 2.54.0.windows.1
+2026-05-16T13:20:03.6161713Z Temporarily overriding HOME='D:\a\_temp\5527b1ba-5ee0-4b8e-b43d-d32bb40b1c8f' before making global git config changes
+2026-05-16T13:20:03.6162996Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-16T13:20:03.6172120Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:20:03.6397633Z Removing SSH command configuration
+2026-05-16T13:20:03.6407937Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-16T13:20:03.6654287Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-16T13:20:04.1497893Z Removing HTTP extra header
+2026-05-16T13:20:04.1507807Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-16T13:20:04.1738600Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-16T13:20:04.6117339Z Removing includeIf entries pointing to credentials config files
+2026-05-16T13:20:04.6129847Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-16T13:20:04.6337414Z includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:20:04.6338394Z includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:20:04.6339381Z includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:20:04.6340416Z includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:20:04.6370418Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:20:04.6575574Z D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.6611284Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.6845551Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:20:04.7046678Z D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.7077764Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.7299050Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:20:04.7492010Z /github/runner_temp/git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.7519037Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path /github/runner_temp/git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.7742399Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:20:04.7940275Z /github/runner_temp/git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.7968403Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path /github/runner_temp/git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config
+2026-05-16T13:20:04.8191055Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-16T13:20:05.2503315Z Removing credentials config 'D:\a\_temp\git-credentials-0bc3887e-dcd8-4c37-bad3-9d644b8cb486.config'
+2026-05-16T13:20:05.2673584Z Cleaning up orphan processes

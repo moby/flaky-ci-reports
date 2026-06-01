@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "docker-daemon-auth-required",
+    "name": "docker daemon: unauthorized (authentication required)",
+    "category": "network",
+    "fields": {
+      "reason": "unauthorized"
+    },
+    "evidence": [
+      {
+        "start_line": 2470,
+        "end_line": 2470
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "gh-workflow-template-fetch-failed:502",
+    "name": "GitHub workflow template fetch failed: HTTP 502",
+    "category": "network",
+    "fields": {
+      "status": "502"
+    },
+    "evidence": [
+      {
+        "start_line": 798,
+        "end_line": 799
+      }
+    ]
+  }
+]

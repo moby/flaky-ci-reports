@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:auth.docker.io:connection-reset",
+    "name": "Registry auth.docker.io network error: connection reset by peer",
+    "category": "network",
+    "fields": {
+      "host": "auth.docker.io",
+      "reason": "connection reset by peer"
+    },
+    "evidence": [
+      {
+        "start_line": 1138,
+        "end_line": 1138
+      }
+    ]
+  }
+]

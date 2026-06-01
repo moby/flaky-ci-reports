@@ -1,0 +1,22 @@
+[
+  {
+    "unique_key": "registry-error:mcr.microsoft.com:403",
+    "name": "Registry mcr.microsoft.com returned HTTP 403",
+    "category": "network",
+    "fields": {
+      "host": "mcr.microsoft.com",
+      "operation": "HEAD",
+      "status": "403"
+    },
+    "tags": {
+      "host": "mcr.microsoft.com",
+      "status": "403"
+    },
+    "evidence": [
+      {
+        "start_line": 894,
+        "end_line": 894
+      }
+    ]
+  }
+]

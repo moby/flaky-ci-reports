@@ -1,0 +1,36 @@
+[
+  {
+    "unique_key": "go-test:TestIntegration/TestDapBuildExitedEvent",
+    "name": "TestIntegration/TestDapBuildExitedEvent failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestIntegration/TestDapBuildExitedEvent/worker=docker@28.5"
+    },
+    "tags": {
+      "worker": "docker@28.5"
+    },
+    "evidence": [
+      {
+        "start_line": 4579,
+        "end_line": 4579
+      }
+    ]
+  },
+  {
+    "unique_key": "go-test:TestIntegration/TestDapBuildExitedEvent/success",
+    "name": "TestIntegration/TestDapBuildExitedEvent/success failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestIntegration/TestDapBuildExitedEvent/worker=docker@28.5/success"
+    },
+    "tags": {
+      "worker": "docker@28.5"
+    },
+    "evidence": [
+      {
+        "start_line": 4580,
+        "end_line": 4580
+      }
+    ]
+  }
+]

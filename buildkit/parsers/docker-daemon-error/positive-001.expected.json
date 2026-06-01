@@ -1,0 +1,18 @@
+[
+  {
+    "unique_key": "registry-error:registry-1.docker.io:502",
+    "name": "Registry registry-1.docker.io returned HTTP 502",
+    "category": "network",
+    "fields": {
+      "host": "registry-1.docker.io",
+      "operation": "Head",
+      "status": "502"
+    },
+    "evidence": [
+      {
+        "start_line": 201,
+        "end_line": 201
+      }
+    ]
+  }
+]

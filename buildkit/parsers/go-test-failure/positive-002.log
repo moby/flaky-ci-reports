@@ -1,0 +1,8 @@
+2026-05-27T05:38:40.0000000Z ##[group]Run integration tests
+2026-05-27T05:38:43.7842139Z     --- FAIL: TestIntegration/TestNamedFilteredContext/worker=containerd-2.1/frontend=builtin (3.76s)
+2026-05-27T05:38:43.7842652Z         --- FAIL: TestIntegration/TestNamedFilteredContext/worker=containerd-2.1/frontend=builtin/new (2.03s)
+2026-05-27T05:38:43.7843202Z             --- PASS: TestIntegration/TestNamedFilteredContext/worker=containerd-2.1/frontend=builtin/new/run_mount (0.60s)
+2026-05-27T05:38:43.7844357Z             --- PASS: TestIntegration/TestNamedFilteredContext/worker=containerd-2.1/frontend=builtin/new/image_source (0.65s)
+2026-05-27T05:38:43.7844940Z             --- FAIL: TestIntegration/TestNamedFilteredContext/worker=containerd-2.1/frontend=builtin/new/all (0.69s)
+2026-05-27T05:38:44.0000000Z FAIL
+2026-05-27T05:38:44.1000000Z ##[error]Process completed with exit code 1.

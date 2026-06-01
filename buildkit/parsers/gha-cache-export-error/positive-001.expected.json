@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "gha-cache-export-error:502",
+    "name": "GHA cache export: backend returned HTTP 502",
+    "category": "network",
+    "fields": {
+      "status": "502"
+    },
+    "evidence": [
+      {
+        "start_line": 920,
+        "end_line": 920
+      }
+    ]
+  }
+]

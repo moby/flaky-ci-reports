@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "artifact-not-found:windows-2025-snapshotter-unit-reports",
+    "name": "actions/download-artifact: artifact not found: windows-2025-snapshotter-unit-reports",
+    "category": "dependency",
+    "fields": {
+      "artifact_name": "windows-2025-snapshotter-unit-reports"
+    },
+    "evidence": [
+      {
+        "start_line": 141,
+        "end_line": 141
+      }
+    ]
+  }
+]

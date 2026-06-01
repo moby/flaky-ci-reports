@@ -1,0 +1,13 @@
+[
+  {
+    "unique_key": "docker-py-tar-socket",
+    "name": "dockerd image export: tar can't handle leftover UNIX socket",
+    "category": "other",
+    "evidence": [
+      {
+        "start_line": 5230,
+        "end_line": 5230
+      }
+    ]
+  }
+]

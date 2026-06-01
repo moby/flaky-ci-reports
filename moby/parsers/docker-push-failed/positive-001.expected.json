@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "docker-push-failed:moby/moby-bin:unknown--blob-upload-unknown-to-registry---blob-upload-unkno",
+    "name": "docker push moby/moby-bin failed: unknown: blob upload unknown to registry - blob upload unknown",
+    "category": "network",
+    "fields": {
+      "image": "moby/moby-bin",
+      "reason": "unknown: blob upload unknown to registry - blob upload unknown"
+    },
+    "evidence": [
+      {
+        "start_line": 4597,
+        "end_line": 4597
+      }
+    ]
+  }
+]

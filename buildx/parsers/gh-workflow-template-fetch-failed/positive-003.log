@@ -1,0 +1,130 @@
+﻿2026-03-19T01:38:32.3496357Z Current runner version: '2.332.0'
+2026-03-19T01:38:32.3519882Z ##[group]Runner Image Provisioner
+2026-03-19T01:38:32.3520610Z Hosted Compute Agent
+2026-03-19T01:38:32.3521171Z Version: 20260213.493
+2026-03-19T01:38:32.3521743Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-19T01:38:32.3522385Z Build Date: 2026-02-13T00:28:41Z
+2026-03-19T01:38:32.3522974Z Worker ID: {ed714f9f-8233-4c4d-89bf-9bf5ac73b12e}
+2026-03-19T01:38:32.3523617Z Azure Region: northcentralus
+2026-03-19T01:38:32.3524159Z ##[endgroup]
+2026-03-19T01:38:32.3525410Z ##[group]Operating System
+2026-03-19T01:38:32.3525982Z Ubuntu
+2026-03-19T01:38:32.3526376Z 24.04.3
+2026-03-19T01:38:32.3526788Z LTS
+2026-03-19T01:38:32.3527252Z ##[endgroup]
+2026-03-19T01:38:32.3528071Z ##[group]Runner Image
+2026-03-19T01:38:32.3528599Z Image: ubuntu-24.04
+2026-03-19T01:38:32.3529103Z Version: 20260309.50.1
+2026-03-19T01:38:32.3530211Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-19T01:38:32.3531547Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+2026-03-19T01:38:32.3532352Z ##[endgroup]
+2026-03-19T01:38:32.3533305Z ##[group]GITHUB_TOKEN Permissions
+2026-03-19T01:38:32.3535323Z Contents: read
+2026-03-19T01:38:32.3535941Z Metadata: read
+2026-03-19T01:38:32.3536383Z ##[endgroup]
+2026-03-19T01:38:32.3538919Z Secret source: Actions
+2026-03-19T01:38:32.3539861Z Prepare workflow directory
+2026-03-19T01:38:32.3902303Z Prepare all required actions
+2026-03-19T01:38:32.3940874Z Getting action download info
+2026-03-19T01:38:32.8457226Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-03-19T01:38:33.2771969Z Download action repository 'docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf' (SHA:030e881283bb7a6894de51c315a6bfe6a94e05cf)
+2026-03-19T01:38:33.8210284Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-03-19T01:38:34.2434032Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-03-19T01:38:34.6464296Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-03-19T01:38:35.0373831Z Download action repository 'docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2' (SHA:b45d80f862d83dbcd57f89517bcf500b2ab88fb2)
+2026-03-19T01:38:35.4283160Z Download action repository 'docker/bake-action@82490499d2e5613fcead7e128237ef0b0ea210f7' (SHA:82490499d2e5613fcead7e128237ef0b0ea210f7)
+2026-03-19T01:38:35.9382957Z Download action repository 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' (SHA:bbbca2ddaa5d8feaa63e36b76fdaad77386f024f)
+2026-03-19T01:38:36.4561854Z Uses: docker/github-builder/.github/workflows/bake.yml@refs/tags/v1 (70313223e2665c3211b454b3fea6534624e78d64)
+2026-03-19T01:38:36.4565678Z ##[group] Inputs
+2026-03-19T01:38:36.4565945Z   runner: amd64
+2026-03-19T01:38:36.4566511Z   distribute: true
+2026-03-19T01:38:36.4566719Z   setup-qemu: false
+2026-03-19T01:38:36.4566961Z   artifact-name: docker-github-builder-assets
+2026-03-19T01:38:36.4567264Z   artifact-upload: false
+2026-03-19T01:38:36.4567632Z   cache: true
+2026-03-19T01:38:36.4567815Z   cache-scope: bin-image
+2026-03-19T01:38:36.4568027Z   cache-mode: min
+2026-03-19T01:38:36.4568217Z   context: .
+2026-03-19T01:38:36.4568397Z   files: 
+2026-03-19T01:38:36.4568573Z   output: image
+2026-03-19T01:38:36.4568757Z   push: true
+2026-03-19T01:38:36.4568945Z   sbom: true
+2026-03-19T01:38:36.4569110Z   set: 
+2026-03-19T01:38:36.4569275Z   sign: auto
+2026-03-19T01:38:36.4569458Z   target: image-cross
+2026-03-19T01:38:36.4569652Z   vars: 
+2026-03-19T01:38:36.4569849Z   set-meta-annotations: false
+2026-03-19T01:38:36.4570084Z   set-meta-labels: true
+2026-03-19T01:38:36.4570599Z   meta-images: docker/buildx-bin
+
+2026-03-19T01:38:36.4571130Z   meta-tags: type=ref,event=branch
+type=ref,event=pr
+type=semver,pattern={{version}}
+
+2026-03-19T01:38:36.4571521Z   meta-flavor: 
+2026-03-19T01:38:36.4571706Z   meta-labels: 
+2026-03-19T01:38:36.4571893Z   meta-annotations: 
+2026-03-19T01:38:36.4572114Z   meta-bake-target: meta-helper
+2026-03-19T01:38:36.4572360Z ##[endgroup]
+2026-03-19T01:38:36.4572646Z Complete job name: bin-image / build (14, openbsd/arm64, ubuntu-24.04)
+2026-03-19T01:38:36.5130066Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-03-19T01:38:36.5130853Z with:
+2026-03-19T01:38:36.5131697Z   script: await exec.exec('npm', [
+  'install',
+  '--prefer-offline',
+  '--ignore-scripts',
+  core.getInput('dat-module'),
+  core.getInput('handlebars-module')
+]);
+
+2026-03-19T01:38:36.5132708Z   github-token: ***
+2026-03-19T01:38:36.5133088Z   debug: false
+2026-03-19T01:38:36.5133452Z   user-agent: actions/github-script
+2026-03-19T01:38:36.5133782Z   result-encoding: json
+2026-03-19T01:38:36.5134109Z   retries: 0
+2026-03-19T01:38:36.5134421Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-03-19T01:38:36.5134954Z env:
+2026-03-19T01:38:36.5135283Z   BUILDX_VERSION: v0.32.1
+2026-03-19T01:38:36.5135568Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-19T01:38:36.5135940Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-19T01:38:36.5136348Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-19T01:38:36.5136864Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-19T01:38:36.5137312Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-19T01:38:36.5137778Z   COSIGN_VERSION: v3.0.2
+2026-03-19T01:38:36.5138138Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-19T01:38:36.5138511Z   MATRIX_SIZE_LIMIT: 20
+2026-03-19T01:38:36.5138806Z   INPUT_DAT-MODULE: @docker/actions-toolkit@0.83.0
+2026-03-19T01:38:36.5139170Z   INPUT_HANDLEBARS-MODULE: handlebars@4.7.8
+2026-03-19T01:38:36.5139554Z ##[endgroup]
+2026-03-19T01:38:36.5913594Z [command]/usr/local/bin/npm install --prefer-offline --ignore-scripts @docker/actions-toolkit@0.83.0 handlebars@4.7.8
+2026-03-19T01:38:43.7572286Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-03-19T01:38:44.8494888Z 
+2026-03-19T01:38:44.8499286Z added 242 packages in 8s
+2026-03-19T01:38:44.8502486Z 
+2026-03-19T01:38:44.8502845Z 29 packages are looking for funding
+2026-03-19T01:38:44.8503610Z   run `npm fund` for details
+2026-03-19T01:38:44.8803791Z ##[group]Run docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf
+2026-03-19T01:38:44.8804311Z with:
+2026-03-19T01:38:44.8804620Z   images: docker/buildx-bin
+
+2026-03-19T01:38:44.8805070Z   tags: type=ref,event=branch
+type=ref,event=pr
+type=semver,pattern={{version}}
+
+2026-03-19T01:38:44.8805521Z   bake-target: meta-helper
+2026-03-19T01:38:44.8805845Z   context: workflow
+2026-03-19T01:38:44.8806271Z   github-token: ***
+2026-03-19T01:38:44.8806573Z env:
+2026-03-19T01:38:44.8806841Z   BUILDX_VERSION: v0.32.1
+2026-03-19T01:38:44.8807189Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-19T01:38:44.8807818Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-19T01:38:44.8808194Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-19T01:38:44.8808687Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-19T01:38:44.8809100Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-19T01:38:44.8809439Z   COSIGN_VERSION: v3.0.2
+2026-03-19T01:38:44.8809828Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-19T01:38:44.8810155Z   MATRIX_SIZE_LIMIT: 20
+2026-03-19T01:38:44.8810506Z ##[endgroup]
+2026-03-19T01:38:45.3854300Z ##[error]The template is not valid. docker/github-builder/.github/workflows/bake.yml@v1 (Line: 784, Col: 14): Error reading JToken from JsonReader. Path '', line 0, position 0.,docker/github-builder/.github/workflows/bake.yml@v1 (Line: 784, Col: 14): Unexpected value ''
+2026-03-19T01:38:45.4086201Z Evaluate and set job outputs
+2026-03-19T01:38:45.4097005Z Cleaning up orphan processes

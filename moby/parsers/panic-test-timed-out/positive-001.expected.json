@@ -1,0 +1,22 @@
+[
+  {
+    "unique_key": "panic-test-timed-out:TestIntegration/TestCacheReleased",
+    "name": "Test timed out: TestIntegration/TestCacheReleased",
+    "category": "test",
+    "fields": {
+      "test_path": "TestIntegration/slice=1-12/TestCacheReleased/worker=dockerd-containerd/frontend=client"
+    },
+    "tags": {
+      "frontend": "client",
+      "slice": "1-12",
+      "test": "TestIntegration/TestCacheReleased",
+      "worker": "dockerd-containerd"
+    },
+    "evidence": [
+      {
+        "start_line": 658,
+        "end_line": 658
+      }
+    ]
+  }
+]

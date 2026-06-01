@@ -1,0 +1,324 @@
+﻿2026-04-01T17:12:20.2452130Z Current runner version: '2.333.1'
+2026-04-01T17:12:20.2476939Z ##[group]Runner Image Provisioner
+2026-04-01T17:12:20.2477776Z Hosted Compute Agent
+2026-04-01T17:12:20.2478559Z Version: 20260213.493
+2026-04-01T17:12:20.2479117Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-04-01T17:12:20.2479871Z Build Date: 2026-02-13T00:28:41Z
+2026-04-01T17:12:20.2480540Z Worker ID: {1857bf66-12ea-4ec0-8662-d66123cd6afb}
+2026-04-01T17:12:20.2481184Z Azure Region: westus
+2026-04-01T17:12:20.2481780Z ##[endgroup]
+2026-04-01T17:12:20.2483194Z ##[group]Operating System
+2026-04-01T17:12:20.2483793Z Ubuntu
+2026-04-01T17:12:20.2484202Z 24.04.4
+2026-04-01T17:12:20.2484744Z LTS
+2026-04-01T17:12:20.2485164Z ##[endgroup]
+2026-04-01T17:12:20.2485671Z ##[group]Runner Image
+2026-04-01T17:12:20.2486267Z Image: ubuntu-24.04
+2026-04-01T17:12:20.2486740Z Version: 20260323.65.1
+2026-04-01T17:12:20.2488144Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-04-01T17:12:20.2489728Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-04-01T17:12:20.2490684Z ##[endgroup]
+2026-04-01T17:12:20.2491714Z ##[group]GITHUB_TOKEN Permissions
+2026-04-01T17:12:20.2493487Z Contents: read
+2026-04-01T17:12:20.2494120Z Metadata: read
+2026-04-01T17:12:20.2494596Z ##[endgroup]
+2026-04-01T17:12:20.2496651Z Secret source: None
+2026-04-01T17:12:20.2497353Z Prepare workflow directory
+2026-04-01T17:12:20.2945946Z Prepare all required actions
+2026-04-01T17:12:20.3004277Z Getting action download info
+2026-04-01T17:12:20.9388997Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-04-01T17:12:21.5562291Z Download action repository 'docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf' (SHA:030e881283bb7a6894de51c315a6bfe6a94e05cf)
+2026-04-01T17:12:22.4674491Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-04-01T17:12:23.1177624Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-04-01T17:12:23.7545401Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-04-01T17:12:24.4777402Z Download action repository 'docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2' (SHA:b45d80f862d83dbcd57f89517bcf500b2ab88fb2)
+2026-04-01T17:12:25.2276447Z Download action repository 'docker/bake-action@82490499d2e5613fcead7e128237ef0b0ea210f7' (SHA:82490499d2e5613fcead7e128237ef0b0ea210f7)
+2026-04-01T17:12:26.1560412Z Download action repository 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' (SHA:bbbca2ddaa5d8feaa63e36b76fdaad77386f024f)
+2026-04-01T17:12:26.3669681Z Uses: docker/github-builder/.github/workflows/bake.yml@70313223e2665c3211b454b3fea6534624e78d64
+2026-04-01T17:12:26.3674661Z ##[group] Inputs
+2026-04-01T17:12:26.3674953Z   runner: amd64
+2026-04-01T17:12:26.3675936Z   distribute: true
+2026-04-01T17:12:26.3676161Z   setup-qemu: false
+2026-04-01T17:12:26.3676372Z   artifact-name: buildx
+2026-04-01T17:12:26.3676576Z   artifact-upload: true
+2026-04-01T17:12:26.3676777Z   cache: true
+2026-04-01T17:12:26.3676977Z   cache-scope: bin-image
+2026-04-01T17:12:26.3677203Z   cache-mode: min
+2026-04-01T17:12:26.3677379Z   context: .
+2026-04-01T17:12:26.3677539Z   files: 
+2026-04-01T17:12:26.3677705Z   output: local
+2026-04-01T17:12:26.3678087Z   push: false
+2026-04-01T17:12:26.3678254Z   sbom: true
+2026-04-01T17:12:26.3678407Z   set: 
+2026-04-01T17:12:26.3678563Z   sign: false
+2026-04-01T17:12:26.3678726Z   target: release
+2026-04-01T17:12:26.3678899Z   vars: 
+2026-04-01T17:12:26.3679072Z   set-meta-annotations: false
+2026-04-01T17:12:26.3679303Z   set-meta-labels: false
+2026-04-01T17:12:26.3679498Z   meta-images: 
+2026-04-01T17:12:26.3679995Z   meta-tags: 
+2026-04-01T17:12:26.3680415Z   meta-flavor: 
+2026-04-01T17:12:26.3680626Z   meta-labels: 
+2026-04-01T17:12:26.3680803Z   meta-annotations: 
+2026-04-01T17:12:26.3680989Z   meta-bake-target: 
+2026-04-01T17:12:26.3681202Z ##[endgroup]
+2026-04-01T17:12:26.3681478Z Complete job name: binaries / build (5, linux/arm/v6, ubuntu-24.04)
+2026-04-01T17:12:26.4357231Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-04-01T17:12:26.4358138Z with:
+2026-04-01T17:12:26.4358737Z   script: await exec.exec('npm', [
+  'install',
+  '--prefer-offline',
+  '--ignore-scripts',
+  core.getInput('dat-module'),
+  core.getInput('handlebars-module')
+]);
+
+2026-04-01T17:12:26.4359604Z   github-token: ***
+2026-04-01T17:12:26.4359906Z   debug: false
+2026-04-01T17:12:26.4360102Z   user-agent: actions/github-script
+2026-04-01T17:12:26.4360343Z   result-encoding: json
+2026-04-01T17:12:26.4360544Z   retries: 0
+2026-04-01T17:12:26.4360743Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-04-01T17:12:26.4361270Z env:
+2026-04-01T17:12:26.4361459Z   BUILDX_VERSION: v0.32.1
+2026-04-01T17:12:26.4361685Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-04-01T17:12:26.4361975Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-04-01T17:12:26.4362290Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-04-01T17:12:26.4362696Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-04-01T17:12:26.4363032Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-04-01T17:12:26.4363279Z   COSIGN_VERSION: v3.0.2
+2026-04-01T17:12:26.4363498Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-04-01T17:12:26.4363740Z   MATRIX_SIZE_LIMIT: 20
+2026-04-01T17:12:26.4363972Z   INPUT_DAT-MODULE: @docker/actions-toolkit@0.83.0
+2026-04-01T17:12:26.4364276Z   INPUT_HANDLEBARS-MODULE: handlebars@4.7.8
+2026-04-01T17:12:26.4364520Z ##[endgroup]
+2026-04-01T17:12:26.5177099Z [command]/usr/local/bin/npm install --prefer-offline --ignore-scripts @docker/actions-toolkit@0.83.0 handlebars@4.7.8
+2026-04-01T17:12:34.6165226Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-04-01T17:12:35.9655115Z 
+2026-04-01T17:12:35.9657073Z added 242 packages in 9s
+2026-04-01T17:12:35.9658964Z 
+2026-04-01T17:12:35.9659851Z 29 packages are looking for funding
+2026-04-01T17:12:35.9660385Z   run `npm fund` for details
+2026-04-01T17:12:36.0149346Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-04-01T17:12:36.0149805Z with:
+2026-04-01T17:12:36.0150127Z   github-token: ***
+2026-04-01T17:12:36.0150335Z env:
+2026-04-01T17:12:36.0150499Z   BUILDX_VERSION: v0.32.1
+2026-04-01T17:12:36.0150740Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-04-01T17:12:36.0151034Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-04-01T17:12:36.0151361Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-04-01T17:12:36.0151752Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-04-01T17:12:36.0152100Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-04-01T17:12:36.0152349Z   COSIGN_VERSION: v3.0.2
+2026-04-01T17:12:36.0152565Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-04-01T17:12:36.0152821Z   MATRIX_SIZE_LIMIT: 20
+2026-04-01T17:12:36.0153012Z ##[endgroup]
+2026-04-01T17:12:36.0938331Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=/opt/actionarchivecache
+2026-04-01T17:12:36.0943985Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus2.actions.githubusercontent.com/WzFg38Z1binMgG0FXaKEfCohGMuS9SP2f5wETQtMYcq6LTupeE/
+2026-04-01T17:12:36.1026212Z ACTIONS_RUNTIME_TOKEN=***
+2026-04-01T17:12:36.1027359Z ACTIONS_CACHE_URL=https://acghubeus2.actions.githubusercontent.com/WzFg38Z1binMgG0FXaKEfCohGMuS9SP2f5wETQtMYcq6LTupeE/
+2026-04-01T17:12:36.1028854Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-04-01T17:12:36.1029578Z ACTIONS_CACHE_SERVICE_V2=True
+2026-04-01T17:12:36.1030417Z ACTIONS_ORCHESTRATION_ID=5ce84c8f-6fa2-4e68-9425-aadcc945ecc3.binaries.build._5_linux_arm_v6_ubuntu-24
+2026-04-01T17:12:36.1146771Z ##[group]Run docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd
+2026-04-01T17:12:36.1147173Z with:
+2026-04-01T17:12:36.1147369Z   version: v0.32.1
+2026-04-01T17:12:36.1147558Z   cache-binary: false
+2026-04-01T17:12:36.1147772Z   buildkitd-flags: --debug
+2026-04-01T17:12:36.1148510Z   driver-opts: image=moby/buildkit:v0.28.0
+env.ACTIONS_ID_TOKEN_REQUEST_TOKEN=
+env.ACTIONS_ID_TOKEN_REQUEST_URL=
+
+2026-04-01T17:12:36.1150652Z   buildkitd-config-inline: [cache]
+  [cache.gha]
+    [cache.gha.sign]
+      command = []
+    [cache.gha.verify]
+      required = false
+      [cache.gha.verify.policy]
+        timestampThreshold = 1
+        tlogThreshold = 1
+        subjectAlternativeName = "https://github.com/docker/github-builder/.github/workflows/bake.yml*"
+        githubWorkflowRepository = "docker/buildx"
+        issuer = "https://token.actions.githubusercontent.com"
+        runnerEnvironment = "github-hosted"
+        sourceRepositoryURI = "https://github.com/docker/buildx"
+
+2026-04-01T17:12:36.1152593Z   driver: docker-container
+2026-04-01T17:12:36.1152798Z   use: true
+2026-04-01T17:12:36.1152967Z   keep-state: false
+2026-04-01T17:12:36.1153144Z   cleanup: true
+2026-04-01T17:12:36.1153315Z env:
+2026-04-01T17:12:36.1153472Z   BUILDX_VERSION: v0.32.1
+2026-04-01T17:12:36.1153695Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-04-01T17:12:36.1153987Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-04-01T17:12:36.1154296Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-04-01T17:12:36.1154646Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-04-01T17:12:36.1154973Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-04-01T17:12:36.1155218Z   COSIGN_VERSION: v3.0.2
+2026-04-01T17:12:36.1155431Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-04-01T17:12:36.1155674Z   MATRIX_SIZE_LIMIT: 20
+2026-04-01T17:12:36.1155944Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-04-01T17:12:36.1156630Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/WzFg38Z1binMgG0FXaKEfCohGMuS9SP2f5wETQtMYcq6LTupeE/
+2026-04-01T17:12:36.1197519Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-04-01T17:12:36.1198267Z   ACTIONS_CACHE_URL: https://acghubeus2.actions.githubusercontent.com/WzFg38Z1binMgG0FXaKEfCohGMuS9SP2f5wETQtMYcq6LTupeE/
+2026-04-01T17:12:36.1198997Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-04-01T17:12:36.1199397Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-04-01T17:12:36.1199859Z   ACTIONS_ORCHESTRATION_ID: 5ce84c8f-6fa2-4e68-9425-aadcc945ecc3.binaries.build._5_linux_arm_v6_ubuntu-24
+2026-04-01T17:12:36.1200324Z ##[endgroup]
+2026-04-01T17:12:36.3786799Z ##[group]Docker info
+2026-04-01T17:12:36.3801109Z [command]/usr/bin/docker version
+2026-04-01T17:12:36.4185297Z Client: Docker Engine - Community
+2026-04-01T17:12:36.4189415Z  Version:           28.0.4
+2026-04-01T17:12:36.4189799Z  API version:       1.48
+2026-04-01T17:12:36.4190150Z  Go version:        go1.23.7
+2026-04-01T17:12:36.4190558Z  Git commit:        b8034c0
+2026-04-01T17:12:36.4190925Z  Built:             Tue Mar 25 15:07:16 2025
+2026-04-01T17:12:36.4191356Z  OS/Arch:           linux/amd64
+2026-04-01T17:12:36.4191707Z  Context:           default
+2026-04-01T17:12:36.4191946Z 
+2026-04-01T17:12:36.4192092Z Server: Docker Engine - Community
+2026-04-01T17:12:36.4192456Z  Engine:
+2026-04-01T17:12:36.4192741Z   Version:          28.0.4
+2026-04-01T17:12:36.4193128Z   API version:      1.48 (minimum version 1.24)
+2026-04-01T17:12:36.4193567Z   Go version:       go1.23.7
+2026-04-01T17:12:36.4193939Z   Git commit:       6430e49
+2026-04-01T17:12:36.4194308Z   Built:            Tue Mar 25 15:07:16 2025
+2026-04-01T17:12:36.4194725Z   OS/Arch:          linux/amd64
+2026-04-01T17:12:36.4195082Z   Experimental:     false
+2026-04-01T17:12:36.4195415Z  containerd:
+2026-04-01T17:12:36.4195688Z   Version:          v2.2.2
+2026-04-01T17:12:36.4196130Z   GitCommit:        301b2dac98f15c27117da5c8af12118a041a31d9
+2026-04-01T17:12:36.4196909Z  runc:
+2026-04-01T17:12:36.4197390Z   Version:          1.3.4
+2026-04-01T17:12:36.4197743Z   GitCommit:        v1.3.4-0-gd6d73eb8
+2026-04-01T17:12:36.4198395Z  docker-init:
+2026-04-01T17:12:36.4198693Z   Version:          0.19.0
+2026-04-01T17:12:36.4199024Z   GitCommit:        de40ad0
+2026-04-01T17:12:36.4244565Z [command]/usr/bin/docker info
+2026-04-01T17:12:36.5569864Z Client: Docker Engine - Community
+2026-04-01T17:12:36.5572230Z  Version:    28.0.4
+2026-04-01T17:12:36.5572634Z  Context:    default
+2026-04-01T17:12:36.5572944Z  Debug Mode: false
+2026-04-01T17:12:36.5573644Z  Plugins:
+2026-04-01T17:12:36.5573955Z   buildx: Docker Buildx (Docker Inc.)
+2026-04-01T17:12:36.5574399Z     Version:  v0.32.1
+2026-04-01T17:12:36.5574972Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-04-01T17:12:36.5575499Z   compose: Docker Compose (Docker Inc.)
+2026-04-01T17:12:36.5575905Z     Version:  v2.38.2
+2026-04-01T17:12:36.5576312Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-04-01T17:12:36.5576733Z 
+2026-04-01T17:12:36.5576852Z Server:
+2026-04-01T17:12:36.5577102Z  Containers: 0
+2026-04-01T17:12:36.5577380Z   Running: 0
+2026-04-01T17:12:36.5577663Z   Paused: 0
+2026-04-01T17:12:36.5578123Z   Stopped: 0
+2026-04-01T17:12:36.5578393Z  Images: 6
+2026-04-01T17:12:36.5578666Z  Server Version: 28.0.4
+2026-04-01T17:12:36.5579002Z  Storage Driver: overlay2
+2026-04-01T17:12:36.5579344Z   Backing Filesystem: extfs
+2026-04-01T17:12:36.5579976Z   Supports d_type: true
+2026-04-01T17:12:36.5580302Z   Using metacopy: false
+2026-04-01T17:12:36.5580644Z   Native Overlay Diff: false
+2026-04-01T17:12:36.5580996Z   userxattr: false
+2026-04-01T17:12:36.5581310Z  Logging Driver: json-file
+2026-04-01T17:12:36.5581649Z  Cgroup Driver: systemd
+2026-04-01T17:12:36.5581974Z  Cgroup Version: 2
+2026-04-01T17:12:36.5582254Z  Plugins:
+2026-04-01T17:12:36.5582517Z   Volume: local
+2026-04-01T17:12:36.5582866Z   Network: bridge host ipvlan macvlan null overlay
+2026-04-01T17:12:36.5583530Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-04-01T17:12:36.5584150Z  Swarm: inactive
+2026-04-01T17:12:36.5584468Z  Runtimes: io.containerd.runc.v2 runc
+2026-04-01T17:12:36.5584877Z  Default Runtime: runc
+2026-04-01T17:12:36.5585203Z  Init Binary: docker-init
+2026-04-01T17:12:36.5585671Z  containerd version: 301b2dac98f15c27117da5c8af12118a041a31d9
+2026-04-01T17:12:36.5586358Z  runc version: v1.3.4-0-gd6d73eb8
+2026-04-01T17:12:36.5586769Z  init version: de40ad0
+2026-04-01T17:12:36.5587097Z  Security Options:
+2026-04-01T17:12:36.5587378Z   apparmor
+2026-04-01T17:12:36.5587633Z   seccomp
+2026-04-01T17:12:36.5588073Z    Profile: builtin
+2026-04-01T17:12:36.5588367Z   cgroupns
+2026-04-01T17:12:36.5588640Z  Kernel Version: 6.17.0-1008-azure
+2026-04-01T17:12:36.5589039Z  Operating System: Ubuntu 24.04.4 LTS
+2026-04-01T17:12:36.5589426Z  OSType: linux
+2026-04-01T17:12:36.5589713Z  Architecture: x86_64
+2026-04-01T17:12:36.5590019Z  CPUs: 4
+2026-04-01T17:12:36.5590280Z  Total Memory: 15.62GiB
+2026-04-01T17:12:36.5590611Z  Name: runnervmrg6be
+2026-04-01T17:12:36.5590944Z  ID: 26c853c4-ebf5-403c-a446-44e39e017c08
+2026-04-01T17:12:36.5591395Z  Docker Root Dir: /var/lib/docker
+2026-04-01T17:12:36.5591760Z  Debug Mode: false
+2026-04-01T17:12:36.5592063Z  Username: githubactions
+2026-04-01T17:12:36.5592395Z  Experimental: false
+2026-04-01T17:12:36.5592711Z  Insecure Registries:
+2026-04-01T17:12:36.5598445Z   ::1/128
+2026-04-01T17:12:36.5598739Z   127.0.0.0/8
+2026-04-01T17:12:36.5599050Z  Live Restore Enabled: false
+2026-04-01T17:12:36.5599325Z 
+2026-04-01T17:12:36.5600139Z ##[endgroup]
+2026-04-01T17:12:36.6264675Z ##[group]Download buildx from GitHub Releases
+2026-04-01T17:12:36.6598540Z Use 0.32.1 version spec cache key for v0.32.1
+2026-04-01T17:12:36.6600238Z GitHub Actions cache disabled
+2026-04-01T17:12:36.6600996Z Downloading https://github.com/docker/buildx/releases/download/v0.32.1/buildx-v0.32.1.linux-amd64
+2026-04-01T17:12:37.7734325Z Copying /home/runner/work/_temp/4b684f38-aec9-4b27-9b39-973f0db3ded6 to /home/runner/.docker/buildx/.bin/0.32.1/linux-x64/docker-buildx
+2026-04-01T17:12:37.9064471Z Cached to /home/runner/.docker/buildx/.bin/0.32.1/linux-x64/docker-buildx
+2026-04-01T17:12:37.9065450Z ##[endgroup]
+2026-04-01T17:12:37.9066045Z ##[group]Install buildx
+2026-04-01T17:12:37.9066517Z Docker plugin mode
+2026-04-01T17:12:38.0392114Z Fixing perms
+2026-04-01T17:12:38.0392744Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-04-01T17:12:38.0393881Z ##[endgroup]
+2026-04-01T17:12:38.0394511Z ##[group]Buildx version
+2026-04-01T17:12:38.0420504Z [command]/usr/bin/docker buildx version
+2026-04-01T17:12:38.0964240Z github.com/docker/buildx v0.32.1 d3bfb3f4e48a67dda56e957a6636f4fab6c5fcb2
+2026-04-01T17:12:38.0989534Z ##[endgroup]
+2026-04-01T17:12:38.1141276Z ##[group]Inspecting default docker context
+2026-04-01T17:12:38.1311649Z [
+2026-04-01T17:12:38.1311946Z   {
+2026-04-01T17:12:38.1312236Z     "Name": "default",
+2026-04-01T17:12:38.1313505Z     "Metadata": {},
+2026-04-01T17:12:38.1313879Z     "Endpoints": {
+2026-04-01T17:12:38.1314219Z       "docker": {
+2026-04-01T17:12:38.1314599Z         "Host": "unix:///var/run/docker.sock",
+2026-04-01T17:12:38.1315084Z         "SkipTLSVerify": false
+2026-04-01T17:12:38.1315473Z       }
+2026-04-01T17:12:38.1315764Z     },
+2026-04-01T17:12:38.1316060Z     "TLSMaterial": {},
+2026-04-01T17:12:38.1316418Z     "Storage": {
+2026-04-01T17:12:38.1316779Z       "MetadataPath": "<IN MEMORY>",
+2026-04-01T17:12:38.1317225Z       "TLSPath": "<IN MEMORY>"
+2026-04-01T17:12:38.1317587Z     }
+2026-04-01T17:12:38.1318114Z   }
+2026-04-01T17:12:38.1318364Z ]
+2026-04-01T17:12:38.1319047Z ##[endgroup]
+2026-04-01T17:12:38.1319673Z ##[group]Creating a new builder instance
+2026-04-01T17:12:38.2565102Z [command]/usr/bin/docker buildx create --name builder-b2b0c723-6748-4348-a0db-2c0043bf5242 --driver docker-container --driver-opt image=moby/buildkit:v0.28.0 --driver-opt env.ACTIONS_ID_TOKEN_REQUEST_TOKEN= --driver-opt env.ACTIONS_ID_TOKEN_REQUEST_URL= --buildkitd-flags --debug --use --config /home/runner/work/_temp/docker-actions-toolkit-cZsoEK/tmp-2235-YvTI1MCQFVWE
+2026-04-01T17:12:38.3299034Z builder-b2b0c723-6748-4348-a0db-2c0043bf5242
+2026-04-01T17:12:38.3325618Z ##[endgroup]
+2026-04-01T17:12:38.3327605Z ##[group]Booting builder
+2026-04-01T17:12:38.3382027Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-b2b0c723-6748-4348-a0db-2c0043bf5242
+2026-04-01T17:12:38.3954300Z #1 [internal] booting buildkit
+2026-04-01T17:12:38.5458994Z #1 pulling image moby/buildkit:v0.28.0
+2026-04-01T17:13:03.2421216Z #1 pulling image moby/buildkit:v0.28.0 24.8s done
+2026-04-01T17:13:03.2424742Z #1 ERROR: Get "https://registry-1.docker.io/v2/moby/buildkit/manifests/sha256:60bfb07e39a6e524e78e6c4723114902c6b61ee36714493e357e39861bea753b": net/http: TLS handshake timeout
+2026-04-01T17:13:03.2426280Z ------
+2026-04-01T17:13:03.2426644Z  > [internal] booting buildkit:
+2026-04-01T17:13:03.2427069Z ------
+2026-04-01T17:13:03.2428558Z ERROR: Get "https://registry-1.docker.io/v2/moby/buildkit/manifests/sha256:60bfb07e39a6e524e78e6c4723114902c6b61ee36714493e357e39861bea753b": net/http: TLS handshake timeout
+2026-04-01T17:13:03.2460097Z ##[endgroup]
+2026-04-01T17:13:03.2487079Z ##[error]ERROR: Get "https://registry-1.docker.io/v2/moby/buildkit/manifests/sha256:60bfb07e39a6e524e78e6c4723114902c6b61ee36714493e357e39861bea753b": net/http: TLS handshake timeout
+2026-04-01T17:13:03.2688360Z ##[error]The template is not valid. docker/github-builder/.github/workflows/bake.yml@70313223e2665c3211b454b3fea6534624e78d64 (Line: 784, Col: 14): Error reading JToken from JsonReader. Path '', line 0, position 0.,docker/github-builder/.github/workflows/bake.yml@70313223e2665c3211b454b3fea6534624e78d64 (Line: 784, Col: 14): Unexpected value ''
+2026-04-01T17:13:03.2855738Z Post job cleanup.
+2026-04-01T17:13:03.4773292Z ##[group]Removing builder
+2026-04-01T17:13:03.5555139Z [command]/usr/bin/docker buildx rm builder-b2b0c723-6748-4348-a0db-2c0043bf5242
+2026-04-01T17:13:03.6219121Z builder-b2b0c723-6748-4348-a0db-2c0043bf5242 removed
+2026-04-01T17:13:03.6247082Z ##[endgroup]
+2026-04-01T17:13:03.6248649Z ##[group]Cleaning up certificates
+2026-04-01T17:13:03.6249380Z ##[endgroup]
+2026-04-01T17:13:03.6250130Z ##[group]Post cache
+2026-04-01T17:13:03.6252829Z State not set
+2026-04-01T17:13:03.6253410Z ##[endgroup]
+2026-04-01T17:13:03.6402476Z Evaluate and set job outputs
+2026-04-01T17:13:03.6412006Z Cleaning up orphan processes

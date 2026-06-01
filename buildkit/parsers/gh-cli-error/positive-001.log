@@ -1,0 +1,83 @@
+﻿2026-05-19T12:13:37.8380093Z Current runner version: '2.334.0'
+2026-05-19T12:13:37.8406465Z ##[group]Runner Image Provisioner
+2026-05-19T12:13:37.8407264Z Hosted Compute Agent
+2026-05-19T12:13:37.8407847Z Version: 20260213.493
+2026-05-19T12:13:37.8408561Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-19T12:13:37.8409226Z Build Date: 2026-02-13T00:28:41Z
+2026-05-19T12:13:37.8409863Z Worker ID: {37d9359e-0d68-450e-8461-7e8c444ed2df}
+2026-05-19T12:13:37.8410570Z Azure Region: westus3
+2026-05-19T12:13:37.8411142Z ##[endgroup]
+2026-05-19T12:13:37.8412632Z ##[group]Operating System
+2026-05-19T12:13:37.8413295Z Ubuntu
+2026-05-19T12:13:37.8413826Z 24.04.4
+2026-05-19T12:13:37.8414490Z LTS
+2026-05-19T12:13:37.8415010Z ##[endgroup]
+2026-05-19T12:13:37.8415531Z ##[group]Runner Image
+2026-05-19T12:13:37.8416100Z Image: ubuntu-24.04
+2026-05-19T12:13:37.8416671Z Version: 20260513.135.3
+2026-05-19T12:13:37.8417825Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260513.135/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-19T12:13:37.8419342Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260513.135
+2026-05-19T12:13:37.8420330Z ##[endgroup]
+2026-05-19T12:13:37.8421353Z ##[group]GITHUB_TOKEN Permissions
+2026-05-19T12:13:37.8423277Z Actions: write
+2026-05-19T12:13:37.8423856Z Metadata: read
+2026-05-19T12:13:37.8425003Z ##[endgroup]
+2026-05-19T12:13:37.8427419Z Secret source: None
+2026-05-19T12:13:37.8428146Z Prepare workflow directory
+2026-05-19T12:13:37.8980703Z Prepare all required actions
+2026-05-19T12:13:37.9042294Z Complete job name: Cleanup artifacts
+2026-05-19T12:13:37.9733583Z ##[group]Run if [ "github-hosted" = "self-hosted" ]; then
+2026-05-19T12:13:37.9734879Z [36;1mif [ "github-hosted" = "self-hosted" ]; then[0m
+2026-05-19T12:13:37.9736122Z [36;1m  echo "GH_TOKEN=***" >> "$GITHUB_ENV"[0m
+2026-05-19T12:13:37.9737164Z [36;1m  echo "GITHUB_TOKEN=***" >> "$GITHUB_ENV"[0m
+2026-05-19T12:13:37.9737818Z [36;1melse[0m
+2026-05-19T12:13:37.9738737Z [36;1m  echo "GH_TOKEN=***" >> "$GITHUB_ENV"[0m
+2026-05-19T12:13:37.9739757Z [36;1m  echo "GITHUB_TOKEN=***" >> "$GITHUB_ENV"[0m
+2026-05-19T12:13:37.9740405Z [36;1mfi[0m
+2026-05-19T12:13:38.0280190Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-19T12:13:38.0281364Z env:
+2026-05-19T12:13:38.0282448Z   GITHUB_COPILOT_API_TOKEN: ***
+2026-05-19T12:13:38.0283086Z ##[endgroup]
+2026-05-19T12:13:38.0636056Z ##[group]Run echo "GH_HOST=${GITHUB_SERVER_URL#https://}" >> $GITHUB_ENV
+2026-05-19T12:13:38.0637783Z [36;1mecho "GH_HOST=${GITHUB_SERVER_URL#https://}" >> $GITHUB_ENV[0m
+2026-05-19T12:13:38.0639429Z [36;1mecho "GH_HOST set to: ${GITHUB_SERVER_URL#https://}"[0m
+2026-05-19T12:13:38.0688751Z shell: /usr/bin/bash -e {0}
+2026-05-19T12:13:38.0689707Z env:
+2026-05-19T12:13:38.0691015Z   GITHUB_COPILOT_API_TOKEN: ***
+2026-05-19T12:13:38.0692247Z   GH_TOKEN: ***
+2026-05-19T12:13:38.0693346Z   GITHUB_TOKEN: ***
+2026-05-19T12:13:38.0694446Z ##[endgroup]
+2026-05-19T12:13:38.0797518Z GH_HOST set to: github.com
+2026-05-19T12:13:38.0919837Z ##[group]Run gh api \
+2026-05-19T12:13:38.0920335Z [36;1mgh api \[0m
+2026-05-19T12:13:38.0920841Z [36;1m  -H "Accept: application/vnd.github+json" \[0m
+2026-05-19T12:13:38.0921583Z [36;1m  /repos/moby/buildkit/actions/runs/26096262718/artifacts \[0m
+2026-05-19T12:13:38.0922320Z [36;1m  --jq '.artifacts[].id' > artifact_ids.txt[0m
+2026-05-19T12:13:38.0956511Z shell: /usr/bin/bash -e {0}
+2026-05-19T12:13:38.0956978Z env:
+2026-05-19T12:13:38.0957655Z   GITHUB_COPILOT_API_TOKEN: ***
+2026-05-19T12:13:38.0958241Z   GH_TOKEN: ***
+2026-05-19T12:13:38.0958760Z   GITHUB_TOKEN: ***
+2026-05-19T12:13:38.0959159Z   GH_HOST: github.com
+2026-05-19T12:13:38.0959569Z ##[endgroup]
+2026-05-19T12:13:38.6800582Z ##[group]Run echo "Deleting artifacts for run ID: 26096262718"
+2026-05-19T12:13:38.6801452Z [36;1mecho "Deleting artifacts for run ID: 26096262718"[0m
+2026-05-19T12:13:38.6802131Z [36;1mwhile read -r artifact_id; do[0m
+2026-05-19T12:13:38.6802679Z [36;1m  gh api \[0m
+2026-05-19T12:13:38.6803125Z [36;1m    --silent \[0m
+2026-05-19T12:13:38.6803836Z [36;1m    -X DELETE \[0m
+2026-05-19T12:13:38.6804594Z [36;1m    -H "Accept: application/vnd.github+json" \[0m
+2026-05-19T12:13:38.6805373Z [36;1m    /repos/moby/buildkit/actions/artifacts/"$artifact_id"[0m
+2026-05-19T12:13:38.6806071Z [36;1mdone < artifact_ids.txt[0m
+2026-05-19T12:13:38.6806618Z [36;1mecho "Artifact cleanup completed"[0m
+2026-05-19T12:13:38.6841135Z shell: /usr/bin/bash -e {0}
+2026-05-19T12:13:38.6841655Z env:
+2026-05-19T12:13:38.6842386Z   GITHUB_COPILOT_API_TOKEN: ***
+2026-05-19T12:13:38.6843008Z   GH_TOKEN: ***
+2026-05-19T12:13:38.6843570Z   GITHUB_TOKEN: ***
+2026-05-19T12:13:38.6844052Z   GH_HOST: github.com
+2026-05-19T12:13:38.6844689Z ##[endgroup]
+2026-05-19T12:13:38.6900741Z Deleting artifacts for run ID: 26096262718
+2026-05-19T12:13:39.0595591Z gh: Resource not accessible by integration (HTTP 403)
+2026-05-19T12:13:39.0634005Z ##[error]Process completed with exit code 1.
+2026-05-19T12:13:39.0713104Z Cleaning up orphan processes

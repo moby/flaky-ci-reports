@@ -1,0 +1,856 @@
+﻿2026-03-25T00:24:12.0709032Z Current runner version: '2.332.0'
+2026-03-25T00:24:12.0733705Z ##[group]Runner Image Provisioner
+2026-03-25T00:24:12.0734853Z Hosted Compute Agent
+2026-03-25T00:24:12.0735574Z Version: 20260213.493
+2026-03-25T00:24:12.0736204Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-25T00:24:12.0736980Z Build Date: 2026-02-13T00:28:41Z
+2026-03-25T00:24:12.0737782Z Worker ID: {fbb5b5fb-e95a-4162-b6f8-6b2098fe8695}
+2026-03-25T00:24:12.0738560Z Azure Region: northcentralus
+2026-03-25T00:24:12.0739278Z ##[endgroup]
+2026-03-25T00:24:12.0741238Z ##[group]Operating System
+2026-03-25T00:24:12.0741841Z Ubuntu
+2026-03-25T00:24:12.0742428Z 24.04.3
+2026-03-25T00:24:12.0742974Z LTS
+2026-03-25T00:24:12.0743475Z ##[endgroup]
+2026-03-25T00:24:12.0744108Z ##[group]Runner Image
+2026-03-25T00:24:12.0744882Z Image: ubuntu-24.04
+2026-03-25T00:24:12.0745425Z Version: 20260309.50.1
+2026-03-25T00:24:12.0746722Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-25T00:24:12.0748320Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+2026-03-25T00:24:12.0749350Z ##[endgroup]
+2026-03-25T00:24:12.0750460Z ##[group]GITHUB_TOKEN Permissions
+2026-03-25T00:24:12.0752765Z Contents: read
+2026-03-25T00:24:12.0753398Z Metadata: read
+2026-03-25T00:24:12.0754156Z ##[endgroup]
+2026-03-25T00:24:12.0756927Z Secret source: Actions
+2026-03-25T00:24:12.0757942Z Prepare workflow directory
+2026-03-25T00:24:12.1155923Z Prepare all required actions
+2026-03-25T00:24:12.1195160Z Getting action download info
+2026-03-25T00:24:12.4671450Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-03-25T00:24:12.9546657Z Download action repository 'docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf' (SHA:030e881283bb7a6894de51c315a6bfe6a94e05cf)
+2026-03-25T00:24:13.4358196Z Download action repository 'docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2' (SHA:b45d80f862d83dbcd57f89517bcf500b2ab88fb2)
+2026-03-25T00:24:13.8705125Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-03-25T00:24:14.3558783Z Download action repository 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' (SHA:bbbca2ddaa5d8feaa63e36b76fdaad77386f024f)
+2026-03-25T00:24:14.9352630Z Uses: docker/github-builder/.github/workflows/bake.yml@refs/tags/v1 (70313223e2665c3211b454b3fea6534624e78d64)
+2026-03-25T00:24:14.9356537Z ##[group] Inputs
+2026-03-25T00:24:14.9356860Z   runner: amd64
+2026-03-25T00:24:14.9357449Z   distribute: true
+2026-03-25T00:24:14.9357724Z   setup-qemu: false
+2026-03-25T00:24:14.9358034Z   artifact-name: docker-github-builder-assets
+2026-03-25T00:24:14.9358397Z   artifact-upload: false
+2026-03-25T00:24:14.9358675Z   cache: true
+2026-03-25T00:24:14.9358919Z   cache-scope: bin-image
+2026-03-25T00:24:14.9359223Z   cache-mode: min
+2026-03-25T00:24:14.9359480Z   context: .
+2026-03-25T00:24:14.9359706Z   files: 
+2026-03-25T00:24:14.9359917Z   output: image
+2026-03-25T00:24:14.9360149Z   push: true
+2026-03-25T00:24:14.9360371Z   sbom: true
+2026-03-25T00:24:14.9360595Z   set: 
+2026-03-25T00:24:14.9360816Z   sign: auto
+2026-03-25T00:24:14.9361055Z   target: image-cross
+2026-03-25T00:24:14.9361308Z   vars: 
+2026-03-25T00:24:14.9361550Z   set-meta-annotations: false
+2026-03-25T00:24:14.9361837Z   set-meta-labels: true
+2026-03-25T00:24:14.9362124Z   meta-images: docker/buildx-bin
+
+2026-03-25T00:24:14.9362596Z   meta-tags: type=ref,event=branch
+type=ref,event=pr
+type=semver,pattern={{version}}
+
+2026-03-25T00:24:14.9363079Z   meta-flavor: 
+2026-03-25T00:24:14.9363332Z   meta-labels: 
+2026-03-25T00:24:14.9363604Z   meta-annotations: 
+2026-03-25T00:24:14.9363885Z   meta-bake-target: meta-helper
+2026-03-25T00:24:14.9364181Z ##[endgroup]
+2026-03-25T00:24:14.9364847Z Complete job name: bin-image / finalize
+2026-03-25T00:24:15.0031132Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-03-25T00:24:15.0032179Z with:
+2026-03-25T00:24:15.0032698Z   script: await exec.exec('npm', ['install', '--prefer-offline', '--ignore-scripts', core.getInput('dat-module')]);
+
+2026-03-25T00:24:15.0033454Z   github-token: ***
+2026-03-25T00:24:15.0033807Z   debug: false
+2026-03-25T00:24:15.0034070Z   user-agent: actions/github-script
+2026-03-25T00:24:15.0034587Z   result-encoding: json
+2026-03-25T00:24:15.0034854Z   retries: 0
+2026-03-25T00:24:15.0035122Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-03-25T00:24:15.0035725Z env:
+2026-03-25T00:24:15.0036155Z   BUILDX_VERSION: v0.32.1
+2026-03-25T00:24:15.0036530Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-25T00:24:15.0036882Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-25T00:24:15.0037258Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-25T00:24:15.0037771Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:15.0038170Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-25T00:24:15.0038477Z   COSIGN_VERSION: v3.0.2
+2026-03-25T00:24:15.0038765Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-25T00:24:15.0039076Z   MATRIX_SIZE_LIMIT: 20
+2026-03-25T00:24:15.0039375Z   INPUT_DAT-MODULE: @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:15.0039709Z ##[endgroup]
+2026-03-25T00:24:15.0886999Z [command]/usr/local/bin/npm install --prefer-offline --ignore-scripts @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:25.6735503Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-03-25T00:24:27.0711128Z 
+2026-03-25T00:24:27.0711679Z added 242 packages in 11s
+2026-03-25T00:24:27.0712020Z 
+2026-03-25T00:24:27.0712217Z 29 packages are looking for funding
+2026-03-25T00:24:27.0712725Z   run `npm fund` for details
+2026-03-25T00:24:27.1208910Z ##[group]Run docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf
+2026-03-25T00:24:27.1209340Z with:
+2026-03-25T00:24:27.1209533Z   images: docker/buildx-bin
+
+2026-03-25T00:24:27.1209904Z   tags: type=ref,event=branch
+type=ref,event=pr
+type=semver,pattern={{version}}
+
+2026-03-25T00:24:27.1210313Z   bake-target: meta-helper
+2026-03-25T00:24:27.1210532Z   context: workflow
+2026-03-25T00:24:27.1210874Z   github-token: ***
+2026-03-25T00:24:27.1211069Z env:
+2026-03-25T00:24:27.1211255Z   BUILDX_VERSION: v0.32.1
+2026-03-25T00:24:27.1211526Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-25T00:24:27.1211825Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-25T00:24:27.1212144Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-25T00:24:27.1212525Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:27.1212872Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-25T00:24:27.1213127Z   COSIGN_VERSION: v3.0.2
+2026-03-25T00:24:27.1213399Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-25T00:24:27.1213667Z   MATRIX_SIZE_LIMIT: 20
+2026-03-25T00:24:27.1213877Z ##[endgroup]
+2026-03-25T00:24:27.6647689Z ##[group]Context info
+2026-03-25T00:24:27.6648351Z eventName: push
+2026-03-25T00:24:27.6648773Z sha: 7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+2026-03-25T00:24:27.6649277Z ref: refs/heads/master
+2026-03-25T00:24:27.6649670Z workflow: build
+2026-03-25T00:24:27.6650060Z action: meta
+2026-03-25T00:24:27.6650414Z actor: tonistiigi
+2026-03-25T00:24:27.6650782Z runNumber: 6963
+2026-03-25T00:24:27.6651163Z runId: 23518326486
+2026-03-25T00:24:27.6651716Z commitDate: Wed Mar 25 2026 00:08:04 GMT+0000 (Coordinated Universal Time)
+2026-03-25T00:24:27.6652939Z ##[endgroup]
+2026-03-25T00:24:27.6653666Z ##[group]Processing images input
+2026-03-25T00:24:27.6654160Z name=docker/buildx-bin,enable=true
+2026-03-25T00:24:27.6655103Z ##[endgroup]
+2026-03-25T00:24:27.6655824Z ##[group]Processing tags input
+2026-03-25T00:24:27.6656562Z type=semver,pattern={{version}},value=,match=,enable=true,priority=900
+2026-03-25T00:24:27.6657869Z type=ref,event=branch,enable=true,priority=600
+2026-03-25T00:24:27.6658515Z type=ref,event=pr,prefix=pr-,enable=true,priority=600
+2026-03-25T00:24:27.6659328Z ##[endgroup]
+2026-03-25T00:24:27.6659971Z ##[group]Processing flavor input
+2026-03-25T00:24:27.6660403Z latest=auto
+2026-03-25T00:24:27.6660716Z prefix=
+2026-03-25T00:24:27.6661039Z prefixLatest=false
+2026-03-25T00:24:27.6661418Z suffix=
+2026-03-25T00:24:27.6661731Z suffixLatest=false
+2026-03-25T00:24:27.6662361Z ##[endgroup]
+2026-03-25T00:24:27.6686725Z ##[group]Docker image version
+2026-03-25T00:24:27.6689891Z master
+2026-03-25T00:24:27.6693113Z ##[endgroup]
+2026-03-25T00:24:27.6696021Z ##[group]Docker tags
+2026-03-25T00:24:27.6700595Z docker/buildx-bin:master
+2026-03-25T00:24:27.6701273Z ##[endgroup]
+2026-03-25T00:24:27.6770671Z ##[group]Docker labels
+2026-03-25T00:24:27.6772594Z org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+2026-03-25T00:24:27.6774407Z org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+2026-03-25T00:24:27.6777230Z org.opencontainers.image.licenses=Apache-2.0
+2026-03-25T00:24:27.6778411Z org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+2026-03-25T00:24:27.6780710Z org.opencontainers.image.source=https://github.com/docker/buildx
+2026-03-25T00:24:27.6781792Z org.opencontainers.image.title=buildx
+2026-03-25T00:24:27.6788276Z org.opencontainers.image.url=https://github.com/docker/buildx
+2026-03-25T00:24:27.6789354Z org.opencontainers.image.version=master
+2026-03-25T00:24:27.6790683Z ##[endgroup]
+2026-03-25T00:24:27.6791463Z ##[group]Annotations
+2026-03-25T00:24:27.6792076Z manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+2026-03-25T00:24:27.6796406Z manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+2026-03-25T00:24:27.6797561Z manifest:org.opencontainers.image.licenses=Apache-2.0
+2026-03-25T00:24:27.6798769Z manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+2026-03-25T00:24:27.6799881Z manifest:org.opencontainers.image.source=https://github.com/docker/buildx
+2026-03-25T00:24:27.6800730Z manifest:org.opencontainers.image.title=buildx
+2026-03-25T00:24:27.6801493Z manifest:org.opencontainers.image.url=https://github.com/docker/buildx
+2026-03-25T00:24:27.6802292Z manifest:org.opencontainers.image.version=master
+2026-03-25T00:24:27.6803154Z ##[endgroup]
+2026-03-25T00:24:27.6803749Z ##[group]JSON output
+2026-03-25T00:24:27.6804072Z {
+2026-03-25T00:24:27.6804527Z   "tags": [
+2026-03-25T00:24:27.6804829Z     "docker/buildx-bin:master"
+2026-03-25T00:24:27.6805159Z   ],
+2026-03-25T00:24:27.6805412Z   "tag-names": [
+2026-03-25T00:24:27.6805698Z     "master"
+2026-03-25T00:24:27.6805961Z   ],
+2026-03-25T00:24:27.6806204Z   "labels": {
+2026-03-25T00:24:27.6806622Z     "org.opencontainers.image.created": "2026-03-25T00:24:27.663Z",
+2026-03-25T00:24:27.6807675Z     "org.opencontainers.image.description": "Docker CLI plugin for extended build capabilities with BuildKit",
+2026-03-25T00:24:27.6808685Z     "org.opencontainers.image.licenses": "Apache-2.0",
+2026-03-25T00:24:27.6809472Z     "org.opencontainers.image.revision": "7ac816801619a0ebf0a8e4f4151a0838a5e559e3",
+2026-03-25T00:24:27.6810387Z     "org.opencontainers.image.source": "https://github.com/docker/buildx",
+2026-03-25T00:24:27.6811221Z     "org.opencontainers.image.title": "buildx",
+2026-03-25T00:24:27.6811916Z     "org.opencontainers.image.url": "https://github.com/docker/buildx",
+2026-03-25T00:24:27.6812601Z     "org.opencontainers.image.version": "master"
+2026-03-25T00:24:27.6813077Z   },
+2026-03-25T00:24:27.6813348Z   "annotations": [
+2026-03-25T00:24:27.6813961Z     "manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z",
+2026-03-25T00:24:27.6815239Z     "manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit",
+2026-03-25T00:24:27.6816429Z     "manifest:org.opencontainers.image.licenses=Apache-2.0",
+2026-03-25T00:24:27.6817310Z     "manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3",
+2026-03-25T00:24:27.6818641Z     "manifest:org.opencontainers.image.source=https://github.com/docker/buildx",
+2026-03-25T00:24:27.6819447Z     "manifest:org.opencontainers.image.title=buildx",
+2026-03-25T00:24:27.6820232Z     "manifest:org.opencontainers.image.url=https://github.com/docker/buildx",
+2026-03-25T00:24:27.6821041Z     "manifest:org.opencontainers.image.version=master"
+2026-03-25T00:24:27.6821603Z   ]
+2026-03-25T00:24:27.6821943Z }
+2026-03-25T00:24:27.6822687Z ##[endgroup]
+2026-03-25T00:24:27.6823440Z ##[group]Bake file definition (tags)
+2026-03-25T00:24:27.6823962Z {
+2026-03-25T00:24:27.6825402Z   "target": {
+2026-03-25T00:24:27.6825819Z     "meta-helper": {
+2026-03-25T00:24:27.6826197Z       "tags": [
+2026-03-25T00:24:27.6826560Z         "docker/buildx-bin:master"
+2026-03-25T00:24:27.6826988Z       ],
+2026-03-25T00:24:27.6827305Z       "args": {
+2026-03-25T00:24:27.6827718Z         "DOCKER_META_IMAGES": "docker/buildx-bin",
+2026-03-25T00:24:27.6828259Z         "DOCKER_META_VERSION": "master"
+2026-03-25T00:24:27.6828702Z       }
+2026-03-25T00:24:27.6828998Z     }
+2026-03-25T00:24:27.6829288Z   }
+2026-03-25T00:24:27.6829628Z }
+2026-03-25T00:24:27.6830324Z ##[endgroup]
+2026-03-25T00:24:27.6831130Z ##[group]Bake file definition (labels)
+2026-03-25T00:24:27.6831607Z {
+2026-03-25T00:24:27.6831907Z   "target": {
+2026-03-25T00:24:27.6832208Z     "meta-helper": {
+2026-03-25T00:24:27.6832580Z       "labels": {
+2026-03-25T00:24:27.6833129Z         "org.opencontainers.image.created": "2026-03-25T00:24:27.663Z",
+2026-03-25T00:24:27.6834411Z         "org.opencontainers.image.description": "Docker CLI plugin for extended build capabilities with BuildKit",
+2026-03-25T00:24:27.6835488Z         "org.opencontainers.image.licenses": "Apache-2.0",
+2026-03-25T00:24:27.6836359Z         "org.opencontainers.image.revision": "7ac816801619a0ebf0a8e4f4151a0838a5e559e3",
+2026-03-25T00:24:27.6837595Z         "org.opencontainers.image.source": "https://github.com/docker/buildx",
+2026-03-25T00:24:27.6838412Z         "org.opencontainers.image.title": "buildx",
+2026-03-25T00:24:27.6839185Z         "org.opencontainers.image.url": "https://github.com/docker/buildx",
+2026-03-25T00:24:27.6839953Z         "org.opencontainers.image.version": "master"
+2026-03-25T00:24:27.6840463Z       }
+2026-03-25T00:24:27.6840765Z     }
+2026-03-25T00:24:27.6841069Z   }
+2026-03-25T00:24:27.6841367Z }
+2026-03-25T00:24:27.6841948Z ##[endgroup]
+2026-03-25T00:24:27.6842656Z ##[group]Bake file definition (annotations)
+2026-03-25T00:24:27.6843203Z {
+2026-03-25T00:24:27.6843501Z   "target": {
+2026-03-25T00:24:27.6843847Z     "meta-helper": {
+2026-03-25T00:24:27.6844403Z       "annotations": [
+2026-03-25T00:24:27.6845028Z         "manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z",
+2026-03-25T00:24:27.6846232Z         "manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit",
+2026-03-25T00:24:27.6847398Z         "manifest:org.opencontainers.image.licenses=Apache-2.0",
+2026-03-25T00:24:27.6848349Z         "manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3",
+2026-03-25T00:24:27.6849471Z         "manifest:org.opencontainers.image.source=https://github.com/docker/buildx",
+2026-03-25T00:24:27.6850324Z         "manifest:org.opencontainers.image.title=buildx",
+2026-03-25T00:24:27.6851143Z         "manifest:org.opencontainers.image.url=https://github.com/docker/buildx",
+2026-03-25T00:24:27.6851998Z         "manifest:org.opencontainers.image.version=master"
+2026-03-25T00:24:27.6852532Z       ]
+2026-03-25T00:24:27.6852841Z     }
+2026-03-25T00:24:27.6853133Z   }
+2026-03-25T00:24:27.6853423Z }
+2026-03-25T00:24:27.6853974Z ##[endgroup]
+2026-03-25T00:24:27.7197379Z ##[group]Run docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2
+2026-03-25T00:24:27.7198024Z with:
+2026-03-25T00:24:27.7198939Z   registry-auth: ***
+
+2026-03-25T00:24:27.7199288Z   logout: true
+2026-03-25T00:24:27.7199760Z env:
+2026-03-25T00:24:27.7200044Z   BUILDX_VERSION: v0.32.1
+2026-03-25T00:24:27.7200439Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-25T00:24:27.7200943Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-25T00:24:27.7201481Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-25T00:24:27.7202090Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:27.7202674Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-25T00:24:27.7203096Z   COSIGN_VERSION: v3.0.2
+2026-03-25T00:24:27.7203479Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-25T00:24:27.7203912Z   MATRIX_SIZE_LIMIT: 20
+2026-03-25T00:24:27.7204461Z   DOCKER_METADATA_OUTPUT_VERSION: master
+2026-03-25T00:24:27.7205028Z   DOCKER_METADATA_OUTPUT_TAGS: docker/buildx-bin:master
+2026-03-25T00:24:27.7205578Z   DOCKER_METADATA_OUTPUT_TAG_NAMES: master
+2026-03-25T00:24:27.7209132Z   DOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+org.opencontainers.image.licenses=Apache-2.0
+org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+org.opencontainers.image.source=https://github.com/docker/buildx
+org.opencontainers.image.title=buildx
+org.opencontainers.image.url=https://github.com/docker/buildx
+org.opencontainers.image.version=master
+2026-03-25T00:24:27.7216539Z   DOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+manifest:org.opencontainers.image.licenses=Apache-2.0
+manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+manifest:org.opencontainers.image.source=https://github.com/docker/buildx
+manifest:org.opencontainers.image.title=buildx
+manifest:org.opencontainers.image.url=https://github.com/docker/buildx
+manifest:org.opencontainers.image.version=master
+2026-03-25T00:24:27.7228113Z   DOCKER_METADATA_OUTPUT_JSON: {"tags":["docker/buildx-bin:master"],"tag-names":["master"],"labels":{"org.opencontainers.image.created":"2026-03-25T00:24:27.663Z","org.opencontainers.image.description":"Docker CLI plugin for extended build capabilities with BuildKit","org.opencontainers.image.licenses":"Apache-2.0","org.opencontainers.image.revision":"7ac816801619a0ebf0a8e4f4151a0838a5e559e3","org.opencontainers.image.source":"https://github.com/docker/buildx","org.opencontainers.image.title":"buildx","org.opencontainers.image.url":"https://github.com/docker/buildx","org.opencontainers.image.version":"master"},"annotations":["manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z","manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit","manifest:org.opencontainers.image.licenses=Apache-2.0","manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3","manifest:org.opencontainers.image.source=https://github.com/docker/buildx","manifest:org.opencontainers.image.title=buildx","manifest:org.opencontainers.image.url=https://github.com/docker/buildx","manifest:org.opencontainers.image.version=master"]}
+2026-03-25T00:24:27.7236954Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-tags.json
+2026-03-25T00:24:27.7238605Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-labels.json
+2026-03-25T00:24:27.7240331Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-annotations.json
+2026-03-25T00:24:27.7242169Z   DOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake.json
+2026-03-25T00:24:27.7243160Z   DOCKER_LOGIN_SCOPE_DISABLED: true
+2026-03-25T00:24:27.7243566Z ##[endgroup]
+2026-03-25T00:24:27.9498508Z Logging into docker.io...
+2026-03-25T00:24:28.2542677Z Login Succeeded!
+2026-03-25T00:24:28.2718979Z ##[group]Run docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd
+2026-03-25T00:24:28.2719398Z with:
+2026-03-25T00:24:28.2719577Z   version: v0.32.1
+2026-03-25T00:24:28.2719786Z   buildkitd-flags: --debug
+2026-03-25T00:24:28.2720039Z   driver-opts: image=moby/buildkit:v0.28.0
+2026-03-25T00:24:28.2720305Z   cache-binary: false
+2026-03-25T00:24:28.2720520Z   driver: docker-container
+2026-03-25T00:24:28.2720733Z   use: true
+2026-03-25T00:24:28.2720912Z   keep-state: false
+2026-03-25T00:24:28.2721098Z   cleanup: true
+2026-03-25T00:24:28.2721278Z env:
+2026-03-25T00:24:28.2721455Z   BUILDX_VERSION: v0.32.1
+2026-03-25T00:24:28.2721688Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-25T00:24:28.2721988Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-25T00:24:28.2722309Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-25T00:24:28.2722666Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:28.2723057Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-25T00:24:28.2723318Z   COSIGN_VERSION: v3.0.2
+2026-03-25T00:24:28.2723564Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-25T00:24:28.2723821Z   MATRIX_SIZE_LIMIT: 20
+2026-03-25T00:24:28.2724048Z   DOCKER_METADATA_OUTPUT_VERSION: master
+2026-03-25T00:24:28.2724607Z   DOCKER_METADATA_OUTPUT_TAGS: docker/buildx-bin:master
+2026-03-25T00:24:28.2724931Z   DOCKER_METADATA_OUTPUT_TAG_NAMES: master
+2026-03-25T00:24:28.2726962Z   DOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+org.opencontainers.image.licenses=Apache-2.0
+org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+org.opencontainers.image.source=https://github.com/docker/buildx
+org.opencontainers.image.title=buildx
+org.opencontainers.image.url=https://github.com/docker/buildx
+org.opencontainers.image.version=master
+2026-03-25T00:24:28.2730948Z   DOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+manifest:org.opencontainers.image.licenses=Apache-2.0
+manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+manifest:org.opencontainers.image.source=https://github.com/docker/buildx
+manifest:org.opencontainers.image.title=buildx
+manifest:org.opencontainers.image.url=https://github.com/docker/buildx
+manifest:org.opencontainers.image.version=master
+2026-03-25T00:24:28.2737349Z   DOCKER_METADATA_OUTPUT_JSON: {"tags":["docker/buildx-bin:master"],"tag-names":["master"],"labels":{"org.opencontainers.image.created":"2026-03-25T00:24:27.663Z","org.opencontainers.image.description":"Docker CLI plugin for extended build capabilities with BuildKit","org.opencontainers.image.licenses":"Apache-2.0","org.opencontainers.image.revision":"7ac816801619a0ebf0a8e4f4151a0838a5e559e3","org.opencontainers.image.source":"https://github.com/docker/buildx","org.opencontainers.image.title":"buildx","org.opencontainers.image.url":"https://github.com/docker/buildx","org.opencontainers.image.version":"master"},"annotations":["manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z","manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit","manifest:org.opencontainers.image.licenses=Apache-2.0","manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3","manifest:org.opencontainers.image.source=https://github.com/docker/buildx","manifest:org.opencontainers.image.title=buildx","manifest:org.opencontainers.image.url=https://github.com/docker/buildx","manifest:org.opencontainers.image.version=master"]}
+2026-03-25T00:24:28.2742148Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-tags.json
+2026-03-25T00:24:28.2743270Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-labels.json
+2026-03-25T00:24:28.2744508Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-annotations.json
+2026-03-25T00:24:28.2745428Z   DOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake.json
+2026-03-25T00:24:28.2745969Z ##[endgroup]
+2026-03-25T00:24:28.5055797Z ##[group]Docker info
+2026-03-25T00:24:28.5092884Z [command]/usr/bin/docker version
+2026-03-25T00:24:28.5300007Z Client: Docker Engine - Community
+2026-03-25T00:24:28.5304009Z  Version:           28.0.4
+2026-03-25T00:24:28.5304840Z  API version:       1.48
+2026-03-25T00:24:28.5305243Z  Go version:        go1.23.7
+2026-03-25T00:24:28.5305637Z  Git commit:        b8034c0
+2026-03-25T00:24:28.5305932Z  Built:             Tue Mar 25 15:07:16 2025
+2026-03-25T00:24:28.5306202Z  OS/Arch:           linux/amd64
+2026-03-25T00:24:28.5306463Z  Context:           default
+2026-03-25T00:24:28.5306611Z 
+2026-03-25T00:24:28.5306710Z Server: Docker Engine - Community
+2026-03-25T00:24:28.5306963Z  Engine:
+2026-03-25T00:24:28.5307145Z   Version:          28.0.4
+2026-03-25T00:24:28.5307396Z   API version:      1.48 (minimum version 1.24)
+2026-03-25T00:24:28.5307691Z   Go version:       go1.23.7
+2026-03-25T00:24:28.5307923Z   Git commit:       6430e49
+2026-03-25T00:24:28.5308158Z   Built:            Tue Mar 25 15:07:16 2025
+2026-03-25T00:24:28.5308416Z   OS/Arch:          linux/amd64
+2026-03-25T00:24:28.5308644Z   Experimental:     false
+2026-03-25T00:24:28.5308860Z  containerd:
+2026-03-25T00:24:28.5309049Z   Version:          v2.2.1
+2026-03-25T00:24:28.5309372Z   GitCommit:        dea7da592f5d1d2b7755e3a161be07f43fad8f75
+2026-03-25T00:24:28.5309679Z  runc:
+2026-03-25T00:24:28.5309858Z   Version:          1.3.4
+2026-03-25T00:24:28.5310422Z   GitCommit:        v1.3.4-0-gd6d73eb8
+2026-03-25T00:24:28.5310841Z  docker-init:
+2026-03-25T00:24:28.5311179Z   Version:          0.19.0
+2026-03-25T00:24:28.5311552Z   GitCommit:        de40ad0
+2026-03-25T00:24:28.5350858Z [command]/usr/bin/docker info
+2026-03-25T00:24:28.7872604Z Client: Docker Engine - Community
+2026-03-25T00:24:28.7873146Z  Version:    28.0.4
+2026-03-25T00:24:28.7873532Z  Context:    default
+2026-03-25T00:24:28.7873913Z  Debug Mode: false
+2026-03-25T00:24:28.7874722Z  Plugins:
+2026-03-25T00:24:28.7875111Z   buildx: Docker Buildx (Docker Inc.)
+2026-03-25T00:24:28.7875587Z     Version:  v0.32.1
+2026-03-25T00:24:28.7876107Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-03-25T00:24:28.7876732Z   compose: Docker Compose (Docker Inc.)
+2026-03-25T00:24:28.7877229Z     Version:  v2.38.2
+2026-03-25T00:24:28.7877719Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-03-25T00:24:28.7878180Z 
+2026-03-25T00:24:28.7878819Z Server:
+2026-03-25T00:24:28.7879188Z  Containers: 0
+2026-03-25T00:24:28.7879552Z   Running: 0
+2026-03-25T00:24:28.7879918Z   Paused: 0
+2026-03-25T00:24:28.7880372Z   Stopped: 0
+2026-03-25T00:24:28.7880705Z  Images: 6
+2026-03-25T00:24:28.7881038Z  Server Version: 28.0.4
+2026-03-25T00:24:28.7881452Z  Storage Driver: overlay2
+2026-03-25T00:24:28.7881868Z   Backing Filesystem: extfs
+2026-03-25T00:24:28.7882282Z   Supports d_type: true
+2026-03-25T00:24:28.7882678Z   Using metacopy: false
+2026-03-25T00:24:28.7883079Z   Native Overlay Diff: false
+2026-03-25T00:24:28.7883511Z   userxattr: false
+2026-03-25T00:24:28.7883884Z  Logging Driver: json-file
+2026-03-25T00:24:28.7884812Z  Cgroup Driver: systemd
+2026-03-25T00:24:28.7885203Z  Cgroup Version: 2
+2026-03-25T00:24:28.7885540Z  Plugins:
+2026-03-25T00:24:28.7885838Z   Volume: local
+2026-03-25T00:24:28.7886259Z   Network: bridge host ipvlan macvlan null overlay
+2026-03-25T00:24:28.7886999Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-03-25T00:24:28.7887657Z  Swarm: inactive
+2026-03-25T00:24:28.7888101Z  Runtimes: io.containerd.runc.v2 runc
+2026-03-25T00:24:28.7888554Z  Default Runtime: runc
+2026-03-25T00:24:28.7889487Z  Init Binary: docker-init
+2026-03-25T00:24:28.7890032Z  containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75
+2026-03-25T00:24:28.7890659Z  runc version: v1.3.4-0-gd6d73eb8
+2026-03-25T00:24:28.7891096Z  init version: de40ad0
+2026-03-25T00:24:28.7891470Z  Security Options:
+2026-03-25T00:24:28.7891800Z   apparmor
+2026-03-25T00:24:28.7892143Z   seccomp
+2026-03-25T00:24:28.7892442Z    Profile: builtin
+2026-03-25T00:24:28.7892762Z   cgroupns
+2026-03-25T00:24:28.7893076Z  Kernel Version: 6.14.0-1017-azure
+2026-03-25T00:24:28.7893530Z  Operating System: Ubuntu 24.04.3 LTS
+2026-03-25T00:24:28.7893980Z  OSType: linux
+2026-03-25T00:24:28.7894511Z  Architecture: x86_64
+2026-03-25T00:24:28.7894863Z  CPUs: 4
+2026-03-25T00:24:28.7895178Z  Total Memory: 15.62GiB
+2026-03-25T00:24:28.7895556Z  Name: runnervm46oaq
+2026-03-25T00:24:28.7895950Z  ID: d09189cb-1d3f-4984-a57a-14f8dab86177
+2026-03-25T00:24:28.7896425Z  Docker Root Dir: /var/lib/docker
+2026-03-25T00:24:28.7896845Z  Debug Mode: false
+2026-03-25T00:24:28.7897212Z  Username: dockerpublicbot
+2026-03-25T00:24:28.7897612Z  Experimental: false
+2026-03-25T00:24:28.7897969Z  Insecure Registries:
+2026-03-25T00:24:28.7902376Z   ::1/128
+2026-03-25T00:24:28.7902697Z   127.0.0.0/8
+2026-03-25T00:24:28.7903042Z  Live Restore Enabled: false
+2026-03-25T00:24:28.7903347Z 
+2026-03-25T00:24:28.7903958Z ##[endgroup]
+2026-03-25T00:24:28.8733393Z ##[group]Download buildx from GitHub Releases
+2026-03-25T00:24:28.9290513Z Use 0.32.1 version spec cache key for v0.32.1
+2026-03-25T00:24:28.9309336Z GitHub Actions cache disabled
+2026-03-25T00:24:28.9310459Z Downloading https://github.com/docker/buildx/releases/download/v0.32.1/buildx-v0.32.1.linux-amd64
+2026-03-25T00:24:29.6582244Z Copying /home/runner/work/_temp/ce2270e8-56d7-4c77-82d0-53e4d0bed68b to /home/runner/.docker/buildx/.bin/0.32.1/linux-x64/docker-buildx
+2026-03-25T00:24:29.8200475Z Cached to /home/runner/.docker/buildx/.bin/0.32.1/linux-x64/docker-buildx
+2026-03-25T00:24:29.8201628Z ##[endgroup]
+2026-03-25T00:24:29.8202520Z ##[group]Install buildx
+2026-03-25T00:24:29.8204955Z Docker plugin mode
+2026-03-25T00:24:30.0278036Z Fixing perms
+2026-03-25T00:24:30.0279275Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-03-25T00:24:30.0280736Z ##[endgroup]
+2026-03-25T00:24:30.0281604Z ##[group]Buildx version
+2026-03-25T00:24:30.0305625Z [command]/usr/bin/docker buildx version
+2026-03-25T00:24:30.0891196Z github.com/docker/buildx v0.32.1 d3bfb3f4e48a67dda56e957a6636f4fab6c5fcb2
+2026-03-25T00:24:30.0947931Z ##[endgroup]
+2026-03-25T00:24:30.1101823Z ##[group]Inspecting default docker context
+2026-03-25T00:24:30.1257419Z [
+2026-03-25T00:24:30.1257690Z   {
+2026-03-25T00:24:30.1257878Z     "Name": "default",
+2026-03-25T00:24:30.1258133Z     "Metadata": {},
+2026-03-25T00:24:30.1258349Z     "Endpoints": {
+2026-03-25T00:24:30.1258559Z       "docker": {
+2026-03-25T00:24:30.1258793Z         "Host": "unix:///var/run/docker.sock",
+2026-03-25T00:24:30.1259101Z         "SkipTLSVerify": false
+2026-03-25T00:24:30.1259366Z       }
+2026-03-25T00:24:30.1259541Z     },
+2026-03-25T00:24:30.1259714Z     "TLSMaterial": {},
+2026-03-25T00:24:30.1259925Z     "Storage": {
+2026-03-25T00:24:30.1260127Z       "MetadataPath": "<IN MEMORY>",
+2026-03-25T00:24:30.1260556Z       "TLSPath": "<IN MEMORY>"
+2026-03-25T00:24:30.1260851Z     }
+2026-03-25T00:24:30.1261013Z   }
+2026-03-25T00:24:30.1261172Z ]
+2026-03-25T00:24:30.1261671Z ##[endgroup]
+2026-03-25T00:24:30.1262078Z ##[group]Creating a new builder instance
+2026-03-25T00:24:30.2554479Z [command]/usr/bin/docker buildx create --name builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d --driver docker-container --driver-opt image=moby/buildkit:v0.28.0 --buildkitd-flags --debug --use
+2026-03-25T00:24:30.3207174Z builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d
+2026-03-25T00:24:30.3242786Z ##[endgroup]
+2026-03-25T00:24:30.3243420Z ##[group]Booting builder
+2026-03-25T00:24:30.3280179Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d
+2026-03-25T00:24:30.3868326Z #1 [internal] booting buildkit
+2026-03-25T00:24:30.5374928Z #1 pulling image moby/buildkit:v0.28.0
+2026-03-25T00:24:33.8527731Z #1 pulling image moby/buildkit:v0.28.0 3.5s done
+2026-03-25T00:24:34.0045968Z #1 creating container buildx_buildkit_builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d0
+2026-03-25T00:24:34.0964172Z #1 creating container buildx_buildkit_builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d0 0.2s done
+2026-03-25T00:24:34.0977534Z #1 DONE 3.7s
+2026-03-25T00:24:34.1269442Z Name:          builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d
+2026-03-25T00:24:34.1270108Z Driver:        docker-container
+2026-03-25T00:24:34.1270540Z Last Activity: 2026-03-25 00:24:30 +0000 UTC
+2026-03-25T00:24:34.1270894Z 
+2026-03-25T00:24:34.1271019Z Nodes:
+2026-03-25T00:24:34.1271446Z Name:                  builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d0
+2026-03-25T00:24:34.1274831Z Endpoint:              unix:///var/run/docker.sock
+2026-03-25T00:24:34.1275492Z Driver Options:        image="moby/buildkit:v0.28.0"
+2026-03-25T00:24:34.1276041Z Status:                running
+2026-03-25T00:24:34.1276631Z BuildKit daemon flags: --debug --allow-insecure-entitlement=network.host
+2026-03-25T00:24:34.1277280Z BuildKit version:      v0.28.0
+2026-03-25T00:24:34.1277823Z Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
+2026-03-25T00:24:34.1278403Z Labels:
+2026-03-25T00:24:34.1278814Z  org.mobyproject.buildkit.worker.executor:         oci
+2026-03-25T00:24:34.1279507Z  org.mobyproject.buildkit.worker.hostname:         6b17f826849e
+2026-03-25T00:24:34.1280210Z  org.mobyproject.buildkit.worker.network:          host
+2026-03-25T00:24:34.1280890Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2026-03-25T00:24:34.1281595Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2026-03-25T00:24:34.1282292Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2026-03-25T00:24:34.1282881Z GC Policy rule#0:
+2026-03-25T00:24:34.1283203Z  All:            false
+2026-03-25T00:24:34.1283776Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2026-03-25T00:24:34.1284593Z  Keep Duration:  48h0m0s
+2026-03-25T00:24:34.1284954Z  Max Used Space: 488.3MiB
+2026-03-25T00:24:34.1285306Z GC Policy rule#1:
+2026-03-25T00:24:34.1285630Z  All:            false
+2026-03-25T00:24:34.1285964Z  Keep Duration:  1440h0m0s
+2026-03-25T00:24:34.1286331Z  Reserved Space: 9.313GiB
+2026-03-25T00:24:34.1286681Z  Max Used Space: 93.13GiB
+2026-03-25T00:24:34.1287083Z  Min Free Space: 27.01GiB
+2026-03-25T00:24:34.1287436Z GC Policy rule#2:
+2026-03-25T00:24:34.1287754Z  All:            false
+2026-03-25T00:24:34.1288094Z  Reserved Space: 9.313GiB
+2026-03-25T00:24:34.1288462Z  Max Used Space: 93.13GiB
+2026-03-25T00:24:34.1288818Z  Min Free Space: 27.01GiB
+2026-03-25T00:24:34.1289162Z GC Policy rule#3:
+2026-03-25T00:24:34.1289474Z  All:            true
+2026-03-25T00:24:34.1289806Z  Reserved Space: 9.313GiB
+2026-03-25T00:24:34.1290158Z  Max Used Space: 93.13GiB
+2026-03-25T00:24:34.1290512Z  Min Free Space: 27.01GiB
+2026-03-25T00:24:34.1329478Z ##[endgroup]
+2026-03-25T00:24:34.2293897Z ##[group]Inspect builder
+2026-03-25T00:24:34.2296386Z {
+2026-03-25T00:24:34.2296700Z   "nodes": [
+2026-03-25T00:24:34.2297012Z     {
+2026-03-25T00:24:34.2297469Z       "name": "builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d0",
+2026-03-25T00:24:34.2298109Z       "endpoint": "unix:///var/run/docker.sock",
+2026-03-25T00:24:34.2298614Z       "driver-opts": [
+2026-03-25T00:24:34.2299026Z         "image=moby/buildkit:v0.28.0"
+2026-03-25T00:24:34.2299480Z       ],
+2026-03-25T00:24:34.2299796Z       "status": "running",
+2026-03-25T00:24:34.2300425Z       "buildkitd-flags": "--debug --allow-insecure-entitlement=network.host",
+2026-03-25T00:24:34.2301121Z       "buildkit": "v0.28.0",
+2026-03-25T00:24:34.2301689Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386",
+2026-03-25T00:24:34.2302303Z       "features": {
+2026-03-25T00:24:34.2302818Z         "Automatically load images to the Docker Engine image store": true,
+2026-03-25T00:24:34.2304004Z         "Cache export": true,
+2026-03-25T00:24:34.2304606Z         "Direct push": true,
+2026-03-25T00:24:34.2304966Z         "Docker exporter": true,
+2026-03-25T00:24:34.2305353Z         "Multi-platform build": true,
+2026-03-25T00:24:34.2305752Z         "OCI exporter": true
+2026-03-25T00:24:34.2306106Z       },
+2026-03-25T00:24:34.2306365Z       "labels": {
+2026-03-25T00:24:34.2306772Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2026-03-25T00:24:34.2307368Z         "org.mobyproject.buildkit.worker.hostname": "6b17f826849e",
+2026-03-25T00:24:34.2307820Z         "org.mobyproject.buildkit.worker.network": "host",
+2026-03-25T00:24:34.2308248Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2026-03-25T00:24:34.2308710Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2026-03-25T00:24:34.2309136Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2026-03-25T00:24:34.2309484Z       },
+2026-03-25T00:24:34.2309656Z       "gcPolicy": [
+2026-03-25T00:24:34.2309857Z         {
+2026-03-25T00:24:34.2310029Z           "all": false,
+2026-03-25T00:24:34.2310228Z           "filter": [
+2026-03-25T00:24:34.2310458Z             "type==source.local",
+2026-03-25T00:24:34.2310706Z             "type==exec.cachemount",
+2026-03-25T00:24:34.2310968Z             "type==source.git.checkout"
+2026-03-25T00:24:34.2311204Z           ],
+2026-03-25T00:24:34.2311390Z           "keepDuration": "48h0m0s",
+2026-03-25T00:24:34.2311624Z           "maxUsedSpace": "488.3MiB"
+2026-03-25T00:24:34.2311846Z         },
+2026-03-25T00:24:34.2312009Z         {
+2026-03-25T00:24:34.2312176Z           "all": false,
+2026-03-25T00:24:34.2312415Z           "keepDuration": "1440h0m0s",
+2026-03-25T00:24:34.2312689Z           "reservedSpace": "9.313GiB",
+2026-03-25T00:24:34.2312955Z           "maxUsedSpace": "93.13GiB",
+2026-03-25T00:24:34.2313212Z           "minFreeSpace": "27.01GiB"
+2026-03-25T00:24:34.2313436Z         },
+2026-03-25T00:24:34.2313599Z         {
+2026-03-25T00:24:34.2313774Z           "all": false,
+2026-03-25T00:24:34.2313982Z           "reservedSpace": "9.313GiB",
+2026-03-25T00:24:34.2315030Z           "maxUsedSpace": "93.13GiB",
+2026-03-25T00:24:34.2315393Z           "minFreeSpace": "27.01GiB"
+2026-03-25T00:24:34.2315670Z         },
+2026-03-25T00:24:34.2315827Z         {
+2026-03-25T00:24:34.2316013Z           "all": true,
+2026-03-25T00:24:34.2316249Z           "reservedSpace": "9.313GiB",
+2026-03-25T00:24:34.2316545Z           "maxUsedSpace": "93.13GiB",
+2026-03-25T00:24:34.2316807Z           "minFreeSpace": "27.01GiB"
+2026-03-25T00:24:34.2317047Z         }
+2026-03-25T00:24:34.2317223Z       ]
+2026-03-25T00:24:34.2317381Z     }
+2026-03-25T00:24:34.2317554Z   ],
+2026-03-25T00:24:34.2317801Z   "name": "builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d",
+2026-03-25T00:24:34.2318134Z   "driver": "docker-container",
+2026-03-25T00:24:34.2318405Z   "lastActivity": "2026-03-25T00:24:30.000Z"
+2026-03-25T00:24:34.2318669Z }
+2026-03-25T00:24:34.2319091Z ##[endgroup]
+2026-03-25T00:24:34.2319450Z ##[group]BuildKit version
+2026-03-25T00:24:34.2319775Z builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d0: v0.28.0
+2026-03-25T00:24:34.2320253Z ##[endgroup]
+2026-03-25T00:24:34.2499093Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-03-25T00:24:34.2499496Z with:
+2026-03-25T00:24:34.2503241Z   script: const { ImageTools } = require('@docker/actions-toolkit/lib/buildx/imagetools');
+
+const inpPush = core.getBooleanInput('push');
+const inpImageNames = core.getMultilineInput('image-names');
+const inpTagNames = core.getMultilineInput('tag-names');
+const inpBuildOutputs = JSON.parse(core.getInput('build-outputs'));
+
+const digests = [];
+for (const key of Object.keys(inpBuildOutputs)) {
+  const output = JSON.parse(inpBuildOutputs[key]);
+  if (output.imageDigest) {
+    digests.push(output.imageDigest);
+  }
+}
+if (digests.length === 0) {
+  core.setFailed('No image digests found from build outputs');
+  return;
+}
+
+let digest;
+for (const imageName of inpImageNames) {
+  const tags = [];
+  for (const tag of inpTagNames) {
+    tags.push(`${imageName}:${tag}`);
+  }
+  const result = await new ImageTools().create({
+    sources: digests,
+    tags: tags,
+    skipExec: !inpPush
+  });
+  if (inpPush) {
+    if (!result.digest) {
+      core.setFailed('Failed to create manifest, no digest returned');
+      return;
+    }
+    digest = result.digest;
+    core.info(`Manifest created: ${imageName}@${result.digest}`);
+  }
+}
+if (digest) {
+  core.setOutput('digest', digest);
+}
+
+2026-03-25T00:24:34.2508033Z   github-token: ***
+2026-03-25T00:24:34.2508253Z   debug: false
+2026-03-25T00:24:34.2508462Z   user-agent: actions/github-script
+2026-03-25T00:24:34.2508720Z   result-encoding: json
+2026-03-25T00:24:34.2508924Z   retries: 0
+2026-03-25T00:24:34.2509143Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-03-25T00:24:34.2509417Z env:
+2026-03-25T00:24:34.2509593Z   BUILDX_VERSION: v0.32.1
+2026-03-25T00:24:34.2509828Z   BUILDKIT_IMAGE: moby/buildkit:v0.28.0
+2026-03-25T00:24:34.2510123Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.10.0
+2026-03-25T00:24:34.2510449Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-03-25T00:24:34.2510808Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.83.0
+2026-03-25T00:24:34.2511155Z   HANDLEBARS_MODULE: handlebars@4.7.8
+2026-03-25T00:24:34.2511409Z   COSIGN_VERSION: v3.0.2
+2026-03-25T00:24:34.2511713Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-03-25T00:24:34.2511968Z   MATRIX_SIZE_LIMIT: 20
+2026-03-25T00:24:34.2512194Z   DOCKER_METADATA_OUTPUT_VERSION: master
+2026-03-25T00:24:34.2512497Z   DOCKER_METADATA_OUTPUT_TAGS: docker/buildx-bin:master
+2026-03-25T00:24:34.2512816Z   DOCKER_METADATA_OUTPUT_TAG_NAMES: master
+2026-03-25T00:24:34.2515094Z   DOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+org.opencontainers.image.licenses=Apache-2.0
+org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+org.opencontainers.image.source=https://github.com/docker/buildx
+org.opencontainers.image.title=buildx
+org.opencontainers.image.url=https://github.com/docker/buildx
+org.opencontainers.image.version=master
+2026-03-25T00:24:34.2519052Z   DOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z
+manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit
+manifest:org.opencontainers.image.licenses=Apache-2.0
+manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3
+manifest:org.opencontainers.image.source=https://github.com/docker/buildx
+manifest:org.opencontainers.image.title=buildx
+manifest:org.opencontainers.image.url=https://github.com/docker/buildx
+manifest:org.opencontainers.image.version=master
+2026-03-25T00:24:34.2525569Z   DOCKER_METADATA_OUTPUT_JSON: {"tags":["docker/buildx-bin:master"],"tag-names":["master"],"labels":{"org.opencontainers.image.created":"2026-03-25T00:24:27.663Z","org.opencontainers.image.description":"Docker CLI plugin for extended build capabilities with BuildKit","org.opencontainers.image.licenses":"Apache-2.0","org.opencontainers.image.revision":"7ac816801619a0ebf0a8e4f4151a0838a5e559e3","org.opencontainers.image.source":"https://github.com/docker/buildx","org.opencontainers.image.title":"buildx","org.opencontainers.image.url":"https://github.com/docker/buildx","org.opencontainers.image.version":"master"},"annotations":["manifest:org.opencontainers.image.created=2026-03-25T00:24:27.663Z","manifest:org.opencontainers.image.description=Docker CLI plugin for extended build capabilities with BuildKit","manifest:org.opencontainers.image.licenses=Apache-2.0","manifest:org.opencontainers.image.revision=7ac816801619a0ebf0a8e4f4151a0838a5e559e3","manifest:org.opencontainers.image.source=https://github.com/docker/buildx","manifest:org.opencontainers.image.title=buildx","manifest:org.opencontainers.image.url=https://github.com/docker/buildx","manifest:org.opencontainers.image.version=master"]}
+2026-03-25T00:24:34.2530546Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-tags.json
+2026-03-25T00:24:34.2531471Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-labels.json
+2026-03-25T00:24:34.2532470Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake-annotations.json
+2026-03-25T00:24:34.2533396Z   DOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-b5FFqF/docker-metadata-action-bake.json
+2026-03-25T00:24:34.2533936Z   INPUT_PUSH: true
+2026-03-25T00:24:34.2534156Z   INPUT_IMAGE-NAMES: docker/buildx-bin
+
+2026-03-25T00:24:34.2534523Z   INPUT_TAG-NAMES: master
+2026-03-25T00:24:34.2563912Z   INPUT_BUILD-OUTPUTS: {
+  "result_5": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:f06d1b6231aca6369e82e8b989e0de578e2a62c40b945fb0bacbf44531711e05\",\"imageDigest\":\"sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983\",\"artifactName\":\"\",\"signed\":true}",
+  "result_14": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:03ea07e856f7e0da126328cf20b94376305fd19b9d206e79d8ce9ff6a5b627e8\",\"imageDigest\":\"sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e\",\"artifactName\":\"\",\"signed\":true}",
+  "result_13": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:f5ac9480f15a92523a785a6cbed0bda4955a5b93fb1a57278c9e8c855f4c440e\",\"imageDigest\":\"sha256:908344bd9b6e40a6b11dbd37cf91a457d8857ba39d71490acf67bb43e4d8bd52\",\"artifactName\":\"\",\"signed\":true}",
+  "result_1": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:399ebb4ed85c3d9687e828c016365dd4b8e2a538ece44299309a40663d38e129\",\"imageDigest\":\"sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710\",\"artifactName\":\"\",\"signed\":true}",
+  "result_11": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:55f99e0cbc3ccd48f44a41701ce844a16ec09bebc758643f6602a17dad121fe1\",\"imageDigest\":\"sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028\",\"artifactName\":\"\",\"signed\":true}",
+  "result_9": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:95f2378428880f326aca0db8df4ea4f71dc6258affe69097fea304525147c92b\",\"imageDigest\":\"sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438\",\"artifactName\":\"\",\"signed\":true}",
+  "result_3": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:c4c8d5924a0c9723c6fdb421f6449b2632bd17dbd0f7a3b8f2f023d926a1e721\",\"imageDigest\":\"sha256:310b2d9d7a0500ac34739c95c99ae875f58811af7da09f9699de87074ac8df74\",\"artifactName\":\"\",\"signed\":true}",
+  "result_2": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:d1893fdf3542bcfb62e636cd686f32c95b5fd13fbdd3073398d3430f8a61443a\",\"imageDigest\":\"sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598\",\"artifactName\":\"\",\"signed\":true}",
+  "result_15": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:951e9745b2e4d0b3beefc0883b38da27b9b9a56f053529c00a9b04250ae25b01\",\"imageDigest\":\"sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa\",\"artifactName\":\"\",\"signed\":true}",
+  "result_16": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:0b2d697c114b36f73f436c0a5f298b11ba19242df5b337bef704efa3f02657d3\",\"imageDigest\":\"sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e\",\"artifactName\":\"\",\"signed\":true}",
+  "result_4": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11\",\"imageDigest\":\"sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1\",\"artifactName\":\"\",\"signed\":true}",
+  "result_6": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:7a7b392212b1ec593751d6a6202356973bf8dae68f4963a7e7cad9758abd09a6\",\"imageDigest\":\"sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb\",\"artifactName\":\"\",\"signed\":true}",
+  "result_10": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:354cea0c5f09972c08eeaa8b4c0c191d691bb8ec02ec182978248b1a5ef454a1\",\"imageDigest\":\"sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1\",\"artifactName\":\"\",\"signed\":true}",
+  "result_12": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:6871f94d5c8d5d14902aeabd0a7521a53e209add48a3a64fa9d22fbb9623de49\",\"imageDigest\":\"sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6\",\"artifactName\":\"\",\"signed\":true}",
+  "result_0": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:c4a8b9499959b36f10982b25f131f15ac9feed82ab8cae05100276a7ae6e8076\",\"imageDigest\":\"sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108\",\"artifactName\":\"\",\"signed\":true}",
+  "result_8": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:9dfaa361bdd05c4125484b2aeacb45d37a450bf29348c861591448793feebbd7\",\"imageDigest\":\"sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8\",\"artifactName\":\"\",\"signed\":true}",
+  "result_7": "{\"verifyCommands\":\"cosign verify --experimental-oci11 --new-bundle-format --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp ^https://github.com/docker/github-builder/.github/workflows/bake.yml.*$ docker/buildx-bin@sha256:abde1b03119fc30458fc0fa2c06cd18bcae62c19e62582bf30fc5e5a2d339e41\",\"imageDigest\":\"sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb\",\"artifactName\":\"\",\"signed\":true}"
+}
+2026-03-25T00:24:34.2593633Z ##[endgroup]
+2026-03-25T00:24:34.6173002Z [command]/usr/bin/docker buildx imagetools create --tag docker/buildx-bin:master --metadata-file /home/runner/work/_temp/docker-actions-toolkit-izxpAn/imagetools-metadata-5acbYE sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e sha256:908344bd9b6e40a6b11dbd37cf91a457d8857ba39d71490acf67bb43e4d8bd52 sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438 sha256:310b2d9d7a0500ac34739c95c99ae875f58811af7da09f9699de87074ac8df74 sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb
+2026-03-25T00:24:35.0729635Z #1 [internal] pushing docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2265093Z #1 0.000 copying sha256:088473c7aa42b539d9c5359a7076b69c7b8f62f30bb3d61e62f27c2d6e601086 from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2267642Z #1 0.000 copying sha256:2b224f04dce928cc811831d6fa92aced501c44256af5c4fc647b6a40c8e75dea from docker.io/docker/buildx-bin@sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2269794Z #1 0.000 copying sha256:354cea0c5f09972c08eeaa8b4c0c191d691bb8ec02ec182978248b1a5ef454a1 from docker.io/docker/buildx-bin@sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2271621Z #1 0.000 copying sha256:5883a9e437277f4923c29030ac94beadc6af4f868a8556a9e8c7b14dc7b6148e from docker.io/docker/buildx-bin@sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2273438Z #1 0.000 copying sha256:6871f94d5c8d5d14902aeabd0a7521a53e209add48a3a64fa9d22fbb9623de49 from docker.io/docker/buildx-bin@sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2275348Z #1 0.000 copying sha256:5085153b419d11790f5146409cf572504f44b180076b099114fb7642819ed9e4 from docker.io/docker/buildx-bin@sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2277031Z #1 0.000 copying sha256:c4a8b9499959b36f10982b25f131f15ac9feed82ab8cae05100276a7ae6e8076 from docker.io/docker/buildx-bin@sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2278555Z #1 0.000 copying sha256:5e14a03beeacd6b7a1029665d7264aac59edbf76170ed70de840be375accf8fe from docker.io/docker/buildx-bin@sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2280100Z #1 0.001 copying sha256:abde1b03119fc30458fc0fa2c06cd18bcae62c19e62582bf30fc5e5a2d339e41 from docker.io/docker/buildx-bin@sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2281623Z #1 0.001 copying sha256:9dfaa361bdd05c4125484b2aeacb45d37a450bf29348c861591448793feebbd7 from docker.io/docker/buildx-bin@sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2283145Z #1 0.001 copying sha256:ca17cb60354ddd63a3d24233252dc9e833c0c5f5d02939f0d087c73b66715715 from docker.io/docker/buildx-bin@sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2284787Z #1 0.001 copying sha256:36a388db8428c4716c5665ffffcfdfbf6bae9e80e9cb2914f046805edbedd459 from docker.io/docker/buildx-bin@sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2286313Z #1 0.001 copying sha256:dbfb54786d19c6985a4e34f3e98830b302f5b85bed2e1e21ee13df5138bd2132 from docker.io/docker/buildx-bin@sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2287816Z #1 0.001 copying sha256:f06d1b6231aca6369e82e8b989e0de578e2a62c40b945fb0bacbf44531711e05 from docker.io/docker/buildx-bin@sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2289325Z #1 0.001 copying sha256:88340f3b012768968cdd2a76c7a9e1f7b29385c2870a658a4885f46cf0cb3e4b from docker.io/docker/buildx-bin@sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2290825Z #1 0.001 copying sha256:55f99e0cbc3ccd48f44a41701ce844a16ec09bebc758643f6602a17dad121fe1 from docker.io/docker/buildx-bin@sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2292335Z #1 0.001 copying sha256:03ea07e856f7e0da126328cf20b94376305fd19b9d206e79d8ce9ff6a5b627e8 from docker.io/docker/buildx-bin@sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2293840Z #1 0.001 copying sha256:88211b3391da4d02c6d5b0401a4f57e6c0bc613407238762d552da0019018ee1 from docker.io/docker/buildx-bin@sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2295581Z #1 0.001 copying sha256:7b7e399adb77dd101aeef16b3cc4a3c0238bc5fb6024b19f57dfbcde4f68de25 from docker.io/docker/buildx-bin@sha256:908344bd9b6e40a6b11dbd37cf91a457d8857ba39d71490acf67bb43e4d8bd52 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2297108Z #1 0.001 copying sha256:95f2378428880f326aca0db8df4ea4f71dc6258affe69097fea304525147c92b from docker.io/docker/buildx-bin@sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2298644Z #1 0.001 copying sha256:f5ac9480f15a92523a785a6cbed0bda4955a5b93fb1a57278c9e8c855f4c440e from docker.io/docker/buildx-bin@sha256:908344bd9b6e40a6b11dbd37cf91a457d8857ba39d71490acf67bb43e4d8bd52 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2300162Z #1 0.001 copying sha256:779fda2954de421b3cf34a3ad045463c34510abf019623fcac13d645084ad8f3 from docker.io/docker/buildx-bin@sha256:310b2d9d7a0500ac34739c95c99ae875f58811af7da09f9699de87074ac8df74 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2301688Z #1 0.001 copying sha256:66f016f9cabd3327d8a2d5b574a953cc25b91c765f745f40aae04bc082f00051 from docker.io/docker/buildx-bin@sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2303323Z #1 0.001 copying sha256:c4c8d5924a0c9723c6fdb421f6449b2632bd17dbd0f7a3b8f2f023d926a1e721 from docker.io/docker/buildx-bin@sha256:310b2d9d7a0500ac34739c95c99ae875f58811af7da09f9699de87074ac8df74 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2304951Z #1 0.001 copying sha256:399ebb4ed85c3d9687e828c016365dd4b8e2a538ece44299309a40663d38e129 from docker.io/docker/buildx-bin@sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2306523Z #1 0.001 copying sha256:7a7b392212b1ec593751d6a6202356973bf8dae68f4963a7e7cad9758abd09a6 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2308045Z #1 0.001 copying sha256:99c7aff18be392e5366255e638ae1928735d1f0cdbe967fae3e825e35b2db68e from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2309560Z #1 0.001 copying sha256:d1893fdf3542bcfb62e636cd686f32c95b5fd13fbdd3073398d3430f8a61443a from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2311074Z #1 0.001 copying sha256:84744046fa7b88cf1a27140f1561c8fbeffbde6301cebf6093f47d4bb95bd3bc from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2312599Z #1 0.001 copying sha256:951e9745b2e4d0b3beefc0883b38da27b9b9a56f053529c00a9b04250ae25b01 from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2314118Z #1 0.001 copying sha256:879a26de6e04886c5bc15180e23ac55d59b0858c9b3905d10860c9b901ed7963 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2315749Z #1 0.001 copying sha256:0b2d697c114b36f73f436c0a5f298b11ba19242df5b337bef704efa3f02657d3 from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2317263Z #1 0.001 copying sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:35.2318785Z #1 0.001 copying sha256:38fd5cdd2b286969fdbd2f2d6941f6efa2ac45b1de32db5f2385085cded07e41 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1573063Z #1 ERROR: httpReadSeeker: failed open: unexpected status from GET request to https://registry-1.docker.io/v2/docker/buildx-bin/manifests/sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11: 502 Bad Gateway
+2026-03-25T00:24:36.1574657Z ------
+2026-03-25T00:24:36.1574949Z  > [internal] pushing docker.io/docker/buildx-bin:
+2026-03-25T00:24:36.1576155Z 0.001 copying sha256:399ebb4ed85c3d9687e828c016365dd4b8e2a538ece44299309a40663d38e129 from docker.io/docker/buildx-bin@sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1578148Z 0.001 copying sha256:7a7b392212b1ec593751d6a6202356973bf8dae68f4963a7e7cad9758abd09a6 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1580122Z 0.001 copying sha256:99c7aff18be392e5366255e638ae1928735d1f0cdbe967fae3e825e35b2db68e from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1582046Z 0.001 copying sha256:d1893fdf3542bcfb62e636cd686f32c95b5fd13fbdd3073398d3430f8a61443a from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1583604Z 0.001 copying sha256:84744046fa7b88cf1a27140f1561c8fbeffbde6301cebf6093f47d4bb95bd3bc from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1585387Z 0.001 copying sha256:951e9745b2e4d0b3beefc0883b38da27b9b9a56f053529c00a9b04250ae25b01 from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1586895Z 0.001 copying sha256:879a26de6e04886c5bc15180e23ac55d59b0858c9b3905d10860c9b901ed7963 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1588396Z 0.001 copying sha256:0b2d697c114b36f73f436c0a5f298b11ba19242df5b337bef704efa3f02657d3 from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1589936Z 0.001 copying sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1591472Z 0.001 copying sha256:38fd5cdd2b286969fdbd2f2d6941f6efa2ac45b1de32db5f2385085cded07e41 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1592359Z ------
+2026-03-25T00:24:36.1593375Z ERROR: httpReadSeeker: failed open: unexpected status from GET request to https://registry-1.docker.io/v2/docker/buildx-bin/manifests/sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11: 502 Bad Gateway
+2026-03-25T00:24:36.1649956Z Error: #1 [internal] pushing docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1651481Z #1 0.000 copying sha256:088473c7aa42b539d9c5359a7076b69c7b8f62f30bb3d61e62f27c2d6e601086 from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1653354Z #1 0.000 copying sha256:2b224f04dce928cc811831d6fa92aced501c44256af5c4fc647b6a40c8e75dea from docker.io/docker/buildx-bin@sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1655361Z #1 0.000 copying sha256:354cea0c5f09972c08eeaa8b4c0c191d691bb8ec02ec182978248b1a5ef454a1 from docker.io/docker/buildx-bin@sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1656934Z #1 0.000 copying sha256:5883a9e437277f4923c29030ac94beadc6af4f868a8556a9e8c7b14dc7b6148e from docker.io/docker/buildx-bin@sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1658692Z #1 0.000 copying sha256:6871f94d5c8d5d14902aeabd0a7521a53e209add48a3a64fa9d22fbb9623de49 from docker.io/docker/buildx-bin@sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1660212Z #1 0.000 copying sha256:5085153b419d11790f5146409cf572504f44b180076b099114fb7642819ed9e4 from docker.io/docker/buildx-bin@sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1661696Z #1 0.000 copying sha256:c4a8b9499959b36f10982b25f131f15ac9feed82ab8cae05100276a7ae6e8076 from docker.io/docker/buildx-bin@sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1663267Z #1 0.000 copying sha256:5e14a03beeacd6b7a1029665d7264aac59edbf76170ed70de840be375accf8fe from docker.io/docker/buildx-bin@sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1665313Z #1 0.001 copying sha256:abde1b03119fc30458fc0fa2c06cd18bcae62c19e62582bf30fc5e5a2d339e41 from docker.io/docker/buildx-bin@sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1666842Z #1 0.001 copying sha256:9dfaa361bdd05c4125484b2aeacb45d37a450bf29348c861591448793feebbd7 from docker.io/docker/buildx-bin@sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1668452Z #1 0.001 copying sha256:ca17cb60354ddd63a3d24233252dc9e833c0c5f5d02939f0d087c73b66715715 from docker.io/docker/buildx-bin@sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1669976Z #1 0.001 copying sha256:36a388db8428c4716c5665ffffcfdfbf6bae9e80e9cb2914f046805edbedd459 from docker.io/docker/buildx-bin@sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1671618Z #1 0.001 copying sha256:dbfb54786d19c6985a4e34f3e98830b302f5b85bed2e1e21ee13df5138bd2132 from docker.io/docker/buildx-bin@sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1673267Z #1 0.001 copying sha256:f06d1b6231aca6369e82e8b989e0de578e2a62c40b945fb0bacbf44531711e05 from docker.io/docker/buildx-bin@sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1675063Z #1 0.001 copying sha256:88340f3b012768968cdd2a76c7a9e1f7b29385c2870a658a4885f46cf0cb3e4b from docker.io/docker/buildx-bin@sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1676592Z #1 0.001 copying sha256:55f99e0cbc3ccd48f44a41701ce844a16ec09bebc758643f6602a17dad121fe1 from docker.io/docker/buildx-bin@sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1678325Z #1 0.001 copying sha256:03ea07e856f7e0da126328cf20b94376305fd19b9d206e79d8ce9ff6a5b627e8 from docker.io/docker/buildx-bin@sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1680197Z #1 0.001 copying sha256:88211b3391da4d02c6d5b0401a4f57e6c0bc613407238762d552da0019018ee1 from docker.io/docker/buildx-bin@sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1681989Z #1 0.001 copying sha256:7b7e399adb77dd101aeef16b3cc4a3c0238bc5fb6024b19f57dfbcde4f68de25 from docker.io/docker/buildx-bin@sha256:908344bd9b6e40a6b11dbd37cf91a457d8857ba39d71490acf67bb43e4d8bd52 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1683643Z #1 0.001 copying sha256:95f2378428880f326aca0db8df4ea4f71dc6258affe69097fea304525147c92b from docker.io/docker/buildx-bin@sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1685524Z #1 0.001 copying sha256:f5ac9480f15a92523a785a6cbed0bda4955a5b93fb1a57278c9e8c855f4c440e from docker.io/docker/buildx-bin@sha256:908344bd9b6e40a6b11dbd37cf91a457d8857ba39d71490acf67bb43e4d8bd52 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1687250Z #1 0.001 copying sha256:779fda2954de421b3cf34a3ad045463c34510abf019623fcac13d645084ad8f3 from docker.io/docker/buildx-bin@sha256:310b2d9d7a0500ac34739c95c99ae875f58811af7da09f9699de87074ac8df74 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1689116Z #1 0.001 copying sha256:66f016f9cabd3327d8a2d5b574a953cc25b91c765f745f40aae04bc082f00051 from docker.io/docker/buildx-bin@sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1690788Z #1 0.001 copying sha256:c4c8d5924a0c9723c6fdb421f6449b2632bd17dbd0f7a3b8f2f023d926a1e721 from docker.io/docker/buildx-bin@sha256:310b2d9d7a0500ac34739c95c99ae875f58811af7da09f9699de87074ac8df74 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1692579Z #1 0.001 copying sha256:399ebb4ed85c3d9687e828c016365dd4b8e2a538ece44299309a40663d38e129 from docker.io/docker/buildx-bin@sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1694321Z #1 0.001 copying sha256:7a7b392212b1ec593751d6a6202356973bf8dae68f4963a7e7cad9758abd09a6 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1696173Z #1 0.001 copying sha256:99c7aff18be392e5366255e638ae1928735d1f0cdbe967fae3e825e35b2db68e from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1697807Z #1 0.001 copying sha256:d1893fdf3542bcfb62e636cd686f32c95b5fd13fbdd3073398d3430f8a61443a from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1699470Z #1 0.001 copying sha256:84744046fa7b88cf1a27140f1561c8fbeffbde6301cebf6093f47d4bb95bd3bc from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1701125Z #1 0.001 copying sha256:951e9745b2e4d0b3beefc0883b38da27b9b9a56f053529c00a9b04250ae25b01 from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1702746Z #1 0.001 copying sha256:879a26de6e04886c5bc15180e23ac55d59b0858c9b3905d10860c9b901ed7963 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1704611Z #1 0.001 copying sha256:0b2d697c114b36f73f436c0a5f298b11ba19242df5b337bef704efa3f02657d3 from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1706295Z #1 0.001 copying sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1707963Z #1 0.001 copying sha256:38fd5cdd2b286969fdbd2f2d6941f6efa2ac45b1de32db5f2385085cded07e41 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1709660Z #1 ERROR: httpReadSeeker: failed open: unexpected status from GET request to https://registry-1.docker.io/v2/docker/buildx-bin/manifests/sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11: 502 Bad Gateway
+2026-03-25T00:24:36.1710646Z ------
+2026-03-25T00:24:36.1710913Z  > [internal] pushing docker.io/docker/buildx-bin:
+2026-03-25T00:24:36.1711928Z 0.001 copying sha256:399ebb4ed85c3d9687e828c016365dd4b8e2a538ece44299309a40663d38e129 from docker.io/docker/buildx-bin@sha256:b66a939cafad07eccb6e8c730d2fd0e35f3ef40911c4ec5882d3bae113883710 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1713831Z 0.001 copying sha256:7a7b392212b1ec593751d6a6202356973bf8dae68f4963a7e7cad9758abd09a6 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1715639Z 0.001 copying sha256:99c7aff18be392e5366255e638ae1928735d1f0cdbe967fae3e825e35b2db68e from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1717192Z 0.001 copying sha256:d1893fdf3542bcfb62e636cd686f32c95b5fd13fbdd3073398d3430f8a61443a from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1719078Z 0.001 copying sha256:84744046fa7b88cf1a27140f1561c8fbeffbde6301cebf6093f47d4bb95bd3bc from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1722088Z 0.001 copying sha256:951e9745b2e4d0b3beefc0883b38da27b9b9a56f053529c00a9b04250ae25b01 from docker.io/docker/buildx-bin@sha256:6f7d7d370748be1fc742bb4e0c847b2915414ffc5ee27071daac0c9e4f0b83fa to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1725004Z 0.001 copying sha256:879a26de6e04886c5bc15180e23ac55d59b0858c9b3905d10860c9b901ed7963 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1727795Z 0.001 copying sha256:0b2d697c114b36f73f436c0a5f298b11ba19242df5b337bef704efa3f02657d3 from docker.io/docker/buildx-bin@sha256:a56f7bc9cc48132b6ab1c59c9451b830f8a0b11199533441226fb559a0bc961e to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1729842Z 0.001 copying sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11 from docker.io/docker/buildx-bin@sha256:278056de6ad340f16a4a5ed803388dc40c52273e1a0d986172604e8af8fbdce1 to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1731376Z 0.001 copying sha256:38fd5cdd2b286969fdbd2f2d6941f6efa2ac45b1de32db5f2385085cded07e41 from docker.io/docker/buildx-bin@sha256:19123c9dec1992ee8ff708eb92ced015dfd8af211c2f2b5de5ea9ca795f6c1cb to docker.io/docker/buildx-bin
+2026-03-25T00:24:36.1732262Z ------
+2026-03-25T00:24:36.1733079Z ERROR: httpReadSeeker: failed open: unexpected status from GET request to https://registry-1.docker.io/v2/docker/buildx-bin/manifests/sha256:7b6aad039e0baf4b937a682daf3545993c2386e814d47fd3ba32b53a8aa2ec11: 502 Bad Gateway
+2026-03-25T00:24:36.1734414Z     at file:///home/runner/work/buildx/buildx/node_modules/@docker/actions-toolkit/lib/buildx/imagetools.js:145:23
+2026-03-25T00:24:36.1735095Z     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-03-25T00:24:36.1735830Z     at async ImageTools.create (file:///home/runner/work/buildx/buildx/node_modules/@docker/actions-toolkit/lib/buildx/imagetools.js:140:16)
+2026-03-25T00:24:36.1736906Z     at async eval (eval at callAsyncFunction (/home/runner/work/_actions/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/dist/index.js:36187:16), <anonymous>:28:18)
+2026-03-25T00:24:36.1737921Z     at async main (/home/runner/work/_actions/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/dist/index.js:36285:20)
+2026-03-25T00:24:36.1825352Z ##[error]Unhandled error: Error: #1 [internal] pushing docker.io/docker/buildx-bin
+#1 0.000 copying sha256:088473c7aa42b539d9c5359a7076b69c7b8f62f30bb3d61e62f27c2d6e601086 from docker.io/docker/buildx-bin@sha256:42a012b9f92ab9fa57391152c56416337b161eee43578f23e46fa75d0896a598 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:2b224f04dce928cc811831d6fa92aced501c44256af5c4fc647b6a40c8e75dea from docker.io/docker/buildx-bin@sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:354cea0c5f09972c08eeaa8b4c0c191d691bb8ec02ec182978248b1a5ef454a1 from docker.io/docker/buildx-bin@sha256:fba5da89837defe58984e30a5ce09e308b20ea372bafa855649d8a16dafe02b1 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:5883a9e437277f4923c29030ac94beadc6af4f868a8556a9e8c7b14dc7b6148e from docker.io/docker/buildx-bin@sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:6871f94d5c8d5d14902aeabd0a7521a53e209add48a3a64fa9d22fbb9623de49 from docker.io/docker/buildx-bin@sha256:75511a601c6a7efdcb8bcc47db8987afb09b1dedb96114c8c9fdaf4d41260df6 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:5085153b419d11790f5146409cf572504f44b180076b099114fb7642819ed9e4 from docker.io/docker/buildx-bin@sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:c4a8b9499959b36f10982b25f131f15ac9feed82ab8cae05100276a7ae6e8076 from docker.io/docker/buildx-bin@sha256:f9a921d44375348332c982c81eb3c5232a340d643194664ea42ffc00623e6108 to docker.io/docker/buildx-bin
+#1 0.000 copying sha256:5e14a03beeacd6b7a1029665d7264aac59edbf76170ed70de840be375accf8fe from docker.io/docker/buildx-bin@sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:abde1b03119fc30458fc0fa2c06cd18bcae62c19e62582bf30fc5e5a2d339e41 from docker.io/docker/buildx-bin@sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:9dfaa361bdd05c4125484b2aeacb45d37a450bf29348c861591448793feebbd7 from docker.io/docker/buildx-bin@sha256:aaddb8525554e0b48d8f0cdd0d34f7a2ffb54a869c8b65874a371d7e735c51e8 to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:ca17cb60354ddd63a3d24233252dc9e833c0c5f5d02939f0d087c73b66715715 from docker.io/docker/buildx-bin@sha256:b2c7bff02887ac6f19c82b0f0f0a9602a3b31ee0ec504619818a3f1e3bfdf5fb to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:36a388db8428c4716c5665ffffcfdfbf6bae9e80e9cb2914f046805edbedd459 from docker.io/docker/buildx-bin@sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:dbfb54786d19c6985a4e34f3e98830b302f5b85bed2e1e21ee13df5138bd2132 from docker.io/docker/buildx-bin@sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:f06d1b6231aca6369e82e8b989e0de578e2a62c40b945fb0bacbf44531711e05 from docker.io/docker/buildx-bin@sha256:638b80d47d89da5db108b262252d623d6ba4c4e86605ace945b8d6833b8e6983 to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:88340f3b012768968cdd2a76c7a9e1f7b29385c2870a658a4885f46cf0cb3e4b from docker.io/docker/buildx-bin@sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:55f99e0cbc3ccd48f44a41701ce844a16ec09bebc758643f6602a17dad121fe1 from docker.io/docker/buildx-bin@sha256:fb055d3c82b61ac3f455f5e409cb45ee2d62a756a3f88670abc6b37c515e9028 to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:03ea07e856f7e0da126328cf20b94376305fd19b9d206e79d8ce9ff6a5b627e8 from docker.io/docker/buildx-bin@sha256:1445ac377ed7e8f3847c071225c65f27502846fca08e092d637c5615cdc1bc8e to docker.io/docker/buildx-bin
+#1 0.001 copying sha256:88211b3391da4d02c6d5b0401a4f57e6c0bc613407238762d552da0019018ee1 from docker.io/docker/buildx-bin@sha256:183c722234cc6bc76ead7695f34fa32d9eec48e77a6b43dc097f9bc327b54438 to 
+2026-03-25T00:24:36.1917067Z Post job cleanup.
+2026-03-25T00:24:36.3927495Z ##[group]BuildKit container logs
+2026-03-25T00:24:36.3966570Z [command]/usr/bin/docker logs buildx_buildkit_builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d0
+2026-03-25T00:24:36.4123071Z time="2026-03-25T00:24:34Z" level=info msg="auto snapshotter: using overlayfs"
+2026-03-25T00:24:36.4123982Z time="2026-03-25T00:24:34Z" level=warning msg="using host network as the default"
+2026-03-25T00:24:36.4127389Z time="2026-03-25T00:24:34Z" level=info msg="found worker \"qfktcg8n20k55mfhnt996wn2i\", labels=map[org.mobyproject.buildkit.worker.executor:oci org.mobyproject.buildkit.worker.hostname:6b17f826849e org.mobyproject.buildkit.worker.network:host org.mobyproject.buildkit.worker.oci.process-mode:sandbox org.mobyproject.buildkit.worker.selinux.enabled:false org.mobyproject.buildkit.worker.snapshotter:overlayfs], platforms=[linux/amd64 linux/amd64/v2 linux/amd64/v3 linux/386]"
+2026-03-25T00:24:36.4129708Z time="2026-03-25T00:24:34Z" level=warning msg="skipping containerd worker, as \"/run/containerd/containerd.sock\" does not exist"
+2026-03-25T00:24:36.4130463Z time="2026-03-25T00:24:34Z" level=info msg="found 1 workers, default=\"qfktcg8n20k55mfhnt996wn2i\""
+2026-03-25T00:24:36.4131180Z time="2026-03-25T00:24:34Z" level=warning msg="currently, only the default worker can be used."
+2026-03-25T00:24:36.4131946Z time="2026-03-25T00:24:34Z" level=info msg="running server on /run/buildkit/buildkitd.sock"
+2026-03-25T00:24:36.4150224Z ##[endgroup]
+2026-03-25T00:24:36.4150672Z ##[group]Removing builder
+2026-03-25T00:24:36.5128246Z [command]/usr/bin/docker buildx rm builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d
+2026-03-25T00:24:36.6579845Z builder-aa801183-7598-4b2f-baf3-e2b947fbbc5d removed
+2026-03-25T00:24:36.6619123Z ##[endgroup]
+2026-03-25T00:24:36.6619552Z ##[group]Cleaning up certificates
+2026-03-25T00:24:36.6621770Z ##[endgroup]
+2026-03-25T00:24:36.6622569Z ##[group]Post cache
+2026-03-25T00:24:36.6624059Z State not set
+2026-03-25T00:24:36.6625071Z ##[endgroup]
+2026-03-25T00:24:36.6767765Z Post job cleanup.
+2026-03-25T00:24:36.8555795Z ##[group]Logout from docker.io
+2026-03-25T00:24:36.8596262Z [command]/usr/bin/docker logout docker.io
+2026-03-25T00:24:36.8736448Z Removing login credentials for docker.io
+2026-03-25T00:24:36.8762403Z ##[endgroup]
+2026-03-25T00:24:36.8763012Z ##[group]Post cache
+2026-03-25T00:24:36.8763633Z State not set
+2026-03-25T00:24:36.8764620Z ##[endgroup]
+2026-03-25T00:24:36.8894134Z Evaluate and set job outputs
+2026-03-25T00:24:36.8911677Z Set output 'meta-json'
+2026-03-25T00:24:36.8913288Z Set output 'cosign-version'
+2026-03-25T00:24:36.8913900Z Set output 'output-type'
+2026-03-25T00:24:36.8914348Z Set output 'signed'
+2026-03-25T00:24:36.8914997Z Cleaning up orphan processes

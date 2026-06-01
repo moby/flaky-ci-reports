@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:registry-1.docker.io:tls-handshake-timeout",
+    "name": "Registry registry-1.docker.io TLS handshake timeout",
+    "category": "network",
+    "fields": {
+      "host": "registry-1.docker.io",
+      "reason": "tls-handshake-timeout"
+    },
+    "evidence": [
+      {
+        "start_line": 305,
+        "end_line": 305
+      }
+    ]
+  }
+]

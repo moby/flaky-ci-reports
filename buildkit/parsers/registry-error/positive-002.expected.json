@@ -1,0 +1,24 @@
+[
+  {
+    "unique_key": "registry-error:auth-stage.docker.io:404",
+    "name": "Registry auth-stage.docker.io returned HTTP 404",
+    "category": "network",
+    "fields": {
+      "host": "auth-stage.docker.io",
+      "operation": "GET",
+      "status": "404"
+    },
+    "tags": {
+      "host": "auth-stage.docker.io",
+      "status": "404",
+      "test": "TestIntegration/TestImageResolveAttestationChainRequiresNetwork",
+      "worker": "oci-rootless-gvisor-tap-vsock-detachnetns"
+    },
+    "evidence": [
+      {
+        "start_line": 4180,
+        "end_line": 4180
+      }
+    ]
+  }
+]

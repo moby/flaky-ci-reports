@@ -1,0 +1,1465 @@
+﻿2026-05-07T00:59:44.0549581Z Current runner version: '2.334.0'
+2026-05-07T00:59:44.0582627Z ##[group]Runner Image Provisioner
+2026-05-07T00:59:44.0583771Z Hosted Compute Agent
+2026-05-07T00:59:44.0584600Z Version: 20260422.526
+2026-05-07T00:59:44.0585542Z Commit: e1a9e573f4d0838b3a7c1b07401aeb29ed3635a9
+2026-05-07T00:59:44.0587145Z Build Date: 2026-04-22T09:31:31Z
+2026-05-07T00:59:44.0588194Z Worker ID: {b10535f4-1d88-4dfd-97d2-73aa8313f7c5}
+2026-05-07T00:59:44.0589294Z Azure Region: northcentralus
+2026-05-07T00:59:44.0590256Z ##[endgroup]
+2026-05-07T00:59:44.0592135Z ##[group]Operating System
+2026-05-07T00:59:44.0593079Z Microsoft Windows Server 2022
+2026-05-07T00:59:44.0594029Z 10.0.20348
+2026-05-07T00:59:44.0594720Z Datacenter
+2026-05-07T00:59:44.0595442Z ##[endgroup]
+2026-05-07T00:59:44.0596239Z ##[group]Runner Image
+2026-05-07T00:59:44.0597038Z Image: windows-2022
+2026-05-07T00:59:44.0597787Z Version: 20260428.139.2
+2026-05-07T00:59:44.0600021Z Included Software: https://github.com/actions/runner-images/blob/win22/20260428.139/images/windows/Windows2022-Readme.md
+2026-05-07T00:59:44.0602635Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20260428.139
+2026-05-07T00:59:44.0604576Z ##[endgroup]
+2026-05-07T00:59:44.0606527Z ##[group]GITHUB_TOKEN Permissions
+2026-05-07T00:59:44.0609742Z Contents: read
+2026-05-07T00:59:44.0610536Z Metadata: read
+2026-05-07T00:59:44.0611222Z ##[endgroup]
+2026-05-07T00:59:44.0613802Z Secret source: Actions
+2026-05-07T00:59:44.0614838Z Prepare workflow directory
+2026-05-07T00:59:44.1005452Z Prepare all required actions
+2026-05-07T00:59:44.1043491Z Getting action download info
+2026-05-07T00:59:44.5159262Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-07T00:59:44.6247413Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-05-07T00:59:44.9281571Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-07T00:59:45.3261252Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-07T00:59:45.6617250Z Download action repository 'codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2' (SHA:57e3a136b779b570ffcdbf80b3bdc90e7fab3de2)
+2026-05-07T00:59:45.8344702Z Download action repository 'crazy-max/.github@64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16' (SHA:64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16)
+2026-05-07T00:59:45.9945502Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-05-07T00:59:46.2689984Z Getting action download info
+2026-05-07T00:59:46.3987995Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-05-07T00:59:46.7661724Z Getting action download info
+2026-05-07T00:59:46.9502428Z Complete job name: test-windows-amd64 (windows-2022, containerd, ./client#3-4)
+2026-05-07T00:59:47.1105015Z ##[group]Run TESTPKG=$(echo "./client#3-4" | awk '-F#' '{print $1}')
+2026-05-07T00:59:47.1106803Z [36;1mTESTPKG=$(echo "./client#3-4" | awk '-F#' '{print $1}')[0m
+2026-05-07T00:59:47.1108242Z [36;1mecho "TESTPKG=$TESTPKG" >> $GITHUB_ENV[0m
+2026-05-07T00:59:47.1110682Z [36;1mecho "TEST_REPORT_NAME=test-windows-amd64-$(echo "./client#3-4--containerd" | tr -dc '[:alnum:]-\n\r' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV[0m
+2026-05-07T00:59:47.1113017Z [36;1mtestFlags="-v --timeout=60m"[0m
+2026-05-07T00:59:47.1114335Z [36;1mtestSlice=$(echo "./client#3-4" | awk '-F#' '{print $2}')[0m
+2026-05-07T00:59:47.1115431Z [36;1mtestSliceOffset=""[0m
+2026-05-07T00:59:47.1116239Z [36;1mif [ -n "$testSlice" ]; then[0m
+2026-05-07T00:59:47.1117146Z [36;1m  testSliceOffset="slice=$testSlice/"[0m
+2026-05-07T00:59:47.1119566Z [36;1mfi[0m
+2026-05-07T00:59:47.1120240Z [36;1mif [ -n "containerd" ]; then[0m
+2026-05-07T00:59:47.1121598Z [36;1m  testFlags="${testFlags} --run=TestIntegration/$testSliceOffset.*/worker=containerd"[0m
+2026-05-07T00:59:47.1122965Z [36;1mfi[0m
+2026-05-07T00:59:47.1123725Z [36;1mecho "TESTFLAGS=${testFlags}" >> $GITHUB_ENV[0m
+2026-05-07T00:59:47.1141031Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T00:59:47.1142495Z env:
+2026-05-07T00:59:47.1143117Z   GO_VERSION: 1.26
+2026-05-07T00:59:47.1143827Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T00:59:47.1144687Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T00:59:47.1145571Z   DESTDIR: ./bin
+2026-05-07T00:59:47.1146265Z   TESTFLAGS: -v --timeout=60m
+2026-05-07T00:59:47.1147083Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T00:59:47.1147894Z ##[endgroup]
+2026-05-07T00:59:47.9288892Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-07T00:59:47.9289408Z with:
+2026-05-07T00:59:47.9289626Z   repository: moby/buildkit
+2026-05-07T00:59:47.9290032Z   token: ***
+2026-05-07T00:59:47.9290241Z   ssh-strict: true
+2026-05-07T00:59:47.9290449Z   ssh-user: git
+2026-05-07T00:59:47.9290669Z   persist-credentials: true
+2026-05-07T00:59:47.9290902Z   clean: true
+2026-05-07T00:59:47.9291117Z   sparse-checkout-cone-mode: true
+2026-05-07T00:59:47.9291374Z   fetch-depth: 1
+2026-05-07T00:59:47.9291578Z   fetch-tags: false
+2026-05-07T00:59:47.9291795Z   show-progress: true
+2026-05-07T00:59:47.9292005Z   lfs: false
+2026-05-07T00:59:47.9292195Z   submodules: false
+2026-05-07T00:59:47.9292413Z   set-safe-directory: true
+2026-05-07T00:59:47.9292637Z env:
+2026-05-07T00:59:47.9292818Z   GO_VERSION: 1.26
+2026-05-07T00:59:47.9293027Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T00:59:47.9293295Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T00:59:47.9293595Z   DESTDIR: ./bin
+2026-05-07T00:59:47.9293956Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T00:59:47.9294452Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T00:59:47.9294714Z   TESTPKG: ./client
+2026-05-07T00:59:47.9295003Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T00:59:47.9295353Z ##[endgroup]
+2026-05-07T00:59:48.0557625Z Syncing repository: moby/buildkit
+2026-05-07T00:59:48.0558923Z ##[group]Getting Git version info
+2026-05-07T00:59:48.0559311Z Working directory is 'D:\a\buildkit\buildkit'
+2026-05-07T00:59:48.1599068Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-07T00:59:48.5133409Z git version 2.54.0.windows.1
+2026-05-07T00:59:48.5178137Z ##[endgroup]
+2026-05-07T00:59:48.5197351Z Temporarily overriding HOME='D:\a\_temp\c645fba6-0c9d-4b0a-b395-cb76258bf2a4' before making global git config changes
+2026-05-07T00:59:48.5198346Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-07T00:59:48.5208362Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\buildkit\buildkit
+2026-05-07T00:59:48.5705251Z Deleting the contents of 'D:\a\buildkit\buildkit'
+2026-05-07T00:59:48.5709922Z ##[group]Initializing the repository
+2026-05-07T00:59:48.5717874Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\buildkit\buildkit
+2026-05-07T00:59:48.6519015Z Initialized empty Git repository in D:/a/buildkit/buildkit/.git/
+2026-05-07T00:59:48.6549771Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/moby/buildkit
+2026-05-07T00:59:48.7047291Z ##[endgroup]
+2026-05-07T00:59:48.7047777Z ##[group]Disabling automatic garbage collection
+2026-05-07T00:59:48.7048242Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-07T00:59:48.7255934Z ##[endgroup]
+2026-05-07T00:59:48.7256326Z ##[group]Setting up auth
+2026-05-07T00:59:48.7257595Z Removing SSH command configuration
+2026-05-07T00:59:48.7267419Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-07T00:59:48.7499707Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-07T00:59:49.7431692Z Removing HTTP extra header
+2026-05-07T00:59:49.7441242Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-07T00:59:49.7699963Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-07T00:59:50.2104736Z Removing includeIf entries pointing to credentials config files
+2026-05-07T00:59:50.2116601Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-07T00:59:50.2334618Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-07T00:59:50.6496040Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-07T00:59:50.6727720Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/buildkit/buildkit/.git.path D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T00:59:50.6940501Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T00:59:50.7202942Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T00:59:50.7422769Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T00:59:50.7645754Z ##[endgroup]
+2026-05-07T00:59:50.7646337Z ##[group]Fetching the repository
+2026-05-07T00:59:50.7662267Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4f42761308ba37d5aec7415c7f174dc1a41d0dca:refs/remotes/origin/master
+2026-05-07T00:59:53.4001312Z From https://github.com/moby/buildkit
+2026-05-07T00:59:53.4002469Z  * [new ref]         4f42761308ba37d5aec7415c7f174dc1a41d0dca -> origin/master
+2026-05-07T00:59:53.4307582Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/master
+2026-05-07T00:59:53.4555385Z   origin/master
+2026-05-07T00:59:53.4583873Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/remotes/origin/master
+2026-05-07T00:59:53.4816128Z 4f42761308ba37d5aec7415c7f174dc1a41d0dca
+2026-05-07T00:59:53.4836403Z ##[endgroup]
+2026-05-07T00:59:53.4836750Z ##[group]Determining the checkout info
+2026-05-07T00:59:53.4838167Z ##[endgroup]
+2026-05-07T00:59:53.4845700Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-07T00:59:53.5151105Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-07T00:59:53.5358779Z ##[group]Checking out the ref
+2026-05-07T00:59:53.5366254Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B master refs/remotes/origin/master
+2026-05-07T00:59:54.5992424Z Updating files:  68% (5036/7329)
+2026-05-07T00:59:54.6152109Z Updating files:  69% (5058/7329)
+2026-05-07T00:59:54.6284582Z Updating files:  70% (5131/7329)
+2026-05-07T00:59:54.6429238Z Updating files:  71% (5204/7329)
+2026-05-07T00:59:54.6561404Z Updating files:  72% (5277/7329)
+2026-05-07T00:59:54.6693742Z Updating files:  73% (5351/7329)
+2026-05-07T00:59:54.6824706Z Updating files:  74% (5424/7329)
+2026-05-07T00:59:54.6967489Z Updating files:  75% (5497/7329)
+2026-05-07T00:59:54.7102165Z Updating files:  76% (5571/7329)
+2026-05-07T00:59:54.7227385Z Updating files:  77% (5644/7329)
+2026-05-07T00:59:54.7380830Z Updating files:  78% (5717/7329)
+2026-05-07T00:59:54.7525395Z Updating files:  79% (5790/7329)
+2026-05-07T00:59:54.7679340Z Updating files:  80% (5864/7329)
+2026-05-07T00:59:54.7814657Z Updating files:  81% (5937/7329)
+2026-05-07T00:59:54.7948699Z Updating files:  82% (6010/7329)
+2026-05-07T00:59:54.8123516Z Updating files:  83% (6084/7329)
+2026-05-07T00:59:54.8307060Z Updating files:  84% (6157/7329)
+2026-05-07T00:59:54.8467479Z Updating files:  85% (6230/7329)
+2026-05-07T00:59:54.8696368Z Updating files:  86% (6303/7329)
+2026-05-07T00:59:54.8812037Z Updating files:  87% (6377/7329)
+2026-05-07T00:59:54.8923756Z Updating files:  88% (6450/7329)
+2026-05-07T00:59:54.9052771Z Updating files:  89% (6523/7329)
+2026-05-07T00:59:54.9257915Z Updating files:  90% (6597/7329)
+2026-05-07T00:59:54.9434898Z Updating files:  91% (6670/7329)
+2026-05-07T00:59:54.9600104Z Updating files:  92% (6743/7329)
+2026-05-07T00:59:54.9849995Z Updating files:  93% (6816/7329)
+2026-05-07T00:59:55.0003360Z Updating files:  94% (6890/7329)
+2026-05-07T00:59:55.0159578Z Updating files:  95% (6963/7329)
+2026-05-07T00:59:55.0333996Z Updating files:  96% (7036/7329)
+2026-05-07T00:59:55.0477060Z Updating files:  97% (7110/7329)
+2026-05-07T00:59:55.0652782Z Updating files:  98% (7183/7329)
+2026-05-07T00:59:55.0793644Z Updating files:  99% (7256/7329)
+2026-05-07T00:59:55.0795021Z Updating files: 100% (7329/7329)
+2026-05-07T00:59:55.0795447Z Updating files: 100% (7329/7329), done.
+2026-05-07T00:59:55.1000280Z Reset branch 'master'
+2026-05-07T00:59:55.1020610Z branch 'master' set up to track 'origin/master'.
+2026-05-07T00:59:55.1072130Z ##[endgroup]
+2026-05-07T00:59:55.1364912Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-07T00:59:55.1567941Z 4f42761308ba37d5aec7415c7f174dc1a41d0dca
+2026-05-07T00:59:55.1830634Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-05-07T00:59:55.1831100Z with:
+2026-05-07T00:59:55.1831416Z   github-token: ***
+2026-05-07T00:59:55.1831589Z env:
+2026-05-07T00:59:55.1831721Z   GO_VERSION: 1.26
+2026-05-07T00:59:55.1831891Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T00:59:55.1832113Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T00:59:55.1832338Z   DESTDIR: ./bin
+2026-05-07T00:59:55.1832632Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T00:59:55.1833004Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T00:59:55.1833213Z   TESTPKG: ./client
+2026-05-07T00:59:55.1833468Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T00:59:55.1833751Z ##[endgroup]
+2026-05-07T00:59:55.2819178Z ACTIONS_CACHE_SERVICE_V2=True
+2026-05-07T00:59:55.2827975Z ACTIONS_CACHE_URL=https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T00:59:55.2830507Z ACTIONS_ORCHESTRATION_ID=17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T00:59:55.2832773Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-05-07T00:59:55.2837504Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=C:\actionarchivecache\
+2026-05-07T00:59:55.2839515Z ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED=1
+2026-05-07T00:59:55.2892323Z ACTIONS_RUNTIME_TOKEN=***
+2026-05-07T00:59:55.2892970Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T00:59:55.3115810Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-07T00:59:55.3116220Z with:
+2026-05-07T00:59:55.3116377Z   go-version: 1.26
+2026-05-07T00:59:55.3116536Z   cache: false
+2026-05-07T00:59:55.3116693Z   check-latest: false
+2026-05-07T00:59:55.3117004Z   token: ***
+2026-05-07T00:59:55.3117151Z env:
+2026-05-07T00:59:55.3117475Z   GO_VERSION: 1.26
+2026-05-07T00:59:55.3117652Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T00:59:55.3117881Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T00:59:55.3118122Z   DESTDIR: ./bin
+2026-05-07T00:59:55.3118411Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T00:59:55.3118777Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T00:59:55.3118986Z   TESTPKG: ./client
+2026-05-07T00:59:55.3119223Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T00:59:55.3119519Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T00:59:55.3120088Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T00:59:55.3120896Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T00:59:55.3121516Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T00:59:55.3121959Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T00:59:55.3122267Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T00:59:55.3167013Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T00:59:55.3167593Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T00:59:55.3168193Z ##[endgroup]
+2026-05-07T00:59:55.4758064Z Setup go version spec 1.26
+2026-05-07T00:59:55.5078290Z Attempting to download 1.26...
+2026-05-07T00:59:56.0161365Z matching 1.26...
+2026-05-07T00:59:56.0171115Z Acquiring 1.26.2 from https://github.com/actions/go-versions/releases/download/1.26.2-24114135105/go-1.26.2-win32-x64.zip
+2026-05-07T00:59:56.6482837Z Extracting Go...
+2026-05-07T00:59:56.7457006Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.26.2-win32-x64.zip', 'D:\a\_temp\e1ad49cb-d863-4805-bcf8-d105a46bc56b', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.26.2-win32-x64.zip' -DestinationPath 'D:\a\_temp\e1ad49cb-d863-4805-bcf8-d105a46bc56b' -Force } else { throw $_ } } ;"
+2026-05-07T01:00:05.9883749Z Successfully extracted go to D:\a\_temp\e1ad49cb-d863-4805-bcf8-d105a46bc56b
+2026-05-07T01:00:05.9884200Z Adding to the cache ...
+2026-05-07T01:00:16.3460939Z Created link C:\hostedtoolcache\windows\go\1.26.2\x64 => D:\hostedtoolcache\windows\go\1.26.2\x64
+2026-05-07T01:00:16.3465223Z Created link C:\hostedtoolcache\windows\go\1.26.2\x64.complete => D:\hostedtoolcache\windows\go\1.26.2\x64.complete
+2026-05-07T01:00:16.3466081Z Successfully cached go to C:\hostedtoolcache\windows\go\1.26.2\x64
+2026-05-07T01:00:16.3471878Z Added go to the path
+2026-05-07T01:00:16.3474222Z Successfully set up Go version 1.26
+2026-05-07T01:00:16.6131505Z go version go1.26.2 windows/amd64
+2026-05-07T01:00:16.6131709Z 
+2026-05-07T01:00:16.6131974Z ##[group]go env
+2026-05-07T01:00:19.6842603Z set AR=ar
+2026-05-07T01:00:19.6842961Z set CC=gcc
+2026-05-07T01:00:19.6843212Z set CGO_CFLAGS=-O2 -g
+2026-05-07T01:00:19.6843431Z set CGO_CPPFLAGS=
+2026-05-07T01:00:19.6843617Z set CGO_CXXFLAGS=-O2 -g
+2026-05-07T01:00:19.6843815Z set CGO_ENABLED=1
+2026-05-07T01:00:19.6843982Z set CGO_FFLAGS=-O2 -g
+2026-05-07T01:00:19.6846406Z set CGO_LDFLAGS=-O2 -g
+2026-05-07T01:00:19.6846697Z set CXX=g++
+2026-05-07T01:00:19.6846859Z set GCCGO=gccgo
+2026-05-07T01:00:19.6847037Z set GO111MODULE=
+2026-05-07T01:00:19.6847202Z set GOAMD64=v1
+2026-05-07T01:00:19.6847352Z set GOARCH=amd64
+2026-05-07T01:00:19.6847516Z set GOAUTH=netrc
+2026-05-07T01:00:19.6847666Z set GOBIN=
+2026-05-07T01:00:19.6848606Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+2026-05-07T01:00:19.6848896Z set GOCACHEPROG=
+2026-05-07T01:00:19.6849053Z set GODEBUG=
+2026-05-07T01:00:19.6849273Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+2026-05-07T01:00:19.6849526Z set GOEXE=.exe
+2026-05-07T01:00:19.6849689Z set GOEXPERIMENT=
+2026-05-07T01:00:19.6849852Z set GOFIPS140=off
+2026-05-07T01:00:19.6850000Z set GOFLAGS=
+2026-05-07T01:00:19.6850705Z set GOGCCFLAGS=-m64 -mthreads -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build4223666377=/tmp/go-build -gno-record-gcc-switches
+2026-05-07T01:00:19.6851437Z set GOHOSTARCH=amd64
+2026-05-07T01:00:19.6851621Z set GOHOSTOS=windows
+2026-05-07T01:00:19.6851791Z set GOINSECURE=
+2026-05-07T01:00:19.6851971Z set GOMOD=D:\a\buildkit\buildkit\go.mod
+2026-05-07T01:00:19.6852241Z set GOMODCACHE=C:\Users\runneradmin\go\pkg\mod
+2026-05-07T01:00:19.6852491Z set GONOPROXY=
+2026-05-07T01:00:19.6852636Z set GONOSUMDB=
+2026-05-07T01:00:19.6852792Z set GOOS=windows
+2026-05-07T01:00:19.6852970Z set GOPATH=C:\Users\runneradmin\go
+2026-05-07T01:00:19.6853229Z set GOPRIVATE=
+2026-05-07T01:00:19.6853484Z set GOPROXY=https://proxy.golang.org,direct
+2026-05-07T01:00:19.6853799Z set GOROOT=C:\hostedtoolcache\windows\go\1.26.2\x64
+2026-05-07T01:00:19.6854080Z set GOSUMDB=sum.golang.org
+2026-05-07T01:00:19.6854277Z set GOTELEMETRY=local
+2026-05-07T01:00:19.6854560Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+2026-05-07T01:00:19.6854880Z set GOTMPDIR=
+2026-05-07T01:00:19.6855033Z set GOTOOLCHAIN=local
+2026-05-07T01:00:19.6855350Z set GOTOOLDIR=C:\hostedtoolcache\windows\go\1.26.2\x64\pkg\tool\windows_amd64
+2026-05-07T01:00:19.6855693Z set GOVCS=
+2026-05-07T01:00:19.6855843Z set GOVERSION=go1.26.2
+2026-05-07T01:00:19.6856020Z set GOWORK=
+2026-05-07T01:00:19.6856206Z set PKG_CONFIG=pkg-config
+2026-05-07T01:00:19.6856344Z 
+2026-05-07T01:00:19.6856647Z ##[endgroup]
+2026-05-07T01:00:19.7092113Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-05-07T01:00:19.7092577Z with:
+2026-05-07T01:00:19.7092748Z   name: buildkit-windows-amd64
+2026-05-07T01:00:19.7092974Z   path: D:\a\buildkit\buildkit\bin
+2026-05-07T01:00:19.7093190Z   merge-multiple: false
+2026-05-07T01:00:19.7093375Z   repository: moby/buildkit
+2026-05-07T01:00:19.7093561Z   run-id: 25469785700
+2026-05-07T01:00:19.7093731Z   skip-decompress: false
+2026-05-07T01:00:19.7093919Z   digest-mismatch: error
+2026-05-07T01:00:19.7094086Z env:
+2026-05-07T01:00:19.7094215Z   GO_VERSION: 1.26
+2026-05-07T01:00:19.7094383Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:00:19.7094595Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:00:19.7094826Z   DESTDIR: ./bin
+2026-05-07T01:00:19.7095131Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:00:19.7095495Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:00:19.7095748Z   TESTPKG: ./client
+2026-05-07T01:00:19.7095993Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:00:19.7096292Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:00:19.7096838Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:00:19.7097652Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:00:19.7098278Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:00:19.7098723Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:00:19.7099038Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:00:19.7143548Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:00:19.7144128Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:00:19.7144728Z   GOTOOLCHAIN: local
+2026-05-07T01:00:19.7144903Z ##[endgroup]
+2026-05-07T01:00:19.8702430Z Downloading single artifact
+2026-05-07T01:00:19.9983623Z Preparing to download the following artifacts:
+2026-05-07T01:00:19.9984517Z - buildkit-windows-amd64 (ID: 6844789337, Size: 108269877, Expected Digest: sha256:5a37139c60189457c661d8fc42ef97e071f0604b1ea4300eb7f59afd405b8362)
+2026-05-07T01:00:20.2050200Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/17537ed9-db3b-41f8-90ea-12133e1cfbd1/workflow-job-run-f0194ef9-2b60-5ae0-a984-251b734ada7c/artifacts/96a48dace6e5a3119bfcbb37a81f89001da66254ecc475028d8ffd3cf8ee952a.zip
+2026-05-07T01:00:20.2051541Z Starting download of artifact to: D:\a\buildkit\buildkit\bin
+2026-05-07T01:00:20.3930848Z (node:3904) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-05-07T01:00:20.3931804Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-07T01:00:23.1249562Z SHA256 digest of downloaded artifact is 5a37139c60189457c661d8fc42ef97e071f0604b1ea4300eb7f59afd405b8362
+2026-05-07T01:00:23.1250206Z Artifact download completed successfully.
+2026-05-07T01:00:23.1250479Z Total of 1 artifact(s) downloaded
+2026-05-07T01:00:23.1259591Z Download artifact has finished successfully
+2026-05-07T01:00:23.1464857Z ##[group]Run echo "D:\a\buildkit\buildkit\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+2026-05-07T01:00:23.1465975Z [36;1mecho "D:\a\buildkit\buildkit\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append[0m
+2026-05-07T01:00:23.1498794Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-07T01:00:23.1499123Z env:
+2026-05-07T01:00:23.1499281Z   GO_VERSION: 1.26
+2026-05-07T01:00:23.1499459Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:00:23.1499700Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:00:23.1499952Z   DESTDIR: ./bin
+2026-05-07T01:00:23.1500266Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:00:23.1500658Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:00:23.1500879Z   TESTPKG: ./client
+2026-05-07T01:00:23.1501137Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:00:23.1501444Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:00:23.1502015Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:00:23.1502834Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:00:23.1503474Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:00:23.1503938Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:00:23.1504268Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:00:23.1548816Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:00:23.1549419Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:00:23.1550043Z   GOTOOLCHAIN: local
+2026-05-07T01:00:23.1550219Z ##[endgroup]
+2026-05-07T01:00:23.7704796Z ##[group]Run mkdir -p ./bin/testreports
+2026-05-07T01:00:23.7705168Z [36;1mmkdir -p ./bin/testreports[0m
+2026-05-07T01:00:23.7705410Z [36;1mgotestsum \[0m
+2026-05-07T01:00:23.7705863Z [36;1m  --jsonfile="./bin/testreports/go-test-report-test-windows-amd64-client3-4--containerd.json" \[0m
+2026-05-07T01:00:23.7706579Z [36;1m  --junitfile="./bin/testreports/junit-report-test-windows-amd64-client3-4--containerd.xml" \[0m
+2026-05-07T01:00:23.7707063Z [36;1m  --packages="./client" \[0m
+2026-05-07T01:00:23.7707288Z [36;1m  -- \[0m
+2026-05-07T01:00:23.7707464Z [36;1m    "-mod=vendor" \[0m
+2026-05-07T01:00:23.7707904Z [36;1m    "-coverprofile" "./bin/testreports/coverage-test-windows-amd64-client3-4--containerd.txt" \[0m
+2026-05-07T01:00:23.7708548Z [36;1m    "-covermode" "atomic" -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd[0m
+2026-05-07T01:00:23.7720221Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:00:23.7720619Z env:
+2026-05-07T01:00:23.7720767Z   GO_VERSION: 1.26
+2026-05-07T01:00:23.7720948Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:00:23.7721178Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:00:23.7721415Z   DESTDIR: ./bin
+2026-05-07T01:00:23.7721716Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:00:23.7722094Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:00:23.7722322Z   TESTPKG: ./client
+2026-05-07T01:00:23.7722575Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:00:23.7722882Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:00:23.7723434Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:00:23.7724259Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:00:23.7724891Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:00:23.7725338Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:00:23.7725660Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:00:23.7770587Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:00:23.7771185Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:00:23.7771794Z   GOTOOLCHAIN: local
+2026-05-07T01:00:23.7771966Z   TMPDIR: D:\a\_temp
+2026-05-07T01:00:23.7772149Z   SKIP_INTEGRATION_TESTS: 
+2026-05-07T01:00:23.7772344Z ##[endgroup]
+2026-05-07T01:01:27.0616064Z time="2026-05-07T01:01:27Z" level=info msg="OCI Worker not supported on Windows."
+2026-05-07T01:01:27.0659080Z === RUN   TestIntegration
+2026-05-07T01:01:27.0726964Z === RUN   TestIntegration/slice=3-4/TestSourceDateEpochReset/worker=containerd
+2026-05-07T01:01:27.1482672Z time="2026-05-07T01:01:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50240"
+2026-05-07T01:01:29.2956732Z     run.go:331: copied mcr.microsoft.com/windows/nanoserver:ltsc2022 to local mirror localhost:50240/library/nanoserver:latest
+2026-05-07T01:01:29.2995999Z time="2026-05-07T01:01:29Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50240"
+2026-05-07T01:01:31.2831393Z     run.go:331: copied docker.io/wintools/nanoserver:ltsc2022 to local mirror localhost:50240/library/nanoserver:plus
+2026-05-07T01:01:32.0285769Z     run.go:575: Skipped on linux
+2026-05-07T01:01:32.0444757Z === RUN   TestIntegration/slice=3-4/TestSourceDateEpochLocalExporter/worker=containerd
+2026-05-07T01:01:32.7533006Z     run.go:575: Skipped on linux
+2026-05-07T01:01:32.7693810Z === RUN   TestIntegration/slice=3-4/TestSourceDateEpochTarExporter/worker=containerd
+2026-05-07T01:01:33.4567017Z     run.go:575: Skipped on linux
+2026-05-07T01:01:33.4718438Z === RUN   TestIntegration/slice=3-4/TestSourceDateEpochImageExporter/worker=containerd
+2026-05-07T01:02:06.7875041Z === RUN   TestIntegration/slice=3-4/TestAttestationBundle/worker=containerd
+2026-05-07T01:02:30.2219692Z === RUN   TestIntegration/slice=3-4/TestSBOMScan/worker=containerd
+2026-05-07T01:02:30.9117035Z     run.go:575: Skipped on linux
+2026-05-07T01:02:30.9273287Z === RUN   TestIntegration/slice=3-4/TestSBOMScanSingleRef/worker=containerd
+2026-05-07T01:02:31.6248240Z     run.go:575: Skipped on linux
+2026-05-07T01:02:31.6419562Z === RUN   TestIntegration/slice=3-4/TestSBOMSupplements/worker=containerd
+2026-05-07T01:02:32.3403297Z     run.go:575: Skipped on linux
+2026-05-07T01:02:32.3581004Z === RUN   TestIntegration/slice=3-4/TestMultipleCacheExports/worker=containerd
+2026-05-07T01:03:41.5860748Z === RUN   TestIntegration/slice=3-4/TestMountStubsDirectory/worker=containerd
+2026-05-07T01:03:42.2988388Z     run.go:573: Skipped on windows: requires tmpfs, multiple mounts, and Scratch — all unsupported on Windows
+2026-05-07T01:03:42.3172784Z === RUN   TestIntegration/slice=3-4/TestMountStubsTimestamp/worker=containerd
+2026-05-07T01:03:43.0158522Z     run.go:573: Skipped on windows: requires tmpfs, multiple mounts, and Scratch — all unsupported on Windows
+2026-05-07T01:03:43.0378558Z === RUN   TestIntegration/slice=3-4/TestSourcePolicy/worker=containerd
+2026-05-07T01:03:43.7767872Z     run.go:575: Skipped on linux
+2026-05-07T01:03:43.7939647Z === RUN   TestIntegration/slice=3-4/TestImageManifestRegistryCacheImportExport/worker=containerd
+2026-05-07T01:04:45.8900762Z === RUN   TestIntegration/slice=3-4/TestLLBMountPerformance/worker=containerd
+2026-05-07T01:05:24.1067142Z === RUN   TestIntegration/slice=3-4/TestClientCustomGRPCOpts/worker=containerd
+2026-05-07T01:05:25.6727757Z === RUN   TestIntegration/slice=3-4/TestMultipleRecordsWithSameLayersCacheImportExport/worker=containerd
+2026-05-07T01:05:26.4488843Z     run.go:575: Skipped on linux
+2026-05-07T01:05:26.4685854Z === RUN   TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd
+2026-05-07T01:05:27.1704854Z === RUN   TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=true/imageManifest=true
+2026-05-07T01:05:27.4167671Z time="2026-05-07T01:05:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50393"
+2026-05-07T01:05:27.4297346Z === RUN   TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=true/imageManifest=false
+2026-05-07T01:05:27.7199080Z time="2026-05-07T01:05:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50396"
+2026-05-07T01:05:27.7310914Z === RUN   TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=false/imageManifest=false
+2026-05-07T01:05:28.0246572Z time="2026-05-07T01:05:28Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50399"
+2026-05-07T01:05:28.0630223Z === RUN   TestIntegration/slice=3-4/TestSnapshotWithMultipleBlobs/worker=containerd
+2026-05-07T01:05:28.7529827Z     run.go:573: Skipped on windows: HCS layer activation race: concurrent mkdir fails on CI (passes locally)
+2026-05-07T01:05:28.7705461Z === RUN   TestIntegration/slice=3-4/TestImageBlobSource/worker=containerd
+2026-05-07T01:05:29.4585430Z     run.go:575: Skipped on linux
+2026-05-07T01:05:29.4764227Z === RUN   TestIntegration/slice=3-4/TestOCILayoutBlobSource/worker=containerd
+2026-05-07T01:05:30.1760593Z     run.go:575: Skipped on linux
+2026-05-07T01:05:30.1965633Z === RUN   TestIntegration/slice=3-4/TestExportLocalNoPlatformSplit/worker=containerd
+2026-05-07T01:05:31.7013426Z === RUN   TestIntegration/slice=3-4/TestExportLocalNoPlatformSplitOverwrite/worker=containerd
+2026-05-07T01:05:33.3476721Z === RUN   TestIntegration/slice=3-4/TestExportLocalForcePlatformSplit/worker=containerd
+2026-05-07T01:05:34.4861895Z === RUN   TestIntegration/slice=3-4/TestOCIIndexMediatype/worker=containerd
+2026-05-07T01:05:58.4170290Z === RUN   TestIntegration/slice=3-4/TestLayerLimitOnMounts/worker=containerd
+2026-05-07T01:05:59.2164793Z     run.go:575: Skipped on windows
+2026-05-07T01:05:59.2332648Z === RUN   TestIntegration/slice=3-4/TestFrontendVerifyPlatforms/worker=containerd
+2026-05-07T01:06:01.9347263Z === RUN   TestIntegration/slice=3-4/TestFrontendLintSkipVerifyPlatforms/worker=containerd
+2026-05-07T01:06:02.8065734Z === RUN   TestIntegration/slice=3-4/TestRunValidExitCodes/worker=containerd
+2026-05-07T01:06:35.2133824Z === RUN   TestIntegration/slice=3-4/TestFileOpSymlink/worker=containerd
+2026-05-07T01:06:35.9929046Z     run.go:575: Skipped on linux
+2026-05-07T01:06:36.0149755Z === RUN   TestIntegration/slice=3-4/TestMetadataOnlyLocal/worker=containerd
+2026-05-07T01:06:37.7998505Z === RUN   TestIntegration/slice=3-4/TestGitResolveSourceMetadata/worker=containerd
+2026-05-07T01:06:41.8886149Z === RUN   TestIntegration/slice=3-4/TestHTTPResolveSourceMetadata/worker=containerd
+2026-05-07T01:06:43.1815084Z === RUN   TestIntegration/slice=3-4/TestHTTPPruneAfterCacheKey/worker=containerd
+2026-05-07T01:06:44.6597110Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:45.7874830Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:47.0260504Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:48.1812680Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:49.3874180Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:50.5920612Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:51.7530993Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:52.9153458Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:54.1602961Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:55.3766823Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:06:55.9058034Z === RUN   TestIntegration/slice=3-4/TestHTTPPruneAfterResolveMeta/worker=containerd
+2026-05-07T01:06:57.8505180Z === RUN   TestIntegration/slice=3-4/TestHTTPResolveMetaReuse/worker=containerd
+2026-05-07T01:06:59.2231426Z === RUN   TestIntegration/slice=3-4/TestHTTPResolveMultiBuild/worker=containerd
+2026-05-07T01:07:01.3519556Z === RUN   TestIntegration/slice=3-4/TestGitResolveMutatedSource/worker=containerd
+2026-05-07T01:07:02.0711685Z     run.go:575: Skipped on windows
+2026-05-07T01:07:02.0883181Z === RUN   TestIntegration/slice=3-4/TestGitBundleRoundTrip/worker=containerd
+2026-05-07T01:07:02.7988179Z     run.go:575: Skipped on windows
+2026-05-07T01:07:02.8172320Z === RUN   TestIntegration/slice=3-4/TestGitBundleRoundTripRegistry/worker=containerd
+2026-05-07T01:07:03.5078495Z     run.go:575: Skipped on windows
+2026-05-07T01:07:03.5274899Z === RUN   TestIntegration/slice=3-4/TestImageResolveAttestationChainRequiresNetwork/worker=containerd
+2026-05-07T01:07:05.8933845Z === RUN   TestIntegration/slice=3-4/TestImageResolveAttestationChainLocal/worker=containerd
+2026-05-07T01:07:06.5849293Z     run.go:575: Skipped on linux
+2026-05-07T01:07:06.6077916Z === RUN   TestIntegration/slice=3-4/TestImageResolveProvenanceAttestation/worker=containerd
+2026-05-07T01:07:07.2984840Z     run.go:575: Skipped on linux
+2026-05-07T01:07:07.3169137Z === RUN   TestIntegration/slice=3-4/TestSourcePolicySession/worker=containerd
+2026-05-07T01:07:08.0697468Z     run.go:575: Skipped on linux
+2026-05-07T01:07:08.0892572Z === RUN   TestIntegration/slice=3-4/TestSourcePolicySessionDenyMessages/worker=containerd
+2026-05-07T01:07:08.7801509Z     run.go:575: Skipped on linux
+2026-05-07T01:07:08.7983557Z === RUN   TestIntegration/slice=3-4/TestSourceMetaPolicySession/worker=containerd
+2026-05-07T01:07:09.4875756Z     run.go:575: Skipped on linux
+2026-05-07T01:07:09.5037398Z === RUN   TestIntegration/slice=3-4/TestSourceMetaPolicySessionResolveAttestations/worker=containerd
+2026-05-07T01:07:10.1908792Z     run.go:575: Skipped on linux
+2026-05-07T01:07:10.2084630Z === RUN   TestIntegration/slice=3-4/TestSourcePolicyParallelSession/worker=containerd
+2026-05-07T01:07:10.9078906Z     run.go:575: Skipped on linux
+2026-05-07T01:07:10.9235999Z === RUN   TestIntegration/slice=3-4/TestSourcePolicySignedCommit/worker=containerd
+2026-05-07T01:07:11.6210582Z     run.go:575: Skipped on linux
+2026-05-07T01:07:11.6379354Z === RUN   TestIntegration/slice=3-4/TestSourcePolicySessionHTTPChecksumAssist/worker=containerd
+2026-05-07T01:07:12.3476674Z     run.go:575: Skipped on linux
+2026-05-07T01:07:12.3658403Z === RUN   TestIntegration/slice=3-4/TestSourcePolicySessionConvert/worker=containerd
+2026-05-07T01:07:13.0546229Z     run.go:575: Skipped on linux
+2026-05-07T01:07:13.0766580Z === RUN   TestIntegration/slice=3-4/TestListenBuildHistoryExcludesSoftDeletedRecords/worker=containerd
+2026-05-07T01:07:15.4140853Z === RUN   TestIntegration/slice=3-4/TestValidateNullConfig/worker=containerd
+2026-05-07T01:07:16.1072769Z     run.go:575: Skipped on linux
+2026-05-07T01:07:16.1258560Z === RUN   TestIntegration/slice=3-4/TestValidateInvalidConfig/worker=containerd
+2026-05-07T01:07:16.8166613Z     run.go:575: Skipped on linux
+2026-05-07T01:07:16.8340666Z === RUN   TestIntegration/slice=3-4/TestValidatePlatformsEmpty/worker=containerd
+2026-05-07T01:07:17.5236910Z     run.go:575: Skipped on linux
+2026-05-07T01:07:17.5413329Z === RUN   TestIntegration/slice=3-4/TestValidatePlatformsInvalid/worker=containerd
+2026-05-07T01:07:18.2401230Z     run.go:575: Skipped on linux
+2026-05-07T01:07:18.2581593Z === RUN   TestIntegration/slice=3-4/TestValidateSourcePolicy/worker=containerd
+2026-05-07T01:07:19.0092311Z     run.go:575: Skipped on linux
+2026-05-07T01:07:19.0274126Z === RUN   TestIntegration/slice=3-4/TestDiffScratch/worker=containerd
+2026-05-07T01:07:19.7489758Z     run.go:575: Skipped on linux
+2026-05-07T01:07:19.7655975Z     run.go:575: Skipped on windows
+2026-05-07T01:07:19.8022791Z --- SKIP: TestIntegration (352.74s)
+2026-05-07T01:07:19.8024350Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochReset/worker=containerd (4.97s)
+2026-05-07T01:07:19.8026027Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochLocalExporter/worker=containerd (0.72s)
+2026-05-07T01:07:19.8027673Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochTarExporter/worker=containerd (0.70s)
+2026-05-07T01:07:19.8029379Z     --- PASS: TestIntegration/slice=3-4/TestSourceDateEpochImageExporter/worker=containerd (33.31s)
+2026-05-07T01:07:19.8031014Z     --- PASS: TestIntegration/slice=3-4/TestAttestationBundle/worker=containerd (23.43s)
+2026-05-07T01:07:19.8032301Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMScan/worker=containerd (0.71s)
+2026-05-07T01:07:19.8033580Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMScanSingleRef/worker=containerd (0.71s)
+2026-05-07T01:07:19.8034974Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMSupplements/worker=containerd (0.72s)
+2026-05-07T01:07:19.8036432Z     --- PASS: TestIntegration/slice=3-4/TestMultipleCacheExports/worker=containerd (69.23s)
+2026-05-07T01:07:19.8037911Z     --- SKIP: TestIntegration/slice=3-4/TestMountStubsDirectory/worker=containerd (0.73s)
+2026-05-07T01:07:19.8039177Z     --- SKIP: TestIntegration/slice=3-4/TestMountStubsTimestamp/worker=containerd (0.72s)
+2026-05-07T01:07:19.8040389Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicy/worker=containerd (0.76s)
+2026-05-07T01:07:19.8041831Z     --- PASS: TestIntegration/slice=3-4/TestImageManifestRegistryCacheImportExport/worker=containerd (62.10s)
+2026-05-07T01:07:19.8043365Z     --- PASS: TestIntegration/slice=3-4/TestLLBMountPerformance/worker=containerd (38.22s)
+2026-05-07T01:07:19.8044627Z     --- PASS: TestIntegration/slice=3-4/TestClientCustomGRPCOpts/worker=containerd (1.57s)
+2026-05-07T01:07:19.8046143Z     --- SKIP: TestIntegration/slice=3-4/TestMultipleRecordsWithSameLayersCacheImportExport/worker=containerd (0.80s)
+2026-05-07T01:07:19.8048070Z     --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd (1.59s)
+2026-05-07T01:07:19.8050915Z         --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=true/imageManifest=true (0.26s)
+2026-05-07T01:07:19.8053624Z         --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=true/imageManifest=false (0.30s)
+2026-05-07T01:07:19.8055450Z         --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=false/imageManifest=false (0.30s)
+2026-05-07T01:07:19.8057669Z     --- SKIP: TestIntegration/slice=3-4/TestSnapshotWithMultipleBlobs/worker=containerd (0.71s)
+2026-05-07T01:07:19.8059695Z     --- SKIP: TestIntegration/slice=3-4/TestImageBlobSource/worker=containerd (0.71s)
+2026-05-07T01:07:19.8061122Z     --- SKIP: TestIntegration/slice=3-4/TestOCILayoutBlobSource/worker=containerd (0.72s)
+2026-05-07T01:07:19.8062508Z     --- PASS: TestIntegration/slice=3-4/TestExportLocalNoPlatformSplit/worker=containerd (1.50s)
+2026-05-07T01:07:19.8064055Z     --- PASS: TestIntegration/slice=3-4/TestExportLocalNoPlatformSplitOverwrite/worker=containerd (1.65s)
+2026-05-07T01:07:19.8065485Z     --- PASS: TestIntegration/slice=3-4/TestExportLocalForcePlatformSplit/worker=containerd (1.14s)
+2026-05-07T01:07:19.8066813Z     --- PASS: TestIntegration/slice=3-4/TestOCIIndexMediatype/worker=containerd (23.93s)
+2026-05-07T01:07:19.8068253Z     --- SKIP: TestIntegration/slice=3-4/TestLayerLimitOnMounts/worker=containerd (0.82s)
+2026-05-07T01:07:19.8070163Z     --- PASS: TestIntegration/slice=3-4/TestFrontendVerifyPlatforms/worker=containerd (2.70s)
+2026-05-07T01:07:19.8072268Z     --- PASS: TestIntegration/slice=3-4/TestFrontendLintSkipVerifyPlatforms/worker=containerd (0.87s)
+2026-05-07T01:07:19.8074282Z     --- PASS: TestIntegration/slice=3-4/TestRunValidExitCodes/worker=containerd (32.41s)
+2026-05-07T01:07:19.8076026Z     --- SKIP: TestIntegration/slice=3-4/TestFileOpSymlink/worker=containerd (0.80s)
+2026-05-07T01:07:19.8077530Z     --- PASS: TestIntegration/slice=3-4/TestMetadataOnlyLocal/worker=containerd (1.78s)
+2026-05-07T01:07:19.8079225Z     --- PASS: TestIntegration/slice=3-4/TestGitResolveSourceMetadata/worker=containerd (4.09s)
+2026-05-07T01:07:19.8081058Z     --- PASS: TestIntegration/slice=3-4/TestHTTPResolveSourceMetadata/worker=containerd (1.29s)
+2026-05-07T01:07:19.8082066Z     --- PASS: TestIntegration/slice=3-4/TestHTTPPruneAfterCacheKey/worker=containerd (12.72s)
+2026-05-07T01:07:19.8082790Z     --- PASS: TestIntegration/slice=3-4/TestHTTPPruneAfterResolveMeta/worker=containerd (1.94s)
+2026-05-07T01:07:19.8083495Z     --- PASS: TestIntegration/slice=3-4/TestHTTPResolveMetaReuse/worker=containerd (1.37s)
+2026-05-07T01:07:19.8084175Z     --- PASS: TestIntegration/slice=3-4/TestHTTPResolveMultiBuild/worker=containerd (2.13s)
+2026-05-07T01:07:19.8084864Z     --- SKIP: TestIntegration/slice=3-4/TestGitResolveMutatedSource/worker=containerd (0.74s)
+2026-05-07T01:07:19.8085519Z     --- SKIP: TestIntegration/slice=3-4/TestGitBundleRoundTrip/worker=containerd (0.73s)
+2026-05-07T01:07:19.8086213Z     --- SKIP: TestIntegration/slice=3-4/TestGitBundleRoundTripRegistry/worker=containerd (0.71s)
+2026-05-07T01:07:19.8087529Z     --- PASS: TestIntegration/slice=3-4/TestImageResolveAttestationChainRequiresNetwork/worker=containerd (2.37s)
+2026-05-07T01:07:19.8089284Z     --- SKIP: TestIntegration/slice=3-4/TestImageResolveAttestationChainLocal/worker=containerd (0.71s)
+2026-05-07T01:07:19.8090901Z     --- SKIP: TestIntegration/slice=3-4/TestImageResolveProvenanceAttestation/worker=containerd (0.71s)
+2026-05-07T01:07:19.8092239Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySession/worker=containerd (0.77s)
+2026-05-07T01:07:19.8095141Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionDenyMessages/worker=containerd (0.71s)
+2026-05-07T01:07:19.8096708Z     --- SKIP: TestIntegration/slice=3-4/TestSourceMetaPolicySession/worker=containerd (0.71s)
+2026-05-07T01:07:19.8098465Z     --- SKIP: TestIntegration/slice=3-4/TestSourceMetaPolicySessionResolveAttestations/worker=containerd (0.70s)
+2026-05-07T01:07:19.8100008Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicyParallelSession/worker=containerd (0.71s)
+2026-05-07T01:07:19.8100821Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySignedCommit/worker=containerd (0.71s)
+2026-05-07T01:07:19.8101720Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionHTTPChecksumAssist/worker=containerd (0.73s)
+2026-05-07T01:07:19.8102508Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionConvert/worker=containerd (0.71s)
+2026-05-07T01:07:19.8103503Z     --- PASS: TestIntegration/slice=3-4/TestListenBuildHistoryExcludesSoftDeletedRecords/worker=containerd (2.34s)
+2026-05-07T01:07:19.8104284Z     --- SKIP: TestIntegration/slice=3-4/TestValidateNullConfig/worker=containerd (0.71s)
+2026-05-07T01:07:19.8104937Z     --- SKIP: TestIntegration/slice=3-4/TestValidateInvalidConfig/worker=containerd (0.71s)
+2026-05-07T01:07:19.8105806Z     --- SKIP: TestIntegration/slice=3-4/TestValidatePlatformsEmpty/worker=containerd (0.71s)
+2026-05-07T01:07:19.8106810Z     --- SKIP: TestIntegration/slice=3-4/TestValidatePlatformsInvalid/worker=containerd (0.72s)
+2026-05-07T01:07:19.8107956Z     --- SKIP: TestIntegration/slice=3-4/TestValidateSourcePolicy/worker=containerd (0.77s)
+2026-05-07T01:07:19.8108907Z     --- SKIP: TestIntegration/slice=3-4/TestDiffScratch/worker=containerd (0.74s)
+2026-05-07T01:07:19.8109294Z PASS
+2026-05-07T01:07:19.8109530Z coverage: 50.9% of statements
+2026-05-07T01:07:19.8445863Z ok  	github.com/moby/buildkit/client	352.839s	coverage: 50.9% of statements
+2026-05-07T01:07:35.4529616Z 
+2026-05-07T01:07:35.4530770Z === [33mSkipped[0m
+2026-05-07T01:07:35.4531956Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourceDateEpochReset/worker=containerd (4.97s)
+2026-05-07T01:07:35.4534131Z time="2026-05-07T01:01:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50240"
+2026-05-07T01:07:35.4535174Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4536173Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochReset/worker=containerd (4.97s)
+2026-05-07T01:07:35.4536843Z 
+2026-05-07T01:07:35.4537724Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourceDateEpochLocalExporter/worker=containerd (0.72s)
+2026-05-07T01:07:35.4539206Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4540888Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochLocalExporter/worker=containerd (0.72s)
+2026-05-07T01:07:35.4541682Z 
+2026-05-07T01:07:35.4542537Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourceDateEpochTarExporter/worker=containerd (0.70s)
+2026-05-07T01:07:35.4543585Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4544572Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochTarExporter/worker=containerd (0.70s)
+2026-05-07T01:07:35.4546235Z 
+2026-05-07T01:07:35.4546879Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSBOMScan/worker=containerd (0.71s)
+2026-05-07T01:07:35.4547794Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4548618Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMScan/worker=containerd (0.71s)
+2026-05-07T01:07:35.4549174Z 
+2026-05-07T01:07:35.4549965Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSBOMScanSingleRef/worker=containerd (0.71s)
+2026-05-07T01:07:35.4551498Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4552784Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMScanSingleRef/worker=containerd (0.71s)
+2026-05-07T01:07:35.4553466Z 
+2026-05-07T01:07:35.4554183Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSBOMSupplements/worker=containerd (0.72s)
+2026-05-07T01:07:35.4555158Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4556320Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMSupplements/worker=containerd (0.72s)
+2026-05-07T01:07:35.4557870Z 
+2026-05-07T01:07:35.4558615Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestMountStubsDirectory/worker=containerd (0.73s)
+2026-05-07T01:07:35.4560289Z     run.go:573: Skipped on windows: requires tmpfs, multiple mounts, and Scratch — all unsupported on Windows
+2026-05-07T01:07:35.4561656Z     --- SKIP: TestIntegration/slice=3-4/TestMountStubsDirectory/worker=containerd (0.73s)
+2026-05-07T01:07:35.4562326Z 
+2026-05-07T01:07:35.4563817Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestMountStubsTimestamp/worker=containerd (0.72s)
+2026-05-07T01:07:35.4565485Z     run.go:573: Skipped on windows: requires tmpfs, multiple mounts, and Scratch — all unsupported on Windows
+2026-05-07T01:07:35.4567040Z     --- SKIP: TestIntegration/slice=3-4/TestMountStubsTimestamp/worker=containerd (0.72s)
+2026-05-07T01:07:35.4567719Z 
+2026-05-07T01:07:35.4568370Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicy/worker=containerd (0.76s)
+2026-05-07T01:07:35.4570221Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4571027Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicy/worker=containerd (0.76s)
+2026-05-07T01:07:35.4571639Z 
+2026-05-07T01:07:35.4572624Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestMultipleRecordsWithSameLayersCacheImportExport/worker=containerd (0.80s)
+2026-05-07T01:07:35.4573814Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4575848Z     --- SKIP: TestIntegration/slice=3-4/TestMultipleRecordsWithSameLayersCacheImportExport/worker=containerd (0.80s)
+2026-05-07T01:07:35.4576826Z 
+2026-05-07T01:07:35.4577670Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSnapshotWithMultipleBlobs/worker=containerd (0.71s)
+2026-05-07T01:07:35.4579132Z     run.go:573: Skipped on windows: HCS layer activation race: concurrent mkdir fails on CI (passes locally)
+2026-05-07T01:07:35.4581226Z     --- SKIP: TestIntegration/slice=3-4/TestSnapshotWithMultipleBlobs/worker=containerd (0.71s)
+2026-05-07T01:07:35.4581961Z 
+2026-05-07T01:07:35.4582622Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestImageBlobSource/worker=containerd (0.71s)
+2026-05-07T01:07:35.4583526Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4584350Z     --- SKIP: TestIntegration/slice=3-4/TestImageBlobSource/worker=containerd (0.71s)
+2026-05-07T01:07:35.4584930Z 
+2026-05-07T01:07:35.4585599Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestOCILayoutBlobSource/worker=containerd (0.72s)
+2026-05-07T01:07:35.4587170Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4588021Z     --- SKIP: TestIntegration/slice=3-4/TestOCILayoutBlobSource/worker=containerd (0.72s)
+2026-05-07T01:07:35.4588621Z 
+2026-05-07T01:07:35.4589297Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestLayerLimitOnMounts/worker=containerd (0.82s)
+2026-05-07T01:07:35.4590246Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4591187Z     --- SKIP: TestIntegration/slice=3-4/TestLayerLimitOnMounts/worker=containerd (0.82s)
+2026-05-07T01:07:35.4592990Z 
+2026-05-07T01:07:35.4593718Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestFileOpSymlink/worker=containerd (0.80s)
+2026-05-07T01:07:35.4594694Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4595588Z     --- SKIP: TestIntegration/slice=3-4/TestFileOpSymlink/worker=containerd (0.80s)
+2026-05-07T01:07:35.4596246Z 
+2026-05-07T01:07:35.4597055Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestGitResolveMutatedSource/worker=containerd (0.74s)
+2026-05-07T01:07:35.4597645Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4598808Z     --- SKIP: TestIntegration/slice=3-4/TestGitResolveMutatedSource/worker=containerd (0.74s)
+2026-05-07T01:07:35.4599221Z 
+2026-05-07T01:07:35.4599637Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestGitBundleRoundTrip/worker=containerd (0.73s)
+2026-05-07T01:07:35.4600208Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4600897Z     --- SKIP: TestIntegration/slice=3-4/TestGitBundleRoundTrip/worker=containerd (0.73s)
+2026-05-07T01:07:35.4601254Z 
+2026-05-07T01:07:35.4601715Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestGitBundleRoundTripRegistry/worker=containerd (0.71s)
+2026-05-07T01:07:35.4602275Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4602827Z     --- SKIP: TestIntegration/slice=3-4/TestGitBundleRoundTripRegistry/worker=containerd (0.71s)
+2026-05-07T01:07:35.4603233Z 
+2026-05-07T01:07:35.4604019Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestImageResolveAttestationChainLocal/worker=containerd (0.71s)
+2026-05-07T01:07:35.4604856Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4605442Z     --- SKIP: TestIntegration/slice=3-4/TestImageResolveAttestationChainLocal/worker=containerd (0.71s)
+2026-05-07T01:07:35.4605974Z 
+2026-05-07T01:07:35.4606436Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestImageResolveProvenanceAttestation/worker=containerd (0.71s)
+2026-05-07T01:07:35.4607051Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4607627Z     --- SKIP: TestIntegration/slice=3-4/TestImageResolveProvenanceAttestation/worker=containerd (0.71s)
+2026-05-07T01:07:35.4608037Z 
+2026-05-07T01:07:35.4608434Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicySession/worker=containerd (0.77s)
+2026-05-07T01:07:35.4608972Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4609754Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySession/worker=containerd (0.77s)
+2026-05-07T01:07:35.4610333Z 
+2026-05-07T01:07:35.4610779Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicySessionDenyMessages/worker=containerd (0.71s)
+2026-05-07T01:07:35.4611673Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4612686Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionDenyMessages/worker=containerd (0.71s)
+2026-05-07T01:07:35.4613415Z 
+2026-05-07T01:07:35.4614196Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourceMetaPolicySession/worker=containerd (0.71s)
+2026-05-07T01:07:35.4616069Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4617054Z     --- SKIP: TestIntegration/slice=3-4/TestSourceMetaPolicySession/worker=containerd (0.71s)
+2026-05-07T01:07:35.4617750Z 
+2026-05-07T01:07:35.4618728Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourceMetaPolicySessionResolveAttestations/worker=containerd (0.70s)
+2026-05-07T01:07:35.4619975Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4622009Z     --- SKIP: TestIntegration/slice=3-4/TestSourceMetaPolicySessionResolveAttestations/worker=containerd (0.70s)
+2026-05-07T01:07:35.4622861Z 
+2026-05-07T01:07:35.4623645Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicyParallelSession/worker=containerd (0.71s)
+2026-05-07T01:07:35.4624648Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4625682Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicyParallelSession/worker=containerd (0.71s)
+2026-05-07T01:07:35.4626401Z 
+2026-05-07T01:07:35.4627959Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicySignedCommit/worker=containerd (0.71s)
+2026-05-07T01:07:35.4628944Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4629863Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySignedCommit/worker=containerd (0.71s)
+2026-05-07T01:07:35.4630516Z 
+2026-05-07T01:07:35.4631441Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicySessionHTTPChecksumAssist/worker=containerd (0.73s)
+2026-05-07T01:07:35.4632958Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4634491Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionHTTPChecksumAssist/worker=containerd (0.73s)
+2026-05-07T01:07:35.4635388Z 
+2026-05-07T01:07:35.4636264Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestSourcePolicySessionConvert/worker=containerd (0.71s)
+2026-05-07T01:07:35.4637403Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4638314Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionConvert/worker=containerd (0.71s)
+2026-05-07T01:07:35.4640198Z 
+2026-05-07T01:07:35.4640927Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestValidateNullConfig/worker=containerd (0.71s)
+2026-05-07T01:07:35.4641921Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4642858Z     --- SKIP: TestIntegration/slice=3-4/TestValidateNullConfig/worker=containerd (0.71s)
+2026-05-07T01:07:35.4643501Z 
+2026-05-07T01:07:35.4645200Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestValidateInvalidConfig/worker=containerd (0.71s)
+2026-05-07T01:07:35.4646205Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4647097Z     --- SKIP: TestIntegration/slice=3-4/TestValidateInvalidConfig/worker=containerd (0.71s)
+2026-05-07T01:07:35.4647756Z 
+2026-05-07T01:07:35.4648524Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestValidatePlatformsEmpty/worker=containerd (0.71s)
+2026-05-07T01:07:35.4649803Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4655474Z     --- SKIP: TestIntegration/slice=3-4/TestValidatePlatformsEmpty/worker=containerd (0.71s)
+2026-05-07T01:07:35.4655920Z 
+2026-05-07T01:07:35.4656720Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestValidatePlatformsInvalid/worker=containerd (0.72s)
+2026-05-07T01:07:35.4657701Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4658265Z     --- SKIP: TestIntegration/slice=3-4/TestValidatePlatformsInvalid/worker=containerd (0.72s)
+2026-05-07T01:07:35.4658645Z 
+2026-05-07T01:07:35.4659094Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestValidateSourcePolicy/worker=containerd (0.77s)
+2026-05-07T01:07:35.4659651Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4660130Z     --- SKIP: TestIntegration/slice=3-4/TestValidateSourcePolicy/worker=containerd (0.77s)
+2026-05-07T01:07:35.4662779Z 
+2026-05-07T01:07:35.4663558Z === [33mSKIP[0m: client TestIntegration/slice=3-4/TestDiffScratch/worker=containerd (0.74s)
+2026-05-07T01:07:35.4664109Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4664595Z     --- SKIP: TestIntegration/slice=3-4/TestDiffScratch/worker=containerd (0.74s)
+2026-05-07T01:07:35.4664915Z 
+2026-05-07T01:07:35.4665146Z === [33mSKIP[0m: client TestIntegration (352.74s)
+2026-05-07T01:07:35.4665991Z     run.go:331: copied mcr.microsoft.com/windows/nanoserver:ltsc2022 to local mirror localhost:50240/library/nanoserver:latest
+2026-05-07T01:07:35.4667384Z time="2026-05-07T01:01:29Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50240"
+2026-05-07T01:07:35.4670584Z     run.go:331: copied docker.io/wintools/nanoserver:ltsc2022 to local mirror localhost:50240/library/nanoserver:plus
+2026-05-07T01:07:35.4671224Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4671724Z time="2026-05-07T01:01:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50240"
+2026-05-07T01:07:35.4672234Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4672759Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochReset/worker=containerd (4.97s)
+2026-05-07T01:07:35.4673268Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4673813Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochLocalExporter/worker=containerd (0.72s)
+2026-05-07T01:07:35.4674346Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4674852Z     --- SKIP: TestIntegration/slice=3-4/TestSourceDateEpochTarExporter/worker=containerd (0.70s)
+2026-05-07T01:07:35.4678233Z     --- PASS: TestIntegration/slice=3-4/TestSourceDateEpochImageExporter/worker=containerd (33.31s)
+2026-05-07T01:07:35.4679065Z     --- PASS: TestIntegration/slice=3-4/TestAttestationBundle/worker=containerd (23.43s)
+2026-05-07T01:07:35.4679560Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4679980Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMScan/worker=containerd (0.71s)
+2026-05-07T01:07:35.4680435Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4680936Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMScanSingleRef/worker=containerd (0.71s)
+2026-05-07T01:07:35.4681429Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4684052Z     --- SKIP: TestIntegration/slice=3-4/TestSBOMSupplements/worker=containerd (0.72s)
+2026-05-07T01:07:35.4684897Z     --- PASS: TestIntegration/slice=3-4/TestMultipleCacheExports/worker=containerd (69.23s)
+2026-05-07T01:07:35.4685880Z     run.go:573: Skipped on windows: requires tmpfs, multiple mounts, and Scratch — all unsupported on Windows
+2026-05-07T01:07:35.4686643Z     --- SKIP: TestIntegration/slice=3-4/TestMountStubsDirectory/worker=containerd (0.73s)
+2026-05-07T01:07:35.4687488Z     run.go:573: Skipped on windows: requires tmpfs, multiple mounts, and Scratch — all unsupported on Windows
+2026-05-07T01:07:35.4694280Z     --- SKIP: TestIntegration/slice=3-4/TestMountStubsTimestamp/worker=containerd (0.72s)
+2026-05-07T01:07:35.4698066Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4698826Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicy/worker=containerd (0.76s)
+2026-05-07T01:07:35.4699620Z     --- PASS: TestIntegration/slice=3-4/TestImageManifestRegistryCacheImportExport/worker=containerd (62.10s)
+2026-05-07T01:07:35.4700413Z     --- PASS: TestIntegration/slice=3-4/TestLLBMountPerformance/worker=containerd (38.22s)
+2026-05-07T01:07:35.4701097Z     --- PASS: TestIntegration/slice=3-4/TestClientCustomGRPCOpts/worker=containerd (1.57s)
+2026-05-07T01:07:35.4701600Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4702268Z     --- SKIP: TestIntegration/slice=3-4/TestMultipleRecordsWithSameLayersCacheImportExport/worker=containerd (0.80s)
+2026-05-07T01:07:35.4703917Z     --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd (1.59s)
+2026-05-07T01:07:35.4704645Z time="2026-05-07T01:05:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50393"
+2026-05-07T01:07:35.4706037Z         --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=true/imageManifest=true (0.26s)
+2026-05-07T01:07:35.4707653Z time="2026-05-07T01:05:27Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50396"
+2026-05-07T01:07:35.4709859Z         --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=true/imageManifest=false (0.30s)
+2026-05-07T01:07:35.4711065Z time="2026-05-07T01:05:28Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:50399"
+2026-05-07T01:07:35.4712821Z         --- PASS: TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/TestIntegration/slice=3-4/TestRegistryEmptyCacheExport/worker=containerd/ociMediaTypes=false/imageManifest=false (0.30s)
+2026-05-07T01:07:35.4714039Z     run.go:573: Skipped on windows: HCS layer activation race: concurrent mkdir fails on CI (passes locally)
+2026-05-07T01:07:35.4715410Z     --- SKIP: TestIntegration/slice=3-4/TestSnapshotWithMultipleBlobs/worker=containerd (0.71s)
+2026-05-07T01:07:35.4716150Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4716658Z     --- SKIP: TestIntegration/slice=3-4/TestImageBlobSource/worker=containerd (0.71s)
+2026-05-07T01:07:35.4717123Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4717634Z     --- SKIP: TestIntegration/slice=3-4/TestOCILayoutBlobSource/worker=containerd (0.72s)
+2026-05-07T01:07:35.4718368Z     --- PASS: TestIntegration/slice=3-4/TestExportLocalNoPlatformSplit/worker=containerd (1.50s)
+2026-05-07T01:07:35.4719167Z     --- PASS: TestIntegration/slice=3-4/TestExportLocalNoPlatformSplitOverwrite/worker=containerd (1.65s)
+2026-05-07T01:07:35.4720308Z     --- PASS: TestIntegration/slice=3-4/TestExportLocalForcePlatformSplit/worker=containerd (1.14s)
+2026-05-07T01:07:35.4721231Z     --- PASS: TestIntegration/slice=3-4/TestOCIIndexMediatype/worker=containerd (23.93s)
+2026-05-07T01:07:35.4721770Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4722241Z     --- SKIP: TestIntegration/slice=3-4/TestLayerLimitOnMounts/worker=containerd (0.82s)
+2026-05-07T01:07:35.4723504Z     --- PASS: TestIntegration/slice=3-4/TestFrontendVerifyPlatforms/worker=containerd (2.70s)
+2026-05-07T01:07:35.4724309Z     --- PASS: TestIntegration/slice=3-4/TestFrontendLintSkipVerifyPlatforms/worker=containerd (0.87s)
+2026-05-07T01:07:35.4725038Z     --- PASS: TestIntegration/slice=3-4/TestRunValidExitCodes/worker=containerd (32.41s)
+2026-05-07T01:07:35.4725522Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4726676Z     --- SKIP: TestIntegration/slice=3-4/TestFileOpSymlink/worker=containerd (0.80s)
+2026-05-07T01:07:35.4727694Z     --- PASS: TestIntegration/slice=3-4/TestMetadataOnlyLocal/worker=containerd (1.78s)
+2026-05-07T01:07:35.4728408Z     --- PASS: TestIntegration/slice=3-4/TestGitResolveSourceMetadata/worker=containerd (4.09s)
+2026-05-07T01:07:35.4729191Z     --- PASS: TestIntegration/slice=3-4/TestHTTPResolveSourceMetadata/worker=containerd (1.29s)
+2026-05-07T01:07:35.4730624Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4731107Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4732523Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4733080Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4733524Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4733928Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4734346Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4734764Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4735174Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4735587Z     client_test.go:13314: entry no longer in use, pruning
+2026-05-07T01:07:35.4736144Z     --- PASS: TestIntegration/slice=3-4/TestHTTPPruneAfterCacheKey/worker=containerd (12.72s)
+2026-05-07T01:07:35.4736887Z     --- PASS: TestIntegration/slice=3-4/TestHTTPPruneAfterResolveMeta/worker=containerd (1.94s)
+2026-05-07T01:07:35.4738402Z     --- PASS: TestIntegration/slice=3-4/TestHTTPResolveMetaReuse/worker=containerd (1.37s)
+2026-05-07T01:07:35.4739177Z     --- PASS: TestIntegration/slice=3-4/TestHTTPResolveMultiBuild/worker=containerd (2.13s)
+2026-05-07T01:07:35.4739683Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4740222Z     --- SKIP: TestIntegration/slice=3-4/TestGitResolveMutatedSource/worker=containerd (0.74s)
+2026-05-07T01:07:35.4740736Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4741219Z     --- SKIP: TestIntegration/slice=3-4/TestGitBundleRoundTrip/worker=containerd (0.73s)
+2026-05-07T01:07:35.4741704Z     run.go:575: Skipped on windows
+2026-05-07T01:07:35.4742213Z     --- SKIP: TestIntegration/slice=3-4/TestGitBundleRoundTripRegistry/worker=containerd (0.71s)
+2026-05-07T01:07:35.4743056Z     --- PASS: TestIntegration/slice=3-4/TestImageResolveAttestationChainRequiresNetwork/worker=containerd (2.37s)
+2026-05-07T01:07:35.4744501Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4745095Z     --- SKIP: TestIntegration/slice=3-4/TestImageResolveAttestationChainLocal/worker=containerd (0.71s)
+2026-05-07T01:07:35.4745646Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4746190Z     --- SKIP: TestIntegration/slice=3-4/TestImageResolveProvenanceAttestation/worker=containerd (0.71s)
+2026-05-07T01:07:35.4746734Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4747221Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySession/worker=containerd (0.77s)
+2026-05-07T01:07:35.4747712Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4748509Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionDenyMessages/worker=containerd (0.71s)
+2026-05-07T01:07:35.4749804Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4750334Z     --- SKIP: TestIntegration/slice=3-4/TestSourceMetaPolicySession/worker=containerd (0.71s)
+2026-05-07T01:07:35.4750855Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4751590Z     --- SKIP: TestIntegration/slice=3-4/TestSourceMetaPolicySessionResolveAttestations/worker=containerd (0.70s)
+2026-05-07T01:07:35.4752660Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4753199Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicyParallelSession/worker=containerd (0.71s)
+2026-05-07T01:07:35.4753719Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4754226Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySignedCommit/worker=containerd (0.71s)
+2026-05-07T01:07:35.4754705Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4755881Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionHTTPChecksumAssist/worker=containerd (0.73s)
+2026-05-07T01:07:35.4756464Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4756989Z     --- SKIP: TestIntegration/slice=3-4/TestSourcePolicySessionConvert/worker=containerd (0.71s)
+2026-05-07T01:07:35.4757977Z     --- PASS: TestIntegration/slice=3-4/TestListenBuildHistoryExcludesSoftDeletedRecords/worker=containerd (2.34s)
+2026-05-07T01:07:35.4758557Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4759036Z     --- SKIP: TestIntegration/slice=3-4/TestValidateNullConfig/worker=containerd (0.71s)
+2026-05-07T01:07:35.4759508Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4760012Z     --- SKIP: TestIntegration/slice=3-4/TestValidateInvalidConfig/worker=containerd (0.71s)
+2026-05-07T01:07:35.4760826Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4761545Z     --- SKIP: TestIntegration/slice=3-4/TestValidatePlatformsEmpty/worker=containerd (0.71s)
+2026-05-07T01:07:35.4762043Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4762548Z     --- SKIP: TestIntegration/slice=3-4/TestValidatePlatformsInvalid/worker=containerd (0.72s)
+2026-05-07T01:07:35.4763048Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4763582Z     --- SKIP: TestIntegration/slice=3-4/TestValidateSourcePolicy/worker=containerd (0.77s)
+2026-05-07T01:07:35.4764075Z     run.go:575: Skipped on linux
+2026-05-07T01:07:35.4764504Z     --- SKIP: TestIntegration/slice=3-4/TestDiffScratch/worker=containerd (0.74s)
+2026-05-07T01:07:35.4764837Z 
+2026-05-07T01:07:35.4764954Z DONE 61 tests, 35 skipped in 366.790s
+2026-05-07T01:07:35.5410039Z ##[group]Run codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2
+2026-05-07T01:07:35.5410556Z with:
+2026-05-07T01:07:35.5410772Z   directory: ./bin/testreports
+2026-05-07T01:07:35.5411050Z   env_vars: RUNNER_OS
+2026-05-07T01:07:35.5411280Z   flags: unit
+2026-05-07T01:07:35.5411502Z   disable_file_fixes: true
+2026-05-07T01:07:35.5411946Z   token: ***
+2026-05-07T01:07:35.5412121Z   disable_search: false
+2026-05-07T01:07:35.5412327Z   disable_safe_directory: false
+2026-05-07T01:07:35.5412537Z   disable_telem: false
+2026-05-07T01:07:35.5412707Z   dry_run: false
+2026-05-07T01:07:35.5412880Z   fail_ci_if_error: false
+2026-05-07T01:07:35.5413089Z   git_service: github
+2026-05-07T01:07:35.5413270Z   gcov_executable: gcov
+2026-05-07T01:07:35.5413460Z   handle_no_reports_found: false
+2026-05-07T01:07:35.5413686Z   recurse_submodules: false
+2026-05-07T01:07:35.5413895Z   run_command: upload-coverage
+2026-05-07T01:07:35.5414101Z   skip_validation: false
+2026-05-07T01:07:35.5414332Z   use_legacy_upload_endpoint: false
+2026-05-07T01:07:35.5414543Z   use_oidc: false
+2026-05-07T01:07:35.5414710Z   use_pypi: false
+2026-05-07T01:07:35.5414873Z   verbose: false
+2026-05-07T01:07:35.5415383Z   version: latest
+2026-05-07T01:07:35.5415549Z env:
+2026-05-07T01:07:35.5415696Z   GO_VERSION: 1.26
+2026-05-07T01:07:35.5415871Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:35.5416100Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:35.5416333Z   DESTDIR: ./bin
+2026-05-07T01:07:35.5416643Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:35.5417023Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:35.5417264Z   TESTPKG: ./client
+2026-05-07T01:07:35.5417509Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:35.5417820Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:35.5418378Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:35.5419201Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:35.5419834Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:35.5420275Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:35.5420603Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:35.5466119Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:35.5466749Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:35.5467591Z   GOTOOLCHAIN: local
+2026-05-07T01:07:35.5467774Z ##[endgroup]
+2026-05-07T01:07:35.5663203Z ##[group]Run missing_deps=""
+2026-05-07T01:07:35.5663501Z [36;1mmissing_deps=""[0m
+2026-05-07T01:07:35.5663724Z [36;1m[0m
+2026-05-07T01:07:35.5663945Z [36;1m# Check for always-required commands[0m
+2026-05-07T01:07:35.5664279Z [36;1mfor cmd in bash git curl; do[0m
+2026-05-07T01:07:35.5664617Z [36;1m  if ! command -v "$cmd" >/dev/null 2>&1; then[0m
+2026-05-07T01:07:35.5664970Z [36;1m    missing_deps="$missing_deps $cmd"[0m
+2026-05-07T01:07:35.5665260Z [36;1m  fi[0m
+2026-05-07T01:07:35.5665441Z [36;1mdone[0m
+2026-05-07T01:07:35.5665623Z [36;1m[0m
+2026-05-07T01:07:35.5665898Z [36;1m# Check for gpg only if validation is not being skipped[0m
+2026-05-07T01:07:35.5666277Z [36;1mif [ "false" != "true" ]; then[0m
+2026-05-07T01:07:35.5666594Z [36;1m  if ! command -v gpg >/dev/null 2>&1; then[0m
+2026-05-07T01:07:35.5666965Z [36;1m    missing_deps="$missing_deps gpg"[0m
+2026-05-07T01:07:35.5667266Z [36;1m  fi[0m
+2026-05-07T01:07:35.5667444Z [36;1mfi[0m
+2026-05-07T01:07:35.5667613Z [36;1m[0m
+2026-05-07T01:07:35.5667835Z [36;1m# Report missing required dependencies[0m
+2026-05-07T01:07:35.5668166Z [36;1mif [ -n "$missing_deps" ]; then[0m
+2026-05-07T01:07:35.5670653Z [36;1m  echo "Error: The following required dependencies are missing:$missing_deps"[0m
+2026-05-07T01:07:35.5671229Z [36;1m  echo "Please install these dependencies before using this action."[0m
+2026-05-07T01:07:35.5671577Z [36;1m  exit 1[0m
+2026-05-07T01:07:35.5671738Z [36;1mfi[0m
+2026-05-07T01:07:35.5671887Z [36;1m[0m
+2026-05-07T01:07:35.5672119Z [36;1mecho "All required system dependencies are available."[0m
+2026-05-07T01:07:35.5692602Z shell: C:\Program Files\Git\bin\sh.EXE -e {0}
+2026-05-07T01:07:35.5692865Z env:
+2026-05-07T01:07:35.5693014Z   GO_VERSION: 1.26
+2026-05-07T01:07:35.5693185Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:35.5693413Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:35.5693662Z   DESTDIR: ./bin
+2026-05-07T01:07:35.5693969Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:35.5694341Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:35.5695155Z   TESTPKG: ./client
+2026-05-07T01:07:35.5695429Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:35.5695742Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:35.5696292Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:35.5697099Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:35.5697730Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:35.5698172Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:35.5698491Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:35.5743693Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:35.5744300Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:35.5744909Z   GOTOOLCHAIN: local
+2026-05-07T01:07:35.5745083Z ##[endgroup]
+2026-05-07T01:07:35.8925381Z All required system dependencies are available.
+2026-05-07T01:07:35.9068840Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2026-05-07T01:07:35.9069294Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2026-05-07T01:07:35.9069732Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2026-05-07T01:07:35.9087856Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:35.9088217Z env:
+2026-05-07T01:07:35.9088365Z   GO_VERSION: 1.26
+2026-05-07T01:07:35.9088543Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:35.9088769Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:35.9089176Z   DESTDIR: ./bin
+2026-05-07T01:07:35.9089484Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:35.9089855Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:35.9090068Z   TESTPKG: ./client
+2026-05-07T01:07:35.9090328Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:35.9090632Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:35.9091194Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:35.9092015Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:35.9092637Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:35.9093079Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:35.9093402Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:35.9145252Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:35.9146317Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:35.9147439Z   GOTOOLCHAIN: local
+2026-05-07T01:07:35.9147735Z ##[endgroup]
+2026-05-07T01:07:35.9938233Z [0;32m==>[0m Running Action version 6.0.0
+2026-05-07T01:07:36.0073824Z ##[group]Run git config --global --add safe.directory "D:\a\buildkit\buildkit"
+2026-05-07T01:07:36.0074405Z [36;1mgit config --global --add safe.directory "D:\a\buildkit\buildkit"[0m
+2026-05-07T01:07:36.0074927Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2026-05-07T01:07:36.0093068Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:36.0093426Z env:
+2026-05-07T01:07:36.0093584Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.0093768Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.0093997Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.0094312Z   DESTDIR: ./bin
+2026-05-07T01:07:36.0094615Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.0094987Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.0095218Z   TESTPKG: ./client
+2026-05-07T01:07:36.0095466Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.0095771Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.0096319Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.0097139Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.0097768Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.0098210Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.0098531Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.0144109Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.0144733Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.0145342Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.0145518Z ##[endgroup]
+2026-05-07T01:07:36.1087038Z ##[group]Run CC_FORK="false"
+2026-05-07T01:07:36.1087300Z [36;1mCC_FORK="false"[0m
+2026-05-07T01:07:36.1087825Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2026-05-07T01:07:36.1088374Z [36;1mthen[0m
+2026-05-07T01:07:36.1088589Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2026-05-07T01:07:36.1088849Z [36;1m  CC_FORK="true"[0m
+2026-05-07T01:07:36.1089019Z [36;1mfi[0m
+2026-05-07T01:07:36.1089203Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.1107258Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:36.1107618Z env:
+2026-05-07T01:07:36.1107945Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.1108133Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.1108371Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.1108621Z   DESTDIR: ./bin
+2026-05-07T01:07:36.1108937Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.1109311Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.1109540Z   TESTPKG: ./client
+2026-05-07T01:07:36.1109799Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.1110113Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.1110680Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.1111504Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.1112146Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.1112603Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.1112933Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.1158035Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.1158827Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.1159464Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.1159673Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: 
+2026-05-07T01:07:36.1159941Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: 
+2026-05-07T01:07:36.1160216Z   GITHUB_REPOSITORY: moby/buildkit
+2026-05-07T01:07:36.1160431Z ##[endgroup]
+2026-05-07T01:07:36.1627367Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-07T01:07:36.1627716Z with:
+2026-05-07T01:07:36.1628290Z   script: if (process.env.CC_USE_OIDC === 'true' && process.env.CC_FORK != 'true') {
+  const id_token = await core.getIDToken(process.env.CC_OIDC_AUDIENCE)
+  return id_token
+}
+
+2026-05-07T01:07:36.1629094Z   github-token: ***
+2026-05-07T01:07:36.1629267Z   debug: false
+2026-05-07T01:07:36.1629446Z   user-agent: actions/github-script
+2026-05-07T01:07:36.1629674Z   result-encoding: json
+2026-05-07T01:07:36.1629850Z   retries: 0
+2026-05-07T01:07:36.1630047Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-07T01:07:36.1630296Z env:
+2026-05-07T01:07:36.1630437Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.1630608Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.1630824Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.1631053Z   DESTDIR: ./bin
+2026-05-07T01:07:36.1631348Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.1631722Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.1631940Z   TESTPKG: ./client
+2026-05-07T01:07:36.1632181Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.1632489Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.1633051Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.1633892Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.1634528Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.1634986Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.1635312Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.1680375Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.1680988Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.1681602Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.1681777Z   CC_FORK: false
+2026-05-07T01:07:36.1681960Z   CC_OIDC_AUDIENCE: https://codecov.io
+2026-05-07T01:07:36.1682183Z   CC_USE_OIDC: false
+2026-05-07T01:07:36.1682350Z ##[endgroup]
+2026-05-07T01:07:36.2848150Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2026-05-07T01:07:36.2848556Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2026-05-07T01:07:36.2848848Z [36;1mthen[0m
+2026-05-07T01:07:36.2849092Z [36;1m  echo "CC_TOKEN=$CC_OIDC_TOKEN" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.2849390Z [36;1melif [ -n "" ];[0m
+2026-05-07T01:07:36.2849577Z [36;1mthen[0m
+2026-05-07T01:07:36.2849801Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2026-05-07T01:07:36.2850114Z [36;1m    echo "CC_TOKEN=" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.2850363Z [36;1melse[0m
+2026-05-07T01:07:36.2850652Z [36;1m  if [ -n "***" ];[0m
+2026-05-07T01:07:36.2850850Z [36;1m  then[0m
+2026-05-07T01:07:36.2851082Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2026-05-07T01:07:36.2851509Z [36;1m    CC_TOKEN=$(echo "***" | tr -d '\n')[0m
+2026-05-07T01:07:36.2851815Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.2852098Z [36;1m  fi[0m
+2026-05-07T01:07:36.2852250Z [36;1mfi[0m
+2026-05-07T01:07:36.2870272Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:36.2870644Z env:
+2026-05-07T01:07:36.2870789Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.2871131Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.2871378Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.2871620Z   DESTDIR: ./bin
+2026-05-07T01:07:36.2871940Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.2872328Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.2872562Z   TESTPKG: ./client
+2026-05-07T01:07:36.2872815Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.2873119Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.2873675Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.2874511Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.2875147Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.2875600Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.2875934Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.2920311Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.2920913Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.2921529Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.2921700Z   CC_FORK: false
+2026-05-07T01:07:36.2921860Z   CC_OIDC_TOKEN: 
+2026-05-07T01:07:36.2922049Z   CC_OIDC_AUDIENCE: https://codecov.io
+2026-05-07T01:07:36.2922280Z ##[endgroup]
+2026-05-07T01:07:36.3209234Z [0;32m==>[0m Token set from input
+2026-05-07T01:07:36.3702060Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2026-05-07T01:07:36.3702630Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2026-05-07T01:07:36.3703015Z [36;1mthen[0m
+2026-05-07T01:07:36.3703463Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-05-07T01:07:36.3704030Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-05-07T01:07:36.3704362Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-05-07T01:07:36.3704670Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.3704913Z [36;1mfi[0m
+2026-05-07T01:07:36.3705057Z [36;1m[0m
+2026-05-07T01:07:36.3705243Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.3723775Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:36.3724127Z env:
+2026-05-07T01:07:36.3724277Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.3724460Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.3724849Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.3725082Z   DESTDIR: ./bin
+2026-05-07T01:07:36.3725387Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.3725762Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.3725990Z   TESTPKG: ./client
+2026-05-07T01:07:36.3726234Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.3726542Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.3727101Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.3727945Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.3728584Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.3729038Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.3729378Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.3774271Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.3774870Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.3776214Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.3776435Z   CC_FORK: false
+2026-05-07T01:07:36.3776657Z   CC_TOKEN: ***
+2026-05-07T01:07:36.3776820Z   CC_BRANCH: 
+2026-05-07T01:07:36.3776986Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: 
+2026-05-07T01:07:36.3777259Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: 
+2026-05-07T01:07:36.3777529Z   GITHUB_REPOSITORY: moby/buildkit
+2026-05-07T01:07:36.3777741Z ##[endgroup]
+2026-05-07T01:07:36.4196598Z ##[group]Run if [ -z "$CC_SHA" ];
+2026-05-07T01:07:36.4196852Z [36;1mif [ -z "$CC_SHA" ];[0m
+2026-05-07T01:07:36.4197042Z [36;1mthen[0m
+2026-05-07T01:07:36.4197253Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2026-05-07T01:07:36.4197530Z [36;1mfi[0m
+2026-05-07T01:07:36.4197725Z [36;1mif [ -z "$CC_PR" ] && [ "$CC_FORK" == 'true' ];[0m
+2026-05-07T01:07:36.4197969Z [36;1mthen[0m
+2026-05-07T01:07:36.4198141Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2026-05-07T01:07:36.4198357Z [36;1mfi[0m
+2026-05-07T01:07:36.4198497Z [36;1m[0m
+2026-05-07T01:07:36.4198671Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.4198939Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2026-05-07T01:07:36.4216388Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:36.4216749Z env:
+2026-05-07T01:07:36.4216898Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.4217084Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.4217325Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.4217569Z   DESTDIR: ./bin
+2026-05-07T01:07:36.4217877Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.4218263Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.4218498Z   TESTPKG: ./client
+2026-05-07T01:07:36.4218751Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.4219059Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.4219623Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.4220448Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.4221082Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.4221538Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.4221859Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.4266408Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.4267012Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.4267784Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.4267959Z   CC_FORK: false
+2026-05-07T01:07:36.4268167Z   CC_TOKEN: ***
+2026-05-07T01:07:36.4268338Z   CC_BRANCH: 
+2026-05-07T01:07:36.4268484Z   CC_PR: 
+2026-05-07T01:07:36.4268618Z   CC_SHA: 
+2026-05-07T01:07:36.4268765Z   GITHUB_EVENT_NAME: push
+2026-05-07T01:07:36.4268963Z   GITHUB_EVENT_NUMBER: 
+2026-05-07T01:07:36.4269157Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: 
+2026-05-07T01:07:36.4269380Z ##[endgroup]
+2026-05-07T01:07:36.4696469Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2026-05-07T01:07:36.4696788Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2026-05-07T01:07:36.4714623Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-07T01:07:36.4714986Z env:
+2026-05-07T01:07:36.4715137Z   GO_VERSION: 1.26
+2026-05-07T01:07:36.4715314Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:36.4715541Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:36.4715781Z   DESTDIR: ./bin
+2026-05-07T01:07:36.4716095Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:36.4716468Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:36.4716693Z   TESTPKG: ./client
+2026-05-07T01:07:36.4716943Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:36.4717414Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:36.4717982Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.4718825Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:36.4719464Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:36.4719912Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:36.4720239Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:36.4764700Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:36.4765294Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:36.4765912Z   GOTOOLCHAIN: local
+2026-05-07T01:07:36.4766089Z   CC_FORK: false
+2026-05-07T01:07:36.4766289Z   CC_TOKEN: ***
+2026-05-07T01:07:36.4766435Z   CC_BRANCH: 
+2026-05-07T01:07:36.4766588Z   CC_SHA: 
+2026-05-07T01:07:36.4766727Z   CC_PR: 
+2026-05-07T01:07:36.4766867Z   CC_BASE_SHA: 
+2026-05-07T01:07:36.4767016Z   CC_BINARY: 
+2026-05-07T01:07:36.4767162Z   CC_BUILD: 
+2026-05-07T01:07:36.4767306Z   CC_BUILD_URL: 
+2026-05-07T01:07:36.4767459Z   CC_CODE: 
+2026-05-07T01:07:36.4767605Z   CC_DIR: ./bin/testreports
+2026-05-07T01:07:36.4767809Z   CC_DISABLE_FILE_FIXES: true
+2026-05-07T01:07:36.4768015Z   CC_DISABLE_SEARCH: false
+2026-05-07T01:07:36.4768207Z   CC_DISABLE_TELEM: false
+2026-05-07T01:07:36.4768382Z   CC_DRY_RUN: false
+2026-05-07T01:07:36.4768548Z   CC_ENTERPRISE_URL: 
+2026-05-07T01:07:36.4768721Z   CC_ENV: RUNNER_OS
+2026-05-07T01:07:36.4768883Z   CC_EXCLUDES: 
+2026-05-07T01:07:36.4769033Z   CC_FAIL_ON_ERROR: false
+2026-05-07T01:07:36.4769207Z   CC_FILES: 
+2026-05-07T01:07:36.4769351Z   CC_FLAGS: unit
+2026-05-07T01:07:36.4769497Z   CC_FORCE: 
+2026-05-07T01:07:36.4769631Z   CC_GCOV_ARGS: 
+2026-05-07T01:07:36.4769788Z   CC_GCOV_EXECUTABLE: gcov
+2026-05-07T01:07:36.4769976Z   CC_GCOV_IGNORE: 
+2026-05-07T01:07:36.4770136Z   CC_GCOV_INCLUDE: 
+2026-05-07T01:07:36.4770293Z   CC_GIT_SERVICE: github
+2026-05-07T01:07:36.4770485Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2026-05-07T01:07:36.4770695Z   CC_JOB_CODE: 
+2026-05-07T01:07:36.4770845Z   CC_LEGACY: false
+2026-05-07T01:07:36.4770991Z   CC_NAME: 
+2026-05-07T01:07:36.4771134Z   CC_NETWORK_FILTER: 
+2026-05-07T01:07:36.4771302Z   CC_NETWORK_PREFIX: 
+2026-05-07T01:07:36.4771470Z   CC_NETWORK_ROOT_FOLDER: 
+2026-05-07T01:07:36.4771638Z   CC_OS: 
+2026-05-07T01:07:36.4771775Z   CC_PARENT_SHA: 
+2026-05-07T01:07:36.4771931Z   CC_PLUGINS: 
+2026-05-07T01:07:36.4772092Z   CC_RECURSE_SUBMODULES: false
+2026-05-07T01:07:36.4772432Z   CC_REPORT_TYPE: 
+2026-05-07T01:07:36.4772602Z   CC_RUN_CMD: upload-coverage
+2026-05-07T01:07:36.4772795Z   CC_SERVICE: github
+2026-05-07T01:07:36.4772970Z   CC_SKIP_VALIDATION: false
+2026-05-07T01:07:36.4773147Z   CC_SLUG: 
+2026-05-07T01:07:36.4773291Z   CC_SWIFT_PROJECT: 
+2026-05-07T01:07:36.4773462Z   CC_USE_PYPI: false
+2026-05-07T01:07:36.4773619Z   CC_VERBOSE: false
+2026-05-07T01:07:36.4773781Z   CC_VERSION: latest
+2026-05-07T01:07:36.4773938Z   CC_YML_PATH: 
+2026-05-07T01:07:36.4774093Z ##[endgroup]
+2026-05-07T01:07:36.5499706Z      _____          _
+2026-05-07T01:07:36.5500163Z     / ____|        | |
+2026-05-07T01:07:36.5500554Z    | |     ___   __| | ___  ___ _____   __
+2026-05-07T01:07:36.5500881Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2026-05-07T01:07:36.5501189Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2026-05-07T01:07:36.5501493Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2026-05-07T01:07:36.5502248Z                            [0;31m Wrapper-0.2.7[0m
+2026-05-07T01:07:36.5502683Z                            
+2026-05-07T01:07:36.6240141Z [0;32m==>[0m Detected [0;36mwindows[0m
+2026-05-07T01:07:36.6241358Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/windows/codecov.exe[0m
+2026-05-07T01:07:36.6769962Z   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+2026-05-07T01:07:36.6771443Z                                  Dload  Upload  Total   Spent   Left   Speed
+2026-05-07T01:07:36.6771869Z 
+2026-05-07T01:07:36.8322977Z   0      0   0      0   0      0      0      0                              0
+2026-05-07T01:07:36.8323663Z 100 10.48M 100 10.48M   0      0 67.15M      0                              0
+2026-05-07T01:07:36.8325125Z 100 10.48M 100 10.48M   0      0 67.10M      0                              0
+2026-05-07T01:07:36.8325918Z 100 10.48M 100 10.48M   0      0 67.02M      0                              0
+2026-05-07T01:07:36.8357502Z [0;32m==>[0m Finishing downloading [0;36mwindows:latest[0m
+2026-05-07T01:07:36.9430031Z       Version: [0;36mv11.2.8[0m
+2026-05-07T01:07:36.9430640Z  
+2026-05-07T01:07:37.1427034Z gpg: directory '/c/Users/runneradmin/.gnupg' created
+2026-05-07T01:07:37.8296979Z gpg: /c/Users/runneradmin/.gnupg/trustdb.gpg: trustdb created
+2026-05-07T01:07:37.8307767Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2026-05-07T01:07:38.0023775Z gpg: Total number processed: 1
+2026-05-07T01:07:38.0024100Z gpg:               imported: 1
+2026-05-07T01:07:38.0119852Z [0;32m==>[0m Verifying GPG signature integrity
+2026-05-07T01:07:38.0120941Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/windows/codecov.exe.SHA256SUM[0m
+2026-05-07T01:07:38.0121868Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/windows/codecov.exe.SHA256SUM.sig[0m
+2026-05-07T01:07:38.0122380Z  
+2026-05-07T01:07:38.1511313Z gpg: Signature made Tue Apr 21 19:28:13 2026 CUT
+2026-05-07T01:07:38.1511905Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2026-05-07T01:07:38.1556163Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2026-05-07T01:07:38.1556898Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-05-07T01:07:38.1557452Z gpg:          There is no indication that the signature belongs to the owner.
+2026-05-07T01:07:38.1558165Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2026-05-07T01:07:38.2531137Z codecov.exe: OK
+2026-05-07T01:07:38.2538429Z [0;32m==>[0m CLI integrity verified
+2026-05-07T01:07:38.2538772Z 
+2026-05-07T01:07:39.5801942Z [0;32m ->[0m Token length: 36
+2026-05-07T01:07:39.5802514Z [0;32m==>[0m Running upload-coverage
+2026-05-07T01:07:39.5945013Z       [0;36m./codecov.exe  upload-coverage -t <redacted> --git-service github --env RUNNER_OS --dir ./bin/testreports --disable-file-fixes --flag unit --gcov-executable gcov[0m
+2026-05-07T01:07:40.4827444Z info - 2026-05-07 01:07:40,481 -- ci service found: github-actions
+2026-05-07T01:07:40.5953740Z warning - 2026-05-07 01:07:40,591 -- xcrun is not installed or can't be found.
+2026-05-07T01:07:40.6003355Z warning - 2026-05-07 01:07:40,591 -- No gcov data found.
+2026-05-07T01:07:40.6169402Z warning - 2026-05-07 01:07:40,606 -- coverage.py is not installed or can't be found.
+2026-05-07T01:07:40.6664107Z info - 2026-05-07 01:07:40,653 -- Found 1 coverage files to report
+2026-05-07T01:07:40.6665449Z info - 2026-05-07 01:07:40,653 -- > bin\testreports\coverage-test-windows-amd64-client3-4--containerd.txt
+2026-05-07T01:07:41.2716045Z info - 2026-05-07 01:07:41,263 -- Your upload is now queued for processing. When finished, results will be available at: https://app.codecov.io/github/moby/buildkit/commit/4f42761308ba37d5aec7415c7f174dc1a41d0dca
+2026-05-07T01:07:41.2717810Z info - 2026-05-07 01:07:41,263 -- Sending upload (443696 bytes) to storage
+2026-05-07T01:07:41.6541796Z info - 2026-05-07 01:07:41,639 -- Upload queued for processing complete
+2026-05-07T01:07:42.1260072Z ##[group]Run crazy-max/.github/.github/actions/gotest-annotations@64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16
+2026-05-07T01:07:42.1260607Z with:
+2026-05-07T01:07:42.1260793Z   directory: ./bin/testreports
+2026-05-07T01:07:42.1260996Z env:
+2026-05-07T01:07:42.1261134Z   GO_VERSION: 1.26
+2026-05-07T01:07:42.1261315Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:42.1261545Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:42.1261786Z   DESTDIR: ./bin
+2026-05-07T01:07:42.1262082Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:42.1262458Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:42.1262679Z   TESTPKG: ./client
+2026-05-07T01:07:42.1262931Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:42.1263237Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:42.1263814Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:42.1264637Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:42.1265262Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:42.1265710Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:42.1266035Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:42.1310508Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:42.1311097Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:42.1311704Z   GOTOOLCHAIN: local
+2026-05-07T01:07:42.1311877Z   CC_FORK: false
+2026-05-07T01:07:42.1312098Z   CC_TOKEN: ***
+2026-05-07T01:07:42.1312252Z   CC_BRANCH: 
+2026-05-07T01:07:42.1312400Z   CC_SHA: 
+2026-05-07T01:07:42.1312537Z   CC_PR: 
+2026-05-07T01:07:42.1312679Z ##[endgroup]
+2026-05-07T01:07:42.1451135Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-07T01:07:42.1451482Z with:
+2026-05-07T01:07:42.1451869Z   script: await core.group(`Install npm deps`, async () => {
+  await exec.exec('npm', ['install', 'line-by-line']);
+});
+
+2026-05-07T01:07:42.1452462Z   github-token: ***
+2026-05-07T01:07:42.1452635Z   debug: false
+2026-05-07T01:07:42.1452815Z   user-agent: actions/github-script
+2026-05-07T01:07:42.1453047Z   result-encoding: json
+2026-05-07T01:07:42.1453227Z   retries: 0
+2026-05-07T01:07:42.1453411Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-07T01:07:42.1453655Z env:
+2026-05-07T01:07:42.1453801Z   GO_VERSION: 1.26
+2026-05-07T01:07:42.1453975Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:42.1454190Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:42.1454419Z   DESTDIR: ./bin
+2026-05-07T01:07:42.1454719Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:42.1455257Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:42.1455478Z   TESTPKG: ./client
+2026-05-07T01:07:42.1455725Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:42.1456028Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:42.1456571Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:42.1457379Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:42.1457999Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:42.1458444Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:42.1458768Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:42.1503171Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:42.1503755Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:42.1506046Z   GOTOOLCHAIN: local
+2026-05-07T01:07:42.1506280Z   CC_FORK: false
+2026-05-07T01:07:42.1506511Z   CC_TOKEN: ***
+2026-05-07T01:07:42.1506670Z   CC_BRANCH: 
+2026-05-07T01:07:42.1506820Z   CC_SHA: 
+2026-05-07T01:07:42.1506957Z   CC_PR: 
+2026-05-07T01:07:42.1507103Z ##[endgroup]
+2026-05-07T01:07:42.2432658Z ##[group]Install npm deps
+2026-05-07T01:07:42.3483027Z [command]C:\Windows\system32\cmd.exe /D /S /C ""C:\Program Files\nodejs\npm.cmd" install line-by-line"
+2026-05-07T01:07:47.7701391Z 
+2026-05-07T01:07:47.7701748Z added 1 package in 2s
+2026-05-07T01:07:47.7833037Z ##[endgroup]
+2026-05-07T01:07:47.8056307Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-07T01:07:47.8056648Z with:
+2026-05-07T01:07:47.8060770Z   script: const lineReader = require('line-by-line');
+const testRegex = /(\s*[\w\d]+.go:\d+:)(.*?)(---\sFAIL:.*)/gs;
+let tests = {};
+const globber = await glob.create(`${core.getInput('directory')}/**/*.json`);
+for await (const jsonReport of globber.globGenerator()) {
+  let lr = new lineReader(jsonReport);
+  lr.on('line', function(line) {
+    const currentLine = JSON.parse(line);
+    const testName = currentLine.Test;
+    let output = currentLine.Output;
+    if (!testName || !output) {
+      return;
+    }
+    const packageName = currentLine.Package.split("/").slice(3).join("/");
+    const key = `${packageName}/${testName}`;
+    if (!tests.hasOwnProperty(key)) {
+      tests[key] = {
+        name: testName,
+        package: packageName,
+        output: output
+      };
+    } else {
+      tests[key].output += output;
+    }
+  });
+  lr.on('end', function() {
+    for (const [key, test] of Object.entries(tests)) {
+      if (!test.output.includes("FAIL") || !test.output.includes(".go")) {
+        continue;
+      }
+      var result;
+      while ((result = testRegex.exec(test.output)) !== null) {
+        const parts = result[0].split(":");
+        const file = `${test.package}/${parts[0].trimStart()}`;
+        const lineNumber = parts[1];
+        core.startGroup(key);
+        core.error(test.output, {
+          title: `Failed: ${key}`,
+          file: file,
+          startLine: lineNumber
+        });
+        core.endGroup();
+      }
+    }
+  });
+}
+
+2026-05-07T01:07:47.8065185Z   github-token: ***
+2026-05-07T01:07:47.8065356Z   debug: false
+2026-05-07T01:07:47.8065529Z   user-agent: actions/github-script
+2026-05-07T01:07:47.8065746Z   result-encoding: json
+2026-05-07T01:07:47.8065920Z   retries: 0
+2026-05-07T01:07:47.8066105Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-07T01:07:47.8066351Z env:
+2026-05-07T01:07:47.8066483Z   GO_VERSION: 1.26
+2026-05-07T01:07:47.8066654Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:47.8066877Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:47.8067110Z   DESTDIR: ./bin
+2026-05-07T01:07:47.8067409Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:47.8067776Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:47.8068138Z   TESTPKG: ./client
+2026-05-07T01:07:47.8068389Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:47.8068698Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:47.8069237Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:47.8070046Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:47.8070681Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:47.8071126Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:47.8071445Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:47.8115851Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:47.8116434Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:47.8117038Z   GOTOOLCHAIN: local
+2026-05-07T01:07:47.8117905Z   CC_FORK: false
+2026-05-07T01:07:47.8118155Z   CC_TOKEN: ***
+2026-05-07T01:07:47.8118315Z   CC_BRANCH: 
+2026-05-07T01:07:47.8118464Z   CC_SHA: 
+2026-05-07T01:07:47.8118594Z   CC_PR: 
+2026-05-07T01:07:47.8118755Z   INPUT_DIRECTORY: ./bin/testreports
+2026-05-07T01:07:47.8118979Z ##[endgroup]
+2026-05-07T01:07:47.9422673Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-05-07T01:07:47.9423120Z with:
+2026-05-07T01:07:47.9423439Z   name: test-reports-windows-2022-test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:47.9423816Z   path: ./bin/testreports
+2026-05-07T01:07:47.9424011Z   retention-days: 1
+2026-05-07T01:07:47.9424186Z   if-no-files-found: warn
+2026-05-07T01:07:47.9424376Z   compression-level: 6
+2026-05-07T01:07:47.9424548Z   overwrite: false
+2026-05-07T01:07:47.9424725Z   include-hidden-files: false
+2026-05-07T01:07:47.9424920Z   archive: true
+2026-05-07T01:07:47.9425070Z env:
+2026-05-07T01:07:47.9425215Z   GO_VERSION: 1.26
+2026-05-07T01:07:47.9425381Z   SETUP_BUILDX_VERSION: edge
+2026-05-07T01:07:47.9425600Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-07T01:07:47.9425830Z   DESTDIR: ./bin
+2026-05-07T01:07:47.9426124Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=3-4/.*/worker=containerd
+2026-05-07T01:07:47.9426528Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-07T01:07:47.9426758Z   TESTPKG: ./client
+2026-05-07T01:07:47.9427003Z   TEST_REPORT_NAME: test-windows-amd64-client3-4--containerd
+2026-05-07T01:07:47.9427308Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-07T01:07:47.9427865Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:47.9428699Z   ACTIONS_ORCHESTRATION_ID: 17537ed9-db3b-41f8-90ea-12133e1cfbd1.test-windows-amd64.windows-2022_containerd_3
+2026-05-07T01:07:47.9429334Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-07T01:07:47.9429777Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-07T01:07:47.9430105Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-07T01:07:47.9474517Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-07T01:07:47.9475111Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-07T01:07:47.9475715Z   GOTOOLCHAIN: local
+2026-05-07T01:07:47.9475888Z   CC_FORK: false
+2026-05-07T01:07:47.9476085Z   CC_TOKEN: ***
+2026-05-07T01:07:47.9476241Z   CC_BRANCH: 
+2026-05-07T01:07:47.9476384Z   CC_SHA: 
+2026-05-07T01:07:47.9476519Z   CC_PR: 
+2026-05-07T01:07:47.9476658Z ##[endgroup]
+2026-05-07T01:07:48.1101295Z With the provided path, there will be 3 files uploaded
+2026-05-07T01:07:48.1106505Z Artifact name is valid!
+2026-05-07T01:07:48.1108409Z Root directory input is valid!
+2026-05-07T01:07:48.4121061Z Post job cleanup.
+2026-05-07T01:07:48.6641657Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-07T01:07:48.6892490Z git version 2.54.0.windows.1
+2026-05-07T01:07:48.6956883Z Copying 'C:\Users\runneradmin\.gitconfig' to 'D:\a\_temp\61193981-8ea0-4507-9e86-ba01067bd71b\.gitconfig'
+2026-05-07T01:07:48.6979055Z Temporarily overriding HOME='D:\a\_temp\61193981-8ea0-4507-9e86-ba01067bd71b' before making global git config changes
+2026-05-07T01:07:48.6980435Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-07T01:07:48.6993444Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\buildkit\buildkit
+2026-05-07T01:07:48.7251180Z Removing SSH command configuration
+2026-05-07T01:07:48.7264106Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-07T01:07:48.7557543Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-07T01:07:49.2287296Z Removing HTTP extra header
+2026-05-07T01:07:49.2299124Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-07T01:07:49.2569202Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-07T01:07:49.7477916Z Removing includeIf entries pointing to credentials config files
+2026-05-07T01:07:49.7490364Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-07T01:07:49.7708354Z includeif.gitdir:D:/a/buildkit/buildkit/.git.path
+2026-05-07T01:07:49.7709062Z includeif.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path
+2026-05-07T01:07:49.7709680Z includeif.gitdir:/github/workspace/.git.path
+2026-05-07T01:07:49.7710246Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-07T01:07:49.7741580Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/buildkit/buildkit/.git.path
+2026-05-07T01:07:49.7991600Z D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.8027233Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/buildkit/buildkit/.git.path D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.8294515Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path
+2026-05-07T01:07:49.8573012Z D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.8621149Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.8896182Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-05-07T01:07:49.9133128Z /github/runner_temp/git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.9168509Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.9424315Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-07T01:07:49.9671937Z /github/runner_temp/git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.9713393Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config
+2026-05-07T01:07:49.9981205Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-07T01:07:50.4462508Z Removing credentials config 'D:\a\_temp\git-credentials-4343bcce-03ed-4d0d-aab5-4b0a13621a5e.config'
+2026-05-07T01:07:50.4640767Z Cleaning up orphan processes

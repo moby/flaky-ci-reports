@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:mcr.microsoft.com:blocked",
+    "name": "Registry mcr.microsoft.com returned blocked HTML body",
+    "category": "network",
+    "fields": {
+      "host": "mcr.microsoft.com",
+      "reason": "blocked"
+    },
+    "evidence": [
+      {
+        "start_line": 868,
+        "end_line": 868
+      }
+    ]
+  }
+]

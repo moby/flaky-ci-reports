@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "dependabot-error:branch_not_found",
+    "name": "Dependabot error: branch_not_found",
+    "category": "dependency",
+    "fields": {
+      "error_type": "branch_not_found"
+    },
+    "evidence": [
+      {
+        "start_line": 79,
+        "end_line": 85
+      }
+    ]
+  }
+]

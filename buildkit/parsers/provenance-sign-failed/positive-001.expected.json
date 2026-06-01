@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "provenance-sign-failed:error-creating-tlog-entry",
+    "name": "Provenance signing failed: error creating tlog entry",
+    "category": "network",
+    "fields": {
+      "reason": "error creating tlog entry"
+    },
+    "evidence": [
+      {
+        "start_line": 2099,
+        "end_line": 2099
+      }
+    ]
+  }
+]

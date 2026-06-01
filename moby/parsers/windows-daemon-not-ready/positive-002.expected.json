@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "windows-daemon-not-ready",
+    "name": "Windows docker daemon did not become ready",
+    "category": "dependency",
+    "fields": {
+      "variant": "direct-invocation"
+    },
+    "evidence": [
+      {
+        "start_line": 450,
+        "end_line": 460
+      }
+    ]
+  }
+]

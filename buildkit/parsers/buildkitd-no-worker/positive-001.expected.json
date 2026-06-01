@@ -1,0 +1,13 @@
+[
+  {
+    "unique_key": "buildkitd-no-worker",
+    "name": "buildkitd: no worker found",
+    "category": "other",
+    "evidence": [
+      {
+        "start_line": 1985,
+        "end_line": 1985
+      }
+    ]
+  }
+]

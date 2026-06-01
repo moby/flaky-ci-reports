@@ -1,0 +1,917 @@
+﻿2026-05-22T04:15:01.1946917Z Current runner version: '2.334.0'
+2026-05-22T04:15:01.1969804Z ##[group]Runner Image Provisioner
+2026-05-22T04:15:01.1970667Z Hosted Compute Agent
+2026-05-22T04:15:01.1971240Z Version: 20260213.493
+2026-05-22T04:15:01.1971797Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-22T04:15:01.1972859Z Build Date: 2026-02-13T00:28:41Z
+2026-05-22T04:15:01.1973489Z Worker ID: {039bbdf7-5e42-46ce-81ff-ebe81029a395}
+2026-05-22T04:15:01.1974173Z Azure Region: westus
+2026-05-22T04:15:01.1974765Z ##[endgroup]
+2026-05-22T04:15:01.1976135Z ##[group]Operating System
+2026-05-22T04:15:01.1976839Z Ubuntu
+2026-05-22T04:15:01.1977342Z 24.04.4
+2026-05-22T04:15:01.1977867Z LTS
+2026-05-22T04:15:01.1978297Z ##[endgroup]
+2026-05-22T04:15:01.1978820Z ##[group]Runner Image
+2026-05-22T04:15:01.1979343Z Image: ubuntu-24.04
+2026-05-22T04:15:01.1979887Z Version: 20260518.149.1
+2026-05-22T04:15:01.1981070Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260518.149/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-22T04:15:01.1982799Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260518.149
+2026-05-22T04:15:01.1983741Z ##[endgroup]
+2026-05-22T04:15:01.1984755Z ##[group]GITHUB_TOKEN Permissions
+2026-05-22T04:15:01.1986517Z Contents: read
+2026-05-22T04:15:01.1987169Z Metadata: read
+2026-05-22T04:15:01.1987631Z ##[endgroup]
+2026-05-22T04:15:01.1989562Z Secret source: None
+2026-05-22T04:15:01.1990343Z Prepare workflow directory
+2026-05-22T04:15:01.2384095Z Prepare all required actions
+2026-05-22T04:15:01.2421155Z Getting action download info
+2026-05-22T04:15:01.9256102Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-05-22T04:15:02.4003692Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-22T04:15:02.4447875Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-22T04:15:02.9589107Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-05-22T04:15:03.3993961Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-05-22T04:15:03.9288107Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-22T04:15:04.3536134Z Download action repository 'docker/bake-action@6614cfa25eff9a0b2b2697efb0b6159e7680d584' (SHA:6614cfa25eff9a0b2b2697efb0b6159e7680d584)
+2026-05-22T04:15:05.0605865Z Complete job name: test-linux (dockerd, client, integration)
+2026-05-22T04:15:05.1245668Z ##[group]Run disabledFeatures="cache_backend_azblob,cache_backend_s3"
+2026-05-22T04:15:05.1246238Z [36;1mdisabledFeatures="cache_backend_azblob,cache_backend_s3"[0m
+2026-05-22T04:15:05.1246653Z [36;1mif [ "dockerd" = "dockerd" ]; then[0m
+2026-05-22T04:15:05.1246991Z [36;1m  disabledFeatures="${disabledFeatures},merge_diff"[0m
+2026-05-22T04:15:05.1247349Z [36;1mfi[0m
+2026-05-22T04:15:05.1247654Z [36;1mecho "BUILDKIT_TEST_DISABLE_FEATURES=${disabledFeatures}" >> $GITHUB_ENV[0m
+2026-05-22T04:15:05.1283904Z shell: /usr/bin/bash -e {0}
+2026-05-22T04:15:05.1284431Z env:
+2026-05-22T04:15:05.1284611Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:05.1284822Z   DESTDIR: ./build
+2026-05-22T04:15:05.1285034Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:05.1285288Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:05.1285558Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:05.1285756Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:05.1285983Z ##[endgroup]
+2026-05-22T04:15:05.1540781Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-05-22T04:15:05.1541255Z with:
+2026-05-22T04:15:05.1541586Z   github-token: ***
+2026-05-22T04:15:05.1541779Z env:
+2026-05-22T04:15:05.1542151Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:05.1542658Z   DESTDIR: ./build
+2026-05-22T04:15:05.1542858Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:05.1543093Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:05.1543350Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:05.1543563Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:05.1543941Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:05.1544321Z ##[endgroup]
+2026-05-22T04:15:05.2360313Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=/opt/actionarchivecache
+2026-05-22T04:15:05.2361764Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:05.2451294Z ACTIONS_RUNTIME_TOKEN=***
+2026-05-22T04:15:05.2451942Z ACTIONS_CACHE_URL=https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:05.2452923Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:05.2453365Z ACTIONS_CACHE_SERVICE_V2=True
+2026-05-22T04:15:05.2453960Z ACTIONS_ORCHESTRATION_ID=2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:05.2558948Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-22T04:15:05.2559321Z with:
+2026-05-22T04:15:05.2559494Z   path: moby
+2026-05-22T04:15:05.2559671Z   repository: moby/moby
+2026-05-22T04:15:05.2560004Z   token: ***
+2026-05-22T04:15:05.2560181Z   ssh-strict: true
+2026-05-22T04:15:05.2560365Z   ssh-user: git
+2026-05-22T04:15:05.2560551Z   persist-credentials: true
+2026-05-22T04:15:05.2560772Z   clean: true
+2026-05-22T04:15:05.2560965Z   sparse-checkout-cone-mode: true
+2026-05-22T04:15:05.2561197Z   fetch-depth: 1
+2026-05-22T04:15:05.2561376Z   fetch-tags: false
+2026-05-22T04:15:05.2561564Z   show-progress: true
+2026-05-22T04:15:05.2561756Z   lfs: false
+2026-05-22T04:15:05.2561919Z   submodules: false
+2026-05-22T04:15:05.2562114Z   set-safe-directory: true
+2026-05-22T04:15:05.2562635Z env:
+2026-05-22T04:15:05.2562815Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:05.2562999Z   DESTDIR: ./build
+2026-05-22T04:15:05.2563185Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:05.2563450Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:05.2563705Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:05.2563904Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:05.2564267Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:05.2564734Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-22T04:15:05.2565438Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:05.2612538Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-22T04:15:05.2613141Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:05.2613876Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:05.2614300Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-22T04:15:05.2614745Z   ACTIONS_ORCHESTRATION_ID: 2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:05.2615252Z ##[endgroup]
+2026-05-22T04:15:05.3585214Z Syncing repository: moby/moby
+2026-05-22T04:15:05.3587268Z ##[group]Getting Git version info
+2026-05-22T04:15:05.3587928Z Working directory is '/home/runner/work/moby/moby/moby'
+2026-05-22T04:15:05.3588717Z [command]/usr/bin/git version
+2026-05-22T04:15:05.3649865Z git version 2.54.0
+2026-05-22T04:15:05.3672746Z ##[endgroup]
+2026-05-22T04:15:05.3687965Z Temporarily overriding HOME='/home/runner/work/_temp/50cad78d-a5f8-415b-9121-c66070a25ce0' before making global git config changes
+2026-05-22T04:15:05.3689377Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-22T04:15:05.3694306Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/moby
+2026-05-22T04:15:05.3740643Z ##[group]Initializing the repository
+2026-05-22T04:15:05.3745498Z [command]/usr/bin/git init /home/runner/work/moby/moby/moby
+2026-05-22T04:15:05.3841042Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-22T04:15:05.3842056Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-22T04:15:05.3842895Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-22T04:15:05.3843315Z hint: call:
+2026-05-22T04:15:05.3843508Z hint:
+2026-05-22T04:15:05.3843806Z hint: 	git config --global init.defaultBranch <name>
+2026-05-22T04:15:05.3844168Z hint:
+2026-05-22T04:15:05.3844465Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-22T04:15:05.3845103Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-22T04:15:05.3845513Z hint:
+2026-05-22T04:15:05.3845709Z hint: 	git branch -m <name>
+2026-05-22T04:15:05.3845941Z hint:
+2026-05-22T04:15:05.3846276Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-22T04:15:05.3847713Z Initialized empty Git repository in /home/runner/work/moby/moby/moby/.git/
+2026-05-22T04:15:05.3858622Z [command]/usr/bin/git remote add origin https://github.com/moby/moby
+2026-05-22T04:15:05.3898590Z ##[endgroup]
+2026-05-22T04:15:05.3899206Z ##[group]Disabling automatic garbage collection
+2026-05-22T04:15:05.3903498Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-22T04:15:05.3931922Z ##[endgroup]
+2026-05-22T04:15:05.3932835Z ##[group]Setting up auth
+2026-05-22T04:15:05.3933773Z Removing SSH command configuration
+2026-05-22T04:15:05.3939713Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-22T04:15:05.3973149Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-22T04:15:05.4305442Z Removing HTTP extra header
+2026-05-22T04:15:05.4311683Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-22T04:15:05.4345940Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-22T04:15:05.4560641Z Removing includeIf entries pointing to credentials config files
+2026-05-22T04:15:05.4567274Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-22T04:15:05.4599252Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-22T04:15:05.4830092Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-22T04:15:05.4867927Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/moby/.git.path /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:05.4898737Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:05.4932201Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/moby/.git.path /github/runner_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:05.4962739Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/moby/.git/worktrees/*.path /github/runner_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:05.4993966Z ##[endgroup]
+2026-05-22T04:15:05.4994600Z ##[group]Fetching the repository
+2026-05-22T04:15:05.5003197Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ddae6fd8b513f52c876ae301fa86c8821dbc9649:refs/remotes/pull/52672/merge
+2026-05-22T04:15:06.8680913Z From https://github.com/moby/moby
+2026-05-22T04:15:06.8681640Z  * [new ref]         ddae6fd8b513f52c876ae301fa86c8821dbc9649 -> pull/52672/merge
+2026-05-22T04:15:06.8717139Z ##[endgroup]
+2026-05-22T04:15:06.8717870Z ##[group]Determining the checkout info
+2026-05-22T04:15:06.8718792Z ##[endgroup]
+2026-05-22T04:15:06.8724347Z [command]/usr/bin/git sparse-checkout disable
+2026-05-22T04:15:06.8770699Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-22T04:15:06.8800085Z ##[group]Checking out the ref
+2026-05-22T04:15:06.8804934Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/52672/merge
+2026-05-22T04:15:07.7089927Z Note: switching to 'refs/remotes/pull/52672/merge'.
+2026-05-22T04:15:07.7090683Z 
+2026-05-22T04:15:07.7091127Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-22T04:15:07.7092103Z changes and commit them, and you can discard any commits you make in this
+2026-05-22T04:15:07.7093649Z state without impacting any branches by switching back to a branch.
+2026-05-22T04:15:07.7094357Z 
+2026-05-22T04:15:07.7095184Z If you want to create a new branch to retain commits you create, you may
+2026-05-22T04:15:07.7096369Z do so (now or later) by using -c with the switch command. Example:
+2026-05-22T04:15:07.7096990Z 
+2026-05-22T04:15:07.7097230Z   git switch -c <new-branch-name>
+2026-05-22T04:15:07.7097607Z 
+2026-05-22T04:15:07.7097811Z Or undo this operation with:
+2026-05-22T04:15:07.7098121Z 
+2026-05-22T04:15:07.7098261Z   git switch -
+2026-05-22T04:15:07.7098488Z 
+2026-05-22T04:15:07.7098907Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-22T04:15:07.7099571Z 
+2026-05-22T04:15:07.7100372Z HEAD is now at ddae6fd Merge 09b0b8c3a07da3208adc55ea291152e44131d3b6 into 20b17b9727e57d27b4ef13d96e20e0e026404744
+2026-05-22T04:15:07.7122692Z ##[endgroup]
+2026-05-22T04:15:07.7176067Z [command]/usr/bin/git log -1 --format=%H
+2026-05-22T04:15:07.7204502Z ddae6fd8b513f52c876ae301fa86c8821dbc9649
+2026-05-22T04:15:07.7395759Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-22T04:15:07.7396123Z with:
+2026-05-22T04:15:07.7396287Z   go-version: 1.26.3
+2026-05-22T04:15:07.7396478Z   cache: false
+2026-05-22T04:15:07.7396650Z   check-latest: false
+2026-05-22T04:15:07.7396967Z   token: ***
+2026-05-22T04:15:07.7397138Z env:
+2026-05-22T04:15:07.7397302Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:07.7397479Z   DESTDIR: ./build
+2026-05-22T04:15:07.7397664Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:07.7397902Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:07.7398154Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:07.7398360Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:07.7398716Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:07.7399193Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-22T04:15:07.7399925Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:07.7446689Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-22T04:15:07.7447277Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:07.7448008Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:07.7448415Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-22T04:15:07.7448858Z   ACTIONS_ORCHESTRATION_ID: 2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:07.7449317Z ##[endgroup]
+2026-05-22T04:15:07.8834438Z Setup go version spec 1.26.3
+2026-05-22T04:15:07.8848206Z Attempting to download 1.26.3...
+2026-05-22T04:15:08.7369886Z matching 1.26.3...
+2026-05-22T04:15:08.7396658Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-linux-x64.tar.gz
+2026-05-22T04:15:09.2406616Z Extracting Go...
+2026-05-22T04:15:09.2530635Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/5c161f4f-d90a-474e-bc5a-1ab3b101114b -f /home/runner/work/_temp/45f8dadb-e7f7-43cd-b873-57bab6117e6f
+2026-05-22T04:15:10.8900316Z Successfully extracted go to /home/runner/work/_temp/5c161f4f-d90a-474e-bc5a-1ab3b101114b
+2026-05-22T04:15:10.8901262Z Adding to the cache ...
+2026-05-22T04:15:16.6760853Z Successfully cached go to /opt/hostedtoolcache/go/1.26.3/x64
+2026-05-22T04:15:16.6761838Z Added go to the path
+2026-05-22T04:15:16.6764585Z Successfully set up Go version 1.26.3
+2026-05-22T04:15:16.6995405Z go version go1.26.3 linux/amd64
+2026-05-22T04:15:16.6995725Z 
+2026-05-22T04:15:16.6996132Z ##[group]go env
+2026-05-22T04:15:17.0266068Z AR='ar'
+2026-05-22T04:15:17.0266413Z CC='gcc'
+2026-05-22T04:15:17.0266839Z CGO_CFLAGS='-O2 -g'
+2026-05-22T04:15:17.0267182Z CGO_CPPFLAGS=''
+2026-05-22T04:15:17.0267500Z CGO_CXXFLAGS='-O2 -g'
+2026-05-22T04:15:17.0267834Z CGO_ENABLED='1'
+2026-05-22T04:15:17.0268163Z CGO_FFLAGS='-O2 -g'
+2026-05-22T04:15:17.0268500Z CGO_LDFLAGS='-O2 -g'
+2026-05-22T04:15:17.0268802Z CXX='g++'
+2026-05-22T04:15:17.0269078Z GCCGO='gccgo'
+2026-05-22T04:15:17.0269365Z GO111MODULE=''
+2026-05-22T04:15:17.0269655Z GOAMD64='v1'
+2026-05-22T04:15:17.0269931Z GOARCH='amd64'
+2026-05-22T04:15:17.0270217Z GOAUTH='netrc'
+2026-05-22T04:15:17.0270486Z GOBIN=''
+2026-05-22T04:15:17.0270809Z GOCACHE='/home/runner/.cache/go-build'
+2026-05-22T04:15:17.0271276Z GOCACHEPROG=''
+2026-05-22T04:15:17.0271584Z GODEBUG=''
+2026-05-22T04:15:17.0271908Z GOENV='/home/runner/.config/go/env'
+2026-05-22T04:15:17.0272510Z GOEXE=''
+2026-05-22T04:15:17.0272802Z GOEXPERIMENT=''
+2026-05-22T04:15:17.0273130Z GOFIPS140='off'
+2026-05-22T04:15:17.0273474Z GOFLAGS=''
+2026-05-22T04:15:17.0274578Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1769086407=/tmp/go-build -gno-record-gcc-switches'
+2026-05-22T04:15:17.0275750Z GOHOSTARCH='amd64'
+2026-05-22T04:15:17.0276081Z GOHOSTOS='linux'
+2026-05-22T04:15:17.0276376Z GOINSECURE=''
+2026-05-22T04:15:17.0276989Z GOMOD='/dev/null'
+2026-05-22T04:15:17.0277344Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-05-22T04:15:17.0277757Z GONOPROXY=''
+2026-05-22T04:15:17.0278031Z GONOSUMDB=''
+2026-05-22T04:15:17.0278306Z GOOS='linux'
+2026-05-22T04:15:17.0278904Z GOPATH='/home/runner/go'
+2026-05-22T04:15:17.0303129Z GOPRIVATE=''
+2026-05-22T04:15:17.0303699Z GOPROXY='https://proxy.golang.org,direct'
+2026-05-22T04:15:17.0322930Z GOROOT='/opt/hostedtoolcache/go/1.26.3/x64'
+2026-05-22T04:15:17.0323522Z GOSUMDB='sum.golang.org'
+2026-05-22T04:15:17.0323928Z GOTELEMETRY='local'
+2026-05-22T04:15:17.0324407Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-05-22T04:15:17.0324925Z GOTMPDIR=''
+2026-05-22T04:15:17.0325250Z GOTOOLCHAIN='local'
+2026-05-22T04:15:17.0325884Z GOTOOLDIR='/opt/hostedtoolcache/go/1.26.3/x64/pkg/tool/linux_amd64'
+2026-05-22T04:15:17.0326604Z GOVCS=''
+2026-05-22T04:15:17.0326967Z GOVERSION='go1.26.3'
+2026-05-22T04:15:17.0327325Z GOWORK=''
+2026-05-22T04:15:17.0327685Z PKG_CONFIG='pkg-config'
+2026-05-22T04:15:17.0327928Z 
+2026-05-22T04:15:17.0328537Z ##[endgroup]
+2026-05-22T04:15:17.0502582Z ##[group]Run ./hack/buildkit-ref >> "$GITHUB_ENV"
+2026-05-22T04:15:17.0503190Z [36;1m./hack/buildkit-ref >> "$GITHUB_ENV"[0m
+2026-05-22T04:15:17.0548610Z shell: /usr/bin/bash -e {0}
+2026-05-22T04:15:17.0548970Z env:
+2026-05-22T04:15:17.0549240Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:17.0549554Z   DESTDIR: ./build
+2026-05-22T04:15:17.0549861Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:17.0550277Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:17.0550716Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:17.0551051Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:17.0551667Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:17.0552748Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-22T04:15:17.0554009Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:17.0631679Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-22T04:15:17.0632591Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:17.0633415Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:17.0633834Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-22T04:15:17.0634290Z   ACTIONS_ORCHESTRATION_ID: 2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:17.0634835Z   GOTOOLCHAIN: local
+2026-05-22T04:15:17.0635190Z   GH_TOKEN: ***
+2026-05-22T04:15:17.0635378Z ##[endgroup]
+2026-05-22T04:15:17.3302133Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-22T04:15:17.3303006Z with:
+2026-05-22T04:15:17.3303288Z   repository: moby/buildkit
+2026-05-22T04:15:17.3303638Z   ref: v0.30.0
+2026-05-22T04:15:17.3303916Z   path: buildkit
+2026-05-22T04:15:17.3304398Z   token: ***
+2026-05-22T04:15:17.3304681Z   ssh-strict: true
+2026-05-22T04:15:17.3304976Z   ssh-user: git
+2026-05-22T04:15:17.3305279Z   persist-credentials: true
+2026-05-22T04:15:17.3305631Z   clean: true
+2026-05-22T04:15:17.3305945Z   sparse-checkout-cone-mode: true
+2026-05-22T04:15:17.3306331Z   fetch-depth: 1
+2026-05-22T04:15:17.3306624Z   fetch-tags: false
+2026-05-22T04:15:17.3306923Z   show-progress: true
+2026-05-22T04:15:17.3307229Z   lfs: false
+2026-05-22T04:15:17.3307495Z   submodules: false
+2026-05-22T04:15:17.3307807Z   set-safe-directory: true
+2026-05-22T04:15:17.3308134Z env:
+2026-05-22T04:15:17.3308388Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:17.3308681Z   DESTDIR: ./build
+2026-05-22T04:15:17.3309023Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:17.3309417Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:17.3309850Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:17.3310175Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:17.3310795Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:17.3311612Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-22T04:15:17.3313042Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:17.3420689Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-22T04:15:17.3421675Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:17.3423122Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:17.3423830Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-22T04:15:17.3424605Z   ACTIONS_ORCHESTRATION_ID: 2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:17.3425408Z   GOTOOLCHAIN: local
+2026-05-22T04:15:17.3425736Z   BUILDKIT_REPO: moby/buildkit
+2026-05-22T04:15:17.3426097Z   BUILDKIT_REF: v0.30.0
+2026-05-22T04:15:17.3426412Z ##[endgroup]
+2026-05-22T04:15:17.4579752Z Syncing repository: moby/buildkit
+2026-05-22T04:15:17.4581082Z ##[group]Getting Git version info
+2026-05-22T04:15:17.4581703Z Working directory is '/home/runner/work/moby/moby/buildkit'
+2026-05-22T04:15:17.4616835Z [command]/usr/bin/git version
+2026-05-22T04:15:17.4657601Z git version 2.54.0
+2026-05-22T04:15:17.4688264Z ##[endgroup]
+2026-05-22T04:15:17.4698839Z Temporarily overriding HOME='/home/runner/work/_temp/5b5b0530-9210-4106-83d0-4a30301f9172' before making global git config changes
+2026-05-22T04:15:17.4700504Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-22T04:15:17.4706158Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/buildkit
+2026-05-22T04:15:17.4740221Z ##[group]Initializing the repository
+2026-05-22T04:15:17.4746385Z [command]/usr/bin/git init /home/runner/work/moby/moby/buildkit
+2026-05-22T04:15:17.4796831Z Initialized empty Git repository in /home/runner/work/moby/moby/buildkit/.git/
+2026-05-22T04:15:17.4800299Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-22T04:15:17.4801281Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-22T04:15:17.4802233Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-22T04:15:17.4803771Z hint: call:
+2026-05-22T04:15:17.4804080Z hint:
+2026-05-22T04:15:17.4804520Z hint: 	git config --global init.defaultBranch <name>
+2026-05-22T04:15:17.4805049Z hint:
+2026-05-22T04:15:17.4805564Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-22T04:15:17.4806436Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-22T04:15:17.4807353Z hint:
+2026-05-22T04:15:17.4807684Z hint: 	git branch -m <name>
+2026-05-22T04:15:17.4808063Z hint:
+2026-05-22T04:15:17.4808641Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-22T04:15:17.4813332Z [command]/usr/bin/git remote add origin https://github.com/moby/buildkit
+2026-05-22T04:15:17.4850448Z ##[endgroup]
+2026-05-22T04:15:17.4851292Z ##[group]Disabling automatic garbage collection
+2026-05-22T04:15:17.4853158Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-22T04:15:17.4888420Z ##[endgroup]
+2026-05-22T04:15:17.4889291Z ##[group]Setting up auth
+2026-05-22T04:15:17.4890123Z Removing SSH command configuration
+2026-05-22T04:15:17.4897923Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-22T04:15:17.4934236Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-22T04:15:17.5165341Z Removing HTTP extra header
+2026-05-22T04:15:17.5173528Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-22T04:15:17.5207946Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-22T04:15:17.5477397Z Removing includeIf entries pointing to credentials config files
+2026-05-22T04:15:17.5482618Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-22T04:15:17.5520393Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-22T04:15:17.5874185Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-22T04:15:17.5973872Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/buildkit/.git.path /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:17.6008378Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:17.6011808Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/buildkit/.git.path /github/runner_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:17.6015252Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/buildkit/.git/worktrees/*.path /github/runner_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:17.6060020Z ##[endgroup]
+2026-05-22T04:15:17.6060720Z ##[group]Fetching the repository
+2026-05-22T04:15:17.6062602Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/v0.30.0*:refs/remotes/origin/v0.30.0* +refs/tags/v0.30.0*:refs/tags/v0.30.0*
+2026-05-22T04:15:18.9582962Z From https://github.com/moby/buildkit
+2026-05-22T04:15:18.9583584Z  * [new tag]         v0.30.0     -> v0.30.0
+2026-05-22T04:15:18.9583993Z  * [new tag]         v0.30.0-rc1 -> v0.30.0-rc1
+2026-05-22T04:15:18.9584710Z  * [new tag]         v0.30.0-rc2 -> v0.30.0-rc2
+2026-05-22T04:15:18.9611121Z ##[endgroup]
+2026-05-22T04:15:18.9611741Z ##[group]Determining the checkout info
+2026-05-22T04:15:18.9618999Z [command]/usr/bin/git branch --list --remote origin/v0.30.0
+2026-05-22T04:15:18.9708426Z [command]/usr/bin/git tag --list v0.30.0
+2026-05-22T04:15:18.9731634Z v0.30.0
+2026-05-22T04:15:18.9736730Z ##[endgroup]
+2026-05-22T04:15:18.9741501Z [command]/usr/bin/git sparse-checkout disable
+2026-05-22T04:15:18.9781912Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-22T04:15:18.9809258Z ##[group]Checking out the ref
+2026-05-22T04:15:18.9813849Z [command]/usr/bin/git checkout --progress --force refs/tags/v0.30.0
+2026-05-22T04:15:19.4752731Z Note: switching to 'refs/tags/v0.30.0'.
+2026-05-22T04:15:19.4753120Z 
+2026-05-22T04:15:19.4754687Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-22T04:15:19.4755553Z changes and commit them, and you can discard any commits you make in this
+2026-05-22T04:15:19.4756371Z state without impacting any branches by switching back to a branch.
+2026-05-22T04:15:19.4756812Z 
+2026-05-22T04:15:19.4757141Z If you want to create a new branch to retain commits you create, you may
+2026-05-22T04:15:19.4757881Z do so (now or later) by using -c with the switch command. Example:
+2026-05-22T04:15:19.4758313Z 
+2026-05-22T04:15:19.4758515Z   git switch -c <new-branch-name>
+2026-05-22T04:15:19.4758792Z 
+2026-05-22T04:15:19.4758953Z Or undo this operation with:
+2026-05-22T04:15:19.4759214Z 
+2026-05-22T04:15:19.4759363Z   git switch -
+2026-05-22T04:15:19.4759538Z 
+2026-05-22T04:15:19.4759916Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-22T04:15:19.4760461Z 
+2026-05-22T04:15:19.4760826Z HEAD is now at dd2170e Merge pull request #6770 from crazy-max/v0.30-picks-0.30.0
+2026-05-22T04:15:19.4777671Z ##[endgroup]
+2026-05-22T04:15:19.4820611Z [command]/usr/bin/git log -1 --format=%H
+2026-05-22T04:15:19.4845513Z dd2170e156c9633da1b2d1a58a6188e3f7d36fa4
+2026-05-22T04:15:19.4978626Z ##[group]Run docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a
+2026-05-22T04:15:19.4979030Z with:
+2026-05-22T04:15:19.4979219Z   image: docker.io/tonistiigi/binfmt:latest
+2026-05-22T04:15:19.4979478Z   platforms: all
+2026-05-22T04:15:19.4979659Z   cache-image: true
+2026-05-22T04:15:19.4979836Z env:
+2026-05-22T04:15:19.4979985Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:19.4980168Z   DESTDIR: ./build
+2026-05-22T04:15:19.4980348Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:19.4980584Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:19.4980831Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:19.4981030Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:19.4981392Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:19.4981849Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-22T04:15:19.4982933Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:19.5031092Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-22T04:15:19.5031667Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:19.5032806Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:19.5033231Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-22T04:15:19.5033671Z   ACTIONS_ORCHESTRATION_ID: 2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:19.5034140Z   GOTOOLCHAIN: local
+2026-05-22T04:15:19.5034335Z   BUILDKIT_REPO: moby/buildkit
+2026-05-22T04:15:19.5034552Z   BUILDKIT_REF: v0.30.0
+2026-05-22T04:15:19.5034741Z ##[endgroup]
+2026-05-22T04:15:19.6333158Z ##[group]Docker info
+2026-05-22T04:15:19.6373537Z [command]/usr/bin/docker version
+2026-05-22T04:15:19.7579990Z Client: Docker Engine - Community
+2026-05-22T04:15:19.7583490Z  Version:           28.0.4
+2026-05-22T04:15:19.7583928Z  API version:       1.48
+2026-05-22T04:15:19.7584320Z  Go version:        go1.23.7
+2026-05-22T04:15:19.7584711Z  Git commit:        b8034c0
+2026-05-22T04:15:19.7585124Z  Built:             Tue Mar 25 15:07:16 2025
+2026-05-22T04:15:19.7585579Z  OS/Arch:           linux/amd64
+2026-05-22T04:15:19.7585957Z  Context:           default
+2026-05-22T04:15:19.7586184Z 
+2026-05-22T04:15:19.7586345Z Server: Docker Engine - Community
+2026-05-22T04:15:19.7586724Z  Engine:
+2026-05-22T04:15:19.7587031Z   Version:          28.0.4
+2026-05-22T04:15:19.7587484Z   API version:      1.48 (minimum version 1.24)
+2026-05-22T04:15:19.7587866Z   Go version:       go1.23.7
+2026-05-22T04:15:19.7588100Z   Git commit:       6430e49
+2026-05-22T04:15:19.7588354Z   Built:            Tue Mar 25 15:07:16 2025
+2026-05-22T04:15:19.7588644Z   OS/Arch:          linux/amd64
+2026-05-22T04:15:19.7588882Z   Experimental:     false
+2026-05-22T04:15:19.7589094Z  containerd:
+2026-05-22T04:15:19.7589286Z   Version:          v2.2.3
+2026-05-22T04:15:19.7589613Z   GitCommit:        77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-22T04:15:19.7589910Z  runc:
+2026-05-22T04:15:19.7590095Z   Version:          1.3.5
+2026-05-22T04:15:19.7590459Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-05-22T04:15:19.7590905Z  docker-init:
+2026-05-22T04:15:19.7591266Z   Version:          0.19.0
+2026-05-22T04:15:19.7591688Z   GitCommit:        de40ad0
+2026-05-22T04:15:19.7627640Z [command]/usr/bin/docker info
+2026-05-22T04:15:24.2794713Z Client: Docker Engine - Community
+2026-05-22T04:15:24.2795505Z  Version:    28.0.4
+2026-05-22T04:15:24.2795929Z  Context:    default
+2026-05-22T04:15:24.2796396Z  Debug Mode: false
+2026-05-22T04:15:24.2796836Z  Plugins:
+2026-05-22T04:15:24.2797230Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-22T04:15:24.2797571Z     Version:  v0.34.0
+2026-05-22T04:15:24.2798005Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-05-22T04:15:24.2798449Z   compose: Docker Compose (Docker Inc.)
+2026-05-22T04:15:24.2798828Z     Version:  v2.38.2
+2026-05-22T04:15:24.2799589Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-05-22T04:15:24.2799892Z 
+2026-05-22T04:15:24.2799979Z Server:
+2026-05-22T04:15:24.2800184Z  Containers: 0
+2026-05-22T04:15:24.2800387Z   Running: 0
+2026-05-22T04:15:24.2800552Z   Paused: 0
+2026-05-22T04:15:24.2800734Z   Stopped: 0
+2026-05-22T04:15:24.2800903Z  Images: 6
+2026-05-22T04:15:24.2801076Z  Server Version: 28.0.4
+2026-05-22T04:15:24.2801301Z  Storage Driver: overlay2
+2026-05-22T04:15:24.2801531Z   Backing Filesystem: extfs
+2026-05-22T04:15:24.2801761Z   Supports d_type: true
+2026-05-22T04:15:24.2801965Z   Using metacopy: false
+2026-05-22T04:15:24.2802186Z   Native Overlay Diff: false
+2026-05-22T04:15:24.2802825Z   userxattr: false
+2026-05-22T04:15:24.2803043Z  Logging Driver: json-file
+2026-05-22T04:15:24.2803269Z  Cgroup Driver: systemd
+2026-05-22T04:15:24.2803476Z  Cgroup Version: 2
+2026-05-22T04:15:24.2803658Z  Plugins:
+2026-05-22T04:15:24.2803835Z   Volume: local
+2026-05-22T04:15:24.2804111Z   Network: bridge host ipvlan macvlan null overlay
+2026-05-22T04:15:24.2804550Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-05-22T04:15:24.2804935Z  Swarm: inactive
+2026-05-22T04:15:24.2805154Z  Runtimes: io.containerd.runc.v2 runc
+2026-05-22T04:15:24.2805413Z  Default Runtime: runc
+2026-05-22T04:15:24.2805619Z  Init Binary: docker-init
+2026-05-22T04:15:24.2805924Z  containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-22T04:15:24.2806262Z  runc version: v1.3.5-0-g488fc13e
+2026-05-22T04:15:24.2806496Z  init version: de40ad0
+2026-05-22T04:15:24.2806695Z  Security Options:
+2026-05-22T04:15:24.2806877Z   apparmor
+2026-05-22T04:15:24.2807046Z   seccomp
+2026-05-22T04:15:24.2807218Z    Profile: builtin
+2026-05-22T04:15:24.2807400Z   cgroupns
+2026-05-22T04:15:24.2807652Z  Kernel Version: 6.17.0-1013-azure
+2026-05-22T04:15:24.2808032Z  Operating System: Ubuntu 24.04.4 LTS
+2026-05-22T04:15:24.2808272Z  OSType: linux
+2026-05-22T04:15:24.2808652Z  Architecture: x86_64
+2026-05-22T04:15:24.2808961Z  CPUs: 4
+2026-05-22T04:15:24.2809202Z  Total Memory: 15.61GiB
+2026-05-22T04:15:24.2809416Z  Name: runnervmg397c
+2026-05-22T04:15:24.2809637Z  ID: 030b3de5-f6f5-43f2-8bdc-0a866a274328
+2026-05-22T04:15:24.2809925Z  Docker Root Dir: /var/lib/docker
+2026-05-22T04:15:24.2810149Z  Debug Mode: false
+2026-05-22T04:15:24.2810342Z  Username: githubactions
+2026-05-22T04:15:24.2810546Z  Experimental: false
+2026-05-22T04:15:24.2810742Z  Insecure Registries:
+2026-05-22T04:15:24.2810955Z   ::1/128
+2026-05-22T04:15:24.2811112Z   127.0.0.0/8
+2026-05-22T04:15:24.2811298Z  Live Restore Enabled: false
+2026-05-22T04:15:24.2811437Z 
+2026-05-22T04:15:24.2813617Z ##[endgroup]
+2026-05-22T04:15:24.2814179Z ##[group]Pulling binfmt Docker image
+2026-05-22T04:15:24.5730937Z Cache hit for: docker.io--tonistiigi--binfmt-latest-linux-x64
+2026-05-22T04:15:25.8933195Z Received 0 of 32159188 (0.0%), 0.0 MBs/sec
+2026-05-22T04:15:26.3418816Z Received 32159188 of 32159188 (100.0%), 21.2 MBs/sec
+2026-05-22T04:15:26.3421736Z Cache Size: ~31 MB (32159188 B)
+2026-05-22T04:15:26.3458200Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a3edd07a-8d9e-4ffc-9040-bce377b0feff/cache.tzst -P -C /home/runner/work/moby/moby --use-compress-program unzstd
+2026-05-22T04:15:26.5105012Z Cache restored successfully
+2026-05-22T04:15:26.5123649Z Restored docker.io--tonistiigi--binfmt-latest-linux-x64 from GitHub Actions cache
+2026-05-22T04:15:26.5613334Z Cached to hosted tool cache /opt/hostedtoolcache/docker.io--tonistiigi--binfmt/latest/linux-x64
+2026-05-22T04:15:26.5614638Z Copying /opt/hostedtoolcache/docker.io--tonistiigi--binfmt/latest/linux-x64/image.tar to /home/runner/.docker/.cache/images/docker.io--tonistiigi--binfmt/latest/linux-x64/image.tar
+2026-05-22T04:15:26.6382076Z Image found from cache in /home/runner/.docker/.cache/images/docker.io--tonistiigi--binfmt/latest/linux-x64/image.tar
+2026-05-22T04:15:26.6405394Z [command]/usr/bin/docker load -i /home/runner/.docker/.cache/images/docker.io--tonistiigi--binfmt/latest/linux-x64/image.tar
+2026-05-22T04:15:28.8100407Z Loaded image: tonistiigi/binfmt:latest
+2026-05-22T04:15:28.8221723Z [command]/usr/bin/docker pull docker.io/tonistiigi/binfmt:latest
+2026-05-22T04:15:32.1938209Z latest: Pulling from tonistiigi/binfmt
+2026-05-22T04:15:32.5393996Z Digest: sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3
+2026-05-22T04:15:32.5398388Z Status: Image is up to date for tonistiigi/binfmt:latest
+2026-05-22T04:15:32.5405853Z docker.io/tonistiigi/binfmt:latest
+2026-05-22T04:15:32.5442771Z [command]/usr/bin/docker save -o /home/runner/work/_temp/docker-actions-toolkit-bdSOQU/749e64100d3fa0c09bdbc8a02e4fb9cb3ee64266f7f661c98371040689abacb3.tar docker.io/tonistiigi/binfmt:latest
+2026-05-22T04:15:32.9282731Z Copying /home/runner/work/_temp/docker-actions-toolkit-bdSOQU/749e64100d3fa0c09bdbc8a02e4fb9cb3ee64266f7f661c98371040689abacb3.tar to /home/runner/.docker/.cache/images/docker.io--tonistiigi--binfmt/latest/linux-x64/image.tar
+2026-05-22T04:15:32.9985702Z Image cached to /home/runner/.docker/.cache/images/docker.io--tonistiigi--binfmt/latest/linux-x64/image.tar
+2026-05-22T04:15:32.9986858Z ##[endgroup]
+2026-05-22T04:15:32.9987530Z ##[group]Image info
+2026-05-22T04:15:33.0005389Z [command]/usr/bin/docker image inspect docker.io/tonistiigi/binfmt:latest
+2026-05-22T04:15:33.0456764Z [
+2026-05-22T04:15:33.0457197Z     {
+2026-05-22T04:15:33.0457829Z         "Id": "sha256:fb4f8f43716ffaf2802bb32cd60994de149d020f8b1c7e7ddfbdfb43a521ec82",
+2026-05-22T04:15:33.0458359Z         "RepoTags": [
+2026-05-22T04:15:33.0458913Z             "tonistiigi/binfmt:latest"
+2026-05-22T04:15:33.0459373Z         ],
+2026-05-22T04:15:33.0459705Z         "RepoDigests": [
+2026-05-22T04:15:33.0460467Z             "tonistiigi/binfmt@sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3"
+2026-05-22T04:15:33.0460987Z         ],
+2026-05-22T04:15:33.0461216Z         "Parent": "",
+2026-05-22T04:15:33.0461725Z         "Comment": "buildkit.dockerfile.v0",
+2026-05-22T04:15:33.0463032Z         "Created": "2026-02-18T18:09:43.658440389Z",
+2026-05-22T04:15:33.0463409Z         "DockerVersion": "",
+2026-05-22T04:15:33.0463697Z         "Author": "",
+2026-05-22T04:15:33.0463940Z         "Config": {
+2026-05-22T04:15:33.0464222Z             "Hostname": "",
+2026-05-22T04:15:33.0464541Z             "Domainname": "",
+2026-05-22T04:15:33.0464834Z             "User": "",
+2026-05-22T04:15:33.0465181Z             "AttachStdin": false,
+2026-05-22T04:15:33.0465534Z             "AttachStdout": false,
+2026-05-22T04:15:33.0465885Z             "AttachStderr": false,
+2026-05-22T04:15:33.0466202Z             "Tty": false,
+2026-05-22T04:15:33.0466514Z             "OpenStdin": false,
+2026-05-22T04:15:33.0466841Z             "StdinOnce": false,
+2026-05-22T04:15:33.0467129Z             "Env": [
+2026-05-22T04:15:33.0467770Z                 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+2026-05-22T04:15:33.0468305Z                 "QEMU_PRESERVE_ARGV0=1"
+2026-05-22T04:15:33.0468791Z             ],
+2026-05-22T04:15:33.0469210Z             "Cmd": null,
+2026-05-22T04:15:33.0469677Z             "Image": "",
+2026-05-22T04:15:33.0470132Z             "Volumes": {
+2026-05-22T04:15:33.0470636Z                 "/tmp": {}
+2026-05-22T04:15:33.0471076Z             },
+2026-05-22T04:15:33.0471567Z             "WorkingDir": "/",
+2026-05-22T04:15:33.0472093Z             "Entrypoint": [
+2026-05-22T04:15:33.0472909Z                 "/usr/bin/binfmt"
+2026-05-22T04:15:33.0473335Z             ],
+2026-05-22T04:15:33.0473776Z             "OnBuild": null,
+2026-05-22T04:15:33.0474256Z             "Labels": null
+2026-05-22T04:15:33.0474610Z         },
+2026-05-22T04:15:33.0474986Z         "Architecture": "amd64",
+2026-05-22T04:15:33.0475434Z         "Os": "linux",
+2026-05-22T04:15:33.0475835Z         "Size": 85108073,
+2026-05-22T04:15:33.0476265Z         "GraphDriver": {
+2026-05-22T04:15:33.0476716Z             "Data": {
+2026-05-22T04:15:33.0478383Z                 "LowerDir": "/var/lib/docker/overlay2/c597cc22a64772292f6780e4b552859f32ed742369e2708fddf090605fd4cce1/diff",
+2026-05-22T04:15:33.0480977Z                 "MergedDir": "/var/lib/docker/overlay2/09384dd1cccaf013baed55576398133f4314d7ca0bbc66de7cf29f8fc59d5069/merged",
+2026-05-22T04:15:33.0483664Z                 "UpperDir": "/var/lib/docker/overlay2/09384dd1cccaf013baed55576398133f4314d7ca0bbc66de7cf29f8fc59d5069/diff",
+2026-05-22T04:15:33.0486063Z                 "WorkDir": "/var/lib/docker/overlay2/09384dd1cccaf013baed55576398133f4314d7ca0bbc66de7cf29f8fc59d5069/work"
+2026-05-22T04:15:33.0487111Z             },
+2026-05-22T04:15:33.0487606Z             "Name": "overlay2"
+2026-05-22T04:15:33.0488050Z         },
+2026-05-22T04:15:33.0488431Z         "RootFS": {
+2026-05-22T04:15:33.0488924Z             "Type": "layers",
+2026-05-22T04:15:33.0489440Z             "Layers": [
+2026-05-22T04:15:33.0490684Z                 "sha256:7c7a3ed8f59c9c48a6885e1b9d666072857891560d4557401a19bd803378d1d4",
+2026-05-22T04:15:33.0492840Z                 "sha256:b7dea0aa7b18514e216eebdbded52b5b2c070562d7c88a97f8c3fb0995e4febb"
+2026-05-22T04:15:33.0493712Z             ]
+2026-05-22T04:15:33.0494052Z         },
+2026-05-22T04:15:33.0494395Z         "Metadata": {
+2026-05-22T04:15:33.0495024Z             "LastTagTime": "0001-01-01T00:00:00Z"
+2026-05-22T04:15:33.0495497Z         }
+2026-05-22T04:15:33.0495771Z     }
+2026-05-22T04:15:33.0496033Z ]
+2026-05-22T04:15:33.0496781Z ##[endgroup]
+2026-05-22T04:15:33.0497310Z ##[group]Binfmt version
+2026-05-22T04:15:33.0498178Z [command]/usr/bin/docker run --rm --privileged docker.io/tonistiigi/binfmt:latest --version
+2026-05-22T04:15:33.5055546Z binfmt/3a63696 qemu/v10.2.1 go/1.25.7
+2026-05-22T04:15:33.5763825Z ##[endgroup]
+2026-05-22T04:15:33.5764621Z ##[group]Installing QEMU static binaries
+2026-05-22T04:15:33.5785252Z [command]/usr/bin/docker run --rm --privileged docker.io/tonistiigi/binfmt:latest --install all
+2026-05-22T04:15:33.6957559Z installing: arm64 OK
+2026-05-22T04:15:33.6958408Z installing: s390x OK
+2026-05-22T04:15:33.6959525Z installing: riscv64 OK
+2026-05-22T04:15:33.6960209Z installing: mips64 OK
+2026-05-22T04:15:33.6960664Z installing: loong64 OK
+2026-05-22T04:15:33.6961235Z installing: arm OK
+2026-05-22T04:15:33.6961617Z installing: ppc64le OK
+2026-05-22T04:15:33.6962002Z installing: mips64le OK
+2026-05-22T04:15:33.7164119Z {
+2026-05-22T04:15:33.7164593Z   "supported": [
+2026-05-22T04:15:33.7165263Z     "linux/amd64",
+2026-05-22T04:15:33.7165573Z     "linux/amd64/v2",
+2026-05-22T04:15:33.7165863Z     "linux/amd64/v3",
+2026-05-22T04:15:33.7166194Z     "linux/arm64",
+2026-05-22T04:15:33.7166520Z     "linux/riscv64",
+2026-05-22T04:15:33.7166898Z     "linux/ppc64le",
+2026-05-22T04:15:33.7167271Z     "linux/s390x",
+2026-05-22T04:15:33.7167714Z     "linux/386",
+2026-05-22T04:15:33.7168064Z     "linux/mips64le",
+2026-05-22T04:15:33.7168404Z     "linux/mips64",
+2026-05-22T04:15:33.7168759Z     "linux/loong64",
+2026-05-22T04:15:33.7169095Z     "linux/arm/v7",
+2026-05-22T04:15:33.7169736Z     "linux/arm/v6"
+2026-05-22T04:15:33.7170078Z   ],
+2026-05-22T04:15:33.7170348Z   "emulators": [
+2026-05-22T04:15:33.7170773Z     "llvm-16-runtime.binfmt",
+2026-05-22T04:15:33.7171245Z     "llvm-17-runtime.binfmt",
+2026-05-22T04:15:33.7171732Z     "llvm-18-runtime.binfmt",
+2026-05-22T04:15:33.7172128Z     "python3.12",
+2026-05-22T04:15:33.7172765Z     "qemu-aarch64",
+2026-05-22T04:15:33.7173104Z     "qemu-arm",
+2026-05-22T04:15:33.7173456Z     "qemu-loongarch64",
+2026-05-22T04:15:33.7173867Z     "qemu-mips64",
+2026-05-22T04:15:33.7174279Z     "qemu-mips64el",
+2026-05-22T04:15:33.7174649Z     "qemu-ppc64le",
+2026-05-22T04:15:33.7175017Z     "qemu-riscv64",
+2026-05-22T04:15:33.7175333Z     "qemu-s390x"
+2026-05-22T04:15:33.7175592Z   ]
+2026-05-22T04:15:33.7175826Z }
+2026-05-22T04:15:33.7788532Z ##[endgroup]
+2026-05-22T04:15:33.7789459Z ##[group]Extracting available platforms
+2026-05-22T04:15:33.9802983Z linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/loong64,linux/arm/v7,linux/arm/v6
+2026-05-22T04:15:33.9804541Z ##[endgroup]
+2026-05-22T04:15:33.9967419Z ##[group]Run docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd
+2026-05-22T04:15:33.9967831Z with:
+2026-05-22T04:15:33.9967996Z   version: edge
+2026-05-22T04:15:33.9968201Z   driver-opts: image=moby/buildkit:latest
+2026-05-22T04:15:33.9968491Z   buildkitd-flags: --debug
+2026-05-22T04:15:33.9968708Z   driver: docker-container
+2026-05-22T04:15:33.9968911Z   use: true
+2026-05-22T04:15:33.9969081Z   keep-state: false
+2026-05-22T04:15:33.9969263Z   cache-binary: true
+2026-05-22T04:15:33.9969453Z   cleanup: true
+2026-05-22T04:15:33.9969621Z env:
+2026-05-22T04:15:33.9969773Z   GO_VERSION: 1.26.3
+2026-05-22T04:15:33.9969957Z   DESTDIR: ./build
+2026-05-22T04:15:33.9970145Z   SETUP_BUILDX_VERSION: edge
+2026-05-22T04:15:33.9970383Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-22T04:15:33.9970690Z   TEST_IMAGE_BUILD: 0
+2026-05-22T04:15:33.9970892Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-22T04:15:33.9971292Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3,merge_diff
+2026-05-22T04:15:33.9971762Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-22T04:15:33.9972781Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:34.0019460Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-22T04:15:34.0020051Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-22T04:15:34.0020798Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-22T04:15:34.0021225Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-22T04:15:34.0021666Z   ACTIONS_ORCHESTRATION_ID: 2ab9393c-c4d4-4730-a1fc-74c39d55e06a.test-linux.dockerd_client_integratio
+2026-05-22T04:15:34.0022134Z   GOTOOLCHAIN: local
+2026-05-22T04:15:34.0022640Z   BUILDKIT_REPO: moby/buildkit
+2026-05-22T04:15:34.0022950Z   BUILDKIT_REF: v0.30.0
+2026-05-22T04:15:34.0023433Z ##[endgroup]
+2026-05-22T04:15:34.1988917Z ##[group]Docker info
+2026-05-22T04:15:34.2030613Z [command]/usr/bin/docker version
+2026-05-22T04:15:34.2248068Z Client: Docker Engine - Community
+2026-05-22T04:15:34.2250807Z  Version:           28.0.4
+2026-05-22T04:15:34.2251789Z  API version:       1.48
+2026-05-22T04:15:34.2252221Z  Go version:        go1.23.7
+2026-05-22T04:15:34.2252903Z  Git commit:        b8034c0
+2026-05-22T04:15:34.2253352Z  Built:             Tue Mar 25 15:07:16 2025
+2026-05-22T04:15:34.2253829Z  OS/Arch:           linux/amd64
+2026-05-22T04:15:34.2254252Z  Context:           default
+2026-05-22T04:15:34.2254502Z 
+2026-05-22T04:15:34.2254688Z Server: Docker Engine - Community
+2026-05-22T04:15:34.2255109Z  Engine:
+2026-05-22T04:15:34.2255423Z   Version:          28.0.4
+2026-05-22T04:15:34.2255920Z   API version:      1.48 (minimum version 1.24)
+2026-05-22T04:15:34.2256511Z   Go version:       go1.23.7
+2026-05-22T04:15:34.2256943Z   Git commit:       6430e49
+2026-05-22T04:15:34.2257441Z   Built:            Tue Mar 25 15:07:16 2025
+2026-05-22T04:15:34.2257954Z   OS/Arch:          linux/amd64
+2026-05-22T04:15:34.2258397Z   Experimental:     false
+2026-05-22T04:15:34.2258791Z  containerd:
+2026-05-22T04:15:34.2259137Z   Version:          v2.2.3
+2026-05-22T04:15:34.2259706Z   GitCommit:        77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-22T04:15:34.2260282Z  runc:
+2026-05-22T04:15:34.2260670Z   Version:          1.3.5
+2026-05-22T04:15:34.2261110Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-05-22T04:15:34.2261560Z  docker-init:
+2026-05-22T04:15:34.2261921Z   Version:          0.19.0
+2026-05-22T04:15:34.2262598Z   GitCommit:        de40ad0
+2026-05-22T04:15:34.2299790Z [command]/usr/bin/docker info
+2026-05-22T04:15:34.3205188Z Client: Docker Engine - Community
+2026-05-22T04:15:34.3206329Z  Version:    28.0.4
+2026-05-22T04:15:34.3206726Z  Context:    default
+2026-05-22T04:15:34.3207093Z  Debug Mode: false
+2026-05-22T04:15:34.3207410Z  Plugins:
+2026-05-22T04:15:34.3207765Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-22T04:15:34.3208682Z     Version:  v0.34.0
+2026-05-22T04:15:34.3209268Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-05-22T04:15:34.3209847Z   compose: Docker Compose (Docker Inc.)
+2026-05-22T04:15:34.3210329Z     Version:  v2.38.2
+2026-05-22T04:15:34.3210914Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-05-22T04:15:34.3211317Z 
+2026-05-22T04:15:34.3211479Z Server:
+2026-05-22T04:15:34.3211776Z  Containers: 0
+2026-05-22T04:15:34.3212073Z   Running: 0
+2026-05-22T04:15:34.3212692Z   Paused: 0
+2026-05-22T04:15:34.3212986Z   Stopped: 0
+2026-05-22T04:15:34.3213290Z  Images: 7
+2026-05-22T04:15:34.3213502Z  Server Version: 28.0.4
+2026-05-22T04:15:34.3213748Z  Storage Driver: overlay2
+2026-05-22T04:15:34.3214010Z   Backing Filesystem: extfs
+2026-05-22T04:15:34.3214274Z   Supports d_type: true
+2026-05-22T04:15:34.3214511Z   Using metacopy: false
+2026-05-22T04:15:34.3214798Z   Native Overlay Diff: false
+2026-05-22T04:15:34.3215065Z   userxattr: false
+2026-05-22T04:15:34.3215306Z  Logging Driver: json-file
+2026-05-22T04:15:34.3215569Z  Cgroup Driver: systemd
+2026-05-22T04:15:34.3215800Z  Cgroup Version: 2
+2026-05-22T04:15:34.3216002Z  Plugins:
+2026-05-22T04:15:34.3216199Z   Volume: local
+2026-05-22T04:15:34.3216485Z   Network: bridge host ipvlan macvlan null overlay
+2026-05-22T04:15:34.3216985Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-05-22T04:15:34.3217640Z  Swarm: inactive
+2026-05-22T04:15:34.3217968Z  Runtimes: io.containerd.runc.v2 runc
+2026-05-22T04:15:34.3218285Z  Default Runtime: runc
+2026-05-22T04:15:34.3218522Z  Init Binary: docker-init
+2026-05-22T04:15:34.3218864Z  containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-22T04:15:34.3219248Z  runc version: v1.3.5-0-g488fc13e
+2026-05-22T04:15:34.3219511Z  init version: de40ad0
+2026-05-22T04:15:34.3219708Z  Security Options:
+2026-05-22T04:15:34.3219899Z   apparmor
+2026-05-22T04:15:34.3220070Z   seccomp
+2026-05-22T04:15:34.3220248Z    Profile: builtin
+2026-05-22T04:15:34.3220659Z   cgroupns
+2026-05-22T04:15:34.3220855Z  Kernel Version: 6.17.0-1013-azure
+2026-05-22T04:15:34.3221121Z  Operating System: Ubuntu 24.04.4 LTS
+2026-05-22T04:15:34.3221366Z  OSType: linux
+2026-05-22T04:15:34.3221559Z  Architecture: x86_64
+2026-05-22T04:15:34.3221753Z  CPUs: 4
+2026-05-22T04:15:34.3221924Z  Total Memory: 15.61GiB
+2026-05-22T04:15:34.3222131Z  Name: runnervmg397c
+2026-05-22T04:15:34.3222825Z  ID: 030b3de5-f6f5-43f2-8bdc-0a866a274328
+2026-05-22T04:15:34.3223308Z  Docker Root Dir: /var/lib/docker
+2026-05-22T04:15:34.3223700Z  Debug Mode: false
+2026-05-22T04:15:34.3223951Z  Username: githubactions
+2026-05-22T04:15:34.3224167Z  Experimental: false
+2026-05-22T04:15:34.3224373Z  Insecure Registries:
+2026-05-22T04:15:34.3224595Z   ::1/128
+2026-05-22T04:15:34.3224758Z   127.0.0.0/8
+2026-05-22T04:15:34.3224950Z  Live Restore Enabled: false
+2026-05-22T04:15:34.3225094Z 
+2026-05-22T04:15:34.3225399Z ##[endgroup]
+2026-05-22T04:15:34.5618838Z ##[group]Download buildx from GitHub Releases
+2026-05-22T04:15:34.6018137Z Use 0.34.1 version spec cache key for v0.34.1
+2026-05-22T04:15:34.8709153Z Cache hit for: buildx-dl-bin-0.34.1-linux-x64
+2026-05-22T04:15:36.2017802Z Received 802138 of 21773658 (3.7%), 0.8 MBs/sec
+2026-05-22T04:15:36.6544591Z Received 21773658 of 21773658 (100.0%), 14.3 MBs/sec
+2026-05-22T04:15:36.6545722Z Cache Size: ~21 MB (21773658 B)
+2026-05-22T04:15:36.6573020Z [command]/usr/bin/tar -xf /home/runner/work/_temp/55dbf0b3-942d-48dd-81d8-ce63bf241759/cache.tzst -P -C /home/runner/work/moby/moby --use-compress-program unzstd
+2026-05-22T04:15:36.7674812Z Cache restored successfully
+2026-05-22T04:15:36.7689052Z Restored buildx-dl-bin-0.34.1-linux-x64 from GitHub Actions cache
+2026-05-22T04:15:36.8070688Z Cached to hosted tool cache /opt/hostedtoolcache/buildx-dl-bin/0.34.1/linux-x64
+2026-05-22T04:15:36.8071929Z Copying /opt/hostedtoolcache/buildx-dl-bin/0.34.1/linux-x64/docker-buildx to /home/runner/.docker/buildx/.bin/0.34.1/linux-x64/docker-buildx
+2026-05-22T04:15:36.8519270Z Buildx binary found in /home/runner/.docker/buildx/.bin/0.34.1/linux-x64/docker-buildx
+2026-05-22T04:15:36.8520564Z ##[endgroup]
+2026-05-22T04:15:36.8522206Z ##[group]Install buildx
+2026-05-22T04:15:36.8523438Z Docker plugin mode
+2026-05-22T04:15:36.9429033Z Fixing perms
+2026-05-22T04:15:36.9433742Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-05-22T04:15:36.9435713Z ##[endgroup]
+2026-05-22T04:15:36.9436493Z ##[group]Buildx version
+2026-05-22T04:15:36.9513849Z [command]/usr/bin/docker buildx version
+2026-05-22T04:15:37.0052949Z github.com/docker/buildx v0.34.1 e0b0e77d18d3379bc1e0d55f3b37de288d36fe47
+2026-05-22T04:15:37.0073155Z ##[endgroup]
+2026-05-22T04:15:37.0230853Z ##[group]Inspecting default docker context
+2026-05-22T04:15:37.0371954Z [
+2026-05-22T04:15:37.0372164Z   {
+2026-05-22T04:15:37.0372689Z     "Name": "default",
+2026-05-22T04:15:37.0372994Z     "Metadata": {},
+2026-05-22T04:15:37.0373240Z     "Endpoints": {
+2026-05-22T04:15:37.0373480Z       "docker": {
+2026-05-22T04:15:37.0373831Z         "Host": "unix:///var/run/docker.sock",
+2026-05-22T04:15:37.0374196Z         "SkipTLSVerify": false
+2026-05-22T04:15:37.0374443Z       }
+2026-05-22T04:15:37.0374619Z     },
+2026-05-22T04:15:37.0374821Z     "TLSMaterial": {},
+2026-05-22T04:15:37.0375050Z     "Storage": {
+2026-05-22T04:15:37.0375303Z       "MetadataPath": "<IN MEMORY>",
+2026-05-22T04:15:37.0375599Z       "TLSPath": "<IN MEMORY>"
+2026-05-22T04:15:37.0375811Z     }
+2026-05-22T04:15:37.0375971Z   }
+2026-05-22T04:15:37.0376128Z ]
+2026-05-22T04:15:37.0376496Z ##[endgroup]
+2026-05-22T04:15:37.0376852Z ##[group]Creating a new builder instance
+2026-05-22T04:15:37.1456010Z [command]/usr/bin/docker buildx create --name builder-f4524664-d92f-4f82-b028-93c96bc08d42 --driver docker-container --driver-opt image=moby/buildkit:latest --buildkitd-flags --debug --use
+2026-05-22T04:15:37.1989922Z builder-f4524664-d92f-4f82-b028-93c96bc08d42
+2026-05-22T04:15:37.2010113Z ##[endgroup]
+2026-05-22T04:15:37.2010508Z ##[group]Booting builder
+2026-05-22T04:15:37.2047862Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-f4524664-d92f-4f82-b028-93c96bc08d42
+2026-05-22T04:15:37.2526006Z #1 [internal] booting buildkit
+2026-05-22T04:15:37.4031186Z #1 pulling image moby/buildkit:latest
+2026-05-22T04:15:52.4806882Z #1 pulling image moby/buildkit:latest 15.2s done
+2026-05-22T04:15:52.4811210Z #1 ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": Get "https://auth.docker.io/token?account=githubactions&scope=repository%3Amoby%2Fbuildkit%3Apull&service=registry.docker.io": net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+2026-05-22T04:15:52.4813273Z ------
+2026-05-22T04:15:52.4813539Z  > [internal] booting buildkit:
+2026-05-22T04:15:52.4813869Z ------
+2026-05-22T04:15:52.4815544Z ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": Get "https://auth.docker.io/token?account=githubactions&scope=repository%3Amoby%2Fbuildkit%3Apull&service=registry.docker.io": net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+2026-05-22T04:15:52.4853489Z ##[endgroup]
+2026-05-22T04:15:52.4877061Z ##[error]ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": Get "https://auth.docker.io/token?account=githubactions&scope=repository%3Amoby%2Fbuildkit%3Apull&service=registry.docker.io": net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+2026-05-22T04:15:52.5034839Z Post job cleanup.
+2026-05-22T04:15:52.6965515Z ##[group]Removing builder
+2026-05-22T04:15:52.7563613Z [command]/usr/bin/docker buildx rm builder-f4524664-d92f-4f82-b028-93c96bc08d42
+2026-05-22T04:15:52.8137376Z builder-f4524664-d92f-4f82-b028-93c96bc08d42 removed
+2026-05-22T04:15:52.8162927Z ##[endgroup]
+2026-05-22T04:15:52.8163928Z ##[group]Cleaning up certificates
+2026-05-22T04:15:52.8166649Z ##[endgroup]
+2026-05-22T04:15:52.8167613Z ##[group]Post cache
+2026-05-22T04:15:52.8168959Z State not set
+2026-05-22T04:15:52.8169744Z ##[endgroup]
+2026-05-22T04:15:52.8303716Z Post job cleanup.
+2026-05-22T04:15:52.9547678Z ##[group]Post cache
+2026-05-22T04:15:52.9550462Z Caching docker.io--tonistiigi--binfmt-latest-linux-x64 to GitHub Actions cache
+2026-05-22T04:15:52.9751791Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/moby/moby --files-from manifest.txt --use-compress-program zstdmt
+2026-05-22T04:15:53.5751690Z Failed to save: Unable to reserve cache with key docker.io--tonistiigi--binfmt-latest-linux-x64, another job may be creating this cache.
+2026-05-22T04:15:53.5779524Z ##[endgroup]
+2026-05-22T04:15:53.5939397Z Post job cleanup.
+2026-05-22T04:15:53.6749465Z [command]/usr/bin/git version
+2026-05-22T04:15:53.6785896Z git version 2.54.0
+2026-05-22T04:15:53.6825274Z Temporarily overriding HOME='/home/runner/work/_temp/4c4415d4-ba10-4393-95c5-7308590f9332' before making global git config changes
+2026-05-22T04:15:53.6826903Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-22T04:15:53.6830684Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/buildkit
+2026-05-22T04:15:53.6859471Z Removing SSH command configuration
+2026-05-22T04:15:53.6865753Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-22T04:15:53.6900139Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-22T04:15:53.7131290Z Removing HTTP extra header
+2026-05-22T04:15:53.7136543Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-22T04:15:53.7170285Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-22T04:15:53.7396454Z Removing includeIf entries pointing to credentials config files
+2026-05-22T04:15:53.7403703Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-22T04:15:53.7461625Z includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git.path
+2026-05-22T04:15:53.7462744Z includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path
+2026-05-22T04:15:53.7463265Z includeif.gitdir:/github/workspace/buildkit/.git.path
+2026-05-22T04:15:53.7463759Z includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path
+2026-05-22T04:15:53.7471096Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git.path
+2026-05-22T04:15:53.7493206Z /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7503984Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git.path /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7538675Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path
+2026-05-22T04:15:53.7559878Z /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7569387Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7600932Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/buildkit/.git.path
+2026-05-22T04:15:53.7621443Z /github/runner_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7630772Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/buildkit/.git.path /github/runner_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7664621Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path
+2026-05-22T04:15:53.7685345Z /github/runner_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7694459Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path /github/runner_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config
+2026-05-22T04:15:53.7726609Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-22T04:15:53.7953162Z Removing credentials config '/home/runner/work/_temp/git-credentials-3d215a5c-20bc-4166-abc0-744bfe460748.config'
+2026-05-22T04:15:53.8100000Z Post job cleanup.
+2026-05-22T04:15:53.8950427Z [command]/usr/bin/git version
+2026-05-22T04:15:53.9002073Z git version 2.54.0
+2026-05-22T04:15:53.9061121Z Temporarily overriding HOME='/home/runner/work/_temp/6478b718-2552-46b1-a560-04d4d4b4616f' before making global git config changes
+2026-05-22T04:15:53.9063206Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-22T04:15:53.9069234Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/moby
+2026-05-22T04:15:53.9104002Z Removing SSH command configuration
+2026-05-22T04:15:53.9111956Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-22T04:15:53.9151204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-22T04:15:53.9416232Z Removing HTTP extra header
+2026-05-22T04:15:53.9421328Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-22T04:15:53.9455545Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-22T04:15:53.9689199Z Removing includeIf entries pointing to credentials config files
+2026-05-22T04:15:53.9695891Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-22T04:15:53.9750113Z includeif.gitdir:/home/runner/work/moby/moby/moby/.git.path
+2026-05-22T04:15:53.9750796Z includeif.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path
+2026-05-22T04:15:53.9751271Z includeif.gitdir:/github/workspace/moby/.git.path
+2026-05-22T04:15:53.9751701Z includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path
+2026-05-22T04:15:53.9759255Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/moby/.git.path
+2026-05-22T04:15:53.9779867Z /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9791380Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/moby/.git.path /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9825170Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path
+2026-05-22T04:15:53.9845772Z /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9855374Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9885891Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/moby/.git.path
+2026-05-22T04:15:53.9907070Z /github/runner_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9915919Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/moby/.git.path /github/runner_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9946901Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path
+2026-05-22T04:15:53.9967761Z /github/runner_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:53.9977712Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path /github/runner_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config
+2026-05-22T04:15:54.0008144Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-22T04:15:54.0247139Z Removing credentials config '/home/runner/work/_temp/git-credentials-0fd5d159-3756-491c-b7d2-57c6a4af0cce.config'
+2026-05-22T04:15:54.0381230Z Cleaning up orphan processes

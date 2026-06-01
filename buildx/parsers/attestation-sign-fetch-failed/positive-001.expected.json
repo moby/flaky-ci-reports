@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "attestation-sign-fetch-failed:production.cloudflare.docker.com:eof",
+    "name": "Attestation sign: fetch from production.cloudflare.docker.com failed: EOF",
+    "category": "network",
+    "fields": {
+      "host": "production.cloudflare.docker.com",
+      "inner": "EOF"
+    },
+    "evidence": [
+      {
+        "start_line": 2602,
+        "end_line": 2602
+      }
+    ]
+  }
+]

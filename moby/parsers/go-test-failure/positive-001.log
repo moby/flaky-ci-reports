@@ -1,0 +1,756 @@
+﻿2026-05-18T13:44:02.5004915Z Current runner version: '2.334.0'
+2026-05-18T13:44:02.5030261Z ##[group]Runner Image Provisioner
+2026-05-18T13:44:02.5031060Z Hosted Compute Agent
+2026-05-18T13:44:02.5031527Z Version: 20260415.520
+2026-05-18T13:44:02.5032061Z Commit: af089020f5f67b61ccc91db6c07980876c02bf7b
+2026-05-18T13:44:02.5032666Z Build Date: 2026-04-15T18:07:08Z
+2026-05-18T13:44:02.5033273Z Worker ID: {f31f5052-b2df-4195-be35-a51bfd60c062}
+2026-05-18T13:44:02.5033861Z Azure Region: westus3
+2026-05-18T13:44:02.5034343Z ##[endgroup]
+2026-05-18T13:44:02.5035523Z ##[group]Operating System
+2026-05-18T13:44:02.5036032Z Microsoft Windows Server 2022
+2026-05-18T13:44:02.5036546Z 10.0.20348
+2026-05-18T13:44:02.5036938Z Datacenter
+2026-05-18T13:44:02.5037350Z ##[endgroup]
+2026-05-18T13:44:02.5037742Z ##[group]Runner Image
+2026-05-18T13:44:02.5038235Z Image: windows-2022
+2026-05-18T13:44:02.5038687Z Version: 20260510.161.1
+2026-05-18T13:44:02.5040031Z Included Software: https://github.com/actions/runner-images/blob/win22/20260510.161/images/windows/Windows2022-Readme.md
+2026-05-18T13:44:02.5041353Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20260510.161
+2026-05-18T13:44:02.5042200Z ##[endgroup]
+2026-05-18T13:44:02.5043119Z ##[group]GITHUB_TOKEN Permissions
+2026-05-18T13:44:02.5044823Z Contents: read
+2026-05-18T13:44:02.5045308Z Metadata: read
+2026-05-18T13:44:02.5045746Z ##[endgroup]
+2026-05-18T13:44:02.5047723Z Secret source: None
+2026-05-18T13:44:02.5048328Z Prepare workflow directory
+2026-05-18T13:44:02.5630188Z Prepare all required actions
+2026-05-18T13:44:02.5672316Z Getting action download info
+2026-05-18T13:44:03.2615080Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-05-18T13:44:03.9826387Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-18T13:44:04.0656481Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-18T13:44:04.8862329Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-18T13:44:05.7763366Z Complete job name: test-windows (dockerd-containerd, ./frontend/dockerfile#1-12)
+2026-05-18T13:44:05.8949244Z ##[group]Run disabledFeatures="cache_backend_azblob,cache_backend_s3"
+2026-05-18T13:44:05.8950006Z [36;1mdisabledFeatures="cache_backend_azblob,cache_backend_s3"[0m
+2026-05-18T13:44:05.8950475Z [36;1mif [ "dockerd-containerd" = "dockerd" ]; then[0m
+2026-05-18T13:44:05.8950849Z [36;1m  disabledFeatures="${disabledFeatures},merge_diff"[0m
+2026-05-18T13:44:05.8951165Z [36;1mfi[0m
+2026-05-18T13:44:05.8951491Z [36;1mecho "BUILDKIT_TEST_DISABLE_FEATURES=${disabledFeatures}" >> $GITHUB_ENV[0m
+2026-05-18T13:44:05.8968217Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-18T13:44:05.8968914Z env:
+2026-05-18T13:44:05.8969121Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:05.8969349Z   DESTDIR: ./build
+2026-05-18T13:44:05.8969585Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:05.8969856Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:05.8970131Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:05.8970406Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:05.8970670Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:05.8970913Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:05.8971152Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:05.8971408Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:05.8971644Z   TEST_DOCKERD: 1
+2026-05-18T13:44:05.8971840Z ##[endgroup]
+2026-05-18T13:44:06.3209938Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-05-18T13:44:06.3210496Z with:
+2026-05-18T13:44:06.3210905Z   github-token: ***
+2026-05-18T13:44:06.3211131Z env:
+2026-05-18T13:44:06.3211335Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:06.3213132Z   DESTDIR: ./build
+2026-05-18T13:44:06.3213360Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:06.3213633Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:06.3213918Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:06.3214136Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:06.3214378Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:06.3214603Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:06.3214838Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:06.3215079Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:06.3215301Z   TEST_DOCKERD: 1
+2026-05-18T13:44:06.3215610Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:06.3215962Z ##[endgroup]
+2026-05-18T13:44:06.4496560Z ACTIONS_CACHE_SERVICE_V2=True
+2026-05-18T13:44:06.4497409Z ACTIONS_CACHE_URL=https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:06.4498248Z ACTIONS_ORCHESTRATION_ID=e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:06.4499125Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:06.4503580Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=C:\actionarchivecache\
+2026-05-18T13:44:06.4505211Z ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED=1
+2026-05-18T13:44:06.4576913Z ACTIONS_RUNTIME_TOKEN=***
+2026-05-18T13:44:06.4578073Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:06.4884103Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-18T13:44:06.4884598Z with:
+2026-05-18T13:44:06.4884803Z   path: moby
+2026-05-18T13:44:06.4885025Z   repository: moby/moby
+2026-05-18T13:44:06.4885441Z   token: ***
+2026-05-18T13:44:06.4885645Z   ssh-strict: true
+2026-05-18T13:44:06.4885859Z   ssh-user: git
+2026-05-18T13:44:06.4886072Z   persist-credentials: true
+2026-05-18T13:44:06.4886444Z   clean: true
+2026-05-18T13:44:06.4886677Z   sparse-checkout-cone-mode: true
+2026-05-18T13:44:06.4886934Z   fetch-depth: 1
+2026-05-18T13:44:06.4887141Z   fetch-tags: false
+2026-05-18T13:44:06.4887347Z   show-progress: true
+2026-05-18T13:44:06.4887558Z   lfs: false
+2026-05-18T13:44:06.4887743Z   submodules: false
+2026-05-18T13:44:06.4887958Z   set-safe-directory: true
+2026-05-18T13:44:06.4888177Z env:
+2026-05-18T13:44:06.4888363Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:06.4888569Z   DESTDIR: ./build
+2026-05-18T13:44:06.4888817Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:06.4889074Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:06.4889354Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:06.4889568Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:06.4889808Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:06.4890032Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:06.4890265Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:06.4890503Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:06.4890733Z   TEST_DOCKERD: 1
+2026-05-18T13:44:06.4891048Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:06.4891416Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:06.4892002Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:06.4892799Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:06.4893432Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:06.4893898Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:06.4894246Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:06.4946142Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:06.4946773Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:06.4947390Z ##[endgroup]
+2026-05-18T13:44:06.6166634Z Syncing repository: moby/moby
+2026-05-18T13:44:06.6169136Z ##[group]Getting Git version info
+2026-05-18T13:44:06.6169456Z Working directory is 'D:\a\moby\moby\moby'
+2026-05-18T13:44:06.7047170Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-18T13:44:07.0130988Z git version 2.54.0.windows.1
+2026-05-18T13:44:07.0177082Z ##[endgroup]
+2026-05-18T13:44:07.0197940Z Temporarily overriding HOME='D:\a\_temp\962fe670-f790-42c1-958d-894d1f45a884' before making global git config changes
+2026-05-18T13:44:07.0199108Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-18T13:44:07.0209286Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\moby
+2026-05-18T13:44:07.0712177Z ##[group]Initializing the repository
+2026-05-18T13:44:07.0721565Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\moby\moby\moby
+2026-05-18T13:44:07.1370447Z Initialized empty Git repository in D:/a/moby/moby/moby/.git/
+2026-05-18T13:44:07.1410042Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/moby/moby
+2026-05-18T13:44:07.1853010Z ##[endgroup]
+2026-05-18T13:44:07.1853489Z ##[group]Disabling automatic garbage collection
+2026-05-18T13:44:07.1862632Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-18T13:44:07.2097022Z ##[endgroup]
+2026-05-18T13:44:07.2097472Z ##[group]Setting up auth
+2026-05-18T13:44:07.2098007Z Removing SSH command configuration
+2026-05-18T13:44:07.2113048Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-18T13:44:07.2356117Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-18T13:44:08.2321933Z Removing HTTP extra header
+2026-05-18T13:44:08.2332388Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-18T13:44:08.2592817Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-18T13:44:08.7233881Z Removing includeIf entries pointing to credentials config files
+2026-05-18T13:44:08.7245953Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-18T13:44:08.7488447Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-18T13:44:09.2122024Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-18T13:44:09.2381395Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/moby/.git.path D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:44:09.2642301Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/moby/.git/worktrees/*.path D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:44:09.2950014Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/moby/.git.path /github/runner_temp/git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:44:09.3196440Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/moby/.git/worktrees/*.path /github/runner_temp/git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:44:09.3452741Z ##[endgroup]
+2026-05-18T13:44:09.3453131Z ##[group]Fetching the repository
+2026-05-18T13:44:09.3472630Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e0610d310411fc6ae03861ba48cb1da70f098548:refs/remotes/pull/52638/merge
+2026-05-18T13:44:12.9974606Z From https://github.com/moby/moby
+2026-05-18T13:44:12.9975365Z  * [new ref]         e0610d310411fc6ae03861ba48cb1da70f098548 -> pull/52638/merge
+2026-05-18T13:44:13.0301803Z ##[endgroup]
+2026-05-18T13:44:13.0302315Z ##[group]Determining the checkout info
+2026-05-18T13:44:13.0303375Z ##[endgroup]
+2026-05-18T13:44:13.0314692Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-18T13:44:13.0743280Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-18T13:44:13.0983469Z ##[group]Checking out the ref
+2026-05-18T13:44:13.0996152Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/52638/merge
+2026-05-18T13:44:14.1512524Z Updating files:  43% (5475/12549)
+2026-05-18T13:44:14.1766303Z Updating files:  44% (5522/12549)
+2026-05-18T13:44:14.1954311Z Updating files:  45% (5648/12549)
+2026-05-18T13:44:14.2170495Z Updating files:  46% (5773/12549)
+2026-05-18T13:44:14.2370466Z Updating files:  47% (5899/12549)
+2026-05-18T13:44:14.2570574Z Updating files:  48% (6024/12549)
+2026-05-18T13:44:14.2762571Z Updating files:  49% (6150/12549)
+2026-05-18T13:44:14.2963609Z Updating files:  50% (6275/12549)
+2026-05-18T13:44:14.3224998Z Updating files:  51% (6400/12549)
+2026-05-18T13:44:14.3460460Z Updating files:  52% (6526/12549)
+2026-05-18T13:44:14.3724841Z Updating files:  53% (6651/12549)
+2026-05-18T13:44:14.3959949Z Updating files:  54% (6777/12549)
+2026-05-18T13:44:14.4601201Z Updating files:  55% (6902/12549)
+2026-05-18T13:44:14.4824301Z Updating files:  56% (7028/12549)
+2026-05-18T13:44:14.5041895Z Updating files:  57% (7153/12549)
+2026-05-18T13:44:14.5307199Z Updating files:  58% (7279/12549)
+2026-05-18T13:44:14.5557976Z Updating files:  59% (7404/12549)
+2026-05-18T13:44:14.5797322Z Updating files:  60% (7530/12549)
+2026-05-18T13:44:14.5987305Z Updating files:  61% (7655/12549)
+2026-05-18T13:44:14.6216430Z Updating files:  62% (7781/12549)
+2026-05-18T13:44:14.6400725Z Updating files:  63% (7906/12549)
+2026-05-18T13:44:14.6574531Z Updating files:  64% (8032/12549)
+2026-05-18T13:44:14.6834638Z Updating files:  65% (8157/12549)
+2026-05-18T13:44:14.7155874Z Updating files:  66% (8283/12549)
+2026-05-18T13:44:14.7391307Z Updating files:  67% (8408/12549)
+2026-05-18T13:44:14.7599590Z Updating files:  68% (8534/12549)
+2026-05-18T13:44:14.7812972Z Updating files:  69% (8659/12549)
+2026-05-18T13:44:14.8025582Z Updating files:  70% (8785/12549)
+2026-05-18T13:44:14.8261825Z Updating files:  71% (8910/12549)
+2026-05-18T13:44:14.8476555Z Updating files:  72% (9036/12549)
+2026-05-18T13:44:14.8687684Z Updating files:  73% (9161/12549)
+2026-05-18T13:44:14.9098887Z Updating files:  74% (9287/12549)
+2026-05-18T13:44:14.9313512Z Updating files:  75% (9412/12549)
+2026-05-18T13:44:14.9540344Z Updating files:  76% (9538/12549)
+2026-05-18T13:44:14.9737794Z Updating files:  77% (9663/12549)
+2026-05-18T13:44:14.9980611Z Updating files:  78% (9789/12549)
+2026-05-18T13:44:15.0178131Z Updating files:  79% (9914/12549)
+2026-05-18T13:44:15.0356982Z Updating files:  80% (10040/12549)
+2026-05-18T13:44:15.0550028Z Updating files:  81% (10165/12549)
+2026-05-18T13:44:15.0816567Z Updating files:  82% (10291/12549)
+2026-05-18T13:44:15.1039847Z Updating files:  83% (10416/12549)
+2026-05-18T13:44:15.1264358Z Updating files:  84% (10542/12549)
+2026-05-18T13:44:15.1416248Z Updating files:  85% (10667/12549)
+2026-05-18T13:44:15.1472661Z Updating files:  85% (10757/12549)
+2026-05-18T13:44:15.1723140Z Updating files:  86% (10793/12549)
+2026-05-18T13:44:15.1981742Z Updating files:  87% (10918/12549)
+2026-05-18T13:44:15.2267367Z Updating files:  88% (11044/12549)
+2026-05-18T13:44:15.2415581Z Updating files:  89% (11169/12549)
+2026-05-18T13:44:15.2594574Z Updating files:  90% (11295/12549)
+2026-05-18T13:44:15.2762267Z Updating files:  91% (11420/12549)
+2026-05-18T13:44:15.2970457Z Updating files:  92% (11546/12549)
+2026-05-18T13:44:15.3357498Z Updating files:  93% (11671/12549)
+2026-05-18T13:44:15.3692183Z Updating files:  94% (11797/12549)
+2026-05-18T13:44:15.4005937Z Updating files:  95% (11922/12549)
+2026-05-18T13:44:15.4274499Z Updating files:  96% (12048/12549)
+2026-05-18T13:44:15.4534072Z Updating files:  97% (12173/12549)
+2026-05-18T13:44:15.4765798Z Updating files:  98% (12299/12549)
+2026-05-18T13:44:15.5020434Z Updating files:  99% (12424/12549)
+2026-05-18T13:44:15.5020908Z Updating files: 100% (12549/12549)
+2026-05-18T13:44:15.5021166Z Updating files: 100% (12549/12549), done.
+2026-05-18T13:44:15.5278476Z Note: switching to 'refs/remotes/pull/52638/merge'.
+2026-05-18T13:44:15.5279291Z 
+2026-05-18T13:44:15.5279587Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-18T13:44:15.5280228Z changes and commit them, and you can discard any commits you make in this
+2026-05-18T13:44:15.5280827Z state without impacting any branches by switching back to a branch.
+2026-05-18T13:44:15.5281246Z 
+2026-05-18T13:44:15.5281474Z If you want to create a new branch to retain commits you create, you may
+2026-05-18T13:44:15.5282044Z do so (now or later) by using -c with the switch command. Example:
+2026-05-18T13:44:15.5282344Z 
+2026-05-18T13:44:15.5282431Z   git switch -c <new-branch-name>
+2026-05-18T13:44:15.5282597Z 
+2026-05-18T13:44:15.5282679Z Or undo this operation with:
+2026-05-18T13:44:15.5282822Z 
+2026-05-18T13:44:15.5282890Z   git switch -
+2026-05-18T13:44:15.5283264Z 
+2026-05-18T13:44:15.5283456Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-18T13:44:15.5283730Z 
+2026-05-18T13:44:15.5284055Z HEAD is now at e0610d3 Merge ea952feee64d2a96517fe991c8bd1e311c4fa776 into 675945d39e1b4dc0e5806b216191e29094e43ec1
+2026-05-18T13:44:15.5417377Z ##[endgroup]
+2026-05-18T13:44:15.5769824Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-18T13:44:15.6003517Z e0610d310411fc6ae03861ba48cb1da70f098548
+2026-05-18T13:44:15.6350260Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-18T13:44:15.6350674Z with:
+2026-05-18T13:44:15.6350851Z   go-version: 1.26.3
+2026-05-18T13:44:15.6351027Z   cache: false
+2026-05-18T13:44:15.6351200Z   check-latest: false
+2026-05-18T13:44:15.6351582Z   token: ***
+2026-05-18T13:44:15.6351741Z env:
+2026-05-18T13:44:15.6351896Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:15.6352069Z   DESTDIR: ./build
+2026-05-18T13:44:15.6352249Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:15.6352486Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:15.6352735Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:15.6352921Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:15.6353135Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:15.6353332Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:15.6353527Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:15.6353733Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:15.6353915Z   TEST_DOCKERD: 1
+2026-05-18T13:44:15.6354259Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:15.6354590Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:15.6355136Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:15.6355890Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:15.6356478Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:15.6356907Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:15.6357222Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:15.6408868Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:15.6409467Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:15.6410064Z ##[endgroup]
+2026-05-18T13:44:15.8234990Z Setup go version spec 1.26.3
+2026-05-18T13:44:15.8250058Z Attempting to download 1.26.3...
+2026-05-18T13:44:16.7622016Z matching 1.26.3...
+2026-05-18T13:44:16.7648973Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-win32-x64.zip
+2026-05-18T13:44:17.5620336Z Extracting Go...
+2026-05-18T13:44:17.6779346Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.26.3-win32-x64.zip', 'D:\a\_temp\43e1b61f-407e-46d0-a914-e9f738628367', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.26.3-win32-x64.zip' -DestinationPath 'D:\a\_temp\43e1b61f-407e-46d0-a914-e9f738628367' -Force } else { throw $_ } } ;"
+2026-05-18T13:44:25.6985863Z Successfully extracted go to D:\a\_temp\43e1b61f-407e-46d0-a914-e9f738628367
+2026-05-18T13:44:25.6986289Z Adding to the cache ...
+2026-05-18T13:44:35.1955392Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64 => D:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-18T13:44:35.1960093Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64.complete => D:\hostedtoolcache\windows\go\1.26.3\x64.complete
+2026-05-18T13:44:35.1960837Z Successfully cached go to C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-18T13:44:35.1966914Z Added go to the path
+2026-05-18T13:44:35.1969515Z Successfully set up Go version 1.26.3
+2026-05-18T13:44:35.4107067Z go version go1.26.3 windows/amd64
+2026-05-18T13:44:35.4107292Z 
+2026-05-18T13:44:35.4107596Z ##[group]go env
+2026-05-18T13:44:37.8857486Z set AR=ar
+2026-05-18T13:44:37.8857767Z set CC=gcc
+2026-05-18T13:44:37.8858026Z set CGO_CFLAGS=-O2 -g
+2026-05-18T13:44:37.8860417Z set CGO_CPPFLAGS=
+2026-05-18T13:44:37.8860773Z set CGO_CXXFLAGS=-O2 -g
+2026-05-18T13:44:37.8861061Z set CGO_ENABLED=1
+2026-05-18T13:44:37.8861332Z set CGO_FFLAGS=-O2 -g
+2026-05-18T13:44:37.8861616Z set CGO_LDFLAGS=-O2 -g
+2026-05-18T13:44:37.8861912Z set CXX=g++
+2026-05-18T13:44:37.8862167Z set GCCGO=gccgo
+2026-05-18T13:44:37.8863072Z set GO111MODULE=
+2026-05-18T13:44:37.8863338Z set GOAMD64=v1
+2026-05-18T13:44:37.8863595Z set GOARCH=amd64
+2026-05-18T13:44:37.8863921Z set GOAUTH=netrc
+2026-05-18T13:44:37.8864343Z set GOBIN=D:\a\moby\moby\go\bin
+2026-05-18T13:44:37.8864790Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+2026-05-18T13:44:37.8865247Z set GOCACHEPROG=
+2026-05-18T13:44:37.8865499Z set GODEBUG=
+2026-05-18T13:44:37.8865880Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+2026-05-18T13:44:37.8866329Z set GOEXE=.exe
+2026-05-18T13:44:37.8866545Z set GOEXPERIMENT=
+2026-05-18T13:44:37.8866733Z set GOFIPS140=off
+2026-05-18T13:44:37.8866898Z set GOFLAGS=
+2026-05-18T13:44:37.8867656Z set GOGCCFLAGS=-m64 -mthreads -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build3794751943=/tmp/go-build -gno-record-gcc-switches
+2026-05-18T13:44:37.8868378Z set GOHOSTARCH=amd64
+2026-05-18T13:44:37.8868571Z set GOHOSTOS=windows
+2026-05-18T13:44:37.8868740Z set GOINSECURE=
+2026-05-18T13:44:37.8868909Z set GOMOD=NUL
+2026-05-18T13:44:37.8869114Z set GOMODCACHE=D:\a\moby\moby\go\pkg\mod
+2026-05-18T13:44:37.8869347Z set GONOPROXY=
+2026-05-18T13:44:37.8869513Z set GONOSUMDB=
+2026-05-18T13:44:37.8869660Z set GOOS=windows
+2026-05-18T13:44:37.8869845Z set GOPATH=D:\a\moby\moby\go
+2026-05-18T13:44:37.8870038Z set GOPRIVATE=
+2026-05-18T13:44:37.8870277Z set GOPROXY=https://proxy.golang.org,direct
+2026-05-18T13:44:37.8870587Z set GOROOT=C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-18T13:44:37.8870868Z set GOSUMDB=sum.golang.org
+2026-05-18T13:44:37.8871067Z set GOTELEMETRY=local
+2026-05-18T13:44:37.8871377Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+2026-05-18T13:44:37.8871954Z set GOTMPDIR=
+2026-05-18T13:44:37.8872127Z set GOTOOLCHAIN=local
+2026-05-18T13:44:37.8872452Z set GOTOOLDIR=C:\hostedtoolcache\windows\go\1.26.3\x64\pkg\tool\windows_amd64
+2026-05-18T13:44:37.8872794Z set GOVCS=
+2026-05-18T13:44:37.8872961Z set GOVERSION=go1.26.3
+2026-05-18T13:44:37.8873136Z set GOWORK=
+2026-05-18T13:44:37.8873314Z set PKG_CONFIG=pkg-config
+2026-05-18T13:44:37.8873447Z 
+2026-05-18T13:44:37.8873791Z ##[endgroup]
+2026-05-18T13:44:37.9119684Z ##[group]Run ./hack/buildkit-ref >> "$GITHUB_ENV"
+2026-05-18T13:44:37.9120105Z [36;1m./hack/buildkit-ref >> "$GITHUB_ENV"[0m
+2026-05-18T13:44:37.9133663Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-18T13:44:37.9134026Z env:
+2026-05-18T13:44:37.9134181Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:37.9134373Z   DESTDIR: ./build
+2026-05-18T13:44:37.9134549Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:37.9134787Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:37.9135042Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:37.9135243Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:37.9135455Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:37.9135659Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:37.9135869Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:37.9136068Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:37.9136262Z   TEST_DOCKERD: 1
+2026-05-18T13:44:37.9136577Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:37.9136913Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:37.9137482Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:37.9138360Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:37.9138972Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:37.9139412Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:37.9139746Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:37.9196600Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:37.9197243Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:37.9197844Z   GOTOOLCHAIN: local
+2026-05-18T13:44:37.9198115Z   GH_TOKEN: ***
+2026-05-18T13:44:37.9198286Z ##[endgroup]
+2026-05-18T13:44:38.4979118Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-18T13:44:38.4979521Z with:
+2026-05-18T13:44:38.4979709Z   repository: moby/buildkit
+2026-05-18T13:44:38.4979909Z   ref: v0.30.0
+2026-05-18T13:44:38.4980066Z   path: buildkit
+2026-05-18T13:44:38.4980358Z   token: ***
+2026-05-18T13:44:38.4980528Z   ssh-strict: true
+2026-05-18T13:44:38.4980706Z   ssh-user: git
+2026-05-18T13:44:38.4980879Z   persist-credentials: true
+2026-05-18T13:44:38.4981082Z   clean: true
+2026-05-18T13:44:38.4981278Z   sparse-checkout-cone-mode: true
+2026-05-18T13:44:38.4981501Z   fetch-depth: 1
+2026-05-18T13:44:38.4981770Z   fetch-tags: false
+2026-05-18T13:44:38.4982181Z   show-progress: true
+2026-05-18T13:44:38.4982456Z   lfs: false
+2026-05-18T13:44:38.4982628Z   submodules: false
+2026-05-18T13:44:38.4982794Z   set-safe-directory: true
+2026-05-18T13:44:38.4982988Z env:
+2026-05-18T13:44:38.4983142Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:38.4983341Z   DESTDIR: ./build
+2026-05-18T13:44:38.4983508Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:38.4983730Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:38.4983962Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:38.4984144Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:38.4984356Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:38.4984540Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:38.4984744Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:38.4984938Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:38.4985128Z   TEST_DOCKERD: 1
+2026-05-18T13:44:38.4985609Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:38.4985955Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:38.4986507Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:38.4987276Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:38.4987871Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:38.4988294Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:38.4988610Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:38.5040272Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:38.5040871Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:38.5041479Z   GOTOOLCHAIN: local
+2026-05-18T13:44:38.5041676Z   BUILDKIT_REPO: moby/buildkit
+2026-05-18T13:44:38.5041880Z   BUILDKIT_REF: v0.30.0
+2026-05-18T13:44:38.5042054Z ##[endgroup]
+2026-05-18T13:44:38.6088335Z Syncing repository: moby/buildkit
+2026-05-18T13:44:38.6094179Z ##[group]Getting Git version info
+2026-05-18T13:44:38.6094523Z Working directory is 'D:\a\moby\moby\buildkit'
+2026-05-18T13:44:38.6741156Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-18T13:44:38.6978432Z git version 2.54.0.windows.1
+2026-05-18T13:44:38.7027675Z ##[endgroup]
+2026-05-18T13:44:38.7047549Z Temporarily overriding HOME='D:\a\_temp\6930890d-8a7c-4411-8d69-2d7b9ffbd116' before making global git config changes
+2026-05-18T13:44:38.7048716Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-18T13:44:38.7061286Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\buildkit
+2026-05-18T13:44:38.7345953Z ##[group]Initializing the repository
+2026-05-18T13:44:38.7358659Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\moby\moby\buildkit
+2026-05-18T13:44:38.7679083Z Initialized empty Git repository in D:/a/moby/moby/buildkit/.git/
+2026-05-18T13:44:38.7727897Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/moby/buildkit
+2026-05-18T13:44:38.8012793Z ##[endgroup]
+2026-05-18T13:44:38.8013167Z ##[group]Disabling automatic garbage collection
+2026-05-18T13:44:38.8029417Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-18T13:44:38.8360765Z ##[endgroup]
+2026-05-18T13:44:38.8361282Z ##[group]Setting up auth
+2026-05-18T13:44:38.8363467Z Removing SSH command configuration
+2026-05-18T13:44:38.8378916Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-18T13:44:38.8733902Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-18T13:44:39.3521261Z Removing HTTP extra header
+2026-05-18T13:44:39.3531627Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-18T13:44:39.3789522Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-18T13:44:39.8837660Z Removing includeIf entries pointing to credentials config files
+2026-05-18T13:44:39.8850222Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-18T13:44:39.9097518Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-18T13:44:40.3698508Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-18T13:44:40.3952283Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/buildkit/.git.path D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:44:40.4193632Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/buildkit/.git/worktrees/*.path D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:44:40.4434491Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/buildkit/.git.path /github/runner_temp/git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:44:40.4677671Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/buildkit/.git/worktrees/*.path /github/runner_temp/git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:44:40.4918564Z ##[endgroup]
+2026-05-18T13:44:40.4918915Z ##[group]Fetching the repository
+2026-05-18T13:44:40.4932896Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/v0.30.0*:refs/remotes/origin/v0.30.0* +refs/tags/v0.30.0*:refs/tags/v0.30.0*
+2026-05-18T13:44:41.9689699Z From https://github.com/moby/buildkit
+2026-05-18T13:44:41.9690227Z  * [new tag]         v0.30.0     -> v0.30.0
+2026-05-18T13:44:41.9690690Z  * [new tag]         v0.30.0-rc1 -> v0.30.0-rc1
+2026-05-18T13:44:41.9691118Z  * [new tag]         v0.30.0-rc2 -> v0.30.0-rc2
+2026-05-18T13:44:41.9862813Z ##[endgroup]
+2026-05-18T13:44:41.9863287Z ##[group]Determining the checkout info
+2026-05-18T13:44:41.9873831Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/v0.30.0
+2026-05-18T13:44:42.0125942Z [command]"C:\Program Files\Git\bin\git.exe" tag --list v0.30.0
+2026-05-18T13:44:42.0340795Z v0.30.0
+2026-05-18T13:44:42.0368097Z ##[endgroup]
+2026-05-18T13:44:42.0378234Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-18T13:44:42.0660415Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-18T13:44:42.0899274Z ##[group]Checking out the ref
+2026-05-18T13:44:42.0909233Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v0.30.0
+2026-05-18T13:44:43.1697594Z Updating files:  72% (5319/7333)
+2026-05-18T13:44:43.1822861Z Updating files:  73% (5354/7333)
+2026-05-18T13:44:43.1940726Z Updating files:  74% (5427/7333)
+2026-05-18T13:44:43.2068553Z Updating files:  75% (5500/7333)
+2026-05-18T13:44:43.2189446Z Updating files:  76% (5574/7333)
+2026-05-18T13:44:43.2301270Z Updating files:  77% (5647/7333)
+2026-05-18T13:44:43.2436509Z Updating files:  78% (5720/7333)
+2026-05-18T13:44:43.2565186Z Updating files:  79% (5794/7333)
+2026-05-18T13:44:43.2700653Z Updating files:  80% (5867/7333)
+2026-05-18T13:44:43.2823532Z Updating files:  81% (5940/7333)
+2026-05-18T13:44:43.2951572Z Updating files:  82% (6014/7333)
+2026-05-18T13:44:43.3128207Z Updating files:  83% (6087/7333)
+2026-05-18T13:44:43.3299469Z Updating files:  84% (6160/7333)
+2026-05-18T13:44:43.3449805Z Updating files:  85% (6234/7333)
+2026-05-18T13:44:43.3673424Z Updating files:  86% (6307/7333)
+2026-05-18T13:44:43.3785198Z Updating files:  87% (6380/7333)
+2026-05-18T13:44:43.3881358Z Updating files:  88% (6454/7333)
+2026-05-18T13:44:43.4004609Z Updating files:  89% (6527/7333)
+2026-05-18T13:44:43.4209288Z Updating files:  90% (6600/7333)
+2026-05-18T13:44:43.4374865Z Updating files:  91% (6674/7333)
+2026-05-18T13:44:43.4530095Z Updating files:  92% (6747/7333)
+2026-05-18T13:44:43.4778851Z Updating files:  93% (6820/7333)
+2026-05-18T13:44:43.4925996Z Updating files:  94% (6894/7333)
+2026-05-18T13:44:43.5077789Z Updating files:  95% (6967/7333)
+2026-05-18T13:44:43.5242037Z Updating files:  96% (7040/7333)
+2026-05-18T13:44:43.5378441Z Updating files:  97% (7114/7333)
+2026-05-18T13:44:43.5546400Z Updating files:  98% (7187/7333)
+2026-05-18T13:44:43.5676147Z Updating files:  99% (7260/7333)
+2026-05-18T13:44:43.5676486Z Updating files: 100% (7333/7333)
+2026-05-18T13:44:43.5676756Z Updating files: 100% (7333/7333), done.
+2026-05-18T13:44:43.5855366Z Note: switching to 'refs/tags/v0.30.0'.
+2026-05-18T13:44:43.5855632Z 
+2026-05-18T13:44:43.5855845Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-18T13:44:43.5856344Z changes and commit them, and you can discard any commits you make in this
+2026-05-18T13:44:43.5856793Z state without impacting any branches by switching back to a branch.
+2026-05-18T13:44:43.5857042Z 
+2026-05-18T13:44:43.5857219Z If you want to create a new branch to retain commits you create, you may
+2026-05-18T13:44:43.5857621Z do so (now or later) by using -c with the switch command. Example:
+2026-05-18T13:44:43.5857843Z 
+2026-05-18T13:44:43.5857952Z   git switch -c <new-branch-name>
+2026-05-18T13:44:43.5858129Z 
+2026-05-18T13:44:43.5858220Z Or undo this operation with:
+2026-05-18T13:44:43.5858356Z 
+2026-05-18T13:44:43.5858443Z   git switch -
+2026-05-18T13:44:43.5858550Z 
+2026-05-18T13:44:43.5858755Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-18T13:44:43.5859038Z 
+2026-05-18T13:44:43.5859245Z HEAD is now at dd2170e Merge pull request #6770 from crazy-max/v0.30-picks-0.30.0
+2026-05-18T13:44:43.5926665Z ##[endgroup]
+2026-05-18T13:44:43.6199046Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-18T13:44:43.6418888Z dd2170e156c9633da1b2d1a58a6188e3f7d36fa4
+2026-05-18T13:44:43.6739275Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-05-18T13:44:43.6739970Z with:
+2026-05-18T13:44:43.6740219Z   name: build-windows
+2026-05-18T13:44:43.6740522Z   path: D:\a\moby\moby\out
+2026-05-18T13:44:43.6740837Z   merge-multiple: false
+2026-05-18T13:44:43.6741133Z   repository: moby/moby
+2026-05-18T13:44:43.6741425Z   run-id: 26036747364
+2026-05-18T13:44:43.6741707Z   skip-decompress: false
+2026-05-18T13:44:43.6741994Z   digest-mismatch: error
+2026-05-18T13:44:43.6742275Z env:
+2026-05-18T13:44:43.6742508Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:43.6742757Z   DESTDIR: ./build
+2026-05-18T13:44:43.6742991Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:43.6743296Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:43.6743703Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:43.6743976Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:43.6744317Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:43.6744682Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:43.6745012Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:43.6745362Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:43.6745657Z   TEST_DOCKERD: 1
+2026-05-18T13:44:43.6746092Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:43.6746669Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:43.6747604Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:43.6748983Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:43.6750032Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:43.6750783Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:43.6751346Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:43.6852581Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:43.6853698Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:43.6854722Z   GOTOOLCHAIN: local
+2026-05-18T13:44:43.6855018Z   BUILDKIT_REPO: moby/buildkit
+2026-05-18T13:44:43.6855330Z   BUILDKIT_REF: v0.30.0
+2026-05-18T13:44:43.6855608Z ##[endgroup]
+2026-05-18T13:44:43.8568505Z Downloading single artifact
+2026-05-18T13:44:44.1143528Z Preparing to download the following artifacts:
+2026-05-18T13:44:44.1144239Z - build-windows (ID: 7059478211, Size: 148435567, Expected Digest: sha256:79cb6de936daa4a90e06ce8e10493f71fc9b4c803d6994c0a19d67606de95d5b)
+2026-05-18T13:44:44.5779432Z Redirecting to blob download url: https://productionresultssa13.blob.core.windows.net/actions-results/e0e94e7e-a34e-4f37-ae70-74de8cca2cfe/workflow-job-run-6fcf2b76-68f6-5d06-8432-317e57fac537/artifacts/ac60ed54a3b5ba5928ebcda96d2829c5a8c534f9180876a0400114cbdb612032.zip
+2026-05-18T13:44:44.5781460Z Starting download of artifact to: D:\a\moby\moby\out
+2026-05-18T13:44:44.8531622Z (node:3696) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-05-18T13:44:44.8532539Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-18T13:44:54.0890332Z SHA256 digest of downloaded artifact is 79cb6de936daa4a90e06ce8e10493f71fc9b4c803d6994c0a19d67606de95d5b
+2026-05-18T13:44:54.0891295Z Artifact download completed successfully.
+2026-05-18T13:44:54.0891585Z Total of 1 artifact(s) downloaded
+2026-05-18T13:44:54.0899849Z Download artifact has finished successfully
+2026-05-18T13:44:54.1134024Z ##[group]Run ls D:\a\moby\moby\out
+2026-05-18T13:44:54.1134437Z [36;1mls D:\a\moby\moby\out[0m
+2026-05-18T13:44:54.1134898Z [36;1mWrite-Output "D:\a\moby\moby\out" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append[0m
+2026-05-18T13:44:54.1166770Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-18T13:44:54.1167099Z env:
+2026-05-18T13:44:54.1167269Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:54.1167452Z   DESTDIR: ./build
+2026-05-18T13:44:54.1167641Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:54.1167883Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:54.1168124Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:54.1168326Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:54.1168568Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:54.1168765Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:54.1168981Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:54.1169198Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:54.1169439Z   TEST_DOCKERD: 1
+2026-05-18T13:44:54.1169718Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:54.1170067Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:54.1170630Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:54.1171417Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:54.1172022Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:54.1172473Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:54.1172807Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:54.1224709Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:54.1225314Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:54.1225908Z   GOTOOLCHAIN: local
+2026-05-18T13:44:54.1226111Z   BUILDKIT_REPO: moby/buildkit
+2026-05-18T13:44:54.1226332Z   BUILDKIT_REF: v0.30.0
+2026-05-18T13:44:54.1226532Z ##[endgroup]
+2026-05-18T13:44:54.5589328Z 
+2026-05-18T13:44:54.5597057Z     Directory: D:\a\moby\moby\out
+2026-05-18T13:44:54.5597418Z 
+2026-05-18T13:44:54.5599495Z [32;1mMode   [0m[32;1m              LastWriteTime[0m[32;1m         Length[0m[32;1m Name[0m
+2026-05-18T13:44:54.5600413Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2026-05-18T13:44:54.6240053Z -a---           5/18/2026  1:44 PM       35505664 [32;1mbuildctl.exe[0m
+2026-05-18T13:44:54.6247500Z -a---           5/18/2026  1:44 PM       22221312 [32;1mcontainerd-shim-runhcs-v1.exe[0m
+2026-05-18T13:44:54.6250010Z -a---           5/18/2026  1:44 PM       41881600 [32;1mcontainerd.exe[0m
+2026-05-18T13:44:54.6252445Z -a---           5/18/2026  1:44 PM       35598336 [32;1mdocker.exe[0m
+2026-05-18T13:44:54.6255011Z -a---           5/18/2026  1:44 PM      116556800 [32;1mdockerd.exe[0m
+2026-05-18T13:44:54.6257444Z -a---           5/18/2026  1:44 PM        9409024 [32;1mgotestsum.exe[0m
+2026-05-18T13:44:54.6259695Z -a---           5/18/2026  1:44 PM       74655232 [32;1mregistry.exe[0m
+2026-05-18T13:44:54.6737457Z 
+2026-05-18T13:44:54.7343515Z ##[group]Run TESTPKG=$(echo "./frontend/dockerfile#1-12" | awk '-F#' '{print $1}')
+2026-05-18T13:44:54.7344166Z [36;1mTESTPKG=$(echo "./frontend/dockerfile#1-12" | awk '-F#' '{print $1}')[0m
+2026-05-18T13:44:54.7344562Z [36;1mecho "TESTPKG=$TESTPKG" >> $GITHUB_ENV[0m
+2026-05-18T13:44:54.7345273Z [36;1mecho "TEST_REPORT_NAME=test-windows-$(echo "./frontend/dockerfile#1-12-dockerd-containerd" | tr -dc '[:alnum:]-\n\r' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV[0m
+2026-05-18T13:44:54.7345943Z [36;1mtestFlags="-v --timeout=40m"[0m
+2026-05-18T13:44:54.7346289Z [36;1mtestSlice=$(echo "./frontend/dockerfile#1-12" | awk '-F#' '{print $2}')[0m
+2026-05-18T13:44:54.7346700Z [36;1mtestSliceOffset=""[0m
+2026-05-18T13:44:54.7346929Z [36;1mif [ -n "$testSlice" ]; then[0m
+2026-05-18T13:44:54.7347192Z [36;1m testSliceOffset="slice=$testSlice/"[0m
+2026-05-18T13:44:54.7347430Z [36;1mfi[0m
+2026-05-18T13:44:54.7347620Z [36;1mif [ -n "dockerd-containerd" ]; then[0m
+2026-05-18T13:44:54.7348093Z [36;1m testFlags="${testFlags} --run=TestIntegration/$testSliceOffset.*/worker=dockerd-containerd"[0m
+2026-05-18T13:44:54.7348512Z [36;1mfi[0m
+2026-05-18T13:44:54.7348716Z [36;1mecho "TESTFLAGS=${testFlags}" >> $GITHUB_ENV[0m
+2026-05-18T13:44:54.7360019Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-18T13:44:54.7360451Z env:
+2026-05-18T13:44:54.7360621Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:54.7360807Z   DESTDIR: ./build
+2026-05-18T13:44:54.7361007Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:54.7361244Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:54.7361498Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:54.7361686Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:54.7361905Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:54.7362108Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:54.7362305Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:54.7362518Z   TESTFLAGS: -v --timeout=40m
+2026-05-18T13:44:54.7362726Z   TEST_DOCKERD: 1
+2026-05-18T13:44:54.7363003Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:54.7363349Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:54.7363919Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:54.7364700Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:54.7365297Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:54.7365735Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:54.7366067Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:54.7417816Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:54.7418433Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:54.7419047Z   GOTOOLCHAIN: local
+2026-05-18T13:44:54.7419256Z   BUILDKIT_REPO: moby/buildkit
+2026-05-18T13:44:54.7419473Z   BUILDKIT_REF: v0.30.0
+2026-05-18T13:44:54.7419669Z ##[endgroup]
+2026-05-18T13:44:55.1078306Z ##[group]Run mkdir -p ./bin/testreports
+2026-05-18T13:44:55.1078736Z [36;1mmkdir -p ./bin/testreports[0m
+2026-05-18T13:44:55.1078978Z [36;1mgotestsum \[0m
+2026-05-18T13:44:55.1079507Z [36;1m  --jsonfile="./bin/testreports/go-test-report-test-windows-frontenddockerfile1-12-dockerd-containerd.json" \[0m
+2026-05-18T13:44:55.1080581Z [36;1m  --junitfile="./bin/testreports/junit-report-test-windows-frontenddockerfile1-12-dockerd-containerd.xml" \[0m
+2026-05-18T13:44:55.1081125Z [36;1m  --packages="./frontend/dockerfile" \[0m
+2026-05-18T13:44:55.1081385Z [36;1m  -- \[0m
+2026-05-18T13:44:55.1081570Z [36;1m    "-mod=vendor" \[0m
+2026-05-18T13:44:55.1082067Z [36;1m    "-coverprofile" "./bin/testreports/coverage-test-windows-frontenddockerfile1-12-dockerd-containerd.txt" \[0m
+2026-05-18T13:44:55.1082793Z [36;1m    "-covermode" "atomic" -v --timeout=40m --run=TestIntegration/slice=1-12/.*/worker=dockerd-containerd[0m
+2026-05-18T13:44:55.1094071Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-18T13:44:55.1094433Z env:
+2026-05-18T13:44:55.1094595Z   GO_VERSION: 1.26.3
+2026-05-18T13:44:55.1094771Z   DESTDIR: ./build
+2026-05-18T13:44:55.1094947Z   SETUP_BUILDX_VERSION: edge
+2026-05-18T13:44:55.1095182Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-18T13:44:55.1095447Z   TEST_IMAGE_BUILD: 0
+2026-05-18T13:44:55.1095637Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-18T13:44:55.1095851Z   GOPATH: D:\a\moby\moby\go
+2026-05-18T13:44:55.1096051Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-18T13:44:55.1096251Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-18T13:44:55.1096618Z   TESTFLAGS: -v --timeout=40m --run=TestIntegration/slice=1-12/.*/worker=dockerd-containerd
+2026-05-18T13:44:55.1097000Z   TEST_DOCKERD: 1
+2026-05-18T13:44:55.1097271Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-18T13:44:55.1097609Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-18T13:44:55.1098175Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:55.1098987Z   ACTIONS_ORCHESTRATION_ID: e0e94e7e-a34e-4f37-ae70-74de8cca2cfe.test-windows.dockerd-containerd___fr_2
+2026-05-18T13:44:55.1099586Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-18T13:44:55.1100032Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-18T13:44:55.1100360Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-18T13:44:55.1152305Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-18T13:44:55.1152912Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-18T13:44:55.1153525Z   GOTOOLCHAIN: local
+2026-05-18T13:44:55.1153721Z   BUILDKIT_REPO: moby/buildkit
+2026-05-18T13:44:55.1153933Z   BUILDKIT_REF: v0.30.0
+2026-05-18T13:44:55.1154133Z   TESTPKG: ./frontend/dockerfile
+2026-05-18T13:44:55.1154497Z   TEST_REPORT_NAME: test-windows-frontenddockerfile1-12-dockerd-containerd
+2026-05-18T13:44:55.1154852Z ##[endgroup]
+2026-05-18T13:45:53.7045913Z [31m✖[0m  frontend/dockerfile (253ms)
+2026-05-18T13:45:54.3768351Z 
+2026-05-18T13:45:54.3769285Z === [31mFailed[0m
+2026-05-18T13:45:54.3770386Z === [31mFAIL[0m: frontend/dockerfile TestIntegration/slice=1-12/TestCmdShell/worker=dockerd-containerd/frontend=builtin (0.20s)
+2026-05-18T13:45:54.3771719Z time="2026-05-18T13:45:53Z" level=info msg="fetch failed after status: 404 Not Found" host="localhost:61649"
+2026-05-18T13:45:54.3772802Z time="2026-05-18T13:45:53Z" level=info msg="fetch failed after status: 403 Forbidden" host=mcr.microsoft.com
+2026-05-18T13:45:54.3774402Z     testing.go:1913: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
+2026-05-18T13:45:54.3775737Z     --- FAIL: TestIntegration/slice=1-12/TestCmdShell/worker=dockerd-containerd/frontend=builtin (0.20s)
+2026-05-18T13:45:54.3776402Z 
+2026-05-18T13:45:54.3779093Z === [31mFAIL[0m: frontend/dockerfile TestIntegration (0.20s)
+2026-05-18T13:45:54.3780063Z     run.go:412: 
+2026-05-18T13:45:54.3780806Z         	Error Trace:	D:/a/moby/moby/buildkit/util/testutil/integration/run.go:412
+2026-05-18T13:45:54.3782164Z         	            				C:/hostedtoolcache/windows/go/1.26.3/x64/src/sync/once.go:78
+2026-05-18T13:45:54.3783698Z         	            				C:/hostedtoolcache/windows/go/1.26.3/x64/src/sync/once.go:69
+2026-05-18T13:45:54.3784980Z         	            				D:/a/moby/moby/buildkit/util/testutil/integration/run.go:409
+2026-05-18T13:45:54.3786518Z         	            				D:/a/moby/moby/buildkit/util/testutil/integration/run.go:239
+2026-05-18T13:45:54.3787779Z         	            				C:/hostedtoolcache/windows/go/1.26.3/x64/src/runtime/asm_amd64.s:1771
+2026-05-18T13:45:54.3788514Z         	Error:      	Received unexpected error:
+2026-05-18T13:45:54.3790241Z         	            	unexpected status from HEAD request to https://mcr.microsoft.com/v2/windows/nanoserver/manifests/ltsc2022: 403 Forbidden
+2026-05-18T13:45:54.3791519Z         	Test:       	TestIntegration
+2026-05-18T13:45:54.3791776Z 
+2026-05-18T13:45:54.3791907Z DONE 2 tests, 2 failures in 0.253s
+2026-05-18T13:45:54.4110238Z ##[error]Process completed with exit code 1.
+2026-05-18T13:45:54.4272927Z Post job cleanup.
+2026-05-18T13:45:54.6094015Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-18T13:45:54.6310849Z git version 2.54.0.windows.1
+2026-05-18T13:45:54.6371690Z Temporarily overriding HOME='D:\a\_temp\86877fc0-b638-4177-8f5f-81fd748f63c9' before making global git config changes
+2026-05-18T13:45:54.6372806Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-18T13:45:54.6383057Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\buildkit
+2026-05-18T13:45:54.6621482Z Removing SSH command configuration
+2026-05-18T13:45:54.6633360Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-18T13:45:54.6888140Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-18T13:45:55.1402501Z Removing HTTP extra header
+2026-05-18T13:45:55.1413694Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-18T13:45:55.1663882Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-18T13:45:55.6227087Z Removing includeIf entries pointing to credentials config files
+2026-05-18T13:45:55.6239506Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-18T13:45:55.6499433Z includeif.gitdir:D:/a/moby/moby/buildkit/.git.path
+2026-05-18T13:45:55.6500146Z includeif.gitdir:D:/a/moby/moby/buildkit/.git/worktrees/*.path
+2026-05-18T13:45:55.6500611Z includeif.gitdir:/github/workspace/buildkit/.git.path
+2026-05-18T13:45:55.6501037Z includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path
+2026-05-18T13:45:55.6540414Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/buildkit/.git.path
+2026-05-18T13:45:55.6767330Z D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.6807541Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/buildkit/.git.path D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.7077912Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/buildkit/.git/worktrees/*.path
+2026-05-18T13:45:55.7298234Z D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.7337248Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/buildkit/.git/worktrees/*.path D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.7590357Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/buildkit/.git.path
+2026-05-18T13:45:55.7805307Z /github/runner_temp/git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.7841099Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/buildkit/.git.path /github/runner_temp/git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.8092903Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path
+2026-05-18T13:45:55.8305454Z /github/runner_temp/git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.8342050Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path /github/runner_temp/git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config
+2026-05-18T13:45:55.8594244Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-18T13:45:56.8140708Z Removing credentials config 'D:\a\_temp\git-credentials-6072b9eb-594f-4e3b-a66b-f8777e93a107.config'
+2026-05-18T13:45:56.8414247Z Post job cleanup.
+2026-05-18T13:45:57.0151699Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-18T13:45:57.0365029Z git version 2.54.0.windows.1
+2026-05-18T13:45:57.0422837Z Temporarily overriding HOME='D:\a\_temp\6593ba09-41ec-43af-9fce-dbbcdc89e031' before making global git config changes
+2026-05-18T13:45:57.0423553Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-18T13:45:57.0434273Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\moby
+2026-05-18T13:45:57.0668112Z Removing SSH command configuration
+2026-05-18T13:45:57.0678861Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-18T13:45:57.0924142Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-18T13:45:57.5194133Z Removing HTTP extra header
+2026-05-18T13:45:57.5205080Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-18T13:45:57.5465434Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-18T13:45:57.9863828Z Removing includeIf entries pointing to credentials config files
+2026-05-18T13:45:57.9876550Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-18T13:45:58.0086858Z includeif.gitdir:D:/a/moby/moby/moby/.git.path
+2026-05-18T13:45:58.0087591Z includeif.gitdir:D:/a/moby/moby/moby/.git/worktrees/*.path
+2026-05-18T13:45:58.0088335Z includeif.gitdir:/github/workspace/moby/.git.path
+2026-05-18T13:45:58.0110826Z includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path
+2026-05-18T13:45:58.0125598Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/moby/.git.path
+2026-05-18T13:45:58.0335468Z D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.0372574Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/moby/.git.path D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.0620815Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/moby/.git/worktrees/*.path
+2026-05-18T13:45:58.0826781Z D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.0861694Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/moby/.git/worktrees/*.path D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.1100502Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/moby/.git.path
+2026-05-18T13:45:58.1303846Z /github/runner_temp/git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.1342109Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/moby/.git.path /github/runner_temp/git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.1585113Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path
+2026-05-18T13:45:58.1790341Z /github/runner_temp/git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.1826880Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path /github/runner_temp/git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config
+2026-05-18T13:45:58.2073871Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-18T13:45:58.6610174Z Removing credentials config 'D:\a\_temp\git-credentials-275970bf-6f15-4a5c-82ee-5030f44f90b3.config'
+2026-05-18T13:45:58.6791459Z Cleaning up orphan processes
+2026-05-18T13:45:58.7127850Z Terminate orphan process: pid (7900) (registry)

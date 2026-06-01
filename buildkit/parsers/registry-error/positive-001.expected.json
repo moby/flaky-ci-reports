@@ -1,0 +1,26 @@
+[
+  {
+    "unique_key": "registry-error:mcr.microsoft.com:403",
+    "name": "Registry mcr.microsoft.com returned HTTP 403",
+    "category": "network",
+    "fields": {
+      "host": "mcr.microsoft.com",
+      "operation": "HEAD",
+      "status": "403"
+    },
+    "tags": {
+      "frontend": "builtin",
+      "host": "mcr.microsoft.com",
+      "slice": "11-12",
+      "status": "403",
+      "test": "TestIntegration/TestGitProvenanceAttestationSHA1",
+      "worker": "containerd"
+    },
+    "evidence": [
+      {
+        "start_line": 386,
+        "end_line": 386
+      }
+    ]
+  }
+]

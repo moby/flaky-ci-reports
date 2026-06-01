@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "buildx-bake-process-failed:/bin/bash -c wget https://github.com/dragonflyoss/nydus/releases/download/$NYDUS_VERSION/nydus-static-$NYDUS_VERSION-$TARGETOS-$TARGETARCH.tgz",
+    "name": "buildx bake: process '/bin/bash -c wget https://github.com/dragonflyoss/nydus/releases/download/$NYDUS_VERSION/nydus-static-$NYDUS_VERSION-$TARGETOS-$TARGETARCH.tgz' failed",
+    "category": "test",
+    "fields": {
+      "command": "/bin/bash -c wget https://github.com/dragonflyoss/nydus/releases/download/$NYDUS_VERSION/nydus-static-$NYDUS_VERSION-$TARGETOS-$TARGETARCH.tgz"
+    },
+    "evidence": [
+      {
+        "start_line": 2107,
+        "end_line": 2107
+      }
+    ]
+  }
+]

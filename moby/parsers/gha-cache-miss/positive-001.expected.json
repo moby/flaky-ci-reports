@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "gha-cache-miss:dev-image-ID",
+    "name": "GHA cache miss with fail-on-cache-miss: dev-image-26457457836",
+    "category": "dependency",
+    "fields": {
+      "cache_key": "dev-image-26457457836",
+      "cache_key_family": "dev-image-ID"
+    },
+    "evidence": [
+      {
+        "start_line": 1135,
+        "end_line": 1135
+      }
+    ]
+  }
+]

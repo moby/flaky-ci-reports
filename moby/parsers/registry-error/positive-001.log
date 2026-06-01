@@ -1,0 +1,1391 @@
+﻿2026-05-16T13:31:17.3824578Z Current runner version: '2.334.0'
+2026-05-16T13:31:17.3852168Z ##[group]Runner Image Provisioner
+2026-05-16T13:31:17.3852907Z Hosted Compute Agent
+2026-05-16T13:31:17.3853426Z Version: 20260415.520
+2026-05-16T13:31:17.3854051Z Commit: af089020f5f67b61ccc91db6c07980876c02bf7b
+2026-05-16T13:31:17.3854690Z Build Date: 2026-04-15T18:07:08Z
+2026-05-16T13:31:17.3855335Z Worker ID: {a165df1e-6e11-4f9e-9a42-db711d4c34e0}
+2026-05-16T13:31:17.3855960Z Azure Region: eastus
+2026-05-16T13:31:17.3856465Z ##[endgroup]
+2026-05-16T13:31:17.3857824Z ##[group]Operating System
+2026-05-16T13:31:17.3858438Z Microsoft Windows Server 2025
+2026-05-16T13:31:17.3858971Z 10.0.26100
+2026-05-16T13:31:17.3859394Z Datacenter
+2026-05-16T13:31:17.3859815Z ##[endgroup]
+2026-05-16T13:31:17.3860252Z ##[group]Runner Image
+2026-05-16T13:31:17.3860765Z Image: windows-2025
+2026-05-16T13:31:17.3861203Z Version: 20260510.128.1
+2026-05-16T13:31:17.3863152Z Included Software: https://github.com/actions/runner-images/blob/win25/20260510.128/images/windows/Windows2025-Readme.md
+2026-05-16T13:31:17.3865489Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20260510.128
+2026-05-16T13:31:17.3866445Z ##[endgroup]
+2026-05-16T13:31:17.3867385Z ##[group]GITHUB_TOKEN Permissions
+2026-05-16T13:31:17.3869837Z Contents: read
+2026-05-16T13:31:17.3870361Z Metadata: read
+2026-05-16T13:31:17.3870793Z ##[endgroup]
+2026-05-16T13:31:17.3872930Z Secret source: None
+2026-05-16T13:31:17.3873873Z Prepare workflow directory
+2026-05-16T13:31:17.4461856Z Prepare all required actions
+2026-05-16T13:31:17.4503389Z Getting action download info
+2026-05-16T13:31:17.7696753Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-16T13:31:17.9046804Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-16T13:31:18.1301013Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-16T13:31:18.3946163Z Download action repository 'codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2' (SHA:57e3a136b779b570ffcdbf80b3bdc90e7fab3de2)
+2026-05-16T13:31:18.4938283Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-05-16T13:31:18.7523521Z Getting action download info
+2026-05-16T13:31:18.8798940Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-05-16T13:31:19.1126613Z Uses: moby/moby/.github/workflows/.windows.yml@refs/pull/52640/merge (e74612bee5dc63c19b50acf2b91c47601d822348)
+2026-05-16T13:31:19.1131977Z ##[group] Inputs
+2026-05-16T13:31:19.1132784Z   os: windows-2025
+2026-05-16T13:31:19.1133590Z   storage: snapshotter
+2026-05-16T13:31:19.1135083Z   send_coverage: false
+2026-05-16T13:31:19.1135929Z ##[endgroup]
+2026-05-16T13:31:19.1137183Z Complete job name: run (snapshotter) / integration-test (snapshotter, containerd, DockerCLIRunSuite)
+2026-05-16T13:31:19.2900220Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-16T13:31:19.2902245Z with:
+2026-05-16T13:31:19.2903165Z   path: D:\a\moby\moby\go/src/github.com/docker/docker
+2026-05-16T13:31:19.2904859Z   repository: moby/moby
+2026-05-16T13:31:19.2906080Z   token: ***
+2026-05-16T13:31:19.2906841Z   ssh-strict: true
+2026-05-16T13:31:19.2907615Z   ssh-user: git
+2026-05-16T13:31:19.2908305Z   persist-credentials: true
+2026-05-16T13:31:19.2909009Z   clean: true
+2026-05-16T13:31:19.2909659Z   sparse-checkout-cone-mode: true
+2026-05-16T13:31:19.2910436Z   fetch-depth: 1
+2026-05-16T13:31:19.2911048Z   fetch-tags: false
+2026-05-16T13:31:19.2911691Z   show-progress: true
+2026-05-16T13:31:19.2912332Z   lfs: false
+2026-05-16T13:31:19.2912922Z   submodules: false
+2026-05-16T13:31:19.2913580Z   set-safe-directory: true
+2026-05-16T13:31:19.2916347Z env:
+2026-05-16T13:31:19.2916928Z   GO_VERSION: 1.26.3
+2026-05-16T13:31:19.2917612Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:31:19.2918411Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:31:19.2919291Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:31:19.2920290Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:31:19.2921062Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:31:19.2921828Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:31:19.2922544Z   TEST_CTN_NAME: moby
+2026-05-16T13:31:19.2923189Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:31:19.2924374Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:31:19.2925088Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:31:19.2925814Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:31:19.2926551Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:31:19.2927266Z ##[endgroup]
+2026-05-16T13:31:19.4501540Z Syncing repository: moby/moby
+2026-05-16T13:31:19.4505227Z ##[group]Getting Git version info
+2026-05-16T13:31:19.4507191Z Working directory is 'D:\a\moby\moby\go\src\github.com\docker\docker'
+2026-05-16T13:31:19.5517654Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-16T13:31:19.9115081Z git version 2.54.0.windows.1
+2026-05-16T13:31:19.9167464Z ##[endgroup]
+2026-05-16T13:31:19.9186738Z Temporarily overriding HOME='D:\a\_temp\f1ec30d8-3be7-4c39-82af-b2c98ab66b22' before making global git config changes
+2026-05-16T13:31:19.9188868Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-16T13:31:19.9197723Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:31:19.9823257Z ##[group]Initializing the repository
+2026-05-16T13:31:19.9832874Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:31:20.0723996Z Initialized empty Git repository in D:/a/moby/moby/go/src/github.com/docker/docker/.git/
+2026-05-16T13:31:20.0774390Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/moby/moby
+2026-05-16T13:31:20.1307613Z ##[endgroup]
+2026-05-16T13:31:20.1308880Z ##[group]Disabling automatic garbage collection
+2026-05-16T13:31:20.1316934Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-16T13:31:20.1618275Z ##[endgroup]
+2026-05-16T13:31:20.1620019Z ##[group]Setting up auth
+2026-05-16T13:31:20.1621145Z Removing SSH command configuration
+2026-05-16T13:31:20.1633412Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-16T13:31:20.1944775Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-16T13:31:21.5612524Z Removing HTTP extra header
+2026-05-16T13:31:21.5627510Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-16T13:31:21.5953375Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-16T13:31:22.1582896Z Removing includeIf entries pointing to credentials config files
+2026-05-16T13:31:22.1595969Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-16T13:31:22.1921478Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-16T13:31:22.7406314Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-16T13:31:22.7733539Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:31:22.8054896Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:31:22.8406329Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path /github/runner_temp/git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:31:22.8727694Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path /github/runner_temp/git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:31:22.9055914Z ##[endgroup]
+2026-05-16T13:31:22.9056564Z ##[group]Fetching the repository
+2026-05-16T13:31:22.9073518Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e74612bee5dc63c19b50acf2b91c47601d822348:refs/remotes/pull/52640/merge
+2026-05-16T13:31:26.8743353Z From https://github.com/moby/moby
+2026-05-16T13:31:26.8744163Z  * [new ref]         e74612bee5dc63c19b50acf2b91c47601d822348 -> pull/52640/merge
+2026-05-16T13:31:26.9082729Z ##[endgroup]
+2026-05-16T13:31:26.9083168Z ##[group]Determining the checkout info
+2026-05-16T13:31:26.9084506Z ##[endgroup]
+2026-05-16T13:31:26.9094342Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-16T13:31:26.9542812Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-16T13:31:26.9864654Z ##[group]Checking out the ref
+2026-05-16T13:31:26.9874329Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/52640/merge
+2026-05-16T13:31:28.0756373Z Updating files:  28% (3537/12549)
+2026-05-16T13:31:28.1060474Z Updating files:  29% (3640/12549)
+2026-05-16T13:31:28.1365721Z Updating files:  30% (3765/12549)
+2026-05-16T13:31:28.1740418Z Updating files:  31% (3891/12549)
+2026-05-16T13:31:28.2063013Z Updating files:  32% (4016/12549)
+2026-05-16T13:31:28.2399750Z Updating files:  33% (4142/12549)
+2026-05-16T13:31:28.2797885Z Updating files:  34% (4267/12549)
+2026-05-16T13:31:28.3193685Z Updating files:  35% (4393/12549)
+2026-05-16T13:31:28.3506804Z Updating files:  36% (4518/12549)
+2026-05-16T13:31:28.3820897Z Updating files:  37% (4644/12549)
+2026-05-16T13:31:28.4171731Z Updating files:  38% (4769/12549)
+2026-05-16T13:31:28.4526062Z Updating files:  39% (4895/12549)
+2026-05-16T13:31:28.4899335Z Updating files:  40% (5020/12549)
+2026-05-16T13:31:28.5252883Z Updating files:  41% (5146/12549)
+2026-05-16T13:31:28.5611412Z Updating files:  42% (5271/12549)
+2026-05-16T13:31:28.5934390Z Updating files:  43% (5397/12549)
+2026-05-16T13:31:28.6310489Z Updating files:  44% (5522/12549)
+2026-05-16T13:31:28.8873351Z Updating files:  45% (5648/12549)
+2026-05-16T13:31:28.9217669Z Updating files:  46% (5773/12549)
+2026-05-16T13:31:28.9569610Z Updating files:  47% (5899/12549)
+2026-05-16T13:31:28.9876738Z Updating files:  48% (6024/12549)
+2026-05-16T13:31:29.0182108Z Updating files:  49% (6150/12549)
+2026-05-16T13:31:29.0497498Z Updating files:  50% (6275/12549)
+2026-05-16T13:31:29.0593673Z Updating files:  51% (6400/12549)
+2026-05-16T13:31:29.0873464Z Updating files:  51% (6441/12549)
+2026-05-16T13:31:29.1234443Z Updating files:  52% (6526/12549)
+2026-05-16T13:31:29.1623551Z Updating files:  53% (6651/12549)
+2026-05-16T13:31:29.1974416Z Updating files:  54% (6777/12549)
+2026-05-16T13:31:29.2304540Z Updating files:  55% (6902/12549)
+2026-05-16T13:31:29.2917401Z Updating files:  56% (7028/12549)
+2026-05-16T13:31:29.3239016Z Updating files:  57% (7153/12549)
+2026-05-16T13:31:29.3613473Z Updating files:  58% (7279/12549)
+2026-05-16T13:31:29.3994170Z Updating files:  59% (7404/12549)
+2026-05-16T13:31:29.4366256Z Updating files:  60% (7530/12549)
+2026-05-16T13:31:29.4675484Z Updating files:  61% (7655/12549)
+2026-05-16T13:31:29.5038796Z Updating files:  62% (7781/12549)
+2026-05-16T13:31:29.5330822Z Updating files:  63% (7906/12549)
+2026-05-16T13:31:29.5616321Z Updating files:  64% (8032/12549)
+2026-05-16T13:31:29.6006432Z Updating files:  65% (8157/12549)
+2026-05-16T13:31:29.6436332Z Updating files:  66% (8283/12549)
+2026-05-16T13:31:29.6754211Z Updating files:  67% (8408/12549)
+2026-05-16T13:31:29.7089979Z Updating files:  68% (8534/12549)
+2026-05-16T13:31:29.7429930Z Updating files:  69% (8659/12549)
+2026-05-16T13:31:29.7755102Z Updating files:  70% (8785/12549)
+2026-05-16T13:31:29.8117349Z Updating files:  71% (8910/12549)
+2026-05-16T13:31:29.8454362Z Updating files:  72% (9036/12549)
+2026-05-16T13:31:29.8780004Z Updating files:  73% (9161/12549)
+2026-05-16T13:31:29.9157092Z Updating files:  74% (9287/12549)
+2026-05-16T13:31:29.9477802Z Updating files:  75% (9412/12549)
+2026-05-16T13:31:29.9805319Z Updating files:  76% (9538/12549)
+2026-05-16T13:31:30.0122239Z Updating files:  77% (9663/12549)
+2026-05-16T13:31:30.1396210Z Updating files:  78% (9789/12549)
+2026-05-16T13:31:30.1876488Z Updating files:  78% (9811/12549)
+2026-05-16T13:31:30.2187293Z Updating files:  79% (9914/12549)
+2026-05-16T13:31:30.2467789Z Updating files:  80% (10040/12549)
+2026-05-16T13:31:30.2785992Z Updating files:  81% (10165/12549)
+2026-05-16T13:31:30.3162788Z Updating files:  82% (10291/12549)
+2026-05-16T13:31:30.3516069Z Updating files:  83% (10416/12549)
+2026-05-16T13:31:30.3865990Z Updating files:  84% (10542/12549)
+2026-05-16T13:31:30.4185230Z Updating files:  85% (10667/12549)
+2026-05-16T13:31:30.4567278Z Updating files:  86% (10793/12549)
+2026-05-16T13:31:30.4955157Z Updating files:  87% (10918/12549)
+2026-05-16T13:31:30.5348742Z Updating files:  88% (11044/12549)
+2026-05-16T13:31:30.5597038Z Updating files:  89% (11169/12549)
+2026-05-16T13:31:30.5874737Z Updating files:  90% (11295/12549)
+2026-05-16T13:31:30.6150998Z Updating files:  91% (11420/12549)
+2026-05-16T13:31:30.6451376Z Updating files:  92% (11546/12549)
+2026-05-16T13:31:30.6898058Z Updating files:  93% (11671/12549)
+2026-05-16T13:31:30.7332374Z Updating files:  94% (11797/12549)
+2026-05-16T13:31:30.7764484Z Updating files:  95% (11922/12549)
+2026-05-16T13:31:30.8170748Z Updating files:  96% (12048/12549)
+2026-05-16T13:31:30.8552320Z Updating files:  97% (12173/12549)
+2026-05-16T13:31:30.8891673Z Updating files:  98% (12299/12549)
+2026-05-16T13:31:30.9287265Z Updating files:  99% (12424/12549)
+2026-05-16T13:31:30.9287773Z Updating files: 100% (12549/12549)
+2026-05-16T13:31:30.9288142Z Updating files: 100% (12549/12549), done.
+2026-05-16T13:31:30.9551505Z Note: switching to 'refs/remotes/pull/52640/merge'.
+2026-05-16T13:31:30.9551872Z 
+2026-05-16T13:31:30.9552080Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-16T13:31:30.9552573Z changes and commit them, and you can discard any commits you make in this
+2026-05-16T13:31:30.9553250Z state without impacting any branches by switching back to a branch.
+2026-05-16T13:31:30.9554060Z 
+2026-05-16T13:31:30.9554419Z If you want to create a new branch to retain commits you create, you may
+2026-05-16T13:31:30.9555199Z do so (now or later) by using -c with the switch command. Example:
+2026-05-16T13:31:30.9555625Z 
+2026-05-16T13:31:30.9555814Z   git switch -c <new-branch-name>
+2026-05-16T13:31:30.9556002Z 
+2026-05-16T13:31:30.9556087Z Or undo this operation with:
+2026-05-16T13:31:30.9556233Z 
+2026-05-16T13:31:30.9556308Z   git switch -
+2026-05-16T13:31:30.9556415Z 
+2026-05-16T13:31:30.9556612Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-16T13:31:30.9556905Z 
+2026-05-16T13:31:30.9557235Z HEAD is now at e74612b Merge df58acf56e592d0972c1616fcda176ac4c255768 into 0686f57c3d942ce4440f9ed7f2e955de3687dd4e
+2026-05-16T13:31:30.9704310Z ##[endgroup]
+2026-05-16T13:31:31.0164061Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-16T13:31:31.0461675Z e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:31:31.0914949Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-16T13:31:31.0915366Z with:
+2026-05-16T13:31:31.0915531Z   go-version: 1.26.3
+2026-05-16T13:31:31.0915716Z   cache: false
+2026-05-16T13:31:31.0915879Z   check-latest: false
+2026-05-16T13:31:31.0916197Z   token: ***
+2026-05-16T13:31:31.0916365Z env:
+2026-05-16T13:31:31.0916506Z   GO_VERSION: 1.26.3
+2026-05-16T13:31:31.0916694Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:31:31.0916895Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:31:31.0917154Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:31:31.0917463Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:31:31.0917674Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:31:31.0917883Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:31:31.0918074Z   TEST_CTN_NAME: moby
+2026-05-16T13:31:31.0918249Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:31:31.0918433Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:31:31.0918623Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:31:31.0918848Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:31:31.0919051Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:31:31.0919244Z ##[endgroup]
+2026-05-16T13:31:31.2808113Z Setup go version spec 1.26.3
+2026-05-16T13:31:31.2831168Z Attempting to download 1.26.3...
+2026-05-16T13:31:31.6226588Z matching 1.26.3...
+2026-05-16T13:31:31.6255285Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-win32-x64.zip
+2026-05-16T13:31:32.2178886Z Extracting Go...
+2026-05-16T13:31:32.3483953Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.26.3-win32-x64.zip', 'D:\a\_temp\cdc6f5d7-7630-4c43-92e3-084045928972', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.26.3-win32-x64.zip' -DestinationPath 'D:\a\_temp\cdc6f5d7-7630-4c43-92e3-084045928972' -Force } else { throw $_ } } ;"
+2026-05-16T13:31:43.1250530Z Successfully extracted go to D:\a\_temp\cdc6f5d7-7630-4c43-92e3-084045928972
+2026-05-16T13:31:43.1250971Z Adding to the cache ...
+2026-05-16T13:31:54.4823097Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64 => D:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-16T13:31:54.4972272Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64.complete => D:\hostedtoolcache\windows\go\1.26.3\x64.complete
+2026-05-16T13:31:54.4973273Z Successfully cached go to C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-16T13:31:54.4980296Z Added go to the path
+2026-05-16T13:31:54.4983222Z Successfully set up Go version 1.26.3
+2026-05-16T13:31:54.7611241Z go version go1.26.3 windows/amd64
+2026-05-16T13:31:54.7611580Z 
+2026-05-16T13:31:54.7612402Z ##[group]go env
+2026-05-16T13:31:57.4670283Z set AR=ar
+2026-05-16T13:31:57.4670928Z set CC=gcc
+2026-05-16T13:31:57.4672205Z set CGO_CFLAGS=-O2 -g
+2026-05-16T13:31:57.4672597Z set CGO_CPPFLAGS=
+2026-05-16T13:31:57.4672901Z set CGO_CXXFLAGS=-O2 -g
+2026-05-16T13:31:57.4673201Z set CGO_ENABLED=1
+2026-05-16T13:31:57.4673474Z set CGO_FFLAGS=-O2 -g
+2026-05-16T13:31:57.4673764Z set CGO_LDFLAGS=-O2 -g
+2026-05-16T13:31:57.4674060Z set CXX=g++
+2026-05-16T13:31:57.4674311Z set GCCGO=gccgo
+2026-05-16T13:31:57.4674568Z set GO111MODULE=
+2026-05-16T13:31:57.4674805Z set GOAMD64=v1
+2026-05-16T13:31:57.4675072Z set GOARCH=amd64
+2026-05-16T13:31:57.4675336Z set GOAUTH=netrc
+2026-05-16T13:31:57.4675650Z set GOBIN=D:\a\moby\moby\go\bin
+2026-05-16T13:31:57.4676111Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+2026-05-16T13:31:57.4676576Z set GOCACHEPROG=
+2026-05-16T13:31:57.4678083Z set GODEBUG=
+2026-05-16T13:31:57.4680378Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+2026-05-16T13:31:57.4680893Z set GOEXE=.exe
+2026-05-16T13:31:57.4681170Z set GOEXPERIMENT=
+2026-05-16T13:31:57.4681452Z set GOFIPS140=off
+2026-05-16T13:31:57.4681708Z set GOFLAGS=
+2026-05-16T13:31:57.4682835Z set GOGCCFLAGS=-m64 -mthreads -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build2415025921=/tmp/go-build -gno-record-gcc-switches
+2026-05-16T13:31:57.4683999Z set GOHOSTARCH=amd64
+2026-05-16T13:31:57.4684291Z set GOHOSTOS=windows
+2026-05-16T13:31:57.4684560Z set GOINSECURE=
+2026-05-16T13:31:57.4684823Z set GOMOD=NUL
+2026-05-16T13:31:57.4685115Z set GOMODCACHE=D:\a\moby\moby\go\pkg\mod
+2026-05-16T13:31:57.4685903Z set GONOPROXY=
+2026-05-16T13:31:57.4686183Z set GONOSUMDB=
+2026-05-16T13:31:57.4686433Z set GOOS=windows
+2026-05-16T13:31:57.4686731Z set GOPATH=D:\a\moby\moby\go
+2026-05-16T13:31:57.4687068Z set GOPRIVATE=
+2026-05-16T13:31:57.4687412Z set GOPROXY=https://proxy.golang.org,direct
+2026-05-16T13:31:57.4687916Z set GOROOT=C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-16T13:31:57.4688371Z set GOSUMDB=sum.golang.org
+2026-05-16T13:31:57.4688687Z set GOTELEMETRY=local
+2026-05-16T13:31:57.4689162Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+2026-05-16T13:31:57.4689672Z set GOTMPDIR=
+2026-05-16T13:31:57.4689932Z set GOTOOLCHAIN=local
+2026-05-16T13:31:57.4690429Z set GOTOOLDIR=C:\hostedtoolcache\windows\go\1.26.3\x64\pkg\tool\windows_amd64
+2026-05-16T13:31:57.4690977Z set GOVCS=
+2026-05-16T13:31:57.4691221Z set GOVERSION=go1.26.3
+2026-05-16T13:31:57.4691496Z set GOWORK=
+2026-05-16T13:31:57.4691757Z set PKG_CONFIG=pkg-config
+2026-05-16T13:31:57.4691964Z 
+2026-05-16T13:31:57.4692378Z ##[endgroup]
+2026-05-16T13:31:57.4992106Z ##[group]Run New-Item -ItemType Directory -Force -Path bundles -ErrorAction Continue
+2026-05-16T13:31:57.4992813Z [36;1mNew-Item -ItemType Directory -Force -Path bundles -ErrorAction Continue[0m
+2026-05-16T13:31:57.4993285Z [36;1mStart-Process "msiexec" -ArgumentList "/i",[0m
+2026-05-16T13:31:57.4994096Z [36;1m    "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v$($Env:OTEL_COLLECTOR_VERSION)/otelcol_$($Env:OTEL_COLLECTOR_VERSION)_windows_x64.msi",[0m
+2026-05-16T13:31:57.4994980Z [36;1m    "/qn", "/l*v", "$(Join-Path (Get-Location) "bundles/otelcol-install.log")",[0m
+2026-05-16T13:31:57.4995854Z [36;1m    "COLLECTOR_SVC_ARGS=`"--config=`"`"file:$(Join-Path (Get-Location) "otelcol-ci-config.yml")`"`" --config=`"`"yaml:exporters::file::path: $(Join-Path (Get-Location) "bundles/otel-trace.jsonl")`"`"`"" `[0m
+2026-05-16T13:31:57.4996613Z [36;1m    -NoNewWindow -Wait[0m
+2026-05-16T13:31:57.4997273Z [36;1m@("OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0.1:4318", "OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf") | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:31:57.5068859Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:31:57.5069219Z env:
+2026-05-16T13:31:57.5069381Z   GO_VERSION: 1.26.3
+2026-05-16T13:31:57.5069577Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:31:57.5069800Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:31:57.5070067Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:31:57.5070370Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:31:57.5070579Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:31:57.5070787Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:31:57.5070977Z   TEST_CTN_NAME: moby
+2026-05-16T13:31:57.5071223Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:31:57.5071433Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:31:57.5071623Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:31:57.5071832Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:31:57.5072040Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:31:57.5072239Z   GOTOOLCHAIN: local
+2026-05-16T13:31:57.5072420Z   OTEL_COLLECTOR_VERSION: 0.144.0
+2026-05-16T13:31:57.5072630Z ##[endgroup]
+2026-05-16T13:31:58.0039066Z 
+2026-05-16T13:31:58.0048106Z     Directory: D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:31:58.0048617Z 
+2026-05-16T13:31:58.0051195Z [32;1mMode   [0m[32;1m              LastWriteTime[0m [32;1;3m        Length[0m[32;1m Name[0m
+2026-05-16T13:31:58.0052283Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2026-05-16T13:31:58.0633014Z d----           5/16/2026  1:31 PM                [44;1mbundles[0m
+2026-05-16T13:32:03.1908025Z 
+2026-05-16T13:32:03.2722668Z ##[group]Run Get-ChildItem Env: | Out-String
+2026-05-16T13:32:03.2723063Z [36;1mGet-ChildItem Env: | Out-String[0m
+2026-05-16T13:32:03.2793529Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:03.2793859Z env:
+2026-05-16T13:32:03.2794020Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:03.2794219Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:03.2794435Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:03.2794721Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:03.2795016Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:03.2795243Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:03.2795457Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:03.2795661Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:03.2795845Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:03.2796019Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:03.2796221Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:03.2796428Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:03.2796714Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:03.2796911Z   GOTOOLCHAIN: local
+2026-05-16T13:32:03.2797137Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:03.2797440Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:03.2797682Z ##[endgroup]
+2026-05-16T13:32:03.8087891Z 
+2026-05-16T13:32:03.8088385Z Name                           Value
+2026-05-16T13:32:03.8088993Z ----                           -----
+2026-05-16T13:32:03.8091038Z ACTIONS_ORCHESTRATION_ID       aa30e9f0-7e49-4b3b-968a-558a10b85308.run.snapshotter.integration-test.snapshotter_contai…
+2026-05-16T13:32:03.8092237Z ACTIONS_RUNNER_ACTION_ARCHIVE… C:\actionarchivecache\
+2026-05-16T13:32:03.8092918Z ACTIONS_RUNNER_RETURN_JOB_RES… 1
+2026-05-16T13:32:03.8093416Z AGENT_TOOLSDIRECTORY           C:\hostedtoolcache\windows
+2026-05-16T13:32:03.8093931Z ALLUSERSPROFILE                C:\ProgramData
+2026-05-16T13:32:03.8094405Z ANDROID_HOME                   C:\Android\android-sdk
+2026-05-16T13:32:03.8094984Z ANDROID_NDK                    C:\Android\android-sdk\ndk\27.3.13750724
+2026-05-16T13:32:03.8095471Z ANDROID_NDK_HOME               C:\Android\android-sdk\ndk\27.3.13750724
+2026-05-16T13:32:03.8095857Z ANDROID_NDK_LATEST_HOME        C:\Android\android-sdk\ndk\29.0.14206865
+2026-05-16T13:32:03.8096244Z ANDROID_NDK_ROOT               C:\Android\android-sdk\ndk\27.3.13750724
+2026-05-16T13:32:03.8096585Z ANDROID_SDK_ROOT               C:\Android\android-sdk
+2026-05-16T13:32:03.8096982Z ANT_HOME                       C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.17
+2026-05-16T13:32:03.8097396Z APPDATA                        C:\Users\runneradmin\AppData\Roaming
+2026-05-16T13:32:03.8097714Z AZ_DEVOPS_GLOBAL_CONFIG_DIR    C:\azureDevOpsCli
+2026-05-16T13:32:03.8097989Z AZURE_CONFIG_DIR               C:\azureCli
+2026-05-16T13:32:03.8098268Z AZURE_DEVOPS_CACHE_DIR         C:\azureDevOpsCli\cache
+2026-05-16T13:32:03.8098687Z AZURE_EXTENSION_DIR            C:\Program Files\Common Files\AzureCliExtensionDirectory
+2026-05-16T13:32:03.8099103Z BIN_OUT                        D:\a\moby\moby\out
+2026-05-16T13:32:03.8099355Z CABAL_DIR                      C:\cabal
+2026-05-16T13:32:03.8099650Z ChocolateyInstall              C:\ProgramData\chocolatey
+2026-05-16T13:32:03.8100032Z ChromeWebDriver                C:\SeleniumWebDrivers\ChromeDriver
+2026-05-16T13:32:03.8100355Z CI                             true
+2026-05-16T13:32:03.8100609Z COBERTURA_HOME                 C:\cobertura-2.1.1
+2026-05-16T13:32:03.8102225Z CommonProgramFiles             C:\Program Files\Common Files
+2026-05-16T13:32:03.8102649Z CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files
+2026-05-16T13:32:03.8103042Z CommonProgramW6432             C:\Program Files\Common Files
+2026-05-16T13:32:03.8103368Z COMPUTERNAME                   runnervmp4gaq
+2026-05-16T13:32:03.8103654Z ComSpec                        C:\Windows\system32\cmd.exe
+2026-05-16T13:32:03.8103931Z CONDA                          C:\Miniconda
+2026-05-16T13:32:03.8106918Z DOCKER_BUILDKIT                0
+2026-05-16T13:32:03.8107402Z DOTNET_MULTILEVEL_LOOKUP       0
+2026-05-16T13:32:03.8107655Z DOTNET_NOLOGO                  1
+2026-05-16T13:32:03.8108012Z DOTNET_SKIP_FIRST_TIME_EXPERI… 1
+2026-05-16T13:32:03.8108325Z DriverData                     C:\Windows\System32\Drivers\DriverData
+2026-05-16T13:32:03.8108719Z EdgeWebDriver                  C:\SeleniumWebDrivers\EdgeDriver
+2026-05-16T13:32:03.8109042Z ENABLE_RUNNER_TRACING          true
+2026-05-16T13:32:03.8109286Z GCM_INTERACTIVE                Never
+2026-05-16T13:32:03.8109590Z GeckoWebDriver                 C:\SeleniumWebDrivers\GeckoDriver
+2026-05-16T13:32:03.8109909Z GHCUP_INSTALL_BASE_PREFIX      C:\
+2026-05-16T13:32:03.8110153Z GHCUP_MSYS2                    C:\msys64
+2026-05-16T13:32:03.8110405Z GITHUB_ACTION                  __run_2
+2026-05-16T13:32:03.8110627Z GITHUB_ACTION_REF              
+2026-05-16T13:32:03.8110842Z GITHUB_ACTION_REPOSITORY       
+2026-05-16T13:32:03.8111060Z GITHUB_ACTIONS                 true
+2026-05-16T13:32:03.8111299Z GITHUB_ACTOR                   vincentbernat
+2026-05-16T13:32:03.8111543Z GITHUB_ACTOR_ID                631446
+2026-05-16T13:32:03.8111830Z GITHUB_API_URL                 https://api.github.com
+2026-05-16T13:32:03.8112115Z GITHUB_BASE_REF                master
+2026-05-16T13:32:03.8112524Z GITHUB_ENV                     D:\a\_temp\_runner_file_commands\set_env_69cc87db-a269-423d-8f30-32be123bd1ee
+2026-05-16T13:32:03.8112954Z GITHUB_EVENT_NAME              pull_request
+2026-05-16T13:32:03.8113265Z GITHUB_EVENT_PATH              D:\a\_temp\_github_workflow\event.json
+2026-05-16T13:32:03.8113656Z GITHUB_GRAPHQL_URL             https://api.github.com/graphql
+2026-05-16T13:32:03.8114016Z GITHUB_HEAD_REF                fix/conntrack-delete-host-ip
+2026-05-16T13:32:03.8114330Z GITHUB_JOB                     integration-test
+2026-05-16T13:32:03.8114776Z GITHUB_OUTPUT                  D:\a\_temp\_runner_file_commands\set_output_69cc87db-a269-423d-8f30-32be123bd1ee
+2026-05-16T13:32:03.8115373Z GITHUB_PATH                    D:\a\_temp\_runner_file_commands\add_path_69cc87db-a269-423d-8f30-32be123bd1ee
+2026-05-16T13:32:03.8115811Z GITHUB_REF                     refs/pull/52640/merge
+2026-05-16T13:32:03.8116075Z GITHUB_REF_NAME                52640/merge
+2026-05-16T13:32:03.8116316Z GITHUB_REF_PROTECTED           false
+2026-05-16T13:32:03.8116541Z GITHUB_REF_TYPE                branch
+2026-05-16T13:32:03.8116775Z GITHUB_REPOSITORY              moby/moby
+2026-05-16T13:32:03.8117011Z GITHUB_REPOSITORY_ID           7691631
+2026-05-16T13:32:03.8117246Z GITHUB_REPOSITORY_OWNER        moby
+2026-05-16T13:32:03.8117576Z GITHUB_REPOSITORY_OWNER_ID     27259197
+2026-05-16T13:32:03.8117970Z GITHUB_RETENTION_DAYS          90
+2026-05-16T13:32:03.8118336Z GITHUB_RUN_ATTEMPT             1
+2026-05-16T13:32:03.8118719Z GITHUB_RUN_ID                  25962933981
+2026-05-16T13:32:03.8119073Z GITHUB_RUN_NUMBER              6580
+2026-05-16T13:32:03.8119358Z GITHUB_SERVER_URL              https://github.com
+2026-05-16T13:32:03.8119714Z GITHUB_SHA                     e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:32:03.8120216Z GITHUB_STATE                   D:\a\_temp\_runner_file_commands\save_state_69cc87db-a269-423d-8f30-32be123bd1ee
+2026-05-16T13:32:03.8120850Z GITHUB_STEP_SUMMARY            D:\a\_temp\_runner_file_commands\step_summary_69cc87db-a269-423d-8f30-32be123bd1ee
+2026-05-16T13:32:03.8121315Z GITHUB_TRIGGERING_ACTOR        vincentbernat
+2026-05-16T13:32:03.8122204Z GITHUB_WORKFLOW                windows-2025
+2026-05-16T13:32:03.8122639Z GITHUB_WORKFLOW_REF            moby/moby/.github/workflows/windows-2025.yml@refs/pull/52640/merge
+2026-05-16T13:32:03.8123130Z GITHUB_WORKFLOW_SHA            e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:32:03.8123483Z GITHUB_WORKSPACE               D:\a\moby\moby
+2026-05-16T13:32:03.8123730Z GO_VERSION                     1.26.3
+2026-05-16T13:32:03.8124768Z GOBIN                          D:\a\moby\moby\go\bin
+2026-05-16T13:32:03.8125100Z GOPATH                         D:\a\moby\moby\go
+2026-05-16T13:32:03.8125432Z GOROOT_1_22_X64                C:\hostedtoolcache\windows\go\1.22.12\x64
+2026-05-16T13:32:03.8125813Z GOROOT_1_23_X64                C:\hostedtoolcache\windows\go\1.23.12\x64
+2026-05-16T13:32:03.8126175Z GOROOT_1_24_X64                C:\hostedtoolcache\windows\go\1.24.13\x64
+2026-05-16T13:32:03.8126538Z GOROOT_1_25_X64                C:\hostedtoolcache\windows\go\1.25.10\x64
+2026-05-16T13:32:03.8126848Z GOTESTLIST_VERSION             v0.3.1
+2026-05-16T13:32:03.8127154Z GOTOOLCHAIN                    local
+2026-05-16T13:32:03.8127741Z GRADLE_HOME                    C:\ProgramData\chocolatey\lib\gradle\tools\gradle-9.5.0
+2026-05-16T13:32:03.8128328Z HOMEDRIVE                      C:
+2026-05-16T13:32:03.8128722Z HOMEPATH                       \Users\runneradmin
+2026-05-16T13:32:03.8129257Z IEWebDriver                    C:\SeleniumWebDrivers\IEDriver
+2026-05-16T13:32:03.8129748Z ImageOS                        win25
+2026-05-16T13:32:03.8130133Z ImageVersion                   20260510.128.1
+2026-05-16T13:32:03.8130542Z ITG_CLI_MATRIX_SIZE            6
+2026-05-16T13:32:03.8131155Z JAVA_HOME                      C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.19-10\x64
+2026-05-16T13:32:03.8132004Z JAVA_HOME_11_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\11.0.31-11\x64
+2026-05-16T13:32:03.8132876Z JAVA_HOME_17_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.19-10\x64
+2026-05-16T13:32:03.8133843Z JAVA_HOME_21_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.11-10.0\x64
+2026-05-16T13:32:03.8134767Z JAVA_HOME_25_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\25.0.3-9.0\x64
+2026-05-16T13:32:03.8135658Z JAVA_HOME_8_X64                C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.482-8\x64
+2026-05-16T13:32:03.8136414Z LOCALAPPDATA                   C:\Users\runneradmin\AppData\Local
+2026-05-16T13:32:03.8136942Z LOGONSERVER                    \\runnervmp4gaq
+2026-05-16T13:32:03.8137508Z M2                             C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.15\bin
+2026-05-16T13:32:03.8138110Z M2_REPO                        C:\ProgramData\m2
+2026-05-16T13:32:03.8138529Z MAVEN_OPTS                     -Xms256m
+2026-05-16T13:32:03.8138962Z npm_config_prefix              C:\npm\prefix
+2026-05-16T13:32:03.8139382Z NUMBER_OF_PROCESSORS           4
+2026-05-16T13:32:03.8139717Z OS                             Windows_NT
+2026-05-16T13:32:03.8140159Z OTEL_EXPORTER_OTLP_ENDPOINT    http://127.0.0.1:4318
+2026-05-16T13:32:03.8140646Z OTEL_EXPORTER_OTLP_PROTOCOL    http/protobuf
+2026-05-16T13:32:03.8141528Z Path                           C:\Program Files\PowerShell\7;D:\a\moby\moby\go\bin;C:\hostedtoolcache\windows\go\1.26.3…
+2026-05-16T13:32:03.8142795Z PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+2026-05-16T13:32:03.8143516Z PGBIN                          C:\Program Files\PostgreSQL\17\bin
+2026-05-16T13:32:03.8144051Z PGDATA                         C:\PostgreSQL\17\data
+2026-05-16T13:32:03.8144487Z PGPASSWORD                     root
+2026-05-16T13:32:03.8144957Z PGROOT                         C:\Program Files\PostgreSQL\17
+2026-05-16T13:32:03.8145445Z PGUSER                         postgres
+2026-05-16T13:32:03.8145840Z PHPROOT                        c:\tools\php
+2026-05-16T13:32:03.8147533Z PIPX_BIN_DIR                   C:\Program Files (x86)\pipx_bin
+2026-05-16T13:32:03.8148119Z PIPX_HOME                      C:\Program Files (x86)\pipx
+2026-05-16T13:32:03.8148846Z POWERSHELL_DISTRIBUTION_CHANN… GitHub-Actions-win25
+2026-05-16T13:32:03.8149366Z POWERSHELL_UPDATECHECK         Off
+2026-05-16T13:32:03.8149772Z PROCESSOR_ARCHITECTURE         AMD64
+2026-05-16T13:32:03.8150347Z PROCESSOR_IDENTIFIER           AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD
+2026-05-16T13:32:03.8151056Z PROCESSOR_LEVEL                25
+2026-05-16T13:32:03.8151434Z PROCESSOR_REVISION             0101
+2026-05-16T13:32:03.8151821Z ProgramData                    C:\ProgramData
+2026-05-16T13:32:03.8152284Z ProgramFiles                   C:\Program Files
+2026-05-16T13:32:03.8152717Z ProgramFiles(x86)              C:\Program Files (x86)
+2026-05-16T13:32:03.8153038Z ProgramW6432                   C:\Program Files
+2026-05-16T13:32:03.8153450Z PSModuleAnalysisCachePath      C:\PSModuleAnalysisCachePath\ModuleAnalysisCache
+2026-05-16T13:32:03.8154218Z PSModulePath                   C:\Users\runneradmin\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:…
+2026-05-16T13:32:03.8154725Z PUBLIC                         C:\Users\Public
+2026-05-16T13:32:03.8154993Z RTOOLS45_HOME                  C:\rtools45
+2026-05-16T13:32:03.8155231Z RUNNER_ARCH                    X64
+2026-05-16T13:32:03.8155562Z RUNNER_ENVIRONMENT             github-hosted
+2026-05-16T13:32:03.8156059Z RUNNER_NAME                    GitHub Actions 1001424389
+2026-05-16T13:32:03.8156504Z RUNNER_OS                      Windows
+2026-05-16T13:32:03.8156876Z RUNNER_TEMP                    D:\a\_temp
+2026-05-16T13:32:03.8157365Z RUNNER_TOOL_CACHE              C:\hostedtoolcache\windows
+2026-05-16T13:32:03.8158025Z RUNNER_TRACKING_ID             github_0c27c230-ebfd-4175-a27a-3382e287839b
+2026-05-16T13:32:03.8158604Z RUNNER_WORKSPACE               D:\a\moby
+2026-05-16T13:32:03.8159080Z SBT_HOME                       C:\Program Files (x86)\sbt\
+2026-05-16T13:32:03.8159669Z SELENIUM_JAR_PATH              C:\selenium\selenium-server.jar
+2026-05-16T13:32:03.8160125Z SystemDrive                    C:
+2026-05-16T13:32:03.8160452Z SystemRoot                     C:\Windows
+2026-05-16T13:32:03.8160886Z TEMP                           C:\Users\RUNNER~1\AppData\Local\Temp
+2026-05-16T13:32:03.8161303Z TEST_CTN_NAME                  moby
+2026-05-16T13:32:03.8161633Z TEST_IMAGE_NAME                moby:test
+2026-05-16T13:32:03.8161990Z TESTSTAT_VERSION               v0.1.25
+2026-05-16T13:32:03.8162789Z TMP                            C:\Users\RUNNER~1\AppData\Local\Temp
+2026-05-16T13:32:03.8163248Z USERDOMAIN                     runnervmp4gaq
+2026-05-16T13:32:03.8163637Z USERDOMAIN_ROAMINGPROFILE      runnervmp4gaq
+2026-05-16T13:32:03.8164039Z USERNAME                       runneradmin
+2026-05-16T13:32:03.8164443Z USERPROFILE                    C:\Users\runneradmin
+2026-05-16T13:32:03.8164889Z VCPKG_INSTALLATION_ROOT        C:\vcpkg
+2026-05-16T13:32:03.8165324Z windir                         C:\Windows
+2026-05-16T13:32:03.8165892Z WINDOWS_BASE_IMAGE             mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:03.8166470Z WINDOWS_BASE_TAG_2022          ltsc2022
+2026-05-16T13:32:03.8166879Z WINDOWS_BASE_TAG_2025          ltsc2025
+2026-05-16T13:32:03.8167381Z WIX                            C:\Program Files (x86)\WiX Toolset v3.14\
+2026-05-16T13:32:03.8167769Z 
+2026-05-16T13:32:03.8167777Z 
+2026-05-16T13:32:03.8904388Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-05-16T13:32:03.8904840Z with:
+2026-05-16T13:32:03.8905034Z   name: build-snapshotter-windows-2025
+2026-05-16T13:32:03.8905286Z   path: D:\a\moby\moby\out
+2026-05-16T13:32:03.8905484Z   merge-multiple: false
+2026-05-16T13:32:03.8905680Z   repository: moby/moby
+2026-05-16T13:32:03.8905863Z   run-id: 25962933981
+2026-05-16T13:32:03.8906044Z   skip-decompress: false
+2026-05-16T13:32:03.8906233Z   digest-mismatch: error
+2026-05-16T13:32:03.8906624Z env:
+2026-05-16T13:32:03.8906767Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:03.8906950Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:03.8907147Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:03.8907406Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:03.8907702Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:03.8907909Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:03.8908116Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:03.8908341Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:03.8908510Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:03.8908679Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:03.8908862Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:03.8909074Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:03.8909270Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:03.8909464Z   GOTOOLCHAIN: local
+2026-05-16T13:32:03.8909687Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:03.8909981Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:03.8910226Z ##[endgroup]
+2026-05-16T13:32:04.0725283Z Downloading single artifact
+2026-05-16T13:32:04.1651006Z Preparing to download the following artifacts:
+2026-05-16T13:32:04.1652231Z - build-snapshotter-windows-2025 (ID: 7033753906, Size: 124419430, Expected Digest: sha256:34101d65c959642b0d430e47be6a1a4df8cb356a0f01cd16cfb0d760bd2aa089)
+2026-05-16T13:32:04.2876073Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/aa30e9f0-7e49-4b3b-968a-558a10b85308/workflow-job-run-d708ff4c-0f71-57b2-868e-f9b2ac6085c6/artifacts/3fa6935e7a69cf0ac395cf4e695c370abdcdb1739f5477ce8425a1f15d707db6.zip
+2026-05-16T13:32:04.2877312Z Starting download of artifact to: D:\a\moby\moby\out
+2026-05-16T13:32:04.3422027Z (node:9844) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-05-16T13:32:04.3423642Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-16T13:32:07.4166711Z SHA256 digest of downloaded artifact is 34101d65c959642b0d430e47be6a1a4df8cb356a0f01cd16cfb0d760bd2aa089
+2026-05-16T13:32:07.4167326Z Artifact download completed successfully.
+2026-05-16T13:32:07.4167611Z Total of 1 artifact(s) downloaded
+2026-05-16T13:32:07.4174526Z Download artifact has finished successfully
+2026-05-16T13:32:07.4522599Z ##[group]Run New-Item -ItemType "directory" -Path "bundles" -ErrorAction SilentlyContinue
+2026-05-16T13:32:07.4523754Z [36;1mNew-Item -ItemType "directory" -Path "bundles" -ErrorAction SilentlyContinue[0m
+2026-05-16T13:32:07.4524857Z [36;1mNew-Item -ItemType "directory" -Path "${env:ProgramData}\Docker" -ErrorAction SilentlyContinue[0m
+2026-05-16T13:32:07.4526055Z [36;1mNew-Item -ItemType "directory" -Path "${env:ProgramData}\Docker\cli-plugins" -ErrorAction SilentlyContinue[0m
+2026-05-16T13:32:07.4527614Z [36;1mMove-Item -Path "D:\a\moby\moby\out\docker-buildx.exe" -Destination "${env:ProgramData}\Docker\cli-plugins\docker-buildx.exe" -Force -ErrorAction Continue[0m
+2026-05-16T13:32:07.4528824Z [36;1mIf ($env:INPUT_OS -eq "windows-2025") {[0m
+2026-05-16T13:32:07.4529674Z [36;1m  echo "WINDOWS_BASE_IMAGE_TAG=ltsc2025" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:32:07.4530566Z [36;1m} ElseIf ($env:INPUT_OS -eq "windows-2022") {[0m
+2026-05-16T13:32:07.4531412Z [36;1m  echo "WINDOWS_BASE_IMAGE_TAG=ltsc2022" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:32:07.4532209Z [36;1m}[0m
+2026-05-16T13:32:07.4532833Z [36;1mWrite-Output "D:\a\moby\moby\out" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append[0m
+2026-05-16T13:32:07.4533584Z [36;1m[0m
+2026-05-16T13:32:07.4535267Z [36;1m$testName = ([System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA256Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes($env:MATRIX_TEST))) -replace '-').ToLower()[0m
+2026-05-16T13:32:07.4537347Z [36;1mecho "TESTREPORTS_NAME=$testName" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:32:07.4640095Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:07.4640441Z env:
+2026-05-16T13:32:07.4640604Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:07.4640792Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:07.4641019Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:07.4641291Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:07.4641588Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:07.4641813Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:07.4642027Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:07.4642223Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:07.4642414Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:07.4642601Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:07.4642801Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:07.4643013Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:07.4643229Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:07.4643446Z   GOTOOLCHAIN: local
+2026-05-16T13:32:07.4643678Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:07.4643987Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:07.4644242Z   INPUT_OS: windows-2025
+2026-05-16T13:32:07.4644443Z   MATRIX_TEST: DockerCLIRunSuite
+2026-05-16T13:32:07.4644665Z ##[endgroup]
+2026-05-16T13:32:08.1610974Z ##[group]Run if (Get-Service docker -ErrorAction SilentlyContinue) {
+2026-05-16T13:32:08.1611950Z [36;1mif (Get-Service docker -ErrorAction SilentlyContinue) {[0m
+2026-05-16T13:32:08.1612610Z [36;1m  $dockerVersion = (docker version -f "{{.Server.Version}}")[0m
+2026-05-16T13:32:08.1613270Z [36;1m  Write-Host "Current installed Docker version: $dockerVersion"[0m
+2026-05-16T13:32:08.1613828Z [36;1m  # remove service[0m
+2026-05-16T13:32:08.1614175Z [36;1m  Stop-Service -Force -Name docker[0m
+2026-05-16T13:32:08.1614599Z [36;1m  Remove-Service -Name docker[0m
+2026-05-16T13:32:08.1615216Z [36;1m  # removes event log entry. we could use "Remove-EventLog -LogName -Source docker"[0m
+2026-05-16T13:32:08.1615891Z [36;1m  # but this cmd is not available atm[0m
+2026-05-16T13:32:08.1616385Z [36;1m  $ErrorActionPreference = "SilentlyContinue"[0m
+2026-05-16T13:32:08.1617255Z [36;1m  & reg delete "HKLM\SYSTEM\CurrentControlSet\Services\EventLog\Application\docker" /f 2>&1 | Out-Null[0m
+2026-05-16T13:32:08.1618023Z [36;1m  $ErrorActionPreference = "Stop"[0m
+2026-05-16T13:32:08.1618442Z [36;1m  Write-Host "Service removed"[0m
+2026-05-16T13:32:08.1618800Z [36;1m}[0m
+2026-05-16T13:32:08.1687507Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:08.1687840Z env:
+2026-05-16T13:32:08.1688015Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:08.1688215Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:08.1688446Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:08.1688719Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:08.1689032Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:08.1689270Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:08.1689479Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:08.1689687Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:08.1689875Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:08.1690055Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:08.1690264Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:08.1690487Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:08.1690695Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:08.1690900Z   GOTOOLCHAIN: local
+2026-05-16T13:32:08.1691148Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:08.1691469Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:08.1691725Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:32:08.1692317Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:32:08.1692708Z ##[endgroup]
+2026-05-16T13:32:10.2015459Z Current installed Docker version: 29.1.5
+2026-05-16T13:32:10.4994989Z Service removed
+2026-05-16T13:32:10.5843310Z ##[group]Run Write-Host "Creating service"
+2026-05-16T13:32:10.5843750Z [36;1mWrite-Host "Creating service"[0m
+2026-05-16T13:32:10.5843998Z [36;1m$args = @([0m
+2026-05-16T13:32:10.5844186Z [36;1m  "--debug",[0m
+2026-05-16T13:32:10.5844429Z [36;1m  "--host=npipe:////./pipe/docker_engine", `[0m
+2026-05-16T13:32:10.5844737Z [36;1m  "--data-root=$env:TEMP\moby-root", `[0m
+2026-05-16T13:32:10.5845016Z [36;1m  "--exec-root=$env:TEMP\moby-exec", `[0m
+2026-05-16T13:32:10.5845294Z [36;1m  "--pidfile=$env:TEMP\docker.pid", `[0m
+2026-05-16T13:32:10.5845560Z [36;1m  "--register-service"[0m
+2026-05-16T13:32:10.5845766Z [36;1m)[0m
+2026-05-16T13:32:10.5845977Z [36;1mIf ($env:MATRIX_RUNTIME -eq "containerd") {[0m
+2026-05-16T13:32:10.5846323Z [36;1m  $args += "--default-runtime=io.containerd.runhcs.v1"[0m
+2026-05-16T13:32:10.5846856Z [36;1m  echo "DOCKER_WINDOWS_CONTAINERD_RUNTIME=1" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:32:10.5847398Z [36;1m}[0m
+2026-05-16T13:32:10.5847605Z [36;1mif ($env:INPUT_STORAGE -eq "snapshotter") {[0m
+2026-05-16T13:32:10.5847922Z [36;1m  $args += "--feature=containerd-snapshotter"[0m
+2026-05-16T13:32:10.5848183Z [36;1m}[0m
+2026-05-16T13:32:10.5848549Z [36;1mNew-Item -ItemType Directory "$env:TEMP\moby-root" -ErrorAction SilentlyContinue | Out-Null[0m
+2026-05-16T13:32:10.5849153Z [36;1mNew-Item -ItemType Directory "$env:TEMP\moby-exec" -ErrorAction SilentlyContinue | Out-Null[0m
+2026-05-16T13:32:10.5849952Z [36;1mStart-Process -Wait -NoNewWindow "D:\a\moby\moby\out\dockerd" -ArgumentList $args[0m
+2026-05-16T13:32:10.5850567Z [36;1m# Make the env-var visible to the service-managed dockerd, as there's no CLI flag for this option.[0m
+2026-05-16T13:32:10.5851257Z [36;1m$dockerEnviron = @("DOCKER_MIN_API_VERSION=1.24")[0m
+2026-05-16T13:32:10.5851691Z [36;1m$dockerEnviron += @(Get-Item Env:\OTEL_* | ForEach-Object { "$($_.Name)=$($_.Value)" })[0m
+2026-05-16T13:32:10.5852149Z [36;1mIf ($env:INPUT_STORAGE -eq "graphdriver") {[0m
+2026-05-16T13:32:10.5852510Z [36;1m  $dockerEnviron += @("TEST_INTEGRATION_USE_GRAPHDRIVER=1")[0m
+2026-05-16T13:32:10.5853050Z [36;1m  echo "TEST_INTEGRATION_USE_GRAPHDRIVER=1" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append[0m
+2026-05-16T13:32:10.5853503Z [36;1m}[0m
+2026-05-16T13:32:10.5854043Z [36;1mNew-ItemProperty -Name "Environment" -Path "HKLM:\SYSTEM\CurrentControlSet\Services\docker" -PropertyType MultiString -Value $dockerEnviron[0m
+2026-05-16T13:32:10.5854666Z [36;1mWrite-Host "Starting service"[0m
+2026-05-16T13:32:10.5854916Z [36;1mStart-Service -Name docker[0m
+2026-05-16T13:32:10.5855182Z [36;1mWrite-Host "Service started successfully!"[0m
+2026-05-16T13:32:10.5917945Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:10.5918281Z env:
+2026-05-16T13:32:10.5918450Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:10.5918640Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:10.5918864Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:10.5919144Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:10.5919438Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:10.5919664Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:10.5919883Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:10.5920084Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:10.5920258Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:10.5920437Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:10.5920637Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:10.5920844Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:10.5921055Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:10.5921257Z   GOTOOLCHAIN: local
+2026-05-16T13:32:10.5921501Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:10.5921824Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:10.5922086Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:32:10.5922459Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:32:10.5924876Z   INPUT_STORAGE: snapshotter
+2026-05-16T13:32:10.5925171Z   MATRIX_RUNTIME: containerd
+2026-05-16T13:32:10.5925383Z ##[endgroup]
+2026-05-16T13:32:10.9087899Z Creating service
+2026-05-16T13:32:12.0069702Z 
+2026-05-16T13:32:12.0076336Z [32;1mEnvironment  : [0m{DOCKER_MIN_API_VERSION=1.24, OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf, 
+2026-05-16T13:32:12.0077476Z                OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0.1:4318}
+2026-05-16T13:32:12.0080208Z [32;1mPSPath       : [0mMicrosoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\docker
+2026-05-16T13:32:12.0081435Z [32;1mPSParentPath : [0mMicrosoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+2026-05-16T13:32:12.0082008Z [32;1mPSChildName  : [0mdocker
+2026-05-16T13:32:12.0082280Z [32;1mPSDrive      : [0mHKLM
+2026-05-16T13:32:12.0082628Z [32;1mPSProvider   : [0mMicrosoft.PowerShell.Core\Registry
+2026-05-16T13:32:12.0082862Z 
+2026-05-16T13:32:12.0087244Z Starting service
+2026-05-16T13:32:13.0976060Z Service started successfully!
+2026-05-16T13:32:13.2075863Z ##[group]Run $tries=20
+2026-05-16T13:32:13.2076405Z [36;1m$tries=20[0m
+2026-05-16T13:32:13.2076886Z [36;1mWrite-Host "Waiting for the test daemon to start..."[0m
+2026-05-16T13:32:13.2077449Z [36;1mWhile ($true) {[0m
+2026-05-16T13:32:13.2077720Z [36;1m  $ErrorActionPreference = "SilentlyContinue"[0m
+2026-05-16T13:32:13.2078044Z [36;1m  & "D:\a\moby\moby\out\docker" version[0m
+2026-05-16T13:32:13.2078327Z [36;1m  $ErrorActionPreference = "Stop"[0m
+2026-05-16T13:32:13.2078585Z [36;1m  If ($LastExitCode -eq 0) {[0m
+2026-05-16T13:32:13.2078822Z [36;1m    break[0m
+2026-05-16T13:32:13.2078991Z [36;1m  }[0m
+2026-05-16T13:32:13.2079145Z [36;1m  $tries--[0m
+2026-05-16T13:32:13.2079330Z [36;1m  If ($tries -le 0) {[0m
+2026-05-16T13:32:13.2079610Z [36;1m    Throw "Failed to get a response from the daemon"[0m
+2026-05-16T13:32:13.2079896Z [36;1m  }[0m
+2026-05-16T13:32:13.2080088Z [36;1m  Write-Host -NoNewline "."[0m
+2026-05-16T13:32:13.2080362Z [36;1m  Start-Sleep -Seconds 1[0m
+2026-05-16T13:32:13.2080570Z [36;1m}[0m
+2026-05-16T13:32:13.2080778Z [36;1mWrite-Host "Test daemon started and replied!"[0m
+2026-05-16T13:32:13.2081092Z [36;1mIf ($env:MATRIX_RUNTIME -eq "containerd") {[0m
+2026-05-16T13:32:13.2081529Z [36;1m  $containerdProcesses = Get-Process -Name containerd -ErrorAction:SilentlyContinue[0m
+2026-05-16T13:32:13.2081967Z [36;1m  If (-not $containerdProcesses) {[0m
+2026-05-16T13:32:13.2082257Z [36;1m    Throw "containerd process is not running"[0m
+2026-05-16T13:32:13.2082517Z [36;1m  } else {[0m
+2026-05-16T13:32:13.2082752Z [36;1m    foreach ($process in $containerdProcesses) {[0m
+2026-05-16T13:32:13.2083174Z [36;1m      $processPath = (Get-Process -Id $process.Id -FileVersionInfo).FileName[0m
+2026-05-16T13:32:13.2083696Z [36;1m      Write-Output "Running containerd instance binary Path: $($processPath)"[0m
+2026-05-16T13:32:13.2084071Z [36;1m    }[0m
+2026-05-16T13:32:13.2084226Z [36;1m  }[0m
+2026-05-16T13:32:13.2084384Z [36;1m}[0m
+2026-05-16T13:32:13.2169573Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:13.2170108Z env:
+2026-05-16T13:32:13.2170364Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:13.2170667Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:13.2171014Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:13.2171456Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:13.2171957Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:13.2172322Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:13.2172680Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:13.2173011Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:13.2173326Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:13.2173645Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:13.2173964Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:13.2174307Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:13.2174654Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:13.2175215Z   GOTOOLCHAIN: local
+2026-05-16T13:32:13.2175597Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:13.2176116Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:13.2176547Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:32:13.2177170Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:32:13.2177866Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:32:13.2178266Z   MATRIX_RUNTIME: containerd
+2026-05-16T13:32:13.2178639Z   DOCKER_HOST: npipe:////./pipe/docker_engine
+2026-05-16T13:32:13.2179048Z ##[endgroup]
+2026-05-16T13:32:13.5819262Z Waiting for the test daemon to start...
+2026-05-16T13:32:13.6156221Z Client:
+2026-05-16T13:32:13.6156833Z  Version:           25.0.5
+2026-05-16T13:32:13.6157245Z  API version:       1.44
+2026-05-16T13:32:13.6157599Z  Go version:        go1.21.8
+2026-05-16T13:32:13.6157960Z  Git commit:        5dc9bcc
+2026-05-16T13:32:13.6158342Z  Built:             Tue Mar 19 15:06:12 2024
+2026-05-16T13:32:13.6158798Z  OS/Arch:           windows/amd64
+2026-05-16T13:32:13.6161713Z  Context:           default
+2026-05-16T13:32:13.6162012Z 
+2026-05-16T13:32:13.6162140Z Server:
+2026-05-16T13:32:13.6162416Z  Engine:
+2026-05-16T13:32:13.6162704Z   Version:          0.0.0-dev
+2026-05-16T13:32:13.6163153Z   API version:      1.54 (minimum version 1.24)
+2026-05-16T13:32:13.6163614Z   Go version:       go1.26.3
+2026-05-16T13:32:13.6164093Z   Git commit:       e74612bee5dc63c19b50acf2b91c47601d822348
+2026-05-16T13:32:13.6164823Z   Built:            
+2026-05-16T13:32:13.6165180Z   OS/Arch:          windows/amd64
+2026-05-16T13:32:13.6165558Z   Experimental:     false
+2026-05-16T13:32:13.6237220Z Test daemon started and replied!
+2026-05-16T13:32:13.6896982Z Running containerd instance binary Path: D:\a\moby\moby\out\containerd.exe
+2026-05-16T13:32:13.7672011Z ##[group]Run & "D:\a\moby\moby\out\docker" info
+2026-05-16T13:32:13.7672489Z [36;1m& "D:\a\moby\moby\out\docker" info[0m
+2026-05-16T13:32:13.7743125Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:13.7743458Z env:
+2026-05-16T13:32:13.7743624Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:13.7743820Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:13.7744027Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:13.7744372Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:13.7744901Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:13.7745127Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:13.7745350Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:13.7745553Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:13.7745733Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:13.7745907Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:13.7746103Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:13.7746304Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:13.7746558Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:13.7746754Z   GOTOOLCHAIN: local
+2026-05-16T13:32:13.7746989Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:13.7747310Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:13.7747816Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:32:13.7748204Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:32:13.7749136Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:32:13.7749601Z   DOCKER_HOST: npipe:////./pipe/docker_engine
+2026-05-16T13:32:13.7750065Z ##[endgroup]
+2026-05-16T13:32:22.0231197Z Client:
+2026-05-16T13:32:22.0231566Z  Version:    25.0.5
+2026-05-16T13:32:22.0233599Z  Context:    default
+2026-05-16T13:32:22.0234010Z  Debug Mode: false
+2026-05-16T13:32:22.0234307Z  Plugins:
+2026-05-16T13:32:22.0234628Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-16T13:32:22.0235094Z     Version:  v0.34.0
+2026-05-16T13:32:22.0235482Z     Path:     C:\ProgramData\Docker\cli-plugins\docker-buildx.exe
+2026-05-16T13:32:22.0235868Z   compose: Docker Compose (Docker Inc.)
+2026-05-16T13:32:22.0236146Z     Version:  v2.40.3
+2026-05-16T13:32:22.0236762Z     Path:     C:\ProgramData\Docker\cli-plugins\docker-compose.exe
+2026-05-16T13:32:22.0237024Z 
+2026-05-16T13:32:22.0237095Z Server:
+2026-05-16T13:32:22.0237420Z  Containers: 0
+2026-05-16T13:32:22.0237752Z   Running: 0
+2026-05-16T13:32:22.0238055Z   Paused: 0
+2026-05-16T13:32:22.0238282Z   Stopped: 0
+2026-05-16T13:32:22.0238536Z  Images: 0
+2026-05-16T13:32:22.0239079Z  Server Version: 0.0.0-dev
+2026-05-16T13:32:22.0239368Z  Storage Driver: windows
+2026-05-16T13:32:22.0239734Z   driver-type: io.containerd.snapshotter.v1
+2026-05-16T13:32:22.0240066Z  Logging Driver: json-file
+2026-05-16T13:32:22.0240419Z  Plugins:
+2026-05-16T13:32:22.0240715Z   Volume: local
+2026-05-16T13:32:22.0241098Z   Network: ics internal l2bridge l2tunnel nat null overlay private transparent
+2026-05-16T13:32:22.0241643Z   Log: awslogs etwlogs fluentd gcplogs gelf json-file local splunk syslog
+2026-05-16T13:32:22.0242018Z  CDI spec directories:
+2026-05-16T13:32:22.0242204Z   /etc/cdi
+2026-05-16T13:32:22.0242369Z   /var/run/cdi
+2026-05-16T13:32:22.0242540Z  Swarm: inactive
+2026-05-16T13:32:22.0242736Z  Default Isolation: process
+2026-05-16T13:32:22.0243230Z  Kernel Version: 10.0 26100 (26100.1.amd64fre.ge_release.240331-1435)
+2026-05-16T13:32:22.0244006Z  Operating System: Microsoft Windows Server Version 24H2 (OS Build 26100.32690)
+2026-05-16T13:32:22.0244377Z  OSType: windows
+2026-05-16T13:32:22.0244562Z  Architecture: x86_64
+2026-05-16T13:32:22.0244744Z  CPUs: 4
+2026-05-16T13:32:22.0244909Z  Total Memory: 15.99GiB
+2026-05-16T13:32:22.0245107Z  Name: runnervmp4gaq
+2026-05-16T13:32:22.0245317Z  ID: fb590a6b-3d20-446b-9f71-5bb914d081c2
+2026-05-16T13:32:22.0245666Z  Docker Root Dir: C:\Users\runneradmin\AppData\Local\Temp\moby-root
+2026-05-16T13:32:22.0245984Z  Debug Mode: true
+2026-05-16T13:32:22.0248533Z   File Descriptors: -1
+2026-05-16T13:32:22.0249017Z   Goroutines: 67
+2026-05-16T13:32:22.0249431Z   System Time: 2026-05-16T13:32:22.0208676Z
+2026-05-16T13:32:22.0249790Z   EventsListeners: 0
+2026-05-16T13:32:22.0250017Z  Username: githubactions
+2026-05-16T13:32:22.0250232Z  Experimental: false
+2026-05-16T13:32:22.0250431Z  Insecure Registries:
+2026-05-16T13:32:22.0250610Z   127.0.0.0/8
+2026-05-16T13:32:22.0250801Z   ::1/128
+2026-05-16T13:32:22.0250979Z  Live Restore Enabled: false
+2026-05-16T13:32:22.0251123Z 
+2026-05-16T13:32:22.1482829Z ##[group]Run $maxRetries = 5
+2026-05-16T13:32:22.1483176Z [36;1m$maxRetries = 5[0m
+2026-05-16T13:32:22.1483431Z [36;1mfor ($i = 1; $i -le $maxRetries; $i++) {[0m
+2026-05-16T13:32:22.1483759Z [36;1m  & "D:\a\moby\moby\out\docker" build -t busybox `[0m
+2026-05-16T13:32:22.1484073Z [36;1m    --build-arg WINDOWS_BASE_IMAGE `[0m
+2026-05-16T13:32:22.1484352Z [36;1m    --build-arg WINDOWS_BASE_IMAGE_TAG `[0m
+2026-05-16T13:32:22.1484614Z [36;1m    .\contrib\busybox\[0m
+2026-05-16T13:32:22.1484835Z [36;1m  if ($LASTEXITCODE -eq 0) {[0m
+2026-05-16T13:32:22.1485327Z [36;1m    break[0m
+2026-05-16T13:32:22.1485689Z [36;1m  }[0m
+2026-05-16T13:32:22.1485925Z [36;1m  if ($i -eq $maxRetries) {[0m
+2026-05-16T13:32:22.1486289Z [36;1m    Write-Error "Failed to build contrib/busybox after $maxRetries attempts"[0m
+2026-05-16T13:32:22.1486660Z [36;1m    exit 1[0m
+2026-05-16T13:32:22.1486829Z [36;1m  }[0m
+2026-05-16T13:32:22.1486982Z [36;1m  $delay = 15 * $i[0m
+2026-05-16T13:32:22.1487420Z [36;1m  Write-Warning "Build attempt $i failed (exit code: $LASTEXITCODE). Retrying in $delay seconds..."[0m
+2026-05-16T13:32:22.1487874Z [36;1m  Start-Sleep -Seconds $delay[0m
+2026-05-16T13:32:22.1488098Z [36;1m}[0m
+2026-05-16T13:32:22.1553235Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:32:22.1553562Z env:
+2026-05-16T13:32:22.1554058Z   GO_VERSION: 1.26.3
+2026-05-16T13:32:22.1554262Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:32:22.1554481Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:32:22.1554753Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:22.1555240Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:32:22.1555467Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:32:22.1555679Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:32:22.1555875Z   TEST_CTN_NAME: moby
+2026-05-16T13:32:22.1556057Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:32:22.1556235Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:32:22.1556436Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:32:22.1556641Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:32:22.1556850Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:32:22.1557045Z   GOTOOLCHAIN: local
+2026-05-16T13:32:22.1557276Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:32:22.1557587Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:32:22.1557849Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:32:22.1558216Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:32:22.1558620Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:32:22.1558882Z   DOCKER_HOST: npipe:////./pipe/docker_engine
+2026-05-16T13:32:22.1559357Z ##[endgroup]
+2026-05-16T13:32:22.4449384Z Sending build context to Docker daemon   5.12kB
+2026-05-16T13:32:22.4449847Z 
+2026-05-16T13:32:22.4486028Z Step 1/13 : ARG WINDOWS_BASE_IMAGE=mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:22.4487018Z Step 2/13 : ARG WINDOWS_BASE_IMAGE_TAG=ltsc2022
+2026-05-16T13:32:22.4487584Z Step 3/13 : ARG BUSYBOX_VERSION=FRP-5007-g82accfc19
+2026-05-16T13:32:22.4488337Z Step 4/13 : ARG BUSYBOX_SHA256SUM=2d6fff0b2de5c034c92990d696c0d85a677b8a75931fa1ec30694fbf1f1df5c9
+2026-05-16T13:32:22.4489066Z Step 5/13 : FROM ${WINDOWS_BASE_IMAGE}:${WINDOWS_BASE_IMAGE_TAG}
+2026-05-16T13:32:22.5626408Z unknown: failed to resolve reference "mcr.microsoft.com/windows/servercore:ltsc2025": unexpected status from HEAD request to https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025: 403 Forbidden
+2026-05-16T13:32:22.6260015Z [33;1mWARNING: Build attempt 1 failed (exit code: 1). Retrying in 15 seconds...[0m
+2026-05-16T13:32:37.6615170Z Sending build context to Docker daemon   5.12kB
+2026-05-16T13:32:37.6615545Z 
+2026-05-16T13:32:37.6645103Z Step 1/13 : ARG WINDOWS_BASE_IMAGE=mcr.microsoft.com/windows/servercore
+2026-05-16T13:32:37.6645767Z Step 2/13 : ARG WINDOWS_BASE_IMAGE_TAG=ltsc2022
+2026-05-16T13:32:37.6646259Z Step 3/13 : ARG BUSYBOX_VERSION=FRP-5007-g82accfc19
+2026-05-16T13:32:37.6649885Z Step 4/13 : ARG BUSYBOX_SHA256SUM=2d6fff0b2de5c034c92990d696c0d85a677b8a75931fa1ec30694fbf1f1df5c9
+2026-05-16T13:32:37.6650738Z Step 5/13 : FROM ${WINDOWS_BASE_IMAGE}:${WINDOWS_BASE_IMAGE_TAG}
+2026-05-16T13:32:37.7112733Z unknown: failed to resolve reference "mcr.microsoft.com/windows/servercore:ltsc2025": unexpected status from HEAD request to https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025: 403 Forbidden
+2026-05-16T13:32:37.7147298Z [33;1mWARNING: Build attempt 2 failed (exit code: 1). Retrying in 30 seconds...[0m
+2026-05-16T13:33:07.7456487Z Sending build context to Docker daemon   5.12kB
+2026-05-16T13:33:07.7456891Z 
+2026-05-16T13:33:07.7493194Z Step 1/13 : ARG WINDOWS_BASE_IMAGE=mcr.microsoft.com/windows/servercore
+2026-05-16T13:33:07.7496157Z Step 2/13 : ARG WINDOWS_BASE_IMAGE_TAG=ltsc2022
+2026-05-16T13:33:07.7498192Z Step 3/13 : ARG BUSYBOX_VERSION=FRP-5007-g82accfc19
+2026-05-16T13:33:07.7499669Z Step 4/13 : ARG BUSYBOX_SHA256SUM=2d6fff0b2de5c034c92990d696c0d85a677b8a75931fa1ec30694fbf1f1df5c9
+2026-05-16T13:33:07.7500632Z Step 5/13 : FROM ${WINDOWS_BASE_IMAGE}:${WINDOWS_BASE_IMAGE_TAG}
+2026-05-16T13:33:07.7986527Z unknown: failed to resolve reference "mcr.microsoft.com/windows/servercore:ltsc2025": unexpected status from HEAD request to https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025: 403 Forbidden
+2026-05-16T13:33:07.8024038Z [33;1mWARNING: Build attempt 3 failed (exit code: 1). Retrying in 45 seconds...[0m
+2026-05-16T13:33:52.8314637Z Sending build context to Docker daemon   5.12kB
+2026-05-16T13:33:52.8315086Z 
+2026-05-16T13:33:52.8347336Z Step 1/13 : ARG WINDOWS_BASE_IMAGE=mcr.microsoft.com/windows/servercore
+2026-05-16T13:33:52.8350890Z Step 2/13 : ARG WINDOWS_BASE_IMAGE_TAG=ltsc2022
+2026-05-16T13:33:52.8351409Z Step 3/13 : ARG BUSYBOX_VERSION=FRP-5007-g82accfc19
+2026-05-16T13:33:52.8353196Z Step 4/13 : ARG BUSYBOX_SHA256SUM=2d6fff0b2de5c034c92990d696c0d85a677b8a75931fa1ec30694fbf1f1df5c9
+2026-05-16T13:33:52.8353929Z Step 5/13 : FROM ${WINDOWS_BASE_IMAGE}:${WINDOWS_BASE_IMAGE_TAG}
+2026-05-16T13:33:52.8880606Z unknown: failed to resolve reference "mcr.microsoft.com/windows/servercore:ltsc2025": unexpected status from HEAD request to https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025: 403 Forbidden
+2026-05-16T13:33:52.8915829Z [33;1mWARNING: Build attempt 4 failed (exit code: 1). Retrying in 60 seconds...[0m
+2026-05-16T13:34:52.9188565Z Sending build context to Docker daemon   5.12kB
+2026-05-16T13:34:52.9189023Z 
+2026-05-16T13:34:52.9216329Z Step 1/13 : ARG WINDOWS_BASE_IMAGE=mcr.microsoft.com/windows/servercore
+2026-05-16T13:34:52.9219912Z Step 2/13 : ARG WINDOWS_BASE_IMAGE_TAG=ltsc2022
+2026-05-16T13:34:52.9220736Z Step 3/13 : ARG BUSYBOX_VERSION=FRP-5007-g82accfc19
+2026-05-16T13:34:52.9221424Z Step 4/13 : ARG BUSYBOX_SHA256SUM=2d6fff0b2de5c034c92990d696c0d85a677b8a75931fa1ec30694fbf1f1df5c9
+2026-05-16T13:34:52.9223356Z Step 5/13 : FROM ${WINDOWS_BASE_IMAGE}:${WINDOWS_BASE_IMAGE_TAG}
+2026-05-16T13:34:53.1905161Z unknown: failed to resolve reference "mcr.microsoft.com/windows/servercore:ltsc2025": unexpected status from HEAD request to https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025: 403 Forbidden
+2026-05-16T13:34:54.9027185Z [31;1mWrite-Error: [31;1mFailed to build contrib/busybox after 5 attempts[0m
+2026-05-16T13:34:54.9265177Z ##[error]Process completed with exit code 1.
+2026-05-16T13:34:54.9468068Z ##[group]Run $ErrorActionPreference = "SilentlyContinue"
+2026-05-16T13:34:54.9468729Z [36;1m$ErrorActionPreference = "SilentlyContinue"[0m
+2026-05-16T13:34:54.9469163Z [36;1mStop-Service -Force -Name docker[0m
+2026-05-16T13:34:54.9469540Z [36;1m$ErrorActionPreference = "Stop"[0m
+2026-05-16T13:34:54.9533679Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:34:54.9534068Z env:
+2026-05-16T13:34:54.9534305Z   GO_VERSION: 1.26.3
+2026-05-16T13:34:54.9534589Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:34:54.9534852Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:34:54.9535195Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:34:54.9535588Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:34:54.9536191Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:34:54.9536453Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:34:54.9536739Z   TEST_CTN_NAME: moby
+2026-05-16T13:34:54.9536994Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:34:54.9537312Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:34:54.9537574Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:34:54.9537817Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:34:54.9538121Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:34:54.9538403Z   GOTOOLCHAIN: local
+2026-05-16T13:34:54.9538732Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:34:54.9539176Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:34:54.9539754Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:34:54.9540202Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:54.9540700Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:34:54.9540973Z ##[endgroup]
+2026-05-16T13:34:55.6208722Z ##[group]Run Get-WinEvent -ea SilentlyContinue `
+2026-05-16T13:34:55.6209250Z [36;1mGet-WinEvent -ea SilentlyContinue `[0m
+2026-05-16T13:34:55.6209723Z [36;1m  -FilterHashtable @{ProviderName= "docker"; LogName = "application"} |[0m
+2026-05-16T13:34:55.6210287Z [36;1m    Sort-Object @{Expression="TimeCreated";Descending=$false} |[0m
+2026-05-16T13:34:55.6210916Z [36;1m    ForEach-Object {"$($_.TimeCreated.ToUniversalTime().ToString("o")) [$($_.LevelDisplayName)] $($_.Message)"} |[0m
+2026-05-16T13:34:55.6211522Z [36;1m    Tee-Object -file ".\bundles\daemon.log"[0m
+2026-05-16T13:34:55.6274050Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:34:55.6274451Z env:
+2026-05-16T13:34:55.6274682Z   GO_VERSION: 1.26.3
+2026-05-16T13:34:55.6274928Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:34:55.6275211Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:34:55.6275548Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:34:55.6275985Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:34:55.6276252Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:34:55.6276544Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:34:55.6276817Z   TEST_CTN_NAME: moby
+2026-05-16T13:34:55.6277071Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:34:55.6277295Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:34:55.6277563Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:34:55.6277849Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:34:55.6279746Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:34:55.6280054Z   GOTOOLCHAIN: local
+2026-05-16T13:34:55.6280397Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:34:55.6280757Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:34:55.6281091Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:34:55.6281532Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:55.6282012Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:34:55.6282286Z ##[endgroup]
+2026-05-16T13:34:56.6599098Z 2026-05-11T02:11:16.6901508Z [Information] Processing signal 'terminated'
+2026-05-16T13:34:56.6602718Z 2026-05-11T02:11:16.6928998Z [Information] Daemon shutdown complete
+2026-05-16T13:34:56.6607116Z 2026-05-11T02:11:16.6932095Z [Error] <nil>
+2026-05-16T13:34:56.6610319Z 2026-05-11T02:33:33.9822690Z [Information] Starting up
+2026-05-16T13:34:56.6614063Z 2026-05-11T02:33:34.1731389Z [Information] OTEL tracing is not configured, using no-op tracer provider
+2026-05-16T13:34:56.6616911Z 2026-05-11T02:33:34.3523938Z [Information] Windows default isolation mode: process
+2026-05-16T13:34:56.6619517Z 2026-05-11T02:33:34.5937107Z [Information] Loading containers: start.
+2026-05-16T13:34:56.6622294Z 2026-05-11T02:33:34.6321027Z [Information] [graphdriver] trying configured driver: windowsfilter
+2026-05-16T13:34:56.6624940Z 2026-05-11T02:33:34.8318990Z [Information] Restoring containers: start.
+2026-05-16T13:34:56.6630610Z 2026-05-11T02:33:34.9397325Z [Information] Restoring existing overlay networks from HNS into docker
+2026-05-16T13:34:56.6633178Z 2026-05-11T02:33:35.8712469Z [Information] Loading containers: done.
+2026-05-16T13:34:56.6636137Z 2026-05-11T02:33:35.8852389Z [Information] Docker daemon [commit=3b01d641 storage-driver=windowsfilter containerd-snapshotter=false version=29.1.5]
+2026-05-16T13:34:56.6638621Z 2026-05-11T02:33:35.8864747Z [Information] Initializing buildkit
+2026-05-16T13:34:56.6641354Z 2026-05-11T02:33:36.4252780Z [Information] Completed buildkit initialization
+2026-05-16T13:34:56.6643759Z 2026-05-11T02:33:36.5286531Z [Information] Daemon has completed initialization
+2026-05-16T13:34:56.6646298Z 2026-05-11T02:33:36.5289748Z [Information] API listen on //./pipe/docker_engine
+2026-05-16T13:34:56.6648776Z 2026-05-11T02:48:42.2935327Z [Information] Processing signal 'terminated'
+2026-05-16T13:34:56.6651581Z 2026-05-11T02:48:42.3203891Z [Information] Daemon shutdown complete
+2026-05-16T13:34:56.6653919Z 2026-05-11T02:48:42.3206882Z [Error] <nil>
+2026-05-16T13:34:56.6658750Z 2026-05-11T02:48:58.9018873Z [Information] Starting up
+2026-05-16T13:34:56.6659839Z 2026-05-11T02:48:58.9952622Z [Information] OTEL tracing is not configured, using no-op tracer provider
+2026-05-16T13:34:56.6662464Z 2026-05-11T02:48:59.0162692Z [Information] Windows default isolation mode: process
+2026-05-16T13:34:56.6665341Z 2026-05-11T02:48:59.0487218Z [Information] Loading containers: start.
+2026-05-16T13:34:56.6668161Z 2026-05-11T02:48:59.0493937Z [Information] [graphdriver] trying configured driver: windowsfilter
+2026-05-16T13:34:56.6671067Z 2026-05-11T02:48:59.0547597Z [Information] Restoring containers: start.
+2026-05-16T13:34:56.6673844Z 2026-05-11T02:48:59.0591753Z [Information] Restoring existing overlay networks from HNS into docker
+2026-05-16T13:34:56.6676188Z 2026-05-11T02:49:05.8275325Z [Information] Loading containers: done.
+2026-05-16T13:34:56.6679022Z 2026-05-11T02:49:05.8304966Z [Information] Docker daemon [version=29.1.5 commit=3b01d641 storage-driver=windowsfilter containerd-snapshotter=false]
+2026-05-16T13:34:56.6681549Z 2026-05-11T02:49:05.8316027Z [Information] Initializing buildkit
+2026-05-16T13:34:56.6684267Z 2026-05-11T02:49:05.8454386Z [Information] Completed buildkit initialization
+2026-05-16T13:34:56.6687109Z 2026-05-11T02:49:05.8561735Z [Information] Daemon has completed initialization
+2026-05-16T13:34:56.6690822Z 2026-05-11T02:49:05.8564131Z [Information] API listen on //./pipe/docker_engine
+2026-05-16T13:34:56.6694949Z 2026-05-11T02:49:19.6322042Z [Information] Processing signal 'terminated'
+2026-05-16T13:34:56.6697671Z 2026-05-11T02:49:19.6354365Z [Information] Daemon shutdown complete
+2026-05-16T13:34:56.6700357Z 2026-05-11T02:49:19.6356797Z [Error] <nil>
+2026-05-16T13:34:56.6703045Z 2026-05-16T13:25:20.0620451Z [Information] Starting up
+2026-05-16T13:34:56.6706390Z 2026-05-16T13:25:20.2809783Z [Information] OTEL tracing is not configured, using no-op tracer provider
+2026-05-16T13:34:56.6710180Z 2026-05-16T13:25:20.3497924Z [Information] Windows default isolation mode: process
+2026-05-16T13:34:56.6712919Z 2026-05-16T13:25:20.4293331Z [Information] Loading containers: start.
+2026-05-16T13:34:56.6715997Z 2026-05-16T13:25:20.4337893Z [Information] [graphdriver] trying configured driver: windowsfilter
+2026-05-16T13:34:56.6718729Z 2026-05-16T13:25:20.4804845Z [Information] Restoring containers: start.
+2026-05-16T13:34:56.6721774Z 2026-05-16T13:25:20.5136197Z [Information] Restoring existing overlay networks from HNS into docker
+2026-05-16T13:34:56.6724493Z 2026-05-16T13:25:23.5656316Z [Information] Loading containers: done.
+2026-05-16T13:34:56.6728688Z 2026-05-16T13:25:23.5710633Z [Information] Docker daemon [storage-driver=windowsfilter containerd-snapshotter=false version=29.1.5 commit=3b01d641]
+2026-05-16T13:34:56.6731519Z 2026-05-16T13:25:23.5749005Z [Information] Initializing buildkit
+2026-05-16T13:34:56.6734732Z 2026-05-16T13:25:23.7091993Z [Information] Completed buildkit initialization
+2026-05-16T13:34:56.6738123Z 2026-05-16T13:25:23.7770821Z [Information] Daemon has completed initialization
+2026-05-16T13:34:56.6740969Z 2026-05-16T13:25:23.7773623Z [Information] API listen on //./pipe/docker_engine
+2026-05-16T13:34:56.6743786Z 2026-05-16T13:32:10.2098765Z [Information] Daemon shutdown complete
+2026-05-16T13:34:56.6746393Z 2026-05-16T13:32:10.2101975Z [Error] <nil>
+2026-05-16T13:34:56.6749820Z 2026-05-16T13:32:12.0629587Z [Information] Starting up
+2026-05-16T13:34:56.6754263Z 2026-05-16T13:32:12.1321109Z [Information] debug: Listener created for HTTP on npipe (//./pipe/docker_engine)
+2026-05-16T13:34:56.6756894Z 2026-05-16T13:32:12.1324421Z [Information] containerd not running, starting managed containerd
+2026-05-16T13:34:56.6760800Z 2026-05-16T13:32:12.1325978Z [Information] debug: Local containerd daemon found. [module=libcontainerd daemon path=D:\a\moby\moby\out\containerd.exe]
+2026-05-16T13:34:56.6764424Z 2026-05-16T13:32:12.1340898Z [Information] debug: starting containerd binary [module=libcontainerd binary=D:\a\moby\moby\out\containerd.exe]
+2026-05-16T13:34:56.6769378Z 2026-05-16T13:32:12.1417243Z [Information] started new containerd.exe process [pid=7900 address=\\.\pipe\docker-containerd module=libcontainerd]
+2026-05-16T13:34:56.6770939Z 2026-05-16T13:32:12.1424061Z [Information] debug: created containerd monitoring client [module=libcontainerd address=\\.\pipe\docker-containerd]
+2026-05-16T13:34:56.6773694Z 2026-05-16T13:32:12.8952477Z [Information] debug: Service running
+2026-05-16T13:34:56.6776117Z 2026-05-16T13:32:12.8968728Z [Information] Windows default isolation mode: process
+2026-05-16T13:34:56.6778904Z 2026-05-16T13:32:12.8968876Z [Information] debug: Stackdump - waiting signal at Global\stackdump-9764
+2026-05-16T13:34:56.6781591Z 2026-05-16T13:32:12.9002936Z [Information] Creating a containerd client [timeout=1m0s address=\\.\pipe\docker-containerd]
+2026-05-16T13:34:56.6784001Z 2026-05-16T13:32:12.9019246Z [Information] debug: Using default logging driver json-file
+2026-05-16T13:34:56.6786487Z 2026-05-16T13:32:12.9028143Z [Information] debug: processing event stream [module=libcontainerd namespace=plugins.moby]
+2026-05-16T13:34:56.6789509Z 2026-05-16T13:32:12.9032232Z [Information] debug: No quota support for local volumes in C:\Users\runneradmin\AppData\Local\Temp\moby-root\volumes: Filesystem does not support, or has not enabled quotas
+2026-05-16T13:34:56.6791604Z 2026-05-16T13:32:12.9495511Z [Information] Loading containers: start.
+2026-05-16T13:34:56.6794716Z 2026-05-16T13:32:12.9500094Z [Information] NRI is disabled
+2026-05-16T13:34:56.6797395Z 2026-05-16T13:32:12.9501462Z [Information] Starting daemon with containerd snapshotter integration enabled
+2026-05-16T13:34:56.6800168Z 2026-05-16T13:32:12.9502901Z [Information] debug: remote introspection plugin filters [filters=[type=="io.containerd.snapshotter.v1"]]
+2026-05-16T13:34:56.6802444Z 2026-05-16T13:32:12.9785443Z [Information] Restoring containers: start.
+2026-05-16T13:34:56.6805065Z 2026-05-16T13:32:12.9787461Z [Information] debug: processing event stream [module=libcontainerd namespace=moby]
+2026-05-16T13:34:56.6807528Z 2026-05-16T13:32:12.9790268Z [Information] debug: Option DefaultDriver: nat
+2026-05-16T13:34:56.6810238Z 2026-05-16T13:32:12.9792656Z [Information] debug: Option DefaultNetwork: nat
+2026-05-16T13:34:56.6812591Z 2026-05-16T13:32:12.9793798Z [Information] debug: Network Control Plane MTU: 1500
+2026-05-16T13:34:56.6814948Z 2026-05-16T13:32:12.9868896Z [Information] Restoring existing overlay networks from HNS into docker
+2026-05-16T13:34:56.6817306Z 2026-05-16T13:32:12.9871277Z [Information] debug: [GET]=>[/networks/] Request : 
+2026-05-16T13:34:56.6832996Z 2026-05-16T13:32:12.9970601Z [Information] debug: Network Response : [{"ActivityId":"DD629111-0C7D-4626-9814-C2A4BABDE497","AdditionalParams":{},"CurrentEndpointCount":0,"Extensions":[{"Id":"E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A","IsEnabled":false,"Name":"Microsoft Windows Filtering Platform"},{"Id":"F74F241B-440F-4433-BB28-00F89EAD20D8","IsEnabled":false,"Name":"Microsoft Azure VFP Switch Extension"},{"Id":"430BDADD-BAB0-41AB-A369-94B67FA5BE0A","IsEnabled":true,"Name":"Microsoft NDIS Capture"}],"Flags":8,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115231083629},"ID":"8E3B817C-3D3F-44E1-9888-C4092061547B","IPv6":false,"LayeredOn":"74A91D9D-BF98-45BE-961D-BB844E28A34A","MacPools":[{"EndMacAddress":"00-15-5D-44-5F-FF","StartMacAddress":"00-15-5D-44-50-00"}],"MaxConcurrentEndpoints":0,"Name":"nat","NatName":"NAT77AD7656-80F3-410E-98B8-21D7B07D3388","Policies":[{"Type":"VLAN","VLAN":1}],"State":1,"Subnets":[{"AdditionalParams":{},"AddressPrefix":"172.27.144.0/20","Flags":0,"GatewayAddress":"172.27.144.1","Health":{"LastErrorCode":0,"LastUpdateTime":134234115231140997},"ID":"D9F1F8C1-A7F7-4B93-A91B-0D8B105BF82A","IpSubnets":[{"AdditionalParams":{},"Flags":3,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115231140997},"ID":"1FCE62BE-FEA5-4299-96E3-7DF6339CCF28","IpAddressPrefix":"172.27.144.0/20","ObjectType":6,"Policies":[],"State":0}],"ObjectType":5,"Policies":[],"State":0}],"SwitchGuid":"8E3B817C-3D3F-44E1-9888-C4092061547B","TotalEndpoints":0,"Type":"nat","Version":68719476736,"Resources":{"AdditionalParams":{},"AllocationOrder":2,"Allocators":[{"AdapterNetCfgInstanceId":"{77AD7656-80F3-410E-98B8-21D7B07D3388}","AdditionalParams":{},"AllocationOrder":0,"CompartmendId":0,"Connected":true,"DNSFirewallRules":true,"DeviceInstanceID":"","DevicelessNic":true,"DhcpDisabled":true,"EndpointNicGuid":"8E3B817C-3D3F-44E1-9888-C4092061547A","EndpointPortGuid":"8E3B817C-3D3F-44E1-9888-C4092061547A","Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115233191587},"ID":"295C3A1D-F864-41FE-A32B-AE81CB783E59","InterfaceGuid":"77AD7656-80F3-410E-98B8-21D7B07D3388","IsPolicy":false,"IsolationId":1,"MacAddress":"00-15-5D-44-5A-66","ManagementPort":true,"NcfHidden":false,"NetworkId":"8E3B817C-3D3F-44E1-9888-C4092061547B","NicFriendlyName":"nat","NlmHidden":true,"PortFriendlyNamePrefix":"Host Vnic","PreferredPortFriendlyName":"Host Vnic 8E3B817C-3D3F-44E1-9888-C4092061547B","State":3,"SwitchId":"8E3B817C-3D3F-44E1-9888-C4092061547B","Tag":"Host Vnic","VmPort":false,"WaitForIpv6Interface":false,"nonPersistentPort":false},{"AdditionalParams":{},"AllocationOrder":1,"Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115235082215,"NATState":2},"ID":"3C41433F-F3B1-45D1-A7FA-2C3A37D7F88D","IsPolicy":false,"Prefix":20,"PrivateInterfaceGUID":"77AD7656-80F3-410E-98B8-21D7B07D3388","State":3,"SubnetIPAddress":"172.27.144.0","Tag":"NAT"}],"CompartmentOperationTime":0,"Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115233176577},"ID":"DD629111-0C7D-4626-9814-C2A4BABDE497","PortOperationTime":0,"State":1,"SwitchOperationTime":0,"VfpOperationTime":0,"parentId":"13405D27-D35A-4BA8-8ECA-F056F4362A26"}}]
+2026-05-16T13:34:56.6846596Z 2026-05-16T13:32:12.9979667Z [Information] debug: [GET]=>[/networks/] Request : 
+2026-05-16T13:34:56.6861278Z 2026-05-16T13:32:13.0024510Z [Information] debug: Network Response : [{"ActivityId":"DD629111-0C7D-4626-9814-C2A4BABDE497","AdditionalParams":{},"CurrentEndpointCount":0,"Extensions":[{"Id":"E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A","IsEnabled":false,"Name":"Microsoft Windows Filtering Platform"},{"Id":"F74F241B-440F-4433-BB28-00F89EAD20D8","IsEnabled":false,"Name":"Microsoft Azure VFP Switch Extension"},{"Id":"430BDADD-BAB0-41AB-A369-94B67FA5BE0A","IsEnabled":true,"Name":"Microsoft NDIS Capture"}],"Flags":8,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115231083629},"ID":"8E3B817C-3D3F-44E1-9888-C4092061547B","IPv6":false,"LayeredOn":"74A91D9D-BF98-45BE-961D-BB844E28A34A","MacPools":[{"EndMacAddress":"00-15-5D-44-5F-FF","StartMacAddress":"00-15-5D-44-50-00"}],"MaxConcurrentEndpoints":0,"Name":"nat","NatName":"NAT77AD7656-80F3-410E-98B8-21D7B07D3388","Policies":[{"Type":"VLAN","VLAN":1}],"State":1,"Subnets":[{"AdditionalParams":{},"AddressPrefix":"172.27.144.0/20","Flags":0,"GatewayAddress":"172.27.144.1","Health":{"LastErrorCode":0,"LastUpdateTime":134234115231140997},"ID":"D9F1F8C1-A7F7-4B93-A91B-0D8B105BF82A","IpSubnets":[{"AdditionalParams":{},"Flags":3,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115231140997},"ID":"1FCE62BE-FEA5-4299-96E3-7DF6339CCF28","IpAddressPrefix":"172.27.144.0/20","ObjectType":6,"Policies":[],"State":0}],"ObjectType":5,"Policies":[],"State":0}],"SwitchGuid":"8E3B817C-3D3F-44E1-9888-C4092061547B","TotalEndpoints":0,"Type":"nat","Version":68719476736,"Resources":{"AdditionalParams":{},"AllocationOrder":2,"Allocators":[{"AdapterNetCfgInstanceId":"{77AD7656-80F3-410E-98B8-21D7B07D3388}","AdditionalParams":{},"AllocationOrder":0,"CompartmendId":0,"Connected":true,"DNSFirewallRules":true,"DeviceInstanceID":"","DevicelessNic":true,"DhcpDisabled":true,"EndpointNicGuid":"8E3B817C-3D3F-44E1-9888-C4092061547A","EndpointPortGuid":"8E3B817C-3D3F-44E1-9888-C4092061547A","Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115233191587},"ID":"295C3A1D-F864-41FE-A32B-AE81CB783E59","InterfaceGuid":"77AD7656-80F3-410E-98B8-21D7B07D3388","IsPolicy":false,"IsolationId":1,"MacAddress":"00-15-5D-44-5A-66","ManagementPort":true,"NcfHidden":false,"NetworkId":"8E3B817C-3D3F-44E1-9888-C4092061547B","NicFriendlyName":"nat","NlmHidden":true,"PortFriendlyNamePrefix":"Host Vnic","PreferredPortFriendlyName":"Host Vnic 8E3B817C-3D3F-44E1-9888-C4092061547B","State":3,"SwitchId":"8E3B817C-3D3F-44E1-9888-C4092061547B","Tag":"Host Vnic","VmPort":false,"WaitForIpv6Interface":false,"nonPersistentPort":false},{"AdditionalParams":{},"AllocationOrder":1,"Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115235082215,"NATState":2},"ID":"3C41433F-F3B1-45D1-A7FA-2C3A37D7F88D","IsPolicy":false,"Prefix":20,"PrivateInterfaceGUID":"77AD7656-80F3-410E-98B8-21D7B07D3388","State":3,"SubnetIPAddress":"172.27.144.0","Tag":"NAT"}],"CompartmentOperationTime":0,"Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115233176577},"ID":"DD629111-0C7D-4626-9814-C2A4BABDE497","PortOperationTime":0,"State":1,"SwitchOperationTime":0,"VfpOperationTime":0,"parentId":"13405D27-D35A-4BA8-8ECA-F056F4362A26"}}]
+2026-05-16T13:34:56.6873915Z 2026-05-16T13:32:13.0029488Z [Information] debug: Launching DNS server for network "none"
+2026-05-16T13:34:56.6874718Z 2026-05-16T13:32:13.0033695Z [Information] debug: Allocating pools for network [network=nat nid=ed4cb08e98cc ipv6=false]
+2026-05-16T13:34:56.6875711Z 2026-05-16T13:32:13.0035886Z [Information] debug: RequestPool: {AddressSpace:LocalDefault Pool:172.27.144.0/20 SubPool: Options:map[] Exclude:[] V6:false}
+2026-05-16T13:34:56.6877105Z 2026-05-16T13:32:13.0038861Z [Information] debug: RequestAddress(172.27.144.0/20, 172.27.144.1, map[RequestAddressType:com.docker.network.gateway])
+2026-05-16T13:34:56.6877884Z 2026-05-16T13:32:13.0040616Z [Information] debug: [GET]=>[/endpoints/] Request : 
+2026-05-16T13:34:56.6878696Z 2026-05-16T13:32:13.0206833Z [Information] debug: Launching DNS server for network "nat"
+2026-05-16T13:34:56.6879496Z 2026-05-16T13:32:13.0209988Z [Information] debug: [GET]=>[/networks/8E3B817C-3D3F-44E1-9888-C4092061547B] Request : 
+2026-05-16T13:34:56.6894525Z 2026-05-16T13:32:13.0260175Z [Information] debug: Network Response : {"ActivityId":"DD629111-0C7D-4626-9814-C2A4BABDE497","AdditionalParams":{},"CurrentEndpointCount":0,"Extensions":[{"Id":"E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A","IsEnabled":false,"Name":"Microsoft Windows Filtering Platform"},{"Id":"F74F241B-440F-4433-BB28-00F89EAD20D8","IsEnabled":false,"Name":"Microsoft Azure VFP Switch Extension"},{"Id":"430BDADD-BAB0-41AB-A369-94B67FA5BE0A","IsEnabled":true,"Name":"Microsoft NDIS Capture"}],"Flags":8,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115231083629},"ID":"8E3B817C-3D3F-44E1-9888-C4092061547B","IPv6":false,"LayeredOn":"74A91D9D-BF98-45BE-961D-BB844E28A34A","MacPools":[{"EndMacAddress":"00-15-5D-44-5F-FF","StartMacAddress":"00-15-5D-44-50-00"}],"MaxConcurrentEndpoints":0,"Name":"nat","NatName":"NAT77AD7656-80F3-410E-98B8-21D7B07D3388","Policies":[{"Type":"VLAN","VLAN":1}],"State":1,"Subnets":[{"AdditionalParams":{},"AddressPrefix":"172.27.144.0/20","Flags":0,"GatewayAddress":"172.27.144.1","Health":{"LastErrorCode":0,"LastUpdateTime":134234115231140997},"ID":"D9F1F8C1-A7F7-4B93-A91B-0D8B105BF82A","IpSubnets":[{"AdditionalParams":{},"Flags":3,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115231140997},"ID":"1FCE62BE-FEA5-4299-96E3-7DF6339CCF28","IpAddressPrefix":"172.27.144.0/20","ObjectType":6,"Policies":[],"State":0}],"ObjectType":5,"Policies":[],"State":0}],"SwitchGuid":"8E3B817C-3D3F-44E1-9888-C4092061547B","TotalEndpoints":0,"Type":"nat","Version":68719476736,"Resources":{"AdditionalParams":{},"AllocationOrder":2,"Allocators":[{"AdapterNetCfgInstanceId":"{77AD7656-80F3-410E-98B8-21D7B07D3388}","AdditionalParams":{},"AllocationOrder":0,"CompartmendId":0,"Connected":true,"DNSFirewallRules":true,"DeviceInstanceID":"","DevicelessNic":true,"DhcpDisabled":true,"EndpointNicGuid":"8E3B817C-3D3F-44E1-9888-C4092061547A","EndpointPortGuid":"8E3B817C-3D3F-44E1-9888-C4092061547A","Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115233191587},"ID":"295C3A1D-F864-41FE-A32B-AE81CB783E59","InterfaceGuid":"77AD7656-80F3-410E-98B8-21D7B07D3388","IsPolicy":false,"IsolationId":1,"MacAddress":"00-15-5D-44-5A-66","ManagementPort":true,"NcfHidden":false,"NetworkId":"8E3B817C-3D3F-44E1-9888-C4092061547B","NicFriendlyName":"nat","NlmHidden":true,"PortFriendlyNamePrefix":"Host Vnic","PreferredPortFriendlyName":"Host Vnic 8E3B817C-3D3F-44E1-9888-C4092061547B","State":3,"SwitchId":"8E3B817C-3D3F-44E1-9888-C4092061547B","Tag":"Host Vnic","VmPort":false,"WaitForIpv6Interface":false,"nonPersistentPort":false},{"AdditionalParams":{},"AllocationOrder":1,"Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115235082215,"NATState":2},"ID":"3C41433F-F3B1-45D1-A7FA-2C3A37D7F88D","IsPolicy":false,"Prefix":20,"PrivateInterfaceGUID":"77AD7656-80F3-410E-98B8-21D7B07D3388","State":3,"SubnetIPAddress":"172.27.144.0","Tag":"NAT"}],"CompartmentOperationTime":0,"Flags":0,"Health":{"LastErrorCode":0,"LastUpdateTime":134234115233176577},"ID":"DD629111-0C7D-4626-9814-C2A4BABDE497","PortOperationTime":0,"State":1,"SwitchOperationTime":0,"VfpOperationTime":0,"parentId":"13405D27-D35A-4BA8-8ECA-F056F4362A26"}}
+2026-05-16T13:34:56.6906978Z 2026-05-16T13:32:13.0264358Z [Information] debug: Binding a resolver on network nat gateway 172.27.144.1
+2026-05-16T13:34:56.6908010Z 2026-05-16T13:32:13.0282611Z [Information] debug: Resolver bound successfully for network nat
+2026-05-16T13:34:56.6908755Z 2026-05-16T13:32:13.0508832Z [Information] Loading containers: done.
+2026-05-16T13:34:56.6909892Z 2026-05-16T13:32:13.0527241Z [Information] Docker daemon [storage-driver=windows containerd-snapshotter=true version=0.0.0-dev commit=e74612bee5dc63c19b50acf2b91c47601d822348]
+2026-05-16T13:34:56.6910753Z 2026-05-16T13:32:13.0534340Z [Information] Initializing buildkit
+2026-05-16T13:34:56.6911450Z 2026-05-16T13:32:13.0809576Z [Warning] using null network as the default
+2026-05-16T13:34:56.6912418Z 2026-05-16T13:32:13.0813298Z [Information] debug: remote introspection plugin filters [filters=[type==io.containerd.runtime.v1 type==io.containerd.runtime.v2]]
+2026-05-16T13:34:56.6913210Z 2026-05-16T13:32:13.1723599Z [Information] Completed buildkit initialization
+2026-05-16T13:34:56.6914016Z 2026-05-16T13:32:13.1735577Z [Information] debug: Registering routers
+2026-05-16T13:34:56.6914735Z 2026-05-16T13:32:13.1738250Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/checkpoints]
+2026-05-16T13:34:56.6930366Z 2026-05-16T13:32:13.1741426Z [Information] debug: Registering route [path=/containers/{name:.*}/checkpoints method=POST]
+2026-05-16T13:34:56.6931909Z 2026-05-16T13:32:13.1744376Z [Information] debug: Registering route [method=DELETE path=/containers/{name}/checkpoints/{checkpoint}]
+2026-05-16T13:34:56.6933654Z 2026-05-16T13:32:13.1747234Z [Information] debug: Registering route [method=HEAD path=/containers/{name:.*}/archive]
+2026-05-16T13:34:56.6935446Z 2026-05-16T13:32:13.1749240Z [Information] debug: Registering route [method=GET path=/containers/json]
+2026-05-16T13:34:56.6936690Z 2026-05-16T13:32:13.1751400Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/export]
+2026-05-16T13:34:56.6937975Z 2026-05-16T13:32:13.1753306Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/changes]
+2026-05-16T13:34:56.6939224Z 2026-05-16T13:32:13.1756164Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/json]
+2026-05-16T13:34:56.6940457Z 2026-05-16T13:32:13.1758198Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/top]
+2026-05-16T13:34:56.6941552Z 2026-05-16T13:32:13.1760672Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/logs]
+2026-05-16T13:34:56.6942337Z 2026-05-16T13:32:13.1762521Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/stats]
+2026-05-16T13:34:56.6943462Z 2026-05-16T13:32:13.1765349Z [Information] debug: Registering route [method=GET path=/containers/{name:.*}/attach/ws]
+2026-05-16T13:34:56.6944629Z 2026-05-16T13:32:13.1768032Z [Information] debug: Registering route [method=GET path=/exec/{id:.*}/json]
+2026-05-16T13:34:56.6945460Z 2026-05-16T13:32:13.1772114Z [Information] debug: Registering route [path=/containers/{name:.*}/archive method=GET]
+2026-05-16T13:34:56.6946564Z 2026-05-16T13:32:13.1774069Z [Information] debug: Registering route [method=POST path=/containers/create]
+2026-05-16T13:34:56.6947279Z 2026-05-16T13:32:13.1775865Z [Information] debug: Registering route [path=/containers/{name:.*}/kill method=POST]
+2026-05-16T13:34:56.6948355Z 2026-05-16T13:32:13.1778108Z [Information] debug: Registering route [path=/containers/{name:.*}/pause method=POST]
+2026-05-16T13:34:56.6949840Z 2026-05-16T13:32:13.1780073Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/unpause]
+2026-05-16T13:34:56.6950622Z 2026-05-16T13:32:13.1782694Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/restart]
+2026-05-16T13:34:56.6951580Z 2026-05-16T13:32:13.1784731Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/start]
+2026-05-16T13:34:56.6952563Z 2026-05-16T13:32:13.1786680Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/stop]
+2026-05-16T13:34:56.6953320Z 2026-05-16T13:32:13.1789373Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/wait]
+2026-05-16T13:34:56.6954536Z 2026-05-16T13:32:13.1791503Z [Information] debug: Registering route [path=/containers/{name:.*}/resize method=POST]
+2026-05-16T13:34:56.6955360Z 2026-05-16T13:32:13.1793591Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/attach]
+2026-05-16T13:34:56.6956120Z 2026-05-16T13:32:13.1795465Z [Information] debug: Registering route [path=/containers/{name:.*}/exec method=POST]
+2026-05-16T13:34:56.6957286Z 2026-05-16T13:32:13.1797852Z [Information] debug: Registering route [method=POST path=/exec/{name:.*}/start]
+2026-05-16T13:34:56.6958027Z 2026-05-16T13:32:13.1799531Z [Information] debug: Registering route [path=/exec/{name:.*}/resize method=POST]
+2026-05-16T13:34:56.6958796Z 2026-05-16T13:32:13.1801275Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/rename]
+2026-05-16T13:34:56.6960013Z 2026-05-16T13:32:13.1803956Z [Information] debug: Registering route [method=POST path=/containers/{name:.*}/update]
+2026-05-16T13:34:56.6960769Z 2026-05-16T13:32:13.1806226Z [Information] debug: Registering route [method=POST path=/containers/prune]
+2026-05-16T13:34:56.6961536Z 2026-05-16T13:32:13.1807927Z [Information] debug: Registering route [method=POST path=/commit]
+2026-05-16T13:34:56.6962567Z 2026-05-16T13:32:13.1810081Z [Information] debug: Registering route [method=PUT path=/containers/{name:.*}/archive]
+2026-05-16T13:34:56.6963350Z 2026-05-16T13:32:13.1811800Z [Information] debug: Registering route [method=DELETE path=/containers/{name:.*}]
+2026-05-16T13:34:56.6964054Z 2026-05-16T13:32:13.1813389Z [Information] debug: Registering route [method=GET path=/images/json]
+2026-05-16T13:34:56.6965230Z 2026-05-16T13:32:13.1814834Z [Information] debug: Registering route [method=GET path=/images/search]
+2026-05-16T13:34:56.6965996Z 2026-05-16T13:32:13.1816302Z [Information] debug: Registering route [method=GET path=/images/get]
+2026-05-16T13:34:56.6969031Z 2026-05-16T13:32:13.1817750Z [Information] debug: Registering route [method=GET path=/images/{name:.*}/get]
+2026-05-16T13:34:56.6971613Z 2026-05-16T13:32:13.1819656Z [Information] debug: Registering route [path=/images/{name:.*}/history method=GET]
+2026-05-16T13:34:56.6974262Z 2026-05-16T13:32:13.1821295Z [Information] debug: Registering route [method=GET path=/images/{name:.*}/json]
+2026-05-16T13:34:56.6976970Z 2026-05-16T13:32:13.1822766Z [Information] debug: Registering route [method=POST path=/images/load]
+2026-05-16T13:34:56.6979546Z 2026-05-16T13:32:13.1824265Z [Information] debug: Registering route [method=POST path=/images/create]
+2026-05-16T13:34:56.6982107Z 2026-05-16T13:32:13.1825800Z [Information] debug: Registering route [method=POST path=/images/{name:.*}/push]
+2026-05-16T13:34:56.6984771Z 2026-05-16T13:32:13.1827443Z [Information] debug: Registering route [method=POST path=/images/{name:.*}/tag]
+2026-05-16T13:34:56.6987014Z 2026-05-16T13:32:13.1829889Z [Information] debug: Registering route [method=POST path=/images/prune]
+2026-05-16T13:34:56.6989989Z 2026-05-16T13:32:13.1831412Z [Information] debug: Registering route [path=/images/{name:.*} method=DELETE]
+2026-05-16T13:34:56.6992262Z 2026-05-16T13:32:13.1833389Z [Information] debug: Registering route [path=/{anyroute:.*} method=OPTIONS]
+2026-05-16T13:34:56.6994520Z 2026-05-16T13:32:13.1835557Z [Information] debug: Registering route [method=GET path=/_ping]
+2026-05-16T13:34:56.6997040Z 2026-05-16T13:32:13.1838827Z [Information] debug: Registering route [path=/_ping method=HEAD]
+2026-05-16T13:34:56.6999331Z 2026-05-16T13:32:13.1841131Z [Information] debug: Registering route [method=GET path=/events]
+2026-05-16T13:34:56.7001569Z 2026-05-16T13:32:13.1843696Z [Information] debug: Registering route [path=/info method=GET]
+2026-05-16T13:34:56.7003831Z 2026-05-16T13:32:13.1846645Z [Information] debug: Registering route [method=GET path=/version]
+2026-05-16T13:34:56.7007756Z 2026-05-16T13:32:13.1848375Z [Information] debug: Registering route [path=/system/df method=GET]
+2026-05-16T13:34:56.7009045Z 2026-05-16T13:32:13.1850145Z [Information] debug: Registering route [method=POST path=/auth]
+2026-05-16T13:34:56.7011869Z 2026-05-16T13:32:13.1851613Z [Information] debug: Registering route [method=GET path=/volumes]
+2026-05-16T13:34:56.7014888Z 2026-05-16T13:32:13.1853211Z [Information] debug: Registering route [method=GET path=/volumes/{name:.*}]
+2026-05-16T13:34:56.7017922Z 2026-05-16T13:32:13.1857227Z [Information] debug: Registering route [method=POST path=/volumes/create]
+2026-05-16T13:34:56.7021176Z 2026-05-16T13:32:13.1859980Z [Information] debug: Registering route [method=POST path=/volumes/prune]
+2026-05-16T13:34:56.7025479Z 2026-05-16T13:32:13.1861856Z [Information] debug: Registering route [path=/volumes/{name:.*} method=PUT]
+2026-05-16T13:34:56.7029091Z 2026-05-16T13:32:13.1863779Z [Information] debug: Registering route [method=DELETE path=/volumes/{name:.*}]
+2026-05-16T13:34:56.7032292Z 2026-05-16T13:32:13.1865783Z [Information] debug: Registering route [path=/build method=POST]
+2026-05-16T13:34:56.7035212Z 2026-05-16T13:32:13.1867594Z [Information] debug: Registering route [method=POST path=/build/prune]
+2026-05-16T13:34:56.7038631Z 2026-05-16T13:32:13.1870444Z [Information] debug: Registering route [method=POST path=/build/cancel]
+2026-05-16T13:34:56.7041351Z 2026-05-16T13:32:13.1872290Z [Information] debug: Registering route [method=POST path=/session]
+2026-05-16T13:34:56.7044037Z 2026-05-16T13:32:13.1874635Z [Information] debug: Registering route [path=/swarm/init method=POST]
+2026-05-16T13:34:56.7046768Z 2026-05-16T13:32:13.1876441Z [Information] debug: Registering route [path=/swarm/join method=POST]
+2026-05-16T13:34:56.7050150Z 2026-05-16T13:32:13.1878854Z [Information] debug: Registering route [method=POST path=/swarm/leave]
+2026-05-16T13:34:56.7052805Z 2026-05-16T13:32:13.1880855Z [Information] debug: Registering route [method=GET path=/swarm]
+2026-05-16T13:34:56.7055768Z 2026-05-16T13:32:13.1882341Z [Information] debug: Registering route [method=GET path=/swarm/unlockkey]
+2026-05-16T13:34:56.7060223Z 2026-05-16T13:32:13.1884084Z [Information] debug: Registering route [method=POST path=/swarm/update]
+2026-05-16T13:34:56.7064390Z 2026-05-16T13:32:13.1885823Z [Information] debug: Registering route [path=/swarm/unlock method=POST]
+2026-05-16T13:34:56.7067286Z 2026-05-16T13:32:13.1887913Z [Information] debug: Registering route [method=GET path=/services]
+2026-05-16T13:34:56.7069815Z 2026-05-16T13:32:13.1890299Z [Information] debug: Registering route [method=GET path=/services/{id}]
+2026-05-16T13:34:56.7072415Z 2026-05-16T13:32:13.1892158Z [Information] debug: Registering route [method=POST path=/services/create]
+2026-05-16T13:34:56.7075486Z 2026-05-16T13:32:13.1893706Z [Information] debug: Registering route [method=POST path=/services/{id}/update]
+2026-05-16T13:34:56.7077851Z 2026-05-16T13:32:13.1895718Z [Information] debug: Registering route [method=DELETE path=/services/{id}]
+2026-05-16T13:34:56.7080776Z 2026-05-16T13:32:13.1897752Z [Information] debug: Registering route [method=GET path=/services/{id}/logs]
+2026-05-16T13:34:56.7083101Z 2026-05-16T13:32:13.1899782Z [Information] debug: Registering route [method=GET path=/nodes]
+2026-05-16T13:34:56.7086287Z 2026-05-16T13:32:13.1902908Z [Information] debug: Registering route [method=GET path=/nodes/{id}]
+2026-05-16T13:34:56.7089254Z 2026-05-16T13:32:13.1905058Z [Information] debug: Registering route [method=DELETE path=/nodes/{id}]
+2026-05-16T13:34:56.7092007Z 2026-05-16T13:32:13.1907125Z [Information] debug: Registering route [path=/nodes/{id}/update method=POST]
+2026-05-16T13:34:56.7094797Z 2026-05-16T13:32:13.1909357Z [Information] debug: Registering route [path=/tasks method=GET]
+2026-05-16T13:34:56.7097272Z 2026-05-16T13:32:13.1911094Z [Information] debug: Registering route [method=GET path=/tasks/{id}]
+2026-05-16T13:34:56.7100122Z 2026-05-16T13:32:13.1912914Z [Information] debug: Registering route [method=GET path=/tasks/{id}/logs]
+2026-05-16T13:34:56.7103210Z 2026-05-16T13:32:13.1915852Z [Information] debug: Registering route [method=GET path=/secrets]
+2026-05-16T13:34:56.7105056Z 2026-05-16T13:32:13.1917564Z [Information] debug: Registering route [method=POST path=/secrets/create]
+2026-05-16T13:34:56.7109067Z 2026-05-16T13:32:13.1919456Z [Information] debug: Registering route [method=DELETE path=/secrets/{id}]
+2026-05-16T13:34:56.7112240Z 2026-05-16T13:32:13.1921136Z [Information] debug: Registering route [method=GET path=/secrets/{id}]
+2026-05-16T13:34:56.7115174Z 2026-05-16T13:32:13.1922743Z [Information] debug: Registering route [method=POST path=/secrets/{id}/update]
+2026-05-16T13:34:56.7117517Z 2026-05-16T13:32:13.1924950Z [Information] debug: Registering route [path=/configs method=GET]
+2026-05-16T13:34:56.7120367Z 2026-05-16T13:32:13.1927521Z [Information] debug: Registering route [path=/configs/create method=POST]
+2026-05-16T13:34:56.7122733Z 2026-05-16T13:32:13.1929851Z [Information] debug: Registering route [path=/configs/{id} method=DELETE]
+2026-05-16T13:34:56.7125497Z 2026-05-16T13:32:13.1931856Z [Information] debug: Registering route [method=GET path=/configs/{id}]
+2026-05-16T13:34:56.7128686Z 2026-05-16T13:32:13.1933656Z [Information] debug: Registering route [method=POST path=/configs/{id}/update]
+2026-05-16T13:34:56.7131003Z 2026-05-16T13:32:13.1936407Z [Information] debug: Registering route [method=GET path=/plugins]
+2026-05-16T13:34:56.7134025Z 2026-05-16T13:32:13.1939136Z [Information] debug: Registering route [method=GET path=/plugins/{name:.*}/json]
+2026-05-16T13:34:56.7136342Z 2026-05-16T13:32:13.1941279Z [Information] debug: Registering route [method=GET path=/plugins/privileges]
+2026-05-16T13:34:56.7139113Z 2026-05-16T13:32:13.1943155Z [Information] debug: Registering route [method=DELETE path=/plugins/{name:.*}]
+2026-05-16T13:34:56.7141817Z 2026-05-16T13:32:13.1945802Z [Information] debug: Registering route [method=POST path=/plugins/{name:.*}/enable]
+2026-05-16T13:34:56.7144586Z 2026-05-16T13:32:13.1948755Z [Information] debug: Registering route [path=/plugins/{name:.*}/disable method=POST]
+2026-05-16T13:34:56.7147739Z 2026-05-16T13:32:13.1950866Z [Information] debug: Registering route [method=POST path=/plugins/pull]
+2026-05-16T13:34:56.7150422Z 2026-05-16T13:32:13.1952701Z [Information] debug: Registering route [method=POST path=/plugins/{name:.*}/push]
+2026-05-16T13:34:56.7153888Z 2026-05-16T13:32:13.1955958Z [Information] debug: Registering route [method=POST path=/plugins/{name:.*}/upgrade]
+2026-05-16T13:34:56.7157090Z 2026-05-16T13:32:13.1958284Z [Information] debug: Registering route [method=POST path=/plugins/{name:.*}/set]
+2026-05-16T13:34:56.7159393Z 2026-05-16T13:32:13.1961564Z [Information] debug: Registering route [method=POST path=/plugins/create]
+2026-05-16T13:34:56.7163450Z 2026-05-16T13:32:13.1963495Z [Information] debug: Registering route [method=GET path=/distribution/{name:.*}/json]
+2026-05-16T13:34:56.7164706Z 2026-05-16T13:32:13.1967706Z [Information] debug: Registering route [method=GET path=/networks]
+2026-05-16T13:34:56.7167701Z 2026-05-16T13:32:13.1970424Z [Information] debug: Registering route [method=GET path=/networks/]
+2026-05-16T13:34:56.7170561Z 2026-05-16T13:32:13.1972360Z [Information] debug: Registering route [method=GET path=/networks/{id:.+}]
+2026-05-16T13:34:56.7172866Z 2026-05-16T13:32:13.1975285Z [Information] debug: Registering route [method=POST path=/networks/create]
+2026-05-16T13:34:56.7175714Z 2026-05-16T13:32:13.1977321Z [Information] debug: Registering route [method=POST path=/networks/{id:.*}/connect]
+2026-05-16T13:34:56.7178083Z 2026-05-16T13:32:13.1980463Z [Information] debug: Registering route [method=POST path=/networks/{id:.*}/disconnect]
+2026-05-16T13:34:56.7180693Z 2026-05-16T13:32:13.1985057Z [Information] debug: Registering route [method=POST path=/networks/prune]
+2026-05-16T13:34:56.7183405Z 2026-05-16T13:32:13.1988909Z [Information] debug: Registering route [path=/networks/{id:.*} method=DELETE]
+2026-05-16T13:34:56.7186172Z 2026-05-16T13:32:13.1991885Z [Information] debug: Registering route [method=GET path=/debug/vars]
+2026-05-16T13:34:56.7188688Z 2026-05-16T13:32:13.1998499Z [Information] debug: Registering route [method=GET path=/debug/pprof/]
+2026-05-16T13:34:56.7191954Z 2026-05-16T13:32:13.2000600Z [Information] debug: Registering route [path=/debug/pprof/cmdline method=GET]
+2026-05-16T13:34:56.7194718Z 2026-05-16T13:32:13.2002342Z [Information] debug: Registering route [method=GET path=/debug/pprof/profile]
+2026-05-16T13:34:56.7197126Z 2026-05-16T13:32:13.2004169Z [Information] debug: Registering route [method=GET path=/debug/pprof/symbol]
+2026-05-16T13:34:56.7199863Z 2026-05-16T13:32:13.2007602Z [Information] debug: Registering route [method=GET path=/debug/pprof/trace]
+2026-05-16T13:34:56.7202487Z 2026-05-16T13:32:13.2009555Z [Information] debug: Registering route [method=GET path=/debug/pprof/{name}]
+2026-05-16T13:34:56.7204710Z 2026-05-16T13:32:13.2011207Z [Information] debug: Registering route [path=/grpc method=POST]
+2026-05-16T13:34:56.7207768Z 2026-05-16T13:32:13.2013309Z [Information] Daemon has completed initialization
+2026-05-16T13:34:56.7210513Z 2026-05-16T13:32:13.2014137Z [Information] debug: Config reload - waiting signal at Global\docker-daemon-config-9764
+2026-05-16T13:34:56.7213615Z 2026-05-16T13:32:13.2015050Z [Information] API listen on //./pipe/docker_engine
+2026-05-16T13:34:56.7216919Z 2026-05-16T13:32:13.6133553Z [Information] debug: handling HEAD request [module=api method=HEAD request-url=/_ping traceID=a418b98dc7ca4646c3ed83f89b949d13 spanID=e9a01316634979a6 vars=map[]]
+2026-05-16T13:34:56.7219186Z 2026-05-16T13:32:13.6144017Z [Information] debug: handling GET request [method=GET request-url=/v1.44/version vars=map[version:1.44] spanID=a1261325c6434fcb traceID=3073ed9a7644197999c856b8e1be1353 module=api]
+2026-05-16T13:34:56.7221564Z 2026-05-16T13:32:22.0193477Z [Information] debug: handling HEAD request [vars=map[] spanID=e4fad42ef99626d8 traceID=aa0573743776db71038057948fb0db52 module=api method=HEAD request-url=/_ping]
+2026-05-16T13:34:56.7224326Z 2026-05-16T13:32:22.0201234Z [Information] debug: handling GET request [request-url=/v1.44/info vars=map[version:1.44] traceID=ffc9b06208c096bc56fc6287e3e5d126 spanID=00bc9a3abd42cc68 module=api method=GET]
+2026-05-16T13:34:56.7226880Z 2026-05-16T13:32:22.4360757Z [Information] debug: handling HEAD request [module=api method=HEAD request-url=/_ping vars=map[] traceID=60d2797b91a1a253ba9984e4191af164 spanID=679ca0486e3346c5]
+2026-05-16T13:34:56.7232450Z 2026-05-16T13:32:22.4445907Z [Information] debug: handling POST request [module=api method=POST request-url=/v1.44/build?buildargs=%7B%22WINDOWS_BASE_IMAGE%22%3A%22mcr.microsoft.com%2Fwindows%2Fservercore%22%2C%22WINDOWS_BASE_IMAGE_TAG%22%3A%22ltsc2025%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=busybox&target=&ulimits=%5B%5D&version=1 vars=map[version:1.44] traceID=cd91169af4b92d85688ba34a10136246 spanID=4bd0095ccf343b0d]
+2026-05-16T13:34:56.7237004Z 2026-05-16T13:32:22.4674941Z [Information] debug: remote introspection plugin filters [traceID=cd91169af4b92d85688ba34a10136246 spanID=66e2e0ac150749bf filters=[type==io.containerd.snapshotter.v1, id==windows]]
+2026-05-16T13:34:56.7239119Z 2026-05-16T13:32:22.4684948Z [Information] debug: resolving [traceID=cd91169af4b92d85688ba34a10136246 spanID=041f9ab804cc8cf0 host=mcr.microsoft.com]
+2026-05-16T13:34:56.7244783Z 2026-05-16T13:32:22.4687092Z [Information] debug: do request [request.header.accept=application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */* request.header.user-agent=docker/0.0.0-dev go/go1.26.3 git-commit/e74612bee5dc63c19b50acf2b91c47601d822348 os/windows arch/amd64 containerd-client/2.2.3+unknown storage-driver/windows UpstreamClient(Docker-Client/25.0.5 \(windows\)) request.method=HEAD host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 traceID=cd91169af4b92d85688ba34a10136246 spanID=041f9ab804cc8cf0]
+2026-05-16T13:34:56.7252240Z 2026-05-16T13:32:22.5450475Z [Information] debug: fetch response received [traceID=cd91169af4b92d85688ba34a10136246 spanID=041f9ab804cc8cf0 host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 response.header.x-msedge-ref=Ref A: 999792B9B9A3482382D2077797BDA110 Ref B: BL2AA2011005062 Ref C: 2026-05-16T13:32:22Z response.header.date=Sat, 16 May 2026 13:32:21 GMT response.status=403 Forbidden]
+2026-05-16T13:34:56.7255874Z 2026-05-16T13:32:22.5454522Z [Information] fetch failed after status: 403 Forbidden [host=mcr.microsoft.com traceID=cd91169af4b92d85688ba34a10136246 spanID=041f9ab804cc8cf0]
+2026-05-16T13:34:56.7257892Z 2026-05-16T13:32:22.5459351Z [Information] debug: unable to unmarshal registry error [traceID=cd91169af4b92d85688ba34a10136246 spanID=4bd0095ccf343b0d error=unexpected end of JSON input]
+2026-05-16T13:34:56.7259981Z 2026-05-16T13:32:37.6544216Z [Information] debug: handling HEAD request [module=api method=HEAD request-url=/_ping vars=map[] spanID=f29b3cc12ca0174f traceID=30845b3ecbcfad839215eda7ce09663b]
+2026-05-16T13:34:56.7264237Z 2026-05-16T13:32:37.6608519Z [Information] debug: handling POST request [method=POST request-url=/v1.44/build?buildargs=%7B%22WINDOWS_BASE_IMAGE%22%3A%22mcr.microsoft.com%2Fwindows%2Fservercore%22%2C%22WINDOWS_BASE_IMAGE_TAG%22%3A%22ltsc2025%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=busybox&target=&ulimits=%5B%5D&version=1 vars=map[version:1.44] spanID=0e24d0487db5a624 traceID=88ed9b35eea1b3223723b1a9dccf927e module=api]
+2026-05-16T13:34:56.7269080Z 2026-05-16T13:32:37.6790739Z [Information] debug: remote introspection plugin filters [traceID=88ed9b35eea1b3223723b1a9dccf927e spanID=14c004a47cbc47ff filters=[type==io.containerd.snapshotter.v1, id==windows]]
+2026-05-16T13:34:56.7271243Z 2026-05-16T13:32:37.6799516Z [Information] debug: resolving [traceID=88ed9b35eea1b3223723b1a9dccf927e spanID=7f37759cadb47bec host=mcr.microsoft.com]
+2026-05-16T13:34:56.7276918Z 2026-05-16T13:32:37.6801705Z [Information] debug: do request [host=mcr.microsoft.com traceID=88ed9b35eea1b3223723b1a9dccf927e spanID=7f37759cadb47bec url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 request.method=HEAD request.header.user-agent=docker/0.0.0-dev go/go1.26.3 git-commit/e74612bee5dc63c19b50acf2b91c47601d822348 os/windows arch/amd64 containerd-client/2.2.3+unknown storage-driver/windows UpstreamClient(Docker-Client/25.0.5 \(windows\)) request.header.accept=application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*]
+2026-05-16T13:34:56.7284022Z 2026-05-16T13:32:37.6972560Z [Information] debug: fetch response received [spanID=7f37759cadb47bec url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 host=mcr.microsoft.com traceID=88ed9b35eea1b3223723b1a9dccf927e response.header.date=Sat, 16 May 2026 13:32:37 GMT response.status=403 Forbidden response.header.x-msedge-ref=Ref A: F7787649C4394549B2F218BDD65D509A Ref B: BL2AA2011004036 Ref C: 2026-05-16T13:32:37Z]
+2026-05-16T13:34:56.7288235Z 2026-05-16T13:32:37.6975480Z [Information] fetch failed after status: 403 Forbidden [traceID=88ed9b35eea1b3223723b1a9dccf927e spanID=7f37759cadb47bec host=mcr.microsoft.com]
+2026-05-16T13:34:56.7290326Z 2026-05-16T13:32:37.6979094Z [Information] debug: unable to unmarshal registry error [spanID=0e24d0487db5a624 error=unexpected end of JSON input traceID=88ed9b35eea1b3223723b1a9dccf927e]
+2026-05-16T13:34:56.7292547Z 2026-05-16T13:33:07.7374624Z [Information] debug: handling HEAD request [spanID=38ce59288ddca391 traceID=5612ad084b05ca4bd1a13a406dfa8616 module=api method=HEAD request-url=/_ping vars=map[]]
+2026-05-16T13:34:56.7297069Z 2026-05-16T13:33:07.7453638Z [Information] debug: handling POST request [vars=map[version:1.44] module=api method=POST traceID=7349167767583031450ee7872f9c0638 spanID=a683491caa479a8a request-url=/v1.44/build?buildargs=%7B%22WINDOWS_BASE_IMAGE%22%3A%22mcr.microsoft.com%2Fwindows%2Fservercore%22%2C%22WINDOWS_BASE_IMAGE_TAG%22%3A%22ltsc2025%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=busybox&target=&ulimits=%5B%5D&version=1]
+2026-05-16T13:34:56.7301567Z 2026-05-16T13:33:07.7640849Z [Information] debug: remote introspection plugin filters [traceID=7349167767583031450ee7872f9c0638 spanID=936c3937b67b5a46 filters=[type==io.containerd.snapshotter.v1, id==windows]]
+2026-05-16T13:34:56.7303642Z 2026-05-16T13:33:07.7649952Z [Information] debug: resolving [traceID=7349167767583031450ee7872f9c0638 spanID=c602888a0e506490 host=mcr.microsoft.com]
+2026-05-16T13:34:56.7309244Z 2026-05-16T13:33:07.7652075Z [Information] debug: do request [request.header.user-agent=docker/0.0.0-dev go/go1.26.3 git-commit/e74612bee5dc63c19b50acf2b91c47601d822348 os/windows arch/amd64 containerd-client/2.2.3+unknown storage-driver/windows UpstreamClient(Docker-Client/25.0.5 \(windows\)) request.header.accept=application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */* traceID=7349167767583031450ee7872f9c0638 spanID=c602888a0e506490 host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 request.method=HEAD]
+2026-05-16T13:34:56.7316192Z 2026-05-16T13:33:07.7852300Z [Information] debug: fetch response received [response.status=403 Forbidden response.header.x-msedge-ref=Ref A: 9330A09EEC9E42E8BCA130836ACB5596 Ref B: BL2AA2011002040 Ref C: 2026-05-16T13:33:07Z response.header.date=Sat, 16 May 2026 13:33:06 GMT traceID=7349167767583031450ee7872f9c0638 spanID=c602888a0e506490 host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025]
+2026-05-16T13:34:56.7319628Z 2026-05-16T13:33:07.7856224Z [Information] fetch failed after status: 403 Forbidden [host=mcr.microsoft.com traceID=7349167767583031450ee7872f9c0638 spanID=c602888a0e506490]
+2026-05-16T13:34:56.7321775Z 2026-05-16T13:33:07.7860140Z [Information] debug: unable to unmarshal registry error [spanID=a683491caa479a8a error=unexpected end of JSON input traceID=7349167767583031450ee7872f9c0638]
+2026-05-16T13:34:56.7324653Z 2026-05-16T13:33:52.8240840Z [Information] debug: handling HEAD request [module=api method=HEAD request-url=/_ping traceID=2ff53c7879149938ded027af30004c98 spanID=9c9c8c45091410fe vars=map[]]
+2026-05-16T13:34:56.7329148Z 2026-05-16T13:33:52.8309381Z [Information] debug: handling POST request [request-url=/v1.44/build?buildargs=%7B%22WINDOWS_BASE_IMAGE%22%3A%22mcr.microsoft.com%2Fwindows%2Fservercore%22%2C%22WINDOWS_BASE_IMAGE_TAG%22%3A%22ltsc2025%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=busybox&target=&ulimits=%5B%5D&version=1 vars=map[version:1.44] traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8 spanID=a6dbd5f4125b66a5 module=api method=POST]
+2026-05-16T13:34:56.7333983Z 2026-05-16T13:33:52.8519168Z [Information] debug: remote introspection plugin filters [traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8 spanID=98563381c944c683 filters=[type==io.containerd.snapshotter.v1, id==windows]]
+2026-05-16T13:34:56.7336144Z 2026-05-16T13:33:52.8528543Z [Information] debug: resolving [host=mcr.microsoft.com spanID=ca4ed30165d4a1e4 traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8]
+2026-05-16T13:34:56.7343073Z 2026-05-16T13:33:52.8530435Z [Information] debug: do request [spanID=ca4ed30165d4a1e4 request.method=HEAD request.header.user-agent=docker/0.0.0-dev go/go1.26.3 git-commit/e74612bee5dc63c19b50acf2b91c47601d822348 os/windows arch/amd64 containerd-client/2.2.3+unknown storage-driver/windows UpstreamClient(Docker-Client/25.0.5 \(windows\)) request.header.accept=application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */* traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8 host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025]
+2026-05-16T13:34:56.7350409Z 2026-05-16T13:33:52.8743061Z [Information] debug: fetch response received [traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8 host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 response.status=403 Forbidden response.header.x-msedge-ref=Ref A: 8C4585C1663B4CBA835D6CA79F1E6F2E Ref B: BL2AA2011005060 Ref C: 2026-05-16T13:33:52Z response.header.date=Sat, 16 May 2026 13:33:51 GMT spanID=ca4ed30165d4a1e4]
+2026-05-16T13:34:56.7353986Z 2026-05-16T13:33:52.8746869Z [Information] fetch failed after status: 403 Forbidden [host=mcr.microsoft.com spanID=ca4ed30165d4a1e4 traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8]
+2026-05-16T13:34:56.7356086Z 2026-05-16T13:33:52.8750819Z [Information] debug: unable to unmarshal registry error [traceID=d00689d5e5ddbc06d0f8436fcbc3e3f8 spanID=a6dbd5f4125b66a5 error=unexpected end of JSON input]
+2026-05-16T13:34:56.7358291Z 2026-05-16T13:34:52.9115848Z [Information] debug: handling HEAD request [module=api method=HEAD request-url=/_ping vars=map[] traceID=0378fa7b7be0b14acb668615374f234a spanID=2c1e5aea0db95728]
+2026-05-16T13:34:56.7362808Z 2026-05-16T13:34:52.9184430Z [Information] debug: handling POST request [traceID=6fc10519a83b3bb19bba22f437eced3d spanID=6d7ca0f2846c96c6 module=api method=POST request-url=/v1.44/build?buildargs=%7B%22WINDOWS_BASE_IMAGE%22%3A%22mcr.microsoft.com%2Fwindows%2Fservercore%22%2C%22WINDOWS_BASE_IMAGE_TAG%22%3A%22ltsc2025%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=busybox&target=&ulimits=%5B%5D&version=1 vars=map[version:1.44]]
+2026-05-16T13:34:56.7367775Z 2026-05-16T13:34:53.1536099Z [Information] debug: remote introspection plugin filters [spanID=3800db53bfb3cc4c traceID=6fc10519a83b3bb19bba22f437eced3d filters=[type==io.containerd.snapshotter.v1, id==windows]]
+2026-05-16T13:34:56.7369950Z 2026-05-16T13:34:53.1545373Z [Information] debug: resolving [spanID=747c5c3bfa39a4d2 host=mcr.microsoft.com traceID=6fc10519a83b3bb19bba22f437eced3d]
+2026-05-16T13:34:56.7375621Z 2026-05-16T13:34:53.1547990Z [Information] debug: do request [host=mcr.microsoft.com url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 traceID=6fc10519a83b3bb19bba22f437eced3d spanID=747c5c3bfa39a4d2 request.method=HEAD request.header.user-agent=docker/0.0.0-dev go/go1.26.3 git-commit/e74612bee5dc63c19b50acf2b91c47601d822348 os/windows arch/amd64 containerd-client/2.2.3+unknown storage-driver/windows UpstreamClient(Docker-Client/25.0.5 \(windows\)) request.header.accept=application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*]
+2026-05-16T13:34:56.7382717Z 2026-05-16T13:34:53.1747964Z [Information] debug: fetch response received [response.header.x-msedge-ref=Ref A: C0E42A9B3B1240139B5041F31DE16657 Ref B: BL2AA2011003054 Ref C: 2026-05-16T13:34:53Z response.header.date=Sat, 16 May 2026 13:34:52 GMT url=https://mcr.microsoft.com/v2/windows/servercore/manifests/ltsc2025 traceID=6fc10519a83b3bb19bba22f437eced3d spanID=747c5c3bfa39a4d2 host=mcr.microsoft.com response.status=403 Forbidden]
+2026-05-16T13:34:56.7391111Z 2026-05-16T13:34:53.1752312Z [Information] fetch failed after status: 403 Forbidden [traceID=6fc10519a83b3bb19bba22f437eced3d spanID=747c5c3bfa39a4d2 host=mcr.microsoft.com]
+2026-05-16T13:34:56.7393265Z 2026-05-16T13:34:53.1755867Z [Information] debug: unable to unmarshal registry error [spanID=6d7ca0f2846c96c6 error=unexpected end of JSON input traceID=6fc10519a83b3bb19bba22f437eced3d]
+2026-05-16T13:34:56.7394993Z 2026-05-16T13:34:55.2913390Z [Information] debug: daemon configured with a 15 seconds minimum shutdown timeout
+2026-05-16T13:34:56.7396281Z 2026-05-16T13:34:55.2917708Z [Information] debug: start clean shutdown of all containers with a 15 seconds timeout...
+2026-05-16T13:34:56.7397370Z 2026-05-16T13:34:55.2927835Z [Information] debug: Clean shutdown succeeded
+2026-05-16T13:34:56.7398628Z 2026-05-16T13:34:55.2930734Z [Information] stopping event stream following graceful shutdown [module=libcontainerd namespace=moby error=<nil>]
+2026-05-16T13:34:56.7400140Z 2026-05-16T13:34:55.2934147Z [Information] stopping healthcheck following graceful shutdown [module=libcontainerd]
+2026-05-16T13:34:56.7401828Z 2026-05-16T13:34:55.2936604Z [Information] stopping event stream following graceful shutdown [module=libcontainerd namespace=plugins.moby error=context canceled]
+2026-05-16T13:34:56.7403460Z 2026-05-16T13:34:55.3003809Z [Error] containerd did not exit successfully [module=libcontainerd error=exit status 1]
+2026-05-16T13:34:56.7404511Z 2026-05-16T13:34:55.3005964Z [Information] Daemon shutdown complete
+2026-05-16T13:34:56.7405738Z 2026-05-16T13:34:55.3008386Z [Error] <nil>
+2026-05-16T13:34:56.7406456Z 2026-05-16T13:34:55.3009296Z [Information] debug: Stopping service: <nil>
+2026-05-16T13:34:56.8333243Z ##[group]Run (Stop-Service -DisplayName "OpenTelemetry Collector" -PassThru).WaitForStatus('Stopped', (New-TimeSpan -Seconds 30))
+2026-05-16T13:34:56.8334377Z [36;1m(Stop-Service -DisplayName "OpenTelemetry Collector" -PassThru).WaitForStatus('Stopped', (New-TimeSpan -Seconds 30))[0m
+2026-05-16T13:34:56.8401807Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-16T13:34:56.8402159Z env:
+2026-05-16T13:34:56.8402329Z   GO_VERSION: 1.26.3
+2026-05-16T13:34:56.8402522Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:34:56.8402746Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:34:56.8403030Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:34:56.8403345Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:34:56.8403568Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:34:56.8403790Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:34:56.8404010Z   TEST_CTN_NAME: moby
+2026-05-16T13:34:56.8404188Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:34:56.8404402Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:34:56.8404599Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:34:56.8404809Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:34:56.8405022Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:34:56.8405225Z   GOTOOLCHAIN: local
+2026-05-16T13:34:56.8405571Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:34:56.8405948Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:34:56.8406567Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:34:56.8406975Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:56.8407455Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:34:56.8407727Z ##[endgroup]
+2026-05-16T13:34:57.3198414Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-05-16T13:34:57.3199102Z with:
+2026-05-16T13:34:57.3200083Z   name: windows-2025-snapshotter-integration-reports-containerd-f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:57.3201664Z   path: D:\a\moby\moby\go\src\github.com\docker\docker\bundles\*
+2026-05-16T13:34:57.3202204Z   retention-days: 1
+2026-05-16T13:34:57.3202571Z   if-no-files-found: warn
+2026-05-16T13:34:57.3202922Z   compression-level: 6
+2026-05-16T13:34:57.3203232Z   overwrite: false
+2026-05-16T13:34:57.3203537Z   include-hidden-files: false
+2026-05-16T13:34:57.3203887Z   archive: true
+2026-05-16T13:34:57.3204147Z env:
+2026-05-16T13:34:57.3204391Z   GO_VERSION: 1.26.3
+2026-05-16T13:34:57.3204691Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:34:57.3205041Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:34:57.3205485Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:34:57.3206022Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:34:57.3206380Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:34:57.3206714Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:34:57.3207015Z   TEST_CTN_NAME: moby
+2026-05-16T13:34:57.3207308Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:34:57.3207599Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:34:57.3207917Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:34:57.3208245Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:34:57.3208588Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:34:57.3208937Z   GOTOOLCHAIN: local
+2026-05-16T13:34:57.3209332Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:34:57.3209843Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:34:57.3210265Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:34:57.3210814Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:57.3211439Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:34:57.3211779Z ##[endgroup]
+2026-05-16T13:34:57.5330480Z With the provided path, there will be 3 files uploaded
+2026-05-16T13:34:57.5338463Z Artifact name is valid!
+2026-05-16T13:34:57.5340686Z Root directory input is valid!
+2026-05-16T13:34:57.6336021Z Uploading artifact: windows-2025-snapshotter-integration-reports-containerd-f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d.zip
+2026-05-16T13:34:57.6389295Z Beginning upload of artifact content to blob storage
+2026-05-16T13:34:57.7129021Z Uploaded bytes 27384
+2026-05-16T13:34:57.7261109Z Finished uploading artifact content to blob storage!
+2026-05-16T13:34:57.7262136Z SHA256 digest of uploaded artifact is cb8c9adecdad058e65edbc90474ce36646b311b8cd3def514cb5b2f82bba0458
+2026-05-16T13:34:57.7262895Z Finalizing artifact upload
+2026-05-16T13:34:57.8604233Z Artifact windows-2025-snapshotter-integration-reports-containerd-f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d successfully finalized. Artifact ID 7033778028
+2026-05-16T13:34:57.8606630Z Artifact windows-2025-snapshotter-integration-reports-containerd-f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d has been successfully uploaded! Final size is 27384 bytes. Artifact ID is 7033778028
+2026-05-16T13:34:57.8612958Z Artifact download URL: https://github.com/moby/moby/actions/runs/25962933981/artifacts/7033778028
+2026-05-16T13:34:57.8930604Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-05-16T13:34:57.8931170Z with:
+2026-05-16T13:34:57.8931873Z   name: test-results-integration-windows-2025-snapshotter-containerd-f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:57.8932779Z   path: D:\a\moby\moby\go\src\github.com\docker\docker\bundles\**\*go-test-report*.json
+2026-05-16T13:34:57.8933204Z   retention-days: 7
+2026-05-16T13:34:57.8933481Z   if-no-files-found: warn
+2026-05-16T13:34:57.8933762Z   compression-level: 6
+2026-05-16T13:34:57.8934023Z   overwrite: false
+2026-05-16T13:34:57.8934275Z   include-hidden-files: false
+2026-05-16T13:34:57.8934551Z   archive: true
+2026-05-16T13:34:57.8934762Z env:
+2026-05-16T13:34:57.8934992Z   GO_VERSION: 1.26.3
+2026-05-16T13:34:57.8935255Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-16T13:34:57.8936339Z   TESTSTAT_VERSION: v0.1.25
+2026-05-16T13:34:57.8936766Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-16T13:34:57.8937116Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-16T13:34:57.8937410Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-16T13:34:57.8937707Z   TEST_IMAGE_NAME: moby:test
+2026-05-16T13:34:57.8937999Z   TEST_CTN_NAME: moby
+2026-05-16T13:34:57.8938261Z   DOCKER_BUILDKIT: 0
+2026-05-16T13:34:57.8938495Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-16T13:34:57.8938769Z   GOPATH: D:\a\moby\moby\go
+2026-05-16T13:34:57.8939062Z   GOBIN: D:\a\moby\moby\go\bin
+2026-05-16T13:34:57.8939350Z   BIN_OUT: D:\a\moby\moby\out
+2026-05-16T13:34:57.8939636Z   GOTOOLCHAIN: local
+2026-05-16T13:34:57.8939954Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://127.0.0.1:4318
+2026-05-16T13:34:57.8940349Z   OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+2026-05-16T13:34:57.8940658Z   WINDOWS_BASE_IMAGE_TAG: ltsc2025
+2026-05-16T13:34:57.8941114Z   TESTREPORTS_NAME: f5d4c85ac59be2a37b578c1b647d3681bcf96f5c5f3261306b452bd725effd5d
+2026-05-16T13:34:57.8941690Z   DOCKER_WINDOWS_CONTAINERD_RUNTIME: 1
+2026-05-16T13:34:57.8942002Z ##[endgroup]
+2026-05-16T13:34:58.1051022Z ##[warning]No files were found with the provided path: D:\a\moby\moby\go\src\github.com\docker\docker\bundles\**\*go-test-report*.json. No artifacts will be uploaded.
+2026-05-16T13:34:58.1401305Z Post job cleanup.
+2026-05-16T13:34:58.3443323Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-16T13:34:58.3799299Z git version 2.54.0.windows.1
+2026-05-16T13:34:58.3884810Z Temporarily overriding HOME='D:\a\_temp\cf3b7359-bf5f-4489-ba32-eb101e21f1ee' before making global git config changes
+2026-05-16T13:34:58.3886070Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-16T13:34:58.3902609Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\moby\moby\go\src\github.com\docker\docker
+2026-05-16T13:34:58.4313538Z Removing SSH command configuration
+2026-05-16T13:34:58.4326086Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-16T13:34:58.4656212Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-16T13:34:59.0753864Z Removing HTTP extra header
+2026-05-16T13:34:59.0764858Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-16T13:34:59.1120022Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-16T13:34:59.7076919Z Removing includeIf entries pointing to credentials config files
+2026-05-16T13:34:59.7090534Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-16T13:34:59.7392630Z includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:34:59.7393497Z includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:34:59.7394346Z includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:34:59.7395150Z includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:34:59.7443238Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:34:59.7730279Z D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:34:59.7780557Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git.path D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:34:59.8201820Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:34:59.8521000Z D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:34:59.8587248Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/moby/moby/go/src/github.com/docker/docker/.git/worktrees/*.path D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:34:59.8992584Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path
+2026-05-16T13:34:59.9294852Z /github/runner_temp/git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:34:59.9344228Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git.path /github/runner_temp/git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:34:59.9716085Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path
+2026-05-16T13:35:00.0030597Z /github/runner_temp/git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:35:00.0120925Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/go/src/github.com/docker/docker/.git/worktrees/*.path /github/runner_temp/git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config
+2026-05-16T13:35:00.0493054Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-16T13:35:00.6520513Z Removing credentials config 'D:\a\_temp\git-credentials-c9a47d79-2bd2-47cb-83a0-ae140f1d087d.config'
+2026-05-16T13:35:00.6745724Z Cleaning up orphan processes

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "registry-error:502",
+    "name": "Registry returned HTTP 502",
+    "category": "network",
+    "fields": {
+      "status": "502"
+    },
+    "evidence": [
+      {
+        "start_line": 215,
+        "end_line": 215
+      }
+    ]
+  }
+]

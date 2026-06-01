@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "docker-py-test:SwarmTest.test_init_swarm_with_ca_config",
+    "name": "docker-py test failed: SwarmTest.test_init_swarm_with_ca_config",
+    "category": "test",
+    "fields": {
+      "test_name": "SwarmTest.test_init_swarm_with_ca_config"
+    },
+    "evidence": [
+      {
+        "start_line": 3130,
+        "end_line": 3130
+      }
+    ]
+  }
+]

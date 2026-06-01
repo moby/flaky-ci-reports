@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "github-artifact-upload-failed:silent",
+    "name": "actions/upload-artifact: died before upload (no error logged)",
+    "category": "network",
+    "fields": {
+      "variant": "silent"
+    },
+    "evidence": [
+      {
+        "start_line": 1405,
+        "end_line": 1406
+      }
+    ]
+  }
+]

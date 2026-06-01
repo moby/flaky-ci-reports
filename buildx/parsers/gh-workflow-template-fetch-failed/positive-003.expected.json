@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "gh-workflow-template-fetch-failed:unknown",
+    "name": "GitHub workflow template fetch failed: cause not in log",
+    "category": "network",
+    "fields": {
+      "variant": "unknown"
+    },
+    "evidence": [
+      {
+        "start_line": 128,
+        "end_line": 128
+      }
+    ]
+  }
+]

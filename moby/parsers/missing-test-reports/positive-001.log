@@ -1,0 +1,184 @@
+﻿2026-05-19T20:52:42.0448038Z Current runner version: '2.334.0'
+2026-05-19T20:52:42.0471461Z ##[group]Runner Image Provisioner
+2026-05-19T20:52:42.0472266Z Hosted Compute Agent
+2026-05-19T20:52:42.0472939Z Version: 20260213.493
+2026-05-19T20:52:42.0473861Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-19T20:52:42.0474548Z Build Date: 2026-02-13T00:28:41Z
+2026-05-19T20:52:42.0475290Z Worker ID: {069c17f4-67cb-467f-b1b4-ac9427f0fc19}
+2026-05-19T20:52:42.0475986Z Azure Region: westus
+2026-05-19T20:52:42.0476501Z ##[endgroup]
+2026-05-19T20:52:42.0478025Z ##[group]Operating System
+2026-05-19T20:52:42.0478615Z Ubuntu
+2026-05-19T20:52:42.0479099Z 24.04.4
+2026-05-19T20:52:42.0479570Z LTS
+2026-05-19T20:52:42.0480062Z ##[endgroup]
+2026-05-19T20:52:42.0480545Z ##[group]Runner Image
+2026-05-19T20:52:42.0481164Z Image: ubuntu-24.04
+2026-05-19T20:52:42.0481700Z Version: 20260513.135.3
+2026-05-19T20:52:42.0482865Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260513.135/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-19T20:52:42.0484749Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260513.135
+2026-05-19T20:52:42.0485756Z ##[endgroup]
+2026-05-19T20:52:42.0487124Z ##[group]GITHUB_TOKEN Permissions
+2026-05-19T20:52:42.0488938Z Contents: read
+2026-05-19T20:52:42.0489448Z Metadata: read
+2026-05-19T20:52:42.0490072Z ##[endgroup]
+2026-05-19T20:52:42.0492155Z Secret source: Actions
+2026-05-19T20:52:42.0492896Z Prepare workflow directory
+2026-05-19T20:52:42.0887064Z Prepare all required actions
+2026-05-19T20:52:42.0944314Z Getting action download info
+2026-05-19T20:52:42.6090566Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-05-19T20:52:43.2514308Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2026-05-19T20:52:43.7874495Z Uses: moby/moby/.github/workflows/.windows.yml@refs/heads/25.0 (f930df54d23cf0ab4263c5dd3cbcb6e415f6af66)
+2026-05-19T20:52:43.7880451Z ##[group] Inputs
+2026-05-19T20:52:43.7881456Z   os: windows-2025
+2026-05-19T20:52:43.7882382Z   storage: graphdriver
+2026-05-19T20:52:43.7883992Z   send_coverage: false
+2026-05-19T20:52:43.7884984Z ##[endgroup]
+2026-05-19T20:52:43.7886467Z Complete job name: run (graphdriver) / integration-test-report (graphdriver, builtin)
+2026-05-19T20:52:43.8713663Z ##[group]Run actions/setup-go@v5
+2026-05-19T20:52:43.8715123Z with:
+2026-05-19T20:52:43.8715869Z   go-version: 1.26.3
+2026-05-19T20:52:43.8716721Z   check-latest: false
+2026-05-19T20:52:43.8717888Z   token: ***
+2026-05-19T20:52:43.8718648Z   cache: true
+2026-05-19T20:52:43.8719643Z env:
+2026-05-19T20:52:43.8720391Z   GO_VERSION: 1.26.3
+2026-05-19T20:52:43.8721253Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-19T20:52:43.8722228Z   TESTSTAT_VERSION: v0.1.25
+2026-05-19T20:52:43.8723592Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-19T20:52:43.8724944Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-19T20:52:43.8726009Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-19T20:52:43.8727013Z   TEST_IMAGE_NAME: moby:test
+2026-05-19T20:52:43.8727980Z   TEST_CTN_NAME: moby
+2026-05-19T20:52:43.8728822Z   DOCKER_BUILDKIT: 0
+2026-05-19T20:52:43.8729669Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-19T20:52:43.8730533Z ##[endgroup]
+2026-05-19T20:52:44.0639446Z Setup go version spec 1.26.3
+2026-05-19T20:52:44.0657247Z Attempting to download 1.26.3...
+2026-05-19T20:52:44.8216616Z matching 1.26.3...
+2026-05-19T20:52:44.8245664Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-linux-x64.tar.gz
+2026-05-19T20:52:45.5534805Z Extracting Go...
+2026-05-19T20:52:45.5697249Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c7fa67d5-499d-4b4c-9476-fcf41903bdf4 -f /home/runner/work/_temp/46af8208-7bb0-473e-aa5e-53743e8b3d56
+2026-05-19T20:52:47.2308896Z Successfully extracted go to /home/runner/work/_temp/c7fa67d5-499d-4b4c-9476-fcf41903bdf4
+2026-05-19T20:52:47.2309921Z Adding to the cache ...
+2026-05-19T20:52:52.5704702Z Successfully cached go to /opt/hostedtoolcache/go/1.26.3/x64
+2026-05-19T20:52:52.5713972Z Added go to the path
+2026-05-19T20:52:52.5715000Z Successfully set up Go version 1.26.3
+2026-05-19T20:52:52.5920980Z [command]/opt/hostedtoolcache/go/1.26.3/x64/bin/go env GOMODCACHE
+2026-05-19T20:52:52.5955744Z [command]/opt/hostedtoolcache/go/1.26.3/x64/bin/go env GOCACHE
+2026-05-19T20:52:52.5984037Z /home/runner/go/pkg/mod
+2026-05-19T20:52:52.6001985Z /home/runner/.cache/go-build
+2026-05-19T20:52:52.6033932Z ##[warning]Restore cache failed: Dependencies file is not found in /home/runner/work/moby/moby. Supported file pattern: go.sum
+2026-05-19T20:52:52.6171752Z go version go1.26.3 linux/amd64
+2026-05-19T20:52:52.6172104Z 
+2026-05-19T20:52:52.6173821Z ##[group]go env
+2026-05-19T20:52:53.3832718Z AR='ar'
+2026-05-19T20:52:53.3834036Z CC='gcc'
+2026-05-19T20:52:53.3835820Z CGO_CFLAGS='-O2 -g'
+2026-05-19T20:52:53.3836306Z CGO_CPPFLAGS=''
+2026-05-19T20:52:53.3836814Z CGO_CXXFLAGS='-O2 -g'
+2026-05-19T20:52:53.3837344Z CGO_ENABLED='1'
+2026-05-19T20:52:53.3837865Z CGO_FFLAGS='-O2 -g'
+2026-05-19T20:52:53.3838424Z CGO_LDFLAGS='-O2 -g'
+2026-05-19T20:52:53.3839023Z CXX='g++'
+2026-05-19T20:52:53.3839420Z GCCGO='gccgo'
+2026-05-19T20:52:53.3839778Z GO111MODULE=''
+2026-05-19T20:52:53.3840165Z GOAMD64='v1'
+2026-05-19T20:52:53.3840556Z GOARCH='amd64'
+2026-05-19T20:52:53.3840975Z GOAUTH='netrc'
+2026-05-19T20:52:53.3841372Z GOBIN=''
+2026-05-19T20:52:53.3841845Z GOCACHE='/home/runner/.cache/go-build'
+2026-05-19T20:52:53.3842775Z GOCACHEPROG=''
+2026-05-19T20:52:53.3843663Z GODEBUG=''
+2026-05-19T20:52:53.3844450Z GOENV='/home/runner/.config/go/env'
+2026-05-19T20:52:53.3845201Z GOEXE=''
+2026-05-19T20:52:53.3845501Z GOEXPERIMENT=''
+2026-05-19T20:52:53.3845816Z GOFIPS140='off'
+2026-05-19T20:52:53.3846135Z GOFLAGS=''
+2026-05-19T20:52:53.3847308Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2341109270=/tmp/go-build -gno-record-gcc-switches'
+2026-05-19T20:52:53.3848478Z GOHOSTARCH='amd64'
+2026-05-19T20:52:53.3848831Z GOHOSTOS='linux'
+2026-05-19T20:52:53.3849148Z GOINSECURE=''
+2026-05-19T20:52:53.3849470Z GOMOD='/dev/null'
+2026-05-19T20:52:53.3849844Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-05-19T20:52:53.3850336Z GONOPROXY=''
+2026-05-19T20:52:53.3850645Z GONOSUMDB=''
+2026-05-19T20:52:53.3851286Z GOOS='linux'
+2026-05-19T20:52:53.3851634Z GOPATH='/home/runner/go'
+2026-05-19T20:52:53.3852030Z GOPRIVATE=''
+2026-05-19T20:52:53.3852517Z GOPROXY='https://proxy.golang.org,direct'
+2026-05-19T20:52:53.3853049Z GOROOT='/opt/hostedtoolcache/go/1.26.3/x64'
+2026-05-19T20:52:53.3853787Z GOSUMDB='sum.golang.org'
+2026-05-19T20:52:53.3854161Z GOTELEMETRY='local'
+2026-05-19T20:52:53.3854613Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-05-19T20:52:53.3855110Z GOTMPDIR=''
+2026-05-19T20:52:53.3855392Z GOTOOLCHAIN='auto'
+2026-05-19T20:52:53.3855864Z GOTOOLDIR='/opt/hostedtoolcache/go/1.26.3/x64/pkg/tool/linux_amd64'
+2026-05-19T20:52:53.3856348Z GOVCS=''
+2026-05-19T20:52:53.3856605Z GOVERSION='go1.26.3'
+2026-05-19T20:52:53.3856996Z GOWORK=''
+2026-05-19T20:52:53.3857353Z PKG_CONFIG='pkg-config'
+2026-05-19T20:52:53.3857587Z 
+2026-05-19T20:52:53.3858481Z ##[endgroup]
+2026-05-19T20:52:53.4115723Z ##[group]Run actions/download-artifact@v4
+2026-05-19T20:52:53.4116037Z with:
+2026-05-19T20:52:53.4116234Z   path: /tmp/reports
+2026-05-19T20:52:53.4116570Z   pattern: windows-2025-graphdriver-integration-reports-builtin-*
+2026-05-19T20:52:53.4116942Z   merge-multiple: true
+2026-05-19T20:52:53.4117157Z   repository: moby/moby
+2026-05-19T20:52:53.4117358Z   run-id: 26124526000
+2026-05-19T20:52:53.4117549Z env:
+2026-05-19T20:52:53.4117709Z   GO_VERSION: 1.26.3
+2026-05-19T20:52:53.4117911Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-19T20:52:53.4118132Z   TESTSTAT_VERSION: v0.1.25
+2026-05-19T20:52:53.4118420Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-19T20:52:53.4118733Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-19T20:52:53.4118969Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-19T20:52:53.4119203Z   TEST_IMAGE_NAME: moby:test
+2026-05-19T20:52:53.4119599Z   TEST_CTN_NAME: moby
+2026-05-19T20:52:53.4119794Z   DOCKER_BUILDKIT: 0
+2026-05-19T20:52:53.4120027Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-19T20:52:53.4120232Z ##[endgroup]
+2026-05-19T20:52:53.9158414Z Found 0 artifact(s)
+2026-05-19T20:52:53.9159847Z Filtering artifacts by pattern 'windows-2025-graphdriver-integration-reports-builtin-*'
+2026-05-19T20:52:53.9176414Z Total of 0 artifact(s) downloaded
+2026-05-19T20:52:53.9184084Z Download artifact has finished successfully
+2026-05-19T20:52:53.9298031Z ##[group]Run go install github.com/vearutop/teststat@v0.1.25
+2026-05-19T20:52:53.9298731Z [36;1mgo install github.com/vearutop/teststat@v0.1.25[0m
+2026-05-19T20:52:53.9337189Z shell: /usr/bin/bash -e {0}
+2026-05-19T20:52:53.9337586Z env:
+2026-05-19T20:52:53.9337873Z   GO_VERSION: 1.26.3
+2026-05-19T20:52:53.9338149Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-19T20:52:53.9338567Z   TESTSTAT_VERSION: v0.1.25
+2026-05-19T20:52:53.9338936Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-19T20:52:53.9339379Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-19T20:52:53.9339821Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-19T20:52:53.9340138Z   TEST_IMAGE_NAME: moby:test
+2026-05-19T20:52:53.9340453Z   TEST_CTN_NAME: moby
+2026-05-19T20:52:53.9340779Z   DOCKER_BUILDKIT: 0
+2026-05-19T20:52:53.9341085Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-19T20:52:53.9341362Z ##[endgroup]
+2026-05-19T20:52:54.0048933Z go: downloading github.com/vearutop/teststat v0.1.25
+2026-05-19T20:52:54.1577375Z go: downloading github.com/bool64/dev v0.2.32
+2026-05-19T20:52:54.1591403Z go: downloading github.com/godogx/allure v0.2.3
+2026-05-19T20:52:54.1605318Z go: downloading github.com/google/uuid v1.4.0
+2026-05-19T20:52:54.1634016Z go: downloading github.com/vearutop/dynhist-go v1.2.2
+2026-05-19T20:53:06.1086330Z ##[group]Run find /tmp/reports -type f -name '*-go-test-report.json' -exec teststat -markdown {} \+ >> $GITHUB_STEP_SUMMARY
+2026-05-19T20:53:06.1087412Z [36;1mfind /tmp/reports -type f -name '*-go-test-report.json' -exec teststat -markdown {} \+ >> $GITHUB_STEP_SUMMARY[0m
+2026-05-19T20:53:06.1122346Z shell: /usr/bin/bash -e {0}
+2026-05-19T20:53:06.1122724Z env:
+2026-05-19T20:53:06.1123038Z   GO_VERSION: 1.26.3
+2026-05-19T20:53:06.1123599Z   GOTESTLIST_VERSION: v0.3.1
+2026-05-19T20:53:06.1124039Z   TESTSTAT_VERSION: v0.1.25
+2026-05-19T20:53:06.1124441Z   WINDOWS_BASE_IMAGE: mcr.microsoft.com/windows/servercore
+2026-05-19T20:53:06.1124917Z   WINDOWS_BASE_TAG_2022: ltsc2022
+2026-05-19T20:53:06.1125310Z   WINDOWS_BASE_TAG_2025: ltsc2025
+2026-05-19T20:53:06.1125652Z   TEST_IMAGE_NAME: moby:test
+2026-05-19T20:53:06.1125994Z   TEST_CTN_NAME: moby
+2026-05-19T20:53:06.1126289Z   DOCKER_BUILDKIT: 0
+2026-05-19T20:53:06.1126657Z   ITG_CLI_MATRIX_SIZE: 6
+2026-05-19T20:53:06.1127049Z ##[endgroup]
+2026-05-19T20:53:06.1285260Z find: ‘/tmp/reports’: No such file or directory
+2026-05-19T20:53:06.1288231Z ##[error]Process completed with exit code 1.
+2026-05-19T20:53:06.1352568Z Cleaning up orphan processes
+2026-05-19T20:53:06.1697677Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/download-artifact@v4, actions/setup-go@v5. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

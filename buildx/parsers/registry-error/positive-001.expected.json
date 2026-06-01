@@ -1,0 +1,22 @@
+[
+  {
+    "unique_key": "registry-error:auth.docker.io:502",
+    "name": "Registry auth.docker.io returned HTTP 502",
+    "category": "network",
+    "fields": {
+      "host": "auth.docker.io",
+      "operation": "POST",
+      "status": "502"
+    },
+    "tags": {
+      "host": "auth.docker.io",
+      "status": "502"
+    },
+    "evidence": [
+      {
+        "start_line": 1196,
+        "end_line": 1196
+      }
+    ]
+  }
+]

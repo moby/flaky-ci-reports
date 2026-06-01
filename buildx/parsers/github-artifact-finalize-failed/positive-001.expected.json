@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "github-artifact-finalize-failed:403",
+    "name": "actions/upload-artifact: FinalizeArtifact returned HTTP 403",
+    "category": "network",
+    "fields": {
+      "status": "403"
+    },
+    "evidence": [
+      {
+        "start_line": 5684,
+        "end_line": 5684
+      }
+    ]
+  }
+]

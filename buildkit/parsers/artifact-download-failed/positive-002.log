@@ -1,0 +1,979 @@
+﻿2026-05-15T17:27:59.0109345Z Current runner version: '2.334.0'
+2026-05-15T17:27:59.0134005Z ##[group]Runner Image Provisioner
+2026-05-15T17:27:59.0134739Z Hosted Compute Agent
+2026-05-15T17:27:59.0135197Z Version: 20260415.520
+2026-05-15T17:27:59.0135711Z Commit: af089020f5f67b61ccc91db6c07980876c02bf7b
+2026-05-15T17:27:59.0136285Z Build Date: 2026-04-15T18:07:08Z
+2026-05-15T17:27:59.0136907Z Worker ID: {4fafda00-6126-486d-aecc-197407c5bf05}
+2026-05-15T17:27:59.0137495Z Azure Region: westcentralus
+2026-05-15T17:27:59.0137988Z ##[endgroup]
+2026-05-15T17:27:59.0139248Z ##[group]Operating System
+2026-05-15T17:27:59.0139766Z Microsoft Windows Server 2022
+2026-05-15T17:27:59.0140246Z 10.0.20348
+2026-05-15T17:27:59.0140667Z Datacenter
+2026-05-15T17:27:59.0141051Z ##[endgroup]
+2026-05-15T17:27:59.0141434Z ##[group]Runner Image
+2026-05-15T17:27:59.0141899Z Image: windows-2022
+2026-05-15T17:27:59.0142309Z Version: 20260510.161.1
+2026-05-15T17:27:59.0143643Z Included Software: https://github.com/actions/runner-images/blob/win22/20260510.161/images/windows/Windows2022-Readme.md
+2026-05-15T17:27:59.0145065Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20260510.161
+2026-05-15T17:27:59.0145866Z ##[endgroup]
+2026-05-15T17:27:59.0146753Z ##[group]GITHUB_TOKEN Permissions
+2026-05-15T17:27:59.0148421Z Contents: read
+2026-05-15T17:27:59.0148875Z Metadata: read
+2026-05-15T17:27:59.0149305Z ##[endgroup]
+2026-05-15T17:27:59.0151228Z Secret source: None
+2026-05-15T17:27:59.0151822Z Prepare workflow directory
+2026-05-15T17:27:59.0593246Z Prepare all required actions
+2026-05-15T17:27:59.0629986Z Getting action download info
+2026-05-15T17:27:59.7036163Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-15T17:27:59.8034079Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-05-15T17:28:00.5678187Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-15T17:28:01.2915758Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-15T17:28:01.9393578Z Download action repository 'codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2' (SHA:57e3a136b779b570ffcdbf80b3bdc90e7fab3de2)
+2026-05-15T17:28:02.2997581Z Download action repository 'crazy-max/.github@9ba6e6f9450baf3b1237f8035c1fdc45932510bd' (SHA:9ba6e6f9450baf3b1237f8035c1fdc45932510bd)
+2026-05-15T17:28:02.6520139Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-05-15T17:28:02.8935314Z Getting action download info
+2026-05-15T17:28:03.0535350Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-05-15T17:28:03.6079268Z Getting action download info
+2026-05-15T17:28:03.7971877Z Complete job name: test-windows-amd64 (windows-2022, containerd, ./frontend/dockerfile#1-12)
+2026-05-15T17:28:03.9765037Z ##[group]Run TESTPKG=$(echo "./frontend/dockerfile#1-12" | awk '-F#' '{print $1}')
+2026-05-15T17:28:03.9765826Z [36;1mTESTPKG=$(echo "./frontend/dockerfile#1-12" | awk '-F#' '{print $1}')[0m
+2026-05-15T17:28:03.9766310Z [36;1mecho "TESTPKG=$TESTPKG" >> $GITHUB_ENV[0m
+2026-05-15T17:28:03.9767161Z [36;1mecho "TEST_REPORT_NAME=test-windows-amd64-$(echo "./frontend/dockerfile#1-12--containerd" | tr -dc '[:alnum:]-\n\r' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV[0m
+2026-05-15T17:28:03.9767979Z [36;1mtestFlags="-v --timeout=60m"[0m
+2026-05-15T17:28:03.9768407Z [36;1mtestSlice=$(echo "./frontend/dockerfile#1-12" | awk '-F#' '{print $2}')[0m
+2026-05-15T17:28:03.9768860Z [36;1mtestSliceOffset=""[0m
+2026-05-15T17:28:03.9769122Z [36;1mif [ -n "$testSlice" ]; then[0m
+2026-05-15T17:28:03.9770910Z [36;1m  testSliceOffset="slice=$testSlice/"[0m
+2026-05-15T17:28:03.9771159Z [36;1mfi[0m
+2026-05-15T17:28:03.9771331Z [36;1mif [ -n "containerd" ]; then[0m
+2026-05-15T17:28:03.9771773Z [36;1m  testFlags="${testFlags} --run=TestIntegration/$testSliceOffset.*/worker=containerd"[0m
+2026-05-15T17:28:03.9772173Z [36;1mfi[0m
+2026-05-15T17:28:03.9772377Z [36;1mecho "TESTFLAGS=${testFlags}" >> $GITHUB_ENV[0m
+2026-05-15T17:28:03.9788189Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:03.9788831Z env:
+2026-05-15T17:28:03.9788985Z   GO_VERSION: 1.26
+2026-05-15T17:28:03.9789181Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:03.9789437Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:03.9789701Z   DESTDIR: ./bin
+2026-05-15T17:28:03.9789875Z   TESTFLAGS: -v --timeout=60m
+2026-05-15T17:28:03.9790095Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:03.9790309Z ##[endgroup]
+2026-05-15T17:28:04.8447148Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-15T17:28:04.8447600Z with:
+2026-05-15T17:28:04.8447769Z   repository: moby/buildkit
+2026-05-15T17:28:04.8448118Z   token: ***
+2026-05-15T17:28:04.8448282Z   ssh-strict: true
+2026-05-15T17:28:04.8448451Z   ssh-user: git
+2026-05-15T17:28:04.8448625Z   persist-credentials: true
+2026-05-15T17:28:04.8448817Z   clean: true
+2026-05-15T17:28:04.8448991Z   sparse-checkout-cone-mode: true
+2026-05-15T17:28:04.8449203Z   fetch-depth: 1
+2026-05-15T17:28:04.8449364Z   fetch-tags: false
+2026-05-15T17:28:04.8449533Z   show-progress: true
+2026-05-15T17:28:04.8449709Z   lfs: false
+2026-05-15T17:28:04.8449858Z   submodules: false
+2026-05-15T17:28:04.8450034Z   set-safe-directory: true
+2026-05-15T17:28:04.8450264Z env:
+2026-05-15T17:28:04.8450404Z   GO_VERSION: 1.26
+2026-05-15T17:28:04.8450577Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:04.8450802Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:04.8451070Z   DESTDIR: ./bin
+2026-05-15T17:28:04.8451388Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:04.8451764Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:04.8451995Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:04.8452320Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:04.8452677Z ##[endgroup]
+2026-05-15T17:28:04.9738566Z Syncing repository: moby/buildkit
+2026-05-15T17:28:04.9739756Z ##[group]Getting Git version info
+2026-05-15T17:28:04.9740064Z Working directory is 'D:\a\buildkit\buildkit'
+2026-05-15T17:28:05.0639066Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-15T17:28:05.3888908Z git version 2.54.0.windows.1
+2026-05-15T17:28:05.3932482Z ##[endgroup]
+2026-05-15T17:28:05.3949976Z Temporarily overriding HOME='D:\a\_temp\19a2f68f-3fa6-483d-9c1b-b1584fdf2f1d' before making global git config changes
+2026-05-15T17:28:05.3950757Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-15T17:28:05.3960972Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\buildkit\buildkit
+2026-05-15T17:28:05.4455560Z Deleting the contents of 'D:\a\buildkit\buildkit'
+2026-05-15T17:28:05.4460739Z ##[group]Initializing the repository
+2026-05-15T17:28:05.4469524Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\buildkit\buildkit
+2026-05-15T17:28:05.5154039Z Initialized empty Git repository in D:/a/buildkit/buildkit/.git/
+2026-05-15T17:28:05.5196485Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/moby/buildkit
+2026-05-15T17:28:05.5641895Z ##[endgroup]
+2026-05-15T17:28:05.5642324Z ##[group]Disabling automatic garbage collection
+2026-05-15T17:28:05.5656970Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-15T17:28:05.5942752Z ##[endgroup]
+2026-05-15T17:28:05.5943348Z ##[group]Setting up auth
+2026-05-15T17:28:05.5945043Z Removing SSH command configuration
+2026-05-15T17:28:05.5956462Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-15T17:28:05.6257428Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-15T17:28:06.6078181Z Removing HTTP extra header
+2026-05-15T17:28:06.6087354Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-15T17:28:06.6311190Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-15T17:28:07.1246825Z Removing includeIf entries pointing to credentials config files
+2026-05-15T17:28:07.1260808Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-15T17:28:07.1489386Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-15T17:28:07.5798573Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-15T17:28:07.6035132Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/buildkit/buildkit/.git.path D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:07.6263635Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:07.6528080Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:07.6759801Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:07.6982509Z ##[endgroup]
+2026-05-15T17:28:07.6982907Z ##[group]Fetching the repository
+2026-05-15T17:28:07.6996224Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +517dae7735b1ac18a8bb2b4f52d8df0eaca4b538:refs/remotes/pull/6776/merge
+2026-05-15T17:28:10.7210656Z From https://github.com/moby/buildkit
+2026-05-15T17:28:10.7211421Z  * [new ref]         517dae7735b1ac18a8bb2b4f52d8df0eaca4b538 -> pull/6776/merge
+2026-05-15T17:28:10.7535141Z ##[endgroup]
+2026-05-15T17:28:10.7535505Z ##[group]Determining the checkout info
+2026-05-15T17:28:10.7537155Z ##[endgroup]
+2026-05-15T17:28:10.7550984Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-15T17:28:10.7968139Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-15T17:28:10.8199870Z ##[group]Checking out the ref
+2026-05-15T17:28:10.8209589Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/6776/merge
+2026-05-15T17:28:11.8627132Z Updating files:  68% (5034/7334)
+2026-05-15T17:28:11.9212782Z Updating files:  69% (5061/7334)
+2026-05-15T17:28:11.9350867Z Updating files:  70% (5134/7334)
+2026-05-15T17:28:11.9493154Z Updating files:  71% (5208/7334)
+2026-05-15T17:28:11.9626007Z Updating files:  72% (5281/7334)
+2026-05-15T17:28:11.9764274Z Updating files:  73% (5354/7334)
+2026-05-15T17:28:11.9892066Z Updating files:  74% (5428/7334)
+2026-05-15T17:28:12.0031486Z Updating files:  75% (5501/7334)
+2026-05-15T17:28:12.0165879Z Updating files:  76% (5574/7334)
+2026-05-15T17:28:12.0292715Z Updating files:  77% (5648/7334)
+2026-05-15T17:28:12.0436440Z Updating files:  78% (5721/7334)
+2026-05-15T17:28:12.0579958Z Updating files:  79% (5794/7334)
+2026-05-15T17:28:12.0729887Z Updating files:  80% (5868/7334)
+2026-05-15T17:28:12.0864557Z Updating files:  81% (5941/7334)
+2026-05-15T17:28:12.1009993Z Updating files:  82% (6014/7334)
+2026-05-15T17:28:12.1188192Z Updating files:  83% (6088/7334)
+2026-05-15T17:28:12.1369443Z Updating files:  84% (6161/7334)
+2026-05-15T17:28:12.1537265Z Updating files:  85% (6234/7334)
+2026-05-15T17:28:12.1759849Z Updating files:  86% (6308/7334)
+2026-05-15T17:28:12.1884860Z Updating files:  87% (6381/7334)
+2026-05-15T17:28:12.1998195Z Updating files:  88% (6454/7334)
+2026-05-15T17:28:12.2123278Z Updating files:  89% (6528/7334)
+2026-05-15T17:28:12.2325623Z Updating files:  90% (6601/7334)
+2026-05-15T17:28:12.2506232Z Updating files:  91% (6674/7334)
+2026-05-15T17:28:12.2673905Z Updating files:  92% (6748/7334)
+2026-05-15T17:28:12.2925543Z Updating files:  93% (6821/7334)
+2026-05-15T17:28:12.3088933Z Updating files:  94% (6894/7334)
+2026-05-15T17:28:12.3244969Z Updating files:  95% (6968/7334)
+2026-05-15T17:28:12.3415102Z Updating files:  96% (7041/7334)
+2026-05-15T17:28:12.3562328Z Updating files:  97% (7114/7334)
+2026-05-15T17:28:12.3736122Z Updating files:  98% (7188/7334)
+2026-05-15T17:28:12.3877583Z Updating files:  99% (7261/7334)
+2026-05-15T17:28:12.3878098Z Updating files: 100% (7334/7334)
+2026-05-15T17:28:12.3878439Z Updating files: 100% (7334/7334), done.
+2026-05-15T17:28:12.4055831Z Note: switching to 'refs/remotes/pull/6776/merge'.
+2026-05-15T17:28:12.4056280Z 
+2026-05-15T17:28:12.4056658Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-15T17:28:12.4057578Z changes and commit them, and you can discard any commits you make in this
+2026-05-15T17:28:12.4058508Z state without impacting any branches by switching back to a branch.
+2026-05-15T17:28:12.4058979Z 
+2026-05-15T17:28:12.4059209Z If you want to create a new branch to retain commits you create, you may
+2026-05-15T17:28:12.4059739Z do so (now or later) by using -c with the switch command. Example:
+2026-05-15T17:28:12.4059986Z 
+2026-05-15T17:28:12.4060165Z   git switch -c <new-branch-name>
+2026-05-15T17:28:12.4060366Z 
+2026-05-15T17:28:12.4060464Z Or undo this operation with:
+2026-05-15T17:28:12.4060618Z 
+2026-05-15T17:28:12.4060731Z   git switch -
+2026-05-15T17:28:12.4060865Z 
+2026-05-15T17:28:12.4061102Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-15T17:28:12.4061462Z 
+2026-05-15T17:28:12.4061827Z HEAD is now at 517dae7 Merge aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f into 5779b27ab78ddf0cc525a2ff93984343738d5723
+2026-05-15T17:28:12.4172757Z ##[endgroup]
+2026-05-15T17:28:12.4506247Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-15T17:28:12.4711237Z 517dae7735b1ac18a8bb2b4f52d8df0eaca4b538
+2026-05-15T17:28:12.5017272Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-05-15T17:28:12.5017760Z with:
+2026-05-15T17:28:12.5018097Z   github-token: ***
+2026-05-15T17:28:12.5018269Z env:
+2026-05-15T17:28:12.5018408Z   GO_VERSION: 1.26
+2026-05-15T17:28:12.5018574Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:12.5018800Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:12.5019028Z   DESTDIR: ./bin
+2026-05-15T17:28:12.5019325Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:12.5019702Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:12.5019935Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:12.5020274Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:12.5020620Z ##[endgroup]
+2026-05-15T17:28:12.6007476Z ACTIONS_CACHE_SERVICE_V2=True
+2026-05-15T17:28:12.6015943Z ACTIONS_CACHE_URL=https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:12.6018650Z ACTIONS_ORCHESTRATION_ID=0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:12.6020969Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:12.6026456Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=C:\actionarchivecache\
+2026-05-15T17:28:12.6028553Z ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED=1
+2026-05-15T17:28:12.6085634Z ACTIONS_RUNTIME_TOKEN=***
+2026-05-15T17:28:12.6086723Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:12.6281725Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-15T17:28:12.6282143Z with:
+2026-05-15T17:28:12.6282297Z   go-version: 1.26
+2026-05-15T17:28:12.6282462Z   cache: false
+2026-05-15T17:28:12.6282615Z   check-latest: false
+2026-05-15T17:28:12.6282924Z   token: ***
+2026-05-15T17:28:12.6283078Z env:
+2026-05-15T17:28:12.6283214Z   GO_VERSION: 1.26
+2026-05-15T17:28:12.6283391Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:12.6283611Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:12.6283869Z   DESTDIR: ./bin
+2026-05-15T17:28:12.6284176Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:12.6284544Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:12.6284786Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:12.6285109Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:12.6285465Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:12.6286022Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:12.6286854Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:12.6287489Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:12.6287948Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:12.6288278Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:12.6335293Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:12.6335863Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:12.6336458Z ##[endgroup]
+2026-05-15T17:28:12.7976586Z Setup go version spec 1.26
+2026-05-15T17:28:12.8293509Z Attempting to download 1.26...
+2026-05-15T17:28:13.5974072Z matching 1.26...
+2026-05-15T17:28:13.5983149Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-win32-x64.zip
+2026-05-15T17:28:14.4591028Z Extracting Go...
+2026-05-15T17:28:14.5575176Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.26.3-win32-x64.zip', 'D:\a\_temp\c13850dc-b3b7-428c-83f8-36694d862380', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.26.3-win32-x64.zip' -DestinationPath 'D:\a\_temp\c13850dc-b3b7-428c-83f8-36694d862380' -Force } else { throw $_ } } ;"
+2026-05-15T17:28:23.1243613Z Successfully extracted go to D:\a\_temp\c13850dc-b3b7-428c-83f8-36694d862380
+2026-05-15T17:28:23.1244102Z Adding to the cache ...
+2026-05-15T17:28:33.6675448Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64 => D:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-15T17:28:33.6718415Z Created link C:\hostedtoolcache\windows\go\1.26.3\x64.complete => D:\hostedtoolcache\windows\go\1.26.3\x64.complete
+2026-05-15T17:28:33.6719171Z Successfully cached go to C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-15T17:28:33.6725756Z Added go to the path
+2026-05-15T17:28:33.6728601Z Successfully set up Go version 1.26
+2026-05-15T17:28:33.9319903Z go version go1.26.3 windows/amd64
+2026-05-15T17:28:33.9320222Z 
+2026-05-15T17:28:33.9320534Z ##[group]go env
+2026-05-15T17:28:36.5897223Z set AR=ar
+2026-05-15T17:28:36.5897554Z set CC=gcc
+2026-05-15T17:28:36.5898429Z set CGO_CFLAGS=-O2 -g
+2026-05-15T17:28:36.5898931Z set CGO_CPPFLAGS=
+2026-05-15T17:28:36.5899698Z set CGO_CXXFLAGS=-O2 -g
+2026-05-15T17:28:36.5900033Z set CGO_ENABLED=1
+2026-05-15T17:28:36.5902494Z set CGO_FFLAGS=-O2 -g
+2026-05-15T17:28:36.5902928Z set CGO_LDFLAGS=-O2 -g
+2026-05-15T17:28:36.5903267Z set CXX=g++
+2026-05-15T17:28:36.5903530Z set GCCGO=gccgo
+2026-05-15T17:28:36.5903837Z set GO111MODULE=
+2026-05-15T17:28:36.5904123Z set GOAMD64=v1
+2026-05-15T17:28:36.5904414Z set GOARCH=amd64
+2026-05-15T17:28:36.5904697Z set GOAUTH=netrc
+2026-05-15T17:28:36.5904976Z set GOBIN=
+2026-05-15T17:28:36.5905377Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+2026-05-15T17:28:36.5905717Z set GOCACHEPROG=
+2026-05-15T17:28:36.5905909Z set GODEBUG=
+2026-05-15T17:28:36.5906136Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+2026-05-15T17:28:36.5906405Z set GOEXE=.exe
+2026-05-15T17:28:36.5906561Z set GOEXPERIMENT=
+2026-05-15T17:28:36.5906726Z set GOFIPS140=off
+2026-05-15T17:28:36.5906876Z set GOFLAGS=
+2026-05-15T17:28:36.5907608Z set GOGCCFLAGS=-m64 -mthreads -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build2041441928=/tmp/go-build -gno-record-gcc-switches
+2026-05-15T17:28:36.5908330Z set GOHOSTARCH=amd64
+2026-05-15T17:28:36.5908506Z set GOHOSTOS=windows
+2026-05-15T17:28:36.5908672Z set GOINSECURE=
+2026-05-15T17:28:36.5908864Z set GOMOD=D:\a\buildkit\buildkit\go.mod
+2026-05-15T17:28:36.5909151Z set GOMODCACHE=C:\Users\runneradmin\go\pkg\mod
+2026-05-15T17:28:36.5909388Z set GONOPROXY=
+2026-05-15T17:28:36.5909540Z set GONOSUMDB=
+2026-05-15T17:28:36.5909683Z set GOOS=windows
+2026-05-15T17:28:36.5909862Z set GOPATH=C:\Users\runneradmin\go
+2026-05-15T17:28:36.5910080Z set GOPRIVATE=
+2026-05-15T17:28:36.5910296Z set GOPROXY=https://proxy.golang.org,direct
+2026-05-15T17:28:36.5910597Z set GOROOT=C:\hostedtoolcache\windows\go\1.26.3\x64
+2026-05-15T17:28:36.5910863Z set GOSUMDB=sum.golang.org
+2026-05-15T17:28:36.5911055Z set GOTELEMETRY=local
+2026-05-15T17:28:36.5911337Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+2026-05-15T17:28:36.5911654Z set GOTMPDIR=
+2026-05-15T17:28:36.5911812Z set GOTOOLCHAIN=local
+2026-05-15T17:28:36.5912124Z set GOTOOLDIR=C:\hostedtoolcache\windows\go\1.26.3\x64\pkg\tool\windows_amd64
+2026-05-15T17:28:36.5912456Z set GOVCS=
+2026-05-15T17:28:36.5912613Z set GOVERSION=go1.26.3
+2026-05-15T17:28:36.5912777Z set GOWORK=
+2026-05-15T17:28:36.5912940Z set PKG_CONFIG=pkg-config
+2026-05-15T17:28:36.5913077Z 
+2026-05-15T17:28:36.5913381Z ##[endgroup]
+2026-05-15T17:28:36.6149566Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-05-15T17:28:36.6150002Z with:
+2026-05-15T17:28:36.6150203Z   name: buildkit-windows-amd64
+2026-05-15T17:28:36.6150424Z   path: D:\a\buildkit\buildkit\bin
+2026-05-15T17:28:36.6150645Z   merge-multiple: false
+2026-05-15T17:28:36.6150834Z   repository: moby/buildkit
+2026-05-15T17:28:36.6151023Z   run-id: 25869554750
+2026-05-15T17:28:36.6151201Z   skip-decompress: false
+2026-05-15T17:28:36.6151395Z   digest-mismatch: error
+2026-05-15T17:28:36.6151562Z env:
+2026-05-15T17:28:36.6151702Z   GO_VERSION: 1.26
+2026-05-15T17:28:36.6151869Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:36.6152086Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:36.6152321Z   DESTDIR: ./bin
+2026-05-15T17:28:36.6152625Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:36.6153007Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:36.6153266Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:36.6153595Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:36.6153954Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:36.6154665Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:36.6155484Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:36.6156107Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:36.6156544Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:36.6156868Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:36.6203904Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:36.6204494Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:36.6205102Z   GOTOOLCHAIN: local
+2026-05-15T17:28:36.6205287Z ##[endgroup]
+2026-05-15T17:28:36.7784251Z Downloading single artifact
+2026-05-15T17:28:37.0272869Z ##[error]Unable to download artifact(s): Artifact not found for name: buildkit-windows-amd64
+        Please ensure that your artifact is not expired and the artifact was uploaded using a compatible version of toolkit/upload-artifact.
+        For more information, visit the GitHub Artifacts FAQ: https://github.com/actions/toolkit/blob/main/packages/artifact/docs/faq.md
+2026-05-15T17:28:37.0696943Z ##[group]Run codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2
+2026-05-15T17:28:37.0697374Z with:
+2026-05-15T17:28:37.0697556Z   directory: ./bin/testreports
+2026-05-15T17:28:37.0697764Z   env_vars: RUNNER_OS
+2026-05-15T17:28:37.0697938Z   flags: unit
+2026-05-15T17:28:37.0698093Z   disable_file_fixes: true
+2026-05-15T17:28:37.0698289Z   disable_search: false
+2026-05-15T17:28:37.0698481Z   disable_safe_directory: false
+2026-05-15T17:28:37.0698687Z   disable_telem: false
+2026-05-15T17:28:37.0698854Z   dry_run: false
+2026-05-15T17:28:37.0699018Z   fail_ci_if_error: false
+2026-05-15T17:28:37.0699207Z   git_service: github
+2026-05-15T17:28:37.0699402Z   gcov_executable: gcov
+2026-05-15T17:28:37.0699602Z   handle_no_reports_found: false
+2026-05-15T17:28:37.0699815Z   recurse_submodules: false
+2026-05-15T17:28:37.0700021Z   run_command: upload-coverage
+2026-05-15T17:28:37.0700217Z   skip_validation: false
+2026-05-15T17:28:37.0700444Z   use_legacy_upload_endpoint: false
+2026-05-15T17:28:37.0700649Z   use_oidc: false
+2026-05-15T17:28:37.0700805Z   use_pypi: false
+2026-05-15T17:28:37.0700950Z   verbose: false
+2026-05-15T17:28:37.0701105Z   version: latest
+2026-05-15T17:28:37.0701249Z env:
+2026-05-15T17:28:37.0701384Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.0701546Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.0701766Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.0702002Z   DESTDIR: ./bin
+2026-05-15T17:28:37.0702300Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.0702681Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.0702912Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.0703239Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.0703606Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.0704152Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.0704960Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.0705567Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.0706012Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.0706332Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.0754271Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.0754876Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.0755707Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.0755879Z ##[endgroup]
+2026-05-15T17:28:37.0913493Z ##[group]Run missing_deps=""
+2026-05-15T17:28:37.0913759Z [36;1mmissing_deps=""[0m
+2026-05-15T17:28:37.0913944Z [36;1m[0m
+2026-05-15T17:28:37.0914131Z [36;1m# Check for always-required commands[0m
+2026-05-15T17:28:37.0914399Z [36;1mfor cmd in bash git curl; do[0m
+2026-05-15T17:28:37.0914673Z [36;1m  if ! command -v "$cmd" >/dev/null 2>&1; then[0m
+2026-05-15T17:28:37.0914958Z [36;1m    missing_deps="$missing_deps $cmd"[0m
+2026-05-15T17:28:37.0915183Z [36;1m  fi[0m
+2026-05-15T17:28:37.0915329Z [36;1mdone[0m
+2026-05-15T17:28:37.0915467Z [36;1m[0m
+2026-05-15T17:28:37.0915689Z [36;1m# Check for gpg only if validation is not being skipped[0m
+2026-05-15T17:28:37.0915999Z [36;1mif [ "false" != "true" ]; then[0m
+2026-05-15T17:28:37.0916269Z [36;1m  if ! command -v gpg >/dev/null 2>&1; then[0m
+2026-05-15T17:28:37.0916545Z [36;1m    missing_deps="$missing_deps gpg"[0m
+2026-05-15T17:28:37.0916786Z [36;1m  fi[0m
+2026-05-15T17:28:37.0916937Z [36;1mfi[0m
+2026-05-15T17:28:37.0917073Z [36;1m[0m
+2026-05-15T17:28:37.0917281Z [36;1m# Report missing required dependencies[0m
+2026-05-15T17:28:37.0917550Z [36;1mif [ -n "$missing_deps" ]; then[0m
+2026-05-15T17:28:37.0919648Z [36;1m  echo "Error: The following required dependencies are missing:$missing_deps"[0m
+2026-05-15T17:28:37.0920216Z [36;1m  echo "Please install these dependencies before using this action."[0m
+2026-05-15T17:28:37.0920576Z [36;1m  exit 1[0m
+2026-05-15T17:28:37.0920733Z [36;1mfi[0m
+2026-05-15T17:28:37.0920937Z [36;1m[0m
+2026-05-15T17:28:37.0921177Z [36;1mecho "All required system dependencies are available."[0m
+2026-05-15T17:28:37.0933229Z shell: C:\Program Files\Git\bin\sh.EXE -e {0}
+2026-05-15T17:28:37.0933499Z env:
+2026-05-15T17:28:37.0933649Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.0933839Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.0934067Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.0934317Z   DESTDIR: ./bin
+2026-05-15T17:28:37.0934617Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.0935000Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.0935229Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.0935578Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.0935943Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.0936484Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.0937284Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.0937895Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.0938334Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.0938655Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.0989239Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.0989848Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.0990455Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.0990632Z ##[endgroup]
+2026-05-15T17:28:37.1396044Z All required system dependencies are available.
+2026-05-15T17:28:37.1518922Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2026-05-15T17:28:37.1519362Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2026-05-15T17:28:37.1519804Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2026-05-15T17:28:37.1531515Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.1531879Z env:
+2026-05-15T17:28:37.1532028Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.1532206Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.1532430Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.1532811Z   DESTDIR: ./bin
+2026-05-15T17:28:37.1533109Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.1533487Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.1533714Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.1534057Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.1534413Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.1534959Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.1535769Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.1536379Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.1536816Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.1537133Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.1584316Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.1584893Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.1585489Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.1585658Z ##[endgroup]
+2026-05-15T17:28:37.2067071Z [0;32m==>[0m Running Action version 6.0.0
+2026-05-15T17:28:37.2192099Z ##[group]Run git config --global --add safe.directory "D:\a\buildkit\buildkit"
+2026-05-15T17:28:37.2192605Z [36;1mgit config --global --add safe.directory "D:\a\buildkit\buildkit"[0m
+2026-05-15T17:28:37.2193059Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2026-05-15T17:28:37.2204773Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.2205133Z env:
+2026-05-15T17:28:37.2205279Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.2205459Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.2205681Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.2205933Z   DESTDIR: ./bin
+2026-05-15T17:28:37.2206226Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.2206600Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.2206826Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.2207584Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.2208043Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.2208579Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.2209385Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.2210005Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.2210446Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.2210765Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.2257758Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.2258324Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.2258919Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.2259096Z ##[endgroup]
+2026-05-15T17:28:37.3117998Z ##[group]Run CC_FORK="false"
+2026-05-15T17:28:37.3118233Z [36;1mCC_FORK="false"[0m
+2026-05-15T17:28:37.3118757Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2026-05-15T17:28:37.3119308Z [36;1mthen[0m
+2026-05-15T17:28:37.3119505Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2026-05-15T17:28:37.3119770Z [36;1m  CC_FORK="true"[0m
+2026-05-15T17:28:37.3119944Z [36;1mfi[0m
+2026-05-15T17:28:37.3120132Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.3131501Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.3132635Z env:
+2026-05-15T17:28:37.3132785Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.3132962Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.3133191Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.3133430Z   DESTDIR: ./bin
+2026-05-15T17:28:37.3133737Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.3134130Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.3134358Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.3134691Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.3135047Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.3135587Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.3136395Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.3137012Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.3137451Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.3137764Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.3185842Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.3186641Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.3187248Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.3187601Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.3188094Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: jsternberg/buildkit
+2026-05-15T17:28:37.3188429Z   GITHUB_REPOSITORY: moby/buildkit
+2026-05-15T17:28:37.3188635Z ##[endgroup]
+2026-05-15T17:28:37.3454334Z [0;32m==>[0m Fork detected
+2026-05-15T17:28:37.3622169Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-15T17:28:37.3622521Z with:
+2026-05-15T17:28:37.3623085Z   script: if (process.env.CC_USE_OIDC === 'true' && process.env.CC_FORK != 'true') {
+  const id_token = await core.getIDToken(process.env.CC_OIDC_AUDIENCE)
+  return id_token
+}
+
+2026-05-15T17:28:37.3623847Z   github-token: ***
+2026-05-15T17:28:37.3624029Z   debug: false
+2026-05-15T17:28:37.3624209Z   user-agent: actions/github-script
+2026-05-15T17:28:37.3624431Z   result-encoding: json
+2026-05-15T17:28:37.3624604Z   retries: 0
+2026-05-15T17:28:37.3624788Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-15T17:28:37.3625029Z env:
+2026-05-15T17:28:37.3625165Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.3625329Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.3625549Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.3625772Z   DESTDIR: ./bin
+2026-05-15T17:28:37.3626074Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.3626451Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.3626694Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.3627017Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.3627371Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.3627908Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.3628700Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.3629306Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.3630055Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.3630613Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.3677846Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.3678434Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.3679241Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.3679406Z   CC_FORK: true
+2026-05-15T17:28:37.3679589Z   CC_OIDC_AUDIENCE: https://codecov.io
+2026-05-15T17:28:37.3679824Z   CC_USE_OIDC: false
+2026-05-15T17:28:37.3679994Z ##[endgroup]
+2026-05-15T17:28:37.4899572Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2026-05-15T17:28:37.4899947Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2026-05-15T17:28:37.4900213Z [36;1mthen[0m
+2026-05-15T17:28:37.4900413Z [36;1m  echo "CC_TOKEN=$CC_OIDC_TOKEN" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.4900698Z [36;1melif [ -n "" ];[0m
+2026-05-15T17:28:37.4900878Z [36;1mthen[0m
+2026-05-15T17:28:37.4901086Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2026-05-15T17:28:37.4901385Z [36;1m    echo "CC_TOKEN=" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.4901607Z [36;1melse[0m
+2026-05-15T17:28:37.4901765Z [36;1m  if [ -n "" ];[0m
+2026-05-15T17:28:37.4901935Z [36;1m  then[0m
+2026-05-15T17:28:37.4902156Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2026-05-15T17:28:37.4902443Z [36;1m    CC_TOKEN=$(echo "" | tr -d '\n')[0m
+2026-05-15T17:28:37.4902714Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.4902957Z [36;1m  fi[0m
+2026-05-15T17:28:37.4903220Z [36;1mfi[0m
+2026-05-15T17:28:37.4914628Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.4914986Z env:
+2026-05-15T17:28:37.4915129Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.4915304Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.4915523Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.4915759Z   DESTDIR: ./bin
+2026-05-15T17:28:37.4916058Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.4916443Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.4916681Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.4917007Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.4917378Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.4917911Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.4918715Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.4919330Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.4919762Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.4920082Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.4967026Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.4967602Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.4968195Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.4968363Z   CC_FORK: true
+2026-05-15T17:28:37.4968514Z   CC_OIDC_TOKEN: 
+2026-05-15T17:28:37.4968690Z   CC_OIDC_AUDIENCE: https://codecov.io
+2026-05-15T17:28:37.4968907Z ##[endgroup]
+2026-05-15T17:28:37.5358730Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2026-05-15T17:28:37.5359229Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2026-05-15T17:28:37.5359570Z [36;1mthen[0m
+2026-05-15T17:28:37.5359956Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-05-15T17:28:37.5360479Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-05-15T17:28:37.5360834Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-05-15T17:28:37.5361162Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.5361411Z [36;1mfi[0m
+2026-05-15T17:28:37.5361562Z [36;1m[0m
+2026-05-15T17:28:37.5361752Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.5373356Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.5373723Z env:
+2026-05-15T17:28:37.5373869Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.5374037Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.5374267Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.5374514Z   DESTDIR: ./bin
+2026-05-15T17:28:37.5374815Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.5375209Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.5375442Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.5375774Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.5376126Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.5376684Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.5377502Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.5378131Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.5378583Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.5378900Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.5426611Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.5427221Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.5427823Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.5427988Z   CC_FORK: true
+2026-05-15T17:28:37.5428136Z   CC_BRANCH: 
+2026-05-15T17:28:37.5428466Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.5428969Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: jsternberg/buildkit
+2026-05-15T17:28:37.5429294Z   GITHUB_REPOSITORY: moby/buildkit
+2026-05-15T17:28:37.5429497Z ##[endgroup]
+2026-05-15T17:28:37.5697390Z [0;32m==>[0m Fork detected, setting branch to jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.5816166Z ##[group]Run if [ -z "$CC_SHA" ];
+2026-05-15T17:28:37.5816411Z [36;1mif [ -z "$CC_SHA" ];[0m
+2026-05-15T17:28:37.5816609Z [36;1mthen[0m
+2026-05-15T17:28:37.5816829Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2026-05-15T17:28:37.5817110Z [36;1mfi[0m
+2026-05-15T17:28:37.5817318Z [36;1mif [ -z "$CC_PR" ] && [ "$CC_FORK" == 'true' ];[0m
+2026-05-15T17:28:37.5817570Z [36;1mthen[0m
+2026-05-15T17:28:37.5817744Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2026-05-15T17:28:37.5817965Z [36;1mfi[0m
+2026-05-15T17:28:37.5818111Z [36;1m[0m
+2026-05-15T17:28:37.5818283Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.5818559Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2026-05-15T17:28:37.5829878Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.5830249Z env:
+2026-05-15T17:28:37.5830403Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.5830579Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.5830799Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.5831041Z   DESTDIR: ./bin
+2026-05-15T17:28:37.5831347Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.5831735Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.5831971Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.5832313Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.5832679Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.5833254Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.5834053Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.5834669Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.5835252Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.5835570Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.5882526Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.5883124Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.5883730Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.5883892Z   CC_FORK: true
+2026-05-15T17:28:37.5884153Z   TOKENLESS: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.5884553Z   CC_BRANCH: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.5884849Z   CC_PR: 
+2026-05-15T17:28:37.5884984Z   CC_SHA: 
+2026-05-15T17:28:37.5885142Z   GITHUB_EVENT_NAME: pull_request
+2026-05-15T17:28:37.5885350Z   GITHUB_EVENT_NUMBER: 6776
+2026-05-15T17:28:37.5885663Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f
+2026-05-15T17:28:37.5886012Z ##[endgroup]
+2026-05-15T17:28:37.6273680Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2026-05-15T17:28:37.6273994Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2026-05-15T17:28:37.6286588Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-15T17:28:37.6286960Z env:
+2026-05-15T17:28:37.6287264Z   GO_VERSION: 1.26
+2026-05-15T17:28:37.6287442Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:37.6287670Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:37.6287901Z   DESTDIR: ./bin
+2026-05-15T17:28:37.6288221Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:37.6288617Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:37.6288854Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:37.6289189Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:37.6289539Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:37.6290084Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.6290911Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:37.6291535Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:37.6291981Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:37.6292295Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:37.6339252Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:37.6339825Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:37.6340427Z   GOTOOLCHAIN: local
+2026-05-15T17:28:37.6340593Z   CC_FORK: true
+2026-05-15T17:28:37.6340848Z   TOKENLESS: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.6341245Z   CC_BRANCH: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:37.6341590Z   CC_SHA: aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f
+2026-05-15T17:28:37.6341835Z   CC_PR: 6776
+2026-05-15T17:28:37.6341976Z   CC_BASE_SHA: 
+2026-05-15T17:28:37.6342121Z   CC_BINARY: 
+2026-05-15T17:28:37.6342255Z   CC_BUILD: 
+2026-05-15T17:28:37.6342393Z   CC_BUILD_URL: 
+2026-05-15T17:28:37.6342532Z   CC_CODE: 
+2026-05-15T17:28:37.6342682Z   CC_DIR: ./bin/testreports
+2026-05-15T17:28:37.6342872Z   CC_DISABLE_FILE_FIXES: true
+2026-05-15T17:28:37.6343066Z   CC_DISABLE_SEARCH: false
+2026-05-15T17:28:37.6343248Z   CC_DISABLE_TELEM: false
+2026-05-15T17:28:37.6343425Z   CC_DRY_RUN: false
+2026-05-15T17:28:37.6343586Z   CC_ENTERPRISE_URL: 
+2026-05-15T17:28:37.6343746Z   CC_ENV: RUNNER_OS
+2026-05-15T17:28:37.6343897Z   CC_EXCLUDES: 
+2026-05-15T17:28:37.6344045Z   CC_FAIL_ON_ERROR: false
+2026-05-15T17:28:37.6344213Z   CC_FILES: 
+2026-05-15T17:28:37.6344345Z   CC_FLAGS: unit
+2026-05-15T17:28:37.6344488Z   CC_FORCE: 
+2026-05-15T17:28:37.6344620Z   CC_GCOV_ARGS: 
+2026-05-15T17:28:37.6344903Z   CC_GCOV_EXECUTABLE: gcov
+2026-05-15T17:28:37.6345078Z   CC_GCOV_IGNORE: 
+2026-05-15T17:28:37.6345230Z   CC_GCOV_INCLUDE: 
+2026-05-15T17:28:37.6345382Z   CC_GIT_SERVICE: github
+2026-05-15T17:28:37.6345569Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2026-05-15T17:28:37.6345778Z   CC_JOB_CODE: 
+2026-05-15T17:28:37.6345927Z   CC_LEGACY: false
+2026-05-15T17:28:37.6346076Z   CC_NAME: 
+2026-05-15T17:28:37.6346209Z   CC_NETWORK_FILTER: 
+2026-05-15T17:28:37.6346377Z   CC_NETWORK_PREFIX: 
+2026-05-15T17:28:37.6346539Z   CC_NETWORK_ROOT_FOLDER: 
+2026-05-15T17:28:37.6346708Z   CC_OS: 
+2026-05-15T17:28:37.6346837Z   CC_PARENT_SHA: 
+2026-05-15T17:28:37.6346987Z   CC_PLUGINS: 
+2026-05-15T17:28:37.6347138Z   CC_RECURSE_SUBMODULES: false
+2026-05-15T17:28:37.6347335Z   CC_REPORT_TYPE: 
+2026-05-15T17:28:37.6347501Z   CC_RUN_CMD: upload-coverage
+2026-05-15T17:28:37.6347690Z   CC_SERVICE: github
+2026-05-15T17:28:37.6347863Z   CC_SKIP_VALIDATION: false
+2026-05-15T17:28:37.6348038Z   CC_SLUG: 
+2026-05-15T17:28:37.6348185Z   CC_SWIFT_PROJECT: 
+2026-05-15T17:28:37.6348341Z   CC_USE_PYPI: false
+2026-05-15T17:28:37.6348498Z   CC_VERBOSE: false
+2026-05-15T17:28:37.6348647Z   CC_VERSION: latest
+2026-05-15T17:28:37.6348804Z   CC_YML_PATH: 
+2026-05-15T17:28:37.6348953Z ##[endgroup]
+2026-05-15T17:28:37.7008121Z      _____          _
+2026-05-15T17:28:37.7008836Z     / ____|        | |
+2026-05-15T17:28:37.7009245Z    | |     ___   __| | ___  ___ _____   __
+2026-05-15T17:28:37.7009693Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2026-05-15T17:28:37.7010124Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2026-05-15T17:28:37.7010585Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2026-05-15T17:28:37.7011735Z                            [0;31m Wrapper-0.2.7[0m
+2026-05-15T17:28:37.7012335Z                            
+2026-05-15T17:28:37.7775285Z [0;32m==>[0m Detected [0;36mwindows[0m
+2026-05-15T17:28:37.7776507Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/windows/codecov.exe[0m
+2026-05-15T17:28:37.8315636Z   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+2026-05-15T17:28:37.8317824Z                                  Dload  Upload  Total   Spent   Left   Speed
+2026-05-15T17:28:37.8318272Z 
+2026-05-15T17:28:38.1681563Z   0      0   0      0   0      0      0      0                              0
+2026-05-15T17:28:38.1682647Z 100 10.48M 100 10.48M   0      0 31.07M      0                              0
+2026-05-15T17:28:38.1683315Z 100 10.48M 100 10.48M   0      0 31.06M      0                              0
+2026-05-15T17:28:38.1683833Z 100 10.48M 100 10.48M   0      0 31.05M      0                              0
+2026-05-15T17:28:38.1716464Z [0;32m==>[0m Finishing downloading [0;36mwindows:latest[0m
+2026-05-15T17:28:38.3580982Z       Version: [0;36mv11.2.8[0m
+2026-05-15T17:28:38.3581569Z  
+2026-05-15T17:28:38.5608404Z gpg: directory '/c/Users/runneradmin/.gnupg' created
+2026-05-15T17:28:39.2860231Z gpg: /c/Users/runneradmin/.gnupg/trustdb.gpg: trustdb created
+2026-05-15T17:28:39.2868761Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2026-05-15T17:28:39.4332491Z gpg: Total number processed: 1
+2026-05-15T17:28:39.4332773Z gpg:               imported: 1
+2026-05-15T17:28:39.4429669Z [0;32m==>[0m Verifying GPG signature integrity
+2026-05-15T17:28:39.4431800Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/windows/codecov.exe.SHA256SUM[0m
+2026-05-15T17:28:39.4433540Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/windows/codecov.exe.SHA256SUM.sig[0m
+2026-05-15T17:28:39.4434483Z  
+2026-05-15T17:28:39.7209887Z gpg: Signature made Tue Apr 21 19:28:13 2026 CUT
+2026-05-15T17:28:39.7210596Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2026-05-15T17:28:39.7246041Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2026-05-15T17:28:39.7247391Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-05-15T17:28:39.7250821Z gpg:          There is no indication that the signature belongs to the owner.
+2026-05-15T17:28:39.7251672Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2026-05-15T17:28:39.8006559Z codecov.exe: OK
+2026-05-15T17:28:39.8013120Z [0;32m==>[0m CLI integrity verified
+2026-05-15T17:28:39.8013879Z 
+2026-05-15T17:28:41.3557345Z [0;32m ->[0m Token length: 0
+2026-05-15T17:28:41.3557992Z [0;32m==>[0m Running upload-coverage
+2026-05-15T17:28:41.3695544Z       [0;36m./codecov.exe  upload-coverage --git-service github --pr 6776 --sha aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f --env RUNNER_OS --branch jsternberg:configurable-registry-concurrency-simple --dir ./bin/testreports --disable-file-fixes --flag unit --gcov-executable gcov[0m
+2026-05-15T17:28:42.5958182Z info - 2026-05-15 17:28:42,585 -- ci service found: github-actions
+2026-05-15T17:28:42.7142561Z warning - 2026-05-15 17:28:42,710 -- xcrun is not installed or can't be found.
+2026-05-15T17:28:42.7178170Z warning - 2026-05-15 17:28:42,710 -- No gcov data found.
+2026-05-15T17:28:42.7298477Z warning - 2026-05-15 17:28:42,726 -- coverage.py is not installed or can't be found.
+2026-05-15T17:28:42.7975877Z info - 2026-05-15 17:28:42,788 -- Found 0 coverage files to report
+2026-05-15T17:28:42.7998590Z Error: No coverage reports found. Please make sure you're generating reports successfully.
+2026-05-15T17:28:43.2613043Z [0;31m==> Failed to run upload-coverage[0m
+2026-05-15T17:28:43.2797918Z ##[group]Run crazy-max/.github/.github/actions/gotest-annotations@9ba6e6f9450baf3b1237f8035c1fdc45932510bd
+2026-05-15T17:28:43.2798468Z with:
+2026-05-15T17:28:43.2798636Z   directory: ./bin/testreports
+2026-05-15T17:28:43.2798836Z env:
+2026-05-15T17:28:43.2798974Z   GO_VERSION: 1.26
+2026-05-15T17:28:43.2799137Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:43.2799362Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:43.2799594Z   DESTDIR: ./bin
+2026-05-15T17:28:43.2799923Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:43.2800297Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:43.2800540Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:43.2800870Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:43.2801228Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:43.2801788Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:43.2802583Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:43.2803197Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:43.2803628Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:43.2803950Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:43.2850824Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:43.2851413Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:43.2852010Z   GOTOOLCHAIN: local
+2026-05-15T17:28:43.2852188Z   CC_FORK: true
+2026-05-15T17:28:43.2852439Z   TOKENLESS: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:43.2852842Z   CC_BRANCH: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:43.2853192Z   CC_SHA: aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f
+2026-05-15T17:28:43.2853432Z   CC_PR: 6776
+2026-05-15T17:28:43.2853586Z ##[endgroup]
+2026-05-15T17:28:43.2975226Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-15T17:28:43.2975639Z with:
+2026-05-15T17:28:43.2976024Z   script: await core.group(`Install npm deps`, async () => {
+  await exec.exec('npm', ['install', 'line-by-line']);
+});
+
+2026-05-15T17:28:43.2976593Z   github-token: ***
+2026-05-15T17:28:43.2976765Z   debug: false
+2026-05-15T17:28:43.2977079Z   user-agent: actions/github-script
+2026-05-15T17:28:43.2977306Z   result-encoding: json
+2026-05-15T17:28:43.2977478Z   retries: 0
+2026-05-15T17:28:43.2977667Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-15T17:28:43.2977910Z env:
+2026-05-15T17:28:43.2978045Z   GO_VERSION: 1.26
+2026-05-15T17:28:43.2978216Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:43.2978431Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:43.2978660Z   DESTDIR: ./bin
+2026-05-15T17:28:43.2978962Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:43.2979334Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:43.2979557Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:43.2979882Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:43.2980234Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:43.2980759Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:43.2981556Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:43.2982164Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:43.2982598Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:43.2982912Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:43.3029761Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:43.3031985Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:43.3032665Z   GOTOOLCHAIN: local
+2026-05-15T17:28:43.3032843Z   CC_FORK: true
+2026-05-15T17:28:43.3033104Z   TOKENLESS: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:43.3033515Z   CC_BRANCH: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:43.3033847Z   CC_SHA: aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f
+2026-05-15T17:28:43.3034104Z   CC_PR: 6776
+2026-05-15T17:28:43.3034251Z ##[endgroup]
+2026-05-15T17:28:43.3970971Z ##[group]Install npm deps
+2026-05-15T17:28:43.4854757Z [command]C:\Windows\system32\cmd.exe /D /S /C ""C:\Program Files\nodejs\npm.cmd" install line-by-line"
+2026-05-15T17:28:48.5453793Z 
+2026-05-15T17:28:48.5454242Z added 1 package in 2s
+2026-05-15T17:28:48.5573602Z ##[endgroup]
+2026-05-15T17:28:48.5792649Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-15T17:28:48.5792995Z with:
+2026-05-15T17:28:48.5797120Z   script: const lineReader = require('line-by-line');
+const testRegex = /(\s*[\w\d]+.go:\d+:)(.*?)(---\sFAIL:.*)/gs;
+let tests = {};
+const globber = await glob.create(`${core.getInput('directory')}/**/*.json`);
+for await (const jsonReport of globber.globGenerator()) {
+  let lr = new lineReader(jsonReport);
+  lr.on('line', function(line) {
+    const currentLine = JSON.parse(line);
+    const testName = currentLine.Test;
+    let output = currentLine.Output;
+    if (!testName || !output) {
+      return;
+    }
+    const packageName = currentLine.Package.split("/").slice(3).join("/");
+    const key = `${packageName}/${testName}`;
+    if (!tests.hasOwnProperty(key)) {
+      tests[key] = {
+        name: testName,
+        package: packageName,
+        output: output
+      };
+    } else {
+      tests[key].output += output;
+    }
+  });
+  lr.on('end', function() {
+    for (const [key, test] of Object.entries(tests)) {
+      if (!test.output.includes("FAIL") || !test.output.includes(".go")) {
+        continue;
+      }
+      var result;
+      while ((result = testRegex.exec(test.output)) !== null) {
+        const parts = result[0].split(":");
+        const file = `${test.package}/${parts[0].trimStart()}`;
+        const lineNumber = parts[1];
+        core.startGroup(key);
+        core.error(test.output, {
+          title: `Failed: ${key}`,
+          file: file,
+          startLine: lineNumber
+        });
+        core.endGroup();
+      }
+    }
+  });
+}
+
+2026-05-15T17:28:48.5801669Z   github-token: ***
+2026-05-15T17:28:48.5801842Z   debug: false
+2026-05-15T17:28:48.5802014Z   user-agent: actions/github-script
+2026-05-15T17:28:48.5802237Z   result-encoding: json
+2026-05-15T17:28:48.5802403Z   retries: 0
+2026-05-15T17:28:48.5802592Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-15T17:28:48.5802839Z env:
+2026-05-15T17:28:48.5802970Z   GO_VERSION: 1.26
+2026-05-15T17:28:48.5803143Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:48.5803364Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:48.5803602Z   DESTDIR: ./bin
+2026-05-15T17:28:48.5803891Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:48.5804266Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:48.5804490Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:48.5804819Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:48.5805177Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:48.5805716Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:48.5806518Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:48.5807126Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:48.5807572Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:48.5808656Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:48.5855600Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:48.5856178Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:48.5856788Z   GOTOOLCHAIN: local
+2026-05-15T17:28:48.5856965Z   CC_FORK: true
+2026-05-15T17:28:48.5857217Z   TOKENLESS: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:48.5857625Z   CC_BRANCH: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:48.5857983Z   CC_SHA: aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f
+2026-05-15T17:28:48.5858236Z   CC_PR: 6776
+2026-05-15T17:28:48.5858404Z   INPUT_DIRECTORY: ./bin/testreports
+2026-05-15T17:28:48.5858622Z ##[endgroup]
+2026-05-15T17:28:48.7150353Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-05-15T17:28:48.7150795Z with:
+2026-05-15T17:28:48.7151171Z   name: test-reports-windows-2022-test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:48.7151629Z   path: ./bin/testreports
+2026-05-15T17:28:48.7151821Z   retention-days: 1
+2026-05-15T17:28:48.7152000Z   if-no-files-found: warn
+2026-05-15T17:28:48.7152179Z   compression-level: 6
+2026-05-15T17:28:48.7152355Z   overwrite: false
+2026-05-15T17:28:48.7152521Z   include-hidden-files: false
+2026-05-15T17:28:48.7152718Z   archive: true
+2026-05-15T17:28:48.7152894Z env:
+2026-05-15T17:28:48.7153043Z   GO_VERSION: 1.26
+2026-05-15T17:28:48.7153226Z   SETUP_BUILDX_VERSION: edge
+2026-05-15T17:28:48.7153447Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-15T17:28:48.7153675Z   DESTDIR: ./bin
+2026-05-15T17:28:48.7153967Z   TESTFLAGS: -v --timeout=60m --run=TestIntegration/slice=1-12/.*/worker=containerd
+2026-05-15T17:28:48.7154364Z   GOTESTSUM_FORMAT: standard-verbose
+2026-05-15T17:28:48.7154598Z   TESTPKG: ./frontend/dockerfile
+2026-05-15T17:28:48.7154926Z   TEST_REPORT_NAME: test-windows-amd64-frontenddockerfile1-12--containerd
+2026-05-15T17:28:48.7155275Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-15T17:28:48.7155823Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:48.7156649Z   ACTIONS_ORCHESTRATION_ID: 0a1dd42f-4d70-42e1-96d5-8644193e120d.test-windows-amd64.windows-2022_containerd_9
+2026-05-15T17:28:48.7157263Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-15T17:28:48.7157705Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: C:\actionarchivecache\
+2026-05-15T17:28:48.7158803Z   ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED: 1
+2026-05-15T17:28:48.7206300Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-15T17:28:48.7206906Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-15T17:28:48.7207507Z   GOTOOLCHAIN: local
+2026-05-15T17:28:48.7207669Z   CC_FORK: true
+2026-05-15T17:28:48.7207922Z   TOKENLESS: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:48.7208318Z   CC_BRANCH: jsternberg:configurable-registry-concurrency-simple
+2026-05-15T17:28:48.7208660Z   CC_SHA: aa4d00374bef5fe685ed5c47c1bb25bbc26ccd6f
+2026-05-15T17:28:48.7208906Z   CC_PR: 6776
+2026-05-15T17:28:48.7209054Z ##[endgroup]
+2026-05-15T17:28:48.8882036Z ##[warning]No files were found with the provided path: ./bin/testreports. No artifacts will be uploaded.
+2026-05-15T17:28:48.9116600Z Post job cleanup.
+2026-05-15T17:28:49.0989905Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-15T17:28:49.1246457Z git version 2.54.0.windows.1
+2026-05-15T17:28:49.1303906Z Copying 'C:\Users\runneradmin\.gitconfig' to 'D:\a\_temp\1ec71e69-0065-450b-b85a-00ee94d86ef9\.gitconfig'
+2026-05-15T17:28:49.1324475Z Temporarily overriding HOME='D:\a\_temp\1ec71e69-0065-450b-b85a-00ee94d86ef9' before making global git config changes
+2026-05-15T17:28:49.1325827Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-15T17:28:49.1339592Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\buildkit\buildkit
+2026-05-15T17:28:49.1577914Z Removing SSH command configuration
+2026-05-15T17:28:49.1589578Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-15T17:28:49.1829094Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-15T17:28:49.6208502Z Removing HTTP extra header
+2026-05-15T17:28:49.6218244Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-15T17:28:49.6462766Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-15T17:28:50.0888585Z Removing includeIf entries pointing to credentials config files
+2026-05-15T17:28:50.0900571Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-15T17:28:50.1097937Z includeif.gitdir:D:/a/buildkit/buildkit/.git.path
+2026-05-15T17:28:50.1098772Z includeif.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path
+2026-05-15T17:28:50.1099314Z includeif.gitdir:/github/workspace/.git.path
+2026-05-15T17:28:50.1100007Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-15T17:28:50.1127920Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/buildkit/buildkit/.git.path
+2026-05-15T17:28:50.1321059Z D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.1352328Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/buildkit/buildkit/.git.path D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.1575318Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path
+2026-05-15T17:28:50.1771004Z D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.1800109Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/buildkit/buildkit/.git/worktrees/*.path D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.2019546Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-05-15T17:28:50.2212759Z /github/runner_temp/git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.2240985Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.2462483Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-15T17:28:50.2657338Z /github/runner_temp/git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.2691865Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config
+2026-05-15T17:28:50.2924329Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-15T17:28:50.7264594Z Removing credentials config 'D:\a\_temp\git-credentials-459ed18a-4ecc-4972-9a26-8aea2cab6070.config'
+2026-05-15T17:28:50.7431172Z Cleaning up orphan processes

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "go-test:TestReadWriteTimeoutsAreEffective",
+    "name": "TestReadWriteTimeoutsAreEffective failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestReadWriteTimeoutsAreEffective"
+    },
+    "evidence": [
+      {
+        "start_line": 4868,
+        "end_line": 4868
+      }
+    ]
+  }
+]

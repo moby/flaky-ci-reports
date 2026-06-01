@@ -1,0 +1,445 @@
+﻿2026-05-13T09:31:25.8839037Z Current runner version: '2.334.0'
+2026-05-13T09:31:25.8865352Z ##[group]Runner Image Provisioner
+2026-05-13T09:31:25.8866177Z Hosted Compute Agent
+2026-05-13T09:31:25.8866739Z Version: 20260213.493
+2026-05-13T09:31:25.8867297Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-13T09:31:25.8868418Z Build Date: 2026-02-13T00:28:41Z
+2026-05-13T09:31:25.8869171Z Worker ID: {bde1e9a8-d953-44ca-bcbf-8216f6a3f6ba}
+2026-05-13T09:31:25.8869903Z Azure Region: eastus
+2026-05-13T09:31:25.8870390Z ##[endgroup]
+2026-05-13T09:31:25.8872386Z ##[group]Operating System
+2026-05-13T09:31:25.8873047Z Ubuntu
+2026-05-13T09:31:25.8873484Z 24.04.4
+2026-05-13T09:31:25.8874037Z LTS
+2026-05-13T09:31:25.8874488Z ##[endgroup]
+2026-05-13T09:31:25.8874968Z ##[group]Runner Image
+2026-05-13T09:31:25.8875530Z Image: ubuntu-24.04
+2026-05-13T09:31:25.8876037Z Version: 20260413.86.1
+2026-05-13T09:31:25.8877241Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260413.86/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-13T09:31:25.8879070Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260413.86
+2026-05-13T09:31:25.8879945Z ##[endgroup]
+2026-05-13T09:31:25.8881008Z ##[group]GITHUB_TOKEN Permissions
+2026-05-13T09:31:25.8883403Z Contents: read
+2026-05-13T09:31:25.8884152Z Metadata: read
+2026-05-13T09:31:25.8884656Z ##[endgroup]
+2026-05-13T09:31:25.8886840Z Secret source: None
+2026-05-13T09:31:25.8888177Z Prepare workflow directory
+2026-05-13T09:31:25.9303946Z Prepare all required actions
+2026-05-13T09:31:25.9342076Z Getting action download info
+2026-05-13T09:31:26.4576203Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-05-13T09:31:26.6845522Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-13T09:31:26.7307075Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-13T09:31:26.9633473Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-05-13T09:31:27.2146439Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-05-13T09:31:27.4049469Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-13T09:31:27.5779702Z Download action repository 'docker/bake-action@a66e1c87e2eca0503c343edf1d208c716d54b8a8' (SHA:a66e1c87e2eca0503c343edf1d208c716d54b8a8)
+2026-05-13T09:31:27.9627406Z Complete job name: test-linux (dockerd-containerd, frontend, integration)
+2026-05-13T09:31:28.0484760Z ##[group]Run disabledFeatures="cache_backend_azblob,cache_backend_s3"
+2026-05-13T09:31:28.0486583Z [36;1mdisabledFeatures="cache_backend_azblob,cache_backend_s3"[0m
+2026-05-13T09:31:28.0488360Z [36;1mif [ "dockerd-containerd" = "dockerd" ]; then[0m
+2026-05-13T09:31:28.0489720Z [36;1m  disabledFeatures="${disabledFeatures},merge_diff"[0m
+2026-05-13T09:31:28.0490870Z [36;1mfi[0m
+2026-05-13T09:31:28.0492016Z [36;1mecho "BUILDKIT_TEST_DISABLE_FEATURES=${disabledFeatures}" >> $GITHUB_ENV[0m
+2026-05-13T09:31:28.0519867Z shell: /usr/bin/bash -e {0}
+2026-05-13T09:31:28.0521640Z env:
+2026-05-13T09:31:28.0522396Z   GO_VERSION: 1.26.3
+2026-05-13T09:31:28.0523161Z   DESTDIR: ./build
+2026-05-13T09:31:28.0523931Z   SETUP_BUILDX_VERSION: edge
+2026-05-13T09:31:28.0524900Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-13T09:31:28.0525922Z   TEST_IMAGE_BUILD: 0
+2026-05-13T09:31:28.0526721Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-13T09:31:28.0527582Z ##[endgroup]
+2026-05-13T09:31:28.0857469Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-05-13T09:31:28.0859350Z with:
+2026-05-13T09:31:28.0860368Z   github-token: ***
+2026-05-13T09:31:28.0861363Z env:
+2026-05-13T09:31:28.0861992Z   GO_VERSION: 1.26.3
+2026-05-13T09:31:28.0862728Z   DESTDIR: ./build
+2026-05-13T09:31:28.0863475Z   SETUP_BUILDX_VERSION: edge
+2026-05-13T09:31:28.0864435Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-13T09:31:28.0865421Z   TEST_IMAGE_BUILD: 0
+2026-05-13T09:31:28.0866198Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-13T09:31:28.0867399Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-13T09:31:28.0869026Z ##[endgroup]
+2026-05-13T09:31:28.1701666Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=/opt/actionarchivecache
+2026-05-13T09:31:28.1704670Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:28.1874390Z ACTIONS_RUNTIME_TOKEN=***
+2026-05-13T09:31:28.1876777Z ACTIONS_CACHE_URL=https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:28.1879534Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-05-13T09:31:28.1881052Z ACTIONS_CACHE_SERVICE_V2=True
+2026-05-13T09:31:28.1882633Z ACTIONS_ORCHESTRATION_ID=72bc8385-9ccf-47ed-a1e2-6de573c33610.test-linux.dockerd-containerd_fronte
+2026-05-13T09:31:28.2092443Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-13T09:31:28.2093741Z with:
+2026-05-13T09:31:28.2094401Z   path: moby
+2026-05-13T09:31:28.2095102Z   repository: moby/moby
+2026-05-13T09:31:28.2096120Z   token: ***
+2026-05-13T09:31:28.2096799Z   ssh-strict: true
+2026-05-13T09:31:28.2097519Z   ssh-user: git
+2026-05-13T09:31:28.2098665Z   persist-credentials: true
+2026-05-13T09:31:28.2099511Z   clean: true
+2026-05-13T09:31:28.2100248Z   sparse-checkout-cone-mode: true
+2026-05-13T09:31:28.2101181Z   fetch-depth: 1
+2026-05-13T09:31:28.2101898Z   fetch-tags: false
+2026-05-13T09:31:28.2102631Z   show-progress: true
+2026-05-13T09:31:28.2103388Z   lfs: false
+2026-05-13T09:31:28.2104085Z   submodules: false
+2026-05-13T09:31:28.2104839Z   set-safe-directory: true
+2026-05-13T09:31:28.2105674Z env:
+2026-05-13T09:31:28.2106315Z   GO_VERSION: 1.26.3
+2026-05-13T09:31:28.2107041Z   DESTDIR: ./build
+2026-05-13T09:31:28.2107794Z   SETUP_BUILDX_VERSION: edge
+2026-05-13T09:31:28.2108915Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-13T09:31:28.2109889Z   TEST_IMAGE_BUILD: 0
+2026-05-13T09:31:28.2110677Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-13T09:31:28.2111858Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-13T09:31:28.2113395Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-13T09:31:28.2115753Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:28.2263580Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-13T09:31:28.2265561Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:28.2268131Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-13T09:31:28.2269620Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-13T09:31:28.2271206Z   ACTIONS_ORCHESTRATION_ID: 72bc8385-9ccf-47ed-a1e2-6de573c33610.test-linux.dockerd-containerd_fronte
+2026-05-13T09:31:28.2272855Z ##[endgroup]
+2026-05-13T09:31:28.3240693Z Syncing repository: moby/moby
+2026-05-13T09:31:28.3243176Z ##[group]Getting Git version info
+2026-05-13T09:31:28.3244341Z Working directory is '/home/runner/work/moby/moby/moby'
+2026-05-13T09:31:28.3246015Z [command]/usr/bin/git version
+2026-05-13T09:31:28.3283854Z git version 2.53.0
+2026-05-13T09:31:28.3308395Z ##[endgroup]
+2026-05-13T09:31:28.3323096Z Temporarily overriding HOME='/home/runner/work/_temp/4e561d23-808c-4736-97b0-b1cc301adfc3' before making global git config changes
+2026-05-13T09:31:28.3325736Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-13T09:31:28.3328700Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/moby
+2026-05-13T09:31:28.3366636Z ##[group]Initializing the repository
+2026-05-13T09:31:28.3371395Z [command]/usr/bin/git init /home/runner/work/moby/moby/moby
+2026-05-13T09:31:28.3476241Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-13T09:31:28.3479495Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-13T09:31:28.3482279Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-13T09:31:28.3484086Z hint: call:
+2026-05-13T09:31:28.3485650Z hint:
+2026-05-13T09:31:28.3487114Z hint: 	git config --global init.defaultBranch <name>
+2026-05-13T09:31:28.3488773Z hint:
+2026-05-13T09:31:28.3489887Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-13T09:31:28.3491527Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-13T09:31:28.3492825Z hint:
+2026-05-13T09:31:28.3493548Z hint: 	git branch -m <name>
+2026-05-13T09:31:28.3494523Z hint:
+2026-05-13T09:31:28.3495651Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-13T09:31:28.3497386Z Initialized empty Git repository in /home/runner/work/moby/moby/moby/.git/
+2026-05-13T09:31:28.3501086Z [command]/usr/bin/git remote add origin https://github.com/moby/moby
+2026-05-13T09:31:28.3528495Z ##[endgroup]
+2026-05-13T09:31:28.3529797Z ##[group]Disabling automatic garbage collection
+2026-05-13T09:31:28.3534129Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-13T09:31:28.3568694Z ##[endgroup]
+2026-05-13T09:31:28.3570765Z ##[group]Setting up auth
+2026-05-13T09:31:28.3572327Z Removing SSH command configuration
+2026-05-13T09:31:28.3577318Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-13T09:31:28.3612734Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-13T09:31:28.3926905Z Removing HTTP extra header
+2026-05-13T09:31:28.3934751Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-13T09:31:28.3969422Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-13T09:31:28.4194093Z Removing includeIf entries pointing to credentials config files
+2026-05-13T09:31:28.4201357Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-13T09:31:28.4238585Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-13T09:31:28.4473603Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-13T09:31:28.4516176Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/moby/.git.path /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:31:28.4548880Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:31:28.4580715Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/moby/.git.path /github/runner_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:31:28.4614177Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/moby/.git/worktrees/*.path /github/runner_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:31:28.4647651Z ##[endgroup]
+2026-05-13T09:31:28.4650113Z ##[group]Fetching the repository
+2026-05-13T09:31:28.4659933Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4a229f8080918e57c94d9dd8f572f8a0752d4b33:refs/remotes/pull/52613/merge
+2026-05-13T09:31:29.4346724Z From https://github.com/moby/moby
+2026-05-13T09:31:29.4347786Z  * [new ref]         4a229f8080918e57c94d9dd8f572f8a0752d4b33 -> pull/52613/merge
+2026-05-13T09:31:29.4381788Z ##[endgroup]
+2026-05-13T09:31:29.4382501Z ##[group]Determining the checkout info
+2026-05-13T09:31:29.4383289Z ##[endgroup]
+2026-05-13T09:31:29.4390050Z [command]/usr/bin/git sparse-checkout disable
+2026-05-13T09:31:29.4433815Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-13T09:31:29.4464116Z ##[group]Checking out the ref
+2026-05-13T09:31:29.4468308Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/52613/merge
+2026-05-13T09:31:30.4688551Z Updating files:  97% (12218/12547)
+2026-05-13T09:31:30.4768645Z Updating files:  98% (12297/12547)
+2026-05-13T09:31:30.4858084Z Updating files:  99% (12422/12547)
+2026-05-13T09:31:30.4858810Z Updating files: 100% (12547/12547)
+2026-05-13T09:31:30.4859498Z Updating files: 100% (12547/12547), done.
+2026-05-13T09:31:30.4999127Z Note: switching to 'refs/remotes/pull/52613/merge'.
+2026-05-13T09:31:30.4999666Z 
+2026-05-13T09:31:30.5000461Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-13T09:31:30.5001303Z changes and commit them, and you can discard any commits you make in this
+2026-05-13T09:31:30.5002087Z state without impacting any branches by switching back to a branch.
+2026-05-13T09:31:30.5002545Z 
+2026-05-13T09:31:30.5002862Z If you want to create a new branch to retain commits you create, you may
+2026-05-13T09:31:30.5003597Z do so (now or later) by using -c with the switch command. Example:
+2026-05-13T09:31:30.5004021Z 
+2026-05-13T09:31:30.5004227Z   git switch -c <new-branch-name>
+2026-05-13T09:31:30.5004586Z 
+2026-05-13T09:31:30.5004753Z Or undo this operation with:
+2026-05-13T09:31:30.5005010Z 
+2026-05-13T09:31:30.5005156Z   git switch -
+2026-05-13T09:31:30.5005349Z 
+2026-05-13T09:31:30.5005781Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-13T09:31:30.5006324Z 
+2026-05-13T09:31:30.5006936Z HEAD is now at 4a229f8 Merge 0d722ef390b173a70b574a5531e1b7d437848929 into 16baa12d9422420024c7b9ebc9ee9ab4216d4651
+2026-05-13T09:31:30.5032733Z ##[endgroup]
+2026-05-13T09:31:30.5077037Z [command]/usr/bin/git log -1 --format=%H
+2026-05-13T09:31:30.5104423Z 4a229f8080918e57c94d9dd8f572f8a0752d4b33
+2026-05-13T09:31:30.5309073Z ##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+2026-05-13T09:31:30.5309485Z with:
+2026-05-13T09:31:30.5309662Z   go-version: 1.26.3
+2026-05-13T09:31:30.5309887Z   cache: false
+2026-05-13T09:31:30.5310096Z   check-latest: false
+2026-05-13T09:31:30.5310411Z   token: ***
+2026-05-13T09:31:30.5310608Z env:
+2026-05-13T09:31:30.5310776Z   GO_VERSION: 1.26.3
+2026-05-13T09:31:30.5310974Z   DESTDIR: ./build
+2026-05-13T09:31:30.5311171Z   SETUP_BUILDX_VERSION: edge
+2026-05-13T09:31:30.5311418Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-13T09:31:30.5311738Z   TEST_IMAGE_BUILD: 0
+2026-05-13T09:31:30.5311949Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-13T09:31:30.5312281Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-13T09:31:30.5312716Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-13T09:31:30.5313466Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:30.5353889Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-13T09:31:30.5354479Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:30.5355241Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-13T09:31:30.5355656Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-13T09:31:30.5356106Z   ACTIONS_ORCHESTRATION_ID: 72bc8385-9ccf-47ed-a1e2-6de573c33610.test-linux.dockerd-containerd_fronte
+2026-05-13T09:31:30.5356579Z ##[endgroup]
+2026-05-13T09:31:30.6845679Z Setup go version spec 1.26.3
+2026-05-13T09:31:30.6860128Z Attempting to download 1.26.3...
+2026-05-13T09:31:31.1389207Z matching 1.26.3...
+2026-05-13T09:31:31.1416890Z Acquiring 1.26.3 from https://github.com/actions/go-versions/releases/download/1.26.3-25533533231/go-1.26.3-linux-x64.tar.gz
+2026-05-13T09:31:31.5191688Z Extracting Go...
+2026-05-13T09:31:31.5315275Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1a1c4b48-9500-4eb4-8779-902cf1548482 -f /home/runner/work/_temp/ad6bba8e-82de-4b5b-8974-12cc6dd53eed
+2026-05-13T09:31:33.1632383Z Successfully extracted go to /home/runner/work/_temp/1a1c4b48-9500-4eb4-8779-902cf1548482
+2026-05-13T09:31:33.1633104Z Adding to the cache ...
+2026-05-13T09:31:40.2592957Z Successfully cached go to /opt/hostedtoolcache/go/1.26.3/x64
+2026-05-13T09:31:40.2595905Z Added go to the path
+2026-05-13T09:31:40.2598358Z Successfully set up Go version 1.26.3
+2026-05-13T09:31:40.2799810Z go version go1.26.3 linux/amd64
+2026-05-13T09:31:40.2800064Z 
+2026-05-13T09:31:40.2800377Z ##[group]go env
+2026-05-13T09:31:40.4075347Z AR='ar'
+2026-05-13T09:31:40.4075687Z CC='gcc'
+2026-05-13T09:31:40.4076005Z CGO_CFLAGS='-O2 -g'
+2026-05-13T09:31:40.4076357Z CGO_CPPFLAGS=''
+2026-05-13T09:31:40.4076660Z CGO_CXXFLAGS='-O2 -g'
+2026-05-13T09:31:40.4076888Z CGO_ENABLED='1'
+2026-05-13T09:31:40.4077077Z CGO_FFLAGS='-O2 -g'
+2026-05-13T09:31:40.4077315Z CGO_LDFLAGS='-O2 -g'
+2026-05-13T09:31:40.4077503Z CXX='g++'
+2026-05-13T09:31:40.4077690Z GCCGO='gccgo'
+2026-05-13T09:31:40.4078433Z GO111MODULE=''
+2026-05-13T09:31:40.4078628Z GOAMD64='v1'
+2026-05-13T09:31:40.4078802Z GOARCH='amd64'
+2026-05-13T09:31:40.4078983Z GOAUTH='netrc'
+2026-05-13T09:31:40.4079157Z GOBIN=''
+2026-05-13T09:31:40.4079353Z GOCACHE='/home/runner/.cache/go-build'
+2026-05-13T09:31:40.4079617Z GOCACHEPROG=''
+2026-05-13T09:31:40.4079834Z GODEBUG=''
+2026-05-13T09:31:40.4080032Z GOENV='/home/runner/.config/go/env'
+2026-05-13T09:31:40.4080280Z GOEXE=''
+2026-05-13T09:31:40.4080457Z GOEXPERIMENT=''
+2026-05-13T09:31:40.4080665Z GOFIPS140='off'
+2026-05-13T09:31:40.4080846Z GOFLAGS=''
+2026-05-13T09:31:40.4081523Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build37956458=/tmp/go-build -gno-record-gcc-switches'
+2026-05-13T09:31:40.4082179Z GOHOSTARCH='amd64'
+2026-05-13T09:31:40.4082377Z GOHOSTOS='linux'
+2026-05-13T09:31:40.4082556Z GOINSECURE=''
+2026-05-13T09:31:40.4083082Z GOMOD='/dev/null'
+2026-05-13T09:31:40.4083307Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-05-13T09:31:40.4083557Z GONOPROXY=''
+2026-05-13T09:31:40.4083733Z GONOSUMDB=''
+2026-05-13T09:31:40.4083904Z GOOS='linux'
+2026-05-13T09:31:40.4084082Z GOPATH='/home/runner/go'
+2026-05-13T09:31:40.4084294Z GOPRIVATE=''
+2026-05-13T09:31:40.4084531Z GOPROXY='https://proxy.golang.org,direct'
+2026-05-13T09:31:40.4084865Z GOROOT='/opt/hostedtoolcache/go/1.26.3/x64'
+2026-05-13T09:31:40.4085151Z GOSUMDB='sum.golang.org'
+2026-05-13T09:31:40.4085371Z GOTELEMETRY='local'
+2026-05-13T09:31:40.4085626Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-05-13T09:31:40.4085921Z GOTMPDIR=''
+2026-05-13T09:31:40.4086099Z GOTOOLCHAIN='local'
+2026-05-13T09:31:40.4086398Z GOTOOLDIR='/opt/hostedtoolcache/go/1.26.3/x64/pkg/tool/linux_amd64'
+2026-05-13T09:31:40.4086732Z GOVCS=''
+2026-05-13T09:31:40.4086903Z GOVERSION='go1.26.3'
+2026-05-13T09:31:40.4087104Z GOWORK=''
+2026-05-13T09:31:40.4087288Z PKG_CONFIG='pkg-config'
+2026-05-13T09:31:40.4087439Z 
+2026-05-13T09:31:40.4088109Z ##[endgroup]
+2026-05-13T09:31:40.4259116Z ##[group]Run echo "$(./hack/buildkit-ref)" >> $GITHUB_ENV
+2026-05-13T09:31:40.4259557Z [36;1mecho "$(./hack/buildkit-ref)" >> $GITHUB_ENV[0m
+2026-05-13T09:31:40.4285470Z shell: /usr/bin/bash -e {0}
+2026-05-13T09:31:40.4285717Z env:
+2026-05-13T09:31:40.4285893Z   GO_VERSION: 1.26.3
+2026-05-13T09:31:40.4286102Z   DESTDIR: ./build
+2026-05-13T09:31:40.4286299Z   SETUP_BUILDX_VERSION: edge
+2026-05-13T09:31:40.4286553Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-13T09:31:40.4286813Z   TEST_IMAGE_BUILD: 0
+2026-05-13T09:31:40.4287234Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-13T09:31:40.4287578Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-13T09:31:40.4288350Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-13T09:31:40.4289074Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:40.4329632Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-13T09:31:40.4330267Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:40.4330989Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-13T09:31:40.4331404Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-13T09:31:40.4331854Z   ACTIONS_ORCHESTRATION_ID: 72bc8385-9ccf-47ed-a1e2-6de573c33610.test-linux.dockerd-containerd_fronte
+2026-05-13T09:31:40.4332431Z   GOTOOLCHAIN: local
+2026-05-13T09:31:40.4332658Z ##[endgroup]
+2026-05-13T09:31:40.6411101Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-13T09:31:40.6411488Z with:
+2026-05-13T09:31:40.6411676Z   repository: crazy-max/buildkit
+2026-05-13T09:31:40.6411903Z   ref: null
+2026-05-13T09:31:40.6412072Z   path: buildkit
+2026-05-13T09:31:40.6412373Z   token: ***
+2026-05-13T09:31:40.6412551Z   ssh-strict: true
+2026-05-13T09:31:40.6412741Z   ssh-user: git
+2026-05-13T09:31:40.6412929Z   persist-credentials: true
+2026-05-13T09:31:40.6413146Z   clean: true
+2026-05-13T09:31:40.6413339Z   sparse-checkout-cone-mode: true
+2026-05-13T09:31:40.6413571Z   fetch-depth: 1
+2026-05-13T09:31:40.6413751Z   fetch-tags: false
+2026-05-13T09:31:40.6413935Z   show-progress: true
+2026-05-13T09:31:40.6414130Z   lfs: false
+2026-05-13T09:31:40.6414295Z   submodules: false
+2026-05-13T09:31:40.6414492Z   set-safe-directory: true
+2026-05-13T09:31:40.6414699Z env:
+2026-05-13T09:31:40.6414865Z   GO_VERSION: 1.26.3
+2026-05-13T09:31:40.6415047Z   DESTDIR: ./build
+2026-05-13T09:31:40.6415300Z   SETUP_BUILDX_VERSION: edge
+2026-05-13T09:31:40.6415549Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-13T09:31:40.6415808Z   TEST_IMAGE_BUILD: 0
+2026-05-13T09:31:40.6415999Z   TEST_IMAGE_ID: buildkit-tests
+2026-05-13T09:31:40.6416324Z   BUILDKIT_TEST_DISABLE_FEATURES: cache_backend_azblob,cache_backend_s3
+2026-05-13T09:31:40.6416748Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-13T09:31:40.6417433Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus5.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:40.6457389Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-13T09:31:40.6458041Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/Y2huPMnV2RyiTvKoReSyXTCrcRyxUdSDRZYoZr0ONBvpl5e9Nu/
+2026-05-13T09:31:40.6458778Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-13T09:31:40.6459183Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-13T09:31:40.6459633Z   ACTIONS_ORCHESTRATION_ID: 72bc8385-9ccf-47ed-a1e2-6de573c33610.test-linux.dockerd-containerd_fronte
+2026-05-13T09:31:40.6460105Z   GOTOOLCHAIN: local
+2026-05-13T09:31:40.6460316Z   BUILDKIT_REPO: crazy-max/buildkit
+2026-05-13T09:31:40.6460549Z   BUILDKIT_REF: null
+2026-05-13T09:31:40.6460733Z ##[endgroup]
+2026-05-13T09:31:40.7312362Z Syncing repository: crazy-max/buildkit
+2026-05-13T09:31:40.7316881Z ##[group]Getting Git version info
+2026-05-13T09:31:40.7317561Z Working directory is '/home/runner/work/moby/moby/buildkit'
+2026-05-13T09:31:40.7353648Z [command]/usr/bin/git version
+2026-05-13T09:31:40.7390233Z git version 2.53.0
+2026-05-13T09:31:40.7413621Z ##[endgroup]
+2026-05-13T09:31:40.7426211Z Temporarily overriding HOME='/home/runner/work/_temp/e64adc51-7f0c-49fb-9bfa-a5d64026a782' before making global git config changes
+2026-05-13T09:31:40.7427244Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-13T09:31:40.7432726Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/buildkit
+2026-05-13T09:31:40.7464819Z ##[group]Initializing the repository
+2026-05-13T09:31:40.7469598Z [command]/usr/bin/git init /home/runner/work/moby/moby/buildkit
+2026-05-13T09:31:40.7517653Z Initialized empty Git repository in /home/runner/work/moby/moby/buildkit/.git/
+2026-05-13T09:31:40.7520771Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-13T09:31:40.7521634Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-13T09:31:40.7522467Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-13T09:31:40.7523090Z hint: call:
+2026-05-13T09:31:40.7523370Z hint:
+2026-05-13T09:31:40.7523761Z hint: 	git config --global init.defaultBranch <name>
+2026-05-13T09:31:40.7524203Z hint:
+2026-05-13T09:31:40.7524688Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-13T09:31:40.7525523Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-13T09:31:40.7526432Z hint:
+2026-05-13T09:31:40.7526762Z hint: 	git branch -m <name>
+2026-05-13T09:31:40.7527116Z hint:
+2026-05-13T09:31:40.7527649Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-13T09:31:40.7529431Z [command]/usr/bin/git remote add origin https://github.com/crazy-max/buildkit
+2026-05-13T09:31:40.7558772Z ##[endgroup]
+2026-05-13T09:31:40.7559355Z ##[group]Disabling automatic garbage collection
+2026-05-13T09:31:40.7564189Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-13T09:31:40.7592475Z ##[endgroup]
+2026-05-13T09:31:40.7593071Z ##[group]Setting up auth
+2026-05-13T09:31:40.7594240Z Removing SSH command configuration
+2026-05-13T09:31:40.7600653Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-13T09:31:40.7631974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-13T09:31:40.7851415Z Removing HTTP extra header
+2026-05-13T09:31:40.7857108Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-13T09:31:40.7889883Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-13T09:31:40.8111285Z Removing includeIf entries pointing to credentials config files
+2026-05-13T09:31:40.8119414Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-13T09:31:40.8153471Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-13T09:31:40.8386533Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-13T09:31:40.8429084Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/buildkit/.git.path /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:31:40.8460190Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:31:40.8493861Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/buildkit/.git.path /github/runner_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:31:40.8527754Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/buildkit/.git/worktrees/*.path /github/runner_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:31:40.8561962Z ##[endgroup]
+2026-05-13T09:31:40.8562487Z ##[group]Fetching the repository
+2026-05-13T09:31:40.8572430Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/null*:refs/remotes/origin/null* +refs/tags/null*:refs/tags/null*
+2026-05-13T09:31:41.1879626Z The process '/usr/bin/git' failed with exit code 1
+2026-05-13T09:31:41.1880285Z Waiting 20 seconds before trying again
+2026-05-13T09:32:01.1936592Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/null*:refs/remotes/origin/null* +refs/tags/null*:refs/tags/null*
+2026-05-13T09:32:01.4403509Z The process '/usr/bin/git' failed with exit code 1
+2026-05-13T09:32:01.4403906Z Waiting 17 seconds before trying again
+2026-05-13T09:32:18.4468154Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/null*:refs/remotes/origin/null* +refs/tags/null*:refs/tags/null*
+2026-05-13T09:32:18.6185096Z ##[error]The process '/usr/bin/git' failed with exit code 1
+2026-05-13T09:32:18.6348636Z Post job cleanup.
+2026-05-13T09:32:18.7188960Z [command]/usr/bin/git version
+2026-05-13T09:32:18.7230984Z git version 2.53.0
+2026-05-13T09:32:18.7273476Z Temporarily overriding HOME='/home/runner/work/_temp/7b452316-bfba-431d-a8fa-55b83ade1e46' before making global git config changes
+2026-05-13T09:32:18.7274841Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-13T09:32:18.7280238Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/buildkit
+2026-05-13T09:32:18.7310978Z Removing SSH command configuration
+2026-05-13T09:32:18.7317121Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-13T09:32:18.7351890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-13T09:32:18.7567838Z Removing HTTP extra header
+2026-05-13T09:32:18.7573038Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-13T09:32:18.7606422Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-13T09:32:18.7818195Z Removing includeIf entries pointing to credentials config files
+2026-05-13T09:32:18.7824395Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-13T09:32:18.7879173Z includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git.path
+2026-05-13T09:32:18.7880110Z includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path
+2026-05-13T09:32:18.7880973Z includeif.gitdir:/github/workspace/buildkit/.git.path
+2026-05-13T09:32:18.7881760Z includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path
+2026-05-13T09:32:18.7888600Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git.path
+2026-05-13T09:32:18.7908671Z /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.7920525Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git.path /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.7953845Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path
+2026-05-13T09:32:18.7975275Z /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.7985147Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/buildkit/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.8016155Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/buildkit/.git.path
+2026-05-13T09:32:18.8036794Z /github/runner_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.8045041Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/buildkit/.git.path /github/runner_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.8075112Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path
+2026-05-13T09:32:18.8094834Z /github/runner_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.8104853Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/buildkit/.git/worktrees/*.path /github/runner_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config
+2026-05-13T09:32:18.8135657Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-13T09:32:18.8349308Z Removing credentials config '/home/runner/work/_temp/git-credentials-09241e16-1a05-494c-a5f9-e654d0b5de31.config'
+2026-05-13T09:32:18.8498126Z Post job cleanup.
+2026-05-13T09:32:18.9399349Z [command]/usr/bin/git version
+2026-05-13T09:32:18.9450101Z git version 2.53.0
+2026-05-13T09:32:18.9506388Z Temporarily overriding HOME='/home/runner/work/_temp/3a83b673-278d-4cea-b84c-1fe091b898e7' before making global git config changes
+2026-05-13T09:32:18.9507759Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-13T09:32:18.9515094Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/moby/moby/moby
+2026-05-13T09:32:18.9552197Z Removing SSH command configuration
+2026-05-13T09:32:18.9560864Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-13T09:32:18.9602942Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-13T09:32:18.9865397Z Removing HTTP extra header
+2026-05-13T09:32:18.9872904Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-13T09:32:18.9911785Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-13T09:32:19.0169117Z Removing includeIf entries pointing to credentials config files
+2026-05-13T09:32:19.0177107Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-13T09:32:19.0235043Z includeif.gitdir:/home/runner/work/moby/moby/moby/.git.path
+2026-05-13T09:32:19.0236211Z includeif.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path
+2026-05-13T09:32:19.0237308Z includeif.gitdir:/github/workspace/moby/.git.path
+2026-05-13T09:32:19.0238588Z includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path
+2026-05-13T09:32:19.0246061Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/moby/.git.path
+2026-05-13T09:32:19.0269996Z /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0282326Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/moby/.git.path /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0324056Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path
+2026-05-13T09:32:19.0346605Z /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0356161Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/moby/moby/moby/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0387183Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/moby/.git.path
+2026-05-13T09:32:19.0407544Z /github/runner_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0416973Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/moby/.git.path /github/runner_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0447763Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path
+2026-05-13T09:32:19.0468199Z /github/runner_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0477565Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/moby/.git/worktrees/*.path /github/runner_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config
+2026-05-13T09:32:19.0509446Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-13T09:32:19.0744377Z Removing credentials config '/home/runner/work/_temp/git-credentials-fbe604a2-0b01-43c6-acaa-2c3555799320.config'
+2026-05-13T09:32:19.0891176Z Cleaning up orphan processes

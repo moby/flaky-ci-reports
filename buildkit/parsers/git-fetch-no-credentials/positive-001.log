@@ -1,0 +1,1497 @@
+﻿2026-05-23T10:33:46.0080163Z Current runner version: '2.334.0'
+2026-05-23T10:33:46.0103959Z ##[group]Runner Image Provisioner
+2026-05-23T10:33:46.0104797Z Hosted Compute Agent
+2026-05-23T10:33:46.0105294Z Version: 20260213.493
+2026-05-23T10:33:46.0105973Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-23T10:33:46.0106625Z Build Date: 2026-02-13T00:28:41Z
+2026-05-23T10:33:46.0107379Z Worker ID: {e9c32213-e5aa-4a54-842b-8a50b111c300}
+2026-05-23T10:33:46.0108058Z Azure Region: westus2
+2026-05-23T10:33:46.0108606Z ##[endgroup]
+2026-05-23T10:33:46.0110089Z ##[group]Operating System
+2026-05-23T10:33:46.0110704Z Ubuntu
+2026-05-23T10:33:46.0111191Z 24.04.4
+2026-05-23T10:33:46.0111640Z LTS
+2026-05-23T10:33:46.0112110Z ##[endgroup]
+2026-05-23T10:33:46.0112586Z ##[group]Runner Image
+2026-05-23T10:33:46.0113380Z Image: ubuntu-24.04
+2026-05-23T10:33:46.0113862Z Version: 20260518.149.1
+2026-05-23T10:33:46.0115137Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260518.149/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-23T10:33:46.0116606Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260518.149
+2026-05-23T10:33:46.0117541Z ##[endgroup]
+2026-05-23T10:33:46.0118461Z ##[group]GITHUB_TOKEN Permissions
+2026-05-23T10:33:46.0120606Z Contents: read
+2026-05-23T10:33:46.0121206Z Metadata: read
+2026-05-23T10:33:46.0121691Z ##[endgroup]
+2026-05-23T10:33:46.0124015Z Secret source: Actions
+2026-05-23T10:33:46.0124725Z Prepare workflow directory
+2026-05-23T10:33:46.0507639Z Prepare all required actions
+2026-05-23T10:33:46.0555249Z Getting action download info
+2026-05-23T10:33:46.6557154Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-05-23T10:33:47.0078984Z Download action repository 'docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf' (SHA:030e881283bb7a6894de51c315a6bfe6a94e05cf)
+2026-05-23T10:33:47.3023294Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-05-23T10:33:47.5522239Z Download action repository 'crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487' (SHA:04d248b84655b509d8c44dc1d6f990c879747487)
+2026-05-23T10:33:47.7582569Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-05-23T10:33:48.0374725Z Download action repository 'docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121' (SHA:4907a6ddec9925e35a0a9e82d7399ccc52663121)
+2026-05-23T10:33:48.3307590Z Download action repository 'docker/bake-action@a66e1c87e2eca0503c343edf1d208c716d54b8a8' (SHA:a66e1c87e2eca0503c343edf1d208c716d54b8a8)
+2026-05-23T10:33:48.6543433Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-05-23T10:33:48.9782655Z Uses: docker/github-builder/.github/workflows/bake.yml@c2782c55efa56a01b9c30021db8f5ec3993228a3
+2026-05-23T10:33:48.9787690Z ##[group] Inputs
+2026-05-23T10:33:48.9788356Z   runner: ubuntu-24.04
+2026-05-23T10:33:48.9789358Z   distribute: true
+2026-05-23T10:33:48.9789961Z   fail-fast: false
+2026-05-23T10:33:48.9790565Z   setup-qemu: true
+2026-05-23T10:33:48.9791197Z   artifact-name: buildkit-binaries
+2026-05-23T10:33:48.9791866Z   artifact-upload: true
+2026-05-23T10:33:48.9792462Z   cache: true
+2026-05-23T10:33:48.9793254Z   cache-scope: binaries
+2026-05-23T10:33:48.9793860Z   cache-mode: min
+2026-05-23T10:33:48.9794418Z   context: .
+2026-05-23T10:33:48.9794969Z   files: 
+2026-05-23T10:33:48.9795496Z   output: local
+2026-05-23T10:33:48.9796083Z   push: false
+2026-05-23T10:33:48.9797005Z   sbom: true
+2026-05-23T10:33:48.9797861Z   set: 
+2026-05-23T10:33:48.9798415Z   sign: true
+2026-05-23T10:33:48.9798969Z   target: release
+2026-05-23T10:33:48.9799527Z   vars: 
+2026-05-23T10:33:48.9800097Z   set-meta-annotations: false
+2026-05-23T10:33:48.9801053Z   set-meta-labels: false
+2026-05-23T10:33:48.9801823Z   meta-images: 
+2026-05-23T10:33:48.9802397Z   meta-tags: 
+2026-05-23T10:33:48.9802976Z   meta-flavor: 
+2026-05-23T10:33:48.9803735Z   meta-labels: 
+2026-05-23T10:33:48.9804300Z   meta-annotations: 
+2026-05-23T10:33:48.9804892Z   meta-bake-target: 
+2026-05-23T10:33:48.9805482Z ##[endgroup]
+2026-05-23T10:33:48.9806189Z Complete job name: binaries / build (4, linux/arm64, ubuntu-24.04)
+2026-05-23T10:33:49.0596273Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-05-23T10:33:49.0597418Z with:
+2026-05-23T10:33:49.0599233Z   script: const runnerEnvironment = core.getInput('runner-environment');
+const runnerOS = core.getInput('runner-os');
+if (runnerEnvironment !== 'github-hosted' || runnerOS !== 'Linux') {
+  core.setFailed(`This workflow requires a GitHub-hosted Linux runner, got: environment=${runnerEnvironment || 'unknown'}, os=${runnerOS || 'unknown'}`);
+}
+
+2026-05-23T10:33:49.0601416Z   github-token: ***
+2026-05-23T10:33:49.0602008Z   debug: false
+2026-05-23T10:33:49.0602626Z   user-agent: actions/github-script
+2026-05-23T10:33:49.0603514Z   result-encoding: json
+2026-05-23T10:33:49.0604113Z   retries: 0
+2026-05-23T10:33:49.0604744Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-23T10:33:49.0605712Z env:
+2026-05-23T10:33:49.0606282Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:33:49.0606935Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:33:49.0607696Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:33:49.0608445Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:33:49.0609243Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:33:49.0609997Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:33:49.0610651Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:33:49.0611313Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:33:49.0611937Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:33:49.0612611Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:33:49.0613432Z   INPUT_RUNNER-ENVIRONMENT: github-hosted
+2026-05-23T10:33:49.0614125Z   INPUT_RUNNER-OS: Linux
+2026-05-23T10:33:49.0614723Z ##[endgroup]
+2026-05-23T10:33:49.1828654Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-05-23T10:33:49.1829483Z with:
+2026-05-23T10:33:49.1830378Z   script: await exec.exec('npm', [
+  'install',
+  '--prefer-offline',
+  '--ignore-scripts',
+  core.getInput('dat-module')
+]);
+
+2026-05-23T10:33:49.1831555Z   github-token: ***
+2026-05-23T10:33:49.1832131Z   debug: false
+2026-05-23T10:33:49.1832782Z   user-agent: actions/github-script
+2026-05-23T10:33:49.1833619Z   result-encoding: json
+2026-05-23T10:33:49.1834201Z   retries: 0
+2026-05-23T10:33:49.1834818Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-23T10:33:49.1835493Z env:
+2026-05-23T10:33:49.1836041Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:33:49.1836676Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:33:49.1837386Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:33:49.1838137Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:33:49.1838978Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:33:49.1839725Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:33:49.1840362Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:33:49.1841017Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:33:49.1841642Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:33:49.1842306Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:33:49.1843003Z   INPUT_DAT-MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:33:49.1843818Z ##[endgroup]
+2026-05-23T10:33:49.2825596Z [command]/usr/local/bin/npm install --prefer-offline --ignore-scripts @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:01.6942170Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-05-23T10:34:03.3301897Z 
+2026-05-23T10:34:03.3302796Z added 245 packages in 11s
+2026-05-23T10:34:03.3304149Z 
+2026-05-23T10:34:03.3304776Z 32 packages are looking for funding
+2026-05-23T10:34:03.3305428Z   run `npm fund` for details
+2026-05-23T10:34:03.4012913Z ##[group]Run docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a
+2026-05-23T10:34:03.4013695Z with:
+2026-05-23T10:34:03.4013906Z   image: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:03.4014167Z   cache-image: false
+2026-05-23T10:34:03.4014379Z   platforms: all
+2026-05-23T10:34:03.4014551Z env:
+2026-05-23T10:34:03.4014773Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:34:03.4014997Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:34:03.4015297Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:03.4015621Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:03.4015965Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:03.4016290Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:34:03.4016505Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:34:03.4016776Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:34:03.4016982Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:34:03.4017226Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:34:03.4017457Z ##[endgroup]
+2026-05-23T10:34:03.5374916Z ##[group]Docker info
+2026-05-23T10:34:03.5399865Z [command]/usr/bin/docker version
+2026-05-23T10:34:04.8012895Z Client: Docker Engine - Community
+2026-05-23T10:34:04.8013762Z  Version:           28.0.4
+2026-05-23T10:34:04.8014160Z  API version:       1.48
+2026-05-23T10:34:04.8016749Z  Go version:        go1.23.7
+2026-05-23T10:34:04.8017295Z  Git commit:        b8034c0
+2026-05-23T10:34:04.8017698Z  Built:             Tue Mar 25 15:07:16 2025
+2026-05-23T10:34:04.8018121Z  OS/Arch:           linux/amd64
+2026-05-23T10:34:04.8018476Z  Context:           default
+2026-05-23T10:34:04.8018624Z 
+2026-05-23T10:34:04.8018722Z Server: Docker Engine - Community
+2026-05-23T10:34:04.8018951Z  Engine:
+2026-05-23T10:34:04.8019126Z   Version:          28.0.4
+2026-05-23T10:34:04.8019376Z   API version:      1.48 (minimum version 1.24)
+2026-05-23T10:34:04.8019674Z   Go version:       go1.23.7
+2026-05-23T10:34:04.8019890Z   Git commit:       6430e49
+2026-05-23T10:34:04.8020119Z   Built:            Tue Mar 25 15:07:16 2025
+2026-05-23T10:34:04.8020379Z   OS/Arch:          linux/amd64
+2026-05-23T10:34:04.8020600Z   Experimental:     false
+2026-05-23T10:34:04.8020806Z  containerd:
+2026-05-23T10:34:04.8020980Z   Version:          v2.2.3
+2026-05-23T10:34:04.8021259Z   GitCommit:        77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-23T10:34:04.8021573Z  runc:
+2026-05-23T10:34:04.8023024Z   Version:          1.3.5
+2026-05-23T10:34:04.8023840Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-05-23T10:34:04.8024427Z  docker-init:
+2026-05-23T10:34:04.8024906Z   Version:          0.19.0
+2026-05-23T10:34:04.8025401Z   GitCommit:        de40ad0
+2026-05-23T10:34:04.8075008Z [command]/usr/bin/docker info
+2026-05-23T10:34:08.2476523Z Client: Docker Engine - Community
+2026-05-23T10:34:08.2477154Z  Version:    28.0.4
+2026-05-23T10:34:08.2477567Z  Context:    default
+2026-05-23T10:34:08.2477899Z  Debug Mode: false
+2026-05-23T10:34:08.2478210Z  Plugins:
+2026-05-23T10:34:08.2478534Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-23T10:34:08.2478946Z     Version:  v0.34.0
+2026-05-23T10:34:08.2479373Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-05-23T10:34:08.2479895Z   compose: Docker Compose (Docker Inc.)
+2026-05-23T10:34:08.2480268Z     Version:  v2.38.2
+2026-05-23T10:34:08.2480685Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-05-23T10:34:08.2481067Z 
+2026-05-23T10:34:08.2481180Z Server:
+2026-05-23T10:34:08.2481449Z  Containers: 0
+2026-05-23T10:34:08.2481737Z   Running: 0
+2026-05-23T10:34:08.2482035Z   Paused: 0
+2026-05-23T10:34:08.2482299Z   Stopped: 0
+2026-05-23T10:34:08.2482569Z  Images: 6
+2026-05-23T10:34:08.2482918Z  Server Version: 28.0.4
+2026-05-23T10:34:08.2483575Z  Storage Driver: overlay2
+2026-05-23T10:34:08.2483941Z   Backing Filesystem: extfs
+2026-05-23T10:34:08.2484321Z   Supports d_type: true
+2026-05-23T10:34:08.2485079Z   Using metacopy: false
+2026-05-23T10:34:08.2485507Z   Native Overlay Diff: false
+2026-05-23T10:34:08.2486138Z   userxattr: false
+2026-05-23T10:34:08.2486602Z  Logging Driver: json-file
+2026-05-23T10:34:08.2487077Z  Cgroup Driver: systemd
+2026-05-23T10:34:08.2487824Z  Cgroup Version: 2
+2026-05-23T10:34:08.2488241Z  Plugins:
+2026-05-23T10:34:08.2488743Z   Volume: local
+2026-05-23T10:34:08.2489342Z   Network: bridge host ipvlan macvlan null overlay
+2026-05-23T10:34:08.2490272Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-05-23T10:34:08.2491127Z  Swarm: inactive
+2026-05-23T10:34:08.2491665Z  Runtimes: runc io.containerd.runc.v2
+2026-05-23T10:34:08.2492229Z  Default Runtime: runc
+2026-05-23T10:34:08.2492679Z  Init Binary: docker-init
+2026-05-23T10:34:08.2520068Z  containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-23T10:34:08.2520617Z  runc version: v1.3.5-0-g488fc13e
+2026-05-23T10:34:08.2521026Z  init version: de40ad0
+2026-05-23T10:34:08.2521363Z  Security Options:
+2026-05-23T10:34:08.2521683Z   apparmor
+2026-05-23T10:34:08.2521968Z   seccomp
+2026-05-23T10:34:08.2522301Z    Profile: builtin
+2026-05-23T10:34:08.2522622Z   cgroupns
+2026-05-23T10:34:08.2522915Z  Kernel Version: 6.17.0-1013-azure
+2026-05-23T10:34:08.2523615Z  Operating System: Ubuntu 24.04.4 LTS
+2026-05-23T10:34:08.2524025Z  OSType: linux
+2026-05-23T10:34:08.2524333Z  Architecture: x86_64
+2026-05-23T10:34:08.2524624Z  CPUs: 4
+2026-05-23T10:34:08.2524916Z  Total Memory: 15.61GiB
+2026-05-23T10:34:08.2525265Z  Name: runnervmg397c
+2026-05-23T10:34:08.2525643Z  ID: 030b3de5-f6f5-43f2-8bdc-0a866a274328
+2026-05-23T10:34:08.2526098Z  Docker Root Dir: /var/lib/docker
+2026-05-23T10:34:08.2526502Z  Debug Mode: false
+2026-05-23T10:34:08.2526832Z  Username: githubactions
+2026-05-23T10:34:08.2527187Z  Experimental: false
+2026-05-23T10:34:08.2527526Z  Insecure Registries:
+2026-05-23T10:34:08.2532549Z   ::1/128
+2026-05-23T10:34:08.2532858Z   127.0.0.0/8
+2026-05-23T10:34:08.2533419Z  Live Restore Enabled: false
+2026-05-23T10:34:08.2533725Z 
+2026-05-23T10:34:08.2534402Z ##[endgroup]
+2026-05-23T10:34:08.2535074Z ##[group]Pulling binfmt Docker image
+2026-05-23T10:34:08.2535916Z [command]/usr/bin/docker pull tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:09.2565308Z qemu-v10.2.1-65: Pulling from tonistiigi/binfmt
+2026-05-23T10:34:09.5287612Z 4b3e935ac1b8: Pulling fs layer
+2026-05-23T10:34:09.5288044Z cba9db6f3ddf: Pulling fs layer
+2026-05-23T10:34:09.8728665Z cba9db6f3ddf: Download complete
+2026-05-23T10:34:09.9458468Z 4b3e935ac1b8: Download complete
+2026-05-23T10:34:10.3376682Z 4b3e935ac1b8: Pull complete
+2026-05-23T10:34:10.9827331Z cba9db6f3ddf: Pull complete
+2026-05-23T10:34:10.9870525Z Digest: sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3
+2026-05-23T10:34:10.9888643Z Status: Downloaded newer image for tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:10.9897271Z docker.io/tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:10.9918417Z ##[endgroup]
+2026-05-23T10:34:10.9918804Z ##[group]Image info
+2026-05-23T10:34:10.9937481Z [command]/usr/bin/docker image inspect tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:11.0062474Z [
+2026-05-23T10:34:11.0062756Z     {
+2026-05-23T10:34:11.0063537Z         "Id": "sha256:fb4f8f43716ffaf2802bb32cd60994de149d020f8b1c7e7ddfbdfb43a521ec82",
+2026-05-23T10:34:11.0064239Z         "RepoTags": [
+2026-05-23T10:34:11.0064557Z             "tonistiigi/binfmt:qemu-v10.2.1-65"
+2026-05-23T10:34:11.0064822Z         ],
+2026-05-23T10:34:11.0065004Z         "RepoDigests": [
+2026-05-23T10:34:11.0065400Z             "tonistiigi/binfmt@sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3"
+2026-05-23T10:34:11.0065834Z         ],
+2026-05-23T10:34:11.0065994Z         "Parent": "",
+2026-05-23T10:34:11.0066209Z         "Comment": "buildkit.dockerfile.v0",
+2026-05-23T10:34:11.0066530Z         "Created": "2026-02-18T18:09:43.658440389Z",
+2026-05-23T10:34:11.0066785Z         "DockerVersion": "",
+2026-05-23T10:34:11.0066991Z         "Author": "",
+2026-05-23T10:34:11.0067491Z         "Config": {
+2026-05-23T10:34:11.0067670Z             "Hostname": "",
+2026-05-23T10:34:11.0068019Z             "Domainname": "",
+2026-05-23T10:34:11.0068221Z             "User": "",
+2026-05-23T10:34:11.0068412Z             "AttachStdin": false,
+2026-05-23T10:34:11.0068633Z             "AttachStdout": false,
+2026-05-23T10:34:11.0068861Z             "AttachStderr": false,
+2026-05-23T10:34:11.0069066Z             "Tty": false,
+2026-05-23T10:34:11.0069262Z             "OpenStdin": false,
+2026-05-23T10:34:11.0069462Z             "StdinOnce": false,
+2026-05-23T10:34:11.0069657Z             "Env": [
+2026-05-23T10:34:11.0069963Z                 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+2026-05-23T10:34:11.0070360Z                 "QEMU_PRESERVE_ARGV0=1"
+2026-05-23T10:34:11.0070587Z             ],
+2026-05-23T10:34:11.0070746Z             "Cmd": null,
+2026-05-23T10:34:11.0070935Z             "Image": "",
+2026-05-23T10:34:11.0071112Z             "Volumes": {
+2026-05-23T10:34:11.0071304Z                 "/tmp": {}
+2026-05-23T10:34:11.0071480Z             },
+2026-05-23T10:34:11.0071651Z             "WorkingDir": "/",
+2026-05-23T10:34:11.0071852Z             "Entrypoint": [
+2026-05-23T10:34:11.0072050Z                 "/usr/bin/binfmt"
+2026-05-23T10:34:11.0072245Z             ],
+2026-05-23T10:34:11.0072409Z             "OnBuild": null,
+2026-05-23T10:34:11.0072610Z             "Labels": null
+2026-05-23T10:34:11.0072795Z         },
+2026-05-23T10:34:11.0073308Z         "Architecture": "amd64",
+2026-05-23T10:34:11.0073626Z         "Os": "linux",
+2026-05-23T10:34:11.0073813Z         "Size": 85108073,
+2026-05-23T10:34:11.0074002Z         "GraphDriver": {
+2026-05-23T10:34:11.0074188Z             "Data": {
+2026-05-23T10:34:11.0074787Z                 "LowerDir": "/var/lib/docker/overlay2/ca0d9d34fad9a5c5fed29f8cd3bc1acb6d4987d8bf80c8d1fa84c34613ead8cd/diff",
+2026-05-23T10:34:11.0075570Z                 "MergedDir": "/var/lib/docker/overlay2/4912237e1e70dde57fde26a10b098981906f4c633eec5a18ebe60e0c593aabaa/merged",
+2026-05-23T10:34:11.0076333Z                 "UpperDir": "/var/lib/docker/overlay2/4912237e1e70dde57fde26a10b098981906f4c633eec5a18ebe60e0c593aabaa/diff",
+2026-05-23T10:34:11.0077120Z                 "WorkDir": "/var/lib/docker/overlay2/4912237e1e70dde57fde26a10b098981906f4c633eec5a18ebe60e0c593aabaa/work"
+2026-05-23T10:34:11.0077982Z             },
+2026-05-23T10:34:11.0078161Z             "Name": "overlay2"
+2026-05-23T10:34:11.0078365Z         },
+2026-05-23T10:34:11.0078515Z         "RootFS": {
+2026-05-23T10:34:11.0078695Z             "Type": "layers",
+2026-05-23T10:34:11.0078893Z             "Layers": [
+2026-05-23T10:34:11.0079213Z                 "sha256:7c7a3ed8f59c9c48a6885e1b9d666072857891560d4557401a19bd803378d1d4",
+2026-05-23T10:34:11.0079734Z                 "sha256:b7dea0aa7b18514e216eebdbded52b5b2c070562d7c88a97f8c3fb0995e4febb"
+2026-05-23T10:34:11.0080091Z             ]
+2026-05-23T10:34:11.0080325Z         },
+2026-05-23T10:34:11.0080516Z         "Metadata": {
+2026-05-23T10:34:11.0080734Z             "LastTagTime": "0001-01-01T00:00:00Z"
+2026-05-23T10:34:11.0080973Z         }
+2026-05-23T10:34:11.0081118Z     }
+2026-05-23T10:34:11.0081264Z ]
+2026-05-23T10:34:11.0081660Z ##[endgroup]
+2026-05-23T10:34:11.0081969Z ##[group]Binfmt version
+2026-05-23T10:34:11.0098881Z [command]/usr/bin/docker run --rm --privileged tonistiigi/binfmt:qemu-v10.2.1-65 --version
+2026-05-23T10:34:11.7037042Z binfmt/3a63696 qemu/v10.2.1 go/1.25.7
+2026-05-23T10:34:11.7738370Z ##[endgroup]
+2026-05-23T10:34:11.7739212Z ##[group]Installing QEMU static binaries
+2026-05-23T10:34:11.7758215Z [command]/usr/bin/docker run --rm --privileged tonistiigi/binfmt:qemu-v10.2.1-65 --install all
+2026-05-23T10:34:11.9194245Z installing: s390x OK
+2026-05-23T10:34:11.9194676Z installing: ppc64le OK
+2026-05-23T10:34:11.9195041Z installing: riscv64 OK
+2026-05-23T10:34:11.9195285Z installing: mips64le OK
+2026-05-23T10:34:11.9195498Z installing: mips64 OK
+2026-05-23T10:34:11.9195686Z installing: loong64 OK
+2026-05-23T10:34:11.9196146Z installing: arm64 OK
+2026-05-23T10:34:11.9196326Z installing: arm OK
+2026-05-23T10:34:11.9400149Z {
+2026-05-23T10:34:11.9401035Z   "supported": [
+2026-05-23T10:34:11.9401456Z     "linux/amd64",
+2026-05-23T10:34:11.9401792Z     "linux/amd64/v2",
+2026-05-23T10:34:11.9402120Z     "linux/amd64/v3",
+2026-05-23T10:34:11.9402452Z     "linux/arm64",
+2026-05-23T10:34:11.9402758Z     "linux/riscv64",
+2026-05-23T10:34:11.9404239Z     "linux/ppc64le",
+2026-05-23T10:34:11.9404638Z     "linux/s390x",
+2026-05-23T10:34:11.9404966Z     "linux/386",
+2026-05-23T10:34:11.9405286Z     "linux/mips64le",
+2026-05-23T10:34:11.9405652Z     "linux/mips64",
+2026-05-23T10:34:11.9405965Z     "linux/loong64",
+2026-05-23T10:34:11.9406293Z     "linux/arm/v7",
+2026-05-23T10:34:11.9406606Z     "linux/arm/v6"
+2026-05-23T10:34:11.9406900Z   ],
+2026-05-23T10:34:11.9407150Z   "emulators": [
+2026-05-23T10:34:11.9407464Z     "llvm-16-runtime.binfmt",
+2026-05-23T10:34:11.9407839Z     "llvm-17-runtime.binfmt",
+2026-05-23T10:34:11.9408206Z     "llvm-18-runtime.binfmt",
+2026-05-23T10:34:11.9408682Z     "python3.12",
+2026-05-23T10:34:11.9409043Z     "qemu-aarch64",
+2026-05-23T10:34:11.9409407Z     "qemu-arm",
+2026-05-23T10:34:11.9409657Z     "qemu-loongarch64",
+2026-05-23T10:34:11.9409904Z     "qemu-mips64",
+2026-05-23T10:34:11.9410211Z     "qemu-mips64el",
+2026-05-23T10:34:11.9410529Z     "qemu-ppc64le",
+2026-05-23T10:34:11.9410817Z     "qemu-riscv64",
+2026-05-23T10:34:11.9411127Z     "qemu-s390x"
+2026-05-23T10:34:11.9411386Z   ]
+2026-05-23T10:34:11.9411546Z }
+2026-05-23T10:34:12.0014931Z ##[endgroup]
+2026-05-23T10:34:12.0015683Z ##[group]Extracting available platforms
+2026-05-23T10:34:12.2110993Z linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/loong64,linux/arm/v7,linux/arm/v6
+2026-05-23T10:34:12.2114350Z ##[endgroup]
+2026-05-23T10:34:12.2255126Z ##[group]Run crazy-max/ghaction-github-runtime@04d248b84655b509d8c44dc1d6f990c879747487
+2026-05-23T10:34:12.2255926Z with:
+2026-05-23T10:34:12.2256483Z   github-token: ***
+2026-05-23T10:34:12.2256811Z env:
+2026-05-23T10:34:12.2257101Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:34:12.2257496Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:34:12.2258017Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:12.2258572Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:12.2259199Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:12.2259772Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:34:12.2260175Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:34:12.2260612Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:34:12.2260982Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:34:12.2261422Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:34:12.2261779Z ##[endgroup]
+2026-05-23T10:34:12.3000244Z ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE=/opt/actionarchivecache
+2026-05-23T10:34:12.3006487Z ACTIONS_RUNTIME_URL=https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:12.3143309Z ACTIONS_RUNTIME_TOKEN=***
+2026-05-23T10:34:12.3143929Z ACTIONS_CACHE_URL=https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:12.3145090Z ACTIONS_ID_TOKEN_REQUEST_URL=https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0
+2026-05-23T10:34:12.3259194Z ACTIONS_ID_TOKEN_REQUEST_TOKEN=***
+2026-05-23T10:34:12.3259612Z ACTIONS_RESULTS_URL=https://results-receiver.actions.githubusercontent.com/
+2026-05-23T10:34:12.3260009Z ACTIONS_CACHE_SERVICE_V2=True
+2026-05-23T10:34:12.3260451Z ACTIONS_ORCHESTRATION_ID=9fa45ee9-2d3e-4af4-a4f6-059ac63da77d.binaries.build._4_linux_arm64_ubuntu-24_
+2026-05-23T10:34:12.3361179Z ##[group]Run docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd
+2026-05-23T10:34:12.3361591Z with:
+2026-05-23T10:34:12.3361755Z   version: v0.33.0
+2026-05-23T10:34:12.3362108Z   cache-binary: false
+2026-05-23T10:34:12.3362323Z   buildkitd-flags: --debug
+2026-05-23T10:34:12.3485311Z   driver-opts: image=moby/buildkit:v0.29.0
+env.ACTIONS_ID_TOKEN_REQUEST_TOKEN=***
+env.ACTIONS_ID_TOKEN_REQUEST_URL=https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0
+
+2026-05-23T10:34:12.3488214Z   buildkitd-config-inline: [cache]
+  [cache.gha]
+    [cache.gha.sign]
+      command = ["ghacache-sign-script.sh"]
+    [cache.gha.verify]
+      required = true
+      [cache.gha.verify.policy]
+        timestampThreshold = 1
+        tlogThreshold = 1
+        subjectAlternativeName = "https://github.com/docker/github-builder/.github/workflows/bake.yml*"
+        githubWorkflowRepository = "moby/buildkit"
+        issuer = "https://token.actions.githubusercontent.com"
+        runnerEnvironment = "github-hosted"
+        sourceRepositoryURI = "https://github.com/moby/buildkit"
+
+2026-05-23T10:34:12.3490159Z   driver: docker-container
+2026-05-23T10:34:12.3490367Z   use: true
+2026-05-23T10:34:12.3490538Z   keep-state: false
+2026-05-23T10:34:12.3490715Z   cleanup: true
+2026-05-23T10:34:12.3490886Z env:
+2026-05-23T10:34:12.3491039Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:34:12.3491257Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:34:12.3491536Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:12.3491848Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:12.3492189Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:12.3492503Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:34:12.3492719Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:34:12.3492974Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:34:12.3493386Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:34:12.3493628Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:34:12.3493910Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-23T10:34:12.3494595Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:12.3607677Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-23T10:34:12.3608240Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:12.3609387Z   ACTIONS_ID_TOKEN_REQUEST_URL: https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0
+2026-05-23T10:34:12.3721802Z   ACTIONS_ID_TOKEN_REQUEST_TOKEN: ***
+2026-05-23T10:34:12.3722215Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-23T10:34:12.3722626Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-23T10:34:12.3723186Z   ACTIONS_ORCHESTRATION_ID: 9fa45ee9-2d3e-4af4-a4f6-059ac63da77d.binaries.build._4_linux_arm64_ubuntu-24_
+2026-05-23T10:34:12.3723659Z ##[endgroup]
+2026-05-23T10:34:12.5791699Z ##[group]Docker info
+2026-05-23T10:34:12.5821783Z [command]/usr/bin/docker version
+2026-05-23T10:34:12.6043636Z Client: Docker Engine - Community
+2026-05-23T10:34:12.6046846Z  Version:           28.0.4
+2026-05-23T10:34:12.6047444Z  API version:       1.48
+2026-05-23T10:34:12.6047827Z  Go version:        go1.23.7
+2026-05-23T10:34:12.6048211Z  Git commit:        b8034c0
+2026-05-23T10:34:12.6048617Z  Built:             Tue Mar 25 15:07:16 2025
+2026-05-23T10:34:12.6049059Z  OS/Arch:           linux/amd64
+2026-05-23T10:34:12.6049430Z  Context:           default
+2026-05-23T10:34:12.6049670Z 
+2026-05-23T10:34:12.6049822Z Server: Docker Engine - Community
+2026-05-23T10:34:12.6050216Z  Engine:
+2026-05-23T10:34:12.6050490Z   Version:          28.0.4
+2026-05-23T10:34:12.6050912Z   API version:      1.48 (minimum version 1.24)
+2026-05-23T10:34:12.6051878Z   Go version:       go1.23.7
+2026-05-23T10:34:12.6052312Z   Git commit:       6430e49
+2026-05-23T10:34:12.6052719Z   Built:            Tue Mar 25 15:07:16 2025
+2026-05-23T10:34:12.6053748Z   OS/Arch:          linux/amd64
+2026-05-23T10:34:12.6054165Z   Experimental:     false
+2026-05-23T10:34:12.6054537Z  containerd:
+2026-05-23T10:34:12.6054845Z   Version:          v2.2.3
+2026-05-23T10:34:12.6055325Z   GitCommit:        77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-23T10:34:12.6055850Z  runc:
+2026-05-23T10:34:12.6056139Z   Version:          1.3.5
+2026-05-23T10:34:12.6056503Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-05-23T10:34:12.6056915Z  docker-init:
+2026-05-23T10:34:12.6057221Z   Version:          0.19.0
+2026-05-23T10:34:12.6057588Z   GitCommit:        de40ad0
+2026-05-23T10:34:12.6095880Z [command]/usr/bin/docker info
+2026-05-23T10:34:12.7210749Z Client: Docker Engine - Community
+2026-05-23T10:34:12.7211315Z  Version:    28.0.4
+2026-05-23T10:34:12.7211627Z  Context:    default
+2026-05-23T10:34:12.7211964Z  Debug Mode: false
+2026-05-23T10:34:12.7212248Z  Plugins:
+2026-05-23T10:34:12.7212572Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-23T10:34:12.7212971Z     Version:  v0.34.0
+2026-05-23T10:34:12.7213592Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-05-23T10:34:12.7214116Z   compose: Docker Compose (Docker Inc.)
+2026-05-23T10:34:12.7214507Z     Version:  v2.38.2
+2026-05-23T10:34:12.7214918Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-05-23T10:34:12.7215259Z 
+2026-05-23T10:34:12.7215325Z Server:
+2026-05-23T10:34:12.7215486Z  Containers: 0
+2026-05-23T10:34:12.7215656Z   Running: 0
+2026-05-23T10:34:12.7215809Z   Paused: 0
+2026-05-23T10:34:12.7215971Z   Stopped: 0
+2026-05-23T10:34:12.7216126Z  Images: 7
+2026-05-23T10:34:12.7216300Z  Server Version: 28.0.4
+2026-05-23T10:34:12.7216501Z  Storage Driver: overlay2
+2026-05-23T10:34:12.7216711Z   Backing Filesystem: extfs
+2026-05-23T10:34:12.7216913Z   Supports d_type: true
+2026-05-23T10:34:12.7217119Z   Using metacopy: false
+2026-05-23T10:34:12.7217313Z   Native Overlay Diff: false
+2026-05-23T10:34:12.7217517Z   userxattr: false
+2026-05-23T10:34:12.7217691Z  Logging Driver: json-file
+2026-05-23T10:34:12.7217943Z  Cgroup Driver: systemd
+2026-05-23T10:34:12.7218131Z  Cgroup Version: 2
+2026-05-23T10:34:12.7218304Z  Plugins:
+2026-05-23T10:34:12.7218466Z   Volume: local
+2026-05-23T10:34:12.7218672Z   Network: bridge host ipvlan macvlan null overlay
+2026-05-23T10:34:12.7219053Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-05-23T10:34:12.7219387Z  Swarm: inactive
+2026-05-23T10:34:12.7219579Z  Runtimes: io.containerd.runc.v2 runc
+2026-05-23T10:34:12.7219812Z  Default Runtime: runc
+2026-05-23T10:34:12.7220015Z  Init Binary: docker-init
+2026-05-23T10:34:12.7220284Z  containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-23T10:34:12.7220593Z  runc version: v1.3.5-0-g488fc13e
+2026-05-23T10:34:12.7220825Z  init version: de40ad0
+2026-05-23T10:34:12.7221007Z  Security Options:
+2026-05-23T10:34:12.7221188Z   apparmor
+2026-05-23T10:34:12.7221335Z   seccomp
+2026-05-23T10:34:12.7221493Z    Profile: builtin
+2026-05-23T10:34:12.7221973Z   cgroupns
+2026-05-23T10:34:12.7222308Z  Kernel Version: 6.17.0-1013-azure
+2026-05-23T10:34:12.7222716Z  Operating System: Ubuntu 24.04.4 LTS
+2026-05-23T10:34:12.7223370Z  OSType: linux
+2026-05-23T10:34:12.7223671Z  Architecture: x86_64
+2026-05-23T10:34:12.7223995Z  CPUs: 4
+2026-05-23T10:34:12.7224672Z  Total Memory: 15.61GiB
+2026-05-23T10:34:12.7225045Z  Name: runnervmg397c
+2026-05-23T10:34:12.7225421Z  ID: 030b3de5-f6f5-43f2-8bdc-0a866a274328
+2026-05-23T10:34:12.7225870Z  Docker Root Dir: /var/lib/docker
+2026-05-23T10:34:12.7226249Z  Debug Mode: false
+2026-05-23T10:34:12.7226551Z  Username: githubactions
+2026-05-23T10:34:12.7226891Z  Experimental: false
+2026-05-23T10:34:12.7227178Z  Insecure Registries:
+2026-05-23T10:34:12.7227542Z   ::1/128
+2026-05-23T10:34:12.7227777Z   127.0.0.0/8
+2026-05-23T10:34:12.7228078Z  Live Restore Enabled: false
+2026-05-23T10:34:12.7228748Z 
+2026-05-23T10:34:12.7229301Z ##[endgroup]
+2026-05-23T10:34:12.9041930Z ##[group]Download buildx from GitHub Releases
+2026-05-23T10:34:12.9685646Z Use 0.33.0 version spec cache key for v0.33.0
+2026-05-23T10:34:12.9687759Z GitHub Actions cache disabled
+2026-05-23T10:34:12.9688531Z Downloading https://github.com/docker/buildx/releases/download/v0.33.0/buildx-v0.33.0.linux-amd64
+2026-05-23T10:34:13.4638037Z Copying /home/runner/work/_temp/68581a86-27b6-4421-93eb-ce414b2c6778 to /home/runner/.docker/buildx/.bin/0.33.0/linux-x64/docker-buildx
+2026-05-23T10:34:13.5117171Z Cached to /home/runner/.docker/buildx/.bin/0.33.0/linux-x64/docker-buildx
+2026-05-23T10:34:13.5118322Z ##[endgroup]
+2026-05-23T10:34:13.5118920Z ##[group]Install buildx
+2026-05-23T10:34:13.5119979Z Docker plugin mode
+2026-05-23T10:34:13.5333103Z Fixing perms
+2026-05-23T10:34:13.5334509Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-05-23T10:34:13.5335645Z ##[endgroup]
+2026-05-23T10:34:13.5336239Z ##[group]Buildx version
+2026-05-23T10:34:13.5371948Z [command]/usr/bin/docker buildx version
+2026-05-23T10:34:13.5887082Z github.com/docker/buildx v0.33.0 f7897eba028583e0071642db3c011e860444f8cf
+2026-05-23T10:34:13.5916694Z ##[endgroup]
+2026-05-23T10:34:13.6073924Z ##[group]Inspecting default docker context
+2026-05-23T10:34:13.6215902Z [
+2026-05-23T10:34:13.6216219Z   {
+2026-05-23T10:34:13.6216476Z     "Name": "default",
+2026-05-23T10:34:13.6216815Z     "Metadata": {},
+2026-05-23T10:34:13.6217132Z     "Endpoints": {
+2026-05-23T10:34:13.6217441Z       "docker": {
+2026-05-23T10:34:13.6217794Z         "Host": "unix:///var/run/docker.sock",
+2026-05-23T10:34:13.6218281Z         "SkipTLSVerify": false
+2026-05-23T10:34:13.6218653Z       }
+2026-05-23T10:34:13.6218914Z     },
+2026-05-23T10:34:13.6219200Z     "TLSMaterial": {},
+2026-05-23T10:34:13.6219552Z     "Storage": {
+2026-05-23T10:34:13.6219913Z       "MetadataPath": "<IN MEMORY>",
+2026-05-23T10:34:13.6220371Z       "TLSPath": "<IN MEMORY>"
+2026-05-23T10:34:13.6220805Z     }
+2026-05-23T10:34:13.6221100Z   }
+2026-05-23T10:34:13.6221376Z ]
+2026-05-23T10:34:13.6222055Z ##[endgroup]
+2026-05-23T10:34:13.6222703Z ##[group]Creating a new builder instance
+2026-05-23T10:34:13.7450042Z [command]/usr/bin/docker buildx create --name builder-173e59a2-7d7d-4704-95dc-4f7453f1003e --driver docker-container --driver-opt image=moby/buildkit:v0.29.0 --driver-opt env.ACTIONS_ID_TOKEN_REQUEST_TOKEN=*** --driver-opt env.ACTIONS_ID_TOKEN_REQUEST_URL=https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0 --buildkitd-flags --debug --use --config /home/runner/work/_temp/docker-actions-toolkit-IUGEyS/tmp-2596-UlDYdNW4edoa
+2026-05-23T10:34:13.7848187Z builder-173e59a2-7d7d-4704-95dc-4f7453f1003e
+2026-05-23T10:34:13.7869427Z ##[endgroup]
+2026-05-23T10:34:13.7870006Z ##[group]Booting builder
+2026-05-23T10:34:13.7907360Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-173e59a2-7d7d-4704-95dc-4f7453f1003e
+2026-05-23T10:34:13.8436425Z #1 [internal] booting buildkit
+2026-05-23T10:34:13.9941151Z #1 pulling image moby/buildkit:v0.29.0
+2026-05-23T10:34:17.1643103Z #1 pulling image moby/buildkit:v0.29.0 3.3s done
+2026-05-23T10:34:17.3153079Z #1 creating container buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0
+2026-05-23T10:34:17.4844846Z #1 creating container buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0 0.3s done
+2026-05-23T10:34:17.4861251Z #1 DONE 3.6s
+2026-05-23T10:34:17.5166377Z Name:          builder-173e59a2-7d7d-4704-95dc-4f7453f1003e
+2026-05-23T10:34:17.5167399Z Driver:        docker-container
+2026-05-23T10:34:17.5167856Z Last Activity: 2026-05-23 10:34:13 +0000 UTC
+2026-05-23T10:34:17.5168161Z 
+2026-05-23T10:34:17.5168491Z Nodes:
+2026-05-23T10:34:17.5168908Z Name:                  builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0
+2026-05-23T10:34:17.5169679Z Endpoint:              unix:///var/run/docker.sock
+2026-05-23T10:34:17.5332536Z Driver Options:        env.ACTIONS_ID_TOKEN_REQUEST_TOKEN="***" env.ACTIONS_ID_TOKEN_REQUEST_URL="https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0" image="moby/buildkit:v0.29.0"
+2026-05-23T10:34:17.5334448Z Status:                running
+2026-05-23T10:34:17.5334966Z BuildKit daemon flags: --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:17.5335597Z BuildKit version:      v0.29.0
+2026-05-23T10:34:17.5336460Z Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/mips64le, linux/mips64, linux/loong64, linux/arm/v7, linux/arm/v6
+2026-05-23T10:34:17.5337196Z Labels:
+2026-05-23T10:34:17.5337425Z  org.mobyproject.buildkit.worker.executor:         oci
+2026-05-23T10:34:17.5337846Z  org.mobyproject.buildkit.worker.hostname:         ef9978b214ad
+2026-05-23T10:34:17.5338247Z  org.mobyproject.buildkit.worker.network:          host
+2026-05-23T10:34:17.5338639Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2026-05-23T10:34:17.5339044Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2026-05-23T10:34:17.5339437Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2026-05-23T10:34:17.5339751Z GC Policy rule#0:
+2026-05-23T10:34:17.5339922Z  All:            false
+2026-05-23T10:34:17.5340403Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2026-05-23T10:34:17.5340798Z  Keep Duration:  48h0m0s
+2026-05-23T10:34:17.5341004Z  Max Used Space: 488.3MiB
+2026-05-23T10:34:17.5341195Z GC Policy rule#1:
+2026-05-23T10:34:17.5341485Z  All:            false
+2026-05-23T10:34:17.5341701Z  Keep Duration:  1440h0m0s
+2026-05-23T10:34:17.5341903Z  Reserved Space: 9.313GiB
+2026-05-23T10:34:17.5342093Z  Max Used Space: 93.13GiB
+2026-05-23T10:34:17.5342273Z  Min Free Space: 27.01GiB
+2026-05-23T10:34:17.5342497Z GC Policy rule#2:
+2026-05-23T10:34:17.5342748Z  All:            false
+2026-05-23T10:34:17.5342938Z  Reserved Space: 9.313GiB
+2026-05-23T10:34:17.5343268Z  Max Used Space: 93.13GiB
+2026-05-23T10:34:17.5343465Z  Min Free Space: 27.01GiB
+2026-05-23T10:34:17.5343780Z GC Policy rule#3:
+2026-05-23T10:34:17.5344062Z  All:            true
+2026-05-23T10:34:17.5344242Z  Reserved Space: 9.313GiB
+2026-05-23T10:34:17.5344529Z  Max Used Space: 93.13GiB
+2026-05-23T10:34:17.5344894Z  Min Free Space: 27.01GiB
+2026-05-23T10:34:17.5345251Z File#buildkitd.toml:
+2026-05-23T10:34:17.5345589Z  > [cache]
+2026-05-23T10:34:17.5345783Z  > [cache.gha]
+2026-05-23T10:34:17.5345956Z  > [cache.gha.sign]
+2026-05-23T10:34:17.5346160Z  > command = ['ghacache-sign-script.sh']
+2026-05-23T10:34:17.5346400Z  > 
+2026-05-23T10:34:17.5346666Z  > [cache.gha.verify]
+2026-05-23T10:34:17.5346911Z  > required = true
+2026-05-23T10:34:17.5347073Z  > 
+2026-05-23T10:34:17.5347236Z  > [cache.gha.verify.policy]
+2026-05-23T10:34:17.5347611Z  > githubWorkflowRepository = 'moby/buildkit'
+2026-05-23T10:34:17.5348136Z  > issuer = 'https://token.actions.githubusercontent.com'
+2026-05-23T10:34:17.5348470Z  > runnerEnvironment = 'github-hosted'
+2026-05-23T10:34:17.5348780Z  > sourceRepositoryURI = 'https://github.com/moby/buildkit'
+2026-05-23T10:34:17.5349437Z  > subjectAlternativeName = 'https://github.com/docker/github-builder/.github/workflows/bake.yml*'
+2026-05-23T10:34:17.5349962Z  > timestampThreshold = 1
+2026-05-23T10:34:17.5350334Z  > tlogThreshold = 1
+2026-05-23T10:34:17.5350541Z  > 
+2026-05-23T10:34:17.5350738Z File#provenance.d/github_actions_context.json:
+2026-05-23T10:34:17.5387253Z  > {"github_actor":"crazy-max","github_actor_id":"1951866","github_event_name":"schedule","github_event_payload":{"enterprise":{"avatar_url":"https://avatars.githubusercontent.com/b/208541?v=4","created_at":"2024-08-08T20:47:18Z","description":"An open framework to assemble specialized container systems without reinventing the wheel.","html_url":"https://github.com/enterprises/mobyproject","id":208541,"name":"Moby","node_id":"E_kgDOAAMunQ","slug":"mobyproject","updated_at":"2026-04-29T17:28:08Z","website_url":"https://mobyproject.org"},"organization":{"avatar_url":"https://avatars.githubusercontent.com/u/27259197?v=4","description":"An open framework to assemble specialized container systems without reinventing the wheel.","events_url":"https://api.github.com/orgs/moby/events","hooks_url":"https://api.github.com/orgs/moby/hooks","id":27259197,"issues_url":"https://api.github.com/orgs/moby/issues","login":"moby","members_url":"https://api.github.com/orgs/moby/members{/member}","node_id":"MDEyOk9yZ2FuaXphdGlvbjI3MjU5MTk3","public_members_url":"https://api.github.com/orgs/moby/public_members{/member}","repos_url":"https://api.github.com/orgs/moby/repos","url":"https://api.github.com/orgs/moby"},"repository":{"allow_forking":true,"archive_url":"https://api.github.com/repos/moby/buildkit/{archive_format}{/ref}","archived":false,"assignees_url":"https://api.github.com/repos/moby/buildkit/assignees{/user}","blobs_url":"https://api.github.com/repos/moby/buildkit/git/blobs{/sha}","branches_url":"https://api.github.com/repos/moby/buildkit/branches{/branch}","clone_url":"https://github.com/moby/buildkit.git","collaborators_url":"https://api.github.com/repos/moby/buildkit/collaborators{/collaborator}","comments_url":"https://api.github.com/repos/moby/buildkit/comments{/number}","commits_url":"https://api.github.com/repos/moby/buildkit/commits{/sha}","compare_url":"https://api.github.com/repos/moby/buildkit/compare/{base}...{head}","contents_url":"https://api.github.com/repos/moby/buildkit/contents/{+path}","contributors_url":"https://api.github.com/repos/moby/buildkit/contributors","created_at":"2017-05-31T17:04:10Z","custom_properties":{},"default_branch":"master","deployments_url":"https://api.github.com/repos/moby/buildkit/deployments","description":"concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit","disabled":false,"downloads_url":"https://api.github.com/repos/moby/buildkit/downloads","events_url":"https://api.github.com/repos/moby/buildkit/events","fork":false,"forks":1420,"forks_count":1420,"forks_url":"https://api.github.com/repos/moby/buildkit/forks","full_name":"moby/buildkit","git_commits_url":"https://api.github.com/repos/moby/buildkit/git/commits{/sha}","git_refs_url":"https://api.github.com/repos/moby/buildkit/git/refs{/sha}","git_tags_url":"https://api.github.com/repos/moby/buildkit/git/tags{/sha}","git_url":"git://github.com/moby/buildkit.git","has_discussions":true,"has_downloads":true,"has_issues":true,"has_pages":false,"has_projects":true,"has_pull_requests":true,"has_wiki":false,"homepage":"https://github.com/moby/moby/issues/34227","hooks_url":"https://api.github.com/repos/moby/buildkit/hooks","html_url":"https://github.com/moby/buildkit","id":92969352,"is_template":false,"issue_comment_url":"https://api.github.com/repos/moby/buildkit/issues/comments{/number}","issue_events_url":"https://api.github.com/repos/moby/buildkit/issues/events{/number}","issues_url":"https://api.github.com/repos/moby/buildkit/issues{/number}","keys_url":"https://api.github.com/repos/moby/buildkit/keys{/key_id}","labels_url":"https://api.github.com/repos/moby/buildkit/labels{/name}","language":"Go","languages_url":"https://api.github.com/repos/moby/buildkit/languages","license":{"key":"apache-2.0","name":"Apache License 2.0","node_id":"MDc6TGljZW5zZTI=","spdx_id":"Apache-2.0","url":"https://api.github.com/licenses/apache-2.0"},"merges_url":"https://api.github.com/repos/moby/buildkit/merges","milestones_url":"https://api.github.com/repos/moby/buildkit/milestones{/number}","mirror_url":null,"name":"buildkit","node_id":"MDEwOlJlcG9zaXRvcnk5Mjk2OTM1Mg==","notifications_url":"https://api.github.com/repos/moby/buildkit/notifications{?since,all,participating}","open_issues":904,"open_issues_count":904,"owner":{"avatar_url":"https://avatars.githubusercontent.com/u/27259197?v=4","events_url":"https://api.github.com/users/moby/events{/privacy}","followers_url":"https://api.github.com/users/moby/followers","following_url":"https://api.github.com/users/moby/following{/other_user}","gists_url":"https://api.github.com/users/moby/gists{/gist_id}","gravatar_id":"","html_url":"https://github.com/moby","id":27259197,"login":"moby","node_id":"MDEyOk9yZ2FuaXphdGlvbjI3MjU5MTk3","organizations_url":"https://api.github.com/users/moby/orgs","received_events_url":"https://api.github.com/users/moby/received_events","repos_url":"https://api.github.com/users/moby/repos","site_admin":false,"starred_url":"https://api.github.com/users/moby/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/moby/subscriptions","type":"Organization","url":"https://api.github.com/users/moby","user_view_type":"public"},"private":false,"pull_request_creation_policy":"all","pulls_url":"https://api.github.com/repos/moby/buildkit/pulls{/number}","pushed_at":"2026-05-23T01:07:32Z","releases_url":"https://api.github.com/repos/moby/buildkit/releases{/id}","size":60378,"ssh_url":"git@github.com:moby/buildkit.git","stargazers_count":9985,"stargazers_url":"https://api.github.com/repos/moby/buildkit/stargazers","statuses_url":"https://api.github.com/repos/moby/buildkit/statuses/{sha}","subscribers_url":"https://api.github.com/repos/moby/buildkit/subscribers","subscription_url":"https://api.github.com/repos/moby/buildkit/subscription","svn_url":"https://github.com/moby/buildkit","tags_url":"https://api.github.com/repos/moby/buildkit/tags","teams_url":"https://api.github.com/repos/moby/buildkit/teams","topics":["builder","buildkit","cloud-native","containers","docker","dockerfile","go","golang","oci","oci-image"],"trees_url":"https://api.github.com/repos/moby/buildkit/git/trees{/sha}","updated_at":"2026-05-23T01:07:37Z","url":"https://api.github.com/repos/moby/buildkit","visibility":"public","watchers":9985,"watchers_count":9985,"web_commit_signoff_required":true},"schedule":"0 10 * * *","workflow":".github/workflows/buildkit.yml"},"github_job":"build","github_ref":"refs/heads/master","github_ref_name":"master","github_ref_protected":"true","github_ref_type":"branch","github_repository":"moby/buildkit","github_repository_id":"92969352","github_repository_owner":"moby","github_repository_owner_id":"27259197","github_run_attempt":"1","github_run_id":"26330447509","github_run_number":"9240","github_runner_arch":"X64","github_runner_environment":"github-hosted","github_runner_image_os":"ubuntu24","github_runner_image_version":"20260518.149.1","github_runner_name":"GitHub Actions 1001447160","github_runner_os":"Linux","github_runner_tracking_id":"github_015e5c0c-327b-474a-840c-92a64b61032f","github_server_url":"https://github.com","github_triggering_actor":"crazy-max","github_workflow":"buildkit","github_workflow_ref":"moby/buildkit/.github/workflows/buildkit.yml@refs/heads/master","github_workflow_sha":"d6b444d4e18204d7f7e6fac28037ab1e28666d1b"}
+2026-05-23T10:34:17.5414159Z ##[endgroup]
+2026-05-23T10:34:17.6048448Z ##[group]Inspect builder
+2026-05-23T10:34:17.6051010Z {
+2026-05-23T10:34:17.6051701Z   "nodes": [
+2026-05-23T10:34:17.6052332Z     {
+2026-05-23T10:34:17.6052795Z       "name": "builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0",
+2026-05-23T10:34:17.6054764Z       "endpoint": "unix:///var/run/docker.sock",
+2026-05-23T10:34:17.6055266Z       "driver-opts": [
+2026-05-23T10:34:17.6208563Z         "env.ACTIONS_ID_TOKEN_REQUEST_TOKEN=***",
+2026-05-23T10:34:17.6209559Z         "env.ACTIONS_ID_TOKEN_REQUEST_URL=https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0",
+2026-05-23T10:34:17.6210432Z         "image=moby/buildkit:v0.29.0"
+2026-05-23T10:34:17.6210671Z       ],
+2026-05-23T10:34:17.6210832Z       "status": "running",
+2026-05-23T10:34:17.6211159Z       "buildkitd-flags": "--debug --allow-insecure-entitlement=network.host",
+2026-05-23T10:34:17.6211523Z       "buildkit": "v0.29.0",
+2026-05-23T10:34:17.6212214Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/loong64,linux/arm/v7,linux/arm/v6",
+2026-05-23T10:34:17.6213435Z       "features": {
+2026-05-23T10:34:17.6213756Z         "Automatically load images to the Docker Engine image store": true,
+2026-05-23T10:34:17.6214113Z         "Cache export": true,
+2026-05-23T10:34:17.6214455Z         "Direct push": true,
+2026-05-23T10:34:17.6214670Z         "Docker exporter": true,
+2026-05-23T10:34:17.6214896Z         "Multi-platform build": true,
+2026-05-23T10:34:17.6215121Z         "OCI exporter": true
+2026-05-23T10:34:17.6215312Z       },
+2026-05-23T10:34:17.6215457Z       "labels": {
+2026-05-23T10:34:17.6215696Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2026-05-23T10:34:17.6216071Z         "org.mobyproject.buildkit.worker.hostname": "ef9978b214ad",
+2026-05-23T10:34:17.6216446Z         "org.mobyproject.buildkit.worker.network": "host",
+2026-05-23T10:34:17.6216838Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2026-05-23T10:34:17.6217272Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2026-05-23T10:34:17.6217681Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2026-05-23T10:34:17.6217982Z       },
+2026-05-23T10:34:17.6218134Z       "gcPolicy": [
+2026-05-23T10:34:17.6218300Z         {
+2026-05-23T10:34:17.6218452Z           "all": false,
+2026-05-23T10:34:17.6218630Z           "filter": [
+2026-05-23T10:34:17.6218816Z             "type==source.local",
+2026-05-23T10:34:17.6219038Z             "type==exec.cachemount",
+2026-05-23T10:34:17.6219274Z             "type==source.git.checkout"
+2026-05-23T10:34:17.6219498Z           ],
+2026-05-23T10:34:17.6219668Z           "keepDuration": "48h0m0s",
+2026-05-23T10:34:17.6219899Z           "maxUsedSpace": "488.3MiB"
+2026-05-23T10:34:17.6220100Z         },
+2026-05-23T10:34:17.6220245Z         {
+2026-05-23T10:34:17.6220388Z           "all": false,
+2026-05-23T10:34:17.6220581Z           "keepDuration": "1440h0m0s",
+2026-05-23T10:34:17.6220805Z           "reservedSpace": "9.313GiB",
+2026-05-23T10:34:17.6221035Z           "maxUsedSpace": "93.13GiB",
+2026-05-23T10:34:17.6221260Z           "minFreeSpace": "27.01GiB"
+2026-05-23T10:34:17.6221471Z         },
+2026-05-23T10:34:17.6221606Z         {
+2026-05-23T10:34:17.6221755Z           "all": false,
+2026-05-23T10:34:17.6221945Z           "reservedSpace": "9.313GiB",
+2026-05-23T10:34:17.6222167Z           "maxUsedSpace": "93.13GiB",
+2026-05-23T10:34:17.6222387Z           "minFreeSpace": "27.01GiB"
+2026-05-23T10:34:17.6222587Z         },
+2026-05-23T10:34:17.6222726Z         {
+2026-05-23T10:34:17.6222869Z           "all": true,
+2026-05-23T10:34:17.6223279Z           "reservedSpace": "9.313GiB",
+2026-05-23T10:34:17.6223512Z           "maxUsedSpace": "93.13GiB",
+2026-05-23T10:34:17.6223736Z           "minFreeSpace": "27.01GiB"
+2026-05-23T10:34:17.6223951Z         }
+2026-05-23T10:34:17.6224101Z       ],
+2026-05-23T10:34:17.6224247Z       "files": {
+2026-05-23T10:34:17.6226066Z         "buildkitd.toml": "[cache]\n[cache.gha]\n[cache.gha.sign]\ncommand = ['ghacache-sign-script.sh']\n\n[cache.gha.verify]\nrequired = true\n\n[cache.gha.verify.policy]\ngithubWorkflowRepository = 'moby/buildkit'\nissuer = 'https://token.actions.githubusercontent.com'\nrunnerEnvironment = 'github-hosted'\nsourceRepositoryURI = 'https://github.com/moby/buildkit'\nsubjectAlternativeName = 'https://github.com/docker/github-builder/.github/workflows/bake.yml*'\ntimestampThreshold = 1\ntlogThreshold = 1\n"
+2026-05-23T10:34:17.6227923Z       }
+2026-05-23T10:34:17.6228071Z     }
+2026-05-23T10:34:17.6228209Z   ],
+2026-05-23T10:34:17.6228460Z   "name": "builder-173e59a2-7d7d-4704-95dc-4f7453f1003e",
+2026-05-23T10:34:17.6228771Z   "driver": "docker-container",
+2026-05-23T10:34:17.6229002Z   "lastActivity": "2026-05-23T10:34:13.000Z"
+2026-05-23T10:34:17.6229240Z }
+2026-05-23T10:34:17.6229661Z ##[endgroup]
+2026-05-23T10:34:17.6241442Z ##[group]BuildKit version
+2026-05-23T10:34:17.6241849Z builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0: v0.29.0
+2026-05-23T10:34:17.6242300Z ##[endgroup]
+2026-05-23T10:34:17.6314697Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-05-23T10:34:17.6315070Z with:
+2026-05-23T10:34:17.6320145Z   script: const fs = require('fs');
+const os = require('os');
+const path = require('path');
+
+const { Buildx } = require('@docker/actions-toolkit/lib/buildx/buildx');
+const { Cosign } = require('@docker/actions-toolkit/lib/cosign/cosign');
+const { Install } = require('@docker/actions-toolkit/lib/cosign/install');
+
+const inpCosignVersion = core.getInput('cosign-version');
+const inpBuilderName = core.getInput('builder-name');
+const inpGHACacheSignScript = core.getInput('gha-cache-sign-script');
+
+const cosignInstall = new Install();
+const cosignBinPath = await cosignInstall.download({
+  version: core.getInput('cosign-version'),
+  ghaNoCache: true,
+  skipState: true,
+  verifySignature: true
+});
+const cosignPath = await cosignInstall.install(cosignBinPath);
+
+const cosign = new Cosign();
+await cosign.printVersion();
+
+const containerName = `${Buildx.containerNamePrefix}${inpBuilderName}0`;
+
+const ghaCacheSignScriptPath = path.join(os.tmpdir(), `ghacache-sign-script.sh`);
+core.info(`Writing GitHub Actions cache sign script to ${ghaCacheSignScriptPath}`);
+await fs.writeFileSync(ghaCacheSignScriptPath, inpGHACacheSignScript, {mode: 0o700});
+
+core.info(`Copying GitHub Actions cache sign script to BuildKit container ${containerName}`);
+await exec.exec('docker', [
+  'cp',
+  ghaCacheSignScriptPath,
+  `${containerName}:/usr/bin/ghacache-sign-script.sh`
+]);
+
+core.info(`Copying cosign binary to BuildKit container ${containerName}`);
+await exec.exec('docker', [
+  'cp',
+  cosignPath,
+  `${containerName}:/usr/bin/cosign`
+]);
+
+2026-05-23T10:34:17.6325945Z   github-token: ***
+2026-05-23T10:34:17.6326134Z   debug: false
+2026-05-23T10:34:17.6326317Z   user-agent: actions/github-script
+2026-05-23T10:34:17.6326555Z   result-encoding: json
+2026-05-23T10:34:17.6326737Z   retries: 0
+2026-05-23T10:34:17.6326940Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-23T10:34:17.6327208Z env:
+2026-05-23T10:34:17.6327363Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:34:17.6327578Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:34:17.6327854Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:17.6328155Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:17.6328502Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:17.6328822Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:34:17.6329033Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:34:17.6329275Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:34:17.6329477Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:34:17.6329713Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:34:17.6329999Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-23T10:34:17.6330672Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:17.6442721Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-23T10:34:17.6443392Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:17.6444539Z   ACTIONS_ID_TOKEN_REQUEST_URL: https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0
+2026-05-23T10:34:17.6557244Z   ACTIONS_ID_TOKEN_REQUEST_TOKEN: ***
+2026-05-23T10:34:17.6557661Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-23T10:34:17.6558075Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-23T10:34:17.6558535Z   ACTIONS_ORCHESTRATION_ID: 9fa45ee9-2d3e-4af4-a4f6-059ac63da77d.binaries.build._4_linux_arm64_ubuntu-24_
+2026-05-23T10:34:17.6559014Z   INPUT_COSIGN-VERSION: v3.0.6
+2026-05-23T10:34:17.6559319Z   INPUT_BUILDER-NAME: builder-173e59a2-7d7d-4704-95dc-4f7453f1003e
+2026-05-23T10:34:17.6562024Z   INPUT_GHA-CACHE-SIGN-SCRIPT: #!/bin/sh
+set -e
+
+# Create temporary files
+tmp_dir=$(mktemp -d)
+out_file="$tmp_dir/bundle"
+in_file="$tmp_dir/blob"
+signing_config="$tmp_dir/signing-config.json"
+trap 'rm -rf "$tmp_dir"' EXIT
+cat > "$in_file"
+
+no_default_rekor=
+if [ "" = "true" ]; then
+  no_default_rekor="--no-default-rekor=true"
+fi
+
+set -x
+
+# Create signing config
+COSIGN_EXPERIMENTAL=1 cosign signing-config create \
+  --with-default-services=true \
+  ${no_default_rekor:+$no_default_rekor} \
+  --out="$signing_config"
+
+# Sign with cosign
+cosign sign-blob \
+  --yes \
+  --oidc-provider github-actions \
+  --new-bundle-format \
+  --signing-config "$signing_config" \
+  --bundle "$out_file" \
+  "$in_file"
+
+# Output bundle to stdout
+cat "$out_file"
+
+2026-05-23T10:34:17.6564719Z ##[endgroup]
+2026-05-23T10:34:18.2725393Z Use 3.0.6 version spec cache key for v3.0.6
+2026-05-23T10:34:18.2735506Z GitHub Actions cache disabled
+2026-05-23T10:34:18.2737101Z Downloading https://github.com/sigstore/cosign/releases/download/v3.0.6/cosign-linux-amd64
+2026-05-23T10:34:19.0025388Z Downloading keyless verification bundle at https://github.com/sigstore/cosign/releases/download/v3.0.6/cosign-linux-amd64.sigstore.json
+2026-05-23T10:34:19.1897570Z Verifying keyless verification bundle signature
+2026-05-23T10:34:19.1910154Z Fetching Sigstore TUF trusted root metadata
+2026-05-23T10:34:19.5254257Z Verifying artifact signature
+2026-05-23T10:34:19.7025691Z Cosign binary signature verified! https://search.sigstore.dev?logIndex=1244817125
+2026-05-23T10:34:19.7027090Z Copying /home/runner/work/_temp/12af24b2-4120-45c7-b10f-0676e8d5f5cf to /home/runner/.bin/3.0.6/linux-x64/cosign
+2026-05-23T10:34:19.8098815Z Cached to /home/runner/.bin/3.0.6/linux-x64/cosign
+2026-05-23T10:34:19.8548556Z Fixing perms
+2026-05-23T10:34:19.8552771Z Added Cosign to PATH
+2026-05-23T10:34:19.8553672Z Binary path: /home/runner/work/_temp/docker-actions-toolkit-h2BmsU/cosign-bin/cosign
+2026-05-23T10:34:19.8583628Z [command]/home/runner/work/_temp/docker-actions-toolkit-h2BmsU/cosign-bin/cosign version --json
+2026-05-23T10:34:19.8802830Z {
+2026-05-23T10:34:19.8803450Z   "gitVersion": "v3.0.6",
+2026-05-23T10:34:19.8803939Z   "gitCommit": "f1ad3ee952313be5d74a49d67ba0aa8d0d5e351f",
+2026-05-23T10:34:19.8804495Z   "gitTreeState": "clean",
+2026-05-23T10:34:19.8804858Z   "buildDate": "2026-04-06T21:39:58Z",
+2026-05-23T10:34:19.8805249Z   "goVersion": "go1.25.7",
+2026-05-23T10:34:19.8805590Z   "compiler": "gc",
+2026-05-23T10:34:19.8805896Z   "platform": "linux/amd64"
+2026-05-23T10:34:19.8806216Z }
+2026-05-23T10:34:19.8813806Z Writing GitHub Actions cache sign script to /tmp/ghacache-sign-script.sh
+2026-05-23T10:34:19.8815952Z Copying GitHub Actions cache sign script to BuildKit container buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0
+2026-05-23T10:34:19.8840571Z [command]/usr/bin/docker cp /tmp/ghacache-sign-script.sh buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0:/usr/bin/ghacache-sign-script.sh
+2026-05-23T10:34:20.4352207Z Copying cosign binary to BuildKit container buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0
+2026-05-23T10:34:20.4367746Z [command]/usr/bin/docker cp /home/runner/work/_temp/docker-actions-toolkit-h2BmsU/cosign-bin/cosign buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0:/usr/bin/cosign
+2026-05-23T10:34:20.5978210Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-05-23T10:34:20.5978616Z with:
+2026-05-23T10:34:20.5995296Z   script: const os = require('os');
+const { Build } = require('@docker/actions-toolkit/lib/buildx/build');
+const { GitHub } = require('@docker/actions-toolkit/lib/github/github');
+const { Util } = require('@docker/actions-toolkit/lib/util');
+
+const inpPlatform = core.getInput('platform');
+const platformPairSuffix = inpPlatform ? `-${inpPlatform.replace(/\//g, '-')}` : '';
+core.setOutput('platform-pair-suffix', platformPairSuffix);
+
+const inpSbomImage = core.getInput('sbom-image');
+const inpLocalExportDir = core.getInput('local-export-dir');
+
+const inpCache = core.getBooleanInput('cache');
+const inpCacheScope = core.getInput('cache-scope');
+const inpCacheMode = core.getInput('cache-mode');
+const inpContext = core.getInput('context');
+const inpFiles = Util.getInputList('files');
+const inpOutput = core.getInput('output');
+const inpPush = core.getBooleanInput('push');
+const inpSbom = core.getBooleanInput('sbom');
+const inpSet = Util.getInputList('set', {ignoreComma: true, quote: false});
+const inpTarget = core.getInput('target');
+const inpVars = Util.getInputList('vars');
+const inpMetaImages = core.getMultilineInput('meta-images');
+const inpMetaVersion = core.getInput('meta-version');
+const inpMetaTags = core.getMultilineInput('meta-tags');
+const inpSetMetaAnnotations = core.getBooleanInput('set-meta-annotations');
+const inpSetMetaLabels = core.getBooleanInput('set-meta-labels');
+const inpBakeFileTags = core.getInput('bake-file-tags');
+const inpBakeFileAnnotations = core.getInput('bake-file-annotations');
+const inpBakeFileLabels = core.getInput('bake-file-labels');
+const inpGitHubToken = core.getInput('github-token');
+
+const meta = {
+  version: inpMetaVersion,
+  tags: inpMetaTags
+};
+const renderTemplate = value => Util.compileHandlebars(value, {noEscape: true}, {meta});
+
+const bakeSource = await new Build().gitContext({subdir: inpContext});
+await core.group(`Set source output`, async () => {
+  core.info(bakeSource);
+  core.setOutput('source', bakeSource);
+});
+
+await core.group(`Set target output`, async () => {
+  core.info(inpTarget);
+  core.setOutput('target', inpTarget);
+});
+
+const sbom = inpSbom ? `generator=${inpSbomImage}` : 'false';
+await core.group(`Set sbom`, async () => {
+  core.info(sbom);
+  core.setOutput('sbom', sbom);
+});
+
+const envs = Object.assign({},
+  inpVars ? inpVars.reduce((acc, curr) => {
+    const idx = curr.indexOf('=');
+    if (idx !== -1) {
+      acc[curr.substring(0, idx)] = curr.substring(idx + 1);
+    }
+    return acc;
+  }, {}) : {},
+  {
+    BUILDKIT_MULTI_PLATFORM: '1',
+    BUILDX_BAKE_GIT_AUTH_TOKEN: inpGitHubToken
+  }
+);
+await core.group(`Set envs`, async () => {
+  core.info(JSON.stringify(envs, null, 2));
+  core.setOutput('envs', JSON.stringify(envs));
+});
+
+let bakeFiles = inpFiles;
+await core.group(`Set bake files`, async () => {
+  if (bakeFiles.length === 0) {
+    bakeFiles = ['docker-bake.hcl'];
+  }
+  if (inpBakeFileTags) {
+    bakeFiles.push(`cwd://${inpBakeFileTags}`);
+  }
+  if (inpSetMetaAnnotations && inpBakeFileAnnotations) {
+    bakeFiles.push(`cwd://${inpBakeFileAnnotations}`);
+  }
+  if (inpSetMetaLabels && inpBakeFileLabels) {
+    bakeFiles.push(`cwd://${inpBakeFileLabels}`);
+  }
+  core.info(JSON.stringify(bakeFiles, null, 2));
+  core.setOutput('files', bakeFiles.join(os.EOL));
+});
+
+let outputOverride = '';
+switch (inpOutput) {
+  case 'image':
+    if (inpMetaImages.length == 0) {
+      core.setFailed('meta-images is required when output is image');
+      return;
+    }
+    outputOverride = `*.output=type=image,"name=${inpMetaImages.join(',')}",oci-artifact=true,push-by-digest=true,name-canonical=true,push=${inpPush}`;
+    break;
+  case 'local':
+    outputOverride = `*.output=type=local,platform-split=true,dest=${inpLocalExportDir}`;
+    break;
+  default:
+    core.setFailed(`Invalid output: ${inpOutput}`);
+    return;
+}
+
+let bakeOverrides = [];
+try {
+  bakeOverrides = inpSet.map(override => renderTemplate(override));
+} catch (err) {
+  core.setFailed(`Failed to render Handlebars template: ${err.message}`);
+  return;
+}
+await core.group(`Set bake overrides`, async () => {
+  bakeOverrides.push(outputOverride);
+  bakeOverrides.push('*.tags=');
+  if (GitHub.context.payload.repository?.private ?? false) {
+    // if this is a private repository, we set min provenance mode
+    bakeOverrides.push(`*.attest=type=provenance,${Build.resolveProvenanceAttrs('mode=min,version=v1')}`);
+  } else {
+    // for a public repository, we set max provenance mode
+    bakeOverrides.push(`*.attest=type=provenance,${Build.resolveProvenanceAttrs('mode=max,version=v1')}`);
+  }
+  if (inpPlatform) {
+    bakeOverrides.push(`*.platform=${inpPlatform}`);
+  }
+  if (inpCache) {
+    bakeOverrides.push(`*.cache-from=type=gha,scope=${inpCacheScope || inpTarget}${platformPairSuffix}`);
+    bakeOverrides.push(`*.cache-to=type=gha,ignore-error=true,scope=${inpCacheScope || inpTarget}${platformPairSuffix},mode=${inpCacheMode}`);
+  }
+  core.info(JSON.stringify(bakeOverrides, null, 2));
+  core.setOutput('overrides', bakeOverrides.join(os.EOL));
+});
+
+2026-05-23T10:34:20.6012080Z   github-token: ***
+2026-05-23T10:34:20.6012262Z   debug: false
+2026-05-23T10:34:20.6012454Z   user-agent: actions/github-script
+2026-05-23T10:34:20.6012700Z   result-encoding: json
+2026-05-23T10:34:20.6012884Z   retries: 0
+2026-05-23T10:34:20.6013311Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-23T10:34:20.6013589Z env:
+2026-05-23T10:34:20.6013755Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:34:20.6013971Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:34:20.6014248Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:20.6014545Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:20.6014888Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:20.6015203Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:34:20.6015411Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:34:20.6015647Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:34:20.6015856Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:34:20.6016097Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:34:20.6016380Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-23T10:34:20.6017061Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:20.6131269Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-23T10:34:20.6131839Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:20.6132994Z   ACTIONS_ID_TOKEN_REQUEST_URL: https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0
+2026-05-23T10:34:20.6245391Z   ACTIONS_ID_TOKEN_REQUEST_TOKEN: ***
+2026-05-23T10:34:20.6245780Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-23T10:34:20.6246195Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-23T10:34:20.6246637Z   ACTIONS_ORCHESTRATION_ID: 9fa45ee9-2d3e-4af4-a4f6-059ac63da77d.binaries.build._4_linux_arm64_ubuntu-24_
+2026-05-23T10:34:20.6247123Z   INPUT_PLATFORM: linux/arm64
+2026-05-23T10:34:20.6247391Z   INPUT_SBOM-IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:20.6247711Z   INPUT_LOCAL-EXPORT-DIR: /tmp/buildx-output
+2026-05-23T10:34:20.6247965Z   INPUT_CACHE: true
+2026-05-23T10:34:20.6248146Z   INPUT_CACHE-SCOPE: binaries
+2026-05-23T10:34:20.6248357Z   INPUT_CACHE-MODE: min
+2026-05-23T10:34:20.6248539Z   INPUT_CONTEXT: .
+2026-05-23T10:34:20.6248711Z   INPUT_FILES: 
+2026-05-23T10:34:20.6248878Z   INPUT_OUTPUT: local
+2026-05-23T10:34:20.6249064Z   INPUT_PUSH: false
+2026-05-23T10:34:20.6249230Z   INPUT_SBOM: true
+2026-05-23T10:34:20.6249400Z   INPUT_SET: 
+2026-05-23T10:34:20.6249559Z   INPUT_TARGET: release
+2026-05-23T10:34:20.6249740Z   INPUT_VARS: 
+2026-05-23T10:34:20.6249907Z   INPUT_META-IMAGES: 
+2026-05-23T10:34:20.6250086Z   INPUT_META-VERSION: 
+2026-05-23T10:34:20.6250492Z   INPUT_META-TAGS: 
+2026-05-23T10:34:20.6250698Z   INPUT_SET-META-ANNOTATIONS: false
+2026-05-23T10:34:20.6250947Z   INPUT_SET-META-LABELS: false
+2026-05-23T10:34:20.6251161Z   INPUT_BAKE-FILE-TAGS: 
+2026-05-23T10:34:20.6251372Z   INPUT_BAKE-FILE-ANNOTATIONS: 
+2026-05-23T10:34:20.6251587Z   INPUT_BAKE-FILE-LABELS: 
+2026-05-23T10:34:20.6251897Z   INPUT_GITHUB-TOKEN: ***
+2026-05-23T10:34:20.6252095Z ##[endgroup]
+2026-05-23T10:34:21.0525971Z ##[group]Set source output
+2026-05-23T10:34:21.0526823Z https://github.com/moby/buildkit.git?ref=refs/heads/master&checksum=d6b444d4e18204d7f7e6fac28037ab1e28666d1b
+2026-05-23T10:34:21.0529469Z ##[endgroup]
+2026-05-23T10:34:21.0529968Z ##[group]Set target output
+2026-05-23T10:34:21.0530294Z release
+2026-05-23T10:34:21.0531947Z ##[endgroup]
+2026-05-23T10:34:21.0532430Z ##[group]Set sbom
+2026-05-23T10:34:21.0532800Z generator=docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:21.0534575Z ##[endgroup]
+2026-05-23T10:34:21.0535084Z ##[group]Set envs
+2026-05-23T10:34:21.0535391Z {
+2026-05-23T10:34:21.0535652Z   "BUILDKIT_MULTI_PLATFORM": "1",
+2026-05-23T10:34:21.0536751Z   "BUILDX_BAKE_GIT_AUTH_TOKEN": "***"
+2026-05-23T10:34:21.0537148Z }
+2026-05-23T10:34:21.0537619Z ##[endgroup]
+2026-05-23T10:34:21.0538170Z ##[group]Set bake files
+2026-05-23T10:34:21.0538484Z [
+2026-05-23T10:34:21.0538733Z   "docker-bake.hcl"
+2026-05-23T10:34:21.0539020Z ]
+2026-05-23T10:34:21.0539471Z ##[endgroup]
+2026-05-23T10:34:21.0539957Z ##[group]Set bake overrides
+2026-05-23T10:34:21.0564794Z [
+2026-05-23T10:34:21.0565284Z   "*.output=type=local,platform-split=true,dest=/tmp/buildx-output",
+2026-05-23T10:34:21.0565738Z   "*.tags=",
+2026-05-23T10:34:21.0566247Z   "*.attest=type=provenance,mode=max,version=v1,builder-id=https://github.com/moby/buildkit/actions/runs/26330447509/attempts/1",
+2026-05-23T10:34:21.0566807Z   "*.platform=linux/arm64",
+2026-05-23T10:34:21.0567075Z   "*.cache-from=type=gha,scope=binaries-linux-arm64",
+2026-05-23T10:34:21.0567512Z   "*.cache-to=type=gha,ignore-error=true,scope=binaries-linux-arm64,mode=min"
+2026-05-23T10:34:21.0567865Z ]
+2026-05-23T10:34:21.0568176Z ##[endgroup]
+2026-05-23T10:34:21.0751923Z ##[group]Run docker/bake-action@a66e1c87e2eca0503c343edf1d208c716d54b8a8
+2026-05-23T10:34:21.0752308Z with:
+2026-05-23T10:34:21.0752749Z   source: https://github.com/moby/buildkit.git?ref=refs/heads/master&checksum=d6b444d4e18204d7f7e6fac28037ab1e28666d1b
+2026-05-23T10:34:21.0753722Z   files: docker-bake.hcl
+2026-05-23T10:34:21.0753938Z   targets: release
+2026-05-23T10:34:21.0754179Z   sbom: generator=docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:21.0755562Z   set: *.output=type=local,platform-split=true,dest=/tmp/buildx-output
+*.tags=
+*.attest=type=provenance,mode=max,version=v1,builder-id=https://github.com/moby/buildkit/actions/runs/26330447509/attempts/1
+*.platform=linux/arm64
+*.cache-from=type=gha,scope=binaries-linux-arm64
+*.cache-to=type=gha,ignore-error=true,scope=binaries-linux-arm64,mode=min
+2026-05-23T10:34:21.0756869Z   no-cache: false
+2026-05-23T10:34:21.0757043Z   pull: false
+2026-05-23T10:34:21.0757201Z   load: false
+2026-05-23T10:34:21.0757398Z   push: false
+2026-05-23T10:34:21.0757701Z   github-token: ***
+2026-05-23T10:34:21.0757875Z env:
+2026-05-23T10:34:21.0758030Z   BUILDX_VERSION: v0.33.0
+2026-05-23T10:34:21.0758252Z   BUILDKIT_IMAGE: moby/buildkit:v0.29.0
+2026-05-23T10:34:21.0758532Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-05-23T10:34:21.0758829Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-05-23T10:34:21.0759168Z   DOCKER_ACTIONS_TOOLKIT_MODULE: @docker/actions-toolkit@0.89.1
+2026-05-23T10:34:21.0759487Z   COSIGN_VERSION: v3.0.6
+2026-05-23T10:34:21.0759702Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-05-23T10:34:21.0759932Z   MATRIX_SIZE_LIMIT: 20
+2026-05-23T10:34:21.0760140Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-05-23T10:34:21.0760372Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-05-23T10:34:21.0760661Z   ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE: /opt/actionarchivecache
+2026-05-23T10:34:21.0761342Z   ACTIONS_RUNTIME_URL: https://pipelinesghubeus2.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:21.0873975Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-23T10:34:21.0874534Z   ACTIONS_CACHE_URL: https://acghubeus1.actions.githubusercontent.com/VSeSJsGRiRCTiu0PRaYdcZnubUW6TSVddo0DTZpqG1wDqsIbXb/
+2026-05-23T10:34:21.0875691Z   ACTIONS_ID_TOKEN_REQUEST_URL: https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0
+2026-05-23T10:34:21.0988145Z   ACTIONS_ID_TOKEN_REQUEST_TOKEN: ***
+2026-05-23T10:34:21.0988545Z   ACTIONS_RESULTS_URL: https://results-receiver.actions.githubusercontent.com/
+2026-05-23T10:34:21.0988939Z   ACTIONS_CACHE_SERVICE_V2: True
+2026-05-23T10:34:21.0989389Z   ACTIONS_ORCHESTRATION_ID: 9fa45ee9-2d3e-4af4-a4f6-059ac63da77d.binaries.build._4_linux_arm64_ubuntu-24_
+2026-05-23T10:34:21.0989868Z   BUILDKIT_MULTI_PLATFORM: 1
+2026-05-23T10:34:21.0990198Z   BUILDX_BAKE_GIT_AUTH_TOKEN: ***
+2026-05-23T10:34:21.0990418Z ##[endgroup]
+2026-05-23T10:34:21.4552201Z ##[group]GitHub Actions runtime token ACs
+2026-05-23T10:34:21.4564718Z refs/heads/master: read/write
+2026-05-23T10:34:21.4565832Z ##[endgroup]
+2026-05-23T10:34:21.4566336Z ##[group]Docker info
+2026-05-23T10:34:21.4692318Z [command]/usr/bin/docker version
+2026-05-23T10:34:21.4875986Z Client: Docker Engine - Community
+2026-05-23T10:34:21.4876895Z  Version:           28.0.4
+2026-05-23T10:34:21.4877303Z  API version:       1.48
+2026-05-23T10:34:21.4878056Z  Go version:        go1.23.7
+2026-05-23T10:34:21.4878468Z  Git commit:        b8034c0
+2026-05-23T10:34:21.4879342Z  Built:             Tue Mar 25 15:07:16 2025
+2026-05-23T10:34:21.4879795Z  OS/Arch:           linux/amd64
+2026-05-23T10:34:21.4880161Z  Context:           default
+2026-05-23T10:34:21.4880375Z 
+2026-05-23T10:34:21.4880516Z Server: Docker Engine - Community
+2026-05-23T10:34:21.4880884Z  Engine:
+2026-05-23T10:34:21.4881135Z   Version:          28.0.4
+2026-05-23T10:34:21.4881506Z   API version:      1.48 (minimum version 1.24)
+2026-05-23T10:34:21.4881939Z   Go version:       go1.23.7
+2026-05-23T10:34:21.4882722Z   Git commit:       6430e49
+2026-05-23T10:34:21.4883341Z   Built:            Tue Mar 25 15:07:16 2025
+2026-05-23T10:34:21.4883754Z   OS/Arch:          linux/amd64
+2026-05-23T10:34:21.4884114Z   Experimental:     false
+2026-05-23T10:34:21.4884438Z  containerd:
+2026-05-23T10:34:21.4884711Z   Version:          v2.2.3
+2026-05-23T10:34:21.4885141Z   GitCommit:        77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-23T10:34:21.4885617Z  runc:
+2026-05-23T10:34:21.4885869Z   Version:          1.3.5
+2026-05-23T10:34:21.4886205Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-05-23T10:34:21.4886583Z  docker-init:
+2026-05-23T10:34:21.4886852Z   Version:          0.19.0
+2026-05-23T10:34:21.4887175Z   GitCommit:        de40ad0
+2026-05-23T10:34:21.4912921Z [command]/usr/bin/docker info
+2026-05-23T10:34:21.5363719Z Client: Docker Engine - Community
+2026-05-23T10:34:21.5364378Z  Version:    28.0.4
+2026-05-23T10:34:21.5364700Z  Context:    default
+2026-05-23T10:34:21.5365087Z  Debug Mode: false
+2026-05-23T10:34:21.5365428Z  Plugins:
+2026-05-23T10:34:21.5365732Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-23T10:34:21.5366143Z     Version:  v0.33.0
+2026-05-23T10:34:21.5366573Z     Path:     /home/runner/.docker/cli-plugins/docker-buildx
+2026-05-23T10:34:21.5367095Z   compose: Docker Compose (Docker Inc.)
+2026-05-23T10:34:21.5367474Z     Version:  v2.38.2
+2026-05-23T10:34:21.5367873Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-05-23T10:34:21.5368243Z 
+2026-05-23T10:34:21.5368345Z Server:
+2026-05-23T10:34:21.5368594Z  Containers: 1
+2026-05-23T10:34:21.5368861Z   Running: 1
+2026-05-23T10:34:21.5369118Z   Paused: 0
+2026-05-23T10:34:21.5369368Z   Stopped: 0
+2026-05-23T10:34:21.5369625Z  Images: 8
+2026-05-23T10:34:21.5369896Z  Server Version: 28.0.4
+2026-05-23T10:34:21.5370213Z  Storage Driver: overlay2
+2026-05-23T10:34:21.5370583Z   Backing Filesystem: extfs
+2026-05-23T10:34:21.5370920Z   Supports d_type: true
+2026-05-23T10:34:21.5371240Z   Using metacopy: false
+2026-05-23T10:34:21.5371573Z   Native Overlay Diff: false
+2026-05-23T10:34:21.5371912Z   userxattr: false
+2026-05-23T10:34:21.5372205Z  Logging Driver: json-file
+2026-05-23T10:34:21.5372543Z  Cgroup Driver: systemd
+2026-05-23T10:34:21.5372858Z  Cgroup Version: 2
+2026-05-23T10:34:21.5373392Z  Plugins:
+2026-05-23T10:34:21.5373653Z   Volume: local
+2026-05-23T10:34:21.5373992Z   Network: bridge host ipvlan macvlan null overlay
+2026-05-23T10:34:21.5374750Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-05-23T10:34:21.5375322Z  Swarm: inactive
+2026-05-23T10:34:21.5375636Z  Runtimes: io.containerd.runc.v2 runc
+2026-05-23T10:34:21.5376042Z  Default Runtime: runc
+2026-05-23T10:34:21.5376360Z  Init Binary: docker-init
+2026-05-23T10:34:21.5376857Z  containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-23T10:34:21.5377377Z  runc version: v1.3.5-0-g488fc13e
+2026-05-23T10:34:21.5377742Z  init version: de40ad0
+2026-05-23T10:34:21.5378045Z  Security Options:
+2026-05-23T10:34:21.5378330Z   apparmor
+2026-05-23T10:34:21.5378936Z   seccomp
+2026-05-23T10:34:21.5379196Z    Profile: builtin
+2026-05-23T10:34:21.5379473Z   cgroupns
+2026-05-23T10:34:21.5379746Z  Kernel Version: 6.17.0-1013-azure
+2026-05-23T10:34:21.5380132Z  Operating System: Ubuntu 24.04.4 LTS
+2026-05-23T10:34:21.5380516Z  OSType: linux
+2026-05-23T10:34:21.5380815Z  Architecture: x86_64
+2026-05-23T10:34:21.5381133Z  CPUs: 4
+2026-05-23T10:34:21.5381294Z  Total Memory: 15.61GiB
+2026-05-23T10:34:21.5381489Z  Name: runnervmg397c
+2026-05-23T10:34:21.5381697Z  ID: 030b3de5-f6f5-43f2-8bdc-0a866a274328
+2026-05-23T10:34:21.5381969Z  Docker Root Dir: /var/lib/docker
+2026-05-23T10:34:21.5382349Z  Debug Mode: false
+2026-05-23T10:34:21.5382531Z  Username: githubactions
+2026-05-23T10:34:21.5382744Z  Experimental: false
+2026-05-23T10:34:21.5382924Z  Insecure Registries:
+2026-05-23T10:34:21.5383624Z   ::1/128
+2026-05-23T10:34:21.5383798Z   127.0.0.0/8
+2026-05-23T10:34:21.5383985Z  Live Restore Enabled: false
+2026-05-23T10:34:21.5384130Z 
+2026-05-23T10:34:21.5387987Z ##[endgroup]
+2026-05-23T10:34:21.5388378Z ##[group]Proxy configuration
+2026-05-23T10:34:21.5391092Z No proxy configuration found
+2026-05-23T10:34:21.5391667Z ##[endgroup]
+2026-05-23T10:34:21.5909062Z ##[group]Buildx version
+2026-05-23T10:34:21.5932202Z [command]/usr/bin/docker buildx version
+2026-05-23T10:34:21.6380198Z github.com/docker/buildx v0.33.0 f7897eba028583e0071642db3c011e860444f8cf
+2026-05-23T10:34:21.6400412Z ##[endgroup]
+2026-05-23T10:34:21.6400968Z ##[group]Builder info
+2026-05-23T10:34:21.7202273Z {
+2026-05-23T10:34:21.7202599Z   "nodes": [
+2026-05-23T10:34:21.7202790Z     {
+2026-05-23T10:34:21.7203311Z       "name": "builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0",
+2026-05-23T10:34:21.7203785Z       "endpoint": "unix:///var/run/docker.sock",
+2026-05-23T10:34:21.7204055Z       "driver-opts": [
+2026-05-23T10:34:21.7204263Z         "image=moby/buildkit:v0.29.0",
+2026-05-23T10:34:21.7322768Z         "env.ACTIONS_ID_TOKEN_REQUEST_TOKEN=***",
+2026-05-23T10:34:21.7323958Z         "env.ACTIONS_ID_TOKEN_REQUEST_URL=https://run-actions-3-azure-eastus.actions.githubusercontent.com/154//idtoken/9fa45ee9-2d3e-4af4-a4f6-059ac63da77d/036b4579-2b4f-533c-9416-e8ad9f19cd2c?api-version=2.0"
+2026-05-23T10:34:21.7324823Z       ],
+2026-05-23T10:34:21.7324984Z       "status": "running",
+2026-05-23T10:34:21.7325312Z       "buildkitd-flags": "--debug --allow-insecure-entitlement=network.host",
+2026-05-23T10:34:21.7325668Z       "buildkit": "v0.29.0",
+2026-05-23T10:34:21.7326367Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/loong64,linux/arm/v7,linux/arm/v6",
+2026-05-23T10:34:21.7327084Z       "features": {
+2026-05-23T10:34:21.7327361Z         "Automatically load images to the Docker Engine image store": true,
+2026-05-23T10:34:21.7327707Z         "Cache export": true,
+2026-05-23T10:34:21.7328106Z         "Direct push": true,
+2026-05-23T10:34:21.7328497Z         "Docker exporter": true,
+2026-05-23T10:34:21.7328939Z         "Multi-platform build": true,
+2026-05-23T10:34:21.7329227Z         "OCI exporter": true
+2026-05-23T10:34:21.7329422Z       },
+2026-05-23T10:34:21.7329577Z       "labels": {
+2026-05-23T10:34:21.7329816Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2026-05-23T10:34:21.7330195Z         "org.mobyproject.buildkit.worker.hostname": "ef9978b214ad",
+2026-05-23T10:34:21.7330605Z         "org.mobyproject.buildkit.worker.network": "host",
+2026-05-23T10:34:21.7331005Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2026-05-23T10:34:21.7331574Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2026-05-23T10:34:21.7331985Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2026-05-23T10:34:21.7332294Z       },
+2026-05-23T10:34:21.7332452Z       "gcPolicy": [
+2026-05-23T10:34:21.7332616Z         {
+2026-05-23T10:34:21.7332771Z           "all": false,
+2026-05-23T10:34:21.7332953Z           "filter": [
+2026-05-23T10:34:21.7333406Z             "type==source.local",
+2026-05-23T10:34:21.7334297Z             "type==exec.cachemount",
+2026-05-23T10:34:21.7334681Z             "type==source.git.checkout"
+2026-05-23T10:34:21.7335036Z           ],
+2026-05-23T10:34:21.7335319Z           "keepDuration": "48h0m0s",
+2026-05-23T10:34:21.7335689Z           "maxUsedSpace": "488.3MiB"
+2026-05-23T10:34:21.7336051Z         },
+2026-05-23T10:34:21.7336277Z         {
+2026-05-23T10:34:21.7336525Z           "all": false,
+2026-05-23T10:34:21.7336845Z           "keepDuration": "1440h0m0s",
+2026-05-23T10:34:21.7337230Z           "reservedSpace": "9.313GiB",
+2026-05-23T10:34:21.7337624Z           "maxUsedSpace": "93.13GiB",
+2026-05-23T10:34:21.7356898Z           "minFreeSpace": "27.01GiB"
+2026-05-23T10:34:21.7357341Z         },
+2026-05-23T10:34:21.7357606Z         {
+2026-05-23T10:34:21.7357885Z           "all": false,
+2026-05-23T10:34:21.7358228Z           "reservedSpace": "9.313GiB",
+2026-05-23T10:34:21.7358626Z           "maxUsedSpace": "93.13GiB",
+2026-05-23T10:34:21.7359316Z           "minFreeSpace": "27.01GiB"
+2026-05-23T10:34:21.7359783Z         },
+2026-05-23T10:34:21.7360033Z         {
+2026-05-23T10:34:21.7360302Z           "all": true,
+2026-05-23T10:34:21.7360648Z           "reservedSpace": "9.313GiB",
+2026-05-23T10:34:21.7361082Z           "maxUsedSpace": "93.13GiB",
+2026-05-23T10:34:21.7361474Z           "minFreeSpace": "27.01GiB"
+2026-05-23T10:34:21.7361866Z         }
+2026-05-23T10:34:21.7362156Z       ],
+2026-05-23T10:34:21.7362462Z       "files": {
+2026-05-23T10:34:21.7366105Z         "buildkitd.toml": "[cache]\n[cache.gha]\n[cache.gha.sign]\ncommand = ['ghacache-sign-script.sh']\n\n[cache.gha.verify]\nrequired = true\n\n[cache.gha.verify.policy]\ngithubWorkflowRepository = 'moby/buildkit'\nissuer = 'https://token.actions.githubusercontent.com'\nrunnerEnvironment = 'github-hosted'\nsourceRepositoryURI = 'https://github.com/moby/buildkit'\nsubjectAlternativeName = 'https://github.com/docker/github-builder/.github/workflows/bake.yml*'\ntimestampThreshold = 1\ntlogThreshold = 1\n"
+2026-05-23T10:34:21.7369339Z       }
+2026-05-23T10:34:21.7369592Z     }
+2026-05-23T10:34:21.7369855Z   ],
+2026-05-23T10:34:21.7370220Z   "name": "builder-173e59a2-7d7d-4704-95dc-4f7453f1003e",
+2026-05-23T10:34:21.7370762Z   "driver": "docker-container",
+2026-05-23T10:34:21.7371186Z   "lastActivity": "2026-05-23T10:34:13.000Z"
+2026-05-23T10:34:21.7371611Z }
+2026-05-23T10:34:21.7372202Z ##[endgroup]
+2026-05-23T10:34:21.7372780Z ##[group]Parsing raw definition
+2026-05-23T10:34:21.7377863Z [command]/usr/bin/docker buildx bake https://github.com/moby/buildkit.git?ref=refs/heads/master&checksum=d6b444d4e18204d7f7e6fac28037ab1e28666d1b --file docker-bake.hcl --set *.output=type=local,platform-split=true,dest=/tmp/buildx-output --set *.tags= --set *.attest=type=provenance,mode=max,version=v1,builder-id=https://github.com/moby/buildkit/actions/runs/26330447509/attempts/1 --set *.platform=linux/arm64 --set *.cache-from=type=gha,scope=binaries-linux-arm64 --set *.cache-to=type=gha,ignore-error=true,scope=binaries-linux-arm64,mode=min --sbom generator=docker/buildkit-syft-scanner:1.11.0 --print release
+2026-05-23T10:34:21.9609700Z #0 building with "builder-173e59a2-7d7d-4704-95dc-4f7453f1003e" instance using docker-container driver
+2026-05-23T10:34:21.9610521Z 
+2026-05-23T10:34:21.9611079Z #1 [internal] load git source https://github.com/moby/buildkit.git?ref=refs/heads/master&checksum=d6b444d4e18204d7f7e6fac28037ab1e28666d1b
+2026-05-23T10:34:22.0913361Z #1 0.281 d6b444d4e18204d7f7e6fac28037ab1e28666d1b	refs/heads/master
+2026-05-23T10:34:22.2254557Z #1 0.011 Initialized empty Git repository in /var/lib/buildkit/runc-overlayfs/snapshots/snapshots/1/fs/
+2026-05-23T10:34:22.2256077Z #1 0.129 fatal: could not read Username for 'https://github.com': terminal prompts disabled
+2026-05-23T10:34:22.2322523Z #1 ERROR: failed to fetch remote https://github.com/moby/buildkit.git: git stderr:
+2026-05-23T10:34:22.2323444Z fatal: could not read Username for 'https://github.com': terminal prompts disabled
+2026-05-23T10:34:22.2325853Z : exit status 128
+2026-05-23T10:34:22.2326072Z ------
+2026-05-23T10:34:22.2327066Z  > [internal] load git source https://github.com/moby/buildkit.git?ref=refs/heads/master&checksum=d6b444d4e18204d7f7e6fac28037ab1e28666d1b:
+2026-05-23T10:34:22.2328808Z 0.281 d6b444d4e18204d7f7e6fac28037ab1e28666d1b	refs/heads/master
+2026-05-23T10:34:22.2330006Z 0.011 Initialized empty Git repository in /var/lib/buildkit/runc-overlayfs/snapshots/snapshots/1/fs/
+2026-05-23T10:34:22.2331212Z 0.129 fatal: could not read Username for 'https://github.com': terminal prompts disabled
+2026-05-23T10:34:22.2331966Z ------
+2026-05-23T10:34:22.2338816Z ERROR: failed to solve: failed to fetch remote https://github.com/moby/buildkit.git: git stderr:
+2026-05-23T10:34:22.2339808Z fatal: could not read Username for 'https://github.com': terminal prompts disabled
+2026-05-23T10:34:22.2340420Z : exit status 128
+2026-05-23T10:34:22.2378697Z ##[endgroup]
+2026-05-23T10:34:22.2398583Z ##[error]cannot parse bake definitions: : exit status 128
+2026-05-23T10:34:22.2570149Z Post job cleanup.
+2026-05-23T10:34:22.5077128Z ##[group]Removing temp folder /home/runner/work/_temp/docker-actions-toolkit-aUfdpp
+2026-05-23T10:34:22.5081262Z ##[endgroup]
+2026-05-23T10:34:22.5081849Z ##[group]Post cache
+2026-05-23T10:34:22.5082763Z State not set
+2026-05-23T10:34:22.5083591Z ##[endgroup]
+2026-05-23T10:34:22.5214249Z Post job cleanup.
+2026-05-23T10:34:22.7204009Z ##[group]BuildKit container logs
+2026-05-23T10:34:22.7245897Z [command]/usr/bin/docker logs buildx_buildkit_builder-173e59a2-7d7d-4704-95dc-4f7453f1003e0
+2026-05-23T10:34:22.7393937Z time="2026-05-23T10:34:17Z" level=info msg="auto snapshotter: using overlayfs"
+2026-05-23T10:34:22.7395477Z time="2026-05-23T10:34:17Z" level=warning msg="using host network as the default"
+2026-05-23T10:34:22.7399636Z time="2026-05-23T10:34:17Z" level=info msg="found worker \"ifzr0e44ml07ymswe3qvhahux\", labels=map[org.mobyproject.buildkit.worker.executor:oci org.mobyproject.buildkit.worker.hostname:ef9978b214ad org.mobyproject.buildkit.worker.network:host org.mobyproject.buildkit.worker.oci.process-mode:sandbox org.mobyproject.buildkit.worker.selinux.enabled:false org.mobyproject.buildkit.worker.snapshotter:overlayfs], platforms=[linux/amd64 linux/amd64/v2 linux/amd64/v3 linux/arm64 linux/riscv64 linux/ppc64le linux/s390x linux/386 linux/mips64le linux/mips64 linux/loong64 linux/arm/v7 linux/arm/v6]"
+2026-05-23T10:34:22.7404525Z time="2026-05-23T10:34:17Z" level=warning msg="skipping containerd worker, as \"/run/containerd/containerd.sock\" does not exist"
+2026-05-23T10:34:22.7405712Z time="2026-05-23T10:34:17Z" level=info msg="found 1 workers, default=\"ifzr0e44ml07ymswe3qvhahux\""
+2026-05-23T10:34:22.7406695Z time="2026-05-23T10:34:17Z" level=warning msg="currently, only the default worker can be used."
+2026-05-23T10:34:22.7407685Z time="2026-05-23T10:34:17Z" level=info msg="running server on /run/buildkit/buildkitd.sock"
+2026-05-23T10:34:22.7408813Z time="2026-05-23T10:34:21Z" level=debug msg="session started" spanID=88ab9bea037ac22d traceID=bfa600edbc33dca1e07fd754afc2ee8b
+2026-05-23T10:34:22.7411819Z time="2026-05-23T10:34:22Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = failed to fetch remote https://github.com/moby/buildkit.git: git stderr:\nfatal: could not read Username for 'https://github.com': terminal prompts disabled\n: exit status 128" spanID=44ac42fac945c4d6 traceID=bfa600edbc33dca1e07fd754afc2ee8b
+2026-05-23T10:34:22.7413788Z failed to fetch remote https://github.com/moby/buildkit.git: git stderr:
+2026-05-23T10:34:22.7414347Z fatal: could not read Username for 'https://github.com': terminal prompts disabled
+2026-05-23T10:34:22.7414997Z : exit status 128
+2026-05-23T10:34:22.7415739Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7416311Z github.com/moby/buildkit/util/gitutil.(*GitCLI).Run
+2026-05-23T10:34:22.7416606Z 	/src/util/gitutil/git_cli.go:240
+2026-05-23T10:34:22.7417222Z github.com/moby/buildkit/source/git.(*gitSourceHandler).tryRemoteFetch
+2026-05-23T10:34:22.7417579Z 	/src/source/git/source.go:914
+2026-05-23T10:34:22.7417879Z github.com/moby/buildkit/source/git.(*gitSourceHandler).remoteFetch
+2026-05-23T10:34:22.7418215Z 	/src/source/git/source.go:728
+2026-05-23T10:34:22.7418765Z github.com/moby/buildkit/source/git.(*gitSourceHandler).Snapshot
+2026-05-23T10:34:22.7419364Z 	/src/source/git/source.go:805
+2026-05-23T10:34:22.7419668Z github.com/moby/buildkit/solver/llbsolver/ops.(*SourceOp).Exec
+2026-05-23T10:34:22.7420038Z 	/src/solver/llbsolver/ops/source.go:112
+2026-05-23T10:34:22.7420348Z github.com/moby/buildkit/solver.(*sharedOp).Exec.func2
+2026-05-23T10:34:22.7420632Z 	/src/solver/jobs.go:1182
+2026-05-23T10:34:22.7420904Z github.com/moby/buildkit/util/flightcontrol.(*call[...]).run
+2026-05-23T10:34:22.7421235Z 	/src/util/flightcontrol/flightcontrol.go:122
+2026-05-23T10:34:22.7421501Z sync.(*Once).doSlow
+2026-05-23T10:34:22.7421684Z 	/usr/local/go/src/sync/once.go:78
+2026-05-23T10:34:22.7421911Z sync.(*Once).Do
+2026-05-23T10:34:22.7422090Z 	/usr/local/go/src/sync/once.go:69
+2026-05-23T10:34:22.7422297Z runtime.goexit
+2026-05-23T10:34:22.7422486Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-05-23T10:34:22.7422658Z 
+2026-05-23T10:34:22.7423449Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7424007Z main.unaryInterceptor
+2026-05-23T10:34:22.7424216Z 	/src/cmd/buildkitd/main.go:738
+2026-05-23T10:34:22.7424655Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-05-23T10:34:22.7425157Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-05-23T10:34:22.7425543Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-05-23T10:34:22.7425929Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-05-23T10:34:22.7426224Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-05-23T10:34:22.7426523Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-05-23T10:34:22.7426817Z google.golang.org/grpc.(*Server).handleStream
+2026-05-23T10:34:22.7427102Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-05-23T10:34:22.7427423Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-05-23T10:34:22.7427753Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-05-23T10:34:22.7428011Z runtime.goexit
+2026-05-23T10:34:22.7428196Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-05-23T10:34:22.7428367Z 
+2026-05-23T10:34:22.7428708Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7429238Z github.com/moby/buildkit/solver.(*edge).execOp
+2026-05-23T10:34:22.7429504Z 	/src/solver/edge.go:963
+2026-05-23T10:34:22.7429817Z github.com/moby/buildkit/solver/internal/pipe.NewWithFunction[...].func2
+2026-05-23T10:34:22.7430415Z 	/src/solver/internal/pipe/pipe.go:78
+2026-05-23T10:34:22.7430820Z runtime.goexit
+2026-05-23T10:34:22.7431127Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-05-23T10:34:22.7431385Z 
+2026-05-23T10:34:22.7431728Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7432323Z github.com/moby/buildkit/source/git.(*gitSourceHandler).tryRemoteFetch
+2026-05-23T10:34:22.7432678Z 	/src/source/git/source.go:915
+2026-05-23T10:34:22.7433282Z github.com/moby/buildkit/source/git.(*gitSourceHandler).remoteFetch
+2026-05-23T10:34:22.7433892Z 	/src/source/git/source.go:728
+2026-05-23T10:34:22.7434135Z 
+2026-05-23T10:34:22.7436117Z time="2026-05-23T10:34:22Z" level=error msg="/moby.buildkit.v1.Control/Solve returned error: rpc error: code = Unknown desc = failed to fetch remote https://github.com/moby/buildkit.git: git stderr:\nfatal: could not read Username for 'https://github.com': terminal prompts disabled\n: exit status 128" spanID=9b5392291d517c68 traceID=bfa600edbc33dca1e07fd754afc2ee8b
+2026-05-23T10:34:22.7438558Z failed to fetch remote https://github.com/moby/buildkit.git: git stderr:
+2026-05-23T10:34:22.7439666Z fatal: could not read Username for 'https://github.com': terminal prompts disabled
+2026-05-23T10:34:22.7440309Z : exit status 128
+2026-05-23T10:34:22.7444514Z 3394 v0.33.0 /home/runner/.docker/cli-plugins/docker-buildx buildx bake https://github.com/moby/buildkit.git?ref=refs/heads/master&checksum=d6b444d4e18204d7f7e6fac28037ab1e28666d1b --file docker-bake.hcl --set *.output=type=local,platform-split=true,dest=/tmp/buildx-output --set *.tags= --set *.attest=type=provenance,mode=max,version=v1,builder-id=https://github.com/moby/buildkit/actions/runs/26330447509/attempts/1 --set *.platform=linux/arm64 --set *.cache-from=type=gha,scope=binaries-linux-arm64 --set *.cache-to=type=gha,ignore-error=true,scope=binaries-linux-arm64,mode=min --sbom generator=docker/buildkit-syft-scanner:1.11.0 --print release
+2026-05-23T10:34:22.7448946Z google.golang.org/grpc.(*ClientConn).Invoke
+2026-05-23T10:34:22.7449497Z 	google.golang.org/grpc@v1.79.3/call.go:35
+2026-05-23T10:34:22.7450194Z github.com/moby/buildkit/frontend/gateway/pb.(*lLBBridgeClient).StatFile
+2026-05-23T10:34:22.7451095Z 	github.com/moby/buildkit@v0.29.0/frontend/gateway/pb/gateway_grpc.pb.go:135
+2026-05-23T10:34:22.7451878Z github.com/moby/buildkit/client.(*gatewayClientForBuild).StatFile
+2026-05-23T10:34:22.7452776Z 	github.com/moby/buildkit@v0.29.0/client/build.go:123
+2026-05-23T10:34:22.7453789Z github.com/moby/buildkit/frontend/gateway/grpcclient.(*reference).StatFile
+2026-05-23T10:34:22.7454580Z 	github.com/moby/buildkit@v0.29.0/frontend/gateway/grpcclient/client.go:1439
+2026-05-23T10:34:22.7455200Z github.com/docker/buildx/bake.filesFromRef
+2026-05-23T10:34:22.7455633Z 	github.com/docker/buildx/bake/remote.go:202
+2026-05-23T10:34:22.7456130Z github.com/docker/buildx/bake.ReadRemoteFiles.func2
+2026-05-23T10:34:22.7456629Z 	github.com/docker/buildx/bake/remote.go:100
+2026-05-23T10:34:22.7457225Z github.com/moby/buildkit/frontend/gateway/grpcclient.(*grpcClient).Run
+2026-05-23T10:34:22.7458026Z 	github.com/moby/buildkit@v0.29.0/frontend/gateway/grpcclient/client.go:218
+2026-05-23T10:34:22.7458730Z github.com/moby/buildkit/client.(*Client).Build.func2
+2026-05-23T10:34:22.7459270Z 	github.com/moby/buildkit@v0.29.0/client/build.go:59
+2026-05-23T10:34:22.7459817Z github.com/moby/buildkit/client.(*Client).solve.func3
+2026-05-23T10:34:22.7460381Z 	github.com/moby/buildkit@v0.29.0/client/solve.go:332
+2026-05-23T10:34:22.7460920Z golang.org/x/sync/errgroup.(*Group).Go.func1
+2026-05-23T10:34:22.7461386Z 	golang.org/x/sync@v0.19.0/errgroup/errgroup.go:93
+2026-05-23T10:34:22.7461853Z runtime.goexit
+2026-05-23T10:34:22.7462208Z 	runtime/asm_amd64.s:1693
+2026-05-23T10:34:22.7462438Z 
+2026-05-23T10:34:22.7463022Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7464466Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).Return
+2026-05-23T10:34:22.7465139Z 	/src/frontend/gateway/gateway.go:1024
+2026-05-23T10:34:22.7465750Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).Return
+2026-05-23T10:34:22.7466359Z 	/src/control/gateway/gateway.go:146
+2026-05-23T10:34:22.7466991Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_Return_Handler.func1
+2026-05-23T10:34:22.7467711Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:523
+2026-05-23T10:34:22.7468287Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-05-23T10:34:22.7468847Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-05-23T10:34:22.7469320Z main.unaryInterceptor
+2026-05-23T10:34:22.7469662Z 	/src/cmd/buildkitd/main.go:734
+2026-05-23T10:34:22.7470447Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-05-23T10:34:22.7471345Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-05-23T10:34:22.7472024Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_Return_Handler
+2026-05-23T10:34:22.7472704Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:525
+2026-05-23T10:34:22.7473473Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-05-23T10:34:22.7474192Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-05-23T10:34:22.7474654Z google.golang.org/grpc.(*Server).handleStream
+2026-05-23T10:34:22.7475108Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-05-23T10:34:22.7475595Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-05-23T10:34:22.7476075Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-05-23T10:34:22.7476473Z runtime.goexit
+2026-05-23T10:34:22.7476762Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-05-23T10:34:22.7477033Z 
+2026-05-23T10:34:22.7477578Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7478495Z github.com/moby/buildkit/util/gitutil.(*GitCLI).Run
+2026-05-23T10:34:22.7478941Z 	/src/util/gitutil/git_cli.go:240
+2026-05-23T10:34:22.7479451Z github.com/moby/buildkit/source/git.(*gitSourceHandler).tryRemoteFetch
+2026-05-23T10:34:22.7479999Z 	/src/source/git/source.go:914
+2026-05-23T10:34:22.7480511Z github.com/moby/buildkit/source/git.(*gitSourceHandler).remoteFetch
+2026-05-23T10:34:22.7481050Z 	/src/source/git/source.go:728
+2026-05-23T10:34:22.7481596Z github.com/moby/buildkit/source/git.(*gitSourceHandler).Snapshot
+2026-05-23T10:34:22.7482389Z 	/src/source/git/source.go:805
+2026-05-23T10:34:22.7482863Z github.com/moby/buildkit/solver/llbsolver/ops.(*SourceOp).Exec
+2026-05-23T10:34:22.7483572Z 	/src/solver/llbsolver/ops/source.go:112
+2026-05-23T10:34:22.7483890Z github.com/moby/buildkit/solver.(*sharedOp).Exec.func2
+2026-05-23T10:34:22.7484176Z 	/src/solver/jobs.go:1182
+2026-05-23T10:34:22.7484455Z github.com/moby/buildkit/util/flightcontrol.(*call[...]).run
+2026-05-23T10:34:22.7484785Z 	/src/util/flightcontrol/flightcontrol.go:122
+2026-05-23T10:34:22.7485039Z sync.(*Once).doSlow
+2026-05-23T10:34:22.7485226Z 	/usr/local/go/src/sync/once.go:78
+2026-05-23T10:34:22.7485446Z sync.(*Once).Do
+2026-05-23T10:34:22.7485621Z 	/usr/local/go/src/sync/once.go:69
+2026-05-23T10:34:22.7485842Z runtime.goexit
+2026-05-23T10:34:22.7486032Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-05-23T10:34:22.7486208Z 
+2026-05-23T10:34:22.7486547Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7487045Z main.unaryInterceptor
+2026-05-23T10:34:22.7487248Z 	/src/cmd/buildkitd/main.go:738
+2026-05-23T10:34:22.7487684Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-05-23T10:34:22.7488177Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-05-23T10:34:22.7488560Z github.com/moby/buildkit/api/services/control._Control_Solve_Handler
+2026-05-23T10:34:22.7488951Z 	/src/api/services/control/control_grpc.pb.go:289
+2026-05-23T10:34:22.7489256Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-05-23T10:34:22.7489562Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-05-23T10:34:22.7489757Z 
+2026-05-23T10:34:22.7490086Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7490617Z github.com/moby/buildkit/solver.(*edge).execOp
+2026-05-23T10:34:22.7491043Z 	/src/solver/edge.go:963
+2026-05-23T10:34:22.7491582Z github.com/moby/buildkit/solver/internal/pipe.NewWithFunction[...].func2
+2026-05-23T10:34:22.7492264Z 	/src/solver/internal/pipe/pipe.go:78
+2026-05-23T10:34:22.7492686Z runtime.goexit
+2026-05-23T10:34:22.7493249Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-05-23T10:34:22.7493605Z 
+2026-05-23T10:34:22.7494229Z 7 v0.29.0 /usr/bin/buildkitd --config /etc/buildkit/buildkitd.toml --debug --allow-insecure-entitlement=network.host
+2026-05-23T10:34:22.7495391Z github.com/moby/buildkit/source/git.(*gitSourceHandler).tryRemoteFetch
+2026-05-23T10:34:22.7495888Z 	/src/source/git/source.go:915
+2026-05-23T10:34:22.7496231Z github.com/moby/buildkit/source/git.(*gitSourceHandler).remoteFetch
+2026-05-23T10:34:22.7496581Z 	/src/source/git/source.go:728
+2026-05-23T10:34:22.7496731Z 
+2026-05-23T10:34:22.7497316Z time="2026-05-23T10:34:22Z" level=debug msg="session finished: <nil>" spanID=88ab9bea037ac22d traceID=bfa600edbc33dca1e07fd754afc2ee8b
+2026-05-23T10:34:22.7498094Z ##[endgroup]
+2026-05-23T10:34:22.7498412Z ##[group]Removing builder
+2026-05-23T10:34:22.8255295Z [command]/usr/bin/docker buildx rm builder-173e59a2-7d7d-4704-95dc-4f7453f1003e
+2026-05-23T10:34:23.3576416Z builder-173e59a2-7d7d-4704-95dc-4f7453f1003e removed
+2026-05-23T10:34:23.3598998Z ##[endgroup]
+2026-05-23T10:34:23.3599391Z ##[group]Cleaning up certificates
+2026-05-23T10:34:23.3601262Z ##[endgroup]
+2026-05-23T10:34:23.3601678Z ##[group]Post cache
+2026-05-23T10:34:23.3603336Z State not set
+2026-05-23T10:34:23.3603848Z ##[endgroup]
+2026-05-23T10:34:23.3739676Z Post job cleanup.
+2026-05-23T10:34:23.5003520Z ##[group]Post cache
+2026-05-23T10:34:23.5005589Z State not set
+2026-05-23T10:34:23.5007427Z ##[endgroup]
+2026-05-23T10:34:23.5141811Z Evaluate and set job outputs
+2026-05-23T10:34:23.5148783Z Cleaning up orphan processes

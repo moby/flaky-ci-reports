@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "gh-workflow-template-fetch-failed:500",
+    "name": "GitHub workflow template fetch failed: HTTP 500",
+    "category": "network",
+    "fields": {
+      "status": "500",
+      "variant": "http"
+    },
+    "evidence": [
+      {
+        "start_line": 261,
+        "end_line": 262
+      }
+    ]
+  }
+]

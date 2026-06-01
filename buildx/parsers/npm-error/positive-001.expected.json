@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "npm-error:ECONNRESET",
+    "name": "npm error ECONNRESET",
+    "category": "dependency",
+    "fields": {
+      "error_code": "ECONNRESET"
+    },
+    "evidence": [
+      {
+        "start_line": 99,
+        "end_line": 99
+      }
+    ]
+  }
+]

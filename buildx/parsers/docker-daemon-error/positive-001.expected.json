@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:auth.docker.io:timeout",
+    "name": "Registry auth.docker.io timeout",
+    "category": "network",
+    "fields": {
+      "host": "auth.docker.io",
+      "reason": "timeout"
+    },
+    "evidence": [
+      {
+        "start_line": 305,
+        "end_line": 305
+      }
+    ]
+  }
+]

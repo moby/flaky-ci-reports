@@ -1,0 +1,32 @@
+﻿2026-05-26T12:25:41.4492642Z Current runner version: '2.334.0'
+2026-05-26T12:25:41.4519533Z ##[group]Runner Image Provisioner
+2026-05-26T12:25:41.4520340Z Hosted Compute Agent
+2026-05-26T12:25:41.4521025Z Version: 20260213.493
+2026-05-26T12:25:41.4521583Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-26T12:25:41.4522260Z Build Date: 2026-02-13T00:28:41Z
+2026-05-26T12:25:41.4522977Z Worker ID: {bfb98d17-ad88-4f91-9966-d67a44030c20}
+2026-05-26T12:25:41.4523666Z Azure Region: northcentralus
+2026-05-26T12:25:41.4524208Z ##[endgroup]
+2026-05-26T12:25:41.4525736Z ##[group]Operating System
+2026-05-26T12:25:41.4526323Z Ubuntu
+2026-05-26T12:25:41.4526786Z 24.04.4
+2026-05-26T12:25:41.4527275Z LTS
+2026-05-26T12:25:41.4527790Z ##[endgroup]
+2026-05-26T12:25:41.4528284Z ##[group]Runner Image
+2026-05-26T12:25:41.4529355Z Image: ubuntu-24.04
+2026-05-26T12:25:41.4529938Z Version: 20260518.149.1
+2026-05-26T12:25:41.4531122Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260518.149/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-26T12:25:41.4532693Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260518.149
+2026-05-26T12:25:41.4533610Z ##[endgroup]
+2026-05-26T12:25:41.4534767Z ##[group]GITHUB_TOKEN Permissions
+2026-05-26T12:25:41.4536681Z Contents: read
+2026-05-26T12:25:41.4537177Z Metadata: read
+2026-05-26T12:25:41.4537841Z PullRequests: read
+2026-05-26T12:25:41.4538320Z ##[endgroup]
+2026-05-26T12:25:41.4541084Z Secret source: None
+2026-05-26T12:25:41.4541937Z Prepare workflow directory
+2026-05-26T12:25:41.4915349Z Prepare all required actions
+2026-05-26T12:25:41.4955397Z Getting action download info
+2026-05-26T12:25:41.8819382Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-05-26T12:25:42.0139747Z ##[error]An action could not be found at the URI 'https://codeload.github.com/actions/github-script/tar.gz/3a2844b7e9c422d3c10d287c895573f7108da1b3' (6828:1481F2:1D6131:257BB4:6A159145)
+2026-05-26T12:25:42.0166856Z ##[error]Failed to download archive 'https://codeload.github.com/actions/github-script/tar.gz/3a2844b7e9c422d3c10d287c895573f7108da1b3' after 1 attempts.

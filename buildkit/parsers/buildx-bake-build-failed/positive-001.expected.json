@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "buildx-bake-process-failed:/bin/sh -c go mod download",
+    "name": "buildx bake: process '/bin/sh -c go mod download' failed",
+    "category": "test",
+    "fields": {
+      "command": "/bin/sh -c go mod download"
+    },
+    "evidence": [
+      {
+        "start_line": 776,
+        "end_line": 776
+      }
+    ]
+  }
+]

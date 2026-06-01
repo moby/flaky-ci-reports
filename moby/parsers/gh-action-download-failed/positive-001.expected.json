@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "gh-action-download-failed:not-found",
+    "name": "GitHub action not found at URI",
+    "category": "network",
+    "fields": {
+      "url": "https://codeload.github.com/actions/github-script/tar.gz/3a2844b7e9c422d3c10d287c895573f7108da1b3",
+      "variant": "not-found"
+    },
+    "evidence": [
+      {
+        "start_line": 31,
+        "end_line": 31
+      }
+    ]
+  }
+]

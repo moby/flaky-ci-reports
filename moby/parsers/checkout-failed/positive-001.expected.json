@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "checkout-failed:null",
+    "name": "actions/checkout: git fetch failed for ref 'null'",
+    "category": "other",
+    "fields": {
+      "ref_pattern": "null"
+    },
+    "evidence": [
+      {
+        "start_line": 373,
+        "end_line": 380
+      }
+    ]
+  }
+]

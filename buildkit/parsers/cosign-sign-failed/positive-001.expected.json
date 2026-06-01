@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "cosign-sign-failed:UNAUTHORIZED",
+    "name": "cosign sign failed: UNAUTHORIZED",
+    "category": "network",
+    "fields": {
+      "message": "authentication required",
+      "reason": "UNAUTHORIZED"
+    },
+    "evidence": [
+      {
+        "start_line": 3089,
+        "end_line": 3090
+      }
+    ]
+  }
+]

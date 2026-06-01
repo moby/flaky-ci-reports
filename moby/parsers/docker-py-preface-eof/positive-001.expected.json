@@ -1,0 +1,13 @@
+[
+  {
+    "unique_key": "docker-py-preface-eof",
+    "name": "docker-py: dockerd http2 preface reset by client",
+    "category": "other",
+    "evidence": [
+      {
+        "start_line": 3222,
+        "end_line": 3222
+      }
+    ]
+  }
+]

@@ -1,0 +1,211 @@
+﻿2026-03-25T17:42:13.3883702Z Current runner version: '2.333.0'
+2026-03-25T17:42:13.3905204Z ##[group]Runner Image Provisioner
+2026-03-25T17:42:13.3906147Z Hosted Compute Agent
+2026-03-25T17:42:13.3906622Z Version: 20260213.493
+2026-03-25T17:42:13.3907156Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-25T17:42:13.3907812Z Build Date: 2026-02-13T00:28:41Z
+2026-03-25T17:42:13.3908396Z Worker ID: {df8e3efe-c2d1-4262-88ed-2739a6df4af4}
+2026-03-25T17:42:13.3908967Z Azure Region: westus3
+2026-03-25T17:42:13.3909501Z ##[endgroup]
+2026-03-25T17:42:13.3910677Z ##[group]Operating System
+2026-03-25T17:42:13.3911190Z Ubuntu
+2026-03-25T17:42:13.3911657Z 24.04.4
+2026-03-25T17:42:13.3912043Z LTS
+2026-03-25T17:42:13.3912450Z ##[endgroup]
+2026-03-25T17:42:13.3912835Z ##[group]Runner Image
+2026-03-25T17:42:13.3913348Z Image: ubuntu-24.04
+2026-03-25T17:42:13.3913777Z Version: 20260323.65.1
+2026-03-25T17:42:13.3914858Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-25T17:42:13.3916322Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-25T17:42:13.3917107Z ##[endgroup]
+2026-03-25T17:42:13.3918065Z ##[group]GITHUB_TOKEN Permissions
+2026-03-25T17:42:13.3919839Z Contents: read
+2026-03-25T17:42:13.3920363Z Metadata: read
+2026-03-25T17:42:13.3920783Z SecurityEvents: write
+2026-03-25T17:42:13.3921261Z ##[endgroup]
+2026-03-25T17:42:13.3923547Z Secret source: Actions
+2026-03-25T17:42:13.3924115Z Prepare workflow directory
+2026-03-25T17:42:13.4280465Z Prepare all required actions
+2026-03-25T17:42:13.4318493Z Getting action download info
+2026-03-25T17:42:13.9483658Z Download action repository 'docker/setup-buildx-action@v4' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-03-25T17:42:15.0281849Z Download action repository 'docker/bake-action@v7' (SHA:82490499d2e5613fcead7e128237ef0b0ea210f7)
+2026-03-25T17:42:16.1519228Z Download action repository 'github/codeql-action@v4' (SHA:38697555549f1db7851b81482ff19f1fa5c4fedc)
+2026-03-25T17:42:17.9401687Z Complete job name: govulncheck
+2026-03-25T17:42:17.9935695Z ##[group]Run docker/setup-buildx-action@v4
+2026-03-25T17:42:17.9936296Z with:
+2026-03-25T17:42:17.9936490Z   version: edge
+2026-03-25T17:42:17.9936697Z   driver-opts: image=moby/buildkit:latest
+2026-03-25T17:42:17.9937002Z   buildkitd-flags: --debug
+2026-03-25T17:42:17.9937211Z   driver: docker-container
+2026-03-25T17:42:17.9937413Z   use: true
+2026-03-25T17:42:17.9937586Z   keep-state: false
+2026-03-25T17:42:17.9937765Z   cache-binary: true
+2026-03-25T17:42:17.9937945Z   cleanup: true
+2026-03-25T17:42:17.9938258Z env:
+2026-03-25T17:42:17.9938416Z   GO_VERSION: 1.26
+2026-03-25T17:42:17.9938628Z   SETUP_BUILDX_VERSION: edge
+2026-03-25T17:42:17.9938871Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-03-25T17:42:17.9939112Z   SCOUT_VERSION: 1.20.2
+2026-03-25T17:42:17.9939309Z   IMAGE_NAME: moby/buildkit
+2026-03-25T17:42:17.9939508Z   DESTDIR: ./bin
+2026-03-25T17:42:17.9939690Z ##[endgroup]
+2026-03-25T17:42:18.1819543Z ##[group]Docker info
+2026-03-25T17:42:18.1820103Z [command]/usr/bin/docker version
+2026-03-25T17:42:18.2157786Z Client: Docker Engine - Community
+2026-03-25T17:42:18.2160065Z  Version:           28.0.4
+2026-03-25T17:42:18.2166431Z  API version:       1.48
+2026-03-25T17:42:18.2166694Z  Go version:        go1.23.7
+2026-03-25T17:42:18.2166899Z  Git commit:        b8034c0
+2026-03-25T17:42:18.2167124Z  Built:             Tue Mar 25 15:07:16 2025
+2026-03-25T17:42:18.2167388Z  OS/Arch:           linux/amd64
+2026-03-25T17:42:18.2167633Z  Context:           default
+2026-03-25T17:42:18.2167773Z 
+2026-03-25T17:42:18.2167965Z Server: Docker Engine - Community
+2026-03-25T17:42:18.2168298Z  Engine:
+2026-03-25T17:42:18.2168584Z   Version:          28.0.4
+2026-03-25T17:42:18.2168978Z   API version:      1.48 (minimum version 1.24)
+2026-03-25T17:42:18.2169338Z   Go version:       go1.23.7
+2026-03-25T17:42:18.2169754Z   Git commit:       6430e49
+2026-03-25T17:42:18.2169985Z   Built:            Tue Mar 25 15:07:16 2025
+2026-03-25T17:42:18.2170546Z   OS/Arch:          linux/amd64
+2026-03-25T17:42:18.2170768Z   Experimental:     false
+2026-03-25T17:42:18.2170977Z  containerd:
+2026-03-25T17:42:18.2171147Z   Version:          v2.2.2
+2026-03-25T17:42:18.2171417Z   GitCommit:        301b2dac98f15c27117da5c8af12118a041a31d9
+2026-03-25T17:42:18.2171689Z  runc:
+2026-03-25T17:42:18.2171859Z   Version:          1.3.4
+2026-03-25T17:42:18.2172086Z   GitCommit:        v1.3.4-0-gd6d73eb8
+2026-03-25T17:42:18.2172317Z  docker-init:
+2026-03-25T17:42:18.2172486Z   Version:          0.19.0
+2026-03-25T17:42:18.2172684Z   GitCommit:        de40ad0
+2026-03-25T17:42:18.2203908Z [command]/usr/bin/docker info
+2026-03-25T17:42:18.3538905Z Client: Docker Engine - Community
+2026-03-25T17:42:18.3539465Z  Version:    28.0.4
+2026-03-25T17:42:18.3539757Z  Context:    default
+2026-03-25T17:42:18.3539959Z  Debug Mode: false
+2026-03-25T17:42:18.3540136Z  Plugins:
+2026-03-25T17:42:18.3540328Z   buildx: Docker Buildx (Docker Inc.)
+2026-03-25T17:42:18.3540566Z     Version:  v0.32.1
+2026-03-25T17:42:18.3540864Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-03-25T17:42:18.3541164Z   compose: Docker Compose (Docker Inc.)
+2026-03-25T17:42:18.3541400Z     Version:  v2.38.2
+2026-03-25T17:42:18.3541651Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-03-25T17:42:18.3541867Z 
+2026-03-25T17:42:18.3541938Z Server:
+2026-03-25T17:42:18.3542200Z  Containers: 0
+2026-03-25T17:42:18.3542374Z   Running: 0
+2026-03-25T17:42:18.3542563Z   Paused: 0
+2026-03-25T17:42:18.3542719Z   Stopped: 0
+2026-03-25T17:42:18.3542893Z  Images: 6
+2026-03-25T17:42:18.3543056Z  Server Version: 28.0.4
+2026-03-25T17:42:18.3543265Z  Storage Driver: overlay2
+2026-03-25T17:42:18.3543473Z   Backing Filesystem: extfs
+2026-03-25T17:42:18.3543689Z   Supports d_type: true
+2026-03-25T17:42:18.3543887Z   Using metacopy: false
+2026-03-25T17:42:18.3544080Z   Native Overlay Diff: false
+2026-03-25T17:42:18.3544295Z   userxattr: false
+2026-03-25T17:42:18.3544477Z  Logging Driver: json-file
+2026-03-25T17:42:18.3544691Z  Cgroup Driver: systemd
+2026-03-25T17:42:18.3545158Z  Cgroup Version: 2
+2026-03-25T17:42:18.3545336Z  Plugins:
+2026-03-25T17:42:18.3545493Z   Volume: local
+2026-03-25T17:42:18.3546025Z   Network: bridge host ipvlan macvlan null overlay
+2026-03-25T17:42:18.3546637Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-03-25T17:42:18.3547230Z  Swarm: inactive
+2026-03-25T17:42:18.3547585Z  Runtimes: io.containerd.runc.v2 runc
+2026-03-25T17:42:18.3548015Z  Default Runtime: runc
+2026-03-25T17:42:18.3548453Z  Init Binary: docker-init
+2026-03-25T17:42:18.3548934Z  containerd version: 301b2dac98f15c27117da5c8af12118a041a31d9
+2026-03-25T17:42:18.3549500Z  runc version: v1.3.4-0-gd6d73eb8
+2026-03-25T17:42:18.3549887Z  init version: de40ad0
+2026-03-25T17:42:18.3550227Z  Security Options:
+2026-03-25T17:42:18.3550530Z   apparmor
+2026-03-25T17:42:18.3550810Z   seccomp
+2026-03-25T17:42:18.3551075Z    Profile: builtin
+2026-03-25T17:42:18.3551346Z   cgroupns
+2026-03-25T17:42:18.3551729Z  Kernel Version: 6.17.0-1008-azure
+2026-03-25T17:42:18.3552167Z  Operating System: Ubuntu 24.04.4 LTS
+2026-03-25T17:42:18.3552593Z  OSType: linux
+2026-03-25T17:42:18.3552906Z  Architecture: x86_64
+2026-03-25T17:42:18.3553227Z  CPUs: 4
+2026-03-25T17:42:18.3553506Z  Total Memory: 15.61GiB
+2026-03-25T17:42:18.3553851Z  Name: runnervmrg6be
+2026-03-25T17:42:18.3554149Z  ID: 26c853c4-ebf5-403c-a446-44e39e017c08
+2026-03-25T17:42:18.3554525Z  Docker Root Dir: /var/lib/docker
+2026-03-25T17:42:18.3554746Z  Debug Mode: false
+2026-03-25T17:42:18.3554919Z  Username: githubactions
+2026-03-25T17:42:18.3555124Z  Experimental: false
+2026-03-25T17:42:18.3555304Z  Insecure Registries:
+2026-03-25T17:42:18.3560714Z   ::1/128
+2026-03-25T17:42:18.3561037Z   127.0.0.0/8
+2026-03-25T17:42:18.3561338Z  Live Restore Enabled: false
+2026-03-25T17:42:18.3561573Z 
+2026-03-25T17:42:18.3562446Z ##[endgroup]
+2026-03-25T17:42:18.4126592Z ##[group]Download buildx from GitHub Releases
+2026-03-25T17:42:18.5045960Z Use 0.32.1 version spec cache key for v0.32.1
+2026-03-25T17:42:18.6949858Z Cache hit for: buildx-dl-bin-0.32.1-linux-x64
+2026-03-25T17:42:19.9340312Z Received 21749761 of 25944065 (83.8%), 20.7 MBs/sec
+2026-03-25T17:42:20.0564156Z Received 25944065 of 25944065 (100.0%), 22.1 MBs/sec
+2026-03-25T17:42:20.0564953Z Cache Size: ~25 MB (25944065 B)
+2026-03-25T17:42:20.0588350Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a5c055ea-2955-4039-ac81-9a30caaf3ac8/cache.tzst -P -C /home/runner/work/buildkit/buildkit --use-compress-program unzstd
+2026-03-25T17:42:20.1689406Z Cache restored successfully
+2026-03-25T17:42:20.1700668Z Restored buildx-dl-bin-0.32.1-linux-x64 from GitHub Actions cache
+2026-03-25T17:42:20.2175999Z Cached to hosted tool cache /opt/hostedtoolcache/buildx-dl-bin/0.32.1/linux-x64
+2026-03-25T17:42:20.2177017Z Copying /opt/hostedtoolcache/buildx-dl-bin/0.32.1/linux-x64/docker-buildx to /home/runner/.docker/buildx/.bin/0.32.1/linux-x64/docker-buildx
+2026-03-25T17:42:20.3054362Z Buildx binary found in /home/runner/.docker/buildx/.bin/0.32.1/linux-x64/docker-buildx
+2026-03-25T17:42:20.3055504Z ##[endgroup]
+2026-03-25T17:42:20.3056253Z ##[group]Install buildx
+2026-03-25T17:42:20.3056584Z Docker plugin mode
+2026-03-25T17:42:20.4383469Z Fixing perms
+2026-03-25T17:42:20.4384011Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-03-25T17:42:20.4385030Z ##[endgroup]
+2026-03-25T17:42:20.4385730Z ##[group]Buildx version
+2026-03-25T17:42:20.4407547Z [command]/usr/bin/docker buildx version
+2026-03-25T17:42:20.4956416Z github.com/docker/buildx v0.32.1 d3bfb3f4e48a67dda56e957a6636f4fab6c5fcb2
+2026-03-25T17:42:20.4972069Z ##[endgroup]
+2026-03-25T17:42:20.5099015Z ##[group]Inspecting default docker context
+2026-03-25T17:42:20.5219157Z [
+2026-03-25T17:42:20.5219453Z   {
+2026-03-25T17:42:20.5219743Z     "Name": "default",
+2026-03-25T17:42:20.5220098Z     "Metadata": {},
+2026-03-25T17:42:20.5220431Z     "Endpoints": {
+2026-03-25T17:42:20.5220720Z       "docker": {
+2026-03-25T17:42:20.5221087Z         "Host": "unix:///var/run/docker.sock",
+2026-03-25T17:42:20.5221916Z         "SkipTLSVerify": false
+2026-03-25T17:42:20.5222297Z       }
+2026-03-25T17:42:20.5222599Z     },
+2026-03-25T17:42:20.5222966Z     "TLSMaterial": {},
+2026-03-25T17:42:20.5223300Z     "Storage": {
+2026-03-25T17:42:20.5223653Z       "MetadataPath": "<IN MEMORY>",
+2026-03-25T17:42:20.5224110Z       "TLSPath": "<IN MEMORY>"
+2026-03-25T17:42:20.5224514Z     }
+2026-03-25T17:42:20.5224790Z   }
+2026-03-25T17:42:20.5225077Z ]
+2026-03-25T17:42:20.5226210Z ##[endgroup]
+2026-03-25T17:42:20.5226974Z ##[group]Creating a new builder instance
+2026-03-25T17:42:20.6355021Z [command]/usr/bin/docker buildx create --name builder-a98ed445-d72d-4b00-9c77-5aa10e651e42 --driver docker-container --driver-opt image=moby/buildkit:latest --buildkitd-flags --debug --use
+2026-03-25T17:42:20.6910208Z builder-a98ed445-d72d-4b00-9c77-5aa10e651e42
+2026-03-25T17:42:20.6925106Z ##[endgroup]
+2026-03-25T17:42:20.6925804Z ##[group]Booting builder
+2026-03-25T17:42:20.6958599Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-a98ed445-d72d-4b00-9c77-5aa10e651e42
+2026-03-25T17:42:20.7476381Z #1 [internal] booting buildkit
+2026-03-25T17:42:20.8981934Z #1 pulling image moby/buildkit:latest
+2026-03-25T17:42:35.9283633Z #1 pulling image moby/buildkit:latest 15.2s done
+2026-03-25T17:42:35.9286522Z #1 ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": Get "https://auth.docker.io/token?account=githubactions&scope=repository%3Amoby%2Fbuildkit%3Apull&service=registry.docker.io": context deadline exceeded
+2026-03-25T17:42:35.9288152Z ------
+2026-03-25T17:42:35.9288439Z  > [internal] booting buildkit:
+2026-03-25T17:42:35.9288802Z ------
+2026-03-25T17:42:35.9290089Z ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": Get "https://auth.docker.io/token?account=githubactions&scope=repository%3Amoby%2Fbuildkit%3Apull&service=registry.docker.io": context deadline exceeded
+2026-03-25T17:42:35.9322670Z ##[endgroup]
+2026-03-25T17:42:35.9350848Z ##[error]ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": Get "https://auth.docker.io/token?account=githubactions&scope=repository%3Amoby%2Fbuildkit%3Apull&service=registry.docker.io": context deadline exceeded
+2026-03-25T17:42:35.9558230Z Post job cleanup.
+2026-03-25T17:42:36.1295958Z ##[group]Removing builder
+2026-03-25T17:42:36.1997345Z [command]/usr/bin/docker buildx rm builder-a98ed445-d72d-4b00-9c77-5aa10e651e42
+2026-03-25T17:42:36.2513777Z builder-a98ed445-d72d-4b00-9c77-5aa10e651e42 removed
+2026-03-25T17:42:36.2528917Z ##[endgroup]
+2026-03-25T17:42:36.2529757Z ##[group]Cleaning up certificates
+2026-03-25T17:42:36.2531420Z ##[endgroup]
+2026-03-25T17:42:36.2532208Z ##[group]Post cache
+2026-03-25T17:42:36.2533684Z State not set
+2026-03-25T17:42:36.2534341Z ##[endgroup]
+2026-03-25T17:42:36.2650181Z Cleaning up orphan processes

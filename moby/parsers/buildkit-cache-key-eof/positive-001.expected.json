@@ -1,0 +1,13 @@
+[
+  {
+    "unique_key": "buildkit-cache-key-eof",
+    "name": "BuildKit cache key compute failed: short read EOF",
+    "category": "other",
+    "evidence": [
+      {
+        "start_line": 1914,
+        "end_line": 1914
+      }
+    ]
+  }
+]

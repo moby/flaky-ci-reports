@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "provenance-sign-failed:error-retrieving-identity-token",
+    "name": "Provenance signing failed: error retrieving identity token",
+    "category": "network",
+    "fields": {
+      "reason": "error retrieving identity token"
+    },
+    "evidence": [
+      {
+        "start_line": 1761,
+        "end_line": 1761
+      }
+    ]
+  }
+]

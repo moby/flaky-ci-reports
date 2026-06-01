@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "buildkit-sandbox-timeout",
+    "name": "BuildKit sandbox timeout",
+    "category": "other",
+    "tags": {
+      "test": "TestIntegration/TestExportLocalNoPlatformSplitOverwrite",
+      "worker": "oci-rootless-gvisor-tap-vsock-detachnetns"
+    },
+    "evidence": [
+      {
+        "start_line": 4684,
+        "end_line": 4684
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "artifact-download-failed:not-found",
+    "name": "Download artifact: artifact not found",
+    "category": "dependency",
+    "fields": {
+      "reason": "Artifact not found for name: buildkit-windows-amd64"
+    },
+    "evidence": [
+      {
+        "start_line": 326,
+        "end_line": 326
+      }
+    ]
+  }
+]

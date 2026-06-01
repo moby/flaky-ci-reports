@@ -1,0 +1,21 @@
+[
+  {
+    "unique_key": "go-test:TestIntegration/TestCmdShell",
+    "name": "TestIntegration/TestCmdShell failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestIntegration/slice=1-12/TestCmdShell/worker=dockerd-containerd/frontend=builtin"
+    },
+    "tags": {
+      "frontend": "builtin",
+      "slice": "1-12",
+      "worker": "dockerd-containerd"
+    },
+    "evidence": [
+      {
+        "start_line": 671,
+        "end_line": 671
+      }
+    ]
+  }
+]

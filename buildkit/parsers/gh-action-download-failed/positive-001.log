@@ -1,0 +1,34 @@
+﻿2026-03-12T04:00:52.7889213Z Current runner version: '2.332.0'
+2026-03-12T04:00:52.7936769Z ##[group]Runner Image Provisioner
+2026-03-12T04:00:52.7937620Z Hosted Compute Agent
+2026-03-12T04:00:52.7938211Z Version: 20260213.493
+2026-03-12T04:00:52.7938916Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-12T04:00:52.7939646Z Build Date: 2026-02-13T00:28:41Z
+2026-03-12T04:00:52.7940317Z Worker ID: {d74050db-4b72-43e6-996e-360b02dd1805}
+2026-03-12T04:00:52.7941089Z Azure Region: westus
+2026-03-12T04:00:52.7941697Z ##[endgroup]
+2026-03-12T04:00:52.7943536Z ##[group]Operating System
+2026-03-12T04:00:52.7944205Z Ubuntu
+2026-03-12T04:00:52.7944730Z 24.04.3
+2026-03-12T04:00:52.7945242Z LTS
+2026-03-12T04:00:52.7945776Z ##[endgroup]
+2026-03-12T04:00:52.7946363Z ##[group]Runner Image
+2026-03-12T04:00:52.7947011Z Image: ubuntu-24.04
+2026-03-12T04:00:52.7947573Z Version: 20260302.42.1
+2026-03-12T04:00:52.7948879Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-12T04:00:52.7950435Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+2026-03-12T04:00:52.7951436Z ##[endgroup]
+2026-03-12T04:00:52.7953025Z ##[group]GITHUB_TOKEN Permissions
+2026-03-12T04:00:52.7954979Z Contents: read
+2026-03-12T04:00:52.7955691Z Metadata: read
+2026-03-12T04:00:52.7956257Z ##[endgroup]
+2026-03-12T04:00:52.7958335Z Secret source: None
+2026-03-12T04:00:52.7959096Z Prepare workflow directory
+2026-03-12T04:00:52.8347580Z Prepare all required actions
+2026-03-12T04:00:52.8387683Z Getting action download info
+2026-03-12T04:00:53.4018926Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-03-12T04:00:53.5702654Z ##[warning]Failed to download action 'https://api.github.com/repos/actions/github-script/tarball/ed597411d8f924073f98dfc5c65a23a2325f34cd'. Error: Response status code does not indicate success: 401 (Unauthorized). 3018:20E705:E17292:E575E1:69B23A75
+2026-03-12T04:00:53.5718979Z ##[warning]Back off 16.658 seconds before retry.
+2026-03-12T04:01:10.3678293Z ##[warning]Failed to download action 'https://api.github.com/repos/actions/github-script/tarball/ed597411d8f924073f98dfc5c65a23a2325f34cd'. Error: Response status code does not indicate success: 401 (Unauthorized). 3019:20E705:E1CBC4:E5D0C1:69B23A86
+2026-03-12T04:01:10.3685117Z ##[warning]Back off 12.213 seconds before retry.
+2026-03-12T04:01:22.7321787Z ##[error]Response status code does not indicate success: 401 (Unauthorized).

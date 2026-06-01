@@ -1,0 +1,1896 @@
+﻿2026-04-03T17:38:06.7792507Z Current runner version: '2.333.1'
+2026-04-03T17:38:06.7827384Z ##[group]Runner Image Provisioner
+2026-04-03T17:38:06.7828700Z Hosted Compute Agent
+2026-04-03T17:38:06.7829784Z Version: 20260213.493
+2026-04-03T17:38:06.7830837Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-04-03T17:38:06.7832101Z Build Date: 2026-02-13T00:28:41Z
+2026-04-03T17:38:06.7833399Z Worker ID: {017af84c-6068-401a-8f73-70eabe37ccd6}
+2026-04-03T17:38:06.7834906Z Azure Region: eastus2
+2026-04-03T17:38:06.7835880Z ##[endgroup]
+2026-04-03T17:38:06.7837997Z ##[group]Operating System
+2026-04-03T17:38:06.7839099Z Ubuntu
+2026-04-03T17:38:06.7839849Z 24.04.4
+2026-04-03T17:38:06.7840668Z LTS
+2026-04-03T17:38:06.7841559Z ##[endgroup]
+2026-04-03T17:38:06.7842495Z ##[group]Runner Image
+2026-04-03T17:38:06.7843445Z Image: ubuntu-24.04
+2026-04-03T17:38:06.7844726Z Version: 20260329.72.1
+2026-04-03T17:38:06.7846685Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260329.72/images/ubuntu/Ubuntu2404-Readme.md
+2026-04-03T17:38:06.7849470Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260329.72
+2026-04-03T17:38:06.7850932Z ##[endgroup]
+2026-04-03T17:38:06.7852614Z ##[group]GITHUB_TOKEN Permissions
+2026-04-03T17:38:06.7855609Z Contents: read
+2026-04-03T17:38:06.7856461Z Metadata: read
+2026-04-03T17:38:06.7857349Z ##[endgroup]
+2026-04-03T17:38:06.7861163Z Secret source: None
+2026-04-03T17:38:06.7862686Z Prepare workflow directory
+2026-04-03T17:38:06.8416269Z Prepare all required actions
+2026-04-03T17:38:06.8472553Z Getting action download info
+2026-04-03T17:38:07.1659248Z Download action repository 'docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd' (SHA:4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd)
+2026-04-03T17:38:07.7603598Z Download action repository 'docker/bake-action@82490499d2e5613fcead7e128237ef0b0ea210f7' (SHA:82490499d2e5613fcead7e128237ef0b0ea210f7)
+2026-04-03T17:38:08.2095534Z Complete job name: validate (lint, windows/arm64)
+2026-04-03T17:38:08.2891241Z ##[group]Run docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd
+2026-04-03T17:38:08.2893201Z with:
+2026-04-03T17:38:08.2894138Z   version: edge
+2026-04-03T17:38:08.2894988Z   driver-opts: image=moby/buildkit:latest
+2026-04-03T17:38:08.2896124Z   buildkitd-flags: --debug
+2026-04-03T17:38:08.2897040Z   driver: docker-container
+2026-04-03T17:38:08.2897914Z   use: true
+2026-04-03T17:38:08.2898644Z   keep-state: false
+2026-04-03T17:38:08.2899438Z   cache-binary: true
+2026-04-03T17:38:08.2900253Z   cleanup: true
+2026-04-03T17:38:08.2901248Z env:
+2026-04-03T17:38:08.2901972Z   SETUP_BUILDX_VERSION: edge
+2026-04-03T17:38:08.2902987Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-04-03T17:38:08.2904272Z ##[endgroup]
+2026-04-03T17:38:08.5019386Z ##[group]Docker info
+2026-04-03T17:38:08.5021922Z [command]/usr/bin/docker version
+2026-04-03T17:38:08.5426967Z Client: Docker Engine - Community
+2026-04-03T17:38:08.5428595Z  Version:           28.0.4
+2026-04-03T17:38:08.5430071Z  API version:       1.48
+2026-04-03T17:38:08.5431328Z  Go version:        go1.23.7
+2026-04-03T17:38:08.5432566Z  Git commit:        b8034c0
+2026-04-03T17:38:08.5435513Z  Built:             Tue Mar 25 15:07:16 2025
+2026-04-03T17:38:08.5440120Z  OS/Arch:           linux/amd64
+2026-04-03T17:38:08.5443005Z  Context:           default
+2026-04-03T17:38:08.5444843Z 
+2026-04-03T17:38:08.5445645Z Server: Docker Engine - Community
+2026-04-03T17:38:08.5447630Z  Engine:
+2026-04-03T17:38:08.5449111Z   Version:          28.0.4
+2026-04-03T17:38:08.5450973Z   API version:      1.48 (minimum version 1.24)
+2026-04-03T17:38:08.5453161Z   Go version:       go1.23.7
+2026-04-03T17:38:08.5455080Z   Git commit:       6430e49
+2026-04-03T17:38:08.5456678Z   Built:            Tue Mar 25 15:07:16 2025
+2026-04-03T17:38:08.5458474Z   OS/Arch:          linux/amd64
+2026-04-03T17:38:08.5460062Z   Experimental:     false
+2026-04-03T17:38:08.5461560Z  containerd:
+2026-04-03T17:38:08.5462858Z   Version:          v2.2.2
+2026-04-03T17:38:08.5465347Z   GitCommit:        301b2dac98f15c27117da5c8af12118a041a31d9
+2026-04-03T17:38:08.5467877Z  runc:
+2026-04-03T17:38:08.5469172Z   Version:          1.3.4
+2026-04-03T17:38:08.5470742Z   GitCommit:        v1.3.4-0-gd6d73eb8
+2026-04-03T17:38:08.5472468Z  docker-init:
+2026-04-03T17:38:08.5474189Z   Version:          0.19.0
+2026-04-03T17:38:08.5475720Z   GitCommit:        de40ad0
+2026-04-03T17:38:08.5479156Z [command]/usr/bin/docker info
+2026-04-03T17:38:10.0850047Z Client: Docker Engine - Community
+2026-04-03T17:38:10.0861610Z  Version:    28.0.4
+2026-04-03T17:38:10.0861907Z  Context:    default
+2026-04-03T17:38:10.0862193Z  Debug Mode: false
+2026-04-03T17:38:10.0862460Z  Plugins:
+2026-04-03T17:38:10.0862742Z   buildx: Docker Buildx (Docker Inc.)
+2026-04-03T17:38:10.0863076Z     Version:  v0.32.1
+2026-04-03T17:38:10.0863450Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-04-03T17:38:10.0864161Z   compose: Docker Compose (Docker Inc.)
+2026-04-03T17:38:10.0864508Z     Version:  v2.38.2
+2026-04-03T17:38:10.0864920Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-04-03T17:38:10.0865225Z 
+2026-04-03T17:38:10.0865317Z Server:
+2026-04-03T17:38:10.0865550Z  Containers: 0
+2026-04-03T17:38:10.0865824Z   Running: 0
+2026-04-03T17:38:10.0866202Z   Paused: 0
+2026-04-03T17:38:10.0866473Z   Stopped: 0
+2026-04-03T17:38:10.0866726Z  Images: 6
+2026-04-03T17:38:10.0866975Z  Server Version: 28.0.4
+2026-04-03T17:38:10.0867266Z  Storage Driver: overlay2
+2026-04-03T17:38:10.0867696Z   Backing Filesystem: extfs
+2026-04-03T17:38:10.0868007Z   Supports d_type: true
+2026-04-03T17:38:10.0868287Z   Using metacopy: false
+2026-04-03T17:38:10.0868584Z   Native Overlay Diff: false
+2026-04-03T17:38:10.0868872Z   userxattr: false
+2026-04-03T17:38:10.0869135Z  Logging Driver: json-file
+2026-04-03T17:38:10.0869463Z  Cgroup Driver: systemd
+2026-04-03T17:38:10.0869766Z  Cgroup Version: 2
+2026-04-03T17:38:10.0870071Z  Plugins:
+2026-04-03T17:38:10.0870401Z   Volume: local
+2026-04-03T17:38:10.0871148Z   Network: bridge host ipvlan macvlan null overlay
+2026-04-03T17:38:10.0871767Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-04-03T17:38:10.0872195Z  Swarm: inactive
+2026-04-03T17:38:10.0872486Z  Runtimes: io.containerd.runc.v2 runc
+2026-04-03T17:38:10.0872831Z  Default Runtime: runc
+2026-04-03T17:38:10.0873212Z  Init Binary: docker-init
+2026-04-03T17:38:10.0873633Z  containerd version: 301b2dac98f15c27117da5c8af12118a041a31d9
+2026-04-03T17:38:10.0874490Z  runc version: v1.3.4-0-gd6d73eb8
+2026-04-03T17:38:10.0874823Z  init version: de40ad0
+2026-04-03T17:38:10.0875102Z  Security Options:
+2026-04-03T17:38:10.0875355Z   apparmor
+2026-04-03T17:38:10.0875632Z   seccomp
+2026-04-03T17:38:10.0875907Z    Profile: builtin
+2026-04-03T17:38:10.0876216Z   cgroupns
+2026-04-03T17:38:10.0876517Z  Kernel Version: 6.17.0-1008-azure
+2026-04-03T17:38:10.0876846Z  Operating System: Ubuntu 24.04.4 LTS
+2026-04-03T17:38:10.0877156Z  OSType: linux
+2026-04-03T17:38:10.0877420Z  Architecture: x86_64
+2026-04-03T17:38:10.0877712Z  CPUs: 4
+2026-04-03T17:38:10.0877986Z  Total Memory: 15.61GiB
+2026-04-03T17:38:10.0878268Z  Name: runnervm727z3
+2026-04-03T17:38:10.0878596Z  ID: 0f5a37c5-64f3-4e6f-bd1e-9f132979e004
+2026-04-03T17:38:10.0878944Z  Docker Root Dir: /var/lib/docker
+2026-04-03T17:38:10.0879246Z  Debug Mode: false
+2026-04-03T17:38:10.0879510Z  Username: githubactions
+2026-04-03T17:38:10.0879800Z  Experimental: false
+2026-04-03T17:38:10.0880069Z  Insecure Registries:
+2026-04-03T17:38:10.0884998Z   ::1/128
+2026-04-03T17:38:10.0885288Z   127.0.0.0/8
+2026-04-03T17:38:10.0885581Z  Live Restore Enabled: false
+2026-04-03T17:38:10.0885798Z 
+2026-04-03T17:38:10.0888278Z ##[endgroup]
+2026-04-03T17:38:10.1543381Z ##[group]Download buildx from GitHub Releases
+2026-04-03T17:38:10.2170339Z Use 0.33.0 version spec cache key for v0.33.0
+2026-04-03T17:38:10.2760635Z Cache hit for: buildx-dl-bin-0.33.0-linux-x64
+2026-04-03T17:38:10.5624756Z Received 21336695 of 21336695 (100.0%), 91.2 MBs/sec
+2026-04-03T17:38:10.5625455Z Cache Size: ~20 MB (21336695 B)
+2026-04-03T17:38:10.5655008Z [command]/usr/bin/tar -xf /home/runner/work/_temp/50d6aae5-1c25-4048-8f38-d5eaa3a8b482/cache.tzst -P -C /home/runner/work/buildx/buildx --use-compress-program unzstd
+2026-04-03T17:38:10.6706430Z Cache restored successfully
+2026-04-03T17:38:10.6718281Z Restored buildx-dl-bin-0.33.0-linux-x64 from GitHub Actions cache
+2026-04-03T17:38:10.7076258Z Cached to hosted tool cache /opt/hostedtoolcache/buildx-dl-bin/0.33.0/linux-x64
+2026-04-03T17:38:10.7077897Z Copying /opt/hostedtoolcache/buildx-dl-bin/0.33.0/linux-x64/docker-buildx to /home/runner/.docker/buildx/.bin/0.33.0/linux-x64/docker-buildx
+2026-04-03T17:38:10.7520073Z Buildx binary found in /home/runner/.docker/buildx/.bin/0.33.0/linux-x64/docker-buildx
+2026-04-03T17:38:10.7523362Z ##[endgroup]
+2026-04-03T17:38:10.7524556Z ##[group]Install buildx
+2026-04-03T17:38:10.7525179Z Docker plugin mode
+2026-04-03T17:38:10.7990194Z Fixing perms
+2026-04-03T17:38:10.7990957Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-04-03T17:38:10.7992115Z ##[endgroup]
+2026-04-03T17:38:10.7992972Z ##[group]Buildx version
+2026-04-03T17:38:10.8024734Z [command]/usr/bin/docker buildx version
+2026-04-03T17:38:10.8489832Z github.com/docker/buildx v0.33.0 f7897eba028583e0071642db3c011e860444f8cf
+2026-04-03T17:38:10.8509041Z ##[endgroup]
+2026-04-03T17:38:10.8656835Z ##[group]Inspecting default docker context
+2026-04-03T17:38:10.8800389Z [
+2026-04-03T17:38:10.8800726Z   {
+2026-04-03T17:38:10.8800905Z     "Name": "default",
+2026-04-03T17:38:10.8801151Z     "Metadata": {},
+2026-04-03T17:38:10.8801358Z     "Endpoints": {
+2026-04-03T17:38:10.8801558Z       "docker": {
+2026-04-03T17:38:10.8801773Z         "Host": "unix:///var/run/docker.sock",
+2026-04-03T17:38:10.8802055Z         "SkipTLSVerify": false
+2026-04-03T17:38:10.8802278Z       }
+2026-04-03T17:38:10.8802429Z     },
+2026-04-03T17:38:10.8802595Z     "TLSMaterial": {},
+2026-04-03T17:38:10.8802790Z     "Storage": {
+2026-04-03T17:38:10.8803000Z       "MetadataPath": "<IN MEMORY>",
+2026-04-03T17:38:10.8804234Z       "TLSPath": "<IN MEMORY>"
+2026-04-03T17:38:10.8804535Z     }
+2026-04-03T17:38:10.8804685Z   }
+2026-04-03T17:38:10.8804947Z ]
+2026-04-03T17:38:10.8805486Z ##[endgroup]
+2026-04-03T17:38:10.8805994Z ##[group]Creating a new builder instance
+2026-04-03T17:38:10.9933660Z [command]/usr/bin/docker buildx create --name builder-1d3a4b0a-f0bb-4533-8872-384e09344358 --driver docker-container --driver-opt image=moby/buildkit:latest --buildkitd-flags --debug --use
+2026-04-03T17:38:11.0507234Z builder-1d3a4b0a-f0bb-4533-8872-384e09344358
+2026-04-03T17:38:11.0528188Z ##[endgroup]
+2026-04-03T17:38:11.0528857Z ##[group]Booting builder
+2026-04-03T17:38:11.0563255Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-1d3a4b0a-f0bb-4533-8872-384e09344358
+2026-04-03T17:38:11.1061615Z #1 [internal] booting buildkit
+2026-04-03T17:38:11.2564324Z #1 pulling image moby/buildkit:latest
+2026-04-03T17:38:15.9017164Z #1 pulling image moby/buildkit:latest 4.8s done
+2026-04-03T17:38:16.0529978Z #1 creating container buildx_buildkit_builder-1d3a4b0a-f0bb-4533-8872-384e093443580
+2026-04-03T17:38:16.2678894Z #1 creating container buildx_buildkit_builder-1d3a4b0a-f0bb-4533-8872-384e093443580 0.4s done
+2026-04-03T17:38:16.2681543Z #1 DONE 5.2s
+2026-04-03T17:38:16.3095519Z Name:          builder-1d3a4b0a-f0bb-4533-8872-384e09344358
+2026-04-03T17:38:16.3097141Z Driver:        docker-container
+2026-04-03T17:38:16.3098303Z Last Activity: 2026-04-03 17:38:11 +0000 UTC
+2026-04-03T17:38:16.3099364Z 
+2026-04-03T17:38:16.3100299Z Nodes:
+2026-04-03T17:38:16.3101470Z Name:                  builder-1d3a4b0a-f0bb-4533-8872-384e093443580
+2026-04-03T17:38:16.3102876Z Endpoint:              unix:///var/run/docker.sock
+2026-04-03T17:38:16.3106640Z Driver Options:        image="moby/buildkit:latest"
+2026-04-03T17:38:16.3114490Z Status:                running
+2026-04-03T17:38:16.3118184Z BuildKit daemon flags: --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:16.3126040Z BuildKit version:      v0.29.0
+2026-04-03T17:38:16.3127695Z Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
+2026-04-03T17:38:16.3128550Z Labels:
+2026-04-03T17:38:16.3128796Z  org.mobyproject.buildkit.worker.executor:         oci
+2026-04-03T17:38:16.3129216Z  org.mobyproject.buildkit.worker.hostname:         1ec1deb1f0bb
+2026-04-03T17:38:16.3129622Z  org.mobyproject.buildkit.worker.network:          host
+2026-04-03T17:38:16.3130003Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2026-04-03T17:38:16.3130410Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2026-04-03T17:38:16.3130804Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2026-04-03T17:38:16.3131129Z GC Policy rule#0:
+2026-04-03T17:38:16.3131316Z  All:            false
+2026-04-03T17:38:16.3131644Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2026-04-03T17:38:16.3136197Z  Keep Duration:  48h0m0s
+2026-04-03T17:38:16.3136441Z  Max Used Space: 488.3MiB
+2026-04-03T17:38:16.3136681Z GC Policy rule#1:
+2026-04-03T17:38:16.3138605Z  All:            false
+2026-04-03T17:38:16.3138828Z  Keep Duration:  1440h0m0s
+2026-04-03T17:38:16.3139911Z  Reserved Space: 9.313GiB
+2026-04-03T17:38:16.3140356Z  Max Used Space: 93.13GiB
+2026-04-03T17:38:16.3140660Z  Min Free Space: 27.01GiB
+2026-04-03T17:38:16.3140878Z GC Policy rule#2:
+2026-04-03T17:38:16.3141082Z  All:            false
+2026-04-03T17:38:16.3141466Z  Reserved Space: 9.313GiB
+2026-04-03T17:38:16.3141691Z  Max Used Space: 93.13GiB
+2026-04-03T17:38:16.3141897Z  Min Free Space: 27.01GiB
+2026-04-03T17:38:16.3142095Z GC Policy rule#3:
+2026-04-03T17:38:16.3142275Z  All:            true
+2026-04-03T17:38:16.3142685Z  Reserved Space: 9.313GiB
+2026-04-03T17:38:16.3142890Z  Max Used Space: 93.13GiB
+2026-04-03T17:38:16.3143082Z  Min Free Space: 27.01GiB
+2026-04-03T17:38:16.3144271Z ##[endgroup]
+2026-04-03T17:38:16.3975054Z ##[group]Inspect builder
+2026-04-03T17:38:16.3984988Z {
+2026-04-03T17:38:16.3985309Z   "nodes": [
+2026-04-03T17:38:16.3985608Z     {
+2026-04-03T17:38:16.3986204Z       "name": "builder-1d3a4b0a-f0bb-4533-8872-384e093443580",
+2026-04-03T17:38:16.3986592Z       "endpoint": "unix:///var/run/docker.sock",
+2026-04-03T17:38:16.3986870Z       "driver-opts": [
+2026-04-03T17:38:16.3987101Z         "image=moby/buildkit:latest"
+2026-04-03T17:38:16.3987333Z       ],
+2026-04-03T17:38:16.3987504Z       "status": "running",
+2026-04-03T17:38:16.3987839Z       "buildkitd-flags": "--debug --allow-insecure-entitlement=network.host",
+2026-04-03T17:38:16.3988204Z       "buildkit": "v0.29.0",
+2026-04-03T17:38:16.3988517Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386",
+2026-04-03T17:38:16.3988843Z       "features": {
+2026-04-03T17:38:16.3989137Z         "Automatically load images to the Docker Engine image store": true,
+2026-04-03T17:38:16.3989494Z         "Cache export": true,
+2026-04-03T17:38:16.3989710Z         "Direct push": true,
+2026-04-03T17:38:16.3989930Z         "Docker exporter": true,
+2026-04-03T17:38:16.3990177Z         "Multi-platform build": true,
+2026-04-03T17:38:16.3990439Z         "OCI exporter": true
+2026-04-03T17:38:16.3990642Z       },
+2026-04-03T17:38:16.3990804Z       "labels": {
+2026-04-03T17:38:16.3991053Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2026-04-03T17:38:16.3991475Z         "org.mobyproject.buildkit.worker.hostname": "1ec1deb1f0bb",
+2026-04-03T17:38:16.3991868Z         "org.mobyproject.buildkit.worker.network": "host",
+2026-04-03T17:38:16.3992260Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2026-04-03T17:38:16.3992691Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2026-04-03T17:38:16.3993102Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2026-04-03T17:38:16.3993402Z       },
+2026-04-03T17:38:16.3993568Z       "gcPolicy": [
+2026-04-03T17:38:16.3993987Z         {
+2026-04-03T17:38:16.3994213Z           "all": false,
+2026-04-03T17:38:16.3994407Z           "filter": [
+2026-04-03T17:38:16.3994610Z             "type==source.local",
+2026-04-03T17:38:16.3994850Z             "type==exec.cachemount",
+2026-04-03T17:38:16.3995277Z             "type==source.git.checkout"
+2026-04-03T17:38:16.3995661Z           ],
+2026-04-03T17:38:16.3995866Z           "keepDuration": "48h0m0s",
+2026-04-03T17:38:16.3996102Z           "maxUsedSpace": "488.3MiB"
+2026-04-03T17:38:16.3996319Z         },
+2026-04-03T17:38:16.3996471Z         {
+2026-04-03T17:38:16.3996633Z           "all": false,
+2026-04-03T17:38:16.3996838Z           "keepDuration": "1440h0m0s",
+2026-04-03T17:38:16.3997075Z           "reservedSpace": "9.313GiB",
+2026-04-03T17:38:16.3997312Z           "maxUsedSpace": "93.13GiB",
+2026-04-03T17:38:16.3997553Z           "minFreeSpace": "27.01GiB"
+2026-04-03T17:38:16.3997763Z         },
+2026-04-03T17:38:16.3997917Z         {
+2026-04-03T17:38:16.3998076Z           "all": false,
+2026-04-03T17:38:16.3998271Z           "reservedSpace": "9.313GiB",
+2026-04-03T17:38:16.3998502Z           "maxUsedSpace": "93.13GiB",
+2026-04-03T17:38:16.3998741Z           "minFreeSpace": "27.01GiB"
+2026-04-03T17:38:16.3998966Z         },
+2026-04-03T17:38:16.3999119Z         {
+2026-04-03T17:38:16.3999279Z           "all": true,
+2026-04-03T17:38:16.3999484Z           "reservedSpace": "9.313GiB",
+2026-04-03T17:38:16.3999728Z           "maxUsedSpace": "93.13GiB",
+2026-04-03T17:38:16.3999954Z           "minFreeSpace": "27.01GiB"
+2026-04-03T17:38:16.4000170Z         }
+2026-04-03T17:38:16.4000325Z       ]
+2026-04-03T17:38:16.4000490Z     }
+2026-04-03T17:38:16.4000643Z   ],
+2026-04-03T17:38:16.4000865Z   "name": "builder-1d3a4b0a-f0bb-4533-8872-384e09344358",
+2026-04-03T17:38:16.4001174Z   "driver": "docker-container",
+2026-04-03T17:38:16.4001424Z   "lastActivity": "2026-04-03T17:38:11.000Z"
+2026-04-03T17:38:16.4001658Z }
+2026-04-03T17:38:16.4002036Z ##[endgroup]
+2026-04-03T17:38:16.4002360Z ##[group]BuildKit version
+2026-04-03T17:38:16.4002667Z builder-1d3a4b0a-f0bb-4533-8872-384e093443580: v0.29.0
+2026-04-03T17:38:16.4003080Z ##[endgroup]
+2026-04-03T17:38:16.4290719Z ##[group]Run docker/bake-action@82490499d2e5613fcead7e128237ef0b0ea210f7
+2026-04-03T17:38:16.4291201Z with:
+2026-04-03T17:38:16.4291416Z   targets: lint
+2026-04-03T17:38:16.4291662Z   set: *.platform=windows/arm64
+
+2026-04-03T17:38:16.4291954Z   no-cache: false
+2026-04-03T17:38:16.4292178Z   pull: false
+2026-04-03T17:38:16.4292393Z   load: false
+2026-04-03T17:38:16.4292602Z   push: false
+2026-04-03T17:38:16.4292987Z   github-token: ***
+2026-04-03T17:38:16.4293224Z env:
+2026-04-03T17:38:16.4293441Z   SETUP_BUILDX_VERSION: edge
+2026-04-03T17:38:16.4294046Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-04-03T17:38:16.4294431Z ##[endgroup]
+2026-04-03T17:38:16.6892956Z ##[group]GitHub Actions runtime token ACs
+2026-04-03T17:38:16.6901006Z refs/pull/3780/merge: read/write
+2026-04-03T17:38:16.6901483Z refs/heads/master: read
+2026-04-03T17:38:16.6902602Z ##[endgroup]
+2026-04-03T17:38:16.6903082Z ##[group]Docker info
+2026-04-03T17:38:16.6937721Z [command]/usr/bin/docker version
+2026-04-03T17:38:16.7119721Z Client: Docker Engine - Community
+2026-04-03T17:38:16.7123582Z  Version:           28.0.4
+2026-04-03T17:38:16.7124240Z  API version:       1.48
+2026-04-03T17:38:16.7124721Z  Go version:        go1.23.7
+2026-04-03T17:38:16.7125111Z  Git commit:        b8034c0
+2026-04-03T17:38:16.7125504Z  Built:             Tue Mar 25 15:07:16 2025
+2026-04-03T17:38:16.7125928Z  OS/Arch:           linux/amd64
+2026-04-03T17:38:16.7126239Z  Context:           default
+2026-04-03T17:38:16.7126375Z 
+2026-04-03T17:38:16.7126465Z Server: Docker Engine - Community
+2026-04-03T17:38:16.7126684Z  Engine:
+2026-04-03T17:38:16.7126848Z   Version:          28.0.4
+2026-04-03T17:38:16.7127794Z   API version:      1.48 (minimum version 1.24)
+2026-04-03T17:38:16.7128072Z   Go version:       go1.23.7
+2026-04-03T17:38:16.7128451Z   Git commit:       6430e49
+2026-04-03T17:38:16.7128678Z   Built:            Tue Mar 25 15:07:16 2025
+2026-04-03T17:38:16.7128918Z   OS/Arch:          linux/amd64
+2026-04-03T17:38:16.7129150Z   Experimental:     false
+2026-04-03T17:38:16.7129352Z  containerd:
+2026-04-03T17:38:16.7129522Z   Version:          v2.2.2
+2026-04-03T17:38:16.7130112Z   GitCommit:        301b2dac98f15c27117da5c8af12118a041a31d9
+2026-04-03T17:38:16.7130394Z  runc:
+2026-04-03T17:38:16.7130550Z   Version:          1.3.4
+2026-04-03T17:38:16.7130765Z   GitCommit:        v1.3.4-0-gd6d73eb8
+2026-04-03T17:38:16.7131010Z  docker-init:
+2026-04-03T17:38:16.7131187Z   Version:          0.19.0
+2026-04-03T17:38:16.7131397Z   GitCommit:        de40ad0
+2026-04-03T17:38:16.7164159Z [command]/usr/bin/docker info
+2026-04-03T17:38:16.7610337Z Client: Docker Engine - Community
+2026-04-03T17:38:16.7610654Z  Version:    28.0.4
+2026-04-03T17:38:16.7610859Z  Context:    default
+2026-04-03T17:38:16.7611182Z  Debug Mode: false
+2026-04-03T17:38:16.7611380Z  Plugins:
+2026-04-03T17:38:16.7611580Z   buildx: Docker Buildx (Docker Inc.)
+2026-04-03T17:38:16.7611891Z     Version:  v0.33.0
+2026-04-03T17:38:16.7612202Z     Path:     /home/runner/.docker/cli-plugins/docker-buildx
+2026-04-03T17:38:16.7612577Z   compose: Docker Compose (Docker Inc.)
+2026-04-03T17:38:16.7612882Z     Version:  v2.38.2
+2026-04-03T17:38:16.7613157Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-04-03T17:38:16.7613429Z 
+2026-04-03T17:38:16.7614371Z Server:
+2026-04-03T17:38:16.7614698Z  Containers: 1
+2026-04-03T17:38:16.7615006Z   Running: 1
+2026-04-03T17:38:16.7615294Z   Paused: 0
+2026-04-03T17:38:16.7615578Z   Stopped: 0
+2026-04-03T17:38:16.7615866Z  Images: 7
+2026-04-03T17:38:16.7616149Z  Server Version: 28.0.4
+2026-04-03T17:38:16.7616510Z  Storage Driver: overlay2
+2026-04-03T17:38:16.7616884Z   Backing Filesystem: extfs
+2026-04-03T17:38:16.7617248Z   Supports d_type: true
+2026-04-03T17:38:16.7617600Z   Using metacopy: false
+2026-04-03T17:38:16.7617951Z   Native Overlay Diff: false
+2026-04-03T17:38:16.7618320Z   userxattr: false
+2026-04-03T17:38:16.7618639Z  Logging Driver: json-file
+2026-04-03T17:38:16.7618999Z  Cgroup Driver: systemd
+2026-04-03T17:38:16.7619713Z  Cgroup Version: 2
+2026-04-03T17:38:16.7620024Z  Plugins:
+2026-04-03T17:38:16.7620296Z   Volume: local
+2026-04-03T17:38:16.7620667Z   Network: bridge host ipvlan macvlan null overlay
+2026-04-03T17:38:16.7621332Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-04-03T17:38:16.7621979Z  Swarm: inactive
+2026-04-03T17:38:16.7622322Z  Runtimes: io.containerd.runc.v2 runc
+2026-04-03T17:38:16.7622753Z  Default Runtime: runc
+2026-04-03T17:38:16.7623100Z  Init Binary: docker-init
+2026-04-03T17:38:16.7623598Z  containerd version: 301b2dac98f15c27117da5c8af12118a041a31d9
+2026-04-03T17:38:16.7624382Z  runc version: v1.3.4-0-gd6d73eb8
+2026-04-03T17:38:16.7624794Z  init version: de40ad0
+2026-04-03T17:38:16.7625137Z  Security Options:
+2026-04-03T17:38:16.7625435Z   apparmor
+2026-04-03T17:38:16.7625711Z   seccomp
+2026-04-03T17:38:16.7625980Z    Profile: builtin
+2026-04-03T17:38:16.7626165Z   cgroupns
+2026-04-03T17:38:16.7626347Z  Kernel Version: 6.17.0-1008-azure
+2026-04-03T17:38:16.7626617Z  Operating System: Ubuntu 24.04.4 LTS
+2026-04-03T17:38:16.7626858Z  OSType: linux
+2026-04-03T17:38:16.7627045Z  Architecture: x86_64
+2026-04-03T17:38:16.7627236Z  CPUs: 4
+2026-04-03T17:38:16.7627400Z  Total Memory: 15.61GiB
+2026-04-03T17:38:16.7627594Z  Name: runnervm727z3
+2026-04-03T17:38:16.7627818Z  ID: 0f5a37c5-64f3-4e6f-bd1e-9f132979e004
+2026-04-03T17:38:16.7628084Z  Docker Root Dir: /var/lib/docker
+2026-04-03T17:38:16.7628325Z  Debug Mode: false
+2026-04-03T17:38:16.7628512Z  Username: githubactions
+2026-04-03T17:38:16.7628729Z  Experimental: false
+2026-04-03T17:38:16.7628926Z  Insecure Registries:
+2026-04-03T17:38:16.7629132Z   ::1/128
+2026-04-03T17:38:16.7629282Z   127.0.0.0/8
+2026-04-03T17:38:16.7629460Z  Live Restore Enabled: false
+2026-04-03T17:38:16.7629601Z 
+2026-04-03T17:38:16.7630027Z ##[endgroup]
+2026-04-03T17:38:16.7630367Z ##[group]Proxy configuration
+2026-04-03T17:38:16.7635225Z No proxy configuration found
+2026-04-03T17:38:16.7636596Z ##[endgroup]
+2026-04-03T17:38:16.8256848Z ##[group]Buildx version
+2026-04-03T17:38:16.8294583Z [command]/usr/bin/docker buildx version
+2026-04-03T17:38:16.8783326Z github.com/docker/buildx v0.33.0 f7897eba028583e0071642db3c011e860444f8cf
+2026-04-03T17:38:16.8804487Z ##[endgroup]
+2026-04-03T17:38:16.8804852Z ##[group]Builder info
+2026-04-03T17:38:16.9677251Z {
+2026-04-03T17:38:16.9677596Z   "nodes": [
+2026-04-03T17:38:16.9677893Z     {
+2026-04-03T17:38:16.9678438Z       "name": "builder-1d3a4b0a-f0bb-4533-8872-384e093443580",
+2026-04-03T17:38:16.9678805Z       "endpoint": "unix:///var/run/docker.sock",
+2026-04-03T17:38:16.9679081Z       "driver-opts": [
+2026-04-03T17:38:16.9679291Z         "image=moby/buildkit:latest"
+2026-04-03T17:38:16.9679519Z       ],
+2026-04-03T17:38:16.9679684Z       "status": "running",
+2026-04-03T17:38:16.9680021Z       "buildkitd-flags": "--debug --allow-insecure-entitlement=network.host",
+2026-04-03T17:38:16.9680387Z       "buildkit": "v0.29.0",
+2026-04-03T17:38:16.9680853Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386",
+2026-04-03T17:38:16.9681214Z       "features": {
+2026-04-03T17:38:16.9681621Z         "Automatically load images to the Docker Engine image store": true,
+2026-04-03T17:38:16.9682017Z         "Cache export": true,
+2026-04-03T17:38:16.9682313Z         "Direct push": true,
+2026-04-03T17:38:16.9682619Z         "Docker exporter": true,
+2026-04-03T17:38:16.9682861Z         "Multi-platform build": true,
+2026-04-03T17:38:16.9683110Z         "OCI exporter": true
+2026-04-03T17:38:16.9683309Z       },
+2026-04-03T17:38:16.9683465Z       "labels": {
+2026-04-03T17:38:16.9683710Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2026-04-03T17:38:16.9684480Z         "org.mobyproject.buildkit.worker.hostname": "1ec1deb1f0bb",
+2026-04-03T17:38:16.9684857Z         "org.mobyproject.buildkit.worker.network": "host",
+2026-04-03T17:38:16.9685390Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2026-04-03T17:38:16.9685948Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2026-04-03T17:38:16.9686625Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2026-04-03T17:38:16.9686953Z       },
+2026-04-03T17:38:16.9687112Z       "gcPolicy": [
+2026-04-03T17:38:16.9687281Z         {
+2026-04-03T17:38:16.9687444Z           "all": false,
+2026-04-03T17:38:16.9687634Z           "filter": [
+2026-04-03T17:38:16.9687943Z             "type==source.local",
+2026-04-03T17:38:16.9688223Z             "type==exec.cachemount",
+2026-04-03T17:38:16.9688469Z             "type==source.git.checkout"
+2026-04-03T17:38:16.9688822Z           ],
+2026-04-03T17:38:16.9688993Z           "keepDuration": "48h0m0s",
+2026-04-03T17:38:16.9689356Z           "maxUsedSpace": "488.3MiB"
+2026-04-03T17:38:16.9689583Z         },
+2026-04-03T17:38:16.9689730Z         {
+2026-04-03T17:38:16.9689886Z           "all": false,
+2026-04-03T17:38:16.9690087Z           "keepDuration": "1440h0m0s",
+2026-04-03T17:38:16.9690316Z           "reservedSpace": "9.313GiB",
+2026-04-03T17:38:16.9690686Z           "maxUsedSpace": "93.13GiB",
+2026-04-03T17:38:16.9690927Z           "minFreeSpace": "27.01GiB"
+2026-04-03T17:38:16.9691266Z         },
+2026-04-03T17:38:16.9691430Z         {
+2026-04-03T17:38:16.9691596Z           "all": false,
+2026-04-03T17:38:16.9691890Z           "reservedSpace": "9.313GiB",
+2026-04-03T17:38:16.9692127Z           "maxUsedSpace": "93.13GiB",
+2026-04-03T17:38:16.9692370Z           "minFreeSpace": "27.01GiB"
+2026-04-03T17:38:16.9692573Z         },
+2026-04-03T17:38:16.9692719Z         {
+2026-04-03T17:38:16.9692870Z           "all": true,
+2026-04-03T17:38:16.9693100Z           "reservedSpace": "9.313GiB",
+2026-04-03T17:38:16.9693521Z           "maxUsedSpace": "93.13GiB",
+2026-04-03T17:38:16.9694319Z           "minFreeSpace": "27.01GiB"
+2026-04-03T17:38:16.9694637Z         }
+2026-04-03T17:38:16.9694786Z       ]
+2026-04-03T17:38:16.9695041Z     }
+2026-04-03T17:38:16.9695203Z   ],
+2026-04-03T17:38:16.9695414Z   "name": "builder-1d3a4b0a-f0bb-4533-8872-384e09344358",
+2026-04-03T17:38:16.9695862Z   "driver": "docker-container",
+2026-04-03T17:38:16.9696115Z   "lastActivity": "2026-04-03T17:38:11.000Z"
+2026-04-03T17:38:16.9696711Z }
+2026-04-03T17:38:16.9697092Z ##[endgroup]
+2026-04-03T17:38:16.9697423Z ##[group]Parsing raw definition
+2026-04-03T17:38:16.9705959Z [command]/usr/bin/docker buildx bake https://github.com/docker/buildx.git#refs/pull/3780/merge --set *.platform=windows/arm64 --print lint
+2026-04-03T17:38:17.2115307Z #0 building with "builder-1d3a4b0a-f0bb-4533-8872-384e09344358" instance using docker-container driver
+2026-04-03T17:38:17.2115900Z 
+2026-04-03T17:38:17.2116212Z #1 [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge
+2026-04-03T17:38:17.3014611Z #1 0.241 40b69d42feb33b29492f173507ee02935b7745c6	refs/pull/3780/merge
+2026-04-03T17:38:17.4672346Z #1 0.010 Initialized empty Git repository in /var/lib/buildkit/runc-overlayfs/snapshots/snapshots/1/fs/
+2026-04-03T17:38:18.2454775Z #1 0.939 From https://github.com/docker/buildx
+2026-04-03T17:38:18.2456773Z #1 0.939  * [new ref]         refs/pull/3780/merge -> refs/pull/3780/merge
+2026-04-03T17:38:18.3995756Z #1 0.943 40b69d42feb33b29492f173507ee02935b7745c6
+2026-04-03T17:38:19.0956164Z #1 DONE 2.0s
+2026-04-03T17:38:19.1224974Z {
+2026-04-03T17:38:19.1225247Z   "group": {
+2026-04-03T17:38:19.1225468Z     "default": {
+2026-04-03T17:38:19.1225720Z       "targets": [
+2026-04-03T17:38:19.1226078Z         "lint"
+2026-04-03T17:38:19.1226411Z       ]
+2026-04-03T17:38:19.1226686Z     }
+2026-04-03T17:38:19.1227308Z   },
+2026-04-03T17:38:19.1229092Z   "target": {
+2026-04-03T17:38:19.1230570Z     "lint": {
+2026-04-03T17:38:19.1231140Z       "context": "https://github.com/docker/buildx.git#refs/pull/3780/merge",
+2026-04-03T17:38:19.1231957Z       "dockerfile": "./hack/dockerfiles/lint.Dockerfile",
+2026-04-03T17:38:19.1232463Z       "args": {
+2026-04-03T17:38:19.1232764Z         "BUILDKIT_CONTEXT_KEEP_GIT_DIR": "1",
+2026-04-03T17:38:19.1233090Z         "GOLANGCI_FROM_SOURCE": "true"
+2026-04-03T17:38:19.1233367Z       },
+2026-04-03T17:38:19.1234134Z       "platforms": [
+2026-04-03T17:38:19.1234532Z         "windows/arm64"
+2026-04-03T17:38:19.1234884Z       ],
+2026-04-03T17:38:19.1235162Z       "output": [
+2026-04-03T17:38:19.1236415Z         {
+2026-04-03T17:38:19.1240600Z           "type": "cacheonly"
+2026-04-03T17:38:19.1241338Z         }
+2026-04-03T17:38:19.1241651Z       ]
+2026-04-03T17:38:19.1241936Z     }
+2026-04-03T17:38:19.1242244Z   }
+2026-04-03T17:38:19.1242520Z }
+2026-04-03T17:38:19.1280991Z ##[endgroup]
+2026-04-03T17:38:19.2701997Z ##[group]Bake definition
+2026-04-03T17:38:19.2718103Z [command]/usr/bin/docker buildx bake https://github.com/docker/buildx.git#refs/pull/3780/merge --allow fs=* --set *.platform=windows/arm64 --metadata-file /home/runner/work/_temp/docker-actions-toolkit-9Kxun0/bake-metadata-e94d635fc6.json --set lint.attest=type=provenance,mode=max,builder-id=https://github.com/docker/buildx/actions/runs/23955720831/attempts/1 lint --print
+2026-04-03T17:38:19.5096956Z #0 building with "builder-1d3a4b0a-f0bb-4533-8872-384e09344358" instance using docker-container driver
+2026-04-03T17:38:19.5097658Z 
+2026-04-03T17:38:19.5098067Z #1 [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge
+2026-04-03T17:38:19.5098585Z #1 0.148 40b69d42feb33b29492f173507ee02935b7745c6	refs/pull/3780/merge
+2026-04-03T17:38:19.5330391Z #1 CACHED
+2026-04-03T17:38:19.5330933Z {
+2026-04-03T17:38:19.5331307Z   "group": {
+2026-04-03T17:38:19.5331637Z     "default": {
+2026-04-03T17:38:19.5332001Z       "targets": [
+2026-04-03T17:38:19.5332285Z         "lint"
+2026-04-03T17:38:19.5332738Z       ]
+2026-04-03T17:38:19.5332974Z     }
+2026-04-03T17:38:19.5333189Z   },
+2026-04-03T17:38:19.5333406Z   "target": {
+2026-04-03T17:38:19.5333701Z     "lint": {
+2026-04-03T17:38:19.5334296Z       "attest": [
+2026-04-03T17:38:19.5338008Z         {
+2026-04-03T17:38:19.5338592Z           "builder-id": "https://github.com/docker/buildx/actions/runs/23955720831/attempts/1",
+2026-04-03T17:38:19.5339750Z           "mode": "max",
+2026-04-03T17:38:19.5340254Z           "type": "provenance"
+2026-04-03T17:38:19.5340674Z         }
+2026-04-03T17:38:19.5341032Z       ],
+2026-04-03T17:38:19.5342026Z       "context": "https://github.com/docker/buildx.git#refs/pull/3780/merge",
+2026-04-03T17:38:19.5343193Z       "dockerfile": "./hack/dockerfiles/lint.Dockerfile",
+2026-04-03T17:38:19.5344157Z       "args": {
+2026-04-03T17:38:19.5344604Z         "BUILDKIT_CONTEXT_KEEP_GIT_DIR": "1",
+2026-04-03T17:38:19.5345242Z         "GOLANGCI_FROM_SOURCE": "true"
+2026-04-03T17:38:19.5345737Z       },
+2026-04-03T17:38:19.5346069Z       "platforms": [
+2026-04-03T17:38:19.5346804Z         "windows/arm64"
+2026-04-03T17:38:19.5347170Z       ],
+2026-04-03T17:38:19.5347389Z       "output": [
+2026-04-03T17:38:19.5347785Z         {
+2026-04-03T17:38:19.5348108Z           "type": "cacheonly"
+2026-04-03T17:38:19.5348474Z         }
+2026-04-03T17:38:19.5348766Z       ]
+2026-04-03T17:38:19.5349075Z     }
+2026-04-03T17:38:19.5349354Z   }
+2026-04-03T17:38:19.5349566Z }
+2026-04-03T17:38:19.5381304Z ##[endgroup]
+2026-04-03T17:38:19.5399801Z [command]/usr/bin/docker buildx bake https://github.com/docker/buildx.git#refs/pull/3780/merge --allow fs=* --set *.platform=windows/arm64 --metadata-file /home/runner/work/_temp/docker-actions-toolkit-9Kxun0/bake-metadata-e94d635fc6.json --set lint.attest=type=provenance,mode=max,builder-id=https://github.com/docker/buildx/actions/runs/23955720831/attempts/1 lint
+2026-04-03T17:38:19.7615395Z #0 building with "builder-1d3a4b0a-f0bb-4533-8872-384e09344358" instance using docker-container driver
+2026-04-03T17:38:19.7616761Z 
+2026-04-03T17:38:19.7617248Z #1 [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge
+2026-04-03T17:38:19.7618143Z #1 0.144 40b69d42feb33b29492f173507ee02935b7745c6	refs/pull/3780/merge
+2026-04-03T17:38:19.9481006Z #1 0.152 40b69d42feb33b29492f173507ee02935b7745c6	refs/pull/3780/merge
+2026-04-03T17:38:20.1093279Z #1 CACHED
+2026-04-03T17:38:20.1093529Z 
+2026-04-03T17:38:20.1094690Z #2 [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge
+2026-04-03T17:38:20.1325040Z #2 0.173 40b69d42feb33b29492f173507ee02935b7745c6	refs/pull/3780/merge
+2026-04-03T17:38:20.3536920Z #2 0.216 40b69d42feb33b29492f173507ee02935b7745c6
+2026-04-03T17:38:20.5129888Z #2 0.222 Initialized empty Git repository in /var/lib/buildkit/runc-overlayfs/snapshots/snapshots/3/fs/.git/
+2026-04-03T17:38:20.5130650Z #2 0.225 commit
+2026-04-03T17:38:21.0609613Z #2 0.923 From file:///var/lib/buildkit/runc-overlayfs/snapshots/snapshots/1/fs
+2026-04-03T17:38:21.0610993Z #2 0.923  * [new tag]         refs/pull/3780/merge -> refs/pull/3780/merge
+2026-04-03T17:38:21.0612024Z #2 0.923  * [new tag]         refs/pull/3780/merge -> refs/pull/3780/merge
+2026-04-03T17:38:21.9462836Z #2 1.808 Note: switching to 'FETCH_HEAD'.
+2026-04-03T17:38:21.9463653Z #2 1.808 
+2026-04-03T17:38:21.9464635Z #2 1.808 You are in 'detached HEAD' state. You can look around, make experimental
+2026-04-03T17:38:21.9465561Z #2 1.808 changes and commit them, and you can discard any commits you make in this
+2026-04-03T17:38:21.9466374Z #2 1.808 state without impacting any branches by switching back to a branch.
+2026-04-03T17:38:21.9466888Z #2 1.808 
+2026-04-03T17:38:21.9467278Z #2 1.808 If you want to create a new branch to retain commits you create, you may
+2026-04-03T17:38:21.9467924Z #2 1.808 do so (now or later) by using -c with the switch command. Example:
+2026-04-03T17:38:21.9468389Z #2 1.808 
+2026-04-03T17:38:21.9468646Z #2 1.808   git switch -c <new-branch-name>
+2026-04-03T17:38:21.9468986Z #2 1.808 
+2026-04-03T17:38:21.9469233Z #2 1.808 Or undo this operation with:
+2026-04-03T17:38:21.9470024Z #2 1.808 
+2026-04-03T17:38:21.9470296Z #2 1.808   git switch -
+2026-04-03T17:38:21.9470830Z #2 1.808 
+2026-04-03T17:38:21.9471408Z #2 1.808 Turn off this advice by setting config variable advice.detachedHead to false
+2026-04-03T17:38:21.9471938Z #2 1.808 
+2026-04-03T17:38:21.9472572Z #2 1.808 HEAD is now at 40b69d4 Merge ce4889434254da5dac9947c59e387b539ba2fe58 into 530dc0bdae5888fd1f7ccb4dff3187d9aabf5a88
+2026-04-03T17:38:22.1556325Z #2 DONE 2.0s
+2026-04-03T17:38:22.1556683Z 
+2026-04-03T17:38:22.1557344Z #3 [auth] docker/dockerfile:pull token for registry-1.docker.io
+2026-04-03T17:38:22.1557935Z #3 DONE 0.0s
+2026-04-03T17:38:22.1558128Z 
+2026-04-03T17:38:22.1558512Z #4 resolve image config for docker-image://docker.io/docker/dockerfile:1
+2026-04-03T17:38:22.3684244Z #4 DONE 0.4s
+2026-04-03T17:38:22.5304852Z 
+2026-04-03T17:38:22.5306578Z #5 docker-image://docker.io/docker/dockerfile:1@sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91
+2026-04-03T17:38:22.5308992Z #5 resolve docker.io/docker/dockerfile:1@sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91 done
+2026-04-03T17:38:22.5328846Z #5 sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9 3.15MB / 13.78MB 0.2s
+2026-04-03T17:38:22.7307226Z #5 sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9 13.78MB / 13.78MB 0.2s done
+2026-04-03T17:38:22.7308122Z #5 extracting sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9 0.1s done
+2026-04-03T17:38:22.7308804Z #5 DONE 0.4s
+2026-04-03T17:38:22.9564103Z 
+2026-04-03T17:38:22.9564840Z #6 [auth] tonistiigi/xx:pull token for registry-1.docker.io
+2026-04-03T17:38:22.9565431Z #6 DONE 0.0s
+2026-04-03T17:38:22.9565617Z 
+2026-04-03T17:38:22.9565878Z #7 [auth] library/golang:pull token for registry-1.docker.io
+2026-04-03T17:38:22.9568798Z #7 DONE 0.0s
+2026-04-03T17:38:22.9569117Z 
+2026-04-03T17:38:22.9569787Z #8 [internal] load metadata for docker.io/library/golang:1.26-alpine3.23
+2026-04-03T17:38:23.1055965Z #8 ...
+2026-04-03T17:38:23.1056843Z 
+2026-04-03T17:38:23.1057250Z #9 [internal] load metadata for docker.io/tonistiigi/xx:1.9.0
+2026-04-03T17:38:23.1057792Z #9 DONE 0.3s
+2026-04-03T17:38:23.2952589Z 
+2026-04-03T17:38:23.2953977Z #8 [internal] load metadata for docker.io/library/golang:1.26-alpine3.23
+2026-04-03T17:38:23.2954868Z #8 DONE 0.4s
+2026-04-03T17:38:23.5763391Z 
+2026-04-03T17:38:23.5767748Z #10 [xx 1/1] FROM docker.io/tonistiigi/xx:1.9.0@sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707
+2026-04-03T17:38:23.5768624Z #10 resolve docker.io/tonistiigi/xx:1.9.0@sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707 done
+2026-04-03T17:38:23.5769356Z #10 sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4 17.70kB / 17.70kB 0.0s done
+2026-04-03T17:38:23.5770266Z #10 extracting sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4 done
+2026-04-03T17:38:23.5770683Z #10 DONE 0.1s
+2026-04-03T17:38:23.5770792Z 
+2026-04-03T17:38:23.5771171Z #11 [base 1/2] FROM docker.io/library/golang:1.26-alpine3.23@sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039
+2026-04-03T17:38:23.5772011Z #11 resolve docker.io/library/golang:1.26-alpine3.23@sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039 done
+2026-04-03T17:38:23.5772745Z #11 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.1s done
+2026-04-03T17:38:23.8026735Z #11 sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706 126B / 126B 0.1s done
+2026-04-03T17:38:23.8028918Z #11 sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98 296.07kB / 296.07kB 0.1s done
+2026-04-03T17:38:23.8034985Z #11 sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 3.86MB / 3.86MB 0.1s done
+2026-04-03T17:38:23.8039297Z #11 extracting sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 0.2s done
+2026-04-03T17:38:23.8041661Z #11 sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28 3.15MB / 67.22MB 0.2s
+2026-04-03T17:38:23.9735480Z #11 sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28 67.22MB / 67.22MB 0.5s
+2026-04-03T17:38:23.9739341Z #11 extracting sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98 0.1s done
+2026-04-03T17:38:24.1381520Z #11 sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28 67.22MB / 67.22MB 0.5s done
+2026-04-03T17:38:24.1386296Z #11 extracting sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28
+2026-04-03T17:38:24.5027589Z #11 ...
+2026-04-03T17:38:24.5028681Z 
+2026-04-03T17:38:24.5029398Z #12 [golangci-build 2/4] ADD https://github.com/golangci/golangci-lint.git#v2.8.0 .
+2026-04-03T17:38:24.5030264Z #12 0.176 e2e40021c9007020676c93680a36e3ab06c6cd33	refs/tags/v2.8.0
+2026-04-03T17:38:24.5030805Z #12 0.012 Initialized empty Git repository in /var/lib/buildkit/runc-overlayfs/snapshots/snapshots/10/fs/
+2026-04-03T17:38:24.5031476Z #12 0.541 From https://github.com/golangci/golangci-lint
+2026-04-03T17:38:24.5031903Z #12 0.541  * [new tag]         v2.8.0     -> v2.8.0
+2026-04-03T17:38:24.5032390Z #12 0.545 e2e40021c9007020676c93680a36e3ab06c6cd33
+2026-04-03T17:38:24.5032814Z #12 DONE 1.0s
+2026-04-03T17:38:24.6537574Z 
+2026-04-03T17:38:24.6538661Z #11 [base 1/2] FROM docker.io/library/golang:1.26-alpine3.23@sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039
+2026-04-03T17:38:27.1780143Z #11 extracting sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28 3.2s done
+2026-04-03T17:38:27.1780977Z #11 DONE 3.7s
+2026-04-03T17:38:27.3375983Z 
+2026-04-03T17:38:27.3377849Z #11 [base 1/2] FROM docker.io/library/golang:1.26-alpine3.23@sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039
+2026-04-03T17:38:27.3379492Z #11 extracting sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706 done
+2026-04-03T17:38:27.3380880Z #11 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+2026-04-03T17:38:27.3381745Z #11 DONE 3.7s
+2026-04-03T17:38:27.3381962Z 
+2026-04-03T17:38:27.3382289Z #13 [base 2/2] RUN apk add --no-cache git gcc musl-dev binutils-gold
+2026-04-03T17:38:27.6009822Z #13 0.414 ( 1/26) Installing libgcc (15.2.0-r2)
+2026-04-03T17:38:27.7596458Z #13 0.423 ( 2/26) Installing jansson (2.14.1-r0)
+2026-04-03T17:38:27.7597650Z #13 0.439 ( 3/26) Installing libstdc++ (15.2.0-r2)
+2026-04-03T17:38:27.7598532Z #13 0.466 ( 4/26) Installing zstd-libs (1.5.7-r2)
+2026-04-03T17:38:27.7599066Z #13 0.481 ( 5/26) Installing binutils-gold (2.45.1-r0)
+2026-04-03T17:38:27.7599769Z #13 0.504 ( 6/26) Installing binutils (2.45.1-r0)
+2026-04-03T17:38:27.7600232Z #13 0.573 ( 7/26) Installing libgomp (15.2.0-r2)
+2026-04-03T17:38:27.9717566Z #13 0.581 ( 8/26) Installing libatomic (15.2.0-r2)
+2026-04-03T17:38:27.9718535Z #13 0.588 ( 9/26) Installing gmp (6.3.0-r4)
+2026-04-03T17:38:27.9719123Z #13 0.597 (10/26) Installing isl26 (0.26-r1)
+2026-04-03T17:38:27.9719650Z #13 0.616 (11/26) Installing mpfr4 (4.2.2-r0)
+2026-04-03T17:38:27.9720296Z #13 0.627 (12/26) Installing mpc1 (1.3.1-r1)
+2026-04-03T17:38:27.9720857Z #13 0.634 (13/26) Installing gcc (15.2.0-r2)
+2026-04-03T17:38:28.2501434Z #13 1.063 ERROR: gcc-15.2.0-r2: failed to extract usr/libexec/gcc/x86_64-alpine-linux-musl/15.2.0/cc1: I/O error
+2026-04-03T17:38:28.2504958Z #13 1.063 ERROR: gcc-15.2.0-r2: v2 package integrity error
+2026-04-03T17:38:28.3534719Z #13 1.086 (14/26) Installing brotli-libs (1.2.0-r0)
+2026-04-03T17:38:28.3535383Z #13 1.166 (15/26) Installing c-ares (1.34.6-r0)
+2026-04-03T17:38:28.4687444Z #13 1.179 (16/26) Installing libunistring (1.4.1-r0)
+2026-04-03T17:38:28.4688098Z #13 1.222 (17/26) Installing libidn2 (2.3.8-r0)
+2026-04-03T17:38:28.4688918Z #13 1.232 (18/26) Installing nghttp2-libs (1.68.0-r0)
+2026-04-03T17:38:28.4689376Z #13 1.240 (19/26) Installing nghttp3 (1.13.1-r0)
+2026-04-03T17:38:28.4689786Z #13 1.249 (20/26) Installing libpsl (0.21.5-r3)
+2026-04-03T17:38:28.4690295Z #13 1.258 (21/26) Installing libcurl (8.17.0-r1)
+2026-04-03T17:38:28.4690712Z #13 1.282 (22/26) Installing libexpat (2.7.5-r0)
+2026-04-03T17:38:28.5970986Z #13 1.290 (23/26) Installing pcre2 (10.47-r0)
+2026-04-03T17:38:28.5972474Z #13 1.308 (24/26) Installing git (2.52.0-r0)
+2026-04-03T17:38:28.5973174Z #13 1.410 (25/26) Installing git-init-template (2.52.0-r0)
+2026-04-03T17:38:28.8404087Z #13 1.418 (26/26) Installing musl-dev (1.2.5-r21)
+2026-04-03T17:38:28.8405308Z #13 1.495 Executing busybox-1.37.0-r30.trigger
+2026-04-03T17:38:28.8406178Z #13 1.503 1 error; 49.0 MiB in 42 packages
+2026-04-03T17:38:29.3765405Z #13 ERROR: process "/bin/sh -c apk add --no-cache git gcc musl-dev binutils-gold" did not complete successfully: exit code: 1
+2026-04-03T17:38:29.3933858Z ------
+2026-04-03T17:38:29.3935322Z  > [base 2/2] RUN apk add --no-cache git gcc musl-dev binutils-gold:
+2026-04-03T17:38:29.3936207Z 1.240 (19/26) Installing nghttp3 (1.13.1-r0)
+2026-04-03T17:38:29.3936969Z 1.249 (20/26) Installing libpsl (0.21.5-r3)
+2026-04-03T17:38:29.3938382Z 1.258 (21/26) Installing libcurl (8.17.0-r1)
+2026-04-03T17:38:29.3939246Z 1.282 (22/26) Installing libexpat (2.7.5-r0)
+2026-04-03T17:38:29.3939971Z 1.290 (23/26) Installing pcre2 (10.47-r0)
+2026-04-03T17:38:29.3940516Z 1.308 (24/26) Installing git (2.52.0-r0)
+2026-04-03T17:38:29.3941061Z 1.410 (25/26) Installing git-init-template (2.52.0-r0)
+2026-04-03T17:38:29.3941798Z 1.418 (26/26) Installing musl-dev (1.2.5-r21)
+2026-04-03T17:38:29.3944890Z 1.495 Executing busybox-1.37.0-r30.trigger
+2026-04-03T17:38:29.3946133Z 1.503 1 error; 49.0 MiB in 42 packages
+2026-04-03T17:38:29.3947028Z ------
+2026-04-03T17:38:29.3947457Z hack/dockerfiles/lint.Dockerfile:16
+2026-04-03T17:38:29.3947963Z --------------------
+2026-04-03T17:38:29.3949221Z   14 |     
+2026-04-03T17:38:29.3950378Z   15 |     FROM --platform=$BUILDPLATFORM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS base
+2026-04-03T17:38:29.3951374Z   16 | >>> RUN apk add --no-cache git gcc musl-dev binutils-gold
+2026-04-03T17:38:29.3952864Z   17 |     
+2026-04-03T17:38:29.3953547Z   18 |     FROM base AS golangci-build
+2026-04-03T17:38:29.3955210Z --------------------
+2026-04-03T17:38:29.3958866Z ERROR: failed to solve: process "/bin/sh -c apk add --no-cache git gcc musl-dev binutils-gold" did not complete successfully: exit code: 1
+2026-04-03T17:38:29.4012814Z ##[group]Build references
+2026-04-03T17:38:29.4858388Z builder-1d3a4b0a-f0bb-4533-8872-384e09344358/builder-1d3a4b0a-f0bb-4533-8872-384e093443580/kbv1wxtjp47w347pscdcpmwy8
+2026-04-03T17:38:29.4866575Z ##[endgroup]
+2026-04-03T17:38:29.4867737Z ##[group]Check build summary support
+2026-04-03T17:38:29.4871835Z Build summary supported!
+2026-04-03T17:38:29.4873861Z ##[endgroup]
+2026-04-03T17:38:29.4902038Z ##[error]buildx bake failed with: ERROR: failed to solve: process "/bin/sh -c apk add --no-cache git gcc musl-dev binutils-gold" did not complete successfully: exit code: 1
+2026-04-03T17:38:29.5055528Z Post job cleanup.
+2026-04-03T17:38:29.7497289Z ##[group]Generating build summary
+2026-04-03T17:38:29.8123164Z exporting build record to /home/runner/work/_temp/docker-actions-toolkit-wEm1Om/export
+2026-04-03T17:38:29.9132018Z [command]/usr/bin/docker buildx history export --builder builder-1d3a4b0a-f0bb-4533-8872-384e09344358 --output /home/runner/work/_temp/docker-actions-toolkit-wEm1Om/export/docker~buildx~KBV1WX.dockerbuild kbv1wxtjp47w347pscdcpmwy8 --finalize
+2026-04-03T17:38:30.1342410Z Build records written to /home/runner/work/_temp/docker-actions-toolkit-wEm1Om/export/docker~buildx~KBV1WX.dockerbuild (33.44 KB)
+2026-04-03T17:38:30.1344391Z Uploading docker~buildx~KBV1WX.dockerbuild as an artifact
+2026-04-03T17:38:30.1351226Z Artifact name is valid!
+2026-04-03T17:38:30.1352738Z Root directory input is valid!
+2026-04-03T17:38:30.1920239Z Uploading artifact: docker~buildx~KBV1WX.dockerbuild
+2026-04-03T17:38:30.1960257Z Beginning upload of artifact content to blob storage
+2026-04-03T17:38:30.2690447Z Uploaded bytes 34246
+2026-04-03T17:38:30.2883188Z Finished uploading artifact content to blob storage!
+2026-04-03T17:38:30.2884710Z SHA256 digest of uploaded artifact is c2bdb9b5340636c3bae06b086ef9ddfb3ace361645f29c1cdabfc51faf6b2640
+2026-04-03T17:38:30.2885933Z Finalizing artifact upload
+2026-04-03T17:38:30.3973119Z Artifact docker~buildx~KBV1WX.dockerbuild successfully finalized. Artifact ID 6263024728
+2026-04-03T17:38:30.3975041Z Artifact download URL: https://github.com/docker/buildx/actions/runs/23955720831/artifacts/6263024728
+2026-04-03T17:38:30.4000591Z Writing summary
+2026-04-03T17:38:30.4035062Z ##[endgroup]
+2026-04-03T17:38:30.4036002Z ##[group]Removing temp folder /home/runner/work/_temp/docker-actions-toolkit-9Kxun0
+2026-04-03T17:38:30.4037337Z ##[endgroup]
+2026-04-03T17:38:30.4037894Z ##[group]Post cache
+2026-04-03T17:38:30.4038122Z State not set
+2026-04-03T17:38:30.4038474Z ##[endgroup]
+2026-04-03T17:38:30.4175173Z Post job cleanup.
+2026-04-03T17:38:30.6099865Z ##[group]BuildKit container logs
+2026-04-03T17:38:30.6142809Z [command]/usr/bin/docker logs buildx_buildkit_builder-1d3a4b0a-f0bb-4533-8872-384e093443580
+2026-04-03T17:38:30.6333629Z time="2026-04-03T17:38:16Z" level=info msg="auto snapshotter: using overlayfs"
+2026-04-03T17:38:30.6349618Z time="2026-04-03T17:38:16Z" level=warning msg="using host network as the default"
+2026-04-03T17:38:30.6353634Z time="2026-04-03T17:38:16Z" level=info msg="found worker \"bnpj9vgs373sbx5zf6098xj15\", labels=map[org.mobyproject.buildkit.worker.executor:oci org.mobyproject.buildkit.worker.hostname:1ec1deb1f0bb org.mobyproject.buildkit.worker.network:host org.mobyproject.buildkit.worker.oci.process-mode:sandbox org.mobyproject.buildkit.worker.selinux.enabled:false org.mobyproject.buildkit.worker.snapshotter:overlayfs], platforms=[linux/amd64 linux/amd64/v2 linux/amd64/v3 linux/386]"
+2026-04-03T17:38:30.6357267Z time="2026-04-03T17:38:16Z" level=warning msg="skipping containerd worker, as \"/run/containerd/containerd.sock\" does not exist"
+2026-04-03T17:38:30.6358554Z time="2026-04-03T17:38:16Z" level=info msg="found 1 workers, default=\"bnpj9vgs373sbx5zf6098xj15\""
+2026-04-03T17:38:30.6359487Z time="2026-04-03T17:38:16Z" level=warning msg="currently, only the default worker can be used."
+2026-04-03T17:38:30.6361760Z time="2026-04-03T17:38:16Z" level=info msg="running server on /run/buildkit/buildkitd.sock"
+2026-04-03T17:38:30.6362891Z time="2026-04-03T17:38:17Z" level=debug msg="session started" spanID=39be681f878c30f7 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6364615Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat compose.yaml: no such file or directory" spanID=2aee844f61a0eea7 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6365906Z lstat compose.yaml: no such file or directory
+2026-04-03T17:38:30.6366378Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6366977Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6367300Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6367748Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6368131Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6368525Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6369084Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6369510Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6369889Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6370458Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6370917Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6371307Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6371775Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6372084Z main.unaryInterceptor
+2026-04-03T17:38:30.6372424Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6373254Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6374461Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6375218Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6375976Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6376544Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6377075Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6377630Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6378208Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6379423Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6380093Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6380613Z runtime.goexit
+2026-04-03T17:38:30.6381392Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6381759Z 
+2026-04-03T17:38:30.6381996Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6382387Z main.unaryInterceptor
+2026-04-03T17:38:30.6382604Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6383351Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6384566Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6384936Z 
+2026-04-03T17:38:30.6385333Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6386052Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6386334Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6386691Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6387284Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6387606Z 
+2026-04-03T17:38:30.6388989Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat compose.yml: no such file or directory" spanID=565461b6c1911b24 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6390761Z lstat compose.yml: no such file or directory
+2026-04-03T17:38:30.6391479Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6392070Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6392588Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6393035Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6393513Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6394355Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6395107Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6395527Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6395885Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6396424Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6397055Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6397445Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6397904Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6398186Z main.unaryInterceptor
+2026-04-03T17:38:30.6398400Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6399018Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6399530Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6400043Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6400488Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6400950Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6401531Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6402103Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6402689Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6403292Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6404143Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6404648Z runtime.goexit
+2026-04-03T17:38:30.6405022Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6405343Z 
+2026-04-03T17:38:30.6405711Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6406383Z main.unaryInterceptor
+2026-04-03T17:38:30.6406759Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6407583Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6408762Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6409136Z 
+2026-04-03T17:38:30.6409502Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6410439Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6410941Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6411555Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6412198Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6412511Z 
+2026-04-03T17:38:30.6414298Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-compose.yml: no such file or directory" spanID=d45361493b60c968 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6416165Z lstat docker-compose.yml: no such file or directory
+2026-04-03T17:38:30.6416916Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6417630Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6418124Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6418701Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6419214Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6419772Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6420385Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6421024Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6421671Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6422234Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6422659Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6423159Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6423504Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6424043Z main.unaryInterceptor
+2026-04-03T17:38:30.6424435Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6424915Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6425416Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6425807Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6426412Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6426991Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6427583Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6428166Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6428728Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6429344Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6429984Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6430319Z runtime.goexit
+2026-04-03T17:38:30.6430527Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6430715Z 
+2026-04-03T17:38:30.6430928Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6431419Z main.unaryInterceptor
+2026-04-03T17:38:30.6431808Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6432657Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6433601Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6434179Z 
+2026-04-03T17:38:30.6434506Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6435197Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6435696Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6436221Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6436805Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6437071Z 
+2026-04-03T17:38:30.6438313Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-compose.yaml: no such file or directory" spanID=a1752353ff413838 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6440353Z lstat docker-compose.yaml: no such file or directory
+2026-04-03T17:38:30.6441079Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6441699Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6442159Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6442672Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6443110Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6443658Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6444510Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6445062Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6445670Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6446321Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6447023Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6447580Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6448127Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6448553Z main.unaryInterceptor
+2026-04-03T17:38:30.6448915Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6449610Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6450490Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6451114Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6451710Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6452225Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6452779Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6453327Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6454082Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6454721Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6455233Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6455603Z runtime.goexit
+2026-04-03T17:38:30.6455929Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6456115Z 
+2026-04-03T17:38:30.6456328Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6456711Z main.unaryInterceptor
+2026-04-03T17:38:30.6457098Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6457549Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6458143Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6458440Z 
+2026-04-03T17:38:30.6458633Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6459023Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6459401Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6459871Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6460301Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6460541Z 
+2026-04-03T17:38:30.6461596Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.json: no such file or directory" spanID=718afcd38e8712cf traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6463391Z lstat docker-bake.json: no such file or directory
+2026-04-03T17:38:30.6464287Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6465019Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6465542Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6466122Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6466617Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6467477Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6468182Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6468989Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6469787Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6470460Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6471223Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6471815Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6472385Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6472917Z main.unaryInterceptor
+2026-04-03T17:38:30.6473319Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6474419Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6475384Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6476095Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6476835Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6477432Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6478029Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6478582Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6479120Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6479711Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6480303Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6480822Z runtime.goexit
+2026-04-03T17:38:30.6481182Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6481499Z 
+2026-04-03T17:38:30.6481870Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6482569Z main.unaryInterceptor
+2026-04-03T17:38:30.6482945Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6484069Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6485078Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6485476Z 
+2026-04-03T17:38:30.6485863Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6486578Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6487050Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6487666Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6488343Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6488675Z 
+2026-04-03T17:38:30.6490450Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.override.json: no such file or directory" spanID=f15720a9377dfa72 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6491543Z lstat docker-bake.override.json: no such file or directory
+2026-04-03T17:38:30.6491995Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6492384Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6492672Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6492989Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6493260Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6493591Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6494254Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6494599Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6494953Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6495322Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6495737Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6496050Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6496372Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6496843Z main.unaryInterceptor
+2026-04-03T17:38:30.6497057Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6497605Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6498108Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6498486Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6498905Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6499222Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6499529Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6499836Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6500133Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6500460Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6500777Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6501044Z runtime.goexit
+2026-04-03T17:38:30.6501251Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6501428Z 
+2026-04-03T17:38:30.6501633Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6502011Z main.unaryInterceptor
+2026-04-03T17:38:30.6502221Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6502825Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6503393Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6503600Z 
+2026-04-03T17:38:30.6504071Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6504520Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6504794Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6505130Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6505502Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6505671Z 
+2026-04-03T17:38:30.6506477Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.override.hcl: no such file or directory" spanID=f4da53127956171a traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6507501Z lstat docker-bake.override.hcl: no such file or directory
+2026-04-03T17:38:30.6507921Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6508297Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6508577Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6508884Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6509147Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6509468Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6509834Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6510174Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6510531Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6510899Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6511308Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6511628Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6511945Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6512222Z main.unaryInterceptor
+2026-04-03T17:38:30.6512432Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6512866Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6513365Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6513946Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6514357Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6514663Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6514970Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6515435Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6515731Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6516152Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6516472Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6516739Z runtime.goexit
+2026-04-03T17:38:30.6516944Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6517130Z 
+2026-04-03T17:38:30.6517323Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6517691Z main.unaryInterceptor
+2026-04-03T17:38:30.6517896Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6518323Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6518822Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6519027Z 
+2026-04-03T17:38:30.6519219Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6519620Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6519886Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6520228Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6520603Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6520774Z 
+2026-04-03T17:38:30.6521140Z time="2026-04-03T17:38:19Z" level=debug msg="session finished: <nil>" spanID=39be681f878c30f7 traceID=4f5733bfda4c553f0eeadb848c868ff6
+2026-04-03T17:38:30.6521919Z time="2026-04-03T17:38:19Z" level=debug msg="session started" spanID=9ffadb3721ded83e traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6523034Z time="2026-04-03T17:38:19Z" level=debug msg="load cache for [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge with bnpj9vgs373sbx5zf6098xj15::pf06qeel2blfit67gr8ncfhai"
+2026-04-03T17:38:30.6524787Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat compose.yaml: no such file or directory" spanID=80fc21c1663109b2 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6525733Z lstat compose.yaml: no such file or directory
+2026-04-03T17:38:30.6526124Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6526511Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6526951Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6527498Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6527957Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6528365Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6528741Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6529081Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6529439Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6529853Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6530587Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6531177Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6531744Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6532222Z main.unaryInterceptor
+2026-04-03T17:38:30.6532441Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6532886Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6533391Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6534031Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6534690Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6535225Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6535770Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6536297Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6536822Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6537156Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6537484Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6537928Z runtime.goexit
+2026-04-03T17:38:30.6538268Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6538451Z 
+2026-04-03T17:38:30.6538655Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6539027Z main.unaryInterceptor
+2026-04-03T17:38:30.6539397Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6539864Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6540592Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6540802Z 
+2026-04-03T17:38:30.6541073Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6541564Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6541881Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6542309Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6542788Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6542964Z 
+2026-04-03T17:38:30.6544053Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat compose.yml: no such file or directory" spanID=fc50c532cfe6c174 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6545126Z lstat compose.yml: no such file or directory
+2026-04-03T17:38:30.6545635Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6546119Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6546412Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6546883Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6547150Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6547605Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6547998Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6548429Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6548867Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6549318Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6549984Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6550577Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6550966Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6551248Z main.unaryInterceptor
+2026-04-03T17:38:30.6551572Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6552035Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6552540Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6552922Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6553315Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6553623Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6554295Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6554605Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6554930Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6555247Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6555573Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6555841Z runtime.goexit
+2026-04-03T17:38:30.6556043Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6556224Z 
+2026-04-03T17:38:30.6556426Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6556796Z main.unaryInterceptor
+2026-04-03T17:38:30.6557006Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6557441Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6558121Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6558329Z 
+2026-04-03T17:38:30.6558625Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6559027Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6559299Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6559657Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6560177Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6560469Z 
+2026-04-03T17:38:30.6561715Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-compose.yml: no such file or directory" spanID=7613212de4de7cf2 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6562725Z lstat docker-compose.yml: no such file or directory
+2026-04-03T17:38:30.6563141Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6563531Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6564091Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6564417Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6564685Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6565032Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6565398Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6565737Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6566093Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6566463Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6566879Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6567204Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6567522Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6567809Z main.unaryInterceptor
+2026-04-03T17:38:30.6568023Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6568465Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6568971Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6569355Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6569737Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6570060Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6570366Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6570669Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6570971Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6571302Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6571658Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6572066Z runtime.goexit
+2026-04-03T17:38:30.6572561Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6572910Z 
+2026-04-03T17:38:30.6573252Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6574099Z main.unaryInterceptor
+2026-04-03T17:38:30.6574468Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6575107Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6575929Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6576282Z 
+2026-04-03T17:38:30.6576618Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6577337Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6577829Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6578417Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6579074Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6579370Z 
+2026-04-03T17:38:30.6580760Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-compose.yaml: no such file or directory" spanID=1d883249fb9f2c22 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6582940Z lstat docker-compose.yaml: no such file or directory
+2026-04-03T17:38:30.6583687Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6584681Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6585169Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6585720Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6586193Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6586748Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6587438Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6588047Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6588679Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6589339Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6590089Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6590676Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6591269Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6591761Z main.unaryInterceptor
+2026-04-03T17:38:30.6592129Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6592921Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6594102Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6594809Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6595504Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6596051Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6596605Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6597158Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6597698Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6598277Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6598871Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6599341Z runtime.goexit
+2026-04-03T17:38:30.6599699Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6600023Z 
+2026-04-03T17:38:30.6600371Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6601029Z main.unaryInterceptor
+2026-04-03T17:38:30.6601394Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6602177Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6603074Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6603424Z 
+2026-04-03T17:38:30.6603963Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6604675Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6605152Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6605741Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6606406Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6606707Z 
+2026-04-03T17:38:30.6608071Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.json: no such file or directory" spanID=6a40ddf2665bf495 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6609753Z lstat docker-bake.json: no such file or directory
+2026-04-03T17:38:30.6610415Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6611105Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6611589Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6612131Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6612797Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6613384Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6614299Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6615132Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6615809Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6616470Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6617241Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6617851Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6618442Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6618929Z main.unaryInterceptor
+2026-04-03T17:38:30.6619280Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6620101Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6621010Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6621695Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6622449Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6623026Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6623632Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6624505Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6625051Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6625656Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6626289Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6626795Z runtime.goexit
+2026-04-03T17:38:30.6627124Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6627543Z 
+2026-04-03T17:38:30.6627905Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6628558Z main.unaryInterceptor
+2026-04-03T17:38:30.6628911Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6629686Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6630570Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6630905Z 
+2026-04-03T17:38:30.6631233Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6631864Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6632293Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6632845Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6633492Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6634011Z 
+2026-04-03T17:38:30.6635397Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.override.json: no such file or directory" spanID=177112d3d8dc1186 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6637178Z lstat docker-bake.override.json: no such file or directory
+2026-04-03T17:38:30.6637918Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6638576Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6639062Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6639585Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6640058Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6640647Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6641289Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6641885Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6642512Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6643161Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6644133Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6644717Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6645528Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6646071Z main.unaryInterceptor
+2026-04-03T17:38:30.6646482Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6647447Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6648357Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6649028Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6649729Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6650292Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6650851Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6651380Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6651915Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6652495Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6653080Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6653566Z runtime.goexit
+2026-04-03T17:38:30.6654151Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6654484Z 
+2026-04-03T17:38:30.6654851Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6655525Z main.unaryInterceptor
+2026-04-03T17:38:30.6655894Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6656707Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6657615Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6657957Z 
+2026-04-03T17:38:30.6658325Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6659024Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6659534Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6660148Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6660823Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6661122Z 
+2026-04-03T17:38:30.6662518Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.override.hcl: no such file or directory" spanID=1796e7692c3b5063 traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6664583Z lstat docker-bake.override.hcl: no such file or directory
+2026-04-03T17:38:30.6665366Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6666064Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6666567Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6667134Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6667615Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6668213Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6668881Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6669477Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6670092Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6670735Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6671470Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6672031Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6672567Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6673043Z main.unaryInterceptor
+2026-04-03T17:38:30.6673383Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6674372Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6675280Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6675985Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6676692Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6677092Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6677943Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6678386Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6678695Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6679181Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6679520Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6679903Z runtime.goexit
+2026-04-03T17:38:30.6680175Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6680355Z 
+2026-04-03T17:38:30.6680561Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6735926Z main.unaryInterceptor
+2026-04-03T17:38:30.6736342Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6737138Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6737880Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6738093Z 
+2026-04-03T17:38:30.6738316Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6738734Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6739018Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6739377Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6739753Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6739923Z 
+2026-04-03T17:38:30.6740292Z time="2026-04-03T17:38:19Z" level=debug msg="session finished: <nil>" spanID=9ffadb3721ded83e traceID=78d67ae339297c0b5026378776d7769c
+2026-04-03T17:38:30.6741081Z time="2026-04-03T17:38:19Z" level=debug msg="session started" spanID=ec0f583a86126a3e traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6742151Z time="2026-04-03T17:38:19Z" level=debug msg="load cache for [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge with bnpj9vgs373sbx5zf6098xj15::pf06qeel2blfit67gr8ncfhai"
+2026-04-03T17:38:30.6743589Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat compose.yaml: no such file or directory" spanID=c55d65e780c08e95 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6744869Z lstat compose.yaml: no such file or directory
+2026-04-03T17:38:30.6745255Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6745638Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6745922Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6746244Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6746507Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6746841Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6747224Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6747561Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6747913Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6748298Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6748725Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6749064Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6749398Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6749675Z main.unaryInterceptor
+2026-04-03T17:38:30.6749889Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6750334Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6750833Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6751216Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6751606Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6751910Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6752215Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6752518Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6753045Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6753364Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6754050Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6754380Z runtime.goexit
+2026-04-03T17:38:30.6754594Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6754776Z 
+2026-04-03T17:38:30.6754990Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6755375Z main.unaryInterceptor
+2026-04-03T17:38:30.6755587Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6756033Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6756545Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6756753Z 
+2026-04-03T17:38:30.6756947Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6757345Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6757621Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6757961Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6758330Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6758509Z 
+2026-04-03T17:38:30.6759277Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat compose.yml: no such file or directory" spanID=a613130a9726d0bb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6760218Z lstat compose.yml: no such file or directory
+2026-04-03T17:38:30.6760593Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6761080Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6761488Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6761798Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6762059Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6762569Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6762941Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6763282Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6763635Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6764313Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6764729Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6765065Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6765405Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6765692Z main.unaryInterceptor
+2026-04-03T17:38:30.6765907Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6766355Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6766861Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6767245Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6767631Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6767937Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6768247Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6768557Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6768864Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6769196Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6769534Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6769807Z runtime.goexit
+2026-04-03T17:38:30.6770010Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6770190Z 
+2026-04-03T17:38:30.6770398Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6770810Z main.unaryInterceptor
+2026-04-03T17:38:30.6771096Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6771716Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6772225Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6772435Z 
+2026-04-03T17:38:30.6772770Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6773461Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6774122Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6774702Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6775336Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6775632Z 
+2026-04-03T17:38:30.6776995Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-compose.yml: no such file or directory" spanID=597c1469d24826c0 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6778647Z lstat docker-compose.yml: no such file or directory
+2026-04-03T17:38:30.6779080Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6779710Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6780106Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6780430Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6780703Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6781030Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6781402Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6781745Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6782098Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6782477Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6782902Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6783224Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6783548Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6784104Z main.unaryInterceptor
+2026-04-03T17:38:30.6784354Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6784804Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6785310Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6785693Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6786080Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6786620Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6786934Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6787239Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6787545Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6787865Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6788199Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6788471Z runtime.goexit
+2026-04-03T17:38:30.6788677Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6788855Z 
+2026-04-03T17:38:30.6789058Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6789446Z main.unaryInterceptor
+2026-04-03T17:38:30.6789660Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6790099Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6790847Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6791187Z 
+2026-04-03T17:38:30.6791387Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6791779Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6792047Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6792390Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6792763Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6792934Z 
+2026-04-03T17:38:30.6794327Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-compose.yaml: no such file or directory" spanID=3e3afd5b99339aaa traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6795350Z lstat docker-compose.yaml: no such file or directory
+2026-04-03T17:38:30.6795761Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6796141Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6796423Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6796734Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6797004Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6797336Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6797712Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6798057Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6798421Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6798794Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6799212Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6799534Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6799863Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6800145Z main.unaryInterceptor
+2026-04-03T17:38:30.6800362Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6800805Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6801309Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6801690Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6802065Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6802405Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6802711Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6803020Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6803317Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6803645Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6804360Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6804644Z runtime.goexit
+2026-04-03T17:38:30.6804853Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6805040Z 
+2026-04-03T17:38:30.6805240Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6805617Z main.unaryInterceptor
+2026-04-03T17:38:30.6805834Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6806273Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6806780Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6806984Z 
+2026-04-03T17:38:30.6807177Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6807578Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6807848Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6808187Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6808559Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6808727Z 
+2026-04-03T17:38:30.6809511Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.json: no such file or directory" spanID=6a3e092b10328ee6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6810472Z lstat docker-bake.json: no such file or directory
+2026-04-03T17:38:30.6810868Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6811241Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6811521Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6811832Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6812259Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6812585Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6813059Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6813403Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6813913Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6814300Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6814713Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6815036Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6815366Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6815646Z main.unaryInterceptor
+2026-04-03T17:38:30.6815861Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6816301Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6816805Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6817196Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6817586Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6817898Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6818204Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6818504Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6818799Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6819123Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6819449Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6819716Z runtime.goexit
+2026-04-03T17:38:30.6819923Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6820101Z 
+2026-04-03T17:38:30.6820299Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6820659Z main.unaryInterceptor
+2026-04-03T17:38:30.6821030Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6821816Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6822760Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6823107Z 
+2026-04-03T17:38:30.6823442Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6824311Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6824760Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6825337Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6825986Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6826284Z 
+2026-04-03T17:38:30.6827700Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.override.json: no such file or directory" spanID=6e440e0cf719e7fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6829602Z lstat docker-bake.override.json: no such file or directory
+2026-04-03T17:38:30.6830386Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6831021Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6831380Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6831691Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6831967Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6832447Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6833141Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6833932Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6834590Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6835269Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6836017Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6836586Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6837390Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6837894Z main.unaryInterceptor
+2026-04-03T17:38:30.6838262Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6839220Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6839946Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6840344Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6840741Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6841050Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6841361Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6841669Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6841971Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6842302Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6842772Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6843044Z runtime.goexit
+2026-04-03T17:38:30.6843245Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6843425Z 
+2026-04-03T17:38:30.6843635Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6844269Z main.unaryInterceptor
+2026-04-03T17:38:30.6844484Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6844926Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6845435Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6845634Z 
+2026-04-03T17:38:30.6845828Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6846220Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6846653Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6847000Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6847375Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6847551Z 
+2026-04-03T17:38:30.6848665Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat docker-bake.override.hcl: no such file or directory" spanID=72b5a1e9bae90fa1 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6849703Z lstat docker-bake.override.hcl: no such file or directory
+2026-04-03T17:38:30.6850122Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6850497Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6850783Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6851090Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6851353Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6851683Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6852050Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6852395Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6852752Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6853125Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6853538Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6854085Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6854409Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6854689Z main.unaryInterceptor
+2026-04-03T17:38:30.6854901Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6855346Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6855843Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6856224Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6856605Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6856916Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6857471Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6858014Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6858683Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6859263Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6859816Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6860277Z runtime.goexit
+2026-04-03T17:38:30.6860613Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6860921Z 
+2026-04-03T17:38:30.6861261Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6861903Z main.unaryInterceptor
+2026-04-03T17:38:30.6862243Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6863023Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6864123Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6864491Z 
+2026-04-03T17:38:30.6864822Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6865502Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6865928Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6866495Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6867134Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6867424Z 
+2026-04-03T17:38:30.6867983Z time="2026-04-03T17:38:19Z" level=debug msg="session finished: <nil>" spanID=ec0f583a86126a3e traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6869033Z time="2026-04-03T17:38:19Z" level=debug msg="session started" spanID=54f16ba80ed1815c traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6869803Z time="2026-04-03T17:38:19Z" level=debug msg="session finished: <nil>" spanID=54f16ba80ed1815c traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6870568Z time="2026-04-03T17:38:19Z" level=debug msg="session started" spanID=f05413a850d88e15 traceID=90382df373f44b5be71d0f8f387ea634
+2026-04-03T17:38:30.6871775Z time="2026-04-03T17:38:19Z" level=debug msg="load cache for [internal] load git source https://github.com/docker/buildx.git#refs/pull/3780/merge with bnpj9vgs373sbx5zf6098xj15::pf06qeel2blfit67gr8ncfhai"
+2026-04-03T17:38:30.6873662Z time="2026-04-03T17:38:19Z" level=error msg="/moby.buildkit.v1.frontend.LLBBridge/StatFile returned error: rpc error: code = Unknown desc = lstat hack/dockerfiles/lint.Dockerfile.rego: no such file or directory" spanID=c2765c34d88c8012 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6875234Z lstat hack/dockerfiles/lint.Dockerfile.rego: no such file or directory
+2026-04-03T17:38:30.6875712Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6876096Z github.com/tonistiigi/fsutil.Stat
+2026-04-03T17:38:30.6876383Z 	/src/vendor/github.com/tonistiigi/fsutil/stat.go:61
+2026-04-03T17:38:30.6876696Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6876975Z 	/src/cache/util/fsutil.go:99
+2026-04-03T17:38:30.6877316Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6877689Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6878035Z github.com/moby/buildkit/control/gateway.(*GatewayForwarder).StatFile
+2026-04-03T17:38:30.6878384Z 	/src/control/gateway/gateway.go:172
+2026-04-03T17:38:30.6878751Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler.func1
+2026-04-03T17:38:30.6879164Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:469
+2026-04-03T17:38:30.6879580Z google.golang.org/grpc.getChainUnaryHandler.func1
+2026-04-03T17:38:30.6880123Z 	/src/vendor/google.golang.org/grpc/server.go:1242
+2026-04-03T17:38:30.6880412Z main.unaryInterceptor
+2026-04-03T17:38:30.6880622Z 	/src/cmd/buildkitd/main.go:734
+2026-04-03T17:38:30.6881069Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6881718Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6882281Z github.com/moby/buildkit/frontend/gateway/pb._LLBBridge_StatFile_Handler
+2026-04-03T17:38:30.6882837Z 	/src/frontend/gateway/pb/gateway_grpc.pb.go:471
+2026-04-03T17:38:30.6883459Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.6884213Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.6884747Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.6885258Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.6885809Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.6886349Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.6886803Z runtime.goexit
+2026-04-03T17:38:30.6887121Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.6887431Z 
+2026-04-03T17:38:30.6887760Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6888395Z main.unaryInterceptor
+2026-04-03T17:38:30.6888746Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.6889522Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.6890422Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.6890763Z 
+2026-04-03T17:38:30.6890974Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.6891669Z github.com/moby/buildkit/cache/util.StatFile
+2026-04-03T17:38:30.6892121Z 	/src/cache/util/fsutil.go:105
+2026-04-03T17:38:30.6892690Z github.com/moby/buildkit/frontend/gateway.(*llbBridgeForwarder).StatFile
+2026-04-03T17:38:30.6893327Z 	/src/frontend/gateway/gateway.go:986
+2026-04-03T17:38:30.6893572Z 
+2026-04-03T17:38:30.6894241Z time="2026-04-03T17:38:19Z" level=debug msg="session started" spanID=94e441ed22fefcae traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6895247Z time="2026-04-03T17:38:21Z" level=debug msg="checked for cached auth handler namespace" cached=false key="docker.io/docker/dockerfile::pull" name=docker.io/docker/dockerfile scope=pull
+2026-04-03T17:38:30.6896347Z time="2026-04-03T17:38:21Z" level=debug msg=resolving span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6898406Z time="2026-04-03T17:38:21Z" level=debug msg="do request" request.header.accept="application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*" request.header.user-agent=buildkit/v0.29 request.method=HEAD span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6903153Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=160 response.header.content-type=application/json response.header.date="Fri, 03 Apr 2026 17:38:21 GMT" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=20.49.14.177 response.header.strict-transport-security="max-age=31536000" response.header.www-authenticate="***"https://auth.docker.io/token\",service=\"registry.docker.io\",scope=\"repository:docker/dockerfile:pull\"" response.status="401 Unauthorized" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6906779Z time="2026-04-03T17:38:22Z" level=debug msg=Unauthorized header="***"https://auth.docker.io/token\",service=\"registry.docker.io\",scope=\"repository:docker/dockerfile:pull\"" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6909732Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*" request.header.user-agent=buildkit/v0.29 request.method=HEAD span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6915285Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=8426 response.header.content-type=application/vnd.oci.image.index.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6918972Z time="2026-04-03T17:38:22Z" level=debug msg=resolved desc.digest="sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6920293Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6921525Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6923464Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.index.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6927742Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=8426 response.header.content-type=application/vnd.oci.image.index.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=20.49.14.177 response.header.etag="\"sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6930944Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6932186Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6934644Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.manifest.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6941768Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=1134 response.header.content-type=application/vnd.oci.image.manifest.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:a7f5ec8c4a35a7f8cd9e6e413f59fd1bfd33f8b623c26981c684f5065dfe3044" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=20.49.14.177 response.header.etag="\"sha256:a7f5ec8c4a35a7f8cd9e6e413f59fd1bfd33f8b623c26981c684f5065dfe3044\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6948013Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6950498Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6952477Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.config.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6959049Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.accept-ranges=bytes response.header.age=242843 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8b9aa02d6f9-IAD response.header.connection=keep-alive response.header.content-length=1332 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.etag="\"179cdae68b5bd75a7948d0d545c32c0d\"" response.header.expires="Fri, 03 Apr 2026 21:38:22 GMT" response.header.last-modified="Tue, 03 Mar 2026 22:10:51 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=ByuzzJeEKjr508CDc0vu3J0yMiYJZPkmZjYVtXIJOCg-1775237902-1.0.1.1-p6CFtsonhbKqZNgCDoZbzr7n.Xa8dfO4z9j94nBWdZHMp9aPN1MEa2jDBsostOA2CrSqz0J5kFwKWn_CIJ77Y3AKuhnyd683QKAOPLwKXCE; path=/; expires=Fri, 03-Apr-26 18:08:22 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="k2H/4qKuUED+mUmV4u+ce9g5ihBnD2AIg+GSm9DHNV3Dw0n83Q3O+XNLsJVaZvhMRjs/l+/qKeE=" response.header.x-amz-request-id=WG6PH45PQ28EB1GE response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=dotYIZbJcmOBGuVga7qJrt0Y.oQnlcsO response.status="200 OK" span="resolving docker.io/docker/dockerfile:1" spanID=faaeafe3fcab0f90 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6966258Z time="2026-04-03T17:38:22Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/docker/dockerfile::pull" name=docker.io/docker/dockerfile scope=pull
+2026-04-03T17:38:30.6968201Z time="2026-04-03T17:38:22Z" level=debug msg=fetch digest="sha256:4a43a54dd1fedceb30ba47e76cfcf2b47304f4161c0caeac2db1c61804ea3c91" mediatype=application/vnd.oci.image.index.v1+json size=8426 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6970610Z time="2026-04-03T17:38:22Z" level=debug msg=fetch digest="sha256:a7f5ec8c4a35a7f8cd9e6e413f59fd1bfd33f8b623c26981c684f5065dfe3044" mediatype=application/vnd.oci.image.manifest.v1+json size=1134 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6972753Z time="2026-04-03T17:38:22Z" level=debug msg=fetch digest="sha256:0c0d553f78ac22c7a86406e049cd10406afae98de1e1c681d4ef065cf948dd2f" mediatype=application/vnd.oci.image.config.v1+json size=1332 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6974358Z time="2026-04-03T17:38:22Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/docker/dockerfile::pull" name=docker.io/docker/dockerfile scope=pull
+2026-04-03T17:38:30.6975984Z time="2026-04-03T17:38:22Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/docker/dockerfile::pull" name=docker.io/docker/dockerfile scope=pull
+2026-04-03T17:38:30.6977621Z time="2026-04-03T17:38:22Z" level=debug msg=fetch digest="sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=13778405 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6980251Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=13778405 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.6983969Z time="2026-04-03T17:38:22Z" level=debug msg="do request" digest="sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=13778405 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/docker/dockerfile/blobs/sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9"
+2026-04-03T17:38:30.6993333Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" digest="sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=242784 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8ba0b2bd6f9-IAD response.header.connection=keep-alive response.header.content-length=13778405 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.etag="\"a285ac74c89d86bb80bc3a4da6b703fe\"" response.header.expires="Fri, 03 Apr 2026 21:38:22 GMT" response.header.last-modified="Tue, 03 Mar 2026 22:10:52 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=BCzvtvihKryhw06dXHTHMa8.PeY2pPsbZRDMzYdGvrQ-1775237902-1.0.1.1-cxQ9GX3e6RqFfjXyz.oPELClU066sqBa_cIMIRK4PYYsH6AGohjqFTzdtOlMYoBJy62mDZVqjN_IA_7.tOeC9KqcSGqYFsFKnS3qVhcQpkY; path=/; expires=Fri, 03-Apr-26 18:08:22 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="ILJFJ84buxrr/HVpQ+/++xkZnomjGheTsq7oCUa9BKlu7jcaMS94/jAM8zrhVmw+/Iu3WwX2j0Y=" response.header.x-amz-request-id=X3BBVWNAT7C41JGY response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=QCI0lUvo2dAdraAZzdHc1_dFLDWyicfy response.status="200 OK" size=13778405 spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/docker/dockerfile/blobs/sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9"
+2026-04-03T17:38:30.7000847Z time="2026-04-03T17:38:22Z" level=debug msg=" not found" error="exec: \"igzip\": executable file not found in $PATH"
+2026-04-03T17:38:30.7001428Z time="2026-04-03T17:38:22Z" level=debug msg="using unpigz for decompression"
+2026-04-03T17:38:30.7002959Z time="2026-04-03T17:38:22Z" level=debug msg="diff applied" d=105.226752ms digest="sha256:149b48b83eff3cc6314b54f2ab6cdb58908e9c43c36a8ae81d8bb55fbc3281f9" media=application/vnd.oci.image.layer.v1.tar+gzip size=13778405 span=extract spanID=ec7ea9b289e08dea traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7004700Z time="2026-04-03T17:38:22Z" level=debug msg="serving grpc connection" spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7005841Z time="2026-04-03T17:38:22Z" level=debug msg="> creating w4yi1rwo24lduetvxw3i1zzlo [/bin/dockerfile-frontend]" spanID=3e73bee46c8ca6f6 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7007447Z time="2026-04-03T17:38:22Z" level=debug msg="checked for cached auth handler namespace" cached=false key="docker.io/tonistiigi/xx::pull" name=docker.io/tonistiigi/xx scope=pull
+2026-04-03T17:38:30.7008738Z time="2026-04-03T17:38:22Z" level=debug msg="checked for cached auth handler namespace" cached=false key="docker.io/library/golang::pull" name=docker.io/library/golang scope=pull
+2026-04-03T17:38:30.7009959Z time="2026-04-03T17:38:22Z" level=debug msg=resolving span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7012304Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*" request.header.user-agent=buildkit/v0.29 request.method=HEAD span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7015505Z time="2026-04-03T17:38:22Z" level=debug msg=resolving span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7019343Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*" request.header.user-agent=buildkit/v0.29 request.method=HEAD span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7026305Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=156 response.header.content-type=application/json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=20.49.14.177 response.header.strict-transport-security="max-age=31536000" response.header.www-authenticate="***"https://auth.docker.io/token\",service=\"registry.docker.io\",scope=\"repository:tonistiigi/xx:pull\"" response.status="401 Unauthorized" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7030269Z time="2026-04-03T17:38:22Z" level=debug msg=Unauthorized header="***"https://auth.docker.io/token\",service=\"registry.docker.io\",scope=\"repository:tonistiigi/xx:pull\"" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7033193Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*" request.header.user-agent=buildkit/v0.29 request.method=HEAD span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7038099Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=157 response.header.content-type=application/json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=20.49.14.177 response.header.strict-transport-security="max-age=31536000" response.header.www-authenticate="***"https://auth.docker.io/token\",service=\"registry.docker.io\",scope=\"repository:library/golang:pull\"" response.status="401 Unauthorized" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7042445Z time="2026-04-03T17:38:22Z" level=debug msg=Unauthorized header="***"https://auth.docker.io/token\",service=\"registry.docker.io\",scope=\"repository:library/golang:pull\"" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7045657Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, */*" request.header.user-agent=buildkit/v0.29 request.method=HEAD span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7050572Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=10708 response.header.content-type=application/vnd.oci.image.index.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7055016Z time="2026-04-03T17:38:22Z" level=debug msg=resolved desc.digest="sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7056486Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7057838Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7060773Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.index.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7066660Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=10293 response.header.content-type=application/vnd.oci.image.index.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7071143Z time="2026-04-03T17:38:22Z" level=debug msg=resolved desc.digest="sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7072920Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7074858Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7077413Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.index.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7084684Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=10708 response.header.content-type=application/vnd.oci.image.index.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7090417Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7092646Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7096425Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.manifest.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7103203Z time="2026-04-03T17:38:22Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=10293 response.header.content-type=application/vnd.oci.image.index.v1+json response.header.date="Fri, 03 Apr 2026 17:38:22 GMT" response.header.docker-content-digest="sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7107199Z time="2026-04-03T17:38:22Z" level=debug msg=fetch span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7108799Z time="2026-04-03T17:38:22Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7111200Z time="2026-04-03T17:38:22Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.manifest.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7116618Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=478 response.header.content-type=application/vnd.oci.image.manifest.v1+json response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.docker-content-digest="sha256:50f4a46e93c5f7e8679f5a14222395a3ee5c65e406e16c96d987f6c911f55f90" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:50f4a46e93c5f7e8679f5a14222395a3ee5c65e406e16c96d987f6c911f55f90\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7121062Z time="2026-04-03T17:38:23Z" level=debug msg=fetch span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7123353Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7126930Z time="2026-04-03T17:38:23Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.config.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7134400Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" response.header.connection=keep-alive response.header.content-length=1921 response.header.content-type=application/vnd.oci.image.manifest.v1+json response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.docker-content-digest="sha256:d337ecb3075f0ec76d81652b3fa52af47c3eba6c8ba9f93b835752df7ce62946" response.header.docker-distribution-api-version=registry/2.0 response.header.docker-ratelimit-source=59aa2839-97c5-4781-8b76-14f597fd2a04 response.header.etag="\"sha256:d337ecb3075f0ec76d81652b3fa52af47c3eba6c8ba9f93b835752df7ce62946\"" response.header.strict-transport-security="max-age=31536000" response.status="200 OK" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7139162Z time="2026-04-03T17:38:23Z" level=debug msg=fetch span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7142675Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 initial_parallelism=0 offset=0 parallelism=1 span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7146033Z time="2026-04-03T17:38:23Z" level=debug msg="do request" request.header.accept="application/vnd.oci.image.config.v1+json, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7155972Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" response.header.accept-ranges=bytes response.header.age=1896701 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8be3963d6f9-IAD response.header.connection=keep-alive response.header.content-length=919 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"ce6985b0b2d07968f8d48065e6bc6441\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Fri, 05 Dec 2025 10:16:58 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=Gv271J9j.cjatVtL1AZHt5CEnV7dR6T8kKBxEpKpWYk-1775237903-1.0.1.1-YrnCJe9Qxkc_Z2u1rLjXP9yUQhYiqrgC7tpFsc5kr9pEM8Jr0FOZDp.TD84wJh4lCD7RwttdX7b3JVjao.ek9scAknrM8A6cGiQ7cOby_74; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="61uwQGTeHImnCvTzVOeoTDh9N1UAqKy6Jwz5ADUc/isL0eDcye2Yd9JSn8REZe7btb/gNPKWQUU=" response.header.x-amz-request-id=FHFEMCTFMWJNC7WQ response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=iTUB1EROJWp74RzgONjk9ojAKe3._67c response.status="200 OK" span="resolving docker.io/tonistiigi/xx:1.9.0" spanID=467257950c4fe0d5 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7170556Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" response.header.accept-ranges=bytes response.header.age=58827 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8be69f4d6f9-IAD response.header.connection=keep-alive response.header.content-length=2193 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"3e7214326e57f51caa370ccae10c57c2\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Fri, 06 Mar 2026 01:12:21 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=TXT8hN23Q4E9sPNYsyrszNg9Xp_kux5vTDa5y2vEDFo-1775237903-1.0.1.1-lc6h3J_IgBHDvJd8Xkxc.U0FzwkdpDb6bb_ahTyo44B5n.gkw0D6y4N3ncbMgzOzleglsSn37b1TB0CNoLBHL3Dw1Sgfr5rKAwXNgn_XlqI; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="DgQGGHbsl9WkZT9fmLhmwtyhQ7b5MvOsuwh9wRw/73g1Kqbef/nwSwO6Yyzg63EqoZSrDGM5wJdqLIZvWAssxmW+2yD3k1uDOt/6V5RN/ds=" response.header.x-amz-request-id=B9FP1WWNCRW9YP17 response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=wTXZK91keYSPb4c8l9WOiK0NBoRA57ib response.status="200 OK" span="resolving docker.io/library/golang:1.26-alpine3.23" spanID=f57fa5c825e708fb traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7179204Z time="2026-04-03T17:38:23Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/tonistiigi/xx::pull" name=docker.io/tonistiigi/xx scope=pull
+2026-04-03T17:38:30.7180835Z time="2026-04-03T17:38:23Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/library/golang::pull" name=docker.io/library/golang scope=pull
+2026-04-03T17:38:30.7182646Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:c64defb9ed5a91eacb37f96ccc3d4cd72521c4bd18d5442905b95e2226b0e707" mediatype=application/vnd.oci.image.index.v1+json size=10708 spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7184814Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039" mediatype=application/vnd.oci.image.index.v1+json size=10293 spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7186751Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:50f4a46e93c5f7e8679f5a14222395a3ee5c65e406e16c96d987f6c911f55f90" mediatype=application/vnd.oci.image.manifest.v1+json size=478 spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7188683Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:166b249494acf77ae1b27c2b7e6867c50d16a5265c710e16aa5e3447ec1cd1ef" mediatype=application/vnd.oci.image.config.v1+json size=919 spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7190772Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:d337ecb3075f0ec76d81652b3fa52af47c3eba6c8ba9f93b835752df7ce62946" mediatype=application/vnd.oci.image.manifest.v1+json size=1921 spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7192711Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:e951cd8dd18b7c05b5a943b21e5f1a3e7088422c21a9c4c8658dd183ee3b636d" mediatype=application/vnd.oci.image.config.v1+json size=2193 spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7194569Z time="2026-04-03T17:38:23Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/tonistiigi/xx::pull" name=docker.io/tonistiigi/xx scope=pull
+2026-04-03T17:38:30.7195794Z time="2026-04-03T17:38:23Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/tonistiigi/xx::pull" name=docker.io/tonistiigi/xx scope=pull
+2026-04-03T17:38:30.7197016Z time="2026-04-03T17:38:23Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/library/golang::pull" name=docker.io/library/golang scope=pull
+2026-04-03T17:38:30.7198249Z time="2026-04-03T17:38:23Z" level=debug msg="checked for cached auth handler namespace" cached=true key="docker.io/library/golang::pull" name=docker.io/library/golang scope=pull
+2026-04-03T17:38:30.7199778Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=17700 spanID=5761f37acc2e25e1 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7201996Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=17700 spanID=5761f37acc2e25e1 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7205691Z time="2026-04-03T17:38:23Z" level=debug msg="do request" digest="sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=17700 spanID=5761f37acc2e25e1 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/tonistiigi/xx/blobs/sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4"
+2026-04-03T17:38:30.7224949Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=32 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7227908Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=126 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7230014Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=67216879 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7233142Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=296074 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7235631Z time="2026-04-03T17:38:23Z" level=debug msg=fetch digest="sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153" mediatype=application/vnd.oci.image.layer.v1.tar+gzip size=3861821 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7238009Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=32 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7241176Z time="2026-04-03T17:38:23Z" level=debug msg="do request" digest="sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=32 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1"
+2026-04-03T17:38:30.7245763Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=126 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7249031Z time="2026-04-03T17:38:23Z" level=debug msg="do request" digest="sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=126 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706"
+2026-04-03T17:38:30.7252378Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=67216879 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7260618Z time="2026-04-03T17:38:23Z" level=debug msg="do request" digest="sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=67216879 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28"
+2026-04-03T17:38:30.7269859Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" digest="sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=1854551 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8c10ab9d6f9-IAD response.header.connection=keep-alive response.header.content-length=17700 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"10a6f1a3455c3fd44efa8f0a00409c87\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Fri, 05 Dec 2025 10:16:58 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=B8sNl8AfT6Y7Ww8BfZb6bKl2XV.xfd3FTmfXdlPxfTg-1775237903-1.0.1.1-uiwextgmlAD8CxjNsIEvwRSkR6lglkD_lv4TnkLzRaTYiA_CnSo_KF8SqsTeBHZYE4dyCVt1zQstodwbpe9jZywFV2pYHt.eCopDFJPC9rc; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="VNWAqKVAPW/zJvCP9uvF9OC/+15teRCNwK4cFHMHkWdmTfECyXxj4ekbbUQIHPRcYz9yPrNtMKM=" response.header.x-amz-request-id=EPKH35TKH2BX24V0 response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=ZI9WOFNyva6HK.uXLDFlT1g5T7A7086b response.status="200 OK" size=17700 spanID=5761f37acc2e25e1 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/tonistiigi/xx/blobs/sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4"
+2026-04-03T17:38:30.7281686Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=296074 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7286039Z time="2026-04-03T17:38:23Z" level=debug msg="do request" digest="sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=296074 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98"
+2026-04-03T17:38:30.7289872Z time="2026-04-03T17:38:23Z" level=debug msg="diff applied" d=2.872592ms digest="sha256:ff62ee5b594035d8ad03d05aadc05e2a73f7e0e11bf2574dc5473677a60e22b4" media=application/vnd.oci.image.layer.v1.tar+gzip size=17700 span=extract spanID=33d1d20bd6be04c3 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7299480Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" digest="sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=1899223 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8c12b27d6f9-IAD response.header.connection=keep-alive response.header.content-length=32 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"0c981b7b1e0a1ffa5aa2e85ce10addf7\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Tue, 07 Mar 2017 15:01:14 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=SKSQRjqYr_0i_9QL5xlMwOuzBQ7XX4buFwvVVmIIKm0-1775237903-1.0.1.1-L6_E03oClPCoxUjvgQd0Ii2Q9xzSRBRfQKElPg4BLO3wTH2b.slcAFKH_17dP5UQrUIGlqWXTiSZDADeD32rGuwgEch8HQZAQ.DV4MIvLV8; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="5mTN0laluF7w88zNneEeVA+es9d81OT+3D0kPAs+hropqrlDb4Qye/zSgCHMLKhGhXWlNVE1Rl8=" response.header.x-amz-request-id=96K84R8QAWJ2210Y response.header.x-amz-version-id=LAYyCSQew06o7Ea1PuAbExWijcT8O9Ci response.status="200 OK" size=32 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1"
+2026-04-03T17:38:30.7310325Z time="2026-04-03T17:38:23Z" level=debug msg="fetching layer" chunk_size=0 digest="sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153" initial_parallelism=0 mediatype=application/vnd.oci.image.layer.v1.tar+gzip offset=0 parallelism=1 size=3861821 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7314260Z time="2026-04-03T17:38:23Z" level=debug msg="do request" digest="sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153" mediatype=application/vnd.oci.image.layer.v1.tar+gzip request.header.accept="application/vnd.oci.image.layer.v1.tar+gzip, */*" request.header.accept-encoding="zstd;q=1.0, gzip;q=0.8, deflate;q=0.5" request.header.user-agent=buildkit/v0.29 request.method=GET size=3861821 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153"
+2026-04-03T17:38:30.7323164Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" digest="sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=1295400 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8c14b6086f1-IAD response.header.connection=keep-alive response.header.content-length=67216879 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"7fec3adad004f67948aedd1f3a9378eb-3\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Fri, 06 Mar 2026 01:12:19 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=XfmeUrlaVas1dVv1p02.M9CIYqPQR75ILA4om77gCWc-1775237903-1.0.1.1-yUI4oMibGMdsaldbRcu7rJtDdLCvYR5_BArgmXiE8YwsV8sw9a829Vgkt1G7yoNnNSglNvhRZmNtpomXRU8M6sGRx3Egizc2F19TVkj7gks; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="mkF+HULtwqIgg1lofeh9q4y78vyXKiiA2VNbW2gp0cyEanOcAHQh70/qRJNmMotBrCRdOjqhLus=" response.header.x-amz-request-id=20D128RABWFHD7EF response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=ZOdRxUtxpMlFz6FSwGCsnQYIjNMqshlP response.status="200 OK" size=67216879 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28"
+2026-04-03T17:38:30.7336634Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" digest="sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=58825 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8c15b46d6a8-IAD response.header.connection=keep-alive response.header.content-length=296074 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"2364a73ff229dbfd326416cce6001ae6\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Fri, 06 Mar 2026 01:12:20 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=0hnEwguNALA_RqQqQZMXKlg3wLpp7QSJnNI16_x9.6Y-1775237903-1.0.1.1-h4g7cvNIIWOrBqh7SpRrtaAZ8Mpni9rDvFKdaXOvJwnFa0aBH7tlTOX11I4.1247xJGbHVn61DDw.D4_pAw8Hj3wVOz6HoIZI5Tb2JQlxDo; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="5d0YtO23vhuKrG2CtDhFrjwlXNfqsoZb0ahemF089TWl3phGErAI463VWmfgRuZ1ycYJqePH0ZA=" response.header.x-amz-request-id=EJGD9H2A5AZY4RVN response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=p3CRwKf.YiRaPH5LsC2_rny7BVr5QMXY response.status="200 OK" size=296074 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98"
+2026-04-03T17:38:30.7349835Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" digest="sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=58825 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8c13c5207fc-IAD response.header.connection=keep-alive response.header.content-length=126 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"039688ccb2f55ac5ff5a5262f9389dcd\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Fri, 06 Mar 2026 01:12:21 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=pYtoRSl_JLlBglUkEsbNcBn7OEyZ.XlpQ8R7oyLBOtE-1775237903-1.0.1.1-iLB5pEZiLy__NqhU_uyyT1y2tc3mX7WnmMOYUIjMr1rL.Ln0N82Bw31rpSePyLwlYMFGvmFgSXxWbmtPm.fIpCl3Je5VZNx1RhSb9FvguPc; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="rfM5FKI1ZfrlAfu+F8KMO9EE7sfgfIZxHHAjYL9H9TV+oNEJCf4N+iWZpLFDJjOCnu/UoMnulqs=" response.header.x-amz-request-id=EJG8S412APJKQ0YN response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=ZcxpK4wGwwssX.ysK20Ud7UJjmwGWhWA response.status="200 OK" size=126 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706"
+2026-04-03T17:38:30.7367224Z time="2026-04-03T17:38:23Z" level=debug msg="fetch response received" digest="sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153" mediatype=application/vnd.oci.image.layer.v1.tar+gzip response.header.accept-ranges=bytes response.header.age=1234890 response.header.cache-control="public, max-age=14400" response.header.cf-cache-status=HIT response.header.cf-ray=9e69d8c17bfed6f9-IAD response.header.connection=keep-alive response.header.content-length=3861821 response.header.content-type=application/octet-stream response.header.date="Fri, 03 Apr 2026 17:38:23 GMT" response.header.etag="\"58099b9a1efd5bfd7f2b1e6b3d903a02\"" response.header.expires="Fri, 03 Apr 2026 21:38:23 GMT" response.header.last-modified="Wed, 28 Jan 2026 01:18:09 GMT" response.header.server=cloudflare response.header.set-cookie="__cf_bm=sb2xVqMbuu_iMbnLQEScsI37C93TGFt08bMcCmvMxp4-1775237903-1.0.1.1-PsJZRYfjGxH3OmQRXpBkqFpvGSYx_MxGp.DwFJvXRyA_H5a6S5tgpAdw9M5ehA8hQIYX1MohsxRQNc4J95yL9bXEeAx7hNR9L80SebSFuhE; path=/; expires=Fri, 03-Apr-26 18:08:23 GMT; domain=.production.cloudflare.docker.com; HttpOnly; Secure; SameSite=None" response.header.vary=Accept-Encoding response.header.x-amz-id-2="oisAEV6pktLbEfjQLAB2KNmX9fGOGaY8572E0n/1hSdcVlPtX5DKwTfGYVI3P1f0L/wrVIJxrPM=" response.header.x-amz-request-id=H4QY90BKWSHAW2NY response.header.x-amz-server-side-encryption=AES256 response.header.x-amz-version-id=gFHL76JSF5c9QKyMfnN9cKmu3PqzD.Ho response.status="200 OK" size=3861821 spanID=5617b07b27dd5021 traceID=ad24d9bff47aa84f2168c860dcec40a9 url="https://registry-1.docker.io/v2/library/golang/blobs/sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153"
+2026-04-03T17:38:30.7379783Z time="2026-04-03T17:38:23Z" level=debug msg="diff applied" d=144.828385ms digest="sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153" media=application/vnd.oci.image.layer.v1.tar+gzip size=3861821 span=extract spanID=76036b1afc10f64d traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7383567Z time="2026-04-03T17:38:23Z" level=debug msg="diff applied" d=62.641945ms digest="sha256:644a983862e3898a5575fef5c81590cbc92d1c1e1bf5f61112c0cd35e6b7be98" media=application/vnd.oci.image.layer.v1.tar+gzip size=296074 span=extract spanID=cb663079b9798c4d traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7387421Z time="2026-04-03T17:38:27Z" level=debug msg="diff applied" d=3.077859129s digest="sha256:6fbff1d4eb7eece408734c05c8c63a49bb181871bc1280cff3f0e28d25a4ea28" media=application/vnd.oci.image.layer.v1.tar+gzip size=67216879 span=extract spanID=b5ece4a6da7400f8 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7391169Z time="2026-04-03T17:38:27Z" level=debug msg="diff applied" d=1.383876ms digest="sha256:13ee208a3600503f47e9ec1ced0e8abb825a045473b092f1fe872b81d9873706" media=application/vnd.oci.image.layer.v1.tar+gzip size=126 span=extract spanID=51930fdd67404664 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7501272Z time="2026-04-03T17:38:27Z" level=debug msg="diff applied" d="954.247µs" digest="sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1" media=application/vnd.oci.image.layer.v1.tar+gzip size=32 span=extract spanID=4c0232184a202725 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7503390Z time="2026-04-03T17:38:27Z" level=debug msg="> creating wkyt103m5pzlpe11hp8nolo4i [/bin/sh -c apk add --no-cache git gcc musl-dev binutils-gold]" span="[base 2/2] RUN apk add --no-cache git gcc musl-dev binutils-gold" spanID=5d9544936704ed3c traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7505739Z time="2026-04-03T17:38:29Z" level=error msg="/moby.buildkit.v1.Control/Solve returned error: rpc error: code = Unknown desc = process \"/bin/sh -c apk add --no-cache git gcc musl-dev binutils-gold\" did not complete successfully: exit code: 1" spanID=48fab6c478544f37 traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7507217Z process "/bin/sh -c apk add --no-cache git gcc musl-dev binutils-gold" did not complete successfully: exit code: 1
+2026-04-03T17:38:30.7507908Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.7508681Z github.com/moby/buildkit/executor/runcexecutor.exitError
+2026-04-03T17:38:30.7509108Z 	/src/executor/runcexecutor/executor.go:403
+2026-04-03T17:38:30.7509564Z github.com/moby/buildkit/executor/runcexecutor.(*runcExecutor).Run
+2026-04-03T17:38:30.7510105Z 	/src/executor/runcexecutor/executor.go:351
+2026-04-03T17:38:30.7510469Z github.com/moby/buildkit/solver/llbsolver/ops.(*ExecOp).Exec
+2026-04-03T17:38:30.7510819Z 	/src/solver/llbsolver/ops/exec.go:498
+2026-04-03T17:38:30.7511156Z github.com/moby/buildkit/solver.(*sharedOp).Exec.func2
+2026-04-03T17:38:30.7511462Z 	/src/solver/jobs.go:1182
+2026-04-03T17:38:30.7511759Z github.com/moby/buildkit/util/flightcontrol.(*call[...]).run
+2026-04-03T17:38:30.7512305Z 	/src/util/flightcontrol/flightcontrol.go:122
+2026-04-03T17:38:30.7512589Z sync.(*Once).doSlow
+2026-04-03T17:38:30.7512798Z 	/usr/local/go/src/sync/once.go:78
+2026-04-03T17:38:30.7513042Z sync.(*Once).Do
+2026-04-03T17:38:30.7513235Z 	/usr/local/go/src/sync/once.go:69
+2026-04-03T17:38:30.7513474Z runtime.goexit
+2026-04-03T17:38:30.7513686Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.7514173Z 
+2026-04-03T17:38:30.7514399Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.7514799Z main.unaryInterceptor
+2026-04-03T17:38:30.7515024Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.7515495Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.7516045Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.7516458Z github.com/moby/buildkit/api/services/control._Control_Solve_Handler
+2026-04-03T17:38:30.7516863Z 	/src/api/services/control/control_grpc.pb.go:289
+2026-04-03T17:38:30.7517200Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.7517319Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.7517438Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.7517554Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.7517695Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.7517813Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.7517889Z runtime.goexit
+2026-04-03T17:38:30.7517992Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.7517997Z 
+2026-04-03T17:38:30.7518204Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.7518321Z github.com/moby/buildkit/solver.(*edge).execOp
+2026-04-03T17:38:30.7518619Z 	/src/solver/edge.go:963
+2026-04-03T17:38:30.7518831Z github.com/moby/buildkit/solver/internal/pipe.NewWithFunction[...].func2
+2026-04-03T17:38:30.7518930Z 	/src/solver/internal/pipe/pipe.go:78
+2026-04-03T17:38:30.7519119Z runtime.goexit
+2026-04-03T17:38:30.7519224Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.7519229Z 
+2026-04-03T17:38:30.7519435Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.7519600Z github.com/moby/buildkit/solver/llbsolver/ops.(*ExecOp).Exec
+2026-04-03T17:38:30.7519694Z 	/src/solver/llbsolver/ops/exec.go:519
+2026-04-03T17:38:30.7519832Z github.com/moby/buildkit/solver.(*sharedOp).Exec.func2
+2026-04-03T17:38:30.7519913Z 	/src/solver/jobs.go:1182
+2026-04-03T17:38:30.7519918Z 
+2026-04-03T17:38:30.7520313Z time="2026-04-03T17:38:29Z" level=debug msg="session finished: <nil>" spanID=94e441ed22fefcae traceID=ad24d9bff47aa84f2168c860dcec40a9
+2026-04-03T17:38:30.7520684Z time="2026-04-03T17:38:29Z" level=debug msg="session finished: <nil>" spanID=f05413a850d88e15 traceID=90382df373f44b5be71d0f8f387ea634
+2026-04-03T17:38:30.7521332Z time="2026-04-03T17:38:29Z" level=error msg="/moby.buildkit.v1.Control/Solve returned error: rpc error: code = Canceled desc = context canceled" spanID=80ab2f8fa2a3750b traceID=0fe1303e60a962c54d5725ca16405d73
+2026-04-03T17:38:30.7521414Z Canceled: context canceled
+2026-04-03T17:38:30.7521615Z 7 v0.29.0 /usr/bin/buildkitd --debug --allow-insecure-entitlement=network.host
+2026-04-03T17:38:30.7521695Z main.unaryInterceptor
+2026-04-03T17:38:30.7521776Z 	/src/cmd/buildkitd/main.go:738
+2026-04-03T17:38:30.7522081Z google.golang.org/grpc.NewServer.chainUnaryServerInterceptors.chainUnaryInterceptors.func1
+2026-04-03T17:38:30.7522197Z 	/src/vendor/google.golang.org/grpc/server.go:1233
+2026-04-03T17:38:30.7522387Z github.com/moby/buildkit/api/services/control._Control_Solve_Handler
+2026-04-03T17:38:30.7522549Z 	/src/api/services/control/control_grpc.pb.go:289
+2026-04-03T17:38:30.7522682Z google.golang.org/grpc.(*Server).processUnaryRPC
+2026-04-03T17:38:30.7522795Z 	/src/vendor/google.golang.org/grpc/server.go:1429
+2026-04-03T17:38:30.7522904Z google.golang.org/grpc.(*Server).handleStream
+2026-04-03T17:38:30.7523026Z 	/src/vendor/google.golang.org/grpc/server.go:1855
+2026-04-03T17:38:30.7523157Z google.golang.org/grpc.(*Server).serveStreams.func2.1
+2026-04-03T17:38:30.7523274Z 	/src/vendor/google.golang.org/grpc/server.go:1064
+2026-04-03T17:38:30.7523346Z runtime.goexit
+2026-04-03T17:38:30.7523445Z 	/usr/local/go/src/runtime/asm_amd64.s:1771
+2026-04-03T17:38:30.7523450Z 
+2026-04-03T17:38:30.7523995Z ##[endgroup]
+2026-04-03T17:38:30.7524245Z ##[group]Removing builder
+2026-04-03T17:38:30.7525104Z [command]/usr/bin/docker buildx rm builder-1d3a4b0a-f0bb-4533-8872-384e09344358
+2026-04-03T17:38:31.8702676Z builder-1d3a4b0a-f0bb-4533-8872-384e09344358 removed
+2026-04-03T17:38:31.8726811Z ##[endgroup]
+2026-04-03T17:38:31.8727681Z ##[group]Cleaning up certificates
+2026-04-03T17:38:31.8728827Z ##[endgroup]
+2026-04-03T17:38:31.8729359Z ##[group]Post cache
+2026-04-03T17:38:31.8730905Z State not set
+2026-04-03T17:38:31.8731455Z ##[endgroup]
+2026-04-03T17:38:31.8877658Z Cleaning up orphan processes

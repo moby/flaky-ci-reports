@@ -1,0 +1,18 @@
+[
+  {
+    "unique_key": "git-fetch-connect-failed:github.com:443",
+    "name": "git fetch failed: cannot connect to github.com:443",
+    "category": "network",
+    "fields": {
+      "host": "github.com",
+      "port": "443",
+      "url": "https://github.com/docker/buildx.git/"
+    },
+    "evidence": [
+      {
+        "start_line": 1087,
+        "end_line": 1087
+      }
+    ]
+  }
+]

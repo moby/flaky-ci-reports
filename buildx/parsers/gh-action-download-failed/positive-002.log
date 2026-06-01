@@ -1,0 +1,39 @@
+﻿2026-05-12T13:59:48.6823038Z Current runner version: '2.334.0'
+2026-05-12T13:59:48.6847465Z ##[group]Runner Image Provisioner
+2026-05-12T13:59:48.6848271Z Hosted Compute Agent
+2026-05-12T13:59:48.6848901Z Version: 20260213.493
+2026-05-12T13:59:48.6849576Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-12T13:59:48.6850257Z Build Date: 2026-02-13T00:28:41Z
+2026-05-12T13:59:48.6850983Z Worker ID: {adc121b1-979d-4570-b35e-7f3c4b2b2dc8}
+2026-05-12T13:59:48.6851672Z Azure Region: westus3
+2026-05-12T13:59:48.6852187Z ##[endgroup]
+2026-05-12T13:59:48.6853834Z ##[group]Operating System
+2026-05-12T13:59:48.6854448Z Ubuntu
+2026-05-12T13:59:48.6854938Z 24.04.4
+2026-05-12T13:59:48.6855403Z LTS
+2026-05-12T13:59:48.6855898Z ##[endgroup]
+2026-05-12T13:59:48.6856374Z ##[group]Runner Image
+2026-05-12T13:59:48.6857008Z Image: ubuntu-24.04
+2026-05-12T13:59:48.6857589Z Version: 20260413.86.1
+2026-05-12T13:59:48.6858739Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260413.86/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-12T13:59:48.6860210Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260413.86
+2026-05-12T13:59:48.6861133Z ##[endgroup]
+2026-05-12T13:59:48.6862407Z ##[group]GITHUB_TOKEN Permissions
+2026-05-12T13:59:48.6864626Z Actions: read
+2026-05-12T13:59:48.6865130Z Contents: read
+2026-05-12T13:59:48.6865769Z Metadata: read
+2026-05-12T13:59:48.6866248Z SecurityEvents: write
+2026-05-12T13:59:48.6866783Z ##[endgroup]
+2026-05-12T13:59:48.6868988Z Secret source: Actions
+2026-05-12T13:59:48.6869684Z Prepare workflow directory
+2026-05-12T13:59:48.7263527Z Prepare all required actions
+2026-05-12T13:59:48.7301290Z Getting action download info
+2026-05-12T13:59:49.1985088Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-12T13:59:49.3049825Z Download action repository 'actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c' (SHA:4a3601121dd01d1626a1e23e37211e3254c1c06c)
+2026-05-12T13:59:50.4067292Z Download action repository 'github/codeql-action@68bde559dea0fdcac2102bfdf6230c5f70eb485e' (SHA:68bde559dea0fdcac2102bfdf6230c5f70eb485e)
+2026-05-12T14:00:00.6041707Z ##[warning]Failed to download action 'https://codeload.github.com/github/codeql-action/tar.gz/68bde559dea0fdcac2102bfdf6230c5f70eb485e'. Error: Response status code does not indicate success: 429 (Too Many Requests). 0401:EF7D:4FC315:62316F:6A033256
+2026-05-12T14:00:00.6057907Z ##[warning]Back off 12.951 seconds before retry.
+2026-05-12T14:00:23.7374363Z ##[warning]Failed to download action 'https://codeload.github.com/github/codeql-action/tar.gz/68bde559dea0fdcac2102bfdf6230c5f70eb485e'. Error: Response status code does not indicate success: 429 (Too Many Requests). 0400:E2C0B:564AB3:681546:6A03326D
+2026-05-12T14:00:23.7377084Z ##[warning]Back off 12.667 seconds before retry.
+2026-05-12T14:00:46.5680020Z ##[error]Response status code does not indicate success: 429 (Too Many Requests).
+2026-05-12T14:00:46.5696835Z ##[error]Failed to download archive 'https://codeload.github.com/github/codeql-action/tar.gz/68bde559dea0fdcac2102bfdf6230c5f70eb485e' after 3 attempts.

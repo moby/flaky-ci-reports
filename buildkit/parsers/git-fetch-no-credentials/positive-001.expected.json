@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "git-fetch-no-credentials:https://github.com",
+    "name": "git fetch failed: no credentials for https://github.com",
+    "category": "other",
+    "fields": {
+      "remote": "https://github.com"
+    },
+    "evidence": [
+      {
+        "start_line": 1295,
+        "end_line": 1295
+      }
+    ]
+  }
+]

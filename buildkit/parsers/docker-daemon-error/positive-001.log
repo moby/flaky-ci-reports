@@ -1,0 +1,218 @@
+﻿2026-05-26T13:42:56.1783105Z Current runner version: '2.334.0'
+2026-05-26T13:42:56.1805190Z ##[group]Runner Image Provisioner
+2026-05-26T13:42:56.1806067Z Hosted Compute Agent
+2026-05-26T13:42:56.1806651Z Version: 20260213.493
+2026-05-26T13:42:56.1807240Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-26T13:42:56.1807985Z Build Date: 2026-02-13T00:28:41Z
+2026-05-26T13:42:56.1808647Z Worker ID: {1e6848e3-5c0b-48d3-8894-bb302c764929}
+2026-05-26T13:42:56.1809362Z Azure Region: westcentralus
+2026-05-26T13:42:56.1810000Z ##[endgroup]
+2026-05-26T13:42:56.1811336Z ##[group]Operating System
+2026-05-26T13:42:56.1812391Z Ubuntu
+2026-05-26T13:42:56.1812931Z 24.04.4
+2026-05-26T13:42:56.1813418Z LTS
+2026-05-26T13:42:56.1813847Z ##[endgroup]
+2026-05-26T13:42:56.1814387Z ##[group]Runner Image
+2026-05-26T13:42:56.1814985Z Image: ubuntu-24.04
+2026-05-26T13:42:56.1815475Z Version: 20260518.149.1
+2026-05-26T13:42:56.1816699Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260518.149/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-26T13:42:56.1818094Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260518.149
+2026-05-26T13:42:56.1819060Z ##[endgroup]
+2026-05-26T13:42:56.1820044Z ##[group]GITHUB_TOKEN Permissions
+2026-05-26T13:42:56.1822523Z Contents: read
+2026-05-26T13:42:56.1823203Z Metadata: read
+2026-05-26T13:42:56.1823678Z ##[endgroup]
+2026-05-26T13:42:56.1825749Z Secret source: Actions
+2026-05-26T13:42:56.1826553Z Prepare workflow directory
+2026-05-26T13:42:56.2229808Z Prepare all required actions
+2026-05-26T13:42:56.2266237Z Getting action download info
+2026-05-26T13:42:56.7851450Z Download action repository 'docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5' (SHA:d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5)
+2026-05-26T13:42:57.7865474Z Download action repository 'docker/bake-action@6614cfa25eff9a0b2b2697efb0b6159e7680d584' (SHA:6614cfa25eff9a0b2b2697efb0b6159e7680d584)
+2026-05-26T13:42:58.7576141Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-05-26T13:42:58.9363627Z Complete job name: build (freebsd/amd64)
+2026-05-26T13:42:59.0079475Z ##[group]Run platform=freebsd/amd64
+2026-05-26T13:42:59.0080576Z [36;1mplatform=freebsd/amd64[0m
+2026-05-26T13:42:59.0081982Z [36;1mecho "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV[0m
+2026-05-26T13:42:59.0122330Z shell: /usr/bin/bash -e {0}
+2026-05-26T13:42:59.0123530Z env:
+2026-05-26T13:42:59.0124178Z   GO_VERSION: 1.26
+2026-05-26T13:42:59.0124941Z   SETUP_BUILDX_VERSION: edge
+2026-05-26T13:42:59.0125898Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-26T13:42:59.0126902Z   DESTDIR: ./bin
+2026-05-26T13:42:59.0127579Z ##[endgroup]
+2026-05-26T13:42:59.0478879Z ##[group]Run docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
+2026-05-26T13:42:59.0480518Z with:
+2026-05-26T13:42:59.0481236Z   version: edge
+2026-05-26T13:42:59.0482429Z   driver-opts: image=moby/buildkit:latest
+2026-05-26T13:42:59.0483590Z   buildkitd-flags: --debug
+2026-05-26T13:42:59.0484534Z   driver: docker-container
+2026-05-26T13:42:59.0485481Z   use: true
+2026-05-26T13:42:59.0486227Z   keep-state: false
+2026-05-26T13:42:59.0487057Z   cache-binary: true
+2026-05-26T13:42:59.0487884Z   cleanup: true
+2026-05-26T13:42:59.0488728Z env:
+2026-05-26T13:42:59.0489413Z   GO_VERSION: 1.26
+2026-05-26T13:42:59.0490247Z   SETUP_BUILDX_VERSION: edge
+2026-05-26T13:42:59.0491332Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-26T13:42:59.0492544Z   DESTDIR: ./bin
+2026-05-26T13:42:59.0493413Z   PLATFORM_PAIR: freebsd-amd64
+2026-05-26T13:42:59.0494410Z ##[endgroup]
+2026-05-26T13:42:59.2861304Z ##[group]Docker info
+2026-05-26T13:42:59.2865972Z [command]/usr/bin/docker version
+2026-05-26T13:42:59.3802531Z Client: Docker Engine - Community
+2026-05-26T13:42:59.3806394Z  Version:           28.0.4
+2026-05-26T13:42:59.3807605Z  API version:       1.48
+2026-05-26T13:42:59.3808554Z  Go version:        go1.23.7
+2026-05-26T13:42:59.3809549Z  Git commit:        b8034c0
+2026-05-26T13:42:59.3811079Z  Built:             Tue Mar 25 15:07:16 2025
+2026-05-26T13:42:59.3812726Z  OS/Arch:           linux/amd64
+2026-05-26T13:42:59.3813752Z  Context:           default
+2026-05-26T13:42:59.3814305Z 
+2026-05-26T13:42:59.3815091Z Server: Docker Engine - Community
+2026-05-26T13:42:59.3816507Z  Engine:
+2026-05-26T13:42:59.3817306Z   Version:          28.0.4
+2026-05-26T13:42:59.3818374Z   API version:      1.48 (minimum version 1.24)
+2026-05-26T13:42:59.3819589Z   Go version:       go1.23.7
+2026-05-26T13:42:59.3820520Z   Git commit:       6430e49
+2026-05-26T13:42:59.3821550Z   Built:            Tue Mar 25 15:07:16 2025
+2026-05-26T13:42:59.3823069Z   OS/Arch:          linux/amd64
+2026-05-26T13:42:59.3824102Z   Experimental:     false
+2026-05-26T13:42:59.3825104Z  containerd:
+2026-05-26T13:42:59.3825903Z   Version:          v2.2.3
+2026-05-26T13:42:59.3827072Z   GitCommit:        77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-26T13:42:59.3828259Z  runc:
+2026-05-26T13:42:59.3829086Z   Version:          1.3.5
+2026-05-26T13:42:59.3830001Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-05-26T13:42:59.3831020Z  docker-init:
+2026-05-26T13:42:59.3832227Z   Version:          0.19.0
+2026-05-26T13:42:59.3833392Z   GitCommit:        de40ad0
+2026-05-26T13:42:59.3847319Z [command]/usr/bin/docker info
+2026-05-26T13:42:59.6358632Z Client: Docker Engine - Community
+2026-05-26T13:42:59.6360249Z  Version:    28.0.4
+2026-05-26T13:42:59.6361425Z  Context:    default
+2026-05-26T13:42:59.6362872Z  Debug Mode: false
+2026-05-26T13:42:59.6364014Z  Plugins:
+2026-05-26T13:42:59.6365142Z   buildx: Docker Buildx (Docker Inc.)
+2026-05-26T13:42:59.6366647Z     Version:  v0.34.0
+2026-05-26T13:42:59.6368359Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-05-26T13:42:59.6370327Z   compose: Docker Compose (Docker Inc.)
+2026-05-26T13:42:59.6372325Z     Version:  v2.38.2
+2026-05-26T13:42:59.6373570Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-05-26T13:42:59.6374454Z 
+2026-05-26T13:42:59.6374732Z Server:
+2026-05-26T13:42:59.6375397Z  Containers: 0
+2026-05-26T13:42:59.6376129Z   Running: 0
+2026-05-26T13:42:59.6377105Z   Paused: 0
+2026-05-26T13:42:59.6377776Z   Stopped: 0
+2026-05-26T13:42:59.6378435Z  Images: 6
+2026-05-26T13:42:59.6379086Z  Server Version: 28.0.4
+2026-05-26T13:42:59.6379877Z  Storage Driver: overlay2
+2026-05-26T13:42:59.6380724Z   Backing Filesystem: extfs
+2026-05-26T13:42:59.6381566Z   Supports d_type: true
+2026-05-26T13:42:59.6382825Z   Using metacopy: false
+2026-05-26T13:42:59.6383651Z   Native Overlay Diff: false
+2026-05-26T13:42:59.6384478Z   userxattr: false
+2026-05-26T13:42:59.6385218Z  Logging Driver: json-file
+2026-05-26T13:42:59.6386032Z  Cgroup Driver: systemd
+2026-05-26T13:42:59.6387189Z  Cgroup Version: 2
+2026-05-26T13:42:59.6387918Z  Plugins:
+2026-05-26T13:42:59.6388563Z   Volume: local
+2026-05-26T13:42:59.6389454Z   Network: bridge host ipvlan macvlan null overlay
+2026-05-26T13:42:59.6390916Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-05-26T13:42:59.6392883Z  Swarm: inactive
+2026-05-26T13:42:59.6394139Z  Runtimes: io.containerd.runc.v2 runc
+2026-05-26T13:42:59.6395778Z  Default Runtime: runc
+2026-05-26T13:42:59.6396563Z  Init Binary: docker-init
+2026-05-26T13:42:59.6397621Z  containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
+2026-05-26T13:42:59.6398838Z  runc version: v1.3.5-0-g488fc13e
+2026-05-26T13:42:59.6399711Z  init version: de40ad0
+2026-05-26T13:42:59.6400470Z  Security Options:
+2026-05-26T13:42:59.6401160Z   apparmor
+2026-05-26T13:42:59.6402142Z   seccomp
+2026-05-26T13:42:59.6402818Z    Profile: builtin
+2026-05-26T13:42:59.6403527Z   cgroupns
+2026-05-26T13:42:59.6404218Z  Kernel Version: 6.17.0-1013-azure
+2026-05-26T13:42:59.6405663Z  Operating System: Ubuntu 24.04.4 LTS
+2026-05-26T13:42:59.6406790Z  OSType: linux
+2026-05-26T13:42:59.6407487Z  Architecture: x86_64
+2026-05-26T13:42:59.6408222Z  CPUs: 4
+2026-05-26T13:42:59.6408872Z  Total Memory: 15.61GiB
+2026-05-26T13:42:59.6409646Z  Name: runnervmg397c
+2026-05-26T13:42:59.6410438Z  ID: 030b3de5-f6f5-43f2-8bdc-0a866a274328
+2026-05-26T13:42:59.6412010Z  Docker Root Dir: /var/lib/docker
+2026-05-26T13:42:59.6413133Z  Debug Mode: false
+2026-05-26T13:42:59.6413931Z  Username: githubactions
+2026-05-26T13:42:59.6414769Z  Experimental: false
+2026-05-26T13:42:59.6415536Z  Insecure Registries:
+2026-05-26T13:42:59.6421452Z   ::1/128
+2026-05-26T13:42:59.6422758Z   127.0.0.0/8
+2026-05-26T13:42:59.6423487Z  Live Restore Enabled: false
+2026-05-26T13:42:59.6424046Z 
+2026-05-26T13:42:59.6425152Z ##[endgroup]
+2026-05-26T13:42:59.7026789Z ##[group]Download buildx from GitHub Releases
+2026-05-26T13:42:59.8502540Z Use 0.34.1 version spec cache key for v0.34.1
+2026-05-26T13:43:00.0358525Z Cache hit for: buildx-dl-bin-0.34.1-linux-x64
+2026-05-26T13:43:01.2556634Z Received 21773634 of 21773634 (100.0%), 21.0 MBs/sec
+2026-05-26T13:43:01.2557422Z Cache Size: ~21 MB (21773634 B)
+2026-05-26T13:43:01.2587573Z [command]/usr/bin/tar -xf /home/runner/work/_temp/6a858ddf-a150-41ff-984f-88c4a9d18499/cache.tzst -P -C /home/runner/work/buildkit/buildkit --use-compress-program unzstd
+2026-05-26T13:43:01.3705311Z Cache restored successfully
+2026-05-26T13:43:01.3717564Z Restored buildx-dl-bin-0.34.1-linux-x64 from GitHub Actions cache
+2026-05-26T13:43:01.4085370Z Cached to hosted tool cache /opt/hostedtoolcache/buildx-dl-bin/0.34.1/linux-x64
+2026-05-26T13:43:01.4086681Z Copying /opt/hostedtoolcache/buildx-dl-bin/0.34.1/linux-x64/docker-buildx to /home/runner/.docker/buildx/.bin/0.34.1/linux-x64/docker-buildx
+2026-05-26T13:43:01.4511088Z Buildx binary found in /home/runner/.docker/buildx/.bin/0.34.1/linux-x64/docker-buildx
+2026-05-26T13:43:01.4512560Z ##[endgroup]
+2026-05-26T13:43:01.4513488Z ##[group]Install buildx
+2026-05-26T13:43:01.4513962Z Docker plugin mode
+2026-05-26T13:43:01.5646436Z Fixing perms
+2026-05-26T13:43:01.5647264Z Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+2026-05-26T13:43:01.5648520Z ##[endgroup]
+2026-05-26T13:43:01.5650917Z ##[group]Buildx version
+2026-05-26T13:43:01.5677254Z [command]/usr/bin/docker buildx version
+2026-05-26T13:43:01.6155626Z github.com/docker/buildx v0.34.1 e0b0e77d18d3379bc1e0d55f3b37de288d36fe47
+2026-05-26T13:43:01.6173223Z ##[endgroup]
+2026-05-26T13:43:01.6325530Z ##[group]Inspecting default docker context
+2026-05-26T13:43:01.6462494Z [
+2026-05-26T13:43:01.6464273Z   {
+2026-05-26T13:43:01.6464612Z     "Name": "default",
+2026-05-26T13:43:01.6464985Z     "Metadata": {},
+2026-05-26T13:43:01.6465328Z     "Endpoints": {
+2026-05-26T13:43:01.6465654Z       "docker": {
+2026-05-26T13:43:01.6466009Z         "Host": "unix:///var/run/docker.sock",
+2026-05-26T13:43:01.6466485Z         "SkipTLSVerify": false
+2026-05-26T13:43:01.6466862Z       }
+2026-05-26T13:43:01.6467145Z     },
+2026-05-26T13:43:01.6467864Z     "TLSMaterial": {},
+2026-05-26T13:43:01.6468288Z     "Storage": {
+2026-05-26T13:43:01.6468622Z       "MetadataPath": "<IN MEMORY>",
+2026-05-26T13:43:01.6469056Z       "TLSPath": "<IN MEMORY>"
+2026-05-26T13:43:01.6469419Z     }
+2026-05-26T13:43:01.6469700Z   }
+2026-05-26T13:43:01.6470012Z ]
+2026-05-26T13:43:01.6470686Z ##[endgroup]
+2026-05-26T13:43:01.6471269Z ##[group]Creating a new builder instance
+2026-05-26T13:43:01.7532770Z [command]/usr/bin/docker buildx create --name builder-9808f4f5-d16d-47fd-952f-83e377f89235 --driver docker-container --driver-opt image=moby/buildkit:latest --buildkitd-flags --debug --use
+2026-05-26T13:43:01.8074528Z builder-9808f4f5-d16d-47fd-952f-83e377f89235
+2026-05-26T13:43:01.8094410Z ##[endgroup]
+2026-05-26T13:43:01.8095028Z ##[group]Booting builder
+2026-05-26T13:43:01.8124827Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-9808f4f5-d16d-47fd-952f-83e377f89235
+2026-05-26T13:43:01.8670196Z #1 [internal] booting buildkit
+2026-05-26T13:43:02.0107723Z #1 pulling image moby/buildkit:latest
+2026-05-26T13:43:02.1213008Z #1 pulling image moby/buildkit:latest 0.3s done
+2026-05-26T13:43:02.1216365Z #1 ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": received unexpected HTTP status: 502 Bad Gateway
+2026-05-26T13:43:02.1217811Z ------
+2026-05-26T13:43:02.1218125Z  > [internal] booting buildkit:
+2026-05-26T13:43:02.1218496Z ------
+2026-05-26T13:43:02.1219497Z ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": received unexpected HTTP status: 502 Bad Gateway
+2026-05-26T13:43:02.1246772Z ##[endgroup]
+2026-05-26T13:43:02.1267226Z ##[error]ERROR: Error response from daemon: Head "https://registry-1.docker.io/v2/moby/buildkit/manifests/latest": received unexpected HTTP status: 502 Bad Gateway
+2026-05-26T13:43:02.1454465Z Post job cleanup.
+2026-05-26T13:43:02.3690275Z ##[group]Removing builder
+2026-05-26T13:43:02.4329976Z [command]/usr/bin/docker buildx rm builder-9808f4f5-d16d-47fd-952f-83e377f89235
+2026-05-26T13:43:02.4812411Z builder-9808f4f5-d16d-47fd-952f-83e377f89235 removed
+2026-05-26T13:43:02.4832091Z ##[endgroup]
+2026-05-26T13:43:02.4833299Z ##[group]Cleaning up certificates
+2026-05-26T13:43:02.4835201Z ##[endgroup]
+2026-05-26T13:43:02.4836854Z ##[group]Post cache
+2026-05-26T13:43:02.4837932Z State not set
+2026-05-26T13:43:02.4839451Z ##[endgroup]
+2026-05-26T13:43:02.4975440Z Cleaning up orphan processes

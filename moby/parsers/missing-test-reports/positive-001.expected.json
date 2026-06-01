@@ -1,0 +1,13 @@
+[
+  {
+    "unique_key": "missing-test-reports:tmp-reports",
+    "name": "integration-test-report: /tmp/reports missing after artifact download",
+    "category": "dependency",
+    "evidence": [
+      {
+        "start_line": 181,
+        "end_line": 181
+      }
+    ]
+  }
+]

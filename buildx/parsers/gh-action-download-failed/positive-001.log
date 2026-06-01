@@ -1,0 +1,35 @@
+﻿2026-03-12T03:45:53.5432155Z Current runner version: '2.332.0'
+2026-03-12T03:45:53.5458781Z ##[group]Runner Image Provisioner
+2026-03-12T03:45:53.5460033Z Hosted Compute Agent
+2026-03-12T03:45:53.5460641Z Version: 20260213.493
+2026-03-12T03:45:53.5461579Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-12T03:45:53.5462303Z Build Date: 2026-02-13T00:28:41Z
+2026-03-12T03:45:53.5463039Z Worker ID: {68b6f4d9-2c99-4533-93d3-3d17da774fc2}
+2026-03-12T03:45:53.5463700Z Azure Region: eastus2
+2026-03-12T03:45:53.5464248Z ##[endgroup]
+2026-03-12T03:45:53.5465994Z ##[group]Operating System
+2026-03-12T03:45:53.5467117Z Ubuntu
+2026-03-12T03:45:53.5467851Z 24.04.3
+2026-03-12T03:45:53.5468476Z LTS
+2026-03-12T03:45:53.5469302Z ##[endgroup]
+2026-03-12T03:45:53.5470025Z ##[group]Runner Image
+2026-03-12T03:45:53.5470775Z Image: ubuntu-24.04
+2026-03-12T03:45:53.5471663Z Version: 20260302.42.1
+2026-03-12T03:45:53.5472948Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-12T03:45:53.5474463Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+2026-03-12T03:45:53.5475399Z ##[endgroup]
+2026-03-12T03:45:53.5476399Z ##[group]GITHUB_TOKEN Permissions
+2026-03-12T03:45:53.5478717Z Contents: read
+2026-03-12T03:45:53.5479276Z Metadata: read
+2026-03-12T03:45:53.5479806Z ##[endgroup]
+2026-03-12T03:45:53.5482587Z Secret source: None
+2026-03-12T03:45:53.5483604Z Prepare workflow directory
+2026-03-12T03:45:53.5881947Z Prepare all required actions
+2026-03-12T03:45:53.5919929Z Getting action download info
+2026-03-12T03:45:54.0355040Z Download action repository 'actions/checkout@v6' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-03-12T03:45:54.2044570Z Download action repository 'docker/setup-qemu-action@v4' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-03-12T03:45:54.2552922Z ##[warning]Failed to download action 'https://api.github.com/repos/docker/setup-qemu-action/tarball/ce360397dd3f832beb865e1373c09c0e9f86d70a'. Error: Response status code does not indicate success: 401 (Unauthorized). 33C0:D6BCF:4966B8:134522D:69B236F2
+2026-03-12T03:45:54.2570231Z ##[warning]Back off 13.847 seconds before retry.
+2026-03-12T03:46:08.1318961Z ##[warning]Failed to download action 'https://api.github.com/repos/docker/setup-qemu-action/tarball/ce360397dd3f832beb865e1373c09c0e9f86d70a'. Error: Response status code does not indicate success: 401 (Unauthorized). 33C1:1E265C:496B15:134BF2E:69B23700
+2026-03-12T03:46:08.1321578Z ##[warning]Back off 11.23 seconds before retry.
+2026-03-12T03:46:19.3944321Z ##[error]Response status code does not indicate success: 401 (Unauthorized).

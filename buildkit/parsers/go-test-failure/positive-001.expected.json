@@ -1,0 +1,19 @@
+[
+  {
+    "unique_key": "go-test:TestClientGatewayIntegration/TestClientGatewayContainerExecPipe",
+    "name": "TestClientGatewayIntegration/TestClientGatewayContainerExecPipe failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestClientGatewayIntegration/TestClientGatewayContainerExecPipe/worker=containerd-rootless"
+    },
+    "tags": {
+      "worker": "containerd-rootless"
+    },
+    "evidence": [
+      {
+        "start_line": 3517,
+        "end_line": 3517
+      }
+    ]
+  }
+]

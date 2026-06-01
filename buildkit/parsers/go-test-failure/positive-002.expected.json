@@ -1,0 +1,20 @@
+[
+  {
+    "unique_key": "go-test:TestIntegration/TestNamedFilteredContext",
+    "name": "TestIntegration/TestNamedFilteredContext failed",
+    "category": "test",
+    "fields": {
+      "test_path": "TestIntegration/TestNamedFilteredContext/worker=containerd-2.1/frontend=builtin"
+    },
+    "tags": {
+      "frontend": "builtin",
+      "worker": "containerd-2.1"
+    },
+    "evidence": [
+      {
+        "start_line": 2,
+        "end_line": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "gh-cli-error:403",
+    "name": "gh CLI HTTP 403: Resource not accessible by integration",
+    "category": "network",
+    "fields": {
+      "http_status": "403",
+      "message": "Resource not accessible by integration"
+    },
+    "evidence": [
+      {
+        "start_line": 81,
+        "end_line": 81
+      }
+    ]
+  }
+]
