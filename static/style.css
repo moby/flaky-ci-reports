@@ -311,6 +311,17 @@ th {
   border-bottom: 1px solid var(--border);
 }
 
+/* Top-failure-groups table: fix the column widths so a long, space-less group
+   key (parameterised go-test subtests) wraps inside its own column instead of
+   stretching it and squeezing the date/count columns until they wrap. */
+table.groups { table-layout: fixed; }
+table.groups td.dim { white-space: nowrap; }
+table.groups th:nth-child(2), table.groups td:nth-child(2) { width: 4.5rem; }   /* Hits */
+table.groups th:nth-child(3), table.groups td:nth-child(3),
+table.groups th:nth-child(4), table.groups td:nth-child(4) { width: 9.5rem; }   /* First/Last seen */
+table.groups th:nth-child(5), table.groups td:nth-child(5),
+table.groups th:nth-child(6), table.groups td:nth-child(6) { width: 7rem; }     /* Workflows/Branches */
+
 td .num {
   font-variant-numeric: tabular-nums;
   text-align: right;
@@ -337,6 +348,12 @@ a.key {
   font-family: var(--code);
   font-size: 0.8125rem;
   font-weight: 500;
+  /* Unique keys can be long, space-less tokens (parameterised go-test subtest
+     names, struct dumps). Without this they don't break and blow out the table
+     width. */
+  display: inline-block;
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .tag-chip {
