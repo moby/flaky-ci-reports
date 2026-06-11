@@ -1,0 +1,290 @@
+﻿2026-06-02T04:00:49.1573267Z Current runner version: '2.334.0'
+2026-06-02T04:00:49.1622786Z ##[group]Runner Image Provisioner
+2026-06-02T04:00:49.1623745Z Hosted Compute Agent
+2026-06-02T04:00:49.1624342Z Version: 20260520.533
+2026-06-02T04:00:49.1625084Z Commit: 189110e25284a9812c124fd27b339e2fb4f2f9db
+2026-06-02T04:00:49.1625815Z Build Date: 2026-05-20T17:44:04Z
+2026-06-02T04:00:49.1626498Z Worker ID: {c9d6474c-a6d2-423e-bbf6-1f23617b0e4e}
+2026-06-02T04:00:49.1627321Z Azure Region: westus2
+2026-06-02T04:00:49.1627902Z ##[endgroup]
+2026-06-02T04:00:49.1629733Z ##[group]Operating System
+2026-06-02T04:00:49.1630480Z Ubuntu
+2026-06-02T04:00:49.1630994Z 24.04.4
+2026-06-02T04:00:49.1631578Z LTS
+2026-06-02T04:00:49.1632097Z ##[endgroup]
+2026-06-02T04:00:49.1633012Z ##[group]Runner Image
+2026-06-02T04:00:49.1633643Z Image: ubuntu-24.04
+2026-06-02T04:00:49.1634225Z Version: 20260525.161.1
+2026-06-02T04:00:49.1635561Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260525.161/images/ubuntu/Ubuntu2404-Readme.md
+2026-06-02T04:00:49.1637166Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260525.161
+2026-06-02T04:00:49.1638154Z ##[endgroup]
+2026-06-02T04:00:49.1639314Z ##[group]GITHUB_TOKEN Permissions
+2026-06-02T04:00:49.1641368Z Contents: read
+2026-06-02T04:00:49.1642000Z Metadata: read
+2026-06-02T04:00:49.1642990Z ##[endgroup]
+2026-06-02T04:00:49.1645212Z Secret source: None
+2026-06-02T04:00:49.1645957Z Prepare workflow directory
+2026-06-02T04:00:49.2051837Z Prepare all required actions
+2026-06-02T04:00:49.2089897Z Getting action download info
+2026-06-02T04:00:49.8816934Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-06-02T04:00:50.2580082Z Download action repository 'docker/metadata-action@80c7e94dd9b9319bd5eb7a0e0fe9291e23a2a2e9' (SHA:80c7e94dd9b9319bd5eb7a0e0fe9291e23a2a2e9)
+2026-06-02T04:00:50.6388130Z Download action repository 'docker/setup-qemu-action@06116385d9baf250c9f4dcb4858b16962ea869c3' (SHA:06116385d9baf250c9f4dcb4858b16962ea869c3)
+2026-06-02T04:00:50.9376930Z Download action repository 'docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5' (SHA:d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5)
+2026-06-02T04:00:51.2829959Z Download action repository 'docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee' (SHA:650006c6eb7dba73a995cc03b0b2d7f5ca915bee)
+2026-06-02T04:00:51.6131513Z Download action repository 'docker/bake-action@6614cfa25eff9a0b2b2697efb0b6159e7680d584' (SHA:6614cfa25eff9a0b2b2697efb0b6159e7680d584)
+2026-06-02T04:00:52.0087234Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-06-02T04:00:52.2650330Z Uses: docker/github-builder/.github/workflows/bake.yml@17bd7d64200cae4ba58ffc099934e8012ae320f2
+2026-06-02T04:00:52.2655102Z ##[group] Inputs
+2026-06-02T04:00:52.2655392Z   runner: ubuntu-24.04
+2026-06-02T04:00:52.2656032Z   distribute: true
+2026-06-02T04:00:52.2656282Z   fail-fast: false
+2026-06-02T04:00:52.2656488Z   setup-qemu: true
+2026-06-02T04:00:52.2656717Z   artifact-name: buildkit-binaries
+2026-06-02T04:00:52.2657007Z   artifact-upload: true
+2026-06-02T04:00:52.2657233Z   cache: true
+2026-06-02T04:00:52.2657437Z   cache-scope: binaries
+2026-06-02T04:00:52.2657669Z   cache-mode: min
+2026-06-02T04:00:52.2657865Z   context: .
+2026-06-02T04:00:52.2658044Z   files: 
+2026-06-02T04:00:52.2658220Z   output: local
+2026-06-02T04:00:52.2658412Z   push: false
+2026-06-02T04:00:52.2658602Z   sbom: true
+2026-06-02T04:00:52.2658781Z   set: 
+2026-06-02T04:00:52.2658957Z   sign: false
+2026-06-02T04:00:52.2659139Z   target: release
+2026-06-02T04:00:52.2659333Z   vars: 
+2026-06-02T04:00:52.2659532Z   set-meta-annotations: false
+2026-06-02T04:00:52.2659780Z   set-meta-labels: false
+2026-06-02T04:00:52.2660003Z   meta-images: 
+2026-06-02T04:00:52.2660195Z   meta-tags: 
+2026-06-02T04:00:52.2660387Z   meta-flavor: 
+2026-06-02T04:00:52.2660911Z   meta-labels: 
+2026-06-02T04:00:52.2661276Z   meta-annotations: 
+2026-06-02T04:00:52.2661488Z   meta-bake-target: 
+2026-06-02T04:00:52.2661702Z ##[endgroup]
+2026-06-02T04:00:52.2661989Z Complete job name: binaries / build (3, linux/arm/v7, ubuntu-24.04)
+2026-06-02T04:00:52.3405558Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-06-02T04:00:52.3406309Z with:
+2026-06-02T04:00:52.3407539Z   script: const runnerEnvironment = core.getInput('runner-environment');
+const runnerOS = core.getInput('runner-os');
+if (runnerEnvironment !== 'github-hosted' || runnerOS !== 'Linux') {
+  core.setFailed(`This workflow requires a GitHub-hosted Linux runner, got: environment=${runnerEnvironment || 'unknown'}, os=${runnerOS || 'unknown'}`);
+}
+
+2026-06-02T04:00:52.3411784Z   github-token: ***
+2026-06-02T04:00:52.3412006Z   debug: false
+2026-06-02T04:00:52.3412226Z   user-agent: actions/github-script
+2026-06-02T04:00:52.3412705Z   result-encoding: json
+2026-06-02T04:00:52.3412922Z   retries: 0
+2026-06-02T04:00:52.3413160Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-06-02T04:00:52.3413760Z env:
+2026-06-02T04:00:52.3413957Z   BUILDX_VERSION: v0.34.1
+2026-06-02T04:00:52.3414203Z   BUILDKIT_IMAGE: moby/buildkit:v0.30.0
+2026-06-02T04:00:52.3414550Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-06-02T04:00:52.3414883Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-06-02T04:00:52.3415223Z   RUNTIME_MODULE: @docker/github-builder-runtime@0.91.0
+2026-06-02T04:00:52.3415951Z   RUNTIME_INSTALL_ARGS: --loglevel=error
+--no-save
+--package-lock=false
+--ignore-scripts
+--omit=dev
+--prefer-offline
+--fund=false
+--audit=false
+
+2026-06-02T04:00:52.3416580Z   COSIGN_VERSION: v3.0.6
+2026-06-02T04:00:52.3416825Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-06-02T04:00:52.3417090Z   MATRIX_SIZE_LIMIT: 20
+2026-06-02T04:00:52.3417318Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-06-02T04:00:52.3417576Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-06-02T04:00:52.3417839Z   INPUT_RUNNER-ENVIRONMENT: github-hosted
+2026-06-02T04:00:52.3418119Z   INPUT_RUNNER-OS: Linux
+2026-06-02T04:00:52.3418353Z ##[endgroup]
+2026-06-02T04:00:52.4670359Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-06-02T04:00:52.4670830Z with:
+2026-06-02T04:00:52.4673356Z   script: const npmArgs = ['install', ...core.getMultilineInput('runtime-install-args'), core.getInput('runtime-module')];
+const maxAttempts = 3;
+for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+  const exitCode = await exec.exec('npm', npmArgs, {ignoreReturnCode: true});
+  if (exitCode === 0) {
+    return;
+  }
+  if (attempt === maxAttempts) {
+    core.setFailed(`npm install failed after ${maxAttempts} attempts`);
+    return;
+  }
+  const retryDelayMs = attempt * 50;
+  core.info(`npm install failed with exit code ${exitCode}; retrying in ${retryDelayMs}ms`);
+  await new Promise(resolve => setTimeout(resolve, retryDelayMs));
+}
+
+2026-06-02T04:00:52.4678455Z   github-token: ***
+2026-06-02T04:00:52.4678680Z   debug: false
+2026-06-02T04:00:52.4678901Z   user-agent: actions/github-script
+2026-06-02T04:00:52.4679186Z   result-encoding: json
+2026-06-02T04:00:52.4679444Z   retries: 0
+2026-06-02T04:00:52.4679673Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-06-02T04:00:52.4680164Z env:
+2026-06-02T04:00:52.4680352Z   BUILDX_VERSION: v0.34.1
+2026-06-02T04:00:52.4680596Z   BUILDKIT_IMAGE: moby/buildkit:v0.30.0
+2026-06-02T04:00:52.4680904Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-06-02T04:00:52.4681237Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-06-02T04:00:52.4681588Z   RUNTIME_MODULE: @docker/github-builder-runtime@0.91.0
+2026-06-02T04:00:52.4682527Z   RUNTIME_INSTALL_ARGS: --loglevel=error
+--no-save
+--package-lock=false
+--ignore-scripts
+--omit=dev
+--prefer-offline
+--fund=false
+--audit=false
+
+2026-06-02T04:00:52.4683325Z   COSIGN_VERSION: v3.0.6
+2026-06-02T04:00:52.4683577Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-06-02T04:00:52.4683852Z   MATRIX_SIZE_LIMIT: 20
+2026-06-02T04:00:52.4684083Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-06-02T04:00:52.4684349Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-06-02T04:00:52.4684909Z   INPUT_RUNTIME-MODULE: @docker/github-builder-runtime@0.91.0
+2026-06-02T04:00:52.4685643Z   INPUT_RUNTIME-INSTALL-ARGS: --loglevel=error
+--no-save
+--package-lock=false
+--ignore-scripts
+--omit=dev
+--prefer-offline
+--fund=false
+--audit=false
+
+2026-06-02T04:00:52.4686286Z ##[endgroup]
+2026-06-02T04:00:52.5697748Z [command]/usr/local/bin/npm install --loglevel=error --no-save --package-lock=false --ignore-scripts --omit=dev --prefer-offline --fund=false --audit=false @docker/github-builder-runtime@0.91.0
+2026-06-02T04:00:58.3449344Z 
+2026-06-02T04:00:58.3449894Z added 244 packages in 6s
+2026-06-02T04:00:58.4152074Z ##[group]Run docker/setup-qemu-action@06116385d9baf250c9f4dcb4858b16962ea869c3
+2026-06-02T04:00:58.4152780Z with:
+2026-06-02T04:00:58.4153008Z   image: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-06-02T04:00:58.4153289Z   cache-image: false
+2026-06-02T04:00:58.4153523Z   platforms: all
+2026-06-02T04:00:58.4153724Z   reset: false
+2026-06-02T04:00:58.4153928Z env:
+2026-06-02T04:00:58.4154116Z   BUILDX_VERSION: v0.34.1
+2026-06-02T04:00:58.4154362Z   BUILDKIT_IMAGE: moby/buildkit:v0.30.0
+2026-06-02T04:00:58.4154675Z   SBOM_IMAGE: docker/buildkit-syft-scanner:1.11.0
+2026-06-02T04:00:58.4155014Z   BINFMT_IMAGE: tonistiigi/binfmt:qemu-v10.2.1-65
+2026-06-02T04:00:58.4155363Z   RUNTIME_MODULE: @docker/github-builder-runtime@0.91.0
+2026-06-02T04:00:58.4156067Z   RUNTIME_INSTALL_ARGS: --loglevel=error
+--no-save
+--package-lock=false
+--ignore-scripts
+--omit=dev
+--prefer-offline
+--fund=false
+--audit=false
+
+2026-06-02T04:00:58.4156763Z   COSIGN_VERSION: v3.0.6
+2026-06-02T04:00:58.4157052Z   LOCAL_EXPORT_DIR: /tmp/buildx-output
+2026-06-02T04:00:58.4157327Z   MATRIX_SIZE_LIMIT: 20
+2026-06-02T04:00:58.4157561Z   BUILDX_SEND_GIT_QUERY_AS_INPUT: true
+2026-06-02T04:00:58.4157834Z   NPM_CONFIG_FETCH_RETRIES: 5
+2026-06-02T04:00:58.4158071Z ##[endgroup]
+2026-06-02T04:00:58.5533345Z ##[group]Docker info
+2026-06-02T04:00:58.5568953Z [command]/usr/bin/docker version
+2026-06-02T04:00:58.6554675Z Client: Docker Engine - Community
+2026-06-02T04:00:58.6557395Z  Version:           28.0.4
+2026-06-02T04:00:58.6557813Z  API version:       1.48
+2026-06-02T04:00:58.6558182Z  Go version:        go1.23.7
+2026-06-02T04:00:58.6558756Z  Git commit:        b8034c0
+2026-06-02T04:00:58.6559412Z  Built:             Tue Mar 25 15:07:16 2025
+2026-06-02T04:00:58.6560019Z  OS/Arch:           linux/amd64
+2026-06-02T04:00:58.6560517Z  Context:           default
+2026-06-02T04:00:58.6560884Z 
+2026-06-02T04:00:58.6561272Z Server: Docker Engine - Community
+2026-06-02T04:00:58.6561748Z  Engine:
+2026-06-02T04:00:58.6562100Z   Version:          28.0.4
+2026-06-02T04:00:58.6562771Z   API version:      1.48 (minimum version 1.24)
+2026-06-02T04:00:58.6563342Z   Go version:       go1.23.7
+2026-06-02T04:00:58.6563719Z   Git commit:       6430e49
+2026-06-02T04:00:58.6564115Z   Built:            Tue Mar 25 15:07:16 2025
+2026-06-02T04:00:58.6564585Z   OS/Arch:          linux/amd64
+2026-06-02T04:00:58.6564998Z   Experimental:     false
+2026-06-02T04:00:58.6565393Z  containerd:
+2026-06-02T04:00:58.6565716Z   Version:          v2.2.4
+2026-06-02T04:00:58.6566216Z   GitCommit:        193637f7ee8ae5f5aa5248f49e7baa3e6164966e
+2026-06-02T04:00:58.6566753Z  runc:
+2026-06-02T04:00:58.6567085Z   Version:          1.3.5
+2026-06-02T04:00:58.6567508Z   GitCommit:        v1.3.5-0-g488fc13e
+2026-06-02T04:00:58.6568020Z  docker-init:
+2026-06-02T04:00:58.6568417Z   Version:          0.19.0
+2026-06-02T04:00:58.6568869Z   GitCommit:        de40ad0
+2026-06-02T04:00:58.6603005Z [command]/usr/bin/docker info
+2026-06-02T04:01:00.7678191Z Client: Docker Engine - Community
+2026-06-02T04:01:00.7678797Z  Version:    28.0.4
+2026-06-02T04:01:00.7679159Z  Context:    default
+2026-06-02T04:01:00.7679503Z  Debug Mode: false
+2026-06-02T04:01:00.7679878Z  Plugins:
+2026-06-02T04:01:00.7680266Z   buildx: Docker Buildx (Docker Inc.)
+2026-06-02T04:01:00.7680723Z     Version:  v0.34.1
+2026-06-02T04:01:00.7681196Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-06-02T04:01:00.7682600Z   compose: Docker Compose (Docker Inc.)
+2026-06-02T04:01:00.7683198Z     Version:  v2.38.2
+2026-06-02T04:01:00.7683699Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-06-02T04:01:00.7684141Z 
+2026-06-02T04:01:00.7684276Z Server:
+2026-06-02T04:01:00.7684592Z  Containers: 0
+2026-06-02T04:01:00.7684933Z   Running: 0
+2026-06-02T04:01:00.7685288Z   Paused: 0
+2026-06-02T04:01:00.7685618Z   Stopped: 0
+2026-06-02T04:01:00.7685952Z  Images: 6
+2026-06-02T04:01:00.7686293Z  Server Version: 28.0.4
+2026-06-02T04:01:00.7686703Z  Storage Driver: overlay2
+2026-06-02T04:01:00.7687433Z   Backing Filesystem: extfs
+2026-06-02T04:01:00.7687871Z   Supports d_type: true
+2026-06-02T04:01:00.7688243Z   Using metacopy: false
+2026-06-02T04:01:00.7688638Z   Native Overlay Diff: false
+2026-06-02T04:01:00.7689052Z   userxattr: false
+2026-06-02T04:01:00.7689409Z  Logging Driver: json-file
+2026-06-02T04:01:00.7689805Z  Cgroup Driver: systemd
+2026-06-02T04:01:00.7690177Z  Cgroup Version: 2
+2026-06-02T04:01:00.7690529Z  Plugins:
+2026-06-02T04:01:00.7690886Z   Volume: local
+2026-06-02T04:01:00.7691372Z   Network: bridge host ipvlan macvlan null overlay
+2026-06-02T04:01:00.7710342Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-06-02T04:01:00.7713935Z  Swarm: inactive
+2026-06-02T04:01:00.7714711Z  Runtimes: io.containerd.runc.v2 runc
+2026-06-02T04:01:00.7715190Z  Default Runtime: runc
+2026-06-02T04:01:00.7715582Z  Init Binary: docker-init
+2026-06-02T04:01:00.7716127Z  containerd version: 193637f7ee8ae5f5aa5248f49e7baa3e6164966e
+2026-06-02T04:01:00.7716797Z  runc version: v1.3.5-0-g488fc13e
+2026-06-02T04:01:00.7717246Z  init version: de40ad0
+2026-06-02T04:01:00.7717619Z  Security Options:
+2026-06-02T04:01:00.7717960Z   apparmor
+2026-06-02T04:01:00.7718258Z   seccomp
+2026-06-02T04:01:00.7718570Z    Profile: builtin
+2026-06-02T04:01:00.7718924Z   cgroupns
+2026-06-02T04:01:00.7719265Z  Kernel Version: 6.17.0-1015-azure
+2026-06-02T04:01:00.7719707Z  Operating System: Ubuntu 24.04.4 LTS
+2026-06-02T04:01:00.7720166Z  OSType: linux
+2026-06-02T04:01:00.7720530Z  Architecture: x86_64
+2026-06-02T04:01:00.7720887Z  CPUs: 4
+2026-06-02T04:01:00.7721201Z  Total Memory: 15.61GiB
+2026-06-02T04:01:00.7721605Z  Name: runnervm3jyl0
+2026-06-02T04:01:00.7722029Z  ID: d0edc0b0-60b3-4f7a-aee7-b8b49cb2e501
+2026-06-02T04:01:00.7722839Z  Docker Root Dir: /var/lib/docker
+2026-06-02T04:01:00.7723262Z  Debug Mode: false
+2026-06-02T04:01:00.7723705Z  Username: githubactions
+2026-06-02T04:01:00.7724099Z  Experimental: false
+2026-06-02T04:01:00.7724478Z  Insecure Registries:
+2026-06-02T04:01:00.7729191Z   ::1/128
+2026-06-02T04:01:00.7729542Z   127.0.0.0/8
+2026-06-02T04:01:00.7729899Z  Live Restore Enabled: false
+2026-06-02T04:01:00.7730182Z 
+2026-06-02T04:01:00.7730921Z ##[endgroup]
+2026-06-02T04:01:00.7731574Z ##[group]Pulling binfmt Docker image
+2026-06-02T04:01:00.7749528Z [command]/usr/bin/docker pull tonistiigi/binfmt:qemu-v10.2.1-65
+2026-06-02T04:01:15.7923586Z Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+2026-06-02T04:01:15.7940257Z ##[endgroup]
+2026-06-02T04:01:15.7964300Z ##[error]Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+2026-06-02T04:01:15.8201816Z Post job cleanup.
+2026-06-02T04:01:15.9538126Z ##[group]Post cache
+2026-06-02T04:01:15.9540248Z State not set
+2026-06-02T04:01:15.9542238Z ##[endgroup]
+2026-06-02T04:01:15.9690165Z Evaluate and set job outputs
+2026-06-02T04:01:15.9701173Z Cleaning up orphan processes

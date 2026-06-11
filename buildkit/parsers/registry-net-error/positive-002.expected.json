@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:registry-1.docker.io:timeout",
+    "name": "Registry registry-1.docker.io timeout",
+    "category": "network",
+    "fields": {
+      "host": "registry-1.docker.io",
+      "reason": "timeout"
+    },
+    "evidence": [
+      {
+        "start_line": 242,
+        "end_line": 242
+      }
+    ]
+  }
+]

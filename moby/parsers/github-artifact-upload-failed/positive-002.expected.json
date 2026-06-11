@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "github-artifact-upload-failed:silent-finalize",
+    "name": "actions/upload-artifact: died during finalize (no error logged)",
+    "category": "network",
+    "fields": {
+      "variant": "silent-finalize"
+    },
+    "evidence": [
+      {
+        "start_line": 8513,
+        "end_line": 8514
+      }
+    ]
+  }
+]

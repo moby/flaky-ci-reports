@@ -1,0 +1,22 @@
+[
+  {
+    "unique_key": "buildx-driver-bootstrap-failed:replicas-not-ready",
+    "name": "buildx driver bootstrap: BuildKit pod never became ready",
+    "category": "dependency",
+    "fields": {
+      "driver": "kubernetes",
+      "mnode": "false",
+      "replicas_ready": "0"
+    },
+    "tags": {
+      "driver": "kubernetes",
+      "mnode": "false"
+    },
+    "evidence": [
+      {
+        "start_line": 304,
+        "end_line": 304
+      }
+    ]
+  }
+]

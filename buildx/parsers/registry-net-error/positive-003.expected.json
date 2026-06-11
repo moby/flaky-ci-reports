@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:registry-1.docker.io:dns-lookup-failed",
+    "name": "Registry registry-1.docker.io DNS lookup failed",
+    "category": "network",
+    "fields": {
+      "host": "registry-1.docker.io",
+      "reason": "dns-lookup-failed"
+    },
+    "evidence": [
+      {
+        "start_line": 355,
+        "end_line": 355
+      }
+    ]
+  }
+]

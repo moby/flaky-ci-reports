@@ -1,0 +1,16 @@
+[
+  {
+    "unique_key": "gha-cache-export-error:503",
+    "name": "GHA cache export: backend returned HTTP 503",
+    "category": "network",
+    "fields": {
+      "status": "503"
+    },
+    "evidence": [
+      {
+        "start_line": 1217,
+        "end_line": 1217
+      }
+    ]
+  }
+]

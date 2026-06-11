@@ -1,0 +1,185 @@
+﻿2026-05-19T15:08:29.6397354Z Current runner version: '2.334.0'
+2026-05-19T15:08:29.6431156Z ##[group]Runner Image Provisioner
+2026-05-19T15:08:29.6432318Z Hosted Compute Agent
+2026-05-19T15:08:29.6433436Z Version: 20260213.493
+2026-05-19T15:08:29.6434481Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-19T15:08:29.6435629Z Build Date: 2026-02-13T00:28:41Z
+2026-05-19T15:08:29.6436682Z Worker ID: {971478cb-2b4b-4a90-81b3-4952fe54cbd0}
+2026-05-19T15:08:29.6437808Z Azure Region: eastus
+2026-05-19T15:08:29.6438674Z ##[endgroup]
+2026-05-19T15:08:29.6440753Z ##[group]Operating System
+2026-05-19T15:08:29.6441785Z Ubuntu
+2026-05-19T15:08:29.6442492Z 24.04.4
+2026-05-19T15:08:29.6443522Z LTS
+2026-05-19T15:08:29.6444331Z ##[endgroup]
+2026-05-19T15:08:29.6445071Z ##[group]Runner Image
+2026-05-19T15:08:29.6445959Z Image: ubuntu-24.04
+2026-05-19T15:08:29.6446913Z Version: 20260513.135.3
+2026-05-19T15:08:29.6448879Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260513.135/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-19T15:08:29.6451561Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260513.135
+2026-05-19T15:08:29.6453340Z ##[endgroup]
+2026-05-19T15:08:29.6454997Z ##[group]GITHUB_TOKEN Permissions
+2026-05-19T15:08:29.6457776Z Contents: read
+2026-05-19T15:08:29.6458781Z Metadata: read
+2026-05-19T15:08:29.6459569Z ##[endgroup]
+2026-05-19T15:08:29.6462446Z Secret source: None
+2026-05-19T15:08:29.6464119Z Prepare workflow directory
+2026-05-19T15:08:29.7038156Z Prepare all required actions
+2026-05-19T15:08:29.7094463Z Getting action download info
+2026-05-19T15:08:30.3132151Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-19T15:08:30.4658832Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-05-19T15:08:30.6586478Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-19T15:08:30.8871113Z Download action repository 'crazy-max/.github@64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16' (SHA:64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16)
+2026-05-19T15:08:31.1258582Z Getting action download info
+2026-05-19T15:08:31.3697403Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-05-19T15:08:31.5548142Z Complete job name: driver (kubernetes, moby/buildkit:master, bkcfg-false, mnode-false, linux/amd64,linux/arm64)
+2026-05-19T15:08:31.6473448Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-19T15:08:31.6475185Z with:
+2026-05-19T15:08:31.6475918Z   repository: docker/buildx
+2026-05-19T15:08:31.6477124Z   token: ***
+2026-05-19T15:08:31.6477864Z   ssh-strict: true
+2026-05-19T15:08:31.6478626Z   ssh-user: git
+2026-05-19T15:08:31.6479379Z   persist-credentials: true
+2026-05-19T15:08:31.6480249Z   clean: true
+2026-05-19T15:08:31.6481049Z   sparse-checkout-cone-mode: true
+2026-05-19T15:08:31.6481999Z   fetch-depth: 1
+2026-05-19T15:08:31.6483050Z   fetch-tags: false
+2026-05-19T15:08:31.6483846Z   show-progress: true
+2026-05-19T15:08:31.6484691Z   lfs: false
+2026-05-19T15:08:31.6485405Z   submodules: false
+2026-05-19T15:08:31.6486200Z   set-safe-directory: true
+2026-05-19T15:08:31.6487344Z env:
+2026-05-19T15:08:31.6488050Z   SETUP_BUILDX_VERSION: edge
+2026-05-19T15:08:31.6489004Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-19T15:08:31.6490026Z   DESTDIR: ./bin
+2026-05-19T15:08:31.6490834Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-19T15:08:31.6491667Z ##[endgroup]
+2026-05-19T15:08:31.7630813Z Syncing repository: docker/buildx
+2026-05-19T15:08:31.7634934Z ##[group]Getting Git version info
+2026-05-19T15:08:31.7637065Z Working directory is '/home/runner/work/buildx/buildx'
+2026-05-19T15:08:31.7640417Z [command]/usr/bin/git version
+2026-05-19T15:08:31.7710963Z git version 2.54.0
+2026-05-19T15:08:31.7736232Z ##[endgroup]
+2026-05-19T15:08:31.7752211Z Temporarily overriding HOME='/home/runner/work/_temp/fa9dfdf2-326e-4820-b00e-0f8b5dfb5f08' before making global git config changes
+2026-05-19T15:08:31.7755585Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-19T15:08:31.7758719Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/buildx/buildx
+2026-05-19T15:08:31.7831116Z Deleting the contents of '/home/runner/work/buildx/buildx'
+2026-05-19T15:08:31.7836277Z ##[group]Initializing the repository
+2026-05-19T15:08:31.7841532Z [command]/usr/bin/git init /home/runner/work/buildx/buildx
+2026-05-19T15:08:31.8007010Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-19T15:08:31.8009926Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-19T15:08:31.8012448Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-19T15:08:31.8014087Z hint: call:
+2026-05-19T15:08:31.8014818Z hint:
+2026-05-19T15:08:31.8016208Z hint: 	git config --global init.defaultBranch <name>
+2026-05-19T15:08:31.8018066Z hint:
+2026-05-19T15:08:31.8019185Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-19T15:08:31.8020967Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-19T15:08:31.8022818Z hint:
+2026-05-19T15:08:31.8023978Z hint: 	git branch -m <name>
+2026-05-19T15:08:31.8025017Z hint:
+2026-05-19T15:08:31.8026153Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-19T15:08:31.8028038Z Initialized empty Git repository in /home/runner/work/buildx/buildx/.git/
+2026-05-19T15:08:31.8031176Z [command]/usr/bin/git remote add origin https://github.com/docker/buildx
+2026-05-19T15:08:31.8082917Z ##[endgroup]
+2026-05-19T15:08:31.8085066Z ##[group]Disabling automatic garbage collection
+2026-05-19T15:08:31.8087350Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-19T15:08:31.8120799Z ##[endgroup]
+2026-05-19T15:08:31.8122416Z ##[group]Setting up auth
+2026-05-19T15:08:31.8123639Z Removing SSH command configuration
+2026-05-19T15:08:31.8128737Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-19T15:08:31.8167452Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-19T15:08:31.8579198Z Removing HTTP extra header
+2026-05-19T15:08:31.8587391Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-19T15:08:31.8622176Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-19T15:08:31.8849739Z Removing includeIf entries pointing to credentials config files
+2026-05-19T15:08:31.8855178Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-19T15:08:31.8889229Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-19T15:08:31.9115688Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-19T15:08:31.9154391Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/buildx/buildx/.git.path /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:31.9185224Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:31.9219717Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:31.9250740Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:31.9286407Z ##[endgroup]
+2026-05-19T15:08:31.9288622Z ##[group]Fetching the repository
+2026-05-19T15:08:31.9298246Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ba4b291865a4dcbd4d021bcd62416189bdd139de:refs/remotes/pull/3860/merge
+2026-05-19T15:08:32.8068455Z From https://github.com/docker/buildx
+2026-05-19T15:08:32.8070196Z  * [new ref]         ba4b291865a4dcbd4d021bcd62416189bdd139de -> pull/3860/merge
+2026-05-19T15:08:32.8114850Z ##[endgroup]
+2026-05-19T15:08:32.8115753Z ##[group]Determining the checkout info
+2026-05-19T15:08:32.8116717Z ##[endgroup]
+2026-05-19T15:08:32.8121911Z [command]/usr/bin/git sparse-checkout disable
+2026-05-19T15:08:32.8169927Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-19T15:08:32.8197384Z ##[group]Checking out the ref
+2026-05-19T15:08:32.8201549Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3860/merge
+2026-05-19T15:08:33.3436446Z Note: switching to 'refs/remotes/pull/3860/merge'.
+2026-05-19T15:08:33.3461611Z 
+2026-05-19T15:08:33.3462151Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-19T15:08:33.3463556Z changes and commit them, and you can discard any commits you make in this
+2026-05-19T15:08:33.3464554Z state without impacting any branches by switching back to a branch.
+2026-05-19T15:08:33.3465222Z 
+2026-05-19T15:08:33.3465610Z If you want to create a new branch to retain commits you create, you may
+2026-05-19T15:08:33.3466512Z do so (now or later) by using -c with the switch command. Example:
+2026-05-19T15:08:33.3467038Z 
+2026-05-19T15:08:33.3467260Z   git switch -c <new-branch-name>
+2026-05-19T15:08:33.3467638Z 
+2026-05-19T15:08:33.3467836Z Or undo this operation with:
+2026-05-19T15:08:33.3468162Z 
+2026-05-19T15:08:33.3468390Z   git switch -
+2026-05-19T15:08:33.3468682Z 
+2026-05-19T15:08:33.3469128Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-19T15:08:33.3469780Z 
+2026-05-19T15:08:33.3470462Z HEAD is now at ba4b291 Merge b5a025f416ebef3ffc2288f0646b3fecad415cf1 into 3e73561e39785683b31b05eeab1ef645be44ca42
+2026-05-19T15:08:33.3473103Z ##[endgroup]
+2026-05-19T15:08:33.3511809Z [command]/usr/bin/git log -1 --format=%H
+2026-05-19T15:08:33.3539672Z ba4b291865a4dcbd4d021bcd62416189bdd139de
+2026-05-19T15:08:33.3810678Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-05-19T15:08:33.3811134Z with:
+2026-05-19T15:08:33.3811305Z   name: binary
+2026-05-19T15:08:33.3811522Z   path: /home/runner/.docker/cli-plugins
+2026-05-19T15:08:33.3811784Z   merge-multiple: false
+2026-05-19T15:08:33.3812007Z   repository: docker/buildx
+2026-05-19T15:08:33.3812226Z   run-id: 26106030503
+2026-05-19T15:08:33.3812428Z   skip-decompress: false
+2026-05-19T15:08:33.3813007Z   digest-mismatch: error
+2026-05-19T15:08:33.3813236Z env:
+2026-05-19T15:08:33.3813422Z   SETUP_BUILDX_VERSION: edge
+2026-05-19T15:08:33.3813666Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-19T15:08:33.3813924Z   DESTDIR: ./bin
+2026-05-19T15:08:33.3814106Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-19T15:08:33.3814312Z ##[endgroup]
+2026-05-19T15:08:33.5193289Z Downloading single artifact
+2026-05-19T15:08:33.6351561Z ##[error]Unable to download artifact(s): Failed to ListArtifacts: Received non-retryable error: Failed request: (403) Forbidden: Error from intermediary with HTTP status code 403 "Forbidden"
+2026-05-19T15:08:33.6556176Z Post job cleanup.
+2026-05-19T15:08:33.7395425Z [command]/usr/bin/git version
+2026-05-19T15:08:33.7466195Z git version 2.54.0
+2026-05-19T15:08:33.7507758Z Temporarily overriding HOME='/home/runner/work/_temp/f7dc3bd5-3b8f-4c41-b8a4-0ee59a1bf753' before making global git config changes
+2026-05-19T15:08:33.7509119Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-19T15:08:33.7513885Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/buildx/buildx
+2026-05-19T15:08:33.7547272Z Removing SSH command configuration
+2026-05-19T15:08:33.7554470Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-19T15:08:33.7592330Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-19T15:08:33.7830029Z Removing HTTP extra header
+2026-05-19T15:08:33.7835490Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-19T15:08:33.7870865Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-19T15:08:33.8109967Z Removing includeIf entries pointing to credentials config files
+2026-05-19T15:08:33.8117337Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-19T15:08:33.8146834Z includeif.gitdir:/home/runner/work/buildx/buildx/.git.path
+2026-05-19T15:08:33.8147579Z includeif.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path
+2026-05-19T15:08:33.8148238Z includeif.gitdir:/github/workspace/.git.path
+2026-05-19T15:08:33.8148637Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-19T15:08:33.8157172Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/buildx/buildx/.git.path
+2026-05-19T15:08:33.8179187Z /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8190328Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/buildx/buildx/.git.path /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8226949Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path
+2026-05-19T15:08:33.8248991Z /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8259672Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8292538Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-05-19T15:08:33.8316076Z /github/runner_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8325295Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8363353Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-19T15:08:33.8388599Z /github/runner_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8401007Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config
+2026-05-19T15:08:33.8439583Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-19T15:08:33.8681543Z Removing credentials config '/home/runner/work/_temp/git-credentials-bac5d393-c41b-4c89-9013-429a8ef43a0d.config'
+2026-05-19T15:08:33.8819151Z Cleaning up orphan processes

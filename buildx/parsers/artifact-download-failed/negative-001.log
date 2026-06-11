@@ -1,0 +1,7 @@
+2026-05-25T11:00:00.0000000Z ##[group]Run echo "smoke test"
+2026-05-25T11:00:00.5000000Z smoke test
+2026-05-25T11:00:01.0000000Z ##[endgroup]
+2026-05-25T11:00:01.5000000Z ##[group]Run go test ./...
+2026-05-25T11:00:02.0000000Z ok  github.com/example/pkg 0.234s
+2026-05-25T11:00:03.0000000Z ##[endgroup]
+2026-05-25T11:00:04.0000000Z Cleaning up orphan processes

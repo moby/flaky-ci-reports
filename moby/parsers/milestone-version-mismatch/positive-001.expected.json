@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "milestone-version-mismatch",
+    "name": "validate-milestone: milestone 29.6.0 != next version 29.5.3",
+    "category": "other",
+    "fields": {
+      "expected": "29.5.3",
+      "milestone": "29.6.0"
+    },
+    "evidence": [
+      {
+        "start_line": 90,
+        "end_line": 90
+      }
+    ]
+  }
+]

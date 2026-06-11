@@ -1,0 +1,416 @@
+﻿2026-05-11T18:01:14.9952148Z Current runner version: '2.334.0'
+2026-05-11T18:01:14.9977679Z ##[group]Runner Image Provisioner
+2026-05-11T18:01:14.9978477Z Hosted Compute Agent
+2026-05-11T18:01:14.9979084Z Version: 20260213.493
+2026-05-11T18:01:14.9979671Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-11T18:01:14.9980475Z Build Date: 2026-02-13T00:28:41Z
+2026-05-11T18:01:14.9981101Z Worker ID: {9876194d-9aab-4c67-bf53-2cc686c0fa84}
+2026-05-11T18:01:14.9981780Z Azure Region: westus3
+2026-05-11T18:01:14.9982404Z ##[endgroup]
+2026-05-11T18:01:14.9983615Z ##[group]Operating System
+2026-05-11T18:01:14.9984570Z Ubuntu
+2026-05-11T18:01:14.9985141Z 24.04.4
+2026-05-11T18:01:14.9985649Z LTS
+2026-05-11T18:01:14.9986084Z ##[endgroup]
+2026-05-11T18:01:14.9986658Z ##[group]Runner Image
+2026-05-11T18:01:14.9987170Z Image: ubuntu-24.04
+2026-05-11T18:01:14.9987734Z Version: 20260413.86.1
+2026-05-11T18:01:14.9988969Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260413.86/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-11T18:01:14.9990357Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260413.86
+2026-05-11T18:01:14.9991671Z ##[endgroup]
+2026-05-11T18:01:14.9992700Z ##[group]GITHUB_TOKEN Permissions
+2026-05-11T18:01:14.9994960Z Contents: read
+2026-05-11T18:01:14.9995544Z Metadata: read
+2026-05-11T18:01:14.9996009Z ##[endgroup]
+2026-05-11T18:01:14.9998247Z Secret source: Actions
+2026-05-11T18:01:14.9998905Z Prepare workflow directory
+2026-05-11T18:01:15.0399921Z Prepare all required actions
+2026-05-11T18:01:15.0438037Z Getting action download info
+2026-05-11T18:01:15.6326576Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+2026-05-11T18:01:15.7738994Z Download action repository 'docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a' (SHA:ce360397dd3f832beb865e1373c09c0e9f86d70a)
+2026-05-11T18:01:16.5969120Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-05-11T18:01:17.4197352Z Download action repository 'crazy-max/.github@64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16' (SHA:64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16)
+2026-05-11T18:01:17.9006327Z Getting action download info
+2026-05-11T18:01:18.1347346Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-05-11T18:01:18.7472562Z Complete job name: driver (kubernetes, moby/buildkit:master, bkcfg-true, mnode-false, linux/amd64,linux/arm64)
+2026-05-11T18:01:18.8124477Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+2026-05-11T18:01:18.8125145Z with:
+2026-05-11T18:01:18.8125341Z   repository: docker/buildx
+2026-05-11T18:01:18.8125831Z   token: ***
+2026-05-11T18:01:18.8126025Z   ssh-strict: true
+2026-05-11T18:01:18.8126211Z   ssh-user: git
+2026-05-11T18:01:18.8126416Z   persist-credentials: true
+2026-05-11T18:01:18.8126628Z   clean: true
+2026-05-11T18:01:18.8126865Z   sparse-checkout-cone-mode: true
+2026-05-11T18:01:18.8127102Z   fetch-depth: 1
+2026-05-11T18:01:18.8127304Z   fetch-tags: false
+2026-05-11T18:01:18.8127500Z   show-progress: true
+2026-05-11T18:01:18.8127690Z   lfs: false
+2026-05-11T18:01:18.8127863Z   submodules: false
+2026-05-11T18:01:18.8128048Z   set-safe-directory: true
+2026-05-11T18:01:18.8128435Z env:
+2026-05-11T18:01:18.8128615Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:18.8128860Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:18.8129110Z   DESTDIR: ./bin
+2026-05-11T18:01:18.8129345Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:18.8129556Z ##[endgroup]
+2026-05-11T18:01:18.9122609Z Syncing repository: docker/buildx
+2026-05-11T18:01:18.9124774Z ##[group]Getting Git version info
+2026-05-11T18:01:18.9125341Z Working directory is '/home/runner/work/buildx/buildx'
+2026-05-11T18:01:18.9126236Z [command]/usr/bin/git version
+2026-05-11T18:01:18.9155027Z git version 2.53.0
+2026-05-11T18:01:18.9209468Z ##[endgroup]
+2026-05-11T18:01:18.9224875Z Temporarily overriding HOME='/home/runner/work/_temp/b0af4a30-61ff-4534-ae8a-8f1e4725312f' before making global git config changes
+2026-05-11T18:01:18.9226114Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-11T18:01:18.9230849Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/buildx/buildx
+2026-05-11T18:01:18.9267507Z Deleting the contents of '/home/runner/work/buildx/buildx'
+2026-05-11T18:01:18.9271460Z ##[group]Initializing the repository
+2026-05-11T18:01:18.9276633Z [command]/usr/bin/git init /home/runner/work/buildx/buildx
+2026-05-11T18:01:18.9343758Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-11T18:01:18.9344819Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-11T18:01:18.9345610Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-11T18:01:18.9346198Z hint: call:
+2026-05-11T18:01:18.9346465Z hint:
+2026-05-11T18:01:18.9346864Z hint: 	git config --global init.defaultBranch <name>
+2026-05-11T18:01:18.9347315Z hint:
+2026-05-11T18:01:18.9347735Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-11T18:01:18.9348260Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-11T18:01:18.9348605Z hint:
+2026-05-11T18:01:18.9348797Z hint: 	git branch -m <name>
+2026-05-11T18:01:18.9349017Z hint:
+2026-05-11T18:01:18.9349334Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-11T18:01:18.9349885Z Initialized empty Git repository in /home/runner/work/buildx/buildx/.git/
+2026-05-11T18:01:18.9356932Z [command]/usr/bin/git remote add origin https://github.com/docker/buildx
+2026-05-11T18:01:18.9388609Z ##[endgroup]
+2026-05-11T18:01:18.9389033Z ##[group]Disabling automatic garbage collection
+2026-05-11T18:01:18.9392294Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-11T18:01:18.9421294Z ##[endgroup]
+2026-05-11T18:01:18.9421676Z ##[group]Setting up auth
+2026-05-11T18:01:18.9422542Z Removing SSH command configuration
+2026-05-11T18:01:18.9428429Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-11T18:01:18.9459787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-11T18:01:18.9760464Z Removing HTTP extra header
+2026-05-11T18:01:18.9766604Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-11T18:01:18.9802276Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-11T18:01:19.0029947Z Removing includeIf entries pointing to credentials config files
+2026-05-11T18:01:19.0036319Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-11T18:01:19.0069899Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-11T18:01:19.0306220Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-11T18:01:19.0345278Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/buildx/buildx/.git.path /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:01:19.0377336Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:01:19.0408900Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:01:19.0441104Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:01:19.0469843Z ##[endgroup]
+2026-05-11T18:01:19.0470599Z ##[group]Fetching the repository
+2026-05-11T18:01:19.0479691Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b40913913bbfdc0bb474e849f89f5021bd23146:refs/remotes/origin/master
+2026-05-11T18:01:20.7372059Z From https://github.com/docker/buildx
+2026-05-11T18:01:20.7372874Z  * [new ref]         5b40913913bbfdc0bb474e849f89f5021bd23146 -> origin/master
+2026-05-11T18:01:20.7406778Z [command]/usr/bin/git branch --list --remote origin/master
+2026-05-11T18:01:20.7432251Z   origin/master
+2026-05-11T18:01:20.7441279Z [command]/usr/bin/git rev-parse refs/remotes/origin/master
+2026-05-11T18:01:20.7465583Z 5b40913913bbfdc0bb474e849f89f5021bd23146
+2026-05-11T18:01:20.7470077Z ##[endgroup]
+2026-05-11T18:01:20.7470802Z ##[group]Determining the checkout info
+2026-05-11T18:01:20.7471575Z ##[endgroup]
+2026-05-11T18:01:20.7477315Z [command]/usr/bin/git sparse-checkout disable
+2026-05-11T18:01:20.7515802Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-11T18:01:20.7546098Z ##[group]Checking out the ref
+2026-05-11T18:01:20.7546542Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-05-11T18:01:21.2759028Z Reset branch 'master'
+2026-05-11T18:01:21.2759617Z branch 'master' set up to track 'origin/master'.
+2026-05-11T18:01:21.2790096Z ##[endgroup]
+2026-05-11T18:01:21.2843243Z [command]/usr/bin/git log -1 --format=%H
+2026-05-11T18:01:21.2875546Z 5b40913913bbfdc0bb474e849f89f5021bd23146
+2026-05-11T18:01:21.3128878Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-05-11T18:01:21.3129306Z with:
+2026-05-11T18:01:21.3129489Z   name: binary
+2026-05-11T18:01:21.3129709Z   path: /home/runner/.docker/cli-plugins
+2026-05-11T18:01:21.3129994Z   merge-multiple: false
+2026-05-11T18:01:21.3130229Z   repository: docker/buildx
+2026-05-11T18:01:21.3130464Z   run-id: 25687787985
+2026-05-11T18:01:21.3130678Z   skip-decompress: false
+2026-05-11T18:01:21.3130894Z   digest-mismatch: error
+2026-05-11T18:01:21.3131100Z env:
+2026-05-11T18:01:21.3131285Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:21.3131581Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:21.3131893Z   DESTDIR: ./bin
+2026-05-11T18:01:21.3132087Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:21.3132314Z ##[endgroup]
+2026-05-11T18:01:21.4436293Z Downloading single artifact
+2026-05-11T18:01:21.7087133Z Preparing to download the following artifacts:
+2026-05-11T18:01:21.7088223Z - binary (ID: 6926083778, Size: 22916902, Expected Digest: sha256:387c91ca74ae8da81168ba20e3d7537a33a7c37e25258a5ffa292ffb9905af2b)
+2026-05-11T18:01:22.1889317Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/4157f8ab-f527-4095-8272-9b1d93d59d57/workflow-job-run-522ca2ed-dc83-5c50-b3cf-c3393fa7762a/artifacts/9a3a45d01531a20e89ac6ae10b0b0beb0492acd7216a368aa062d1a5fecaf9cd.zip
+2026-05-11T18:01:22.1891471Z Starting download of artifact to: /home/runner/.docker/cli-plugins
+2026-05-11T18:01:22.4817838Z (node:2297) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-05-11T18:01:22.4819051Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-11T18:01:23.7941161Z SHA256 digest of downloaded artifact is 387c91ca74ae8da81168ba20e3d7537a33a7c37e25258a5ffa292ffb9905af2b
+2026-05-11T18:01:23.7942021Z Artifact download completed successfully.
+2026-05-11T18:01:23.7942310Z Total of 1 artifact(s) downloaded
+2026-05-11T18:01:23.7950760Z Download artifact has finished successfully
+2026-05-11T18:01:23.8076663Z ##[group]Run chmod +x /home/runner/.docker/cli-plugins/docker-buildx
+2026-05-11T18:01:23.8077377Z [36;1mchmod +x /home/runner/.docker/cli-plugins/docker-buildx[0m
+2026-05-11T18:01:23.8077746Z [36;1mdocker buildx version[0m
+2026-05-11T18:01:23.8102631Z shell: /usr/bin/bash -e {0}
+2026-05-11T18:01:23.8102881Z env:
+2026-05-11T18:01:23.8103080Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:23.8103340Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:23.8103607Z   DESTDIR: ./bin
+2026-05-11T18:01:23.8103807Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:23.8104329Z ##[endgroup]
+2026-05-11T18:01:23.8828795Z github.com/docker/buildx 5b40913 5b40913913bbfdc0bb474e849f89f5021bd23146
+2026-05-11T18:01:23.8905357Z ##[group]Run # BuildKit cfg
+2026-05-11T18:01:23.8905660Z [36;1m# BuildKit cfg[0m
+2026-05-11T18:01:23.8905914Z [36;1mif [ "bkcfg-true" = "bkcfg-true" ]; then[0m
+2026-05-11T18:01:23.8906224Z [36;1m  cat > "/tmp/buildkitd.toml" <<EOL[0m
+2026-05-11T18:01:23.8906487Z [36;1m[worker.oci][0m
+2026-05-11T18:01:23.8906711Z [36;1m  max-parallelism = 2[0m
+2026-05-11T18:01:23.8906963Z [36;1mEOL[0m
+2026-05-11T18:01:23.8907219Z [36;1m  echo "BUILDKIT_CFG=/tmp/buildkitd.toml" >> $GITHUB_ENV[0m
+2026-05-11T18:01:23.8907529Z [36;1mfi[0m
+2026-05-11T18:01:23.8907698Z [36;1m# Multi node[0m
+2026-05-11T18:01:23.8907934Z [36;1mif [ "mnode-false" = "mnode-true" ]; then[0m
+2026-05-11T18:01:23.8908233Z [36;1m  echo "MULTI_NODE=1" >> $GITHUB_ENV[0m
+2026-05-11T18:01:23.8908494Z [36;1melse[0m
+2026-05-11T18:01:23.8908693Z [36;1m  echo "MULTI_NODE=0" >> $GITHUB_ENV[0m
+2026-05-11T18:01:23.8908931Z [36;1mfi[0m
+2026-05-11T18:01:23.8909135Z [36;1mif [ -n "" ]; then[0m
+2026-05-11T18:01:23.8909467Z [36;1m  echo "BUILDX_METADATA_PROVENANCE=" >> $GITHUB_ENV[0m
+2026-05-11T18:01:23.8909767Z [36;1mfi[0m
+2026-05-11T18:01:23.8909948Z [36;1mif [ -n "" ]; then[0m
+2026-05-11T18:01:23.8910220Z [36;1m  echo "BUILDX_METADATA_WARNINGS=" >> $GITHUB_ENV[0m
+2026-05-11T18:01:23.8910491Z [36;1mfi[0m
+2026-05-11T18:01:23.8932489Z shell: /usr/bin/bash -e {0}
+2026-05-11T18:01:23.8932739Z env:
+2026-05-11T18:01:23.8932949Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:23.8933204Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:23.8933483Z   DESTDIR: ./bin
+2026-05-11T18:01:23.8933684Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:23.8934124Z ##[endgroup]
+2026-05-11T18:01:23.9042004Z ##[group]Run crazy-max/.github/.github/actions/install-k3s@64a0bfaf6e6bb1c448d6e4c42b11034ee7094f16
+2026-05-11T18:01:23.9042470Z with:
+2026-05-11T18:01:23.9042656Z   version: v1.32.2+k3s1
+2026-05-11T18:01:23.9042865Z env:
+2026-05-11T18:01:23.9043038Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:23.9043293Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:23.9043563Z   DESTDIR: ./bin
+2026-05-11T18:01:23.9043750Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:23.9044275Z   BUILDKIT_CFG: /tmp/buildkitd.toml
+2026-05-11T18:01:23.9044563Z   MULTI_NODE: 0
+2026-05-11T18:01:23.9044742Z ##[endgroup]
+2026-05-11T18:01:23.9144509Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-05-11T18:01:23.9144895Z with:
+2026-05-11T18:01:23.9147014Z   script: const fs = require('fs');
+const os = require('os');
+const path = require('path');
+
+const tmpDir = fs.mkdtempSync(path.join(process.env.RUNNER_TEMP || os.tmpdir(), 'install-k3s-'));
+const kubeconfig = `${tmpDir}/kubeconfig.yaml`;
+core.info(`Storing kubeconfig in ${kubeconfig}`);
+
+await exec.exec('sh', ['-c', 'curl -sfL https://get.k3s.io | sh -'], {
+  env: Object.assign({}, process.env, {
+    INSTALL_K3S_VERSION: core.getInput('version'),
+    INSTALL_K3S_EXEC: `--disable traefik --disable metrics-server --write-kubeconfig-mode 666 --write-kubeconfig ${kubeconfig}`,
+  })
+});
+
+core.exportVariable('KUBECONFIG', kubeconfig);
+await exec.exec(`yq ${kubeconfig}`);
+
+2026-05-11T18:01:23.9149208Z   github-token: ***
+2026-05-11T18:01:23.9149419Z   debug: false
+2026-05-11T18:01:23.9149627Z   user-agent: actions/github-script
+2026-05-11T18:01:23.9149879Z   result-encoding: json
+2026-05-11T18:01:23.9150091Z   retries: 0
+2026-05-11T18:01:23.9150313Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-11T18:01:23.9150794Z env:
+2026-05-11T18:01:23.9150978Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:23.9151229Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:23.9151478Z   DESTDIR: ./bin
+2026-05-11T18:01:23.9151678Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:23.9151911Z   BUILDKIT_CFG: /tmp/buildkitd.toml
+2026-05-11T18:01:23.9152138Z   MULTI_NODE: 0
+2026-05-11T18:01:23.9152334Z   INPUT_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:23.9152562Z ##[endgroup]
+2026-05-11T18:01:23.9900367Z Storing kubeconfig in /home/runner/work/_temp/install-k3s-9DpGQJ/kubeconfig.yaml
+2026-05-11T18:01:23.9943781Z [command]/usr/bin/sh -c curl -sfL https://get.k3s.io | sh -
+2026-05-11T18:01:24.2152677Z [INFO]  Using v1.32.2+k3s1 as release
+2026-05-11T18:01:24.2157236Z [INFO]  Downloading hash https://github.com/k3s-io/k3s/releases/download/v1.32.2%2Bk3s1/sha256sum-amd64.txt
+2026-05-11T18:01:24.5299390Z [INFO]  Downloading binary https://github.com/k3s-io/k3s/releases/download/v1.32.2%2Bk3s1/k3s
+2026-05-11T18:01:25.1698902Z [INFO]  Verifying binary download
+2026-05-11T18:01:25.2309527Z [INFO]  Installing k3s to /usr/local/bin/k3s
+2026-05-11T18:01:25.2486160Z [INFO]  Skipping installation of SELinux RPM
+2026-05-11T18:01:25.2489330Z [INFO]  Skipping /usr/local/bin/kubectl symlink to k3s, command exists in PATH at /usr/bin/kubectl
+2026-05-11T18:01:25.2493692Z [INFO]  Creating /usr/local/bin/crictl symlink to k3s
+2026-05-11T18:01:25.2568113Z [INFO]  Skipping /usr/local/bin/ctr symlink to k3s, command exists in PATH at /usr/bin/ctr
+2026-05-11T18:01:25.2568924Z [INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+2026-05-11T18:01:25.2778418Z [INFO]  Creating uninstall script /usr/local/bin/k3s-uninstall.sh
+2026-05-11T18:01:25.3243761Z [INFO]  env: Creating environment file /etc/systemd/system/k3s.service.env
+2026-05-11T18:01:25.3556657Z [INFO]  systemd: Creating service file /etc/systemd/system/k3s.service
+2026-05-11T18:01:25.3728684Z [INFO]  systemd: Enabling k3s unit
+2026-05-11T18:01:25.3828310Z Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc/systemd/system/k3s.service.
+2026-05-11T18:01:26.0787804Z [INFO]  systemd: Starting k3s
+2026-05-11T18:01:30.3845377Z [command]/usr/bin/yq /home/runner/work/_temp/install-k3s-9DpGQJ/kubeconfig.yaml
+2026-05-11T18:01:30.4096079Z apiVersion: v1
+2026-05-11T18:01:30.4096468Z clusters:
+2026-05-11T18:01:30.4096752Z   - cluster:
+2026-05-11T18:01:30.4120861Z       certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlRENDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdGMyVnkKZG1WeUxXTmhRREUzTnpnMU1qSTBPRGN3SGhjTk1qWXdOVEV4TVRnd01USTNXaGNOTXpZd05UQTRNVGd3TVRJMwpXakFqTVNFd0h3WURWUVFEREJock0zTXRjMlZ5ZG1WeUxXTmhRREUzTnpnMU1qSTBPRGN3V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFRd21xeGo1VDdvMk1sc0lLUGFyOVg2SFdVRmdISkIySnl3b3ZKemRnR0kKSCtBd0ExL25IbnJHUTVoYnNMamhwZXVEU2REMEZBM0dWSlBiWFFyZ0F2SURvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVWFXd3E2c3o4VXJTdzlpaElpbzdtClpDMnNqWjB3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU1hU3NhZHhrclNDMW00ZSs0OGErb0NqanFjVk9TNE0KbDFPbGw2QXpkNzFsQWlFQXJMd0daZEdQNTcwR0VZV1lBWGdnY1dJdFdueFM5cmltdFVEVDhaTE5EaHM9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+2026-05-11T18:01:30.4137035Z       server: https://127.0.0.1:6443
+2026-05-11T18:01:30.4137545Z     name: default
+2026-05-11T18:01:30.4137912Z contexts:
+2026-05-11T18:01:30.4138205Z   - context:
+2026-05-11T18:01:30.4138502Z       cluster: default
+2026-05-11T18:01:30.4138836Z       user: default
+2026-05-11T18:01:30.4139147Z     name: default
+2026-05-11T18:01:30.4139640Z current-context: default
+2026-05-11T18:01:30.4139994Z kind: Config
+2026-05-11T18:01:30.4140301Z preferences: {}
+2026-05-11T18:01:30.4140605Z users:
+2026-05-11T18:01:30.4140919Z   - name: default
+2026-05-11T18:01:30.4141225Z     user:
+2026-05-11T18:01:30.4199616Z       client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJrRENDQVRlZ0F3SUJBZ0lJUFNnMlh4aXoxa2t3Q2dZSUtvWkl6ajBFQXdJd0l6RWhNQjhHQTFVRUF3d1kKYXpOekxXTnNhV1Z1ZEMxallVQXhOemM0TlRJeU5EZzNNQjRYRFRJMk1EVXhNVEU0TURFeU4xb1hEVEkzTURVeApNVEU0TURFeU4xb3dNREVYTUJVR0ExVUVDaE1PYzNsemRHVnRPbTFoYzNSbGNuTXhGVEFUQmdOVkJBTVRESE41CmMzUmxiVHBoWkcxcGJqQlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJLUW9xQ2F5ZjNQdFhNd1QKTkcwZnZlKzEwamZYZm9uZWF6OW5JblFwSzdIZGlzZ0J5TFFTNzNzTzJOU3dvcndNWXlENUJDVUxxM0poQ3VSeQpKQitzSldxalNEQkdNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBakFmCkJnTlZIU01FR0RBV2dCUjZUSTR4bHZxcW05ZTN4b1E4RkcrcDhhbUNFREFLQmdncWhrak9QUVFEQWdOSEFEQkUKQWlBSlRLWkc3bUxPN3o5ZzN0aENwb0xHUmJXNmw4T2l6aTFTSVBLdXBNRVB4QUlnR0FrMEp3ZWRITWt1WHlIUApnOERnN0lQaWpXUlpyZ0REb3lKa21GclIySHM9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJkekNDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdFkyeHAKWlc1MExXTmhRREUzTnpnMU1qSTBPRGN3SGhjTk1qWXdOVEV4TVRnd01USTNXaGNOTXpZd05UQTRNVGd3TVRJMwpXakFqTVNFd0h3WURWUVFEREJock0zTXRZMnhwWlc1MExXTmhRREUzTnpnMU1qSTBPRGN3V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFRUndwS3ZGT0xGcWtEUlZnNzNuTzUyYjFjeXJHUXJxejh2M3Y4MXJVRGgKUFl4VElVZWZnV2tScFE3allVTDNoT3RNQ0hqNlVUY3NHZ0dCM0Y3U212RlNvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVWVreU9NWmI2cXB2WHQ4YUVQQlJ2CnFmR3BnaEF3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUloQVBLeFNNY1lNMUlVN0FodldlYmVhZ0pMaEU3dE1wejQKcjRhQ25HaHp6Zjl2QWlBVERSS0FsVkZHVm9ROVd3ZXJmR1hFVE5WYnpYQ3ptS2thN0h6QkZObThXUT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+2026-05-11T18:01:30.4322748Z       client-key-data: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSUliYjlmc0VkN3gxUkg3Z3MzTEUxZUhwbnh6cHRTcTg2TUx5MWFlM3pRdUFvQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFcENpb0pySi9jKzFjekJNMGJSKzk3N1hTTjlkK2lkNXJQMmNpZENrcnNkMkt5QUhJdEJMdgpldzdZMUxDaXZBeGpJUGtFSlF1cmNtRUs1SElrSDZ3bGFnPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=
+2026-05-11T18:01:30.4399214Z ##[group]Run make test-driver
+2026-05-11T18:01:30.4399711Z [36;1mmake test-driver[0m
+2026-05-11T18:01:30.4430096Z shell: /usr/bin/bash -e {0}
+2026-05-11T18:01:30.4430465Z env:
+2026-05-11T18:01:30.4430744Z   SETUP_BUILDX_VERSION: edge
+2026-05-11T18:01:30.4431186Z   SETUP_BUILDKIT_IMAGE: moby/buildkit:latest
+2026-05-11T18:01:30.4431623Z   DESTDIR: ./bin
+2026-05-11T18:01:30.4431920Z   K3S_VERSION: v1.32.2+k3s1
+2026-05-11T18:01:30.4432304Z   BUILDKIT_CFG: /tmp/buildkitd.toml
+2026-05-11T18:01:30.4432696Z   MULTI_NODE: 0
+2026-05-11T18:01:30.4433181Z   KUBECONFIG: /home/runner/work/_temp/install-k3s-9DpGQJ/kubeconfig.yaml
+2026-05-11T18:01:30.4433820Z   BUILDKIT_IMAGE: moby/buildkit:master
+2026-05-11T18:01:30.4434398Z   DRIVER: kubernetes
+2026-05-11T18:01:30.4434720Z   DRIVER_OPT: qemu.install=true
+2026-05-11T18:01:30.4434970Z   ENDPOINT: 
+2026-05-11T18:01:30.4435182Z   PLATFORMS: linux/amd64,linux/arm64
+2026-05-11T18:01:30.4435440Z ##[endgroup]
+2026-05-11T18:01:30.5077125Z ./hack/test-driver
+2026-05-11T18:01:30.5161049Z + docker buildx create --buildkitd-config=/tmp/buildkitd.toml --bootstrap --name=buildx-test-75e92e10d06d5bb2b58b8d12ab44363e --platform=linux/amd64,linux/arm64 --driver=kubernetes --driver-opt=image=moby/buildkit:master,qemu.install=true
+2026-05-11T18:01:30.5822753Z #1 [internal] booting buildkit
+2026-05-11T18:01:30.7396528Z #1 waiting for 1 pods to be ready, timeout: 2 minutes
+2026-05-11T18:02:17.5771105Z #1 waiting for 1 pods to be ready, timeout: 2 minutes 47.0s done
+2026-05-11T18:02:17.5773039Z #1 DONE 47.0s
+2026-05-11T18:02:17.5774493Z buildx-test-75e92e10d06d5bb2b58b8d12ab44363e
+2026-05-11T18:02:17.5808605Z + docker buildx inspect --bootstrap --builder=buildx-test-75e92e10d06d5bb2b58b8d12ab44363e
+2026-05-11T18:02:17.6773395Z Name:          buildx-test-75e92e10d06d5bb2b58b8d12ab44363e
+2026-05-11T18:02:17.6774405Z Driver:        kubernetes
+2026-05-11T18:02:17.6775408Z Last Activity: 2026-05-11 18:01:30 +0000 UTC
+2026-05-11T18:02:17.6775915Z 
+2026-05-11T18:02:17.6776146Z Nodes:
+2026-05-11T18:02:17.6778445Z Name:                  buildx-test-75e92e10d06d5bb2b58b8d12ab44363e0
+2026-05-11T18:02:17.6780243Z Endpoint:              kubernetes:///buildx-test-75e92e10d06d5bb2b58b8d12ab44363e?deployment=buildkit-db77b6fe-e197-4137-b566-f1bc9100fb19-1eb57&kubeconfig=%2Fhome%2Frunner%2Fwork%2F_temp%2Finstall-k3s-9DpGQJ%2Fkubeconfig.yaml
+2026-05-11T18:02:17.6782471Z Driver Options:        image="moby/buildkit:master" qemu.install="true"
+2026-05-11T18:02:17.6782843Z Status:                running
+2026-05-11T18:02:17.6783205Z BuildKit daemon flags: --allow-insecure-entitlement=network.host
+2026-05-11T18:02:17.6783568Z BuildKit version:      a7c8749
+2026-05-11T18:02:17.6784093Z Platforms:             linux/amd64*, linux/arm64*
+2026-05-11T18:02:17.6784503Z Labels:
+2026-05-11T18:02:17.6784760Z  org.mobyproject.buildkit.worker.executor:         oci
+2026-05-11T18:02:17.6785354Z  org.mobyproject.buildkit.worker.hostname:         buildx-test-75e92e10d06d5bb2b58b8d12ab44363e0-55f7f56848-pqw6k
+2026-05-11T18:02:17.6785952Z  org.mobyproject.buildkit.worker.network:          host
+2026-05-11T18:02:17.6786370Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2026-05-11T18:02:17.6786779Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2026-05-11T18:02:17.6787194Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2026-05-11T18:02:17.6787530Z GC Policy rule#0:
+2026-05-11T18:02:17.6787726Z  All:            false
+2026-05-11T18:02:17.6788107Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2026-05-11T18:02:17.6788508Z  Keep Duration:  48h0m0s
+2026-05-11T18:02:17.6788732Z  Max Used Space: 488.3MiB
+2026-05-11T18:02:17.6788957Z GC Policy rule#1:
+2026-05-11T18:02:17.6789163Z  All:            false
+2026-05-11T18:02:17.6789363Z  Keep Duration:  1440h0m0s
+2026-05-11T18:02:17.6789593Z  Reserved Space: 9.313GiB
+2026-05-11T18:02:17.6789815Z  Max Used Space: 93.13GiB
+2026-05-11T18:02:17.6790020Z  Min Free Space: 27.01GiB
+2026-05-11T18:02:17.6790473Z GC Policy rule#2:
+2026-05-11T18:02:17.6790677Z  All:            false
+2026-05-11T18:02:17.6790884Z  Reserved Space: 9.313GiB
+2026-05-11T18:02:17.6791086Z  Max Used Space: 93.13GiB
+2026-05-11T18:02:17.6791303Z  Min Free Space: 27.01GiB
+2026-05-11T18:02:17.6791512Z GC Policy rule#3:
+2026-05-11T18:02:17.6791699Z  All:            true
+2026-05-11T18:02:17.6791917Z  Reserved Space: 9.313GiB
+2026-05-11T18:02:17.6792237Z  Max Used Space: 93.13GiB
+2026-05-11T18:02:17.6792531Z  Min Free Space: 27.01GiB
+2026-05-11T18:02:17.6792854Z File#buildkitd.toml:
+2026-05-11T18:02:17.6793142Z  > [worker]
+2026-05-11T18:02:17.6793323Z  > [worker.oci]
+2026-05-11T18:02:17.6793531Z  > max-parallelism = 2
+2026-05-11T18:02:17.6793824Z  > 
+2026-05-11T18:02:17.6851077Z + docker buildx build --platform=linux/amd64,linux/arm64 --output=type=oci,dest=/tmp/buildx-output.VIbfseywkc/buildx-test-build.tar --builder=buildx-test-75e92e10d06d5bb2b58b8d12ab44363e --metadata-file=/tmp/buildx-output.VIbfseywkc/metadata-build.json /tmp/buildx-output.VIbfseywkc
+2026-05-11T18:02:17.9598057Z #0 building with "buildx-test-75e92e10d06d5bb2b58b8d12ab44363e" instance using kubernetes driver
+2026-05-11T18:02:17.9598572Z 
+2026-05-11T18:02:17.9598711Z #1 [internal] load build definition from Dockerfile
+2026-05-11T18:02:17.9599069Z #1 transferring dockerfile: 371B done
+2026-05-11T18:02:17.9599432Z #1 WARN: FromAsCasing: 'As' and 'FROM' keywords' casing do not match (line 6)
+2026-05-11T18:02:17.9600054Z #1 WARN: ConsistentInstructionCasing: Command 'fRom' should match the case of the command majority (uppercase) (line 1)
+2026-05-11T18:02:17.9600830Z #1 WARN: ConsistentInstructionCasing: Command 'FROm' should match the case of the command majority (uppercase) (line 11)
+2026-05-11T18:02:17.9601607Z #1 WARN: ConsistentInstructionCasing: Command 'CoPY' should match the case of the command majority (uppercase) (line 15)
+2026-05-11T18:02:17.9602091Z #1 DONE 0.0s
+2026-05-11T18:02:17.9602195Z 
+2026-05-11T18:02:17.9602393Z #2 [linux/amd64 internal] load metadata for docker.io/library/busybox:latest
+2026-05-11T18:02:27.8135610Z #2 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/busybox/manifests/latest": dial tcp: lookup registry-1.docker.io on 10.43.0.10:53: read udp 10.42.0.2:50304->10.43.0.10:53: read: connection refused
+2026-05-11T18:02:27.8137281Z 
+2026-05-11T18:02:27.8138530Z #3 [linux/arm64 internal] load metadata for docker.io/library/busybox:latest
+2026-05-11T18:02:27.8139703Z #3 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/busybox/manifests/latest": dial tcp: lookup registry-1.docker.io on 10.43.0.10:53: read udp 10.42.0.2:50304->10.43.0.10:53: read: connection refused
+2026-05-11T18:02:27.8302019Z ------
+2026-05-11T18:02:27.8302480Z  > [linux/arm64 internal] load metadata for docker.io/library/busybox:latest:
+2026-05-11T18:02:27.8303010Z ------
+2026-05-11T18:02:27.8303173Z ------
+2026-05-11T18:02:27.8305935Z  > [linux/amd64 internal] load metadata for docker.io/library/busybox:latest:
+2026-05-11T18:02:27.8306607Z ------
+2026-05-11T18:02:27.8306805Z 
+2026-05-11T18:02:27.8307388Z  [33m4 warnings found (use docker --debug to expand):
+2026-05-11T18:02:27.8312009Z [0m - FromAsCasing: 'As' and 'FROM' keywords' casing do not match (line 6)
+2026-05-11T18:02:27.8313060Z  - ConsistentInstructionCasing: Command 'fRom' should match the case of the command majority (uppercase) (line 1)
+2026-05-11T18:02:27.8314279Z  - ConsistentInstructionCasing: Command 'FROm' should match the case of the command majority (uppercase) (line 11)
+2026-05-11T18:02:27.8315140Z  - ConsistentInstructionCasing: Command 'CoPY' should match the case of the command majority (uppercase) (line 15)
+2026-05-11T18:02:27.8344065Z Dockerfile:11
+2026-05-11T18:02:27.8353602Z --------------------
+2026-05-11T18:02:27.8354366Z    9 |     RUN uname -a
+2026-05-11T18:02:27.8355226Z   10 |     
+2026-05-11T18:02:27.8356220Z   11 | >>> FROm busybox AS hello
+2026-05-11T18:02:27.8357385Z   12 |     RUN echo hello > /hello
+2026-05-11T18:02:27.8357868Z   13 |     
+2026-05-11T18:02:27.8358615Z --------------------
+2026-05-11T18:02:27.8360585Z ERROR: failed to build: failed to solve: busybox: failed to resolve source metadata for docker.io/library/busybox:latest: failed to do request: Head "https://registry-1.docker.io/v2/library/busybox/manifests/latest": dial tcp: lookup registry-1.docker.io on 10.43.0.10:53: read udp 10.42.0.2:50304->10.43.0.10:53: read: connection refused
+2026-05-11T18:02:27.8393743Z + docker buildx rm buildx-test-75e92e10d06d5bb2b58b8d12ab44363e
+2026-05-11T18:02:27.9005156Z buildx-test-75e92e10d06d5bb2b58b8d12ab44363e removed
+2026-05-11T18:02:27.9039534Z make: *** [Makefile:49: test-driver] Error 1
+2026-05-11T18:02:27.9061777Z ##[error]Process completed with exit code 2.
+2026-05-11T18:02:27.9171530Z Post job cleanup.
+2026-05-11T18:02:28.0236221Z [command]/usr/bin/git version
+2026-05-11T18:02:28.0332730Z git version 2.53.0
+2026-05-11T18:02:28.0402471Z Temporarily overriding HOME='/home/runner/work/_temp/0586811b-08cf-4df7-bb72-74ec70d0b99a' before making global git config changes
+2026-05-11T18:02:28.0403476Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-11T18:02:28.0408887Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/buildx/buildx
+2026-05-11T18:02:28.0478058Z Removing SSH command configuration
+2026-05-11T18:02:28.0479135Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-11T18:02:28.0541701Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-11T18:02:28.0875318Z Removing HTTP extra header
+2026-05-11T18:02:28.0876405Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-11T18:02:28.0908062Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-11T18:02:28.1171703Z Removing includeIf entries pointing to credentials config files
+2026-05-11T18:02:28.1179148Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-11T18:02:28.1205162Z includeif.gitdir:/home/runner/work/buildx/buildx/.git.path
+2026-05-11T18:02:28.1205998Z includeif.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path
+2026-05-11T18:02:28.1206747Z includeif.gitdir:/github/workspace/.git.path
+2026-05-11T18:02:28.1207560Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-11T18:02:28.1216095Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/buildx/buildx/.git.path
+2026-05-11T18:02:28.1271970Z /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1284389Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/buildx/buildx/.git.path /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1326473Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path
+2026-05-11T18:02:28.1352445Z /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1363531Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/buildx/buildx/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1399470Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-05-11T18:02:28.1422742Z /github/runner_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1430097Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1462247Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-05-11T18:02:28.1484457Z /github/runner_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1494294Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config
+2026-05-11T18:02:28.1529004Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-11T18:02:28.1776120Z Removing credentials config '/home/runner/work/_temp/git-credentials-11eeb80d-8f81-4c03-bc36-136edfc6b591.config'
+2026-05-11T18:02:28.1930369Z Cleaning up orphan processes

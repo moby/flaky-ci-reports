@@ -1,0 +1,18 @@
+[
+  {
+    "unique_key": "freebsd-pkg-update-failed",
+    "name": "FreeBSD pkg: unable to update repository FreeBSD",
+    "category": "dependency",
+    "fields": {
+      "branch": "release_2",
+      "mirror": "pkgmir.geo.freebsd.org",
+      "repo": "FreeBSD"
+    },
+    "evidence": [
+      {
+        "start_line": 1622,
+        "end_line": 1622
+      }
+    ]
+  }
+]

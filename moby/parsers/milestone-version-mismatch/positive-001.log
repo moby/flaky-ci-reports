@@ -1,0 +1,91 @@
+﻿2026-05-29T18:07:23.7590510Z Current runner version: '2.334.0'
+2026-05-29T18:07:23.7628358Z ##[group]Runner Image Provisioner
+2026-05-29T18:07:23.7629845Z Hosted Compute Agent
+2026-05-29T18:07:23.7631085Z Version: 20260520.533
+2026-05-29T18:07:23.7632129Z Commit: 189110e25284a9812c124fd27b339e2fb4f2f9db
+2026-05-29T18:07:23.7633448Z Build Date: 2026-05-20T17:44:04Z
+2026-05-29T18:07:23.7634679Z Worker ID: {057cd4af-96de-4244-ad23-c3dad3b94fac}
+2026-05-29T18:07:23.7635942Z Azure Region: eastus
+2026-05-29T18:07:23.7637098Z ##[endgroup]
+2026-05-29T18:07:23.7639884Z ##[group]Operating System
+2026-05-29T18:07:23.7641493Z Ubuntu
+2026-05-29T18:07:23.7642609Z 24.04.4
+2026-05-29T18:07:23.7643821Z LTS
+2026-05-29T18:07:23.7644752Z ##[endgroup]
+2026-05-29T18:07:23.7645602Z ##[group]Runner Image
+2026-05-29T18:07:23.7646703Z Image: ubuntu-24.04
+2026-05-29T18:07:23.7647602Z Version: 20260525.161.1
+2026-05-29T18:07:23.7649884Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260525.161/images/ubuntu/Ubuntu2404-Readme.md
+2026-05-29T18:07:23.7652804Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260525.161
+2026-05-29T18:07:23.7654650Z ##[endgroup]
+2026-05-29T18:07:23.7656623Z ##[group]GITHUB_TOKEN Permissions
+2026-05-29T18:07:23.7659773Z Contents: read
+2026-05-29T18:07:23.7661011Z Metadata: read
+2026-05-29T18:07:23.7662087Z PullRequests: read
+2026-05-29T18:07:23.7663028Z ##[endgroup]
+2026-05-29T18:07:23.7666348Z Secret source: None
+2026-05-29T18:07:23.7668125Z Prepare workflow directory
+2026-05-29T18:07:23.8156656Z Prepare all required actions
+2026-05-29T18:07:23.8213879Z Getting action download info
+2026-05-29T18:07:24.1682655Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-05-29T18:07:24.4902760Z Complete job name: validate-milestone
+2026-05-29T18:07:24.5679621Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-05-29T18:07:24.5681108Z with:
+2026-05-29T18:07:24.5691913Z   script: const files = await github.paginate(github.rest.pulls.listFiles, {
+  owner: context.repo.owner,
+  repo: context.repo.repo,
+  pull_number: context.payload.pull_request.number,
+});
+core.info(`Modified files: ${files.map(f => f.filename).join(', ')}`);
+
+const touchesVersions = files.some(f => f.filename === 'releases/versions.yaml');
+core.info(`Touches version: ${touchesVersions}`);
+
+// Use the PR's version when it bumps the file, base branch otherwise.
+// It's fine to trust the author in this case, it's not meant to be
+// a security gate, just a helpful check for maintainers.
+const ref = touchesVersions
+  ? context.payload.pull_request.head.sha
+  : context.payload.pull_request.base.ref;
+
+core.info(`Base ref: ${ref}`);
+
+const resp = await github.rest.repos.getContent({
+  owner: context.repo.owner,
+  repo: context.repo.repo,
+  path: 'releases/versions.yaml',
+  ref,
+});
+const content = Buffer.from(resp.data.content, resp.data.encoding).toString('utf8');
+const line = content.split('\n').find(l => l.includes('next:'));
+if (!line) {
+  core.setFailed('Could not find docker.next in releases/versions.yaml');
+  return;
+}
+const expected = line.trim().replace('next: ', '').replaceAll('"', '');
+const milestone = process.env.MILESTONE;
+
+if (!milestone) {
+  core.setFailed(`PR must have a milestone set (expected: ${expected})`);
+  return;
+}
+if (milestone !== expected) {
+  core.setFailed(`Milestone '${milestone}' does not match docker next version '${expected}'`);
+  return;
+}
+core.info(`Milestone: ${milestone} ✓`);
+
+2026-05-29T18:07:24.5709863Z   github-token: ***
+2026-05-29T18:07:24.5710414Z   debug: false
+2026-05-29T18:07:24.5711087Z   user-agent: actions/github-script
+2026-05-29T18:07:24.5711763Z   result-encoding: json
+2026-05-29T18:07:24.5712314Z   retries: 0
+2026-05-29T18:07:24.5712879Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-29T18:07:24.5714064Z env:
+2026-05-29T18:07:24.5714681Z   MILESTONE: 29.6.0
+2026-05-29T18:07:24.5715211Z ##[endgroup]
+2026-05-29T18:07:25.0529482Z Modified files: go.mod, go.sum, vendor/github.com/containerd/typeurl/v2/README.md, vendor/github.com/containerd/typeurl/v2/types.go, vendor/github.com/containerd/typeurl/v2/types_gogo.go, vendor/modules.txt
+2026-05-29T18:07:25.0533447Z Touches version: false
+2026-05-29T18:07:25.0534275Z Base ref: master
+2026-05-29T18:07:25.2409761Z ##[error]Milestone '29.6.0' does not match docker next version '29.5.3'
+2026-05-29T18:07:25.2593724Z Cleaning up orphan processes

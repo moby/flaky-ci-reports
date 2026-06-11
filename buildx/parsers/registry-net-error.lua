@@ -8,6 +8,11 @@
 --   (b) `<OP> "https://<host>/...": net/http: TLS handshake timeout`
 --       → registry-error:<host>:tls-handshake-timeout
 --
+--   (c) `<OP> "https://<host>/...": dial tcp: lookup <host> on <resolver>:
+--       ... connection refused` — DNS resolution failed (e.g. the in-cluster
+--       CoreDNS resolver refusing the lookup during a kubernetes-driver test).
+--       → registry-error:<host>:dns-lookup-failed
+--
 -- Shares the `registry-error:<host>:<key>` namespace with
 -- registry-error.lua (HTTP-status form) and docker-daemon-error.lua
 -- on purpose — same failure family, reports group together. The
@@ -67,6 +72,25 @@ function parse(log, ctx)
             evidence   = { { start_line = i, end_line = i } },
           })
         end
+      end
+    end
+
+    -- (c) DNS resolution failure (cheap plain-find gate first).
+    if line:find("dial tcp: lookup ", 1, true) then
+      local host = line:match('dial tcp: lookup ([%w%.%-]+) on ')
+      if host then
+        local k = host .. "|dns-lookup-failed"
+        if not seen[k] then
+          seen[k] = true
+          table.insert(out, {
+            unique_key = "registry-error:" .. host .. ":dns-lookup-failed",
+            name       = "Registry " .. host .. " DNS lookup failed",
+            category   = "network",
+            fields     = { host = host, reason = "dns-lookup-failed" },
+            evidence   = { { start_line = i, end_line = i } },
+          })
+        end
+        goto continue
       end
     end
 

@@ -98,6 +98,28 @@ function parse(log, ctx)
         }
       end
     end
+
+    -- E. Single-URL timeout form (one quoted URL, no nested op, no HTTP
+    --    status) — the daemon's own registry probe times out, e.g. during
+    --    Set up Docker Buildx:
+    --      ERROR: Error response from daemon: Get "https://registry-1.docker.io/v2/": context deadline exceeded
+    --    Form C only catches the *nested* two-URL shape; this is the bare
+    --    single-Get variant. Same cause + key namespace (':timeout'). Checked
+    --    last so A/B/C/D claim their more specific shapes first.
+    do
+      local op, host, suffix = line:match(
+        'Error response from daemon: (%S+) "https?://([^/"]+)[^"]*": (.+)$')
+      if op and op ~= "received"
+         and (suffix:match("context deadline exceeded") or suffix:match("Client%.Timeout")) then
+        return {
+          unique_key = "registry-error:" .. host .. ":timeout",
+          name       = "Registry " .. host .. " timeout",
+          category   = "network",
+          fields     = { host = host, reason = "timeout" },
+          evidence   = { { start_line = i, end_line = i } },
+        }
+      end
+    end
   end
   return nil
 end

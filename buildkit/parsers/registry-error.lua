@@ -15,6 +15,23 @@ function parse(log, ctx)
   local out = {}
   local seen = {}
   for i, line in ipairs(log.lines) do
+    do
+      local status = line:match("error writing layer blob: failed to parse error response (%d+)")
+      if status then
+        local dedup_key = "blob-write|" .. status
+        if not seen[dedup_key] then
+          seen[dedup_key] = true
+          table.insert(out, {
+            unique_key = "registry-error:blob-write:" .. status,
+            name       = "Registry layer blob write returned HTTP " .. status,
+            category   = "network",
+            fields     = { operation = "blob-write", status = status },
+            evidence   = { { start_line = i, end_line = i } },
+          })
+        end
+      end
+    end
+
     -- Greedy `.*` on the path so URLs whose path contains `:` (e.g.
     -- /v2/foo/manifests/sha256:abcdef...) anchor to the final ": <status> "
     -- at end of line rather than the inline colon.

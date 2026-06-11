@@ -1,0 +1,17 @@
+[
+  {
+    "unique_key": "registry-error:blob-write:502",
+    "name": "Registry layer blob write returned HTTP 502",
+    "category": "network",
+    "fields": {
+      "operation": "blob-write",
+      "status": "502"
+    },
+    "evidence": [
+      {
+        "start_line": 920,
+        "end_line": 920
+      }
+    ]
+  }
+]
